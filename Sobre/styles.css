@@ -1,18 +1,45 @@
+/* Variáveis para facilitar a manutenção */
+:root {
+    --bg-dark: #121212;
+    --bg-card: #1e1e1e;
+    --header-red: #2d0000; /* Um tom mais fechado e elegante */
+    --accent-blue: #0078D4;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --border-color: #333333;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #222222;
-    /* Cor do texto no cabeçalho */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #440000;
-    /* Cor de fundo do cabeçalho */
-    color: #FFF;
-    /* Cor do texto no cabeçalho */
-    text-align: center;
-    padding: 2px;
+    background: linear-gradient(180deg, var(--header-red) 0%, #1a0000 100%);
+    padding: 1.5rem 2rem;
+    border-bottom: 2px solid #4a0000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    
+    /* Flexbox para alinhar os blocos */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between; /* Distribui espaço entre os elementos */
+    gap: 20px;
+}
+
+.version-info img {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    transition: transform 0.2s;
+}
+
+.version-info img:hover {
+    transform: translateY(-2px);
 }
 
 header img {
@@ -20,7 +47,9 @@ header img {
 }
 
 section {
-    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 section h2 {
@@ -66,25 +95,31 @@ ul {
 
 .about {
     display: flex;
+    gap: 40px;
     align-items: center;
-    justify-content: space-between;
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
 }
 
 .logo-container {
-    float: left;
-    margin-right: 20px;
-    /* Espaço entre a imagem e o texto */
+    float: none; /* Remova o float antigo */
+    margin-right: 0;
 }
 
 .logo {
-    width: 100px;
-    /* Largura da imagem (ajuste conforme necessário) */
+    width: 60px; /* Tamanho reduzido para proporção legal */
+    height: auto;
+    border-radius: 8px;
 }
 
+/* Agrupamento das informações de versão e GitHub */
 .version-info {
-    float: center;
-    margin-top: 20px;
-    /* Espaço entre a imagem e a informação de versão */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0; /* Remove a margem que sugerimos antes */
 }
 
 .version-info img {
@@ -101,6 +136,11 @@ ul {
 .info-container {
     max-width: 1000px;
     /* Define a largura máxima do conteúdo informativo */
+}
+
+.info-container h2 {
+    color: #ff4d4d; /* Destaque no título */
+    margin-top: 0;
 }
 
 .version-info img {
@@ -187,11 +227,31 @@ ul {
     /* Cor quando o link está em foco */
 }
 
+.data a[href="news.html"] {
+    display: inline-block;
+    background: var(--accent-blue);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.data a[href="news.html"]:hover {
+    background: #005a9e;
+}
+
+.data-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
 .data-list a {
-    color: #b9b9b9;
-    /* Substitua pela cor desejada */
+    color: var(--text-primary);
     text-decoration: none;
-    /* Para remover o sublinhado padrão dos links */
+    font-size: 0.95rem;
+    display: block;
 }
 
 .data-list a:hover {
@@ -200,11 +260,17 @@ ul {
 }
 
 .data-list li {
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    color: #ffffff;
-    background-color: #444444;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.data-list li:hover {
+    border-color: var(--accent-blue);
+    background: #252525;
+    transform: translateX(5px);
 }
 
 .data-list img {
@@ -271,19 +337,25 @@ ul {
     display: block;
 }
 
-@media (min-width: 768px) {
-    .command-list {
-        display: inline-block;
-        vertical-align: top;
-        width: 45%;
-        margin-right: 5%;
+/* Media Query específica para telas pequenas */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
     }
-}
-
-@media (max-width: 767px) {
-    .command-list {
+    
+    header h1 {
+        text-align: center;
         width: 100%;
-        margin-right: 0;
+    }
+
+    .line-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card, .empresa {
+        align-self: flex-end; /* Joga o status e a empresa para a direita mesmo no mobile */
     }
 }
 
@@ -474,23 +546,23 @@ ul {
     /* Use a Arial Nova, ou Arial, ou uma fonte sans-serif genérica como fallback */
 }
 
+/* Ajuste nos HRs */
 hr {
-    background-color: #363636;
-    /* Cor de fundo da linha */
+    border: 0;
     height: 1px;
-    /* Altura da linha */
-    border: none;
-    /* Remove a borda padrão */
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    margin: 40px 0;
 }
 
 footer {
-    background-color: #292929;
-    /* Cor de fundo do rodapé */
-    color: #929292;
-    /* Cor de texto padrão do GitHub */
-    text-align: center;
-    padding: 0px;
-    position: static;
-    bottom: 0;
-    width: 100%;
+    background-color: #0a0a0a;
+    padding: 40px 20px;
+    margin-top: 50px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.85rem;
 }
