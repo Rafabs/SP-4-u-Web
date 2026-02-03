@@ -1,0 +1,496 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222222;
+    /* Cor do texto no cabeçalho */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #440000;
+    /* Cor de fundo do cabeçalho */
+    color: #FFF;
+    /* Cor do texto no cabeçalho */
+    text-align: center;
+    padding: 2px;
+}
+
+header img {
+    max-width: 100px;
+}
+
+section {
+    padding: 20px;
+}
+
+section h2 {
+    color: #FFF;
+    /* Cor do texto dos títulos das seções */
+}
+
+a {
+    color: #FFF;
+    /* Cor do texto dos títulos das seções */
+}
+
+p {
+    color: #a0a0a0;
+    /* Cor do texto dos títulos das seções */
+}
+
+/* Estilo para a imagem das notícias */
+.news-item img {
+    max-width: 400px; /* Defina a largura máxima desejada para a imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block;
+    margin-top: 10px;
+    border-bottom: 1px solid #ccc; /* Adiciona uma borda inferior cinza */
+    padding-bottom: 20px; /* Adiciona um espaço entre cada notícia */
+    margin-bottom: 20px; /* Adiciona um espaço entre cada notícia */    
+}
+
+h2 {
+    color: #ffffff;
+    /* Cor do texto dos títulos das seções */
+}
+
+section p {
+    color: #FFF;
+    /* Cor do texto dos títulos das seções */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-container {
+    float: left;
+    margin-right: 20px;
+    /* Espaço entre a imagem e o texto */
+}
+
+.logo {
+    width: 100px;
+    /* Largura da imagem (ajuste conforme necessário) */
+}
+
+.version-info {
+    float: center;
+    margin-top: 20px;
+    /* Espaço entre a imagem e a informação de versão */
+}
+
+.version-info img {
+    margin-right: 10px;
+    /* Espaço entre os ícones de versão e atualização */
+}
+
+.logo-container img {
+    margin-right: 10px;
+    max-width: 1000px;
+    /* Define a largura máxima do conteúdo informativo */
+}
+
+.info-container {
+    max-width: 1000px;
+    /* Define a largura máxima do conteúdo informativo */
+}
+
+.version-info img {
+    margin-left: 10px;
+    max-width: 1000px;
+    /* Define a largura máxima do conteúdo informativo */
+}
+
+.note {
+    border-left: 3px solid #0366d6;
+    /* Cor azul usada nos blocos de nota do GitHub */
+    background-color: #001222;
+    /* Cor de fundo do bloco de nota */
+    padding: 1px;
+    /* Espaçamento interno */
+    margin: 20px 0;
+    /* Espaçamento externo */
+}
+
+.note p {
+    margin: 0;
+    /* Remove a margem padrão dos parágrafos dentro do bloco de nota */
+}
+
+.attention {
+    border-left: 3px solid #46d603;
+    /* Cor azul usada nos blocos de nota do GitHub */
+    background-color: #0d2900;
+    /* Cor de fundo do bloco de nota */
+    padding: 1px;
+    /* Espaçamento interno */
+    margin: 20px 0;
+    /* Espaçamento externo */
+}
+
+.attention p {
+    margin: 0;
+    /* Remove a margem padrão dos parágrafos dentro do bloco de nota */
+}
+
+.lines {
+    margin-bottom: 10px;
+    /* Adicione margem na parte inferior */
+}
+
+.line-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.line-list li {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #444444;
+}
+
+.line-list li span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.line-list li code {
+    font-family: monospace;
+    background-color: #3d3d3d;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.lines a {
+    color: #b9b9b9;
+    /* Substitua pela cor desejada */
+    text-decoration: none;
+    /* Para remover o sublinhado padrão dos links */
+}
+
+.lines a:hover {
+    color: #ffffff;
+    /* Cor quando o link está em foco */
+}
+
+.data-list a {
+    color: #b9b9b9;
+    /* Substitua pela cor desejada */
+    text-decoration: none;
+    /* Para remover o sublinhado padrão dos links */
+}
+
+.data-list a:hover {
+    color: #ffffff;
+    /* Cor quando o link está em foco */
+}
+
+.data-list li {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #444444;
+}
+
+.data-list img {
+    margin-right: 10px;
+}
+
+.lib {
+    padding: 20px;
+    color: #ffffff;
+}
+
+.lib h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.command-list {
+    margin-bottom: 20px;
+}
+
+.command-list h3 {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.command-list ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+.command-list li {
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+
+.copy-code {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #3d3d3d;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    /* Adicionamos margem na parte inferior para separar os códigos */
+}
+
+.copy-code:hover {
+    background-color: #a5a5a5;
+}
+
+.command-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    /* Adicionamos um display flex para os códigos ficarem na mesma linha */
+    flex-wrap: wrap;
+    /* Se houver muitos códigos, eles irão quebrar para a linha seguinte */
+}
+
+.command-list code {
+    margin: 0 10px 5px 0;
+    /* Adicionamos margens para separar os códigos horizontalmente */
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .command-list {
+        display: inline-block;
+        vertical-align: top;
+        width: 45%;
+        margin-right: 5%;
+    }
+}
+
+@media (max-width: 767px) {
+    .command-list {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+.execution {
+    padding-bottom: 80px;
+    /* Ou o valor que funcionar melhor para o seu layout */
+}
+
+.execution a {
+    color: #b9b9b9;
+    /* Substitua pela cor desejada */
+    text-decoration: none;
+    /* Para remover o sublinhado padrão dos links */
+}
+
+.execution a:hover {
+    color: #ffffff;
+    /* Cor quando o link está em foco */
+}
+
+.execution h3 {
+    color: #0366d6;
+    /* Cor azul usada nos links do GitHub */
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.execution ol {
+    list-style-type: decimal;
+    color: #ffffff;
+    /* Cor de texto padrão do GitHub */
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.execution ol li {
+    margin-bottom: 10px;
+}
+
+.execution p {
+    margin-bottom: 20px;
+}
+
+.execution code {
+    font-family: monospace;
+    background-color: #3d3d3d;
+    color: #ffffff;
+    /* Cor de texto padrão do GitHub */
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.estacoes ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.estacoes li {
+    flex: 0 0 30%;
+    /* Define a largura das imagens */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.estacoes img {
+    max-width: 100%;
+    /* Garante que a imagem não ultrapasse seu contêiner */
+}
+
+.centered-image {
+    text-align: center;
+    margin-top: 50px;
+    /* Espaço entre a imagem e o botão */
+}
+
+.centered-image img {
+    max-width: 100%;
+    /* Garante que a imagem não ultrapasse a largura do contêiner */
+}
+
+.centered-image button {
+    background-color: #4CAF50;
+    /* Cor de fundo verde */
+    color: white;
+    /* Cor do texto branco */
+    border: none;
+    /* Remove a borda do botão */
+    padding: 10px 20px;
+    /* Espaçamento interno */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    cursor: pointer;
+    /* Muda o cursor ao passar o mouse sobre o botão */
+    border-radius: 5px;
+    /* Borda arredondada */
+}
+
+.centered-image button:hover {
+    background-color: #45a049;
+    /* Cor de fundo verde escuro ao passar o mouse */
+}
+
+.card {
+    position: relative;
+    background-color: #000655;
+    /* Amarelo escuro */
+    color: #00a6ff;
+    /* Amarelo claro */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    /* Tamanho da fonte */
+    float: right;
+    /* Alinha no lado direito */
+}
+
+.amarelo_velocidade_reduzida {
+    position: relative;
+    background-color: #554800;
+    /* Amarelo escuro */
+    color: #ffd900;
+    /* Amarelo claro */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    /* Tamanho da fonte */
+    float: right;
+    /* Alinha no lado direito */
+}
+
+.verde_operacao_normal {
+    position: relative;
+    background-color: #00550e;
+    /* Verde escuro */
+    color: #00ff1e;
+    /* Verde claro */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    /* Tamanho da fonte */
+    float: right;
+    /* Alinha no lado direito */
+}
+
+.branco_dados_indisponiveis {
+    position: relative;
+    background-color: #000000;
+    /* Branco escuro */
+    color: #ffffff;
+    /* Branco claro */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    /* Tamanho da fonte */
+    float: right;
+    /* Alinha no lado direito */
+}
+
+.vermelho_paralisada {
+    position: relative;
+    background-color: #550000;
+    /* Vermelho escuro */
+    color: #ff0000;
+    /* Vermelho claro */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    /* Tamanho da fonte */
+    float: right;
+    /* Alinha no lado direito */
+}
+
+.empresa {
+    position: relative;
+    padding: 1px 10px;
+    border-radius: 5px;
+    color: #a2a0a0;
+    /* Cinza claro */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    float: right;
+    /* Alinha no lado direito */
+    font-family: 'Arial Nova light', Arial, sans-serif;
+    /* Use a Arial Nova, ou Arial, ou uma fonte sans-serif genérica como fallback */
+}
+
+hr {
+    background-color: #363636;
+    /* Cor de fundo da linha */
+    height: 1px;
+    /* Altura da linha */
+    border: none;
+    /* Remove a borda padrão */
+}
+
+footer {
+    background-color: #292929;
+    /* Cor de fundo do rodapé */
+    color: #929292;
+    /* Cor de texto padrão do GitHub */
+    text-align: center;
+    padding: 0px;
+    position: static;
+    bottom: 0;
+    width: 100%;
+}
