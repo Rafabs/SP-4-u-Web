@@ -3,7 +3,7 @@
     --bg-dark: #121212;
     --bg-card: #1e1e1e;
     --header-red: #2d0000;
-    --accent-blue: #0078D4;
+    --accent-red: #d40000;
     --text-primary: #e0e0e0;
     --text-secondary: #a0a0a0;
     --border-color: #333333;
@@ -35,8 +35,10 @@ body {
 }
 
 header {
+    position: relative;
     background: linear-gradient(180deg, var(--header-red) 0%, #1a0000 100%);
     padding: 1rem 2rem;
+    z-index: 1100;    
     border-bottom: 2px solid #4a0000;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     display: flex;
@@ -78,7 +80,7 @@ section h2, h2, h1 {
 }
 
 a {
-    color: var(--accent-blue); /* Ou var(--text-primary) se preferir */
+    color: var(--accent-red); /* Ou var(--text-primary) se preferir */
     transition: opacity 0.2s;
 }
 
@@ -288,7 +290,7 @@ ul {
 
 .data a[href="news.html"] {
     display: inline-block;
-    background: var(--accent-blue);
+    background: var(--accent-red);
     color: white;
     padding: 12px 25px;
     border-radius: 50px;
@@ -297,7 +299,7 @@ ul {
 }
 
 .data a[href="news.html"]:hover {
-    background: #005a9e;
+    background: #9e0000;
 }
 
 .data-list {
@@ -327,7 +329,7 @@ ul {
 }
 
 .data-list li:hover {
-    border-color: var(--accent-blue);
+    border-color: var(--accent-red);
     background: #252525;
     transform: translateX(5px);
 }
@@ -410,7 +412,13 @@ ul {
     .line-list li code { grid-area: hex; }
     .line-list li a    { grid-area: line; }
 
-        .line-list li code {
+    .line-list li a {
+        justify-self: left;
+        align-items: left;
+        padding: 0px;
+    }
+
+    .line-list li code {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -654,7 +662,7 @@ hr {
 
 .contact-item a {
     text-decoration: none;
-    color: var(--accent-blue);
+    color: var(--accent-red);
     font-size: 0.9rem;
     justify-self: center; 
     text-align: left;
@@ -682,20 +690,151 @@ hr {
     }
 }
 
+/* Estilo da Navegação Desktop */
+.nav-menu {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    position: relative; /* Necessário para a animação da linha */
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-red);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--accent-red);
+}
+
+.nav-menu a:hover::after {
+    width: 100%; /* A linha cresce ao passar o mouse */
+}
+
+/* Esconder botão hambúrguer no Desktop */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-primary);
+    transition: 0.3s;
+}
+
+/* No Desktop, escondemos o botão */
+.menu-toggle {
+    display: none;
+}
+
+/* --- VERSÃO MOBILE --- */
+@media (max-width: 768px) {
+    header {
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    .menu-toggle {
+        display: flex; /* Garante que ele apareça */
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1100;
+        padding: 0;
+    }
+
+    /* Estilo dos 3 pauzinhos */
+    .menu-toggle span {
+        width: 100%;
+        height: 3px;
+        background-color: var(--text-primary); /* Se o texto for branco, o pauzinho será branco */
+        border-radius: 10px;
+        transition: all 0.3s linear;
+    }
+
+    /* Menu que aparece/some */
+    .nav-menu {
+        position: absolute; /* O menu 'flutua' sobre o conteúdo */
+        top: 100%;          /* Começa logo após o header */
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-card);
+        display: none;      /* Esconde por padrão */
+        flex-direction: column;
+        z-index: 1500;      /* Abaixo do botão de tema, mas acima do conteúdo */
+    }
+
+    /* Classe ativada pelo JS */
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        padding: 15px;
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .menu-toggle.open span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .menu-toggle.open span:nth-child(2) {
+        opacity: 0; /* Some a linha do meio */
+    }
+
+    .menu-toggle.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+        
+}
+
 /* Botão Flutuante de Alternância */
 .theme-toggle {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--accent-blue);
-    color: white;
-    border: none;
-    padding: 12px;
+    bottom: 20px;    /* Distância do fundo da tela */
+    right: 20px;     /* Distância da direita da tela */
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
+    border: none;
+    background-color: var(--code-color);
+    color: white;
     cursor: pointer;
+    z-index: 2000;   /* Valor bem alto para ficar na frente de TUDO */
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
-    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
     transition: transform 0.2s;
 }
 
