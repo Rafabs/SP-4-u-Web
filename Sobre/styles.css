@@ -21,16 +21,22 @@ body {
 
 header {
     background: linear-gradient(180deg, var(--header-red) 0%, #1a0000 100%);
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem;
     border-bottom: 2px solid #4a0000;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    
-    /* Flexbox para alinhar os blocos */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between; /* Distribui espaço entre os elementos */
-    gap: 20px;
+    justify-content: space-between; /* Mantém logo na esquerda e badges na direita */
+    gap: 15px;
+}
+
+/* Container que agrupa GitHub + Versão + Atualização */
+.version-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; 
 }
 
 .version-info img {
@@ -109,8 +115,9 @@ ul {
 }
 
 .logo {
-    width: 60px; /* Tamanho reduzido para proporção legal */
-    height: auto;
+    width: 60px; /* Tamanho fixo para não distorcer */
+    height: 60px;
+    object-fit: cover; /* Garante que a imagem preencha o quadrado sem esticar */
     border-radius: 8px;
 }
 
@@ -192,39 +199,78 @@ ul {
 }
 
 .line-list li {
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    color: #ffffff;
-    font-weight: bold;
+    display: grid;
+    grid-template-columns: 16px auto 1fr auto auto;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0;
+    padding: 14px;
+    border-radius: 8px;
     background-color: #444444;
+    column-gap: 16px;
 }
 
+.line-list li span    { grid-column: 1; } /* bolinha */
+.line-list li code    { grid-column: 2; } /* hex */
+.line-list li a       { grid-column: 3; } /* linha */
+.line-list li .empresa{ grid-column: 4; } /* empresa */
+.line-list li .card   { grid-column: 5; } /* operação */
+
+.line-list li span,
+.line-list li code,
+.line-list li a,
+.line-list li .empresa,
+.line-list li .card {
+    grid-row: 1;
+}
+
+/* Bolinha */
 .line-list li span {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    margin-right: 10px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
 }
 
+/* Código HEX */
 .line-list li code {
     font-family: monospace;
     background-color: #3d3d3d;
-    padding: 2px 4px;
-    border-radius: 3px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* Nome da linha */
+.line-list li a {
+    color: #b9b9b9;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Empresa */
+.line-list li .empresa {
+    display: flex;            /* garante flex */
+    align-items: center;      /* centraliza verticalmente */
+    justify-content: flex-start; /* alinha à esquerda */
+    text-align: right;       
+    margin-right: 8px;        /* espaço entre empresa e operação */
+}
+
+
+/* Operação */
+.line-list li .card {
+    display: flex;
+    align-items: center;
 }
 
 .lines a {
     color: #b9b9b9;
-    /* Substitua pela cor desejada */
     text-decoration: none;
-    /* Para remover o sublinhado padrão dos links */
 }
 
-.lines a:hover {
+.line-list li a:hover {
     color: #ffffff;
-    /* Cor quando o link está em foco */
 }
 
 .data a[href="news.html"] {
@@ -339,19 +385,34 @@ ul {
 
 /* Media Query específica para telas pequenas */
 @media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    header h1 {
-        text-align: center;
-        width: 100%;
+    .line-list li {
+        grid-template-columns: 16px auto 1fr;
+        grid-template-areas:
+            "dot hex line"
+            "empresa empresa operacao";
+        row-gap: 8px;
     }
 
-    .line-list li {
-        flex-direction: column;
-        align-items: flex-start;
+    .line-list li span { grid-area: dot; }
+    .line-list li code { grid-area: hex; }
+    .line-list li a    { grid-area: line; }
+
+        .line-list li code {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 60px;    
+        box-sizing: border-box;
+    }
+
+    .line-list li .empresa {
+        grid-area: empresa;
+        justify-content: flex-start;
+    }
+
+    .line-list li .card {
+        grid-area: operacao;
+        justify-self: end;
     }
 
     .card, .empresa {
@@ -472,8 +533,6 @@ ul {
     border-radius: 5px;
     font-size: 12px;
     /* Tamanho da fonte */
-    float: right;
-    /* Alinha no lado direito */
 }
 
 .amarelo_velocidade_reduzida {
@@ -540,10 +599,14 @@ ul {
     /* Cinza claro */
     font-size: 16px;
     /* Tamanho da fonte */
-    float: right;
-    /* Alinha no lado direito */
     font-family: 'Arial Nova light', Arial, sans-serif;
     /* Use a Arial Nova, ou Arial, ou uma fonte sans-serif genérica como fallback */
+}
+
+.line-list li .card,
+.line-list li .empresa {
+    float: none !important;
+    position: static !important;
 }
 
 /* Ajuste nos HRs */
@@ -556,13 +619,59 @@ hr {
 
 footer {
     background-color: #0a0a0a;
-    padding: 40px 20px;
+    padding: 60px 20px; /* Mais respiro */
     margin-top: 50px;
     border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
 }
 
-footer p {
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-info p {
     margin: 5px 0;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+}
+
+.footer-info span {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Container dos Badges - Sem floats, usando Flexbox */
+.footer-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.footer-badges img {
+    height: 25px; /* Altura uniforme para todos os badges */
+    transition: filter 0.3s, transform 0.3s;
+    filter: grayscale(0.4); /* Efeito dark sutil */
+}
+
+.footer-badges img:hover {
+    filter: grayscale(0);
+    transform: scale(1.05);
+}
+
+/* Ajuste Responsivo para o Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-badges {
+        justify-content: center;
+    }
 }

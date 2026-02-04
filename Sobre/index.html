@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
     <script src="server.js"></script>
-    <link rel="icon"
-        href="https://raw.githubusercontent.com/Rafabs/SP-4-u/main/Mapa_dos_Trilhos/Favicon/SP4U_LOGO.ico"
+    <link rel="icon" href="https://raw.githubusercontent.com/Rafabs/SP-4-u/main/Mapa_dos_Trilhos/Favicon/SP4U_LOGO.ico"
         type="image/x-icon">
 </head>
 
@@ -20,45 +19,36 @@
                 src="https://raw.githubusercontent.com/Rafabs/SP-4-u/main/Mapa_dos_Trilhos/Imgs/SP4U_LOGO.jpg"
                 alt="Logo do Projeto">
         </div>
-        <div class="version-info">
-            <img src="https://img.shields.io/badge/Vers%C3%A3o-1.0.0.0-blue.svg" alt="Version">
-            <img src="https://img.shields.io/badge/Atualiza%C3%A7%C3%A3o-03/02/2026-green.svg" alt="Atualização">
-        </div>
-        <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
-            <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
-                alt="github">
-        </a>
     </header>
-
+    <hr>
     <section class="about">
         <div class="info-container">
             <h2>Sampa 4u</h2>
             <p>Este repositório foi criado com o objetivo de demonstrar como criar visualizações simples de mapas de
                 linhas de metrô, trens e ônibus usando a biblioteca Tkinter. Cada script contido neste repositório
-                representa
-                uma linha diferente e usa elementos gráficos para criar um mapa que mostra as estações, as conexões e os
+                representa uma linha diferente e usa elementos gráficos para criar um mapa que mostra as estações, as conexões e os
                 trajetos possíveis, além de verificar o trânsito no sentido Centro-Bairro ou Bairro-Centro, a hora e a
                 temperatura na cidade de São Paulo, as linhas que estão em construção não constam no mapa de trajetos,
                 porém consta no mapa global.</p>
-        </div>
-
-        <div class="logo-container">
-            <img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white"
-                alt="VSCode">
-            <br>
-            <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
-                alt="HTML5">
-            <br>
-            <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
-                alt="CSS3">
-            <br>
-            <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
-                alt="JS">
-        </div>
+        </div>        
     </section>
-
     <hr>
+    <section class="about">
+        <div class="info-container">
+            <h2>Saiba mais</h2>
+            <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
+                <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+                    alt="github">
+            </a>            
+            <p>INFO SOBRE ATUALIZAÇÕES E COMMIT</p>
 
+            <div class="version-info">
+                <img src="https://img.shields.io/badge/Vers%C3%A3o-1.0.0.0-blue.svg" alt="Version">
+                <img src="https://img.shields.io/badge/Atualiza%C3%A7%C3%A3o-03/02/2026-green.svg" alt="Atualização">
+            </div>                 
+        </div>    
+    </section>
+    <hr>
     <section class="lines">
         <h2>Explorando os Mapas</h2>
         <p>Cada linha recebeu uma cor em hexadecimal, de acordo com o GFTS da <a
@@ -91,11 +81,6 @@
                 <div class="card" id="linha05-info">Informações sobre a Operação - Carregando...</div>
                 <div class="empresa">VIAMOBILIDADE</div>
             </li>
-            <li><span style="background-color: #000000;"></span> <code>#000000</code> <a href="SP_L06.html">Linha 06 -
-                Laranja</a>
-            <div class="card" id="linha06-info">Informações sobre a Operação - Carregando...</div>
-            <div class="empresa">ACCIONA</div>
-            </li>            
             <li><span style="background-color: #CA016B;"></span> <code>#CA016B</code> <a href="SP_L07.html">Linha 07 -
                     Rubi</a>
                 <div class="card" id="linha07-info">Informações sobre a Operação - Carregando...</div>
@@ -137,49 +122,45 @@
                 <div class="empresa">METRÔ</div>
             </li>
             <li><span style="background-color: #000000;"></span> <code>#000000</code> <a href="SP_L17.html">Linha 17 -
-                Ouro</a>
-            <div class="card" id="linha06-info">Informações sobre a Operação - Carregando...</div>
-            <div class="empresa">VIAMOBILIDADE</div>
-            </li>              
+                    Ouro</a>
+                <div class="card" id="linha06-info">Informações sobre a Operação - Carregando...</div>
+                <div class="empresa">VIAMOBILIDADE</div>
+            </li>
         </ul>
         <div class="empresa" id="ultima-atualizacao">Atualizado em DD/MM/AAAA HH:MM</div>
     </section>
-
     <hr>
-
     <section class="data" style="text-align: center;">
         <h2>Notícias sobre o transporte público</h2>
         <a href="news.html" class="btn-news">Acessar Portal de Notícias</a>
     </section>
-
     <hr>
-
     <section class="data">
         <h2>Informações sobre os Sistemas</h2>
         <ul class="data-list">
             <li>
-                <a href="https://www.metro.sp.gov.br/wp-content/uploads/2025/12/mapaderede.pdf"
-                    target="_blank">Mapa da Rede</a>
+                <a href="https://www.metro.sp.gov.br/wp-content/uploads/2025/12/mapaderede.pdf" target="_blank">Mapa da
+                    Rede</a>
             </li>
 
             <li>
-                <a href="https://trilhos.motiva.com.br/viaquatro/guia-de-uso/"
-                    target="_blank">VIAQUATRO - Guia do Uso [PT/BR]</a>
+                <a href="https://trilhos.motiva.com.br/viaquatro/guia-de-uso/" target="_blank">VIAQUATRO - Guia do Uso
+                    [PT/BR]</a>
             </li>
 
             <li>
-                <a href="https://trilhos.motiva.com.br/viamobilidade5/guia-de-uso/"
-                    target="_blank">VIAMOBILIDADE - LINHAS 5 E 17 - Guia do Uso [PT/BR]</a>
+                <a href="https://trilhos.motiva.com.br/viamobilidade5/guia-de-uso/" target="_blank">VIAMOBILIDADE -
+                    LINHAS 5 E 17 - Guia do Uso [PT/BR]</a>
             </li>
-            
+
             <li>
-                <a href="https://trilhos.motiva.com.br/viamobilidade8e9/guia-de-uso/"
-                    target="_blank">VIAMOBILIDADE - LINHAS 8 E 9 - Guia do Uso [PT/BR]</a>
+                <a href="https://trilhos.motiva.com.br/viamobilidade8e9/guia-de-uso/" target="_blank">VIAMOBILIDADE -
+                    LINHAS 8 E 9 - Guia do Uso [PT/BR]</a>
             </li>
-            
+
             <li>
-                <a href="https://www.tictrens.com.br/sua-viagem/informacoes-uteis"
-                    target="_blank">TIC TRENS - Informaçoes Úteis [PT/BR]</a>
+                <a href="https://www.tictrens.com.br/sua-viagem/informacoes-uteis" target="_blank">TIC TRENS -
+                    Informaçoes Úteis [PT/BR]</a>
             </li>
 
             <li>
@@ -192,22 +173,33 @@
                     target="_blank">METRÔ - Guia do Usuário [EN/US]</a>
             </li>
             <li>
-                <a href="https://www.cptm.sp.gov.br/cptm/sua-viagem/regulamento-de-viagem"
-                    target="_blank">CPTM - Regulamento de Viagem</a>
+                <a href="https://www.cptm.sp.gov.br/cptm/sua-viagem/regulamento-de-viagem" target="_blank">CPTM -
+                    Regulamento de Viagem</a>
             </li>
             <li>
-                <a href="https://www.cptm.sp.gov.br/cptm/sua-viagem/expresso-turistico"
-                    target="_blank">CPTM - Guia do Usuário - Expresso Turístico</a>
+                <a href="https://www.cptm.sp.gov.br/cptm/sua-viagem/expresso-turistico" target="_blank">CPTM - Guia do
+                    Usuário - Expresso Turístico</a>
             </li>
         </ul>
     </section>
 
     <hr>
 
-        <footer>
-            <p>&copy; 2023 | Sampa 4u</p>
-            <p>Desenvolvido por Rafael Barbosa</p>
-        </footer>
+<footer>
+    <div class="footer-content">
+        <div class="footer-info">
+            <p class="copyright">&copy; 2023 - 2026 | <strong>Sampa 4u</strong></p>
+            <p class="author">Desenvolvido por <span>Rafael Barbosa</span></p>
+        </div>
+        
+        <div class="footer-badges">
+            <img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="VSCode">
+            <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+            <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+            <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JS">
+        </div>
+    </div>
+</footer>
 
 </body>
 
