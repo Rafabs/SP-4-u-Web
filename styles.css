@@ -1,22 +1,37 @@
-/* Variáveis para facilitar a manutenção */
+/* Definições de cores para o modo Escuro (Padrão) */
 :root {
     --bg-dark: #121212;
     --bg-card: #1e1e1e;
-    --header-red: #2d0000; /* Um tom mais fechado e elegante */
+    --header-red: #2d0000;
     --accent-blue: #0078D4;
     --text-primary: #e0e0e0;
     --text-secondary: #a0a0a0;
     --border-color: #333333;
-    --glass: rgba(255, 255, 255, 0.05);
+    --code-color: #3d3d3d;
+    --p-color: #ffffff;
+    --hr-gradient: linear-gradient(90deg, transparent, #333333, transparent);
+}
+
+/* Definições para o modo Claro */
+body.light-mode {
+    --bg-dark: #f0f2f5;        /* Cinza muito claro ou branco */
+    --bg-card: #ffffff;        /* Card branco puro */
+    --header-red: #b30000;     /* Vermelho mais vivo para o topo */
+    --text-primary: #1a1a1a;   /* Texto quase preto para leitura */
+    --text-secondary: #4a4a4a; /* Cinza escuro para textos menores */
+    --border-color: #dcdcdc;
+    --code-color: #bbbbbb;
+    --p-color: #272727;
 }
 
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-dark);
-    color: var(--text-primary);
+    color: var(--p-color); 
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header {
@@ -58,19 +73,17 @@ section {
     padding: 40px 20px;
 }
 
-section h2 {
-    color: #FFF;
-    /* Cor do texto dos títulos das seções */
+section h2, h2, h1 {
+    color: var(--text-primary) !important;
 }
 
 a {
-    color: #FFF;
-    /* Cor do texto dos títulos das seções */
+    color: var(--accent-blue); /* Ou var(--text-primary) se preferir */
+    transition: opacity 0.2s;
 }
 
-p {
-    color: #a0a0a0;
-    /* Cor do texto dos títulos das seções */
+p, .author, .copyright {
+    color: var(--p-color) !important;
 }
 
 /* Estilo para a imagem das notícias */
@@ -206,7 +219,7 @@ ul {
     margin: 12px 0;
     padding: 14px;
     border-radius: 8px;
-    background-color: #444444;
+    background-color: var(--bg-card);
     column-gap: 16px;
 }
 
@@ -234,7 +247,7 @@ ul {
 /* Código HEX */
 .line-list li code {
     font-family: monospace;
-    background-color: #3d3d3d;
+    background-color: var(--code-color);
     padding: 2px 6px;
     border-radius: 4px;
     font-size: 12px;
@@ -243,7 +256,7 @@ ul {
 
 /* Nome da linha */
 .line-list li a {
-    color: #b9b9b9;
+    color: var(--text-primary);
     text-decoration: none;
     white-space: nowrap;
 }
@@ -609,20 +622,40 @@ ul {
     position: static !important;
 }
 
-/* Ajuste nos HRs */
 hr {
     border: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    background: var(--hr-gradient);
     margin: 40px 0;
 }
 
+/* Botão Flutuante de Alternância */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    font-size: 20px;
+    transition: transform 0.2s;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
 footer {
-    background-color: #0a0a0a;
+    background-color: var(--bg-dark);
     padding: 60px 20px; /* Mais respiro */
     margin-top: 50px;
     border-top: 1px solid var(--border-color);
-    color: var(--text-secondary);
+    color: var(--text-primary);
 }
 
 .footer-content {
@@ -638,10 +671,11 @@ footer {
 .footer-info p {
     margin: 5px 0;
     font-size: 0.9rem;
+    color: var(--text-primary) !important;    
 }
 
 .footer-info span {
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
     font-weight: 600;
 }
 
