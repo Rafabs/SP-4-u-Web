@@ -629,6 +629,59 @@ hr {
     margin: 40px 0;
 }
 
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-item {
+    display: grid;
+    /* Coluna 1: Empresa (fixa) | Coluna 2: Site (flexível) | Coluna 3: Telefone (auto) */
+    grid-template-columns: 180px 1fr auto; 
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contact-item strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: var(--accent-blue);
+    font-size: 0.9rem;
+    justify-self: center; 
+    text-align: left;
+}
+
+.contact-item span {
+    color: var(--text-secondary);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    justify-self: end; 
+    text-align: right;
+    min-width: 120px;
+}
+
+/* Responsividade: No celular, vira uma lista simples */
+@media (max-width: 700px) {
+    .contact-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .contact-item a, .contact-item span {
+        justify-self: center;
+    }
+}
+
 /* Botão Flutuante de Alternância */
 .theme-toggle {
     position: fixed;
