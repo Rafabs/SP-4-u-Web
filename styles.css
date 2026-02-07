@@ -1,4 +1,6 @@
-/* Definições de cores para o modo Escuro (Padrão) */
+/* ==========================================================================
+   VARIÁVEIS E DEFINIÇÕES GLOBAIS
+   ========================================================================== */
 :root {
     --bg-dark: #121212;
     --bg-card: #1e1e1e;
@@ -10,624 +12,49 @@
     --code-color: #3d3d3d;
     --p-color: #ffffff;
     --hr-gradient: linear-gradient(90deg, transparent, #333333, transparent);
+    
+    /* Cores de Status Operacional */
+    --status-blue-bg: #000655;
+    --status-blue-text: #00a6ff;
+    --status-yellow-bg: #554800;
+    --status-yellow-text: #ffd900;
+    --status-green-bg: #00550e;
+    --status-green-text: #00ff1e;
+    --status-red-bg: #550000;
+    --status-red-text: #ff0000;
+    --status-gray-bg: #000000;
+    --status-gray-text: #ffffff;
 }
 
 /* Definições para o modo Claro */
 body.light-mode {
-    --bg-dark: #f0f2f5;        /* Cinza muito claro ou branco */
-    --bg-card: #ffffff;        /* Card branco puro */
-    --header-red: #b30000;     /* Vermelho mais vivo para o topo */
-    --text-primary: #1a1a1a;   /* Texto quase preto para leitura */
-    --text-secondary: #4a4a4a; /* Cinza escuro para textos menores */
+    --bg-dark: #f0f2f5;
+    --bg-card: #ffffff;
+    --header-red: #b30000;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
     --border-color: #dcdcdc;
     --code-color: #bbbbbb;
     --p-color: #272727;
 }
 
+/* ==========================================================================
+   BASE & LAYOUT
+   ========================================================================== */
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-dark);
-    color: var(--p-color); 
+    color: var(--p-color);
     margin: 0;
     padding: 0;
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
 }
 
-header {
-    position: relative;
-    background: linear-gradient(180deg, var(--header-red) 0%, #1a0000 100%);
-    padding: 1rem 2rem;
-    z-index: 1100;    
-    border-bottom: 2px solid #4a0000;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between; /* Mantém logo na esquerda e badges na direita */
-    gap: 15px;
-}
-
-/* Container que agrupa GitHub + Versão + Atualização */
-.version-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap; 
-}
-
-.version-info img {
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-    transition: transform 0.2s;
-}
-
-.version-info img:hover {
-    transform: translateY(-2px);
-}
-
-header img {
-    max-width: 100px;
-}
-
 section {
     max-width: 1100px;
     margin: 0 auto;
     padding: 40px 20px;
-}
-
-section h2, h2, h1 {
-    color: var(--text-primary) !important;
-}
-
-a {
-    color: var(--accent-red); /* Ou var(--text-primary) se preferir */
-    transition: opacity 0.2s;
-}
-
-p, .author, .copyright {
-    color: var(--p-color) !important;
-}
-
-/* Estilo para a imagem das notícias */
-.news-item img {
-    max-width: 400px; /* Defina a largura máxima desejada para a imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    display: block;
-    margin-top: 10px;
-    border-bottom: 1px solid #ccc; /* Adiciona uma borda inferior cinza */
-    padding-bottom: 20px; /* Adiciona um espaço entre cada notícia */
-    margin-bottom: 20px; /* Adiciona um espaço entre cada notícia */    
-}
-
-h2 {
-    color: #ffffff;
-    /* Cor do texto dos títulos das seções */
-}
-
-section p {
-    color: #FFF;
-    /* Cor do texto dos títulos das seções */
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.about {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    background: var(--bg-card);
-    padding: 20px;
-    border-radius: 15px;
-    border: 1px solid var(--border-color);
-}
-
-.logo-container {
-    float: none; /* Remova o float antigo */
-    margin-right: 0;
-}
-
-.logo {
-    width: 60px; /* Tamanho fixo para não distorcer */
-    height: 60px;
-    object-fit: cover; /* Garante que a imagem preencha o quadrado sem esticar */
-    border-radius: 8px;
-}
-
-/* Agrupamento das informações de versão e GitHub */
-.version-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 0; /* Remove a margem que sugerimos antes */
-}
-
-.version-info img {
-    margin-right: 10px;
-    /* Espaço entre os ícones de versão e atualização */
-}
-
-.logo-container img {
-    margin-right: 10px;
-    max-width: 1000px;
-    /* Define a largura máxima do conteúdo informativo */
-}
-
-.info-container {
-    max-width: 1000px;
-    /* Define a largura máxima do conteúdo informativo */
-}
-
-.info-container h2 {
-    color: #ff4d4d; /* Destaque no título */
-    margin-top: 0;
-}
-
-.version-info img {
-    margin-left: 10px;
-    max-width: 1000px;
-    /* Define a largura máxima do conteúdo informativo */
-}
-
-.note {
-    border-left: 3px solid #0366d6;
-    /* Cor azul usada nos blocos de nota do GitHub */
-    background-color: #001222;
-    /* Cor de fundo do bloco de nota */
-    padding: 1px;
-    /* Espaçamento interno */
-    margin: 20px 0;
-    /* Espaçamento externo */
-}
-
-.note p {
-    margin: 0;
-    /* Remove a margem padrão dos parágrafos dentro do bloco de nota */
-}
-
-.attention {
-    border-left: 3px solid #46d603;
-    /* Cor azul usada nos blocos de nota do GitHub */
-    background-color: #0d2900;
-    /* Cor de fundo do bloco de nota */
-    padding: 1px;
-    /* Espaçamento interno */
-    margin: 20px 0;
-    /* Espaçamento externo */
-}
-
-.attention p {
-    margin: 0;
-    /* Remove a margem padrão dos parágrafos dentro do bloco de nota */
-}
-
-.lines {
-    margin-bottom: 10px;
-    /* Adicione margem na parte inferior */
-}
-
-.line-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.line-list li {
-    display: grid;
-    grid-template-columns: 16px auto 1fr auto auto;
-    align-items: center;
-    gap: 12px;
-    margin: 12px 0;
-    padding: 14px;
-    border-radius: 8px;
-    background-color: var(--bg-card);
-    column-gap: 16px;
-}
-
-.line-list li span    { grid-column: 1; } /* bolinha */
-.line-list li code    { grid-column: 2; } /* hex */
-.line-list li a       { grid-column: 3; } /* linha */
-.line-list li .empresa{ grid-column: 4; } /* empresa */
-.line-list li .card   { grid-column: 5; } /* operação */
-
-.line-list li span,
-.line-list li code,
-.line-list li a,
-.line-list li .empresa,
-.line-list li .card {
-    grid-row: 1;
-}
-
-/* Bolinha */
-.line-list li span {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-}
-
-/* Código HEX */
-.line-list li code {
-    font-family: monospace;
-    background-color: var(--code-color);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 12px;
-    white-space: nowrap;
-}
-
-/* Nome da linha */
-.line-list li a {
-    color: var(--text-primary);
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-/* Empresa */
-.line-list li .empresa {
-    display: flex;            /* garante flex */
-    align-items: center;      /* centraliza verticalmente */
-    justify-content: flex-start; /* alinha à esquerda */
-    text-align: right;       
-    margin-right: 8px;        /* espaço entre empresa e operação */
-}
-
-
-/* Operação */
-.line-list li .card {
-    display: flex;
-    align-items: center;
-}
-
-.lines a {
-    color: #b9b9b9;
-    text-decoration: none;
-}
-
-.line-list li a:hover {
-    color: #ffffff;
-}
-
-.data a[href="news.html"] {
-    display: inline-block;
-    background: var(--accent-red);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.data a[href="news.html"]:hover {
-    background: #9e0000;
-}
-
-.data-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
-}
-
-.data-list a {
-    color: var(--text-primary);
-    text-decoration: none;
-    font-size: 0.95rem;
-    display: block;
-}
-
-.data-list a:hover {
-    color: #ffffff;
-    /* Cor quando o link está em foco */
-}
-
-.data-list li {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 15px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.data-list li:hover {
-    border-color: var(--accent-red);
-    background: #252525;
-    transform: translateX(5px);
-}
-
-.data-list img {
-    margin-right: 10px;
-}
-
-.lib {
-    padding: 20px;
-    color: #ffffff;
-}
-
-.lib h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.command-list {
-    margin-bottom: 20px;
-}
-
-.command-list h3 {
-    font-size: 1.2em;
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.command-list ol {
-    list-style-type: decimal;
-    padding-left: 20px;
-}
-
-.command-list li {
-    font-size: 1em;
-    margin-bottom: 8px;
-}
-
-.copy-code {
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: #3d3d3d;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    /* Adicionamos margem na parte inferior para separar os códigos */
-}
-
-.copy-code:hover {
-    background-color: #a5a5a5;
-}
-
-.command-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    /* Adicionamos um display flex para os códigos ficarem na mesma linha */
-    flex-wrap: wrap;
-    /* Se houver muitos códigos, eles irão quebrar para a linha seguinte */
-}
-
-.command-list code {
-    margin: 0 10px 5px 0;
-    /* Adicionamos margens para separar os códigos horizontalmente */
-    display: block;
-}
-
-/* Media Query específica para telas pequenas */
-@media (max-width: 600px) {
-    .line-list li {
-        grid-template-columns: 16px auto 1fr;
-        grid-template-areas:
-            "dot hex line"
-            "empresa empresa operacao";
-        row-gap: 8px;
-    }
-
-    .line-list li span { grid-area: dot; }
-    .line-list li code { grid-area: hex; }
-    .line-list li a    { grid-area: line; }
-
-    .line-list li a {
-        justify-self: left;
-        align-items: left;
-        padding: 0px;
-    }
-
-    .line-list li code {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        max-width: 60px;    
-        box-sizing: border-box;
-    }
-
-    .line-list li .empresa {
-        grid-area: empresa;
-        justify-content: flex-start;
-    }
-
-    .line-list li .card {
-        grid-area: operacao;
-        justify-self: end;
-    }
-
-    .card, .empresa {
-        align-self: flex-end; /* Joga o status e a empresa para a direita mesmo no mobile */
-    }
-}
-
-.execution {
-    padding-bottom: 80px;
-    /* Ou o valor que funcionar melhor para o seu layout */
-}
-
-.execution a {
-    color: #b9b9b9;
-    /* Substitua pela cor desejada */
-    text-decoration: none;
-    /* Para remover o sublinhado padrão dos links */
-}
-
-.execution a:hover {
-    color: #ffffff;
-    /* Cor quando o link está em foco */
-}
-
-.execution h3 {
-    color: #0366d6;
-    /* Cor azul usada nos links do GitHub */
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.execution ol {
-    list-style-type: decimal;
-    color: #ffffff;
-    /* Cor de texto padrão do GitHub */
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-.execution ol li {
-    margin-bottom: 10px;
-}
-
-.execution p {
-    margin-bottom: 20px;
-}
-
-.execution code {
-    font-family: monospace;
-    background-color: #3d3d3d;
-    color: #ffffff;
-    /* Cor de texto padrão do GitHub */
-    padding: 2px 4px;
-    border-radius: 3px;
-}
-
-.estacoes ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.estacoes li {
-    flex: 0 0 30%;
-    /* Define a largura das imagens */
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.estacoes img {
-    max-width: 100%;
-    /* Garante que a imagem não ultrapasse seu contêiner */
-}
-
-.centered-image {
-    text-align: center;
-    margin-top: 50px;
-    /* Espaço entre a imagem e o botão */
-}
-
-.centered-image img {
-    max-width: 100%;
-    /* Garante que a imagem não ultrapasse a largura do contêiner */
-}
-
-.centered-image button {
-    background-color: #4CAF50;
-    /* Cor de fundo verde */
-    color: white;
-    /* Cor do texto branco */
-    border: none;
-    /* Remove a borda do botão */
-    padding: 10px 20px;
-    /* Espaçamento interno */
-    font-size: 16px;
-    /* Tamanho da fonte */
-    cursor: pointer;
-    /* Muda o cursor ao passar o mouse sobre o botão */
-    border-radius: 5px;
-    /* Borda arredondada */
-}
-
-.centered-image button:hover {
-    background-color: #45a049;
-    /* Cor de fundo verde escuro ao passar o mouse */
-}
-
-.card {
-    position: relative;
-    background-color: #000655;
-    /* Amarelo escuro */
-    color: #00a6ff;
-    /* Amarelo claro */
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    /* Tamanho da fonte */
-}
-
-.amarelo_velocidade_reduzida {
-    position: relative;
-    background-color: #554800;
-    /* Amarelo escuro */
-    color: #ffd900;
-    /* Amarelo claro */
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    /* Tamanho da fonte */
-    float: right;
-    /* Alinha no lado direito */
-}
-
-.verde_operacao_normal {
-    position: relative;
-    background-color: #00550e;
-    /* Verde escuro */
-    color: #00ff1e;
-    /* Verde claro */
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    /* Tamanho da fonte */
-    float: right;
-    /* Alinha no lado direito */
-}
-
-.branco_dados_indisponiveis {
-    position: relative;
-    background-color: #000000;
-    /* Branco escuro */
-    color: #ffffff;
-    /* Branco claro */
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    /* Tamanho da fonte */
-    float: right;
-    /* Alinha no lado direito */
-}
-
-.vermelho_paralisada {
-    position: relative;
-    background-color: #550000;
-    /* Vermelho escuro */
-    color: #ff0000;
-    /* Vermelho claro */
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    /* Tamanho da fonte */
-    float: right;
-    /* Alinha no lado direito */
-}
-
-.empresa {
-    position: relative;
-    padding: 1px 10px;
-    border-radius: 5px;
-    color: #a2a0a0;
-    /* Cinza claro */
-    font-size: 16px;
-    /* Tamanho da fonte */
-    font-family: 'Arial Nova light', Arial, sans-serif;
-    /* Use a Arial Nova, ou Arial, ou uma fonte sans-serif genérica como fallback */
-}
-
-.line-list li .card,
-.line-list li .empresa {
-    float: none !important;
-    position: static !important;
 }
 
 hr {
@@ -637,60 +64,40 @@ hr {
     margin: 40px 0;
 }
 
-.contact-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+section h2, h2, h1 {
+    color: var(--text-primary) !important;
 }
 
-.contact-item {
-    display: grid;
-    /* Coluna 1: Empresa (fixa) | Coluna 2: Site (flexível) | Coluna 3: Telefone (auto) */
-    grid-template-columns: 180px 1fr auto; 
-    align-items: center;
-    padding: 12px 15px;
-    margin-bottom: 8px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 6px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.contact-item strong {
-    color: var(--text-primary);
-    font-weight: 600;
-}
-
-.contact-item a {
-    text-decoration: none;
+a {
     color: var(--accent-red);
-    font-size: 0.9rem;
-    justify-self: center; 
-    text-align: left;
+    text-decoration: none;
+    transition: opacity 0.2s, color 0.2s;
 }
 
-.contact-item span {
-    color: var(--text-secondary);
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    justify-self: end; 
-    text-align: right;
-    min-width: 120px;
+/* ==========================================================================
+   HEADER & NAVEGAÇÃO
+   ========================================================================== */
+header {
+    position: relative;
+    background: linear-gradient(180deg, var(--header-red) 0%, #1a0000 100%);
+    padding: 1rem 2rem;
+    z-index: 1100;
+    border-bottom: 2px solid #4a0000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-/* Responsividade: No celular, vira uma lista simples */
-@media (max-width: 700px) {
-    .contact-item {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 8px;
-    }
-    
-    .contact-item a, .contact-item span {
-        justify-self: center;
-    }
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
-/* Estilo da Navegação Desktop */
 .nav-menu {
     display: flex;
     gap: 25px;
@@ -726,102 +133,200 @@ hr {
     width: 100%; /* A linha cresce ao passar o mouse */
 }
 
-/* Esconder botão hambúrguer no Desktop */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
+/* ==========================================================================
+   COMPONENTES (CARDS, LISTAS, BOTÕES)
+   ========================================================================== */
+
+.about {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
 }
 
-.menu-toggle span {
+.version-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.version-info img {
+    transition: transform 0.2s;
+}
+
+.version-info img:hover {
+    transform: translateY(-2px);
+}
+
+/* Listagem de Linhas Metroferroviárias */
+.line-list {
+    list-style: none;
+    padding: 0;
+}
+
+.line-list li {
+    display: grid;
+    grid-template-columns: 16px 80px 1fr auto auto;
+    align-items: center;
+    gap: 16px;
+    margin: 12px 0;
+    padding: 14px;
+    border-radius: 8px;
+    background-color: var(--bg-card);
+}
+
+.line-list li span    { grid-column: 1; } /* bolinha */
+.line-list li code    { grid-column: 2; } /* hex */
+.line-list li a       { grid-column: 3; } /* linha */
+.line-list li .empresa{ grid-column: 4; } /* empresa */
+.line-list li .card   { grid-column: 5; } /* operação */
+
+.line-list li span,
+.line-list li code,
+.line-list li a,
+.line-list li .empresa,
+.line-list li .card {
+    grid-row: 1;
+}
+
+/* Bolinha */
+.line-list li span:first-child {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+/* Código HEX */
+.line-list li code {
+    font-family: monospace;
+    background-color: var(--code-color);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Nome da linha */
+.line-list li a {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Empresa */
+.line-list li .empresa {
+    display: flex;            /* garante flex */
+    align-items: center;      /* centraliza verticalmente */
+    justify-content: flex-start; /* alinha à esquerda */
+    text-align: right;       
+    margin-right: 8px;        /* espaço entre empresa e operação */
+}
+
+/* Operação */
+.line-list li .card {
+    display: flex;
+    align-items: center;
+}
+
+.lines a {
+    color: #b9b9b9;
+    text-decoration: none;
+}
+
+/* Classes de Status Operacional */
+.card, .amarelo_velocidade_reduzida, .verde_operacao_normal, 
+.vermelho_paralisada, .branco_dados_indisponiveis {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.card { background: var(--status-blue-bg); color: var(--status-blue-text); }
+.amarelo_velocidade_reduzida { background: var(--status-yellow-bg); color: var(--status-yellow-text); }
+.verde_operacao_normal { background: var(--status-green-bg); color: var(--status-green-text); }
+.vermelho_paralisada { background: var(--status-red-bg); color: var(--status-red-text); }
+.branco_dados_indisponiveis { background: var(--status-gray-bg); color: var(--status-gray-text); }
+
+.empresa {
+    color: var(--text-secondary);
+    font-size: 14px;
+    min-width: 100px;
+    text-align: right;
+}
+
+/* Listagem de Dados e Links Úteis */
+.data-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.data-list li {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.data-list li:hover {
+    border-color: var(--accent-red);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(5px);
+}
+
+.data-list a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
     display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-primary);
-    transition: 0.3s;
 }
 
-/* No Desktop, escondemos o botão */
-.menu-toggle {
-    display: none;
+/* Seção de Contatos */
+.contact-list { list-style: none; padding: 0; }
+
+.contact-item {
+    display: grid;
+    grid-template-columns: 180px 1fr auto;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    border-bottom: 1px solid var(--border-color);
 }
 
-/* --- VERSÃO MOBILE --- */
-@media (max-width: 768px) {
-    header {
-        justify-content: space-between;
-        padding: 10px 20px;
-    }
-
-    .menu-toggle {
-        display: flex; /* Garante que ele apareça */
-        flex-direction: column;
-        justify-content: space-around;
-        width: 30px;
-        height: 25px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        z-index: 1100;
-        padding: 0;
-    }
-
-    /* Estilo dos 3 pauzinhos */
-    .menu-toggle span {
-        width: 100%;
-        height: 3px;
-        background-color: var(--text-primary); /* Se o texto for branco, o pauzinho será branco */
-        border-radius: 10px;
-        transition: all 0.3s linear;
-    }
-
-    /* Menu que aparece/some */
-    .nav-menu {
-        position: absolute; /* O menu 'flutua' sobre o conteúdo */
-        top: 100%;          /* Começa logo após o header */
-        left: 0;
-        width: 100%;
-        background-color: var(--bg-card);
-        display: none;      /* Esconde por padrão */
-        flex-direction: column;
-        z-index: 1500;      /* Abaixo do botão de tema, mas acima do conteúdo */
-    }
-
-    /* Classe ativada pelo JS */
-    .nav-menu.active {
-        display: flex;
-    }
-
-    .nav-menu a {
-        padding: 15px;
-        text-align: center;
-        width: 100%;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .menu-toggle.open span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
-    }
-
-    .menu-toggle.open span:nth-child(2) {
-        opacity: 0; /* Some a linha do meio */
-    }
-
-    .menu-toggle.open span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
-    }
-        
+.contact-item a {
+    text-decoration: none;
+    color: var(--accent-red);
+    font-size: 0.9rem;
+    justify-self: center; 
+    text-align: left;
 }
 
-/* Botão Flutuante de Alternância */
+.contact-item span {
+    color: var(--text-secondary);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    justify-self: end; 
+    text-align: right;
+    min-width: 120px;
+}
+
+/* ==========================================================================
+   UI ELEMENTS (THEME TOGGLE, FOOTER)
+   ========================================================================== */
 .theme-toggle {
     position: fixed;
-    bottom: 20px;    /* Distância do fundo da tela */
-    right: 20px;     /* Distância da direita da tela */
+    bottom: 20px;
+    right: 20px;
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -829,7 +334,7 @@ hr {
     background-color: var(--code-color);
     color: white;
     cursor: pointer;
-    z-index: 2000;   /* Valor bem alto para ficar na frente de TUDO */
+    z-index: 2000;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
@@ -838,16 +343,11 @@ hr {
     transition: transform 0.2s;
 }
 
-.theme-toggle:hover {
-    transform: scale(1.1);
-}
-
 footer {
     background-color: var(--bg-dark);
-    padding: 60px 20px; /* Mais respiro */
+    padding: 60px 20px;
     margin-top: 50px;
     border-top: 1px solid var(--border-color);
-    color: var(--text-primary);
 }
 
 .footer-content {
@@ -860,44 +360,173 @@ footer {
     gap: 30px;
 }
 
-.footer-info p {
-    margin: 5px 0;
-    font-size: 0.9rem;
-    color: var(--text-primary) !important;    
-}
-
-.footer-info span {
-    color: var(--text-primary) !important;
-    font-weight: 600;
-}
-
-/* Container dos Badges - Sem floats, usando Flexbox */
 .footer-badges {
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
-    justify-content: center;
+}
+
+.menu-toggle {
+    display: none; /* Escondido no desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px; /* Altura fixa para dar espaço entre as linhas */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-primary); /* Cor dinâmica baseada no tema */
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE MULTI-TELA
+   ========================================================================== */
+
+/* --- TABLETS E TELAS MÉDIAS (até 992px) --- */
+@media (max-width: 992px) {
+    .about {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .data-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* --- MOBILE E SMARTPHONES (até 768px) --- */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;
+        z-index: 1600;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-card);
+        border-top: 1px solid var(--border-color);
+        z-index: 1500;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Ajuste da Lista de Linhas (Grid Mobile) */
+    .line-list li {
+        grid-template-columns: 16px 70px 1fr;
+        grid-template-areas:
+            "dot hex line"
+            "empresa empresa operacao";
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .line-list li span { grid-area: dot; }
+    .line-list li code { grid-area: hex; }
+    .line-list li a    { grid-area: line; font-size: 0.9rem; }
+    
+    .line-list li .empresa {
+        grid-area: empresa;
+        text-align: left;
+        margin-top: 5px;
+        font-size: 0.8rem;
+    }
+
+    .line-list li .card,
+    .line-list li [class*="verde"],
+    .line-list li [class*="amarelo"],
+    .line-list li [class*="vermelho"],
+    .line-list li [class*="branco"] {
+        grid-area: operacao;
+        justify-self: end;
+        font-size: 11px;
+    }
+
+    /* Contatos e Footer */
+    .contact-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .contact-item span {
+        color: var(--text-secondary);
+        justify-self: center; 
+
+    }    
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-badges {
+        justify-content: center;
+    }
+}
+
+/* --- DISPOSITIVOS MUITO PEQUENOS (até 480px) --- */
+@media (max-width: 480px) {
+    .line-list li {
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+            "line line"
+            "hex dot"
+            "empresa operacao";
+    }
+    
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    section h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* --- ESTILOS DE INTERAÇÃO (Geral) --- */
+.theme-toggle:hover {
+    transform: scale(1.1);
 }
 
 .footer-badges img {
-    height: 25px; /* Altura uniforme para todos os badges */
+    height: 25px;
     transition: filter 0.3s, transform 0.3s;
-    filter: grayscale(0.4); /* Efeito dark sutil */
+    filter: grayscale(0.4);
 }
 
 .footer-badges img:hover {
     filter: grayscale(0);
     transform: scale(1.05);
-}
-
-/* Ajuste Responsivo para o Footer */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .footer-badges {
-        justify-content: center;
-    }
 }
