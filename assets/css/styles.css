@@ -331,26 +331,45 @@ header {
 }
 
 /* ==========================================================================
-   UI ELEMENTS (THEME TOGGLE, FOOTER)
+   UI ELEMENTS (THEME TOGGLE, BACK TO TOP, FOOTER)
    ========================================================================== */
-.theme-toggle {
+.theme-toggle, #backToTop {
     position: fixed;
-    bottom: 20px;
     right: 20px;
     width: 45px;
     height: 45px;
     border-radius: 50%;
     border: none;
-    background-color: var(--code-color);
-    color: white;
     cursor: pointer;
     z-index: 2000;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    padding: 0;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+/* Posicionamento Individual */
+.theme-toggle {
+    bottom: 20px;
+    background-color: var(--code-color);
+    color: white;
     font-size: 1.2rem;
-    transition: transform 0.2s;
+}
+
+#backToTop {
+    bottom: 75px; /* Ajustado para um respiro simétrico de 10px entre eles */
+    background-color: var(--border-color);
+    color: white;
+    font-size: 1.1rem;
+    display: none; /* Controlado pelo JS */
+}
+
+/* Hover Unificado */
+.theme-toggle:hover, #backToTop:hover {
+    transform: scale(1.1);
 }
 
 footer {
@@ -494,6 +513,20 @@ footer {
 
     }    
 
+    .theme-toggle, #backToTop {
+        right: 15px;    
+        width: 42px;      
+        height: 42px;
+    }
+
+    .theme-toggle {
+        bottom: 15px;
+    }
+
+    #backToTop {
+        bottom: 67px;   
+    }
+
     .footer-content {
         flex-direction: column;
         gap: 20px;
@@ -531,11 +564,18 @@ footer {
             padding: 4px 8px;
     }
 
+    .theme-toggle, #backToTop {
+        right: 15px; 
+        width: 42px;    
+        height: 42px;
+    }
+
     .theme-toggle {
-        width: 40px;
-        height: 40px;
         bottom: 15px;
-        right: 15px;
+    }
+
+    #backToTop {
+        bottom: 67px;    
     }
 
     section h2 {
