@@ -120,10 +120,6 @@ header {
     transform: translateY(-3px);
 }
 
-.nav-menu a:hover::after {
-    width: 100%; /* A linha cresce ao passar o mouse */
-}
-
 .nav-menu a i {
     font-size: 1.5rem;     
     color: var(--code-color);
