@@ -138,6 +138,10 @@ header {
     color: var(--text-primary);
 }
 
+.nav-menu a.active-link i {
+    color: #ff3333; /* Cor de destaque para o ícone */
+}
+
 /* ==========================================================================
    COMPONENTES (CARDS, LISTAS, BOTÕES)
    ========================================================================== */
