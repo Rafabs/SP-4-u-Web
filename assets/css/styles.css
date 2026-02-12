@@ -177,6 +177,7 @@ header {
     margin: 12px 0;
     padding: 14px;
     border-radius: 8px;
+    overflow: hidden;    
     background-color: var(--bg-card);
 }
 
@@ -502,7 +503,23 @@ footer {
             "hex dot"
             "empresa operacao";
     }
-    
+
+    .line-list li .card,
+        .line-list li [class*="verde"],
+        .line-list li [class*="amarelo"],
+        .line-list li [class*="vermelho"],
+        .line-list li [class*="branco"] {
+            grid-area: operacao;
+            justify-self: end;
+            font-size: 10px;          
+            white-space: normal;      
+            text-align: right;
+            max-width: 140px;        
+            word-break: break-word;   
+            line-height: 1.2;
+            padding: 4px 8px;
+    }
+
     .theme-toggle {
         width: 40px;
         height: 40px;
