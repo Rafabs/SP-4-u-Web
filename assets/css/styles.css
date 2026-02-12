@@ -100,37 +100,46 @@ header {
 
 .nav-menu {
     display: flex;
-    gap: 25px;
+    gap: 20px;
     align-items: center;
 }
 
 .nav-menu a {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;  
+    justify-content: center;
+    text-align: center;
+    gap: 5px;             
     text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    color: var(--text-primary);
-    position: relative; /* Necessário para a animação da linha */
-    padding: 8px 0;
-    transition: color 0.3s ease;
-}
-
-.nav-menu a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--accent-red);
-    transition: width 0.3s ease;
+    transition: all 0.3s ease;
+    min-width: 70px;        
 }
 
 .nav-menu a:hover {
-    color: var(--accent-red);
+    transform: translateY(-3px);
 }
 
 .nav-menu a:hover::after {
     width: 100%; /* A linha cresce ao passar o mouse */
+}
+
+.nav-menu a i {
+    font-size: 1.5rem;     
+    color: var(--code-color);
+    margin: 0;              
+}
+
+.nav-menu a:hover i {
+    color: #ff3333;
+}
+
+.nav-menu a span {
+    font-size: 0.7rem;     
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
 }
 
 /* ==========================================================================
@@ -430,13 +439,15 @@ footer {
     }
 
     .nav-menu.active {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        padding: 20px 10px;
+        gap: 15px;
     }
 
     .nav-menu a {
-        padding: 15px;
-        text-align: center;
-        border-bottom: 1px solid var(--border-color);
+        min-width: unset; 
+        padding: 10px 0;
     }
 
     /* Ajuste da Lista de Linhas (Grid Mobile) */
