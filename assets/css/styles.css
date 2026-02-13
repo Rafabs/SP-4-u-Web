@@ -614,7 +614,7 @@ footer {
 }
 
 .error-icon {
-    font-size: 8rem;
+    font-size: 3rem;
     color: var(--hr-gradient);
     margin-bottom: 20px;
     animation: moveTrain 4s infinite linear;
