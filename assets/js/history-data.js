@@ -36,7 +36,9 @@ const historyData = [
     { data: "02/02/2025", tipo: "❌ Remoção", linha: "339A/69", cor: "0082BA", rota: "Metrô Vl. Matilde - Passeio Iluminado", recente: false },
     { data: "02/02/2025", tipo: "❌ Remoção", linha: "339A/70", cor: "FF671F", rota: "Metrô Vl. Matilde - Passeio Iluminado", recente: false },
     { data: "02/02/2025", tipo: "❌ Remoção", linha: "339A/71", cor: "509E2F", rota: "Metrô Vl. Matilde - Passeio Iluminado", recente: false },
-    { data: "06/01/2025", tipo: "💰 Tarifas", linha: "METRÔ / CPTM", cor: "FFFFFF", rota: "R$ 5,40", recente: true },
+    { data: "06/01/2025", tipo: "💰 Tarifas", linha: "METRÔ", cor: "FFFFFF", rota: "R$ 5,40", recente: true },
+    { data: "06/01/2025", tipo: "💰 Tarifas", linha: "CPTM", cor: "FFFFFF", rota: "R$ 5,40", recente: true },
+    { data: "06/01/2025", tipo: "💰 Tarifas", linha: "Concessionárias", cor: "FFFFFF", rota: "R$ 5,40", recente: true },    
     { data: "06/01/2025", tipo: "💰 Tarifas", linha: "SPTrans", cor: "FFFFFF", rota: "R$ 5,30", recente: true },    
     { data: "02/02/2025", tipo: "❌ Remoção", linha: "339A/72", cor: "FF671F", rota: "Metrô Vl. Matilde - Passeio Iluminado", recente: false },
     { data: "01/12/2025", tipo: "🆕 Inclusão", linha: "2002/31", cor: "DA291C", rota: "Term. Pq. D. Pedro II - Natal Iluminado", recente: false },
@@ -58,9 +60,9 @@ const historyData = [
     { data: "06/08/2025", tipo: "❌ Remoção", linha: "6960/21", cor: "0082BA", rota: "Term. Varginha - E.t. Vitor Manzini", recente: false },
     { data: "23/06/2025", tipo: "✏️ Modificação", linha: "9166/10", cor: "002F6C", rota: "<after>Atual:</after> Cachoeirinha - Jd. Sta. Cruz<br><before>Antes:</before> Term. Cachoeirinha - Jd. Sta. Cruz", recente: false },
     { data: "23/06/2025", tipo: "❌ Remoção", linha: "8013/43", cor: "509E2F", rota: "Morro Doce - Term. Jd. Britania", recente: false },
-    { data: "20/06/2025", tipo: "🆕 Inclusão", linha: "2034/10", cor: "002F6C", rota: "Metrô Tietê → Centro Tea", recente: false },
-    { data: "20/06/2025", tipo: "✏️ Modificação", linha: "4056/10", cor: "DA291C", rota: "<after>Atual:</after> Pq. Boa Esperança → Term. São Mateus<br><before>Antes:</before> (Cor anterior: Amarelo)", recente: false },
-    { data: "20/06/2025", tipo: "❌ Remoção", linha: "3033/10", cor: "FFD100", rota: "Guaianases → São Mateus", recente: false },
+    { data: "20/06/2025", tipo: "🆕 Inclusão", linha: "2034/10", cor: "002F6C", rota: "Metrô Tietê - Centro Tea", recente: false },
+    { data: "20/06/2025", tipo: "✏️ Modificação", linha: "4056/10", cor: "DA291C", rota: "<after>Atual:</after> Pq. Boa Esperança - Term. São Mateus<br><before>Antes:</before> (Cor anterior: Amarelo)", recente: false },
+    { data: "20/06/2025", tipo: "❌ Remoção", linha: "3033/10", cor: "FFD100", rota: "Guaianases - São Mateus", recente: false },
 ];
 
 function renderHistory() {
