@@ -7,6 +7,8 @@
     <title>Histórico de Linhas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">    
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/history.css">    
+    <script src="../assets/js/history-data.js"></script>        
     <script src="../assets/js/bottom-theme.js"></script>
     <script src="../assets/js/menu-toggle.js" defer></script>
     <link rel="icon" href="https://raw.githubusercontent.com/Rafabs/SP-4-u/main/Mapa_dos_Trilhos/Favicon/SP4U_LOGO.ico" type="image/x-icon">
@@ -64,29 +66,43 @@
             </a>
         </nav>
     </header>
-    <hr>
-    <section class="about">
-        <div class="info-container">
-            <h2>Sampa 4u</h2>
-            <p>
-                O <strong>Sampa 4u</strong> é um ecossistema de visualização de dados focado na malha metroferroviária e
-                de ônibus urbano de São Paulo.
-                Este projeto demonstra como transformar coordenadas e informações operacionais em interfaces gráficas
-                intuitivas utilizando dados abertos e tecnologia open source.
-            </p>
-            <p>
-                Cada script foi projetado para renderizar linhas, estações, conexões estratégicas e trajetos em tempo
-                real. Além da infraestrutura, o sistema integra APIs para monitorar o fluxo de trânsito
-                (Centro-Bairro/Bairro-Centro),
-                além de fornecer dados climáticos e cronológicos da capital paulista.
-            </p>
-            <div class="version-info">
-                <img src="https://img.shields.io/badge/Vers%C3%A3o-1.0.0.0-blue.svg" alt="Version">
-                <img src="https://img.shields.io/badge/Atualiza%C3%A7%C3%A3o-12/02/2026-green.svg" alt="Atualização">
-            </div>
-        </div>
-    </section>
+<section>
+    <h2><i class="fa-solid fa-thumbtack"></i> Últimas Atualizações</h2>
+    <div class="table-wrapper">
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Linha</th>
+                    <th>Rota</th>
+                </tr>
+            </thead>
+            <tbody id="sptrans-recent-body">
+            </tbody>
+        </table>
+    </div>
 
+    <br>
+
+    <details class="history-details">
+        <summary>📚 Ver histórico completo</summary>
+        <div class="table-wrapper">
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Tipo</th>
+                        <th>Linha</th>
+                        <th>Rota</th>
+                    </tr>
+                </thead>
+                <tbody id="full-history-body">
+                </tbody>
+            </table>
+        </div>
+    </details>
+</section>
+    
     <hr>
 
     <section class="data">
