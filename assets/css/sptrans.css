@@ -1,0 +1,185 @@
+/* --- Área de Resultados (Grid) --- */
+#result-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* --- Card da Linha --- */
+.line-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: fadeIn 0.3s ease-in;
+    contain: content; /* Otimização para scroll de listas longas */
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.line-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Cabeçalho do Card (Badge + Destino) --- */
+.line-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 12px;
+}
+
+.line-identity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.line-destiny {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-primary, #222);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+/* --- Corpo do Card --- */
+.route-full-name {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.info-grid {
+    background: var(--bg-card); 
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-grid p {
+    margin: 0;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #444;
+}
+
+.info-grid i {
+    color: var(--text-primary); 
+    width: 16px;
+    text-align: center;
+}
+
+/* --- Rodapé do Card --- */
+.line-footer {
+    margin-top: auto;
+    padding-top: 12px;
+    font-size: 0.7rem;
+    color: #999;
+    text-align: right;
+    border-top: 1px inset #f0f0f0;
+}
+
+/* --- Seção de Busca --- */
+.search-section {
+    display: flex;
+    flex-direction: column; /* Para empilhar busca e contador */
+    align-items: center;
+    padding: 30px 20px;
+    background: linear-gradient(to bottom, var(--bg-dark, #f4f4f4), transparent);
+    gap: 15px;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+}
+
+/* Ícone da Lupa (Esquerda) */
+.search-icon {
+    position: absolute;
+    left: 18px;
+    color: #888;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Ícone do X (Direita) */
+.clear-icon {
+    position: absolute;
+    right: 18px;
+    color: #888;
+    cursor: pointer;
+    display: none; /* Controlado pelo JS */
+    padding: 5px;
+    transition: color 0.2s, transform 0.2s;
+    z-index: 2;
+}
+
+.clear-icon:hover {
+    color: #ed1c24;
+    transform: scale(1.2);
+}
+
+#lineSearch {
+    width: 100%;
+    padding: 14px 45px 14px 45px; /* Espaço para ícones em ambos os lados */
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+#lineSearch:focus {
+    border-color: #ed1c24;
+    box-shadow: 0 4px 12px rgba(237, 28, 36, 0.2);
+}
+
+#lineSearch:focus + .search-icon {
+    color: #ed1c24;
+}
+
+/* --- Contador de Linhas --- */
+#line-counter {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* --- Animação --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsividade --- */
+@media (max-width: 480px) {
+    .search-section {
+        padding: 20px;
+    }
+    .line-destiny {
+        font-size: 1rem;
+    }
+}
