@@ -80,7 +80,7 @@ a {
 header {
     position: relative;
     background: linear-gradient(180deg, var(--header-red) 0%, #1a0000 100%);
-    padding: 1rem 2rem;
+    padding: 0.8rem 2rem; /* Reduzi um pouco o padding vertical */
     z-index: 1100;
     border-bottom: 2px solid #4a0000;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
@@ -88,7 +88,6 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 15px;
-    flex-wrap: wrap;
 }
 
 .logo {
@@ -100,47 +99,81 @@ header {
 
 .nav-menu {
     display: flex;
-    gap: 20px;
+    gap: 25px; /* Aumentei o espaço entre os botões */
     align-items: center;
 }
 
 .nav-menu a {
     display: flex;
-    flex-direction: column; 
-    align-items: center;  
+    flex-direction: column; /* COLOCA O ÍCONE EM CIMA */
+    align-items: center;    /* CENTRALIZA HORIZONTALMENTE */
     justify-content: center;
-    text-align: center;
-    gap: 5px;             
+    gap: 4px;              /* ESPAÇO PEQUENO ENTRE ÍCONE E TEXTO */
     text-decoration: none;
     transition: all 0.3s ease;
-    min-width: 70px;        
+    min-width: 65px;        /* GARANTE QUE O BOTÃO TENHA UMA ÁREA CLICÁVEL BOA */
 }
 
 .nav-menu a:hover {
     transform: translateY(-3px);
 }
-
-.nav-menu a i {
-    font-size: 1.5rem;     
-    color: var(--code-color);
-    margin: 0;              
+.nav-menu a .material-symbols-outlined {
+    font-size: 28px;        /* TAMANHO DO ÍCONE MAIOR E BACANA */
+    color: var(--text-secondary); /* COR INICIAL MAIS SUAVE */
+    transition: color 0.3s;
 }
 
-.nav-menu a:hover i {
-    color: #ff3333;
+.nav-menu a:hover .material-symbols-outlined,
+.nav-menu a.active-link .material-symbols-outlined {
+    color: #ff3333;         /* DESTAQUE NO HOVER E LINK ATIVO */
+    font-variation-settings: 'FILL' 1; /* OPCIONAL: PREENCHE O ÍCONE NO HOVER */
 }
 
 .nav-menu a span {
-    font-size: 0.7rem;     
-    font-weight: 600;
+    font-size: 0.65rem;     /* TEXTO UM POUCO MENOR PARA HARMONIZAR */
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
     color: var(--text-primary);
+    text-align: center;
 }
 
-.nav-menu a.active-link i {
-    color: #ff3333; /* Cor de destaque para o ícone */
+/* Estilo da Navbar Reutilizável */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaço entre ícone e texto */
+    font-weight: 500;
+}
+
+.nav-links a.active {
+    color: #ed1c24; /* Destaque para página atual */
+}
+
+/* Garante que o ícone do Google alinhe com o texto */
+.material-symbols-outlined {
+    font-size: 24px; /* Tamanho padrão */
+    vertical-align: middle;
+    /* Opcional: define a espessura do ícone */
+    font-variation-settings: 'wght' 400; 
+}   
 
 /* ==========================================================================
    COMPONENTES (CARDS, LISTAS, BOTÕES)

@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Versionamento</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="../assets/css/version.css">
+    <script src="../assets/js/components.js" defer></script>
     <link rel="stylesheet" href="../assets/css/styles.css">
     <script src="../assets/js/bottom-theme.js"></script>
     <script src="../assets/js/menu-toggle.js" defer></script>
@@ -25,43 +26,39 @@
             </a>
         </div>
 
-        <button class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <button id="backToTop"><span class="material-symbols-outlined">arrow_upward</span></button>
 
         <nav class="nav-menu" id="nav-menu">
             <a href="../index.html">
-                <i class="fa-solid fa-house"></i>
+                <span class="material-symbols-outlined">home</span>
                 <span>Início</span>
             </a>
             <a href="../pages/sptrans.html">
-                <i class="fa-solid fa-bus"></i>
+                <span class="material-symbols-outlined">directions_bus</span>
                 <span>SPTrans</span>
             </a>
             <a href="../pages/artesp.html">
-                <i class="fa-solid fa-bus-simple"></i>
+                <span class="material-symbols-outlined">commute</span>
                 <span>ARTESP</span>
             </a>
             <a href="../pages/historico.html">
-                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span class="material-symbols-outlined">history</span>
                 <span>Histórico</span>
             </a>
             <a href="../pages/qualidade_ar.html">
-                <i class="fa-solid fa-wind"></i>
+                <span class="material-symbols-outlined">air</span>
                 <span>Ar</span>
             </a>
             <a href="../pages/origem_destino.html">
-                <i class="fa-solid fa-route"></i>
-                <span>Pesquisa OD</span>
+                <span class="material-symbols-outlined">route</span>
+                <span>Trajeto</span>
             </a>
             <a href="../pages/demanda.html">
-                <i class="fa-solid fa-users"></i>
+                <span class="material-symbols-outlined">group</span>
                 <span>Demanda</span>
             </a>
             <a href="../pages/mapa.html">
-                <i class="fa-solid fa-map-location-dot"></i>
+                <span class="material-symbols-outlined">map</span>
                 <span>Mapa</span>
             </a>
         </nav>
@@ -72,13 +69,16 @@
 
         <h3>🔧 Refatoração e Estrutura</h3>
         <ul>            
-            <li><input type="checkbox" disabled>Inserir dados nas páginas via .JS</li>            
+            <li><input type="checkbox" disabled>Inserir Canais de Atendimento e Portais Oficiais e Informações sobre os Sistemas
+nas páginas via .JS</li>            
             <li><input type="checkbox" disabled>Desenvolver funcionalidade para atualização/horário das linhas</li>
             <li><input type="checkbox" disabled>Desenvolver funcionalidade para atualização de status das linhas</li>
             <li><input type="checkbox" disabled>Desenvolver funcionalidade para atualização de exibição/pesquisas dos dados EMTU/ARTESP</li>      
             <li><input type="checkbox" disabled>Desenvolver funcionalidade para atualização de exibição de AQI</li>        
-            <li><input type="checkbox" disabled><code>v1.0.0.1</code> Corrigir e implementar renderização progressiva ou virtual scroll em sptrans.html</li>            
-        </ul>                
+            <li><input type="checkbox" disabled>Corrigir e implementar renderização progressiva ou virtual scroll em sptrans.html</li>            
+            <li><input type="checkbox" disabled>Unificar arquivos SP_LXX.html e um único arquivo</li>       
+            <li><input type="checkbox" disabled>Unificar métodos .html e um único arquivo</li>            
+        </ul>                        
 
         <h3>📚 Documentação (readme)</h3>
         <ul>
@@ -90,8 +90,7 @@
 
         <h3>🖼️ Interface</h3>
         <ul>            
-            <li><input type="checkbox" disabled>Utilizar ícones do Material Symbols (Google)<code>EM DESENVOLVIMENTO</code></li>
-            <li><input type="checkbox" disabled>Adotar método de design Hero Section</li>            
+            <li><input type="checkbox" disabled>Adotar método de design Hero Section<code>EM DESENVOLVIMENTO</code></li>            
             <li><input type="checkbox" disabled>Desenvolver página: Linhas - EMTU/ARTESP</li>
             <li><input type="checkbox" disabled>Desenvolver página: Linhas - Qualidade do Ar</li>
             <li><input type="checkbox" disabled>Desenvolver página: Linhas - Origem e Destino</li>
@@ -102,32 +101,33 @@
         <details class="note" style="padding: 15px; cursor: pointer;">
             <summary><strong>📚 Ver histórico completo</strong></summary>
             <ul style="margin-top: 15px;">
-                <li><code>17/02/2026</code><code>v1.0.0.0</code> Correção de erros em index.html</li>
-                <li><code>17/02/2026</code><code>v1.0.0.0</code> disabled>Correção: Ao clicar em outro item da navbar quando estiver em sptrans.html, o sistema entra em latência</li>                                        
-                <li><code>13/02/2026</code><code>v1.0.0.0</code> Desenvolver funcionalidade para atualização de exibição/pesquisas dos dados SPTrans</li>
-                <li><code>13/02/2026</code><code>v1.0.0.0</code> Desenvolver página: Linhas - SPTrans</li>
-                <li><code>13/02/2026</code><code>v1.0.0.0</code> Desenvolver página: Linhas - Histórico de Alterações de Linhas</li>
-                <li><code>12/02/2026</code><code>v1.0.0.0</code> Desenvolver página: 404</li>
-                <li><code>12/02/2026</code><code>v1.0.0.0</code> Desenvolver funcionalidade para subir para o topo da página (Back to Top)</li>
-                <li><code>12/02/2026</code><code>v1.0.0.0</code> Modificar: Inserir ícones na navbar</li>                
-                <li><code>12/02/2026</code><code>v1.0.0.0</code> Inserir hiperlink no logotipo de todas as páginas direcionando à pagina inicial.</li>                
-                <li><code>12/02/2026</code><code>v1.0.0.0</code> Corrigir responsividade de .line-list de todas as linhas (.html)</li>                
-                <li><code>09/02/2026</code><code>v1.0.0.0</code> Desenvolver página: Linha 1 - Azul </li>
-                <li><code>09/02/2026</code><code>v1.0.0.0</code> Desenvolver página: Linha 2 - Verde</li>
-                <li><code>09/02/2026</code><code>v1.0.0.0</code> Desenvolver página: Linha 3 - Vermelha</li>
-                <li><code>09/02/2026</code><code>v1.0.0.0</code> Desenvolver página: Linha 4 - Amarela</li>
-                <li><code>09/02/2026</code><code>v1.0.0.0</code> Desenvolver página: Linha 5 - Lilás</li>
-                <li><code>09/02/2026</code><code>v1.0.0.0</code> Desenvolver página: Linha 7 - Rubi</li>
-                <li><code>09/02/2026</code><code>v1.0.0.0</code> Desenvolver página: Linha 8 - Diamante</li>
-                <li><code>09/02/2026</code><code>v1.0.0.0</code> Desenvolver página: Linha 9 - Esmeralda</li>
-                <li><code>09/02/2026</code><code>v1.0.0.0</code> Desenvolver página: Linha 10 - Turquesa</li>
-                <li><code>09/02/2026</code><code>v1.0.0.0</code> Desenvolver página: Linha 11 - Coral</li>
-                <li><code>09/02/2026</code><code>v1.0.0.0</code> Desenvolver página: Linha 12 - Safira</li>
-                <li><code>09/02/2026</code><code>v1.0.0.0</code> Desenvolver página: Linha 13 - Jade</li>
-                <li><code>09/02/2026</code><code>v1.0.0.0</code> Desenvolver página: Linha 15 - Prata</li>                
-                <li><code>08/02/2026</code><code>v1.0.0.0</code> Remodelar/Iniciar versao.html</li>
-                <li><code>06/02/2026</code><code>v1.0.0.0</code> Remodelar responsividade</li>
-                <li><code>04/02/2026</code><code>v1.0.0.0</code> Remodelar/Iniciar index.html, estilos e funcionalidades</li>
+                <li><code>17/02/2026</code><code>v26.02.2</code> Utilizar ícones do Material Symbols (Google)</li>
+                <li><code>17/02/2026</code><code>v26.02.2</code> Correção de erros em index.html</li>
+                <li><code>17/02/2026</code><code>v26.02.2</code> Correção: Ao clicar em outro item da navbar quando estiver em sptrans.html, o sistema entra em latência</li>                                        
+                <li><code>13/02/2026</code><code>v26.02.1</code> Desenvolver funcionalidade para atualização de exibição/pesquisas dos dados SPTrans</li>
+                <li><code>13/02/2026</code><code>v26.02.1</code> Desenvolver página: Linhas - SPTrans</li>
+                <li><code>13/02/2026</code><code>v26.02.1</code> Desenvolver página: Linhas - Histórico de Alterações de Linhas</li>
+                <li><code>12/02/2026</code><code>v26.02.1</code> Desenvolver página: 404</li>
+                <li><code>12/02/2026</code><code>v26.02.1</code> Desenvolver funcionalidade para subir para o topo da página (Back to Top)</li>
+                <li><code>12/02/2026</code><code>v26.02.1</code> Modificar: Inserir ícones na navbar</li>                
+                <li><code>12/02/2026</code><code>v26.02.1</code> Inserir hiperlink no logotipo de todas as páginas direcionando à pagina inicial.</li>                
+                <li><code>12/02/2026</code><code>v26.02.1</code> Corrigir responsividade de .line-list de todas as linhas (.html)</li>                
+                <li><code>09/02/2026</code><code>v26.02.0</code> Desenvolver página: Linha 1 - Azul </li>
+                <li><code>09/02/2026</code><code>v26.02.0</code> Desenvolver página: Linha 2 - Verde</li>
+                <li><code>09/02/2026</code><code>v26.02.0</code> Desenvolver página: Linha 3 - Vermelha</li>
+                <li><code>09/02/2026</code><code>v26.02.0</code> Desenvolver página: Linha 4 - Amarela</li>
+                <li><code>09/02/2026</code><code>v26.02.0</code> Desenvolver página: Linha 5 - Lilás</li>
+                <li><code>09/02/2026</code><code>v26.02.0</code> Desenvolver página: Linha 7 - Rubi</li>
+                <li><code>09/02/2026</code><code>v26.02.0</code> Desenvolver página: Linha 8 - Diamante</li>
+                <li><code>09/02/2026</code><code>v26.02.0</code> Desenvolver página: Linha 9 - Esmeralda</li>
+                <li><code>09/02/2026</code><code>v26.02.0</code> Desenvolver página: Linha 10 - Turquesa</li>
+                <li><code>09/02/2026</code><code>v26.02.0</code> Desenvolver página: Linha 11 - Coral</li>
+                <li><code>09/02/2026</code><code>v26.02.0</code> Desenvolver página: Linha 12 - Safira</li>
+                <li><code>09/02/2026</code><code>v26.02.0</code> Desenvolver página: Linha 13 - Jade</li>
+                <li><code>09/02/2026</code><code>v26.02.0</code> Desenvolver página: Linha 15 - Prata</li>                
+                <li><code>08/02/2026</code><code>v26.02.0</code> Remodelar/Iniciar versao.html</li>
+                <li><code>06/02/2026</code><code>v26.02.0</code> Remodelar responsividade</li>
+                <li><code>04/02/2026</code><code>v26.02.0</code> Remodelar/Iniciar index.html, estilos e funcionalidades</li>
             </ul>
         </details>
 
@@ -232,10 +232,7 @@
             </div>
         </div>
     </footer>
-
-    <button id="backToTop" title="Voltar ao topo">
-    <i class="fa-solid fa-arrow-up"></i>
-    </button>    
+ 
 </body>
 
 </html>
