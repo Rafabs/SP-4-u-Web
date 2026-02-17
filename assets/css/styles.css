@@ -472,10 +472,27 @@ footer {
     }
 
     .menu-toggle {
-        display: flex !important;
+        display: flex !important; /* Força a exibição no mobile */
         flex-direction: column;
-        gap: 5px;
-        z-index: 1600;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1600; /* Garante que fique em cima de tudo */
+    }
+
+    /* Efeito de X quando o menu estiver aberto (Opcional, mas bacana) */
+    .menu-toggle.open span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.open span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
 
     .nav-menu {
