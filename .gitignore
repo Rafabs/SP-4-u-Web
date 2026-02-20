@@ -1,0 +1,27 @@
+# Dependências
+node_modules/
+
+# Build do Astro (Arquivos gerados)
+dist/
+
+# Pasta do sistema e cache
+.astro/
+.cache/
+
+# Variáveis de ambiente (Segurança)
+.env
+.env.production
+.env.*
+
+# Logs de erro do NPM
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos do VS Code e Sistema Operacional
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Dados Temporários de Desenvolvimento
+public/data/temp-*

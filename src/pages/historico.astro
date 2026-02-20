@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Histórico de Linhas - Sampa 4u">
+    <link rel="stylesheet" href="/src/styles/history.css" slot="head" />
+
+    <section>
+        <h2><span class="material-symbols-outlined" style="vertical-align: middle;">push_pin</span> Últimas Atualizações</h2>
+        <div class="table-wrapper">
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Linha</th>
+                        <th>Rota</th>
+                    </tr>
+                </thead>
+                <tbody id="sptrans-recent-body">
+                    </tbody>
+            </table>
+        </div>
+
+        <br>
+
+        <details class="note" style="padding: 15px; cursor: pointer;">
+            <summary><strong>📚 Ver histórico completo</strong></summary>
+            <div style="margin-top: 15px;">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Tipo</th>
+                            <th>Linha</th>
+                            <th>Rota</th>
+                        </tr>
+                    </thead>
+                    <tbody id="full-history-body">
+                        </tbody>
+                </table>
+            </div>
+        </details>
+    </section>
+
+    <hr>
+    <div id="dynamic-systems-info"></div>
+    <hr>
+
+    <section class="about">
+        <div class="info-container">
+            <h2>Desenvolvimento e Transparência</h2>
+            <p>
+                Este é um projeto de código aberto sob constante atualização. Você pode acompanhar o histórico de
+                melhorias, contribuir com novas funcionalidades ou reportar inconsistências através do repositório oficial.
+            </p>
+
+            <div class="actions" style="margin-bottom: 20px;">
+                <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
+                    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github">
+                </a>
+            </div>
+            <p><strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de integração contínua.</p>
+        </div>
+    </section>
+
+    <script is:inline src="/src/scripts/history-data.js"></script>
+</Layout>

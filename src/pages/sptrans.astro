@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="SPTRANS - Sampa 4u">
+    <link rel="stylesheet" href="/src/styles/sptrans.css" slot="head" />
+    
+    <section class="search-section">
+        <div class="search-container">
+            <span class="material-symbols-outlined search-icon">search</span>
+            <input type="text" id="lineSearch" placeholder="Busque por número ou nome da linha...">
+            <span class="material-symbols-outlined clear-icon" id="clearSearch" title="Limpar busca">close</span>
+        </div>
+    </section>
+
+    <div id="result-area"></div>
+
+    <hr>
+    <div id="dynamic-systems-info"></div>
+    <hr>
+    
+    <section class="about">
+        <div class="info-container">
+            <h2>Desenvolvimento e Transparência</h2>
+            <p>
+                Este é um projeto de código aberto sob constante atualização. Você pode acompanhar o histórico de
+                melhorias, contribuir com novas funcionalidades ou reportar inconsistências através do repositório
+                oficial.
+            </p>
+
+            <div class="actions" style="margin-bottom: 20px;">
+                <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
+                    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github">
+                </a>
+            </div>
+
+            <p><strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de integração contínua para garantir a precisão dos mapas e links.</p>
+        </div>
+    </section>
+
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script is:inline src="/src/scripts/sptrans.js"></script>
+</Layout>
+
+<style>
+    /* Ajuste rápido para os ícones se necessário, 
+       já que você usava FontAwesome em alguns lugares e Material em outros */
+    .search-icon, .clear-icon {
+        position: absolute;
+        align-self: center;
+    }
+</style>

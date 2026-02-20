@@ -1,0 +1,13 @@
+---
+// src/components/LinhaCard.astro
+const { id, nome, cor, empresa } = Astro.props;
+---
+<li>
+    <span style={`background-color: ${cor};`}></span>
+    <code>{cor}</code>
+    <a href={`/detalhes?linha=${id}`}>{nome}</a>
+    <div class="card" id={`${id.toLowerCase()}-info`}>
+        Informações sobre a Operação - Carregando...
+    </div>
+    <div class="empresa">{empresa}</div>
+</li>

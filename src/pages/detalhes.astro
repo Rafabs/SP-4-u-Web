@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Carregando Detalhes... | Sampa 4u">
+    <link rel="stylesheet" href="/src/styles/lines.css" slot="head" />
+
+    <main>
+        <div class="lines">
+            <ul class="line-list">
+                <li style="list-style: none;">
+                    <span id="linha-cor-bloco"></span>
+                    <a href="#" id="linha-nome-titulo" style="pointer-events: none; text-decoration: none;">Nome da Linha</a>
+                    
+                    <div class="card" id="linha-status-info">
+                        Informações sobre a Operação - Carregando...
+                    </div>
+                    
+                    <div class="empresa" id="linha-empresa">EMPRESA</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="centered-image" style="text-align: center; margin-top: 20px;">
+            <img id="linha-mapa-img" src="" alt="Mapa da Linha" style="max-width: 100%; height: auto; border-radius: 8px;">
+            <br><br>
+            <a href="/">
+                <button class="btn-back">Voltar para a Página Inicial</button>
+            </a>
+        </div>
+    </main>
+
+    <hr>
+    <div id="dynamic-systems-info"></div>
+
+    <script is:inline src="/src/scripts/detalhes.js"></script>
+</Layout>

@@ -1,0 +1,83 @@
+---
+import '../styles/styles.css'; // Importa seu CSS global
+---
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Estação Não Encontrada | Sampa 4u</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="icon" href="https://raw.githubusercontent.com/Rafabs/SP-4-u/main/Mapa_dos_Trilhos/Favicon/SP4U_LOGO.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="error-wrapper">
+        <div class="error-container">
+            <div class="error-icon">
+                <span class="material-symbols-outlined" style="font-size: 4rem; color: #ffcc00;">traffic</span>
+                <span class="material-symbols-outlined" style="font-size: 5rem;">train</span>
+                <span class="material-symbols-outlined" style="font-size: 4rem; color: #ff4444;">wrong_location</span>
+            </div>
+            <h1>404</h1>
+            <h2>Ops... Estação Não Encontrada :(</h2>
+            <p>Parece que o trem mudou de rota ou esta linha ainda está em obras.</p>
+
+            <a href="/" class="btn-home">
+                <span class="material-symbols-outlined" style="vertical-align: middle;">arrow_back</span> 
+                Por favor, embarque no próximo trem (Início)
+            </a>
+        </div>
+    </div>
+
+    <style>
+        .error-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            background-color: var(--bg-color, #0f0f0f);
+            font-family: system-ui, -apple-system, sans-serif;
+            padding: 20px;
+        }
+        .error-container {
+            max-width: 500px;
+        }
+        .error-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 6rem;
+            margin: 0;
+            color: #333;
+        }
+        h2 {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        p {
+            margin-bottom: 2rem;
+            color: #777;
+        }
+        .btn-home {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #0078D4;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .btn-home:hover {
+            background-color: #005a9e;
+            transform: scale(1.05);
+        }
+    </style>
+</body>
+</html>
