@@ -1,0 +1,7 @@
+"fare_id","price","currency_type","payment_method","transfers","transfer_duration"
+"CPTM","5.400000","BRL","0","","10800"
+"Metrô","5.400000","BRL","0","","10800"
+"Ônibus","5.300000","BRL","0","","10800"
+"Ônibus + CPTM","9.380000","BRL","0","","10800"
+"Ônibus + Metrô","9.380000","BRL","0","","10800"
+"Ônibus + Metrô + CPTM","14.680000","BRL","0","","10800"

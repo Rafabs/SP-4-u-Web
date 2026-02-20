@@ -72,7 +72,7 @@ function setupSearch() {
    CARREGAMENTO GTFS
 ========================================================= */
 async function loadGTFSFiles() {
-  const basePath = `${BASE_URL}/data/`;
+  const basePath = `${BASE_URL}/gtfs-sptrans/`;
 
   const files = [
     { id: "fares", name: "fare_attributes.txt" },
@@ -84,7 +84,7 @@ async function loadGTFSFiles() {
 
   const promises = files.map((file) => {
     return new Promise((resolve) => {
-      // PapaParse agora vai pedir: /SP-4-u-Web/data/routes.txt
+      // PapaParse agora vai pedir: /SP-4-u-Web/gtfs-sptrans/routes.txt
       Papa.parse(basePath + file.name, {
         download: true,
         header: true,
