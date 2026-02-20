@@ -1,11 +1,12 @@
 ---
 // src/components/LinhaCard.astro
 const { id, nome, cor, empresa } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 <li>
     <span style={`background-color: ${cor};`}></span>
     <code>{cor}</code>
-    <a href={`/detalhes?linha=${id}`}>{nome}</a>
+    <a href={`${base}detalhes?linha=${id}`}>{nome}</a>
     <div class="card" id={`${id.toLowerCase()}-info`}>
         Informações sobre a Operação - Carregando...
     </div>

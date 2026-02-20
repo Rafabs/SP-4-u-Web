@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Versionamento - Sampa 4u">
-    <link rel="stylesheet" href="/src/styles/version.css" slot="head" />
+    <link rel="stylesheet" href={`${base}/version.css`} slot="head" />
 
     <section class="execution">
         <h2><span class="material-symbols-outlined" style="vertical-align: middle;">timeline</span> Roadmap de Desenvolvimento</h2>

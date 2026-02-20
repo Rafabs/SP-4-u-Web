@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Carregando Detalhes... | Sampa 4u">
-    <link rel="stylesheet" href="/src/styles/lines.css" slot="head" />
+    <link rel="stylesheet" href={`${base}/lines.css`} slot="head" />
 
     <main>
         <div class="lines">
@@ -24,8 +25,8 @@ import Layout from '../layouts/Layout.astro';
         <div class="centered-image" style="text-align: center; margin-top: 20px;">
             <img id="linha-mapa-img" src="" alt="Mapa da Linha" style="max-width: 100%; height: auto; border-radius: 8px;">
             <br><br>
-            <a href="/">
-                <button class="btn-back">Voltar para a Página Inicial</button>
+            <a href={`${base}/`}>
+                <button class="btn-back">Voltar para o Início</button>
             </a>
         </div>
     </main>
@@ -33,5 +34,5 @@ import Layout from '../layouts/Layout.astro';
     <hr>
     <div id="dynamic-systems-info"></div>
 
-    <script is:inline src="/src/scripts/detalhes.js"></script>
+    <script is:inline src={`${base}/detalhes.js`}></script>
 </Layout>
