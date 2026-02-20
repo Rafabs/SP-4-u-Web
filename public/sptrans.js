@@ -2,6 +2,8 @@
  * sptrans.js - Processamento de Dados GTFS para SPTrans (VERSÃO OTIMIZADA)
  */
 
+const BASE_URL = window.location.pathname.includes('SP-4-u-Web') ? '/SP-4-u-Web' : '';
+
 let gtfsData = {
     routes: [],
     fares: [],
@@ -72,7 +74,9 @@ function setupSearch() {
 ========================================================= */
 async function loadGTFSFiles() {
 
-    const basePath = '../data/';
+    // O caminho agora começa da raiz do site + subpasta do repositório
+    const basePath = `${BASE_URL}/data/`; 
+    
     const files = [
         { id: 'fares', name: 'fare_attributes.txt' },
         { id: 'routes', name: 'routes.txt' },
@@ -83,14 +87,12 @@ async function loadGTFSFiles() {
 
     const promises = files.map(file => {
         return new Promise(resolve => {
-
+            // Papa.parse agora receberá, por exemplo: "/SP-4-u-Web/data/routes.txt"
             Papa.parse(basePath + file.name, {
                 download: true,
                 header: true,
                 skipEmptyLines: true,
-
                 complete: (results) => {
-
                     if (isLeavingPage || !gtfsData) return resolve();
 
                     if (file.id === 'agency') {
@@ -99,11 +101,12 @@ async function loadGTFSFiles() {
                     } else {
                         gtfsData[file.id] = results.data;
                     }
-
                     resolve();
                 },
-
-                error: () => resolve()
+                error: (err) => {
+                    console.error(`Erro ao carregar ${file.name}:`, err);
+                    resolve();
+                }
             });
         });
     });
