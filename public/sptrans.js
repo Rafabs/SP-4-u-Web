@@ -49,23 +49,32 @@ function setupNavigationCleanup() {
    BUSCA
 ========================================================= */
 function setupSearch() {
-  const searchInput = document.getElementById("lineSearch");
-  const clearBtn = document.getElementById("clearSearch");
+    const searchInput = document.getElementById('lineSearch');
+    const clearBtn = document.getElementById('clearSearch');
 
-  if (!searchInput || !clearBtn) return;
+    if (!searchInput || !clearBtn) return;
 
-  searchInput.addEventListener("input", () => {
-    const term = searchInput.value.toLowerCase();
-    clearBtn.style.display = term.length > 0 ? "block" : "none";
-    filterLines(term);
-  });
+    // Monitora a digitação
+    searchInput.addEventListener('input', () => {
+        const term = searchInput.value.trim().toLowerCase();
+        
+        // Se tiver texto, mostra o ícone de fechar (close), senão esconde
+        if (term.length > 0) {
+            clearBtn.style.display = 'block';
+        } else {
+            clearBtn.style.display = 'none';
+        }
+        
+        filterLines(term);
+    });
 
-  clearBtn.addEventListener("click", () => {
-    searchInput.value = "";
-    clearBtn.style.display = "none";
-    searchInput.focus();
-    filterLines("");
-  });
+    // Evento de clique no ícone "X" (close)
+    clearBtn.addEventListener('click', () => {
+        searchInput.value = '';         // Limpa o input
+        clearBtn.style.display = 'none'; // Esconde o próprio ícone
+        searchInput.focus();            // Mantém o foco para o usuário digitar de novo
+        filterLines('');                // Volta a exibir todas as linhas
+    });
 }
 
 /* =========================================================
