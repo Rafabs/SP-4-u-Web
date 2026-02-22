@@ -49,32 +49,37 @@ function setupNavigationCleanup() {
    BUSCA
 ========================================================= */
 function setupSearch() {
-    const searchInput = document.getElementById('lineSearch');
-    const clearBtn = document.getElementById('clearSearch');
+  const searchInput = document.getElementById("lineSearch");
+  const clearBtn = document.getElementById("clearSearch");
 
-    if (!searchInput || !clearBtn) return;
+  if (!searchInput) return;
 
-    // Monitora a digitação
-    searchInput.addEventListener('input', () => {
-        const term = searchInput.value.trim().toLowerCase();
-        
-        // Se tiver texto, mostra o ícone de fechar (close), senão esconde
-        if (term.length > 0) {
-            clearBtn.style.display = 'block';
-        } else {
-            clearBtn.style.display = 'none';
-        }
-        
-        filterLines(term);
+  searchInput.addEventListener("input", () => {
+    const term = searchInput.value.trim().toLowerCase();
+    
+    // Mostra/Esconde o botão X
+    if (clearBtn) clearBtn.style.display = term.length > 0 ? "block" : "none";
+
+    // FILTRO REAL: Filtramos o array de dados, não os elementos da tela
+    if (term === "") {
+      renderAllLines(); // Volta a mostrar tudo em chunks
+    } else {
+      const filtered = gtfsData.routes.filter(route => {
+        const name = (route.route_short_name + " " + route.route_long_name).toLowerCase();
+        return name.includes(term);
+      });
+      renderAllLines(filtered); // Renderiza apenas os encontrados
+    }
+  });
+
+  if (clearBtn) {
+    clearBtn.addEventListener("click", () => {
+      searchInput.value = "";
+      clearBtn.style.display = "none";
+      searchInput.focus();
+      renderAllLines();
     });
-
-    // Evento de clique no ícone "X" (close)
-    clearBtn.addEventListener('click', () => {
-        searchInput.value = '';         // Limpa o input
-        clearBtn.style.display = 'none'; // Esconde o próprio ícone
-        searchInput.focus();            // Mantém o foco para o usuário digitar de novo
-        filterLines('');                // Volta a exibir todas as linhas
-    });
+  }
 }
 
 /* =========================================================
@@ -125,112 +130,106 @@ async function loadGTFSFiles() {
 }
 
 /* =========================================================
-   RENDERIZAÇÃO OTIMIZADA (SEM O(N²))
+   RENDERIZAÇÃO OTIMIZADA POR BLOCOS (CHUNKING)
 ========================================================= */
-function renderAllLines() {
+let currentRenderId = 0; 
+
+function renderAllLines(filteredRoutes = null) {
   const resultArea = document.getElementById("result-area");
   if (!resultArea || !gtfsData) return;
 
-  // INDEXAÇÃO PARA BUSCA RÁPIDA
+  // Cancela a renderização anterior (importante para a busca não encavalar)
+  currentRenderId++;
+  const renderId = currentRenderId;
+
+  resultArea.innerHTML = ""; // Limpa a tela
+  
+  const routesToRender = filteredRoutes ? filteredRoutes : gtfsData.routes;
+
+  // Limpa a área de forma eficiente
+  while (resultArea.firstChild) {
+    resultArea.removeChild(resultArea.firstChild);
+  }
+  
+  // Cache de Mapas para performance extrema O(1)
   const tripMap = new Map();
-  gtfsData.trips.forEach((t) => {
-    if (!tripMap.has(t.route_id)) {
-      tripMap.set(t.route_id, t);
-    }
-  });
-
+  gtfsData.trips.forEach(t => { if (!tripMap.has(t.route_id)) tripMap.set(t.route_id, t); });
+  
   const calendarMap = new Map();
-  gtfsData.calendar.forEach((c) => {
-    calendarMap.set(c.service_id, c);
-  });
+  gtfsData.calendar.forEach(c => calendarMap.set(c.service_id, c));
 
-  const fare = gtfsData.fares.find((f) => f.fare_id === "Ônibus");
-  const preco = fare
-    ? parseFloat(fare.price).toLocaleString("pt-br", {
-        style: "currency",
-        currency: "BRL",
-      })
-    : "R$ 5,30";
+  const fare = gtfsData.fares.find(f => f.fare_id === "Ônibus");
+  const preco = fare ? parseFloat(fare.price).toLocaleString("pt-br", { style: "currency", currency: "BRL" }) : "R$ 4,40";
 
-  let htmlContent = "";
+  let currentIndex = 0;
+  const CHUNK_SIZE = 80; // Quantidade de cards processados por "respiro" do navegador
 
-  for (const route of gtfsData.routes) {
-    if (isLeavingPage) return;
-
-    const trip = tripMap.get(route.route_id);
-    const service = trip ? calendarMap.get(trip.service_id) : null;
-
-    let operacao = "Sob Consulta";
-
-    if (service) {
-      if (service.monday === "1" && service.sunday === "1") operacao = "Diária";
-      else if (service.monday === "1" && service.saturday === "0")
-        operacao = "Segunda a Sexta";
-      else if (service.saturday === "1" || service.sunday === "1")
-        operacao = "Fins de Semana";
+  function processChunk() {
+    if (isLeavingPage || currentIndex >= routesToRender.length) {
+      updateCounter(routesToRender.length);
+      return;
     }
 
-    const badgeColor = route.route_color || "333333";
-    const textColor = route.route_text_color || "FFFFFF";
-    const shortName = route.route_short_name || "";
-    const longName = route.route_long_name || "";
+    const fragment = document.createDocumentFragment();
+    const limit = Math.min(currentIndex + CHUNK_SIZE, routesToRender.length);
 
-    htmlContent += `
-            <div class="line-card" 
-                 data-search="${shortName.toLowerCase()} ${longName.toLowerCase()}"
-                 style="border-top: 5px solid #${badgeColor}">
-                 
-                <div class="line-header">
-                    <div class="line-identity">
-                        <img src="https://img.shields.io/badge/${shortName.replace("-", "--")}-${badgeColor}.svg?style=for-the-badge&logoColor=${textColor}" 
-                             alt="Linha ${shortName}">
-                        <span class="line-destiny">
-                            ${trip ? trip.trip_headsign : "Circular"}
-                        </span>
-                    </div>
-                </div>
+    for (; currentIndex < limit; currentIndex++) {
+      const route = routesToRender[currentIndex];
+      const trip = tripMap.get(route.route_id);
+      const service = trip ? calendarMap.get(trip.service_id) : null;
+      
+      let operacao = "Sob Consulta";
+      if (service) {
+        if (service.monday === "1" && service.sunday === "1") operacao = "Diária";
+        else if (service.monday === "1" && service.saturday === "0") operacao = "Segunda a Sexta";
+        else if (service.saturday === "1" || service.sunday === "1") operacao = "Fins de Semana";
+      }
 
-                <div class="line-body">
-                    <p class="route-full-name">${longName}</p>
-                    <div class="info-grid">
-                        <p><i class="fa-solid fa-calendar-day"></i> 
-                        <strong>Operação:</strong> ${operacao}</p>
-                        <p><i class="fa-solid fa-coins"></i> 
-                        <strong>Tarifa:</strong> ${preco}</p>
-                    </div>
-                </div>
+      const badgeColor = route.route_color || "333333";
+      const textColor = route.route_text_color || "FFFFFF";
+      const shortName = route.route_short_name || "";
 
-                <div class="line-footer">
-                    <small>
-                        Versão SPTrans: ${gtfsData.agency} | 
-                        ID: ${route.route_id}
-                    </small>
-                </div>
+      const card = document.createElement("div");
+      card.className = "line-card";
+      card.style.borderTop = `5px solid #${badgeColor}`;
+      
+      // Uso de loading="lazy" e dimensões fixas para evitar o erro de intervenção do navegador
+      card.innerHTML = `
+        <div class="line-header">
+            <div class="line-identity">
+                <img src="https://img.shields.io/badge/${shortName.replace("-", "--")}-${badgeColor}.svg?style=for-the-badge&logoColor=${textColor}" 
+                     alt="${shortName}" 
+                     loading="lazy"
+                     width="90" 
+                     height="28">
+                <span class="line-destiny">${trip ? trip.trip_headsign : "Circular"}</span>
             </div>
-        `;
+        </div>
+        <div class="line-body">
+            <p class="route-full-name">${route.route_long_name}</p>
+            <div class="info-grid">
+                <p><i class="fa-solid fa-calendar-day"></i> <strong>Operação:</strong> ${operacao}</p>
+                <p><i class="fa-solid fa-coins"></i> <strong>Tarifa:</strong> ${preco}</p>
+            </div>
+        </div>
+        <div class="line-footer">
+                <small>Agência: ${gtfsData.agency} | ID: ${route.route_id}</small>              
+        </div>
+      `;
+      fragment.appendChild(card);
+    }
+
+    resultArea.appendChild(fragment);
+
+    // Usa requestIdleCallback ou requestAnimationFrame para renderizar o próximo bloco sem travar a UI
+    if (currentIndex < routesToRender.length) {
+      requestAnimationFrame(processChunk);
+    } else {
+      updateCounter(routesToRender.length);
+    }
   }
 
-  resultArea.innerHTML = htmlContent;
-  updateCounter(gtfsData.routes.length);
-}
-
-/* =========================================================
-   FILTRO
-========================================================= */
-function filterLines(term) {
-  const cards = document.querySelectorAll(".line-card");
-  let visibleCount = 0;
-
-  cards.forEach((card) => {
-    if (card.getAttribute("data-search").includes(term)) {
-      card.style.display = "block";
-      visibleCount++;
-    } else {
-      card.style.display = "none";
-    }
-  });
-
-  updateCounter(visibleCount);
+  processChunk();
 }
 
 /* =========================================================
