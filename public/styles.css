@@ -132,7 +132,7 @@ header {
 .nav-menu a span {
     font-size: 0.65rem;     /* TEXTO UM POUCO MENOR PARA HARMONIZAR */
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 0.8px;
     color: var(--text-primary);
     text-align: center;

@@ -1,0 +1,94 @@
+{
+    "base_medicoes": {
+        "Capão Redondo": {
+            "latitude": -23.6719026,
+            "longitude": -46.779435420915036,
+            "endereco": "Estrada de Itapecerica, 5859, Campus UNASP, Capão Redondo, São Paulo"
+        },
+        "Cerqueira César": {
+            "latitude": -23.553093629369393, 
+            "longitude": -46.67366292043347,
+            "endereco": "Av. Doutor Arnaldo, 725, Faculdade de Saúde Pública, Sumaré, São Paulo"
+        },
+        "Cid.Universitária-USP-Ipen": {
+            "latitude": -23.56650524639774, 
+            "longitude": -46.72779087675122,
+            "endereco": "Av. Professor Lineu Prestes, 2242, Cidade Universitária, Butantã, São Paulo"
+        },
+        "Congonhas": {
+            "latitude": -23.615805959917115, 
+            "longitude": -46.66328794682777,
+            "endereco": "Alameda dos Tupiniquins, 1571, E.M.Prof.J.C. da Silva Borges, Planalto Paulista, São Paulo"
+        },
+        "Grajaú-Parelheiros": {
+            "latitude": -23.7716735,
+            "longitude": -46.72096266047676,
+            "endereco": "Av. Paulo Guilguer Reimberg, 2448, E.E. Pres. Tancredo A. Neves, Jd Novo Horizonte, São Paulo"
+        },
+        "Ibirapuera": {
+            "latitude": -23.58605474437425, 
+            "longitude": -46.6587754087232,
+            "endereco": "Parque do Ibirapuera, s/nº, Setor 25, Prq Ibirapuera, São Paulo"
+        },
+        "Interlagos": {
+            "latitude": -23.7019315,
+            "longitude": -46.69670781252424,
+            "endereco": "Rua Domingas Galleteri Blotta, 171, Jd Santa Cruz, São Paulo"
+        },
+        "Itaim Paulista": {
+            "latitude": -23.5017648,
+            "longitude": -46.3996091,
+            "endereco": "Rua Jaguar, 225, Bibl. Mun. Vicente Paulo Guimarães, Vila Curuçá, São Paulo"
+        },
+        "Itaquera": {
+            "latitude": -23.5360799,
+            "longitude": -46.4555099,
+            "endereco": "Av. Fernando do Espírito Santo Alves de Mattos, 1000, SESC Itaquera, Prq do Carmo, São Paulo"
+        },
+        "Marg.Tietê-Pte Remédios": {
+            "latitude": -23.5204595,
+            "longitude": -46.7480298,
+            "endereco": "Av. Embaixador Macedo Soares, 12889, Centro de Trein. da Polícia Militar, Vl Ribeiro de Barros, São Paulo"
+        },
+        "Mooca": {
+            "latitude": -23.5606808,
+            "longitude": -46.5971924,
+            "endereco": "Rua Bresser, 2341, Centro Esportivo Municipal – Subprefeitura da Moóca, Moóca, São Paulo"
+        },
+        "N.Senhora do Ó": {
+            "latitude": -23.47984227058503, 
+            "longitude": -46.69198810540247,
+            "endereco": "Rua Capitão José Amaral, 80, E.E. Cacilda Becker, Vila Portuguesa, São Paulo"
+        },
+        "Parque D.Pedro II": {
+            "latitude": -23.55086975,
+            "longitude": -46.62751362464202,
+            "endereco": "Parque Dom Pedro II, s/nº, Palácio das Indústrias, Centro, São Paulo"
+        },
+        "Pico do Jaraguá": {
+            "latitude": -23.4584254,
+            "longitude": -46.7670295,
+            "endereco": "Estrada Turística do Jaraguá, s/nº, Altura do n. 9000, Parque Est. do Jaraguá, Vila Jaraguá, São Paulo"
+        },
+        "Pinheiros": {
+            "latitude": -23.5672842,
+            "longitude": -46.701939,
+            "endereco": "Av. Prof. Frederico Herman Júnior, 345, CETESB, Alto de Pinheiros, São Paulo"
+        },
+        "Perus": {
+            "latitude": -23.404830579155703, 
+            "longitude": -46.75839111717909,
+            "endereco": "Estrada São Paulo -Jundiaí, 1666 Perus – São Paulo"
+        },
+        "Santana": {
+            "latitude": -23.505067348200033,
+            "longitude":  -46.62891860615703,
+            "endereco": "Av. Santos Dumont, 1019, Parque de Material Aeronáutico, Santana, São Paulo"
+        },
+        "Santo Amaro": {
+            "latitude": -23.654563644450775, 
+            "longitude": -46.70962401856792,
+            "endereco": "Rua Padre José Maria, 555, Centro Ed. e Esp. Mun. Joerg Brüder, Santo Amaro, São Paulo"
+        }
+    }
+}    

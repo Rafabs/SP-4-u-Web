@@ -1,0 +1,122 @@
+  /* 1. Container Principal: Mantém a largura máxima das outras páginas */
+  .map-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      /* Alinhado com o padrão de desktop do seu projeto */
+      margin: 20px auto;
+      /* Centraliza na tela */
+      padding: 0 15px;
+      /* Respiro para mobile */
+      box-sizing: border-box;
+  }
+
+  /* 2. O Mapa: Altura fixa ideal e bordas arredondadas padrão */
+  #map {
+      height: 75vh;
+      /* Altura excelente para desktop e mobile */
+      width: 100%;
+      /* Ocupa todo o container wrapper */
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      /* Sombra suave para parecer um card */
+      z-index: 1;
+  }
+
+  /* 3. Controles Flutuantes (Camadas) */
+  .custom-controls {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      z-index: 1000;
+      background: rgba(45, 45, 45, 0.9);
+      /* Tom escuro levemente transparente */
+      color: white;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-family: sans-serif;
+      font-size: 14px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(4px);
+      /* Efeito moderno de vidro */
+  }
+
+  .custom-controls h3 {
+      margin: 0 0 10px 0;
+      font-size: 16px;
+      border-bottom: 1px solid #666;
+      padding-bottom: 5px;
+  }
+
+  .custom-controls label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+  }
+
+  /* 4. Estilo para o Popup do Mapa (Design Limpo) */
+  .map-popup .leaflet-popup-content-wrapper {
+      padding: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+  }
+
+  .map-popup .leaflet-popup-content {
+      margin: 0;
+      width: 250px !important;
+  }
+
+  .popup-header {
+      padding: 12px;
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+  }
+
+  .popup-body {
+      padding: 15px;
+      font-size: 13px;
+      color: #333;
+      line-height: 1.6;
+  }
+
+  .popup-body p {
+      margin: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .popup-body i {
+      color: #666;
+      width: 16px;
+      text-align: center;
+  }
+
+  .bike-icon {
+    background: none !important;
+    border: none !important;
+}
+
+.leaflet-interactive[stroke="#e67e22"]:hover {
+    stroke: #d35400; /* Escurece um pouco ao passar o mouse */
+    stroke-width: 5;
+    cursor: pointer;
+}
+
+  /* Ajuste para mobile */
+  @media (max-width: 768px) {
+      #map {
+          height: 50vh;
+          /* Um pouco menor no celular para facilitar o scroll da página */
+      }
+
+      .custom-controls {
+          top: 10px;
+          right: 20px;
+          padding: 8px 12px;
+      }
+  }
