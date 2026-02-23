@@ -1,53 +1,86 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="EMTU/ARTESP - Sampa 4u">
-    <link rel="stylesheet" href={`${base}/artesp.css`} slot="head" />
-    
-    <section class="search-section">
-        <div class="search-container">
-            <span class="material-symbols-outlined search-icon">search</span>
-            <input type="text" id="lineSearch" placeholder="Busque por número ou nome da linha...">
-            <span class="material-symbols-outlined clear-icon" id="clearSearch" title="Limpar busca">close</span>
-        </div>
-    </section>
+  <link rel="stylesheet" href={`${base}/artesp.css`} slot="head" />
 
-    <div id="result-area"></div>
+  <section class="search-section">
+    <div class="search-container">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input
+        type="text"
+        id="lineSearch"
+        placeholder="Busque por número ou nome da linha..."
+      />
+      <span
+        class="material-symbols-outlined clear-icon"
+        id="clearSearch"
+        title="Limpar busca">close</span
+      >
+    </div>
+  </section>
+  <section>
+    <div
+      class="attention"
+      style="background-color: rgba(0,0,0,0.05); padding: 15px; border-left: 5px solid #0078D4; margin: 20px 0;"
+    >
+      <p>
+        <strong>📘 Nota:</strong> Os dados GTFS (itinerários
+        e horários) da ARTESP têm previsão oficial de abertura para <strong
+          >15/04/2026</strong
+        >. Até esta data, as informações apresentadas são do último GTFS.
+        Para atualizações, consulte o cronograma do <a
+          href="https://www.artesp.sp.gov.br"
+          target="_blank">Plano de Dados Abertos da ARTESP</a
+        >[cite: 14, 84].
+      </p>
+    </div>
+  </section>
 
-    <hr>
-    <div id="dynamic-systems-info"></div>
-    <hr>
-    
-    <section class="about">
-        <div class="info-container">
-            <h2>Desenvolvimento e Transparência</h2>
-            <p>
-                Este é um projeto de código aberto sob constante atualização. Você pode acompanhar o histórico de
-                melhorias, contribuir com novas funcionalidades ou reportar inconsistências através do repositório
-                oficial.
-            </p>
+  <div id="result-area"></div>
 
-            <div class="actions" style="margin-bottom: 20px;">
-                <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
-                    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github">
-                </a>
-            </div>
+  <hr />
+  <div id="dynamic-systems-info"></div>
+  <hr />
 
-            <p><strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de integração contínua para garantir a precisão dos mapas e links.</p>
-        </div>
-    </section>
+  <section class="about">
+    <div class="info-container">
+      <h2>Desenvolvimento e Transparência</h2>
+      <p>
+        Este é um projeto de código aberto sob constante atualização. Você pode
+        acompanhar o histórico de melhorias, contribuir com novas
+        funcionalidades ou reportar inconsistências através do repositório
+        oficial.
+      </p>
 
-    <script is:inline src={`${base}/papaparse.min.js`}></script>
-    <script is:inline src={`${base}/emtu.js`}></script>
+      <div class="actions" style="margin-bottom: 20px;">
+        <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
+          <img
+            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+            alt="github"
+          />
+        </a>
+      </div>
+
+      <p>
+        <strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de
+        integração contínua para garantir a precisão dos mapas e links.
+      </p>
+    </div>
+  </section>
+
+  <script is:inline src={`${base}/papaparse.min.js`}></script>
+  <script is:inline src={`${base}/emtu.js`}></script>
 </Layout>
 
 <style>
-    /* Ajuste rápido para os ícones se necessário, 
+  /* Ajuste rápido para os ícones se necessário, 
        já que você usava FontAwesome em alguns lugares e Material em outros */
-    .search-icon, .clear-icon {
-        position: absolute;
-        align-self: center;
-    }
+  .search-icon,
+  .clear-icon {
+    position: absolute;
+    align-self: center;
+  }
 </style>

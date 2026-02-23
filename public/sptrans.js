@@ -56,7 +56,7 @@ function setupSearch() {
 
   searchInput.addEventListener("input", () => {
     const term = searchInput.value.trim().toLowerCase();
-    
+
     // Mostra/Esconde o botão X
     if (clearBtn) clearBtn.style.display = term.length > 0 ? "block" : "none";
 
@@ -64,8 +64,12 @@ function setupSearch() {
     if (term === "") {
       renderAllLines(); // Volta a mostrar tudo em chunks
     } else {
-      const filtered = gtfsData.routes.filter(route => {
-        const name = (route.route_short_name + " " + route.route_long_name).toLowerCase();
+      const filtered = gtfsData.routes.filter((route) => {
+        const name = (
+          route.route_short_name +
+          " " +
+          route.route_long_name
+        ).toLowerCase();
         return name.includes(term);
       });
       renderAllLines(filtered); // Renderiza apenas os encontrados
@@ -77,7 +81,14 @@ function setupSearch() {
       searchInput.value = "";
       clearBtn.style.display = "none";
       searchInput.focus();
+
+      // 1. Volta a renderizar todos os cards na lista lateral
       renderAllLines();
+
+      // 2. 🔥 A MÁGICA: Remove o filtro do mapa e volta a exibir tudo
+      if (window.filterSptransLine) {
+        window.filterSptransLine(null); // Passando null, a função reseta o mapa
+      }
     });
   }
 }
@@ -129,10 +140,34 @@ async function loadGTFSFiles() {
   }
 }
 
+// Exemplo de função disparada ao clicar em um resultado da busca no sptrans.js
+function selecionarLinhaDaBusca(routeId) {
+  console.log("Tentando filtrar linha:", routeId);
+
+  // Força a ativação do checkbox da SPTrans caso esteja desmarcado
+  const checkSptrans = document.getElementById("check-sptrans");
+  if (checkSptrans && !checkSptrans.checked) {
+    checkSptrans.checked = true;
+    // Dispara o evento manualmente para o map-logic.js carregar os dados
+    checkSptrans.dispatchEvent(new Event("change"));
+  }
+
+  setTimeout(() => {
+    if (window.filterSptransLine) {
+      window.filterSptransLine(routeId);
+
+      const mapEl = document.getElementById("map");
+      if (mapEl) mapEl.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      console.error("Função filterSptransLine não encontrada no window!");
+    }
+  }, 800); // O delay de 800ms é seguro para o carregamento do GTFS
+}
+
 /* =========================================================
    RENDERIZAÇÃO OTIMIZADA POR BLOCOS (CHUNKING)
 ========================================================= */
-let currentRenderId = 0; 
+let currentRenderId = 0;
 
 function renderAllLines(filteredRoutes = null) {
   const resultArea = document.getElementById("result-area");
@@ -143,23 +178,30 @@ function renderAllLines(filteredRoutes = null) {
   const renderId = currentRenderId;
 
   resultArea.innerHTML = ""; // Limpa a tela
-  
+
   const routesToRender = filteredRoutes ? filteredRoutes : gtfsData.routes;
 
   // Limpa a área de forma eficiente
   while (resultArea.firstChild) {
     resultArea.removeChild(resultArea.firstChild);
   }
-  
+
   // Cache de Mapas para performance extrema O(1)
   const tripMap = new Map();
-  gtfsData.trips.forEach(t => { if (!tripMap.has(t.route_id)) tripMap.set(t.route_id, t); });
-  
-  const calendarMap = new Map();
-  gtfsData.calendar.forEach(c => calendarMap.set(c.service_id, c));
+  gtfsData.trips.forEach((t) => {
+    if (!tripMap.has(t.route_id)) tripMap.set(t.route_id, t);
+  });
 
-  const fare = gtfsData.fares.find(f => f.fare_id === "Ônibus");
-  const preco = fare ? parseFloat(fare.price).toLocaleString("pt-br", { style: "currency", currency: "BRL" }) : "R$ 4,40";
+  const calendarMap = new Map();
+  gtfsData.calendar.forEach((c) => calendarMap.set(c.service_id, c));
+
+  const fare = gtfsData.fares.find((f) => f.fare_id === "Ônibus");
+  const preco = fare
+    ? parseFloat(fare.price).toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      })
+    : "R$ 4,40";
 
   let currentIndex = 0;
   const CHUNK_SIZE = 80; // Quantidade de cards processados por "respiro" do navegador
@@ -177,12 +219,15 @@ function renderAllLines(filteredRoutes = null) {
       const route = routesToRender[currentIndex];
       const trip = tripMap.get(route.route_id);
       const service = trip ? calendarMap.get(trip.service_id) : null;
-      
+
       let operacao = "Sob Consulta";
       if (service) {
-        if (service.monday === "1" && service.sunday === "1") operacao = "Diária";
-        else if (service.monday === "1" && service.saturday === "0") operacao = "Segunda a Sexta";
-        else if (service.saturday === "1" || service.sunday === "1") operacao = "Fins de Semana";
+        if (service.monday === "1" && service.sunday === "1")
+          operacao = "Diária";
+        else if (service.monday === "1" && service.saturday === "0")
+          operacao = "Segunda a Sexta";
+        else if (service.saturday === "1" || service.sunday === "1")
+          operacao = "Fins de Semana";
       }
 
       const badgeColor = route.route_color || "333333";
@@ -192,30 +237,33 @@ function renderAllLines(filteredRoutes = null) {
       const card = document.createElement("div");
       card.className = "line-card";
       card.style.borderTop = `5px solid #${badgeColor}`;
-      
-      // Uso de loading="lazy" e dimensões fixas para evitar o erro de intervenção do navegador
+      card.style.cursor = "pointer"; // Adiciona o cursor de clique para indicar interatividade
+
+      // Adiciona o evento de clique para filtrar no mapa
+      card.addEventListener("click", () => {
+        selecionarLinhaDaBusca(route.route_id);
+      });
+
       card.innerHTML = `
-        <div class="line-header">
-            <div class="line-identity">
-                <img src="https://img.shields.io/badge/${shortName.replace("-", "--")}-${badgeColor}.svg?style=for-the-badge&logoColor=${textColor}" 
-                     alt="${shortName}" 
-                     loading="lazy"
-                     width="90" 
-                     height="28">
-                <span class="line-destiny">${trip ? trip.trip_headsign : "Circular"}</span>
-            </div>
-        </div>
-        <div class="line-body">
-            <p class="route-full-name">${route.route_long_name}</p>
-            <div class="info-grid">
-                <p><i class="fa-solid fa-calendar-day"></i> <strong>Operação:</strong> ${operacao}</p>
-                <p><i class="fa-solid fa-coins"></i> <strong>Tarifa:</strong> ${preco}</p>
-            </div>
-        </div>
-        <div class="line-footer">
-                <small>Agência: ${gtfsData.agency} | ID: ${route.route_id}</small>              
-        </div>
-      `;
+              <div class="line-header">
+                  <div class="line-identity">
+                      <span class="route-badge" style="background-color: #${badgeColor}; color: #${textColor}">
+                          ${shortName}
+                      </span>
+                      <span class="line-destiny">${trip ? trip.trip_headsign : "Circular"}</span>
+                  </div>
+              </div>
+              <div class="line-body">
+                  <p class="route-full-name">${route.route_long_name}</p>
+                  <div class="info-grid">
+                      <p><i class="fa-solid fa-calendar-day"></i> <strong>Operação:</strong> ${operacao}</p>
+                      <p><i class="fa-solid fa-coins"></i> <strong>Tarifa:</strong> ${preco}</p>
+                  </div>
+              </div>
+              <div class="line-footer">
+                  <small>Agência: ${gtfsData.agency} | ID: ${route.route_id}</small>              
+              </div>
+          `;
       fragment.appendChild(card);
     }
 

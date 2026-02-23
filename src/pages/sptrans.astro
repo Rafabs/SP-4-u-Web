@@ -1,53 +1,47 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="SPTRANS - Sampa 4u">
-    <link rel="stylesheet" href={`${base}/sptrans.css`} slot="head" />
-    
-    <section class="search-section">
-        <div class="search-container">
-            <span class="material-symbols-outlined search-icon">search</span>
-            <input type="text" id="lineSearch" placeholder="Busque por número ou nome da linha...">
-            <span class="material-symbols-outlined clear-icon" id="clearSearch" title="Limpar busca">close</span>
-        </div>
-    </section>
+<Layout title="SPTrans - Sampa 4u">
+  <link rel="stylesheet" href={`${base}/sptrans.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}/map.css`} slot="head" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" slot="head" />
 
-    <div id="result-area"></div>
+  <section class="search-section">
+    <div class="search-container">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input type="text" id="lineSearch" placeholder="Busque por número ou nome da linha..." />
+      <span class="material-symbols-outlined clear-icon" id="clearSearch" title="Limpar busca">close</span>
+    </div>
+  </section>
 
-    <hr>
-    <div id="dynamic-systems-info"></div>
-    <hr>
-    
-    <section class="about">
-        <div class="info-container">
-            <h2>Desenvolvimento e Transparência</h2>
-            <p>
-                Este é um projeto de código aberto sob constante atualização. Você pode acompanhar o histórico de
-                melhorias, contribuir com novas funcionalidades ou reportar inconsistências através do repositório
-                oficial.
-            </p>
+  <div id="result-area"></div>
+  
+  <div class="map-wrapper">
+    <div id="map"></div>
+    <div id="map-controls" class="custom-controls">
+      <h3>Camadas</h3>
+        <input type="checkbox" id="check-sptrans"> <label for="check-sptrans">Visualizar Linhas</label>
+    </div>
+  </div>
+    <hr/>
+  <div id="dynamic-systems-info"></div>
 
-            <div class="actions" style="margin-bottom: 20px;">
-                <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
-                    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github">
-                </a>
-            </div>
+  <section class="about">
+    <div class="info-container">
+      <h2>Desenvolvimento e Transparência</h2>
+      <p>Este projeto utiliza dados abertos (GTFS) para mapear a rede de transporte.</p>
+      <div class="actions" style="margin-bottom: 20px;">
+        <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github" />
+        </a>
+      </div>
+    </div>
+  </section>
 
-            <p><strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de integração contínua para garantir a precisão dos mapas e links.</p>
-        </div>
-    </section>
-
-    <script is:inline src={`${base}/papaparse.min.js`}></script>
-    <script is:inline src={`${base}/sptrans.js`}></script>
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script is:inline src={`${base}/sptrans.js`}></script>
+  <script is:inline src={`${base}/map-logic.js`}></script> 
 </Layout>
-
-<style>
-    /* Ajuste rápido para os ícones se necessário, 
-       já que você usava FontAwesome em alguns lugares e Material em outros */
-    .search-icon, .clear-icon {
-        position: absolute;
-        align-self: center;
-    }
-</style>
