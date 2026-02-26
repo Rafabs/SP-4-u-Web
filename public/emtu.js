@@ -19,9 +19,33 @@ let isLeavingPage = false;
 let currentRenderId = 0; // ID para controlar e cancelar renderizações sobrepostas
 
 document.addEventListener("DOMContentLoaded", function () {
+  setupNavigationCleanup();
   setupSearch();
   loadGTFSFiles();
 });
+
+/* =========================================================
+   CANCELAMENTO IMEDIATO AO SAIR DA PÁGINA
+========================================================= */
+function setupNavigationCleanup() {
+  // Cancela para QUALQUER link interno
+  document.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      isLeavingPage = true;
+      window.stop();
+
+      const resultArea = document.getElementById("result-area");
+      if (resultArea) resultArea.innerHTML = "";
+
+      gtfsData = null;
+    });
+  });
+
+  window.addEventListener("beforeunload", () => {
+    isLeavingPage = true;
+    gtfsData = null;
+  });
+}
 
 /* =========================================================
    CARREGAMENTO GTFS (ARTESP)
@@ -68,6 +92,31 @@ async function loadGTFSFiles() {
   }
 }
 
+
+// Exemplo de função disparada ao clicar em um resultado da busca no emtu.js
+function selecionarLinhaDaBusca(routeId) {
+  console.log("Tentando filtrar linha:", routeId);
+
+  // Força a ativação do checkbox da EMTU/ARTESP caso esteja desmarcado
+  const checkArtesp = document.getElementById("check-artesp");
+  if (checkArtesp && !checkArtesp.checked) {
+    checkArtesp.checked = true;
+    // Dispara o evento manualmente para o map-logic.js carregar os dados
+    checkArtesp.dispatchEvent(new Event("change"));
+  }
+
+  setTimeout(() => {
+    if (window.filterSptransLine) {
+      window.filterSptransLine(routeId);
+
+      const mapEl = document.getElementById("map");
+      if (mapEl) mapEl.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      console.error("Função filterSptransLine não encontrada no window!");
+    }
+  }, 800); // O delay de 800ms é seguro para o carregamento do GTFS
+}
+
 /* =========================================================
    RENDERIZAÇÃO OTIMIZADA POR BLOCOS (CHUNKING)
 ========================================================= */
@@ -75,16 +124,20 @@ function renderAllLines(filteredRoutes = null) {
   const resultArea = document.getElementById("result-area");
   if (!resultArea || !gtfsData) return;
 
-  // Incrementa o ID para cancelar qualquer renderização em curso (como uma busca anterior)
+  // Cancela a renderização anterior (importante para a busca não encavalar)
   currentRenderId++;
   const renderId = currentRenderId;
 
-  // Limpa a área de forma performática
-  resultArea.innerHTML = "";
+  resultArea.innerHTML = ""; // Limpa a tela
 
   const routesToRender = filteredRoutes ? filteredRoutes : gtfsData.routes;
 
-  // Mapas de busca rápida O(1)
+  // Limpa a área de forma eficiente
+  while (resultArea.firstChild) {
+    resultArea.removeChild(resultArea.firstChild);
+  }
+
+  // Cache de Mapas para performance extrema O(1)
   const tripMap = new Map();
   gtfsData.trips.forEach((t) => {
     if (!tripMap.has(t.route_id)) tripMap.set(t.route_id, t);
@@ -101,10 +154,9 @@ function renderAllLines(filteredRoutes = null) {
   });
 
   let currentIndex = 0;
-  const CHUNK_SIZE = 80; // Renderiza 80 cards por vez
+  const CHUNK_SIZE = 80; // Quantidade de cards processados por "respiro" do navegador
 
   function processChunk() {
-    // Se o usuário mudou de página ou iniciou uma nova busca, interrompe este processo
     if (isLeavingPage || renderId !== currentRenderId || currentIndex >= routesToRender.length) {
       if (renderId === currentRenderId) updateCounter(routesToRender.length);
       return;
@@ -130,7 +182,7 @@ function renderAllLines(filteredRoutes = null) {
       const preco = precoRaw
         ? parseFloat(precoRaw).toLocaleString("pt-br", { style: "currency", currency: "BRL" })
         : "R$ --";
-
+        
       const badgeColor = route.route_color || "0054a6"; // Azul EMTU padrão
       const textColor = route.route_text_color || "FFFFFF";
       const shortName = route.route_short_name || "";
@@ -138,6 +190,13 @@ function renderAllLines(filteredRoutes = null) {
       const card = document.createElement("div");
       card.className = "line-card";
       card.style.borderTop = `5px solid #${badgeColor}`;
+      card.style.cursor = "pointer"; // Adiciona o cursor de clique para indicar interatividade
+
+      // Adiciona o evento de clique para filtrar no mapa
+      card.addEventListener("click", () => {
+        selecionarLinhaDaBusca(route.route_id);
+      });
+
       card.innerHTML = `
             <div class="line-header">
                 <div class="line-identity">
@@ -164,8 +223,12 @@ function renderAllLines(filteredRoutes = null) {
 
     resultArea.appendChild(fragment);
 
-    // Agenda o próximo bloco
-    requestAnimationFrame(processChunk);
+    // Usa requestIdleCallback ou requestAnimationFrame para renderizar o próximo bloco sem travar a UI
+    if (currentIndex < routesToRender.length) {
+      requestAnimationFrame(processChunk);
+    } else {
+      updateCounter(routesToRender.length);
+    }
   }
 
   processChunk();
