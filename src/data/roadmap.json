@@ -1,0 +1,52 @@
+{
+  "roadmap": [
+    {
+      "categoria": "🔧 Refatoração e Estrutura",
+      "itens": [
+        { "label": "Desenvolver funcionalidade para atualização/horário das linhas", "checked": false },
+        { "label": "Desenvolver funcionalidade para atualização de status das linhas", "checked": false },
+        { "label": "Desenvolver funcionalidade para atualização de exibição de AQI", "checked": false },
+        { "label": "Desenvolver Design System e disponibilizar no projeto", "status": "EM DESENVOLVIMENTO", "checked": false },
+        { "label": "Adotar Next.js", "checked": false }
+      ]
+    },
+    {
+      "categoria": "📚 Documentação (readme)",
+      "texto": "Sem modificações futuras no momento."
+    },
+    {
+      "categoria": "🛠️ Logs e Validações",
+      "texto": "Sem modificações futuras no momento."
+    },
+    {
+      "categoria": "🖼️ Interface",
+      "itens": [
+        { "label": "Correção de estilos", "checked": false },
+        { "label": "Adotar método de design Hero Section", "checked": false },
+        { "label": "Desenvolver página: Linhas - Qualidade do Ar", "checked": false },
+        { "label": "Desenvolver página: Linhas - Origem e Destino", "checked": false },
+        { "label": "Desenvolver página: Linhas - Demanda/Estação", "checked": false },
+        { "label": "Desenvolver página: Linhas - Ciclovia", "status": "EM DESENVOLVIMENTO", "checked": false },
+        { "label": "Atualizar dados .json/.kmz de Mapa", "checked": false }
+      ]
+    }
+  ],
+  "historico": [
+    { "data": "26/02/2026", "versao": "v26.02.10", "descricao": "Atualização GTFS - SPTrans e Exibição dados de versao.astro via .js" },
+    { "data": "26/02/2026", "versao": "v26.02.9", "descricao": "Inserir Mapa de via - ARTESP" },
+    { "data": "23/02/2026", "versao": "v26.02.8", "descricao": "Inserir Mapa de via - SPTrans" },
+    { "data": "22/02/2026", "versao": "v26.02.7", "descricao": "Desenvolver página: Linhas - Mapa" },
+    { "data": "22/02/2026", "versao": "v26.02.6", "descricao": "Corrigir e implementar renderização progressiva ou virtual scroll em sptrans e artesp" },
+    { "data": "21/02/2026", "versao": "v26.02.5", "descricao": "Desenvolver página: Linhas - EMTU/ARTESP" },
+    { "data": "20/02/2026", "versao": "v26.02.5", "descricao": "Desenvolver funcionalidade para atualização de exibição/pesquisas dos dados EMTU/ARTESP" },
+    { "data": "20/02/2026", "versao": "v26.02.5", "descricao": "Migrar para framework Astro" },
+    { "data": "20/02/2026", "versao": "v26.02.4", "descricao": "Atualização GTFS - SPTrans e Migração para Astro" },
+    { "data": "18/02/2026", "versao": "v26.02.3", "descricao": "Unificar arquivos SP_LXX.html em um único arquivo" },
+    { "data": "18/02/2026", "versao": "v26.02.3", "descricao": "Inserir Canais de Atendimento e Portais Oficiais via .JS" },
+    { "data": "17/02/2026", "versao": "v26.02.2", "descricao": "Utilizar ícones do Material Symbols (Google)" },
+    { "data": "17/02/2026", "versao": "v26.02.2", "descricao": "Correção de erros em index.html" },
+    { "data": "13/02/2026", "versao": "v26.02.1", "descricao": "Desenvolver funcionalidade de pesquisas SPTrans" },
+    { "data": "12/02/2026", "versao": "v26.02.1", "descricao": "Desenvolver página: 404 e Back to Top" },
+    { "data": "04/02/2026", "versao": "v26.02.0", "descricao": "Remodelar index.html, estilos e funcionalidades" }
+  ]
+}

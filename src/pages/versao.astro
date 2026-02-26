@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import roadmapData from '../data/roadmap.json'; // Importação direta do JSON
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -7,81 +8,43 @@ const base = import.meta.env.BASE_URL;
     <link rel="stylesheet" href={`${base}/version.css`} slot="head" />
 
     <section class="execution">
-        <h2><span class="material-symbols-outlined" style="vertical-align: middle;">timeline</span> Roadmap de Desenvolvimento</h2>
+        <h2>
+            <span class="material-symbols-outlined" style="vertical-align: middle;">timeline</span> 
+            Roadmap de Desenvolvimento
+        </h2>
 
-        <h3>🔧 Refatoração e Estrutura</h3>
-        <ul>            
-            <li><input type="checkbox" disabled> Desenvolver funcionalidade para atualização/horário das linhas</li>
-            <li><input type="checkbox" disabled> Desenvolver funcionalidade para atualização de status das linhas</li>
-            <li><input type="checkbox" disabled> Desenvolver funcionalidade para atualização de exibição de AQI</li>        
-            <li><input type="checkbox" disabled> Desenvolver Design System e disponibilizar no projeto <code>EM DESENVOLVIMENTO</code></li>      
-            <li><input type="checkbox" disabled> Adotar Next.js</li>        
-            <li><input type="checkbox" disabled> Exibir dados de versao.astro via .js<code>EM DESENVOLVIMENTO</code></li>        
-        </ul>                        
-
-        <h3>📚 Documentação (readme)</h3>
-        <p>Sem modificações futuras no momento.</p>
-        </ul>
-        
-        <h3>🛠️ Logs e Validações</h3>      
-        <p>Sem modificações futuras no momento.</p>
-
-        <h3>🖼️ Interface</h3>
-        <ul>            
-            <li><input type="checkbox" disabled> Correção de estilos</li>            
-            <li><input type="checkbox" disabled> Adotar método de design Hero Section</li>            
-            <li><input type="checkbox" disabled> Desenvolver página: Linhas - Qualidade do Ar</li>
-            <li><input type="checkbox" disabled> Desenvolver página: Linhas - Origem e Destino</li>
-            <li><input type="checkbox" disabled> Desenvolver página: Linhas - Demanda/Estação</li>
-            <li><input type="checkbox" disabled> Desenvolver página: Linhas - Ciclovia</li>
-            <li><input type="checkbox" disabled> Atualizar dados .json/.kmz de Mapa</li>
-        </ul>
+        {roadmapData.roadmap.map((secao) => (
+            <>
+                <h3>{secao.categoria}</h3>
+                {secao.itens ? (
+                    <ul>
+                        {secao.itens.map((item) => (
+                            <li>
+                                <input type="checkbox" checked={item.checked} disabled>
+                                {item.label} 
+                                {item.status && <code>{item.status}</code>}
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>{secao.texto}</p>
+                )}
+            </>
+        ))}
 
         <details class="note" style="padding: 15px; cursor: pointer;">
             <summary><strong>📚 Ver histórico completo</strong></summary>
             <ul style="margin-top: 15px; list-style: none; padding-left: 0;">
-                <li><code>26/02/2026</code> <code>v26.02.9</code> Inserir Mapa de via - ARTESP</li>
-                <li><code>23/02/2026</code> <code>v26.02.8</code> Inserir Mapa de via - SPTrans</li>
-                <li><code>22/02/2026</code> <code>v26.02.7</code> Desenvolver página: Linhas - Mapa</li>
-                <li><code>22/02/2026</code> <code>v26.02.6</code> Corrigir e implementar renderização progressiva ou virtual scroll em sptrans e artesp
-                <li><code>21/02/2026</code> <code>v26.02.5</code> Desenvolver página: Linhas - EMTU/ARTESP</li>
-                <li><code>20/02/2026</code> <code>v26.02.5</code> Desenvolver funcionalidade para atualização de exibição/pesquisas dos dados EMTU/ARTESP                
-                <li><code>20/02/2026</code> <code>v26.02.5</code> Migrar para framework Astro</li>                                    
-                <li><code>20/02/2026</code> <code>v26.02.5</code> Criar página de README.md no GitHub</li>
-                <li><code>20/02/2026</code> <code>v26.02.4</code> Atualização GTFS - SPTrans e Migração para Astro</li>
-                <li><code>18/02/2026</code> <code>v26.02.3</code> Unificar arquivos SP_LXX.html em um único arquivo</li>
-                <li><code>18/02/2026</code> <code>v26.02.3</code> Inserir Canais de Atendimento e Portais Oficiais via .JS</li>
-                <li><code>17/02/2026</code> <code>v26.02.2</code> Utilizar ícones do Material Symbols (Google)</li>
-                <li><code>17/02/2026</code> <code>v26.02.2</code> Correção de erros em index.html</li>
-                <li><code>13/02/2026</code> <code>v26.02.1</code> Desenvolver funcionalidade de pesquisas SPTrans</li>
-                <li><code>12/02/2026</code> <code>v26.02.1</code> Desenvolver página: 404 e Back to Top</li>
-                <li><code>04/02/2026</code> <code>v26.02.0</code> Remodelar index.html, estilos e funcionalidades</li>
+                {roadmapData.historico.map((log) => (
+                    <li>
+                        <code>{log.data}</code> 
+                        <code>{log.versao}</code> 
+                        {log.descricao}
+                    </li>
+                ))}
             </ul>
         </details>
 
         <hr>
-
-        <h2>📜 Licença</h2>
-        <p>Distribuído sob a Licença MIT.</p>
-
-        <div class="attention" style="background-color: rgba(0,0,0,0.05); padding: 15px; border-left: 5px solid #d40000; margin: 20px 0;">
-            <p><strong>📘 Nota:</strong> Este projeto foi desenvolvido com fins de aprendizagem, desenvolvimento de software e informativos, não possuindo vínculo com órgãos públicos.</p>
-        </div>
-    </section>
-
-    <hr>
-    <div id="dynamic-systems-info"></div>
-    <hr>
-
-    <section class="about">
-        <div class="info-container">
-            <h2>Desenvolvimento e Transparência</h2>
-            <div class="actions" style="margin-bottom: 20px;">
-                <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
-                    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github">
-                </a>
-            </div>
-            <p><strong>Status do Build:</strong> <span style="color: green;">✔ Estável</span> (Astro Mode)</p>
-        </div>
-    </section>
+        </section>
 </Layout>
