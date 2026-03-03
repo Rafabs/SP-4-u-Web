@@ -1,9 +1,10 @@
 const historyData = [
+    { data: "02/03/2026", tipo: "🆕 Inclusão", linha: "2023/42", cor: "002F6C", rota: "Jd. Nova Paris - Metrô Tucuruvi", recente: true },
     { data: "20/02/2026", tipo: "🆕 Inclusão", linha: "8006/21", cor: "509E2F", rota: "Term. Pirituba - Jd. Donária", recente: true },
     { data: "20/02/2026", tipo: "✏️ Modificação", linha: "6820/21", cor: "782F40", rota: "<after>Atual:</after> Term. Capelinha - Jd. Amália<br><before>Antes:</before> Jd. Amália - Term. Capelinha", recente: true },
     { data: "20/02/2026", tipo: "🆕 Inclusão", linha: "675R/23", cor: "0082BA", rota: "Grajaú - Shop Interlagos", recente: true },
-    { data: "20/02/2026", tipo: "❌ Remoção", linha: "179A/10", cor: "002F6C", rota: "Pq. Do Trote - Metrô Santana", recente: true },
-    { data: "20/02/2026", tipo: "❌ Remoção", linha: "879A/10", cor: "002F6C", rota: "Metrô Barra Funda - São João / Ctn", recente: true },    
+    { data: "20/02/2026", tipo: "❌ Remoção", linha: "179A/10", cor: "002F6C", rota: "Pq. Do Trote - Metrô Santana", recente: false },
+    { data: "20/02/2026", tipo: "❌ Remoção", linha: "879A/10", cor: "002F6C", rota: "Metrô Barra Funda - São João / Ctn", recente: false },    
     { data: "12/02/2026", tipo: "🆕 Inclusão", linha: "179A/10", cor: "002F6C", rota: "Pq. Do Trote - Metrô Santana", recente: false },
     { data: "12/02/2026", tipo: "🆕 Inclusão", linha: "879A/10", cor: "002F6C", rota: "Metrô Barra Funda - São João / Ctn", recente: false },
     { data: "02/02/2025", tipo: "🆕 Inclusão", linha: "5108/21", cor: "006341", rota: "Jd. Celeste - Metrô Alto Do Ipiranga", recente: false },
