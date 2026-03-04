@@ -1,65 +1,319 @@
-.lines {
-    max-width: 1100px;
-    margin: 20px auto 0px;
-    padding: 0 10px;
+/* --- CONTAINER E ESTRUTURA GERAL --- */
+/* --- ESTILIZAÇÃO DO BOTÃO VOLTAR --- */
+.btn-back {
+    background: rgba(255, 255, 255, 0.05); /* Fundo semi-transparente */
+    color: var(--station-name-main);      /* Cor do texto dinâmica */
+    border: 1px solid var(--map-border);  /* Borda dinâmica */
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;                 /* Formato pílula */
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);         /* Efeito de vidro */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* Container da Imagem do Mapa */
-.centered-image {
-    text-align: center;
-    max-width: 1100px;
-    margin: 20px auto 60px;
-    padding: 20px;
-}
-
-.centered-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    border: 2px solid var(--border-color);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+/* Ícone de seta antes do texto (opcional, via CSS) */
+.btn-back::before {
+    content: '←';
+    font-size: 18px;
     transition: transform 0.3s ease;
 }
 
-.centered-image img:hover {
-    transform: scale(1.01);
+/* --- EFEITO HOVER --- */
+.btn-back:hover {
+    background: var(--line-color);       /* Assume a cor da linha no hover */
+    color: #fff;                         /* Texto sempre branco no hover */
+    border-color: var(--line-color);
+    transform: translateY(-3px);         /* Leve elevação */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilização do Botão de Voltar */
-.centered-image button {
-    margin-top: 30px;
-    padding: 12px 25px;
-    background-color: var(--accent-red);
-    color: #ffffff;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+.btn-back:hover::before {
+    transform: translateX(-5px);         /* Seta move para a esquerda */
 }
 
-.centered-image button:hover {
-    background-color: #b30000;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(212, 0, 0, 0.3);
+/* --- EFEITO AO CLICAR --- */
+.btn-back:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.centered-image button:active {
-    transform: translateY(0);
+/* Ajuste específico para o modo claro */
+.light-theme .btn-back {
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* Responsividade específica para o mapa */
+.station-timeline-container {
+    /* Mantenha seus paddings, mas mude o display */
+    width: 100%;
+    box-sizing: border-box;    
+    background: radial-gradient(circle at center, #1e1e1e 0%, #121212 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center; /* Centraliza o mapa se ele for menor que a tela */
+    overflow-x: auto;        /* Mantém o scroll se o mapa for maior que a tela */
+    min-height: 400px;       /* Garante espaço vertical para os nomes e conexões */
+}
+
+#station-line-wrapper {
+    display: inline-flex; 
+    flex-wrap: nowrap;    
+    align-items: center;
+    padding: 40px 100px;
+    min-width: max-content; /* Importante para não encolher a linha */
+    margin: 0 auto;         /* Garante a centralização horizontal interna */
+}
+
+/* Ajuste do Item (Estações próximas) */
+.item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 60px; /* Distância aproximada entre estações */
+    z-index: 2;
+    height: 40px;
+    justify-content: center;
+}
+
+/* --- ESTILIZAÇÃO DO PONTO (BOLA BRANCA) --- */
+.item::before {
+    content: "";
+    width: 12px;           /* Tamanho reduzido para ser mais discreto */
+    height: 12px;
+    background: #ffffff;      /* Fundo branco limpo */
+    border: 3px solid var(--line-color); /* Borda com a cor da linha */
+    border-radius: 50%;
+    z-index: 3;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Sombra leve para dar profundidade */
+}
+
+.item.has-transfer::before {
+    width: 12px;           /* Exatamente igual às outras */
+    height: 12px;
+    border-width: 3px;     /* Mesma espessura de borda */
+    margin: 0;             /* Resetamos qualquer margem de compensação */
+}
+
+.item:hover::before {
+    transform: scale(1.3);
+    background: var(--line-color); /* Inverte a cor ao passar o mouse */
+    border-color: #fff;
+}
+
+/* A linha agora deve ser contínua entre os pontos */
+.item::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 8px;
+    background-color: var(--line-color);
+    z-index: 1;
+    transform: translateY(-50%); /* Alinhamento vertical perfeito no centro */
+    box-shadow: none;       /* REMOVE TODO O BRILHO NEON DA LINHA */
+    opacity: 0.9;           /* Aumentei a opacidade para manter a cor sólida */
+}
+
+/* Remove a linha após a última estação */
+.item:last-child::after {
+    display: none;
+}
+
+/* --- NOMES DAS ESTAÇÕES (COM ROTAÇÃO) --- */
+.station-name-wrapper {
+    position: absolute;
+    bottom: 35px; /* Posicionado ACIMA do ponto branco */
+    left: 50%;
+    transform: rotate(-60deg); 
+    transform-origin: left bottom;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    text-align: left;
+    width: 200px; /* Previne quebras de linha indesejadas no texto */
+}
+
+.station-timeline-container::-webkit-scrollbar {
+    height: 8px;
+}
+.station-timeline-container::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+.station-timeline-container::-webkit-scrollbar-thumb {
+    background: var(--line-color, #444);
+    border-radius: 10px;
+    border: 2px solid #1a1a1a;
+}
+
+.main-content {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto;    /* Centraliza na tela */
+    padding: 0 20px;   /* Espaçamento lateral interno (respiro) */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Cores corrigidas para o tema escuro */
+.name-main {
+    font-size: 14px;
+    color: #eee; /* Mais claro para ler no fundo escuro */
+    font-weight: bold;
+    display: block;    
+}
+
+.name-secondary {
+    font-size: 11px;
+    color: #aaa;
+    font-weight: 500;
+    display: block;    
+}
+
+/* Estados de Destaque */
+.is-highlight {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.is-not-main {
+    font-size: 11px;
+    font-weight: normal;
+    color: #888 !important;
+}
+
+/* --- TRANSFERÊNCIAS (CÁPSULAS ABAIXO DO PONTO) --- */
+.transfer-pills {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: absolute; /* Mudamos para absoluto */
+    top: 45px;          /* Fixamos a distância abaixo do ponto */
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+}
+
+.transfer-pill-custom {
+    display: flex;
+    align-items: center;
+    background: #222;
+    border-radius: 12px;
+    padding: 2px 6px 2px 2px;
+    gap: 5px;
+    border: 1px solid #444;
+    height: 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.operator-img {
+    width: 16px;
+    height: 16px;
+}
+
+.line-ball {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 900;
+    color: #fff;
+}
+
+/* Ajuste específico para acessibilidade em cores claras */
+.bg-l04, .bg-l08, .bg-l10 .bg-l13 { color: #000 !important; }
+
+/* --- VERSÃO MOBILE (TRAÇADO VERTICAL) --- */
+/* --- VERSÃO MOBILE (TRAÇADO VERTICAL ESPELHADO) --- */
 @media (max-width: 768px) {
-    .lines .line-list li {
-        grid-template-columns: 16px 1fr;
-        grid-template-areas: 
-            "dot line"
-            "empresa operacao";
-        gap: 15px;
+    .station-timeline-container {
+        padding: 40px 10px;
+        display: block; 
+        overflow-x: hidden;
+        overflow-y: auto;
     }
-    
-    .centered-image img {
-        border-radius: 8px;
+
+    #station-line-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza a linha no meio da tela */
+        padding: 40px 0;
+        min-width: 100%;
+        margin: 0;
+    }
+
+    .item {
+        flex: 0 0 50px; /* Espaço entre estações */
+        width: 100%;
+        display: flex;
+        flex-direction: row; 
+        justify-content: center; /* Mantém o ponto no centro */
+        align-items: center;
+        position: relative;
+    }
+
+    /* O Ponto (Bolinha) no centro */
+    .item::before {
+        position: relative;
+        z-index: 4;
+        margin: 0; 
+    }
+
+    /* Linha Vertical centralizada */
+    .item::after {
+        top: 50%;
+        left: calc(50% - 3px); /* Ajuste para centralizar o traço de 6px */
+        width: 6px;
+        height: 100%;
+        transform: none;
+    }
+
+    /* NOMES À DIREITA */
+    .station-name-wrapper {
+        position: absolute;
+        left: calc(50% + 25px); /* Empurra o nome para a direita do ponto */
+        bottom: auto;
+        transform: none;
+        text-align: left;
+        width: 45%; /* Limita para não vazar da tela */
+        white-space: normal; /* Permite quebrar nome se for muito longo */
+    }
+
+    /* TRANSFERÊNCIAS À ESQUERDA */
+    .transfer-pills {
+        position: absolute;
+        right: calc(50% + 15px); /* Posiciona à esquerda do ponto central */
+        left: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        
+        display: flex;
+        flex-direction: row;    /* MUDANÇA AQUI: Lado a lado */
+        flex-wrap: wrap;       /* Permite quebra de linha se forem muitas */
+        justify-content: flex-end; /* Alinha as cápsulas em direção à linha do metrô */
+        gap: 6px;
+        width: 42%;            /* Limita a largura para não bater na borda da tela */
+    }
+
+    .transfer-pill-custom {
+        margin-left: auto; /* Garante que fiquem coladas na linha */
+        padding: 2px 4px 2px 8px; /* Inverte o padding para o design ficar harmônico */
+        flex-direction: row-reverse; /* Inverte ícone e número se desejar, ou mantenha */
     }
 }

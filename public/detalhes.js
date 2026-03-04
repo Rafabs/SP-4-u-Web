@@ -1,55 +1,158 @@
-// Detecta se estamos no GitHub Pages ou Localhost
-const BASE_URL = window.location.pathname.includes('SP-4-u-Web') ? '/SP-4-u-Web' : '';
+const BASE_URL = window.location.pathname.includes("SP-4-u-Web")
+  ? "/SP-4-u-Web"
+  : "";
 
-const dadosLinhas = {
-    "L01": { nome: "Linha 01 - Azul", cor: "#0455A1", empresa: "METRÔ", mapa: `${BASE_URL}/assets/imgs/linha_01.PNG` },
-    "L02": { nome: "Linha 02 - Verde", cor: "#007E5E", empresa: "METRÔ", mapa: `${BASE_URL}/assets/imgs/linha_02.PNG` },
-    "L03": { nome: "Linha 03 - Vermelha", cor: "#EE372F", empresa: "METRÔ", mapa: `${BASE_URL}/assets/imgs/linha_03.PNG` },
-    "L04": { nome: "Linha 04 - Amarela", cor: "#FFF000", empresa: "VIAQUATRO", mapa: `${BASE_URL}/assets/imgs/linha_04.PNG` },
-    "L05": { nome: "Linha 05 - Lilás", cor: "#9B3894", empresa: "VIAMOBILIDADE", mapa: `${BASE_URL}/assets/imgs/linha_05.PNG` },
-    "L06": { nome: "Linha 06 - Laranja", cor: "#000000", empresa: "METRÔ", mapa: `${BASE_URL}/assets/imgs/linha_06.PNG` },
-    "L07": { nome: "Linha 07 - Rubi", cor: "#CA016B", empresa: "TIC TRENS", mapa: `${BASE_URL}/assets/imgs/linha_07.PNG` },
-    "L08": { nome: "Linha 08 - Diamante", cor: "#97A098", empresa: "VIAMOBILIDADE", mapa: `${BASE_URL}/assets/imgs/linha_08.PNG` },
-    "L09": { nome: "Linha 09 - Esmeralda", cor: "#01A9A7", empresa: "VIAMOBILIDADE", mapa: `${BASE_URL}/assets/imgs/linha_09.PNG` },
-    "L10": { nome: "Linha 10 - Turquesa", cor: "#049FC3", empresa: "CPTM", mapa: `${BASE_URL}/assets/imgs/linha_10.PNG` },
-    "L11": { nome: "Linha 11 - Coral", cor: "#F68368", empresa: "CPTM", mapa: `${BASE_URL}/assets/imgs/linha_11.PNG` },
-    "L12": { nome: "Linha 12 - Safira", cor: "#133C8D", empresa: "CPTM", mapa: `${BASE_URL}/assets/imgs/linha_12.PNG` },
-    "L13": { nome: "Linha 13 - Jade", cor: "#00B352", empresa: "CPTM", mapa: `${BASE_URL}/assets/imgs/linha_13.PNG` },
-    "L15": { nome: "Linha 15 - Prata", cor: "#C0C0C0", empresa: "METRÔ", mapa: `${BASE_URL}/assets/imgs/linha_15.PNG` },
-    "L17": { nome: "Linha 17 - Ouro", cor: "#000000", empresa: "METRÔ", mapa: `${BASE_URL}/assets/imgs/linha_17.PNG` }
-};
+document.addEventListener("DOMContentLoaded", async () => {
+  const params = new URLSearchParams(window.location.search);
+  const linhaId = params.get("linha");
 
-document.addEventListener("DOMContentLoaded", () => {
-    const params = new URLSearchParams(window.location.search);
-    const linhaId = params.get('linha');
+  try {
+    // O caminho correto ignora a pasta 'public'
+    const url = `${BASE_URL}/dados-linhas.json`;
+    console.log("Tentando carregar:", url); // Debug para ver no console
+
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`Erro HTTP: ${response.status}`);
+    }
+
+    const dadosLinhas = await response.json();
     const dados = dadosLinhas[linhaId];
 
     if (dados) {
-        document.title = `${dados.nome}`;
-
-        const corBloco = document.getElementById('linha-cor-bloco');
-        if (corBloco) corBloco.style.backgroundColor = dados.cor;
-
-        const nomeTitulo = document.getElementById('linha-nome-titulo');
-        if (nomeTitulo) nomeTitulo.innerText = dados.nome;
-
-        const statusCard = document.getElementById('linha-status-info');
-        if (statusCard) {
-            statusCard.id = `${linhaId.toLowerCase()}-info`; 
-            statusCard.innerText = `Informações sobre a Operação - Sincronizando ${dados.nome}...`;
-        }
-
-        const empresaDiv = document.getElementById('linha-empresa');
-        if (empresaDiv) empresaDiv.innerText = dados.empresa;
-
-        const mapaImg = document.getElementById('linha-mapa-img');
-        if (mapaImg) {
-            mapaImg.src = dados.mapa;
-            mapaImg.alt = `Mapa da ${dados.nome}`;
-        }
-
+      renderPage(dados, linhaId);
     } else {
-        // Redireciona para a 404 do Astro com o caminho base correto
-        window.location.href = `${BASE_URL}/404`;
+      window.location.href = `${BASE_URL}/404`;
     }
+  } catch (error) {
+    console.error("Erro detalhado:", error);
+  }
 });
+
+function renderPage(dados, linhaId) {
+    // 1. Atualiza Título e Cores Base
+    document.title = `${dados.nome}`;
+    const corBloco = document.getElementById("linha-cor-bloco");
+    if (corBloco) corBloco.style.backgroundColor = dados.cor;
+    
+    document.getElementById("linha-nome-titulo").innerText = dados.nome;
+
+    // 2. Lógica da Operadora (Lendo o novo campo do JSON)
+    const empresaEl = document.getElementById("linha-empresa");
+    const logoImg = document.getElementById("linha-destaque-logo"); // Certifique-se de ter este ID no HTML
+    
+    // Pega o valor de 'operadora' (ex: "METRÔ") ou 'empresa' como fallback
+    const nomeOperadora = dados.operadora || dados.empresa || "Operadora Desconhecida";
+    empresaEl.innerText = nomeOperadora;
+
+    // 3. Identificação do Logo da Operadora
+    const operadoraLower = nomeOperadora.toLowerCase();
+    let logoFileName = "";
+
+    if (operadoraLower.includes("metrô") || operadoraLower.includes("metro")) {
+        logoFileName = "metro.png";
+    } else if (operadoraLower.includes("cptm")) {
+        logoFileName = "cptm.png";
+    } else if (operadoraLower.includes("viaquatro")) {
+        logoFileName = "viaquatro.png";
+    } else if (operadoraLower.includes("viamobilidade")) {
+        logoFileName = "viamobilidade.png";
+    }
+
+    if (logoImg && logoFileName) {
+        const iconBase = `${window.location.pathname.includes("SP-4-u-Web") ? "/SP-4-u-Web" : ""}/icons`;
+        logoImg.alt = `Logo ${nomeOperadora}`;
+    }
+
+    // 4. Status da Operação
+    const statusCard = document.getElementById("linha-status-info");
+    if (statusCard) {
+        statusCard.id = `${linhaId.toLowerCase()}-info`;
+        statusCard.innerText = `Informações sobre a Operação - Carregando...`;
+    }
+
+    // 5. Renderiza a Timeline
+    renderTimeline(dados, linhaId);
+}
+
+function renderTimeline(dados) {
+  const wrapper = document.getElementById("station-line-wrapper");
+  const lineBar = document.getElementById("dynamic-line-color");
+  lineBar.style.backgroundColor = dados.cor;
+
+  const iconBase = `${window.location.pathname.includes("SP-4-u-Web") ? "/SP-4-u-Web" : ""}/icons`;
+
+  // Limpa o conteúdo anterior
+  wrapper.querySelectorAll(".item").forEach((el) => el.remove());
+
+  dados.estacoes.forEach((est) => {
+    const item = document.createElement("div");
+    item.className = `item ${est.conexoes?.length > 0 ? "has-transfer" : ""}`;
+    item.style.setProperty("--line-color", dados.cor);
+
+    // --- LÓGICA DE DESTAQUE CORRIGIDA ---
+    const isDestaque = est.destaqueSecundario === true;
+    const nomePrincipal = est.nomePrincipal || est.primary;
+    const nomeSecundario = est.nomeSecundario || est.secondary;
+
+    const nameHTML = `
+        <div class="station-name-wrapper">
+            <span class="name-main ${isDestaque ? 'is-not-main' : ''}">${nomePrincipal}</span>
+            ${nomeSecundario ? 
+                `<span class="name-secondary ${isDestaque ? 'is-highlight' : ''}">${nomeSecundario}</span>` 
+                : ""}
+        </div>
+    `;
+    // ------------------------------------
+
+    let pillsHTML = '<div class="transfer-pills">';
+    if (est.conexoes) {
+      est.conexoes.forEach((con) => {
+        const iconName = con.icone ? con.icone : getIconFileName(con.linha);
+        const iconPath = `${iconBase}/${iconName}`;
+
+        let ballHTML = "";
+        if (con.linha) {
+            const textColor = (con.linha === 'L04' || con.linha === 'L13') ? '#000' : '#fff';
+            const numeroExibicao = con.linha.replace("L", "");
+            ballHTML = `
+                <div class="line-ball" style="background-color: ${con.cor}; color: ${textColor};">
+                    ${numeroExibicao}
+                </div>`;
+        }
+
+        pillsHTML += `
+            <div class="transfer-pill-custom">
+                <img src="${iconPath}" class="operator-img" alt="${con.nome || 'logo'}">
+                ${ballHTML}
+            </div>
+        `;
+      });
+    }
+    pillsHTML += "</div>";
+
+    item.innerHTML = `${nameHTML}${pillsHTML}`;
+    wrapper.appendChild(item);
+  });
+}
+
+// Função auxiliar (Nome corrigido para bater com a chamada acima)
+function getIconFileName(id) {
+  const map = {
+    L01: "1_azul.png",
+    L02: "2_verde.png",
+    L03: "3_vermelha.png",
+    L04: "4_amarela.png",
+    L05: "5_lilas.png",
+    L07: "cptm.png", // Notei que você mudou este para cptm.png
+    L08: "8_diamante.png",
+    L09: "9_esmeralda.png",
+    L10: "cptm.png",
+    L11: "cptm.png",
+    L12: "cptm.png",
+    L13: "cptm.png",
+    L15: "15_prata.png",
+  };
+  return map[id] || "default.png";
+}

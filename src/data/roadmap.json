@@ -8,7 +8,7 @@
         { "label": "Corrigir exibição de dados de Pesquisa Origem e Destino (Exibição de 1997 e 2007)", "checked": false },
         { "label": "Desenvolver Design System e disponibilizar no projeto", "status": "EM DESENVOLVIMENTO", "checked": false },
         { "label": "Adotar Next.js", "checked": false },
-        { "label": "Melhorar localização de arquivos de dados nas pastas", "checked": false }
+        { "label": "Melhorar localização de arquivos de dados nas pastas","status": "EM DESENVOLVIMENTO", "checked": false }
       ]
     },
     {
@@ -23,8 +23,8 @@
       "categoria": "🖼️ Interface",
       "itens": [
         { "label": "Correção de estilos", "checked": false },
+        { "label": "Ajustar Linhas de estações e implantar L17 - Ouro", "checked": false },
         { "label": "Correção de estilos na versão mobile (footer)", "checked": false },
-        { "label": "Desenvolver página de Linhas (detalhes) com item nativo, substituir imagens","status": "EM DESENVOLVIMENTO", "checked": false },
         { "label": "Melhorias na interface e funcionalidade dos mapas", "checked": false },
         { "label": "Adotar método de design Hero Section", "checked": false },
         { "label": "Atualizar dados .json/.kmz de Mapa", "checked": false }
@@ -32,6 +32,7 @@
     }
   ],
   "historico": [
+    { "data": "04/03/2026", "versao": "v26.03.2", "descricao": "Desenvolver página de Linhas (detalhes) com item nativo, substituir imagens" },
     { "data": "04/03/2026", "versao": "v26.03.1", "descricao": "Desenvolver página: Demanda/Estação" },
     { "data": "03/03/2026", "versao": "v26.03.0", "descricao": "Atualização GTFS - SPTrans e Desenvolver página: Origem e Destino" },
     { "data": "26/02/2026", "versao": "v26.02.11", "descricao": "Desenvolvido página: Ciclovia, desenvolvido página: Qualidade do Ar e Funcionalidade para atualização de exibição de AQI" },
