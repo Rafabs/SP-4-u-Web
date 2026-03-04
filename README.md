@@ -5,7 +5,6 @@
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 ![Leaflet](https://img.shields.io/badge/Leaflet-199903?style=for-the-badge&logo=leaflet&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini_AI-8E75B2?style=for-the-badge&logo=google-gemini&logoColor=white)
 
 O **Sampa 4u** é um ecossistema de visualização de dados focado na mobilidade urbana e qualidade ambiental de São Paulo. O projeto transforma dados operacionais (GTFS), coordenadas geográficas e APIs ambientais em interfaces gráficas intuitivas.
 
@@ -19,15 +18,6 @@ O **Sampa 4u** é um ecossistema de visualização de dados focado na mobilidade
 - **📊 Roadmap Automatizado:** Sistema de versionamento alimentado via JSON, garantindo transparência total no desenvolvimento.
 - **📱 Design Ultra-Responsivo:** Interface otimizada para consulta rápida em dispositivos móveis.
 - **🔐 Segurança de Dados:** Implementação de variáveis de ambiente e GitHub Secrets para proteção de chaves de API.
-
----
-
-## 🤖 Desenvolvimento Auxiliado por IA
-
-| ![Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=for-the-badge&logo=google-gemini&logoColor=white) | **Co-Desenvolvedor de Arquitetura** |
-| :--- | :--- |
-| **Papel:** | O Gemini atua na refatoração de lógica complexa, otimização de scripts de mapeamento (Leaflet), estruturação do CI/CD no GitHub Actions e garantia de conformidade com os Planos de Dados Abertos (PDA). |
-| **Impacto:** | Redução no tempo de resposta da UI e implementação de padrões de segurança para consumo de APIs externas. |
 
 ---
 

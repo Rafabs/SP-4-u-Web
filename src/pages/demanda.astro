@@ -1,52 +1,72 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Demanda de Passageiros - Sampa 4u">
-    <hr>
-    <section class="about">
-        <div class="info-container">
-            <h2>Sampa 4u</h2>
-            <p>
-                O <strong>Sampa 4u</strong> é um ecossistema de visualização de dados focado na malha metroferroviária e
-                de ônibus urbano de São Paulo.
-                Este projeto demonstra como transformar coordenadas e informações operacionais em interfaces gráficas
-                intuitivas utilizando dados abertos e tecnologia open source.
-            </p>
-            <p>
-                Cada script foi projetado para renderizar linhas, estações, conexões estratégicas e trajetos em tempo
-                real. Além da infraestrutura, o sistema integra APIs para monitorar o fluxo de trânsito
-                (Centro-Bairro/Bairro-Centro),
-                além de fornecer dados climáticos e cronológicos da capital paulista.
-            </p>
-            <div class="version-info">
-                <img src="https://img.shields.io/badge/Vers%C3%A3o-1.0.0.0-blue.svg" alt="Version">
-                <img src="https://img.shields.io/badge/Atualiza%C3%A7%C3%A3o-12/02/2026-green.svg" alt="Atualização">
-            </div>
-        </div>
-    </section>
+  <link rel="stylesheet" href={`${base}/demanda.css`} slot="head" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-    <hr>
+  <div class="demanda-page">
+    <header class="dashboard-header">
+      <h1>Demanda de Passageiros</h1>
+      <p>Média de entradas por dia útil no sistema metroviário (2020-2025)</p>
+    </header>
+
+    <div class="filter-bar" style="display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap;">
+      <select id="ano-filter" class="custom-select"></select>
+      <select id="linha-filter" class="custom-select"></select>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Média Diária Útil</h3>
+        <p id="total-demand">0</p>
+        <span>Passageiros (MDU)</span>
+      </div>
+
+      <div class="stat-card">
+        <h3>Estação de Maior Movimento</h3>
+        <p id="peak-station" style="font-size: 1.6rem; color: var(--text-primary);">-</p>
+        <span id="peak-value" style="color: var(--accent-red); font-weight: bold;">0</span>
+      </div>
+
+      <div class="stat-card" style="border-left: 4px solid #a72828;">
+        <h3>Status da Linha</h3>
+        <p id="status-line" style="font-size: 1.4rem; color: var(--text-primary);">Consolidado</p>
+        <span>Fonte: Portal da Transparência</span>
+      </div>
+    </div>
+
+    <div class="charts-container">
+      <div class="chart-box">
+        <h3>Evolução Mensal da Linha</h3>
+        <div style="height: 320px;"><canvas id="chart-tendencia"></canvas></div>
+      </div>
+
+      <div class="chart-box">
+        <h3>Top 10 Estações da Linha</h3>
+        <div style="height: 320px;"><canvas id="chart-ranking"></canvas></div>
+      </div>
+    </div>
+
+    <hr class="section-divider" />
     <div id="dynamic-systems-info"></div>
-    <hr>
 
     <section class="about">
-        <div class="info-container">
-            <h2>Desenvolvimento e Transparência</h2>
-            <p>
-                Este é um projeto de código aberto sob constante atualização. Você pode acompanhar o histórico de
-                melhorias, contribuir com novas funcionalidades ou reportar inconsistências através do repositório
-                oficial.
-            </p>
-
-            <div class="actions" style="margin-bottom: 20px;">
-                <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
-                    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github">
-                </a>
-            </div>
-
-            <p><strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de integração contínua para garantir a precisão dos mapas e links.</p>
+      <div class="info-container">
+        <h2>Desenvolvimento e Transparência</h2>
+        <p>Dados processados automaticamente a partir dos relatórios de demanda bruta do Metrô de São Paulo.</p>
+        <div class="actions" style="margin-top: 15px;">
+          <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
+            <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github" />
+          </a>
         </div>
+      </div>
     </section>
+  </div>
+
+  <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script is:inline src={`${base}/demanda-logic.js`}></script>
 </Layout>
