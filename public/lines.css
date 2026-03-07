@@ -1,319 +1,683 @@
-/* --- CONTAINER E ESTRUTURA GERAL --- */
-/* --- ESTILIZAÇÃO DO BOTÃO VOLTAR --- */
+/* ================================================
+   SAMPA 4U — MAPA DE LINHAS
+   Estética: Transit Tech / Dark Systems
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap');
+
+/* --- VARIÁVEIS GLOBAIS --- */
+:root {
+    --bg-deep:       #0a0a0f;
+    --bg-surface:    #111118;
+    --bg-card:       #16161f;
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-glow:   rgba(255, 255, 255, 0.12);
+    --text-primary:  #f0f0f5;
+    --text-muted:    #6b6b80;
+    --text-dim:      #3d3d50;
+    --mono:          'DM Mono', monospace;
+    --sans:          'Syne', sans-serif;
+    --arial:         Arial, sans-serif;
+}
+
+/* --- BOTÃO VOLTAR --- */
 .btn-back {
-    background: rgba(255, 255, 255, 0.05); /* Fundo semi-transparente */
-    color: var(--station-name-main);      /* Cor do texto dinâmica */
-    border: 1px solid var(--map-border);  /* Borda dinâmica */
-    padding: 12px 30px;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 50px;                 /* Formato pílula */
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-glow);
+    padding: 11px 28px;
+    font-family: var(--arial);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: normal;
+    letter-spacing: 2.5px;
+    border-radius: 2px;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);         /* Efeito de vidro */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.25s ease;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Ícone de seta antes do texto (opcional, via CSS) */
 .btn-back::before {
     content: '←';
-    font-size: 18px;
-    transition: transform 0.3s ease;
+    font-size: 14px;
+    transition: transform 0.25s ease;
+    font-style: normal;
 }
 
-/* --- EFEITO HOVER --- */
+.btn-back::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--line-color, #fff);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    z-index: -1;
+}
+
 .btn-back:hover {
-    background: var(--line-color);       /* Assume a cor da linha no hover */
-    color: #fff;                         /* Texto sempre branco no hover */
-    border-color: var(--line-color);
-    transform: translateY(-3px);         /* Leve elevação */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border-color: var(--line-color, #fff);
+    box-shadow: 0 0 20px color-mix(in srgb, var(--line-color, #888) 30%, transparent);
+    letter-spacing: 3px;
 }
 
 .btn-back:hover::before {
-    transform: translateX(-5px);         /* Seta move para a esquerda */
+    transform: translateX(-4px);
 }
 
-/* --- EFEITO AO CLICAR --- */
 .btn-back:active {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(0.98);
 }
 
-/* Ajuste específico para o modo claro */
-.light-theme .btn-back {
-    background: rgba(0, 0, 0, 0.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+/* --- LISTAGEM DE LINHAS --- */
+.line-list {
+    list-style: none;
+    padding: 0;
 }
 
-.station-timeline-container {
-    /* Mantenha seus paddings, mas mude o display */
-    width: 100%;
-    box-sizing: border-box;    
-    background: radial-gradient(circle at center, #1e1e1e 0%, #121212 100%);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex;
-    justify-content: center; /* Centraliza o mapa se ele for menor que a tela */
-    overflow-x: auto;        /* Mantém o scroll se o mapa for maior que a tela */
-    min-height: 400px;       /* Garante espaço vertical para os nomes e conexões */
-}
-
-#station-line-wrapper {
-    display: inline-flex; 
-    flex-wrap: nowrap;    
+.line-list li {
+    display: grid;
+    grid-template-columns: 16px 80px 1fr auto auto;
     align-items: center;
-    padding: 40px 100px;
-    min-width: max-content; /* Importante para não encolher a linha */
-    margin: 0 auto;         /* Garante a centralização horizontal interna */
+    gap: 16px;
+    margin: 12px 0;
+    padding: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--bg-card);
 }
 
-/* Ajuste do Item (Estações próximas) */
+.line-list li span    { grid-column: 1; }
+.line-list li code    { grid-column: 2; }
+.line-list li a       { grid-column: 3; }
+.line-list li .empresa{ grid-column: 4; }
+.line-list li .card   { grid-column: 5; }
+
+.line-list li span,
+.line-list li code,
+.line-list li a,
+.line-list li .empresa,
+.line-list li .card {
+    grid-row: 1;
+}
+
+.line-list li span:first-child {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.line-list li code {
+    font-family: monospace;
+    background-color: var(--code-color);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.line-list li a {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.line-list li .empresa {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: right;
+    margin-right: 8px;
+}
+
+.line-list li .card {
+    display: flex;
+    align-items: center;
+}
+
+.lines a {
+    color: #b9b9b9;
+    text-decoration: none;
+}
+
+/* --- STATUS OPERACIONAL --- */
+.card,
+.amarelo_velocidade_reduzida,
+.verde_operacao_normal,
+.vermelho_paralisada,
+.branco_dados_indisponiveis {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.card                      { background: var(--status-blue-bg);   color: var(--status-blue-text); }
+.amarelo_velocidade_reduzida{ background: var(--status-yellow-bg); color: var(--status-yellow-text); }
+.verde_operacao_normal      { background: var(--status-green-bg);  color: var(--status-green-text); }
+.vermelho_paralisada        { background: var(--status-red-bg);    color: var(--status-red-text); }
+.branco_dados_indisponiveis { background: var(--status-gray-bg);   color: var(--status-gray-text); }
+
+.empresa {
+    color: var(--text-secondary);
+    font-size: 14px;
+    min-width: 100px;
+    text-align: right;
+}
+
+/* --- CONTAINER DO MAPA --- */
+.station-timeline-container {
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--bg-deep);
+    border-radius: 10px;
+    border: 3px solid var(--border-subtle);
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    min-height: 220px;
+    position: relative;
+}
+
+.station-timeline-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(var(--border-subtle) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: 0.5;
+}
+
+/* --- WRAPPER INTERNO --- */
+#station-line-wrapper {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 80px 120px 60px;
+    min-width: max-content;
+    margin: 120px auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- ITEM (ESTAÇÃO) --- */
 .item {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 0 0 60px; /* Distância aproximada entre estações */
+    flex: 0 0 70px;
     z-index: 2;
     height: 40px;
     justify-content: center;
+    cursor: default;
 }
 
-/* --- ESTILIZAÇÃO DO PONTO (BOLA BRANCA) --- */
 .item::before {
     content: "";
-    width: 12px;           /* Tamanho reduzido para ser mais discreto */
-    height: 12px;
-    background: #ffffff;      /* Fundo branco limpo */
-    border: 3px solid var(--line-color); /* Borda com a cor da linha */
+    width: 10px;
+    height: 10px;
+    background: var(--text-primary);
+    border: 2px solid var(--line-color);
     border-radius: 50%;
-    z-index: 3;
+    z-index: 4;
     flex-shrink: 0;
     transition: all 0.2s ease;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Sombra leve para dar profundidade */
-}
-
-.item.has-transfer::before {
-    width: 12px;           /* Exatamente igual às outras */
-    height: 12px;
-    border-width: 3px;     /* Mesma espessura de borda */
-    margin: 0;             /* Resetamos qualquer margem de compensação */
+    position: relative;
 }
 
 .item:hover::before {
-    transform: scale(1.3);
-    background: var(--line-color); /* Inverte a cor ao passar o mouse */
-    border-color: #fff;
+    background: var(--line-color);
+    transform: scale(1.4);
+    box-shadow:
+        0 0 0 4px color-mix(in srgb, var(--line-color) 20%, transparent),
+        0 0 16px color-mix(in srgb, var(--line-color) 50%, transparent);
 }
 
-/* A linha agora deve ser contínua entre os pontos */
+/* --- TRILHO --- */
 .item::after {
     content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100%;
-    height: 8px;
-    background-color: var(--line-color);
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--line-color) 90%, #000),
+        var(--line-color)
+    );
     z-index: 1;
-    transform: translateY(-50%); /* Alinhamento vertical perfeito no centro */
-    box-shadow: none;       /* REMOVE TODO O BRILHO NEON DA LINHA */
-    opacity: 0.9;           /* Aumentei a opacidade para manter a cor sólida */
+    transform: translateY(-50%);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--line-color) 35%, transparent);
 }
 
-/* Remove a linha após a última estação */
 .item:last-child::after {
     display: none;
 }
 
-/* --- NOMES DAS ESTAÇÕES (COM ROTAÇÃO) --- */
+/* --- NOMES DAS ESTAÇÕES --- */
 .station-name-wrapper {
     position: absolute;
-    bottom: 35px; /* Posicionado ACIMA do ponto branco */
+    bottom: 34px;
     left: 50%;
-    transform: rotate(-60deg); 
+    transform: rotate(-60deg);
     transform-origin: left bottom;
     display: flex;
     flex-direction: column;
     white-space: nowrap;
     text-align: left;
-    width: 200px; /* Previne quebras de linha indesejadas no texto */
+    width: 180px;
+    padding-left: 6px;
 }
 
-.station-timeline-container::-webkit-scrollbar {
-    height: 8px;
-}
-.station-timeline-container::-webkit-scrollbar-track {
-    background: #1a1a1a;
-    border-radius: 10px;
-}
-.station-timeline-container::-webkit-scrollbar-thumb {
-    background: var(--line-color, #444);
-    border-radius: 10px;
-    border: 2px solid #1a1a1a;
-}
-
-.main-content {
-    max-width: 1200px; /* Largura máxima do conteúdo */
-    margin: 0 auto;    /* Centraliza na tela */
-    padding: 0 20px;   /* Espaçamento lateral interno (respiro) */
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* Cores corrigidas para o tema escuro */
 .name-main {
-    font-size: 14px;
-    color: #eee; /* Mais claro para ler no fundo escuro */
-    font-weight: bold;
-    display: block;    
+    font-family: var(--arial);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: block;
+    line-height: 1.2;
+    letter-spacing: 0.3px;
+    transition: color 0.2s ease;
 }
 
 .name-secondary {
-    font-size: 11px;
-    color: #aaa;
-    font-weight: 500;
-    display: block;    
+    font-family: var(--arial);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--text-muted);
+    display: block;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
 }
 
-/* Estados de Destaque */
+.item:hover .name-main {
+    color: var(--line-color);
+}
+
 .is-highlight {
-    font-size: 14px;
-    font-weight: bold;
-    color: #fff !important;
+    font-family: var(--main) !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: var(--text-primary);
 }
 
 .is-not-main {
-    font-size: 11px;
-    font-weight: normal;
-    color: #888 !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    color: var(--text-muted) !important;
 }
 
-/* --- TRANSFERÊNCIAS (CÁPSULAS ABAIXO DO PONTO) --- */
+/* --- TRANSFERÊNCIAS --- */
 .transfer-pills {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    position: absolute; /* Mudamos para absoluto */
-    top: 45px;          /* Fixamos a distância abaixo do ponto */
+    gap: 3px;
+    position: absolute;
+    top: 42px;
     left: 50%;
     transform: translateX(-50%);
     align-items: center;
+    z-index: 10;
 }
 
 .transfer-pill-custom {
     display: flex;
     align-items: center;
-    background: #222;
-    border-radius: 12px;
-    padding: 2px 6px 2px 2px;
-    gap: 5px;
-    border: 1px solid #444;
-    height: 24px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    background: var(--bg-card);
+    border-radius: 3px;
+    padding: 3px 6px 3px 3px;
+    gap: 4px;
+    border: 1px solid var(--border-glow);
+    height: 22px;
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.5),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+    transition: all 0.2s ease;
+}
+
+.transfer-pill-custom:hover {
+    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-1px);
 }
 
 .operator-img {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    opacity: 0.9;
 }
 
 .line-ball {
     width: 16px;
     height: 16px;
-    border-radius: 50%;
+    border-radius: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 9px;
-    font-weight: 900;
+    font-family: var(--arial);
+    font-size: 8px;
+    font-weight: 500;
     color: #fff;
+    letter-spacing: 0;
 }
 
-/* Ajuste específico para acessibilidade em cores claras */
-.bg-l04, .bg-l08, .bg-l10 .bg-l13 { color: #000 !important; }
+/* --- SCROLLBAR --- */
+.station-timeline-container::-webkit-scrollbar { height: 3px; }
+.station-timeline-container::-webkit-scrollbar-track { background: transparent; }
+.station-timeline-container::-webkit-scrollbar-thumb {
+    background: var(--line-color, var(--border-glow));
+    border-radius: 2px;
+}
 
-/* --- VERSÃO MOBILE (TRAÇADO VERTICAL) --- */
-/* --- VERSÃO MOBILE (TRAÇADO VERTICAL ESPELHADO) --- */
+/* --- CONTEÚDO PRINCIPAL --- */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ================================================
+   NAVEGADOR DE LINHAS — GRID PAGINADO
+   ================================================ */
+
+.line-switcher-section {
+    margin: 0 0 32px;
+}
+
+.line-switcher-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.line-switcher-label {
+    font-family: var(--arial);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+}
+
+.switcher-arrows {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.arrow-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--text-muted);
+    width: 28px;
+    height: 28px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    line-height: 1;
+    padding: 0;
+}
+
+.arrow-btn:hover:not(:disabled) {
+    border-color: rgba(255,255,255,0.2);
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+}
+
+.arrow-btn:disabled {
+    opacity: 0.2;
+    cursor: default;
+}
+
+.page-indicator {
+    font-family: var(--arial);
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    min-width: 36px;
+    text-align: center;
+    user-select: none;
+}
+
+/* Desktop: 6 colunas */
+.line-switcher-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+}
+
+/* Animações de troca de página */
+.line-switcher-grid.page-exit {
+    animation: lsPageOut 0.15s ease forwards;
+}
+.line-switcher-grid.page-enter {
+    animation: lsPageIn 0.2s ease forwards;
+}
+
+@keyframes lsPageOut {
+    to { opacity: 0; transform: translateY(5px); }
+}
+@keyframes lsPageIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Pílula de linha */
+.line-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px 10px 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(255,255,255,0.07);
+    background: var(--bg-card);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-family: var(--arial);
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    overflow: hidden;
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.15s ease;
+    position: relative;
+}
+
+.line-pill::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--pill-color, #fff);
+    border-radius: 3px 0 0 3px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease, width 0.2s ease;
+}
+
+.line-pill:hover {
+    color: #fff;
+    border-color: color-mix(in srgb, var(--pill-color, #fff) 40%, transparent);
+    background: color-mix(in srgb, var(--pill-color, #fff) 8%, var(--bg-card));
+    box-shadow: 0 0 14px color-mix(in srgb, var(--pill-color, #888) 15%, transparent);
+    transform: translateY(-2px);
+}
+
+.line-pill:hover::before {
+    opacity: 1;
+    width: 4px;
+}
+
+.line-pill.is-active {
+    color: #fff;
+    border-color: color-mix(in srgb, var(--pill-color, #fff) 50%, transparent);
+    background: color-mix(in srgb, var(--pill-color, #fff) 12%, var(--bg-card));
+    box-shadow: 0 0 18px color-mix(in srgb, var(--pill-color, #888) 22%, transparent);
+    cursor: default;
+    pointer-events: none;
+}
+
+.line-pill.is-active::before {
+    opacity: 1;
+    width: 4px;
+}
+
+.pill-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.pill-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+    min-width: 0;
+}
+
+/* ================================================
+   MOBILE — LAYOUT VERTICAL
+   ================================================ */
 @media (max-width: 768px) {
+
+    /* --- Timeline vertical --- */
     .station-timeline-container {
-        padding: 40px 10px;
-        display: block; 
+        display: block;
         overflow-x: hidden;
         overflow-y: auto;
+        min-height: unset;
+    }
+
+    .station-timeline-container::before {
+        display: none;
     }
 
     #station-line-wrapper {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Centraliza a linha no meio da tela */
-        padding: 40px 0;
+        align-items: center;
+        padding: 40px 0 60px;
         min-width: 100%;
         margin: 0;
     }
 
     .item {
-        flex: 0 0 50px; /* Espaço entre estações */
+        flex: 0 0 auto;
+        min-height: 52px;
         width: 100%;
         display: flex;
-        flex-direction: row; 
-        justify-content: center; /* Mantém o ponto no centro */
+        flex-direction: row;
+        justify-content: center;
         align-items: center;
         position: relative;
+        padding: 8px 0;
     }
 
-    /* O Ponto (Bolinha) no centro */
+    .item.has-transfer {
+        min-height: 60px;
+    }
+
     .item::before {
         position: relative;
         z-index: 4;
-        margin: 0; 
+        margin: 0;
     }
 
-    /* Linha Vertical centralizada */
     .item::after {
         top: 50%;
-        left: calc(50% - 3px); /* Ajuste para centralizar o traço de 6px */
-        width: 6px;
+        left: calc(50% - 2px);
+        width: 4px;
         height: 100%;
         transform: none;
+        box-shadow: none;
     }
 
-    /* NOMES À DIREITA */
     .station-name-wrapper {
         position: absolute;
-        left: calc(50% + 25px); /* Empurra o nome para a direita do ponto */
+        left: calc(50% + 22px);
         bottom: auto;
         transform: none;
         text-align: left;
-        width: 45%; /* Limita para não vazar da tela */
-        white-space: normal; /* Permite quebrar nome se for muito longo */
+        width: 44%;
+        white-space: normal;
+        padding-left: 8px;
     }
 
-    /* TRANSFERÊNCIAS À ESQUERDA */
+    .station-name-wrapper::before {
+        background: linear-gradient(
+            to bottom,
+            color-mix(in srgb, var(--line-color) 40%, transparent),
+            transparent
+        );
+    }
+
     .transfer-pills {
         position: absolute;
-        right: calc(50% + 15px); /* Posiciona à esquerda do ponto central */
+        right: calc(50% + 16px);
         left: auto;
         top: 50%;
         transform: translateY(-50%);
-        
-        display: flex;
-        flex-direction: row;    /* MUDANÇA AQUI: Lado a lado */
-        flex-wrap: wrap;       /* Permite quebra de linha se forem muitas */
-        justify-content: flex-end; /* Alinha as cápsulas em direção à linha do metrô */
-        gap: 6px;
-        width: 42%;            /* Limita a largura para não bater na borda da tela */
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        justify-content: end;
+        align-items: center;
+        gap: 2px;
+        width: 42%;
+        max-width: 42%;
     }
 
     .transfer-pill-custom {
-        margin-left: auto; /* Garante que fiquem coladas na linha */
-        padding: 2px 4px 2px 8px; /* Inverte o padding para o design ficar harmônico */
-        flex-direction: row-reverse; /* Inverte ícone e número se desejar, ou mantenha */
+        padding: 3px 4px 3px 6px;
+        flex-direction: row-reverse;
+        white-space: nowrap;
+    }
+
+    /* --- Navegador de linhas mobile: 3 colunas --- */
+    .line-switcher-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .line-pill {
+        font-size: 10px;
+        padding: 8px 8px 8px 8px;
+        gap: 7px;
+    }
+
+    .pill-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    /* Setas ficam menores no mobile */
+    .arrow-btn {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+    }
+
+    .page-indicator {
+        font-size: 9px;
     }
 }

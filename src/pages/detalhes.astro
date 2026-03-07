@@ -41,6 +41,18 @@ const base = import.meta.env.BASE_URL;
       </div>
     </div>
 
+    <!-- NAVEGADOR DE LINHAS -->
+    <div class="line-switcher-section">
+      </div>
+      <div class="line-switcher-grid" id="line-switcher-grid">
+      </div>
+        <div class="switcher-arrows">
+          <button class="arrow-btn" id="arrow-prev" aria-label="Anterior">&#8592;</button>
+          <span class="page-indicator" id="page-indicator">1 / 1</span>
+          <button class="arrow-btn" id="arrow-next" aria-label="Próxima">&#8594;</button>
+        </div>      
+    </div>
+
     <div style="text-align: center; margin-top: 40px; padding-bottom: 40px;">
       <a href={`${base}/`} style="text-decoration: none;">
         <button class="btn-back">Voltar para o Início</button>

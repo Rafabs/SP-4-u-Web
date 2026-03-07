@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (dados) {
       renderPage(dados, linhaId);
+      renderLineSwitcher(linhaId, dadosLinhas);
     } else {
       window.location.href = `${BASE_URL}/404`;
     }
@@ -155,4 +156,85 @@ function getIconFileName(id) {
     L15: "15_prata.png",
   };
   return map[id] || "default.png";
+}
+// ── NAVEGADOR DE LINHAS (grid paginado) ──────────────────────────────────────
+function renderLineSwitcher(currentLinhaId, dadosLinhas) {
+  const grid      = document.getElementById("line-switcher-grid");
+  const btnPrev   = document.getElementById("arrow-prev");
+  const btnNext   = document.getElementById("arrow-next");
+  const indicator = document.getElementById("page-indicator");
+  if (!grid) return;
+
+  const base         = window.location.pathname.includes("SP-4-u-Web") ? "/SP-4-u-Web" : "";
+  const detalhesPath = `${base}/detalhes`;
+
+  // Detecta quantas colunas o grid está exibindo no momento
+  const getPageSize = () => window.innerWidth <= 768 ? 3 : 6;
+
+  const entries  = Object.entries(dadosLinhas);
+  let pageSize   = getPageSize();
+  let totalPages = Math.ceil(entries.length / pageSize);
+
+  // Começa na página onde está a linha ativa
+  const activeIndex = entries.findIndex(([id]) => id === currentLinhaId);
+  let currentPage   = Math.floor(activeIndex / pageSize);
+
+  function buildPills(page) {
+    pageSize   = getPageSize();
+    totalPages = Math.ceil(entries.length / pageSize);
+    currentPage = Math.min(page, totalPages - 1);
+
+    const start = currentPage * pageSize;
+    const slice = entries.slice(start, start + pageSize);
+
+    grid.innerHTML = "";
+    slice.forEach(([id, linha]) => {
+      const pill = document.createElement("a");
+      pill.className = "line-pill" + (id === currentLinhaId ? " is-active" : "");
+      pill.style.setProperty("--pill-color", linha.cor);
+      if (id !== currentLinhaId) pill.href = `${detalhesPath}?linha=${id}`;
+      pill.innerHTML = `
+        <span class="pill-dot" style="background:${linha.cor};"></span>
+        <span class="pill-name">${linha.nome}</span>
+      `;
+      grid.appendChild(pill);
+    });
+
+    // Preenche células vazias para manter o grid alinhado
+    const remainder = pageSize - slice.length;
+    for (let i = 0; i < remainder; i++) {
+      const empty = document.createElement("div");
+      empty.className = "line-pill-empty";
+      empty.style.cssText = "visibility:hidden;";
+      grid.appendChild(empty);
+    }
+
+    indicator.textContent = `${currentPage + 1} / ${totalPages}`;
+    btnPrev.disabled = currentPage === 0;
+    btnNext.disabled = currentPage >= totalPages - 1;
+  }
+
+  function goTo(page) {
+    grid.classList.add("page-exit");
+    setTimeout(() => {
+      grid.classList.remove("page-exit");
+      buildPills(page);
+      grid.classList.add("page-enter");
+      setTimeout(() => grid.classList.remove("page-enter"), 200);
+    }, 150);
+  }
+
+  btnPrev.addEventListener("click", () => { if (currentPage > 0) goTo(--currentPage); });
+  btnNext.addEventListener("click", () => { if (currentPage < totalPages - 1) goTo(++currentPage); });
+
+  // Recalcula ao redimensionar (mobile ↔ desktop)
+  window.addEventListener("resize", () => {
+    const newSize = getPageSize();
+    if (newSize !== pageSize) {
+      currentPage = Math.floor(activeIndex / newSize);
+      buildPills(currentPage);
+    }
+  });
+
+  buildPills(currentPage);
 }
