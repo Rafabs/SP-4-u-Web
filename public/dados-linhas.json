@@ -4,63 +4,183 @@
     "cor": "#0455A1",
     "operadora": "METRÔ",
     "estacoes": [
-      { "nomePrincipal": "Tucuruvi", "nomeSecundario": null, "destaqueSecundario": false, "tag": "TUC", 
-      "conexoes": [
-        { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" }
-      ] },
-      { "nomePrincipal": "Parada Inglesa", "nomeSecundario": null, "destaqueSecundario": false, "tag": "PIG", "conexoes": [] },
-      { "nomePrincipal": "Jardim São Paulo", "nomeSecundario": "Ayrton Senna", "destaqueSecundario": false, "tag": "JPA", "conexoes": [] },
-      { "nomePrincipal": "Santana", "nomeSecundario": null, "destaqueSecundario": false, "tag": "SAN", "conexoes": [] },
-      { "nomePrincipal": "Carandiru", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CDU", "conexoes": [] },
-      { "nomePrincipal": "Portuguesa", "nomeSecundario": "Tietê", "destaqueSecundario": true, "tag": "TTE", "conexoes": [] },
-      { "nomePrincipal": "Armênia", "nomeSecundario": null, "destaqueSecundario": false, "tag": "PPQ", 
+      {
+        "nomePrincipal": "Tucuruvi",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "TUC",
         "conexoes": [
           { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" }
-      ] },
-      { "nomePrincipal": "Tiradentes", "nomeSecundario": null, "destaqueSecundario": false, "tag": "TRD", "conexoes": [] },
-      { 
-        "nomePrincipal": "Luz", "nomeSecundario": null, "destaqueSecundario": false, "tag": "LUZ", 
+        ]
+      },
+      {
+        "nomePrincipal": "Parada Inglesa",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "PIG",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Jardim São Paulo",
+        "nomeSecundario": "Ayrton Senna",
+        "destaqueSecundario": false,
+        "tag": "JPA",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Santana",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "SAN",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Carandiru",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CDU",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Portuguesa",
+        "nomeSecundario": "Tietê",
+        "destaqueSecundario": true,
+        "tag": "TTE",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Armênia",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "PPQ",
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" }
+        ]
+      },
+      {
+        "nomePrincipal": "Tiradentes",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "TRD",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Luz",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "LUZ",
         "conexoes": [
           { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" },
           { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
-        ] 
+        ]
       },
-      { "nomePrincipal": "São Bento", "nomeSecundario": null, "destaqueSecundario": false, "tag": "BTO", "conexoes": [] },
-      { 
-        "nomePrincipal": "Sé", "nomeSecundario": null, "destaqueSecundario": false, "tag": "PSE", 
-        "conexoes": [{ "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }] 
+      {
+        "nomePrincipal": "São Bento",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "BTO",
+        "conexoes": []
       },
-      { "nomePrincipal": "Japão", "nomeSecundario": "Liberdade", "destaqueSecundario": true, "tag": "LIB", "conexoes": [] },
-      { "nomePrincipal": "São Joaquim", "nomeSecundario": null, "destaqueSecundario": false, "tag": "JQM", "conexoes": [] },
-      { "nomePrincipal": "Vergueiro", "nomeSecundario": "Sebrae", "destaqueSecundario": false, "tag": "VGO", "conexoes": [] },
-      { 
-        "nomePrincipal": "Paraíso", "nomeSecundario": null, "destaqueSecundario": false, "tag": "PSO", 
-        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }] 
+      {
+        "nomePrincipal": "Sé",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "PSE",
+        "conexoes": [{ "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }]
       },
-      { 
-        "nomePrincipal": "Ana Rosa", "nomeSecundario": null, "destaqueSecundario": false, "tag": "ANR", 
-        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }] 
+      {
+        "nomePrincipal": "Japão",
+        "nomeSecundario": "Liberdade",
+        "destaqueSecundario": true,
+        "tag": "LIB",
+        "conexoes": []
       },
-      { "nomePrincipal": "Vila Mariana", "nomeSecundario": null, "destaqueSecundario": false, "tag": "VMN", "conexoes": [] },
-      { 
-        "nomePrincipal": "Santa Cruz", "nomeSecundario": null, "destaqueSecundario": false, "tag": "SCZ", 
-        "conexoes": [{ "linha": "L05", "cor": "#9B3894", "operadora": "ViaMobilidade" }] 
+      {
+        "nomePrincipal": "São Joaquim",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "JQM",
+        "conexoes": []
       },
-      { "nomePrincipal": "Praça da Árvore", "nomeSecundario": null, "destaqueSecundario": false, "tag": "ARV", "conexoes": [] },
-      { "nomePrincipal": "Saúde", "nomeSecundario": "Ultrafarma", "destaqueSecundario": false, "tag": "SAU", "conexoes": [] },
-      { "nomePrincipal": "São Judas", "nomeSecundario": null, "destaqueSecundario": false, "tag": "JUD", "conexoes": [] },
-      { "nomePrincipal": "Conceição", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CON", "conexoes": [] },
-      { "nomePrincipal": "Jabaquara", 
-        "nomeSecundario": "Comitê Paralímpico Brasileiro", "destaqueSecundario": false, "tag": "JAB", 
+      {
+        "nomePrincipal": "Vergueiro",
+        "nomeSecundario": "Sebrae",
+        "destaqueSecundario": false,
+        "tag": "VGO",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Paraíso",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "PSO",
+        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
+      },
+      {
+        "nomePrincipal": "Ana Rosa",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "ANR",
+        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
+      },
+      {
+        "nomePrincipal": "Vila Mariana",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "VMN",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Santa Cruz",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "SCZ",
         "conexoes": [
-            { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" },
-            { "tipo": "servico", "nome": "Zoo", "icone": "zoo.png" },
-            { "tipo": "Corredor EMTU", "nome": "A", "icone": "A.png" }
-            ]
-        }
+          { "linha": "L05", "cor": "#9B3894", "operadora": "ViaMobilidade" }
+        ]
+      },
+      {
+        "nomePrincipal": "Praça da Árvore",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "ARV",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Saúde",
+        "nomeSecundario": "Ultrafarma",
+        "destaqueSecundario": false,
+        "tag": "SAU",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "São Judas",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "JUD",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Conceição",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CON",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Jabaquara",
+        "nomeSecundario": "Comitê Paralímpico Brasileiro",
+        "destaqueSecundario": false,
+        "tag": "JAB",
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" },
+          { "tipo": "servico", "nome": "Zoo", "icone": "zoo.png" },
+          { "tipo": "Corredor EMTU", "nome": "A", "icone": "A.png" }
+        ]
+      }
     ]
   },
   "L02": {
@@ -68,37 +188,107 @@
     "cor": "#007E5E",
     "operadora": "METRÔ",
     "estacoes": [
-      { "nomePrincipal": "Vila Madalena", "nomeSecundario": null, "destaqueSecundario": false, "tag": "VMD", "conexoes": [] },
-      { "nomePrincipal": "Sumaré", "nomeSecundario": "Santuário N. Sra. de Fátima", "destaqueSecundario": false, "tag": "SUM", "conexoes": [] },
-      { "nomePrincipal": "Clínicas", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CLI", "conexoes": [] },
-      { 
-        "nomePrincipal": "Consolação", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CNS", 
-        "conexoes": [{ "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" }] 
+      {
+        "nomePrincipal": "Vila Madalena",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "VMD",
+        "conexoes": []
       },
-      { "nomePrincipal": "Trianon • Masp", "nomeSecundario": null, "destaqueSecundario": false, "tag": "TRI", "conexoes": [] },
-      { "nomePrincipal": "Brigadeiro", "nomeSecundario": null, "destaqueSecundario": false, "tag": "BGD", "conexoes": [] },
-      { 
-        "nomePrincipal": "Paraíso", "nomeSecundario": null, "destaqueSecundario": false, "tag": "PSO", 
-        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }] 
+      {
+        "nomePrincipal": "Sumaré",
+        "nomeSecundario": "Santuário N. Sra. de Fátima",
+        "destaqueSecundario": false,
+        "tag": "SUM",
+        "conexoes": []
       },
-      { 
-        "nomePrincipal": "Ana Rosa", "nomeSecundario": null, "destaqueSecundario": false, "tag": "ANR", 
-        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }] 
+      {
+        "nomePrincipal": "Clínicas",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CLI",
+        "conexoes": []
       },
-      { 
-        "nomePrincipal": "Chácara Klabin", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CKB", 
-        "conexoes": [{ "linha": "L05", "cor": "#9B3894", "operadora": "ViaMobilidade" }] 
+      {
+        "nomePrincipal": "Consolação",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CNS",
+        "conexoes": [
+          { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" }
+        ]
       },
-      { "nomePrincipal": "Santos", "nomeSecundario": "Imigrantes", "destaqueSecundario": true, "tag": "IMG", "conexoes": [] },
-      { "nomePrincipal": "Alto do Ipiranga", "nomeSecundario": null, "destaqueSecundario": false, "tag": "AIP", "conexoes": [] },
-      { "nomePrincipal": "Sacomã", "nomeSecundario": null, "destaqueSecundario": false, "tag": "SAC", "conexoes": [] },
-      { 
-        "nomePrincipal": "Tamanduateí", "nomeSecundario": null, "destaqueSecundario": false, "tag": "TTI", 
-        "conexoes": [{ "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" }] 
+      {
+        "nomePrincipal": "Trianon • Masp",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "TRI",
+        "conexoes": []
       },
-      { 
-        "nomePrincipal": "Vila Prudente", "nomeSecundario": null, "destaqueSecundario": false, "tag": "VPT", 
-        "conexoes": [{ "linha": "L15", "cor": "#9E9E9E", "operadora": "Metrô" }] 
+      {
+        "nomePrincipal": "Brigadeiro",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "BGD",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Paraíso",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "PSO",
+        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }]
+      },
+      {
+        "nomePrincipal": "Ana Rosa",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "ANR",
+        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }]
+      },
+      {
+        "nomePrincipal": "Chácara Klabin",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CKB",
+        "conexoes": [
+          { "linha": "L05", "cor": "#9B3894", "operadora": "ViaMobilidade" }
+        ]
+      },
+      {
+        "nomePrincipal": "Santos",
+        "nomeSecundario": "Imigrantes",
+        "destaqueSecundario": true,
+        "tag": "IMG",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Alto do Ipiranga",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "AIP",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Sacomã",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "SAC",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Tamanduateí",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "TTI",
+        "conexoes": [{ "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" }]
+      },
+      {
+        "nomePrincipal": "Vila Prudente",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "VPT",
+        "conexoes": [{ "linha": "L15", "cor": "#9E9E9E", "operadora": "Metrô" }]
       }
     ]
   },
@@ -107,62 +297,151 @@
     "cor": "#EE372F",
     "operadora": "METRÔ",
     "estacoes": [
-      { 
-        "nomePrincipal": "Palmeiras", "nomeSecundario": "Barra Funda", "destaqueSecundario": true, "tag": "BFU", 
+      {
+        "nomePrincipal": "Palmeiras",
+        "nomeSecundario": "Barra Funda",
+        "destaqueSecundario": true,
+        "tag": "BFU",
         "conexoes": [
           { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
           { "linha": "L08", "cor": "#97A098", "operadora": "ViaMobilidade" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
-        ] 
+        ]
       },
-      { "nomePrincipal": "Marechal Deodoro", "nomeSecundario": null, "destaqueSecundario": false, "tag": "DEO", "conexoes": [] },
-      { "nomePrincipal": "Santa Cecília", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CEC", "conexoes": [] },
-      { 
-        "nomePrincipal": "República", "nomeSecundario": null, "destaqueSecundario": false, "tag": "REP", 
-        "conexoes": [{ "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" }] 
+      {
+        "nomePrincipal": "Marechal Deodoro",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "DEO",
+        "conexoes": []
       },
-      { "nomePrincipal": "Anhangabaú", "nomeSecundario": null, "destaqueSecundario": false, "tag": "GBU", "conexoes": [] },
-      { 
-        "nomePrincipal": "Sé", "nomeSecundario": null, "destaqueSecundario": false, "tag": "PSE", 
-        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }] 
+      {
+        "nomePrincipal": "Santa Cecília",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CEC",
+        "conexoes": []
       },
-      { "nomePrincipal": "Pedro II", "nomeSecundario": null, "destaqueSecundario": false, "tag": "PDS", "conexoes": [] },
-      { 
-        "nomePrincipal": "Brás", "nomeSecundario": null, "destaqueSecundario": false, "tag": "BAS", 
+      {
+        "nomePrincipal": "República",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "REP",
+        "conexoes": [
+          { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" }
+        ]
+      },
+      {
+        "nomePrincipal": "Anhangabaú",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "GBU",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Sé",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "PSE",
+        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }]
+      },
+      {
+        "nomePrincipal": "Pedro II",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "PDS",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Brás",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "BAS",
         "conexoes": [
           { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L12", "cor": "#009496", "operadora": "CPTM" },
           { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
-        ] 
+        ]
       },
-      { "nomePrincipal": "Bresser", "nomeSecundario": "Mooca", "destaqueSecundario": true, "tag": "BRE", "conexoes": [] },
-      { "nomePrincipal": "Belém", "nomeSecundario": null, "destaqueSecundario": false, "tag": "BEL", "conexoes": [] },
-      { 
-        "nomePrincipal": "Tatuapé", "nomeSecundario": null, "destaqueSecundario": false, "tag": "TAT", 
+      {
+        "nomePrincipal": "Bresser",
+        "nomeSecundario": "Mooca",
+        "destaqueSecundario": true,
+        "tag": "BRE",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Belém",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "BEL",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Tatuapé",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "TAT",
         "conexoes": [
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L12", "cor": "#009496", "operadora": "CPTM" }
-        ] 
+        ]
       },
-      { "nomePrincipal": "Carrão", "nomeSecundario": "Assaí Atacadista", "destaqueSecundario": false, "tag": "CAR", "conexoes": [] },
-      { 
-        "nomePrincipal": "Penha", "nomeSecundario": "Lojas Besni", "destaqueSecundario": false, "tag": "PEN", 
+      {
+        "nomePrincipal": "Carrão",
+        "nomeSecundario": "Assaí Atacadista",
+        "destaqueSecundario": false,
+        "tag": "CAR",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Penha",
+        "nomeSecundario": "Lojas Besni",
+        "destaqueSecundario": false,
+        "tag": "PEN",
         "conexoes": [
           { "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }
-        ] 
+        ]
       },
-      { "nomePrincipal": "Vila Matilde", "nomeSecundario": null, "destaqueSecundario": false, "tag": "VTD", "conexoes": [] },
-      { "nomePrincipal": "Guilhermina", "nomeSecundario": "Esperança", "destaqueSecundario": false, "tag": "VPA", "conexoes": [] },
-      { "nomePrincipal": "Patriarca", "nomeSecundario": "Vila Ré", "destaqueSecundario": false, "tag": "PCA", "conexoes": [] },
-      { "nomePrincipal": "Artur Alvim", "nomeSecundario": null, "destaqueSecundario": false, "tag": "ART", "conexoes": [] },
-      { 
-        "nomePrincipal": "Corinthians", "nomeSecundario": "Itaquera", "destaqueSecundario": false, "tag": "ITQ", 
-        "conexoes": [{ "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }] 
+      {
+        "nomePrincipal": "Vila Matilde",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "VTD",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Guilhermina",
+        "nomeSecundario": "Esperança",
+        "destaqueSecundario": false,
+        "tag": "VPA",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Patriarca",
+        "nomeSecundario": "Vila Ré",
+        "destaqueSecundario": false,
+        "tag": "PCA",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Artur Alvim",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "ART",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Corinthians",
+        "nomeSecundario": "Itaquera",
+        "destaqueSecundario": false,
+        "tag": "ITQ",
+        "conexoes": [{ "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }]
       }
     ]
   },
@@ -171,35 +450,91 @@
     "cor": "#FFF000",
     "operadora": "VIAQUATRO",
     "estacoes": [
-        { 
-          "nomePrincipal": "Luz", "nomeSecundario": null, "destaqueSecundario": false, "tag": "LUZ", 
-          "conexoes": [
-            { "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" },
-            { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
-            { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
-            { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
-            { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
-          ] 
-        },
-        { 
-          "nomePrincipal": "República", "nomeSecundario": null, "destaqueSecundario": false, "tag": "REP", 
-          "conexoes": [{ "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }] 
-        },
-        { "nomePrincipal": "Higienópolis", "nomeSecundario": "Mackenzie", "destaqueSecundario": false, "tag": "HIG", "conexoes": [] },
-        { 
-          "nomePrincipal": "Paulista", "nomeSecundario": "Pernambucanas", "destaqueSecundario": false, "tag": "PTA", 
-          "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }] 
-        },
-        { "nomePrincipal": "Oscar Freire", "nomeSecundario": null, "destaqueSecundario": false, "tag": "FRE", "conexoes": [] },
-        { "nomePrincipal": "Fradique Coutinho", "nomeSecundario": null, "destaqueSecundario": false, "tag": "FRA", "conexoes": [] },
-        { "nomePrincipal": "Faria Lima", "nomeSecundario": null, "destaqueSecundario": false, "tag": "FAL", "conexoes": [] },
-        { 
-          "nomePrincipal": "Pinheiros", "nomeSecundario": null, "destaqueSecundario": false, "tag": "PIN", 
-          "conexoes": [{ "linha": "L09", "cor": "#00A78E", "operadora": "ViaMobilidade" }] 
-        },
-        { "nomePrincipal": "Butantã", "nomeSecundario": null, "destaqueSecundario": false, "tag": "BUT", "conexoes": [] },
-        { "nomePrincipal": "São Paulo", "nomeSecundario": "Morumbi", "destaqueSecundario": true, "tag": "MBI", "conexoes": [] },
-        { "nomePrincipal": "Vila Sônia", "nomeSecundario": "Elisabeth Tenreiro", "destaqueSecundario": false, "tag": "VSO", "conexoes": [] }
+      {
+        "nomePrincipal": "Luz",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "LUZ",
+        "conexoes": [
+          { "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" },
+          { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
+        ]
+      },
+      {
+        "nomePrincipal": "República",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "REP",
+        "conexoes": [{ "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }]
+      },
+      {
+        "nomePrincipal": "Higienópolis",
+        "nomeSecundario": "Mackenzie",
+        "destaqueSecundario": false,
+        "tag": "HIG",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Paulista",
+        "nomeSecundario": "Pernambucanas",
+        "destaqueSecundario": false,
+        "tag": "PTA",
+        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
+      },
+      {
+        "nomePrincipal": "Oscar Freire",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "FRE",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Fradique Coutinho",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "FRA",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Faria Lima",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "FAL",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Pinheiros",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "PIN",
+        "conexoes": [
+          { "linha": "L09", "cor": "#00A78E", "operadora": "ViaMobilidade" }
+        ]
+      },
+      {
+        "nomePrincipal": "Butantã",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "BUT",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "São Paulo",
+        "nomeSecundario": "Morumbi",
+        "destaqueSecundario": true,
+        "tag": "MBI",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Vila Sônia",
+        "nomeSecundario": "Elisabeth Tenreiro",
+        "destaqueSecundario": false,
+        "tag": "VSO",
+        "conexoes": []
+      }
     ]
   },
   "L05": {
@@ -207,66 +542,379 @@
     "cor": "#9B3894",
     "operadora": "VIAMOBILIDADE",
     "estacoes": [
-      { "nomePrincipal": "Chácara Klabin", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CKB", "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }] },
-      { "nomePrincipal": "Santa Cruz", "nomeSecundario": null, "destaqueSecundario": false, "tag": "SCZ", "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }] },
-      { "nomePrincipal": "Hospital São Paulo", "nomeSecundario": null, "destaqueSecundario": false, "tag": "HSP", "conexoes": [] },
-      { "nomePrincipal": "AACD", "nomeSecundario": "Servidor", "destaqueSecundario": true, "tag": "SER", "conexoes": [] },
-      { "nomePrincipal": "Moema", "nomeSecundario": null, "destaqueSecundario": false, "tag": "MOE", "conexoes": [] },
-      { "nomePrincipal": "Eucaliptos", "nomeSecundario": null, "destaqueSecundario": false, "tag": "ECT", "conexoes": [] },
-      { "nomePrincipal": "Campo Belo", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CPB", "conexoes": [{ "linha": "L17", "cor": "#808080", "operadora": "Metrô" }] },
-      { "nomePrincipal": "Brooklin", "nomeSecundario": null, "destaqueSecundario": false, "tag": "BRK", 
-      "conexoes": [
-        { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" }
-      ] },
-      { "nomePrincipal": "Borba Gato", "nomeSecundario": null, "destaqueSecundario": false, "tag": "BGA", "conexoes": [] },
-      { "nomePrincipal": "Alto da Boa Vista", "nomeSecundario": null, "destaqueSecundario": false, "tag": "ABV", "conexoes": [] },
-      { "nomePrincipal": "Adolfo Pinheiro", "nomeSecundario": "Unisa", "destaqueSecundario": false, "tag": "APN", "conexoes": [] },
-      { "nomePrincipal": "Largo Treze", "nomeSecundario": null, "destaqueSecundario": false, "tag": "LTR", "conexoes": [] },
-      { "nomePrincipal": "Santo Amaro", "nomeSecundario": null, "destaqueSecundario": false, "tag": "STA", "conexoes": [{ "linha": "L09", "cor": "#00A78E", "operadora": "ViaMobilidade" }] },
-      { "nomePrincipal": "Giovanni Gronchi", "nomeSecundario": null, "destaqueSecundario": false, "tag": "GGR", "conexoes": [] },
-      { "nomePrincipal": "Vila das Belezas", "nomeSecundario": null, "destaqueSecundario": false, "tag": "VBE", "conexoes": [] },
-      { "nomePrincipal": "Campo Limpo", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CPL", 
-      "conexoes": [
-        { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" }
-      ] },
-      { "nomePrincipal": "Capão Redondo", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CPR", 
-      "conexoes": [
-        { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" }
-      ] }
+      {
+        "nomePrincipal": "Chácara Klabin",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CKB",
+        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
+      },
+      {
+        "nomePrincipal": "Santa Cruz",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "SCZ",
+        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }]
+      },
+      {
+        "nomePrincipal": "Hospital São Paulo",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "HSP",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "AACD",
+        "nomeSecundario": "Servidor",
+        "destaqueSecundario": true,
+        "tag": "SER",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Moema",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "MOE",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Eucaliptos",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "ECT",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Campo Belo",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CPB",
+        "conexoes": [{ "linha": "L17", "cor": "#808080", "operadora": "Metrô" }]
+      },
+      {
+        "nomePrincipal": "Brooklin",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "BRK",
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" }
+        ]
+      },
+      {
+        "nomePrincipal": "Borba Gato",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "BGA",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Alto da Boa Vista",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "ABV",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Adolfo Pinheiro",
+        "nomeSecundario": "Unisa",
+        "destaqueSecundario": false,
+        "tag": "APN",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Largo Treze",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "LTR",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Santo Amaro",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "STA",
+        "conexoes": [
+          { "linha": "L09", "cor": "#00A78E", "operadora": "ViaMobilidade" }
+        ]
+      },
+      {
+        "nomePrincipal": "Giovanni Gronchi",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "GGR",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Vila das Belezas",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "VBE",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Campo Limpo",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CPL",
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" }
+        ]
+      },
+      {
+        "nomePrincipal": "Capão Redondo",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CPR",
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" }
+        ]
+      }
     ]
   },
-
+  "L06": {
+    "nome": "Linha 6 - Laranja [EM CONSTRUÇÃO]",
+    "cor": "#000000",
+    "operadora": "METRÔ",
+    "estacoes": [
+      {
+        "nomePrincipal": "Brasilândia",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "XYZ",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Maristela",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "XYZ",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Itaberaba",
+        "nomeSecundario": "Hospital Vila Penteado",
+        "destaqueSecundario": false,
+        "tag": "ITB",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "João Paulo I",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "JPI",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Freguesia do Ó",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "FRE",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Santa Marina",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "STM",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Água Branca",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "ABR",
+        "conexoes": [{ "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" }]
+      },
+      {
+        "nomePrincipal": "SESC",
+        "nomeSecundario": "Pompeia",
+        "destaqueSecundario": true,
+        "tag": "XYZ",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Perdizes",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "XYZ",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "PUC",
+        "nomeSecundario": "Cardoso de Almeida",
+        "destaqueSecundario": true,
+        "tag": "XYZ",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "FAAP",
+        "nomeSecundario": "Pacaembu",
+        "destaqueSecundario": true,
+        "tag": "XYZ",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Higienópolis",
+        "nomeSecundario": "Mackenzie",
+        "destaqueSecundario": false,
+        "tag": "HIG",
+        "conexoes": [
+          { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" }
+        ]
+      },
+      {
+        "nomePrincipal": "14 Bis",
+        "nomeSecundario": "Saracura",
+        "destaqueSecundario": false,
+        "tag": "XYZ",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Bela Vista",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "XYZ",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "São Joaquim",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "JQM",
+        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }]
+      }
+    ]
+  },
   "L07": {
     "nome": "Linha 7 - Rubi",
     "cor": "#CA016B",
     "operadora": "TIC TRENS",
     "estacoes": [
-      { 
-        "nomePrincipal": "Palmeiras", "nomeSecundario": "Barra Funda", "destaqueSecundario": true, "tag": "BFU", 
+      {
+        "nomePrincipal": "Palmeiras",
+        "nomeSecundario": "Barra Funda",
+        "destaqueSecundario": true,
+        "tag": "BFU",
         "conexoes": [
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
           { "linha": "L08", "cor": "#97A098", "operadora": "ViaMobilidade" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
-        ] 
+        ]
       },
-      { "nomePrincipal": "Água Branca", "nomeSecundario": null, "destaqueSecundario": false, "tag": "ABR", "conexoes": [] },
-      { "nomePrincipal": "Lapa", "nomeSecundario": null, "destaqueSecundario": false, "tag": "LPA", "conexoes": [] },
-      { "nomePrincipal": "Piqueri", "nomeSecundario": null, "destaqueSecundario": false, "tag": "PQR", "conexoes": [] },
-      { "nomePrincipal": "Pirituba", "nomeSecundario": null, "destaqueSecundario": false, "tag": "PRT", "conexoes": [] },
-      { "nomePrincipal": "Vila Clarice", "nomeSecundario": null, "destaqueSecundario": false, "tag": "VCL", "conexoes": [] },
-      { "nomePrincipal": "Jaraguá", "nomeSecundario": null, "destaqueSecundario": false, "tag": "JRG", "conexoes": [] },
-      { "nomePrincipal": "Vila Aurora", "nomeSecundario": null, "destaqueSecundario": false, "tag": "VAU", "conexoes": [] },
-      { "nomePrincipal": "Perus", "nomeSecundario": null, "destaqueSecundario": false, "tag": "PRU", "conexoes": [] },
-      { "nomePrincipal": "Caieiras", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CAI", "conexoes": [] },
-      { "nomePrincipal": "Franco da Rocha", "nomeSecundario": null, "destaqueSecundario": false, "tag": "FDR", "conexoes": [] },
-      { "nomePrincipal": "Baltazar Fidélis", "nomeSecundario": null, "destaqueSecundario": false, "tag": "BFI", "conexoes": [] },
-      { "nomePrincipal": "Francisco Morato", "nomeSecundario": null, "destaqueSecundario": false, "tag": "FMO", "conexoes": [] },
-      { "nomePrincipal": "Botujuru", "nomeSecundario": null, "destaqueSecundario": false, "tag": "BTJ", "conexoes": [] },
-      { "nomePrincipal": "Campo Limpo Pta.", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CLP", "conexoes": [] },
-      { "nomePrincipal": "Várzea Paulista", "nomeSecundario": null, "destaqueSecundario": false, "tag": "VPL", "conexoes": [] },
-      { "nomePrincipal": "Jundiaí", "nomeSecundario": null, "destaqueSecundario": false, "tag": "JUN", "conexoes": [] }
+      {
+        "nomePrincipal": "Água Branca",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "ABR",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Lapa",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "LPA",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Piqueri",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "PQR",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Pirituba",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "PRT",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Vila Clarice",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "VCL",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Jaraguá",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "JRG",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Vila Aurora",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "VAU",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Perus",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "PRU",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Caieiras",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CAI",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Franco da Rocha",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "FDR",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Baltazar Fidélis",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "BFI",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Francisco Morato",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "FMO",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Botujuru",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "BTJ",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Campo Limpo Pta.",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CLP",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Várzea Paulista",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "VPL",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Jundiaí",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "JUN",
+        "conexoes": []
+      }
     ]
   },
 
@@ -275,38 +923,177 @@
     "cor": "#97A098",
     "operadora": "VIAMOBILIDADE",
     "estacoes": [
-      { "nomePrincipal": "Júlio Prestes", "nomeSecundario": null, "destaqueSecundario": false, "tag": "JPR", "conexoes": [] },
-      { 
-        "nomePrincipal": "Palmeiras", "nomeSecundario": "Barra Funda", "destaqueSecundario": true, "tag": "BFU", 
+      {
+        "nomePrincipal": "Júlio Prestes",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "JPR",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Palmeiras",
+        "nomeSecundario": "Barra Funda",
+        "destaqueSecundario": true,
+        "tag": "BFU",
         "conexoes": [
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
           { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
-        ] 
+        ]
       },
-      { "nomePrincipal": "Lapa", "nomeSecundario": "Senac", "destaqueSecundario": false, "tag": "LAB", "conexoes": [] },
-      { "nomePrincipal": "Domingo de Moraes", "nomeSecundario": null, "destaqueSecundario": false, "tag": "DMO", "conexoes": [] },
-      { "nomePrincipal": "Imperatriz Leopoldina", "nomeSecundario": null, "destaqueSecundario": false, "tag": "ILE", "conexoes": [] },
-      { "nomePrincipal": "Presidente Altino", "nomeSecundario": null, "destaqueSecundario": false, "tag": "PAL", "conexoes": [{ "linha": "L09", "cor": "#00A78E", "operadora": "ViaMobilidade" }] },
-      { "nomePrincipal": "Osasco", "nomeSecundario": null, "destaqueSecundario": false, "tag": "OSA", "conexoes": [{ "linha": "L09", "cor": "#00A78E", "operadora": "ViaMobilidade" }] },
-      { "nomePrincipal": "Comandante Sampaio", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CSA", "conexoes": [] },
-      { "nomePrincipal": "Quitaúna", "nomeSecundario": null, "destaqueSecundario": false, "tag": "QTU", "conexoes": [] },
-      { "nomePrincipal": "General Miguel Costa", "nomeSecundario": null, "destaqueSecundario": false, "tag": "GMC", "conexoes": [] },
-      { "nomePrincipal": "Carapicuíba", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CPB", "conexoes": [] },
-      { "nomePrincipal": "Santa Terezinha", "nomeSecundario": null, "destaqueSecundario": false, "tag": "STE", "conexoes": [] },
-      { "nomePrincipal": "Antônio João", "nomeSecundario": null, "destaqueSecundario": false, "tag": "AJO", "conexoes": [] },
-      { "nomePrincipal": "Barueri", "nomeSecundario": null, "destaqueSecundario": false, "tag": "BRU", "conexoes": [] },
-      { "nomePrincipal": "Jardim Belval", "nomeSecundario": null, "destaqueSecundario": false, "tag": "JBE", "conexoes": [] },
-      { "nomePrincipal": "Jardim Silveira", "nomeSecundario": "Leo Madeiras", "destaqueSecundario": false, "tag": "JSI", "conexoes": [] },
-      { "nomePrincipal": "Jandira", "nomeSecundario": null, "destaqueSecundario": false, "tag": "JDI", "conexoes": [] },
-      { "nomePrincipal": "Sagrado Coração", "nomeSecundario": null, "destaqueSecundario": false, "tag": "SCO", "conexoes": [] },
-      { "nomePrincipal": "Eng° Cardoso", "nomeSecundario": null, "destaqueSecundario": false, "tag": "ECD", "conexoes": [] },
-      { "nomePrincipal": "Itapevi", "nomeSecundario": null, "destaqueSecundario": false, "tag": "IPV", "conexoes": [] },
-      { "nomePrincipal": "Santa Rita", "nomeSecundario": null, "destaqueSecundario": false, "tag": "SRT", "conexoes": [] },
-      { "nomePrincipal": "Ambuitá", "nomeSecundario": null, "destaqueSecundario": false, "tag": "AMB", "conexoes": [] },
-      { "nomePrincipal": "Amador Bueno", "nomeSecundario": null, "destaqueSecundario": false, "tag": "ABU", "conexoes": [] }
+      {
+        "nomePrincipal": "Lapa",
+        "nomeSecundario": "Senac",
+        "destaqueSecundario": false,
+        "tag": "LAB",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Domingo de Moraes",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "DMO",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Imperatriz Leopoldina",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "ILE",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Presidente Altino",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "PAL",
+        "conexoes": [
+          { "linha": "L09", "cor": "#00A78E", "operadora": "ViaMobilidade" }
+        ]
+      },
+      {
+        "nomePrincipal": "Osasco",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "OSA",
+        "conexoes": [
+          { "linha": "L09", "cor": "#00A78E", "operadora": "ViaMobilidade" }
+        ]
+      },
+      {
+        "nomePrincipal": "Comandante Sampaio",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CSA",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Quitaúna",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "QTU",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "General Miguel Costa",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "GMC",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Carapicuíba",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CPB",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Santa Terezinha",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "STE",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Antônio João",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "AJO",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Barueri",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "BRU",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Jardim Belval",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "JBE",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Jardim Silveira",
+        "nomeSecundario": "Leo Madeiras",
+        "destaqueSecundario": false,
+        "tag": "JSI",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Jandira",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "JDI",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Sagrado Coração",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "SCO",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Eng° Cardoso",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "ECD",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Itapevi",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "IPV",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Santa Rita",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "SRT",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Ambuitá",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "AMB",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Amador Bueno",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "ABU",
+        "conexoes": []
+      }
     ]
   },
 
@@ -315,27 +1102,161 @@
     "cor": "#01A9A7",
     "operadora": "VIAMOBILIDADE_L9",
     "estacoes": [
-      { "nomePrincipal": "Varginha", "nomeSecundario": null, "destaqueSecundario": false, "tag": "VAR", "conexoes": [] },
-      { "nomePrincipal": "Bruno Covas", "nomeSecundario": "Mendes • Vila Natal", "destaqueSecundario": true, "tag": "MVN", "conexoes": [] },
-      { "nomePrincipal": "Grajaú", "nomeSecundario": null, "destaqueSecundario": false, "tag": "GRA", "conexoes": [] },
-      { "nomePrincipal": "Primavera ", "nomeSecundario": "Interlagos", "destaqueSecundario": true, "tag": "INT", "conexoes": [] },
-      { "nomePrincipal": "Autódromo", "nomeSecundario": null, "destaqueSecundario": false, "tag": "AUT", "conexoes": [] },
-      { "nomePrincipal": "Jurubatuba", "nomeSecundario": "Senac", "destaqueSecundario": false, "tag": "JUR", "conexoes": [] },
-      { "nomePrincipal": "Socorro", "nomeSecundario": null, "destaqueSecundario": false, "tag": "SOC", "conexoes": [] },
-      { "nomePrincipal": "Santo Amaro", "nomeSecundario": null, "destaqueSecundario": false, "tag": "SAM", "conexoes": [{ "linha": "L05", "cor": "#9B3894", "operadora": "ViaMobilidade" }] },
-      { "nomePrincipal": "João Dias", "nomeSecundario": null, "destaqueSecundario": false, "tag": "JOD", "conexoes": [] },
-      { "nomePrincipal": "Granja Julieta", "nomeSecundario": null, "destaqueSecundario": false, "tag": "GJT", "conexoes": [] },
-      { "nomePrincipal": "Morumbi", "nomeSecundario": "Claro", "destaqueSecundario": false, "tag": "MRB", "conexoes": [{ "linha": "L17", "cor": "#808080", "operadora": "Metrô" }] },
-      { "nomePrincipal": "Berrini", "nomeSecundario": "Casas Bahia", "destaqueSecundario": false, "tag": "BRR", "conexoes": [] },
-      { "nomePrincipal": "Vila Olímpia", "nomeSecundario": null, "destaqueSecundario": false, "tag": "VOL", "conexoes": [] },
-      { "nomePrincipal": "Cidade Jardim", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CJD", "conexoes": [] },
-      { "nomePrincipal": "Hebraica", "nomeSecundario": "Rebouças", "destaqueSecundario": true, "tag": "HBR", "conexoes": [] },
-      { "nomePrincipal": "Pinheiros", "nomeSecundario": null, "destaqueSecundario": false, "tag": "PIN", "conexoes": [{ "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" }] },
-      { "nomePrincipal": "Cidade Universitária", "nomeSecundario": null, "destaqueSecundario": false, "tag": "USP", "conexoes": [] },
-      { "nomePrincipal": "Vila Lobos", "nomeSecundario": "Jaguaré", "destaqueSecundario": true, "tag": "JAG", "conexoes": [] },
-      { "nomePrincipal": "Ceasa", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CEA", "conexoes": [] },
-      { "nomePrincipal": "Presidente Altino", "nomeSecundario": null, "destaqueSecundario": false, "tag": "PAL", "conexoes": [{ "linha": "L08", "cor": "#97A098", "operadora": "ViaMobilidade" }] },
-      { "nomePrincipal": "Osasco", "nomeSecundario": null, "destaqueSecundario": false, "tag": "OSA", "conexoes": [{ "linha": "L08", "cor": "#97A098", "operadora": "ViaMobilidade" }] }
+      {
+        "nomePrincipal": "Varginha",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "VAR",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Bruno Covas",
+        "nomeSecundario": "Mendes • Vila Natal",
+        "destaqueSecundario": true,
+        "tag": "MVN",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Grajaú",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "GRA",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Primavera ",
+        "nomeSecundario": "Interlagos",
+        "destaqueSecundario": true,
+        "tag": "INT",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Autódromo",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "AUT",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Jurubatuba",
+        "nomeSecundario": "Senac",
+        "destaqueSecundario": false,
+        "tag": "JUR",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Socorro",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "SOC",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Santo Amaro",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "SAM",
+        "conexoes": [
+          { "linha": "L05", "cor": "#9B3894", "operadora": "ViaMobilidade" }
+        ]
+      },
+      {
+        "nomePrincipal": "João Dias",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "JOD",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Granja Julieta",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "GJT",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Morumbi",
+        "nomeSecundario": "Claro",
+        "destaqueSecundario": false,
+        "tag": "MRB",
+        "conexoes": [{ "linha": "L17", "cor": "#808080", "operadora": "Metrô" }]
+      },
+      {
+        "nomePrincipal": "Berrini",
+        "nomeSecundario": "Casas Bahia",
+        "destaqueSecundario": false,
+        "tag": "BRR",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Vila Olímpia",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "VOL",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Cidade Jardim",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CJD",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Hebraica",
+        "nomeSecundario": "Rebouças",
+        "destaqueSecundario": true,
+        "tag": "HBR",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Pinheiros",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "PIN",
+        "conexoes": [
+          { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" }
+        ]
+      },
+      {
+        "nomePrincipal": "Cidade Universitária",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "USP",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Vila Lobos",
+        "nomeSecundario": "Jaguaré",
+        "destaqueSecundario": true,
+        "tag": "JAG",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Ceasa",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CEA",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Presidente Altino",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "PAL",
+        "conexoes": [
+          { "linha": "L08", "cor": "#97A098", "operadora": "ViaMobilidade" }
+        ]
+      },
+      {
+        "nomePrincipal": "Osasco",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "OSA",
+        "conexoes": [
+          { "linha": "L08", "cor": "#97A098", "operadora": "ViaMobilidade" }
+        ]
+      }
     ]
   },
 
@@ -344,27 +1265,102 @@
     "cor": "#049FC3",
     "operadora": "CPTM",
     "estacoes": [
-      { "nomePrincipal": "Rio Grande da Serra", "nomeSecundario": null, "destaqueSecundario": false, "tag": "RGS", "conexoes": [] },
-      { "nomePrincipal": "Ribeirão Pires", "nomeSecundario": "Antônio Bespalec", "destaqueSecundario": false, "tag": "RPI", "conexoes": [] },
-      { "nomePrincipal": "Guapituba", "nomeSecundario": null, "destaqueSecundario": false, "tag": "GPT", "conexoes": [] },
-      { "nomePrincipal": "Mauá", "nomeSecundario": null, "destaqueSecundario": false, "tag": "MAU", "conexoes": [] },
-      { "nomePrincipal": "Capuava", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CPV", "conexoes": [] },
-      { "nomePrincipal": "Prefeito Celso Daniel", "nomeSecundario": "Santo André", "destaqueSecundario": true, "tag": "SAN", "conexoes": [] },
-      { "nomePrincipal": "Prefeito Saladino", "nomeSecundario": null, "destaqueSecundario": false, "tag": "PSA", "conexoes": [] },
-      { "nomePrincipal": "Utinga", "nomeSecundario": null, "destaqueSecundario": false, "tag": "UTG", "conexoes": [] },
-      { "nomePrincipal": "São Caetano do Sul", "nomeSecundario": "Prefeito Walter Braido", "destaqueSecundario": false, "tag": "SCT", "conexoes": [] },
-      { "nomePrincipal": "Tamanduateí", "nomeSecundario": null, "destaqueSecundario": false, "tag": "TMD", "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }] },
-      { "nomePrincipal": "Ipiranga", "nomeSecundario": null, "destaqueSecundario": false, "tag": "IPG", "conexoes": [] },
-      { "nomePrincipal": "Juventus", "nomeSecundario": "Mooca", "destaqueSecundario": true, "tag": "MOC", "conexoes": [] },
-      { 
-        "nomePrincipal": "Brás", "nomeSecundario": null, "destaqueSecundario": false, "tag": "BAS", 
+      {
+        "nomePrincipal": "Rio Grande da Serra",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "RGS",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Ribeirão Pires",
+        "nomeSecundario": "Antônio Bespalec",
+        "destaqueSecundario": false,
+        "tag": "RPI",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Guapituba",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "GPT",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Mauá",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "MAU",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Capuava",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CPV",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Prefeito Celso Daniel",
+        "nomeSecundario": "Santo André",
+        "destaqueSecundario": true,
+        "tag": "SAN",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Prefeito Saladino",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "PSA",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Utinga",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "UTG",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "São Caetano do Sul",
+        "nomeSecundario": "Prefeito Walter Braido",
+        "destaqueSecundario": false,
+        "tag": "SCT",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Tamanduateí",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "TMD",
+        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
+      },
+      {
+        "nomePrincipal": "Ipiranga",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "IPG",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Juventus",
+        "nomeSecundario": "Mooca",
+        "destaqueSecundario": true,
+        "tag": "MOC",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Brás",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "BAS",
         "conexoes": [
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
           { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" },
           { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
-        ] 
+        ]
       }
     ]
   },
@@ -374,39 +1370,142 @@
     "cor": "#F68368",
     "operadora": "CPTM",
     "estacoes": [
-      { 
-        "nomePrincipal": "Palmeiras", "nomeSecundario": "Barra Funda", "destaqueSecundario": true, "tag": "BFU", 
+      {
+        "nomePrincipal": "Palmeiras",
+        "nomeSecundario": "Barra Funda",
+        "destaqueSecundario": true,
+        "tag": "BFU",
         "conexoes": [
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
           { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
           { "linha": "L08", "cor": "#97A098", "operadora": "ViaMobilidade" },
           { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
-        ] 
+        ]
       },
-      { 
-        "nomePrincipal": "Luz", "nomeSecundario": null, "destaqueSecundario": false, "tag": "LUZ", 
+      {
+        "nomePrincipal": "Luz",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "LUZ",
         "conexoes": [
           { "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" },
           { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" },
           { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
           { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
-        ] 
+        ]
       },
-      { "nomePrincipal": "Brás", "nomeSecundario": null, "destaqueSecundario": false, "tag": "BAS", "conexoes": [{ "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }, { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" }, { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }] },
-      { "nomePrincipal": "Tatuapé", "nomeSecundario": null, "destaqueSecundario": false, "tag": "TAT", "conexoes": [{ "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }, { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }] },
-      { "nomePrincipal": "Corinthians", "nomeSecundario": "Itaquera", "destaqueSecundario": true, "tag": "ITQ", "conexoes": [{ "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }] },
-      { "nomePrincipal": "Dom Bosco", "nomeSecundario": null, "destaqueSecundario": false, "tag": "DOB", "conexoes": [] },
-      { "nomePrincipal": "José Bonifácio", "nomeSecundario": null, "destaqueSecundario": false, "tag": "JBO", "conexoes": [] },
-      { "nomePrincipal": "Guaianazes", "nomeSecundario": null, "destaqueSecundario": false, "tag": "GUA", "conexoes": [] },
-      { "nomePrincipal": "Antônio Gianetti Neto", "nomeSecundario": null, "destaqueSecundario": false, "tag": "AGN", "conexoes": [] },
-      { "nomePrincipal": "Ferraz de Vasconcelos", "nomeSecundario": null, "destaqueSecundario": false, "tag": "FVC", "conexoes": [] },
-      { "nomePrincipal": "Poá", "nomeSecundario": null, "destaqueSecundario": false, "tag": "POA", "conexoes": [] },
-      { "nomePrincipal": "Calmon Viana", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CMV", "conexoes": [{ "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }] },
-      { "nomePrincipal": "Suzano", "nomeSecundario": null, "destaqueSecundario": false, "tag": "SUZ", "conexoes": [{ "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }] },
-      { "nomePrincipal": "Jundiapeba", "nomeSecundario": null, "destaqueSecundario": false, "tag": "JPB", "conexoes": [] },
-      { "nomePrincipal": "Braz Cubas", "nomeSecundario": null, "destaqueSecundario": false, "tag": "BCB", "conexoes": [] },
-      { "nomePrincipal": "Mogi das Cruzes", "nomeSecundario": null, "destaqueSecundario": false, "tag": "MDC", "conexoes": [] },
-      { "nomePrincipal": "Estudantes", "nomeSecundario": null, "destaqueSecundario": false, "tag": "EST", "conexoes": [] }
+      {
+        "nomePrincipal": "Brás",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "BAS",
+        "conexoes": [
+          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
+          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }
+        ]
+      },
+      {
+        "nomePrincipal": "Tatuapé",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "TAT",
+        "conexoes": [
+          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
+          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }
+        ]
+      },
+      {
+        "nomePrincipal": "Corinthians",
+        "nomeSecundario": "Itaquera",
+        "destaqueSecundario": true,
+        "tag": "ITQ",
+        "conexoes": [{ "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }]
+      },
+      {
+        "nomePrincipal": "Dom Bosco",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "DOB",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "José Bonifácio",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "JBO",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Guaianazes",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "GUA",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Antônio Gianetti Neto",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "AGN",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Ferraz de Vasconcelos",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "FVC",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Poá",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "POA",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Calmon Viana",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CMV",
+        "conexoes": [{ "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }]
+      },
+      {
+        "nomePrincipal": "Suzano",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "SUZ",
+        "conexoes": [{ "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }]
+      },
+      {
+        "nomePrincipal": "Jundiapeba",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "JPB",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Braz Cubas",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "BCB",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Mogi das Cruzes",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "MDC",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Estudantes",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "EST",
+        "conexoes": []
+      }
     ]
   },
 
@@ -415,31 +1514,105 @@
     "cor": "#133C8D",
     "operadora": "CPTM",
     "estacoes": [
-      { "nomePrincipal": "Brás", "nomeSecundario": null, "destaqueSecundario": false, "tag": "BAS", 
-      "conexoes": [
-        { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }, 
-        { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" }, 
-        { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
-        { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }] },
-      { "nomePrincipal": "Tatuapé", "nomeSecundario": null, "destaqueSecundario": false, "tag": "TAT", 
-      "conexoes": [
-        { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }, 
-        { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }] },
-      { "nomePrincipal": "Engenheiro Goulart", "nomeSecundario": null, "destaqueSecundario": false, "tag": "EGO", 
-      "conexoes": [
-        { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }] },
-      { "nomePrincipal": "USP Leste", "nomeSecundario": null, "destaqueSecundario": false, "tag": "USP", "conexoes": [] },
-      { "nomePrincipal": "Comendador Ermelino", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CEL", "conexoes": [] },
-      { "nomePrincipal": "São Miguel Paulista", "nomeSecundario": null, "destaqueSecundario": false, "tag": "SMP", "conexoes": [] },
-      { "nomePrincipal": "Jardim Helena", "nomeSecundario": "Vila Mara", "destaqueSecundario": true, "tag": "JHV", "conexoes": [] },
-      { "nomePrincipal": "Itaim Paulista", "nomeSecundario": null, "destaqueSecundario": false, "tag": "ITP", "conexoes": [] },
-      { "nomePrincipal": "Jardim Romano", "nomeSecundario": null, "destaqueSecundario": false, "tag": "JRO", "conexoes": [] },
-      { "nomePrincipal": "Engenheiro Manoel Feio", "nomeSecundario": null, "destaqueSecundario": false, "tag": "EMF", "conexoes": [] },
-      { "nomePrincipal": "Itaquaquecetuba", "nomeSecundario": null, "destaqueSecundario": false, "tag": "IQU", "conexoes": [] },
-      { "nomePrincipal": "Aracaré", "nomeSecundario": null, "destaqueSecundario": false, "tag": "ARA", "conexoes": [] },
-      { "nomePrincipal": "Calmon Viana", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CMV", 
-      "conexoes": [
-        { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }] }
+      {
+        "nomePrincipal": "Brás",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "BAS",
+        "conexoes": [
+          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
+        ]
+      },
+      {
+        "nomePrincipal": "Tatuapé",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "TAT",
+        "conexoes": [
+          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }
+        ]
+      },
+      {
+        "nomePrincipal": "Engenheiro Goulart",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "EGO",
+        "conexoes": [{ "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }]
+      },
+      {
+        "nomePrincipal": "USP Leste",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "USP",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Comendador Ermelino",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CEL",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "São Miguel Paulista",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "SMP",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Jardim Helena",
+        "nomeSecundario": "Vila Mara",
+        "destaqueSecundario": true,
+        "tag": "JHV",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Itaim Paulista",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "ITP",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Jardim Romano",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "JRO",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Engenheiro Manoel Feio",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "EMF",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Itaquaquecetuba",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "IQU",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Aracaré",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "ARA",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Calmon Viana",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CMV",
+        "conexoes": [{ "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }]
+      }
     ]
   },
   "L13": {
@@ -447,43 +1620,65 @@
     "cor": "#00B352",
     "operadora": "CPTM",
     "estacoes": [
-      { 
-        "nomePrincipal": "Palmeiras", "nomeSecundario": "Barra Funda", "destaqueSecundario": true, "tag": "BFU", 
+      {
+        "nomePrincipal": "Palmeiras",
+        "nomeSecundario": "Barra Funda",
+        "destaqueSecundario": true,
+        "tag": "BFU",
         "conexoes": [
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
           { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
           { "linha": "L08", "cor": "#97A098", "operadora": "ViaMobilidade" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }
-        ] 
+        ]
       },
-      { 
-        "nomePrincipal": "Luz", "nomeSecundario": null, "destaqueSecundario": false, "tag": "LUZ", 
+      {
+        "nomePrincipal": "Luz",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "LUZ",
         "conexoes": [
           { "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" },
           { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" },
           { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }
-        ] 
+        ]
       },
-      { 
-        "nomePrincipal": "Brás", "nomeSecundario": null, "destaqueSecundario": false, "tag": "BAS", 
+      {
+        "nomePrincipal": "Brás",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "BAS",
         "conexoes": [
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
           { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }
-        ] 
+        ]
       },
-      { 
-        "nomePrincipal": "Eng° Goulart", "nomeSecundario": null, "destaqueSecundario": false, "tag": "EGO", 
-        "conexoes": [
-          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }
-        ] 
+      {
+        "nomePrincipal": "Eng° Goulart",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "EGO",
+        "conexoes": [{ "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }]
       },
-      { "nomePrincipal": "Guarulhos", "nomeSecundario": "CECAP", "destaqueSecundario": true, "tag": "GCE", "conexoes": [] },
-      { "nomePrincipal": "Aeroporto • Guarulhos", "nomeSecundario": null, "destaqueSecundario": false, "tag": "AGU", "conexoes": [] }
+      {
+        "nomePrincipal": "Guarulhos",
+        "nomeSecundario": "CECAP",
+        "destaqueSecundario": true,
+        "tag": "GCE",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Aeroporto • Guarulhos",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "AGU",
+        "conexoes": []
+      }
     ]
   },
   "L15": {
@@ -491,22 +1686,150 @@
     "cor": "#C0C0C0",
     "operadora": "METRÔ",
     "estacoes": [
-      { 
-        "nomePrincipal": "Vila Prudente", "nomeSecundario": null, "destaqueSecundario": false, "tag": "VPM", 
-        "conexoes": [
-          { "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }
-        ] 
+      {
+        "nomePrincipal": "Vila Prudente",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "VPM",
+        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
       },
-      { "nomePrincipal": "Oratório", "nomeSecundario": null, "destaqueSecundario": false, "tag": "ORT", "conexoes": [] },
-      { "nomePrincipal": "São Lucas", "nomeSecundario": null, "destaqueSecundario": false, "tag": "SLU", "conexoes": [] },
-      { "nomePrincipal": "Camilo Haddad", "nomeSecundario": null, "destaqueSecundario": false, "tag": "CAD", "conexoes": [] },
-      { "nomePrincipal": "Vila Tolstói", "nomeSecundario": null, "destaqueSecundario": false, "tag": "VTL", "conexoes": [] },
-      { "nomePrincipal": "Vila União", "nomeSecundario": null, "destaqueSecundario": false, "tag": "VUN", "conexoes": [] },
-      { "nomePrincipal": "Jardim Planalto", "nomeSecundario": null, "destaqueSecundario": false, "tag": "JPL", "conexoes": [] },
-      { "nomePrincipal": "Sapopemba", "nomeSecundario": null, "destaqueSecundario": false, "tag": "SAP", "conexoes": [] },
-      { "nomePrincipal": "Fazenda da Juta", "nomeSecundario": null, "destaqueSecundario": false, "tag": "FJT", "conexoes": [] },
-      { "nomePrincipal": "São Mateus", "nomeSecundario": null, "destaqueSecundario": false, "tag": "MAT", "conexoes": [] },
-      { "nomePrincipal": "Jardim Colonial", "nomeSecundario": null, "destaqueSecundario": false, "tag": "IGT", "conexoes": [] }
+      {
+        "nomePrincipal": "Oratório",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "ORT",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "São Lucas",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "SLU",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Camilo Haddad",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CAD",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Vila Tolstói",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "VTL",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Vila União",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "VUN",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Jardim Planalto",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "JPL",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Sapopemba",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "SAP",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Fazenda da Juta",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "FJT",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "São Mateus",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "MAT",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Jardim Colonial",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "IGT",
+        "conexoes": []
+      }
+    ]
+  },
+  "L17": {
+    "nome": "Linha 17 - Ouro [EM CONSTRUÇÃO]",
+    "cor": "#000000",
+    "operadora": "METRÔ",
+    "estacoes": [
+      {
+        "nomePrincipal": "Morumbi",
+        "nomeSecundario": "Claro",
+        "destaqueSecundario": false,
+        "tag": "MOR",
+        "conexoes": [
+          { "linha": "L09", "cor": "#00A78E", "operadora": "ViaMobilidade" }
+        ]
+      },
+      {
+        "nomePrincipal": "Chucri Zaidan",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CZD",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Vila Cordeiro",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "VCD",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Campo Belo",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "CBM",
+        "conexoes": [
+          { "linha": "L05", "cor": "#9B3894", "operadora": "ViaMobilidade" }
+        ]
+      },
+      {
+        "nomePrincipal": "Vereador José Diniz",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "VJD",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Brooklin Paulista",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "BPA",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Aeroporto",
+        "nomeSecundario": "Congonhas",
+        "destaqueSecundario": true,
+        "tag": "CGN",
+        "conexoes": []
+      },
+      {
+        "nomePrincipal": "Washington Luís",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "tag": "JDA",
+        "conexoes": []
+      }      
     ]
   }
 }

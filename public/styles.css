@@ -448,6 +448,87 @@ footer {
     transition: all 0.3s ease;
 }
 
+
+/* --- ESTILOS DE INTERAÇÃO (Geral) --- */
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.footer-badges img {
+    height: 25px;
+    transition: filter 0.3s, transform 0.3s;
+    filter: grayscale(0.4);
+}
+
+.footer-badges img:hover {
+    filter: grayscale(0);
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+    PÁGINA DE ERRO 404
+========================================================================== */
+
+.error-container {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.error-icon {
+    font-size: 3rem;
+    color: var(--hr-gradient);
+    margin-bottom: 20px;
+    animation: moveTrain 4s infinite linear;
+}
+
+.error-container h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.error-container p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+.btn-home {
+    padding: 15px 30px;
+    background-color: var(--accent-red);
+    color: white;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-home:hover {
+    background-color: #ff3333;
+    transform: scale(1.05);
+}
+
+@keyframes moveTrain {
+    0% {
+        transform: translateX(-20px);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translateX(20px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-20px);
+        opacity: 0.8;
+    }
+}
+
 /* ==========================================================================
    RESPONSIVIDADE MULTI-TELA
    ========================================================================== */
@@ -577,14 +658,29 @@ footer {
         bottom: 67px;   
     }
 
+    footer {
+        padding: 30px 20px; /* Garante um respiro nas laterais */
+        overflow: hidden;   /* Evita qualquer sobra interna */
+    }
+
     .footer-content {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+        width: 100%;        /* Garante que ocupe apenas o espaço disponível */
+        max-width: 100%;    /* Previne expansão indevida */
     }
 
     .footer-badges {
+        display: flex;
+        flex-wrap: wrap;    /* CRUCIAL: Faz as badges pularem de linha se não couberem */
         justify-content: center;
+        gap: 8px;           /* Espaçamento entre elas */
+    }
+
+    .footer-badges img {
+        max-width: 120px;   /* Reduz levemente o tamanho no mobile */
+        height: auto;
     }
 }
 
@@ -630,85 +726,5 @@ footer {
 
     section h2 {
         font-size: 1.4rem;
-    }
-}
-
-/* --- ESTILOS DE INTERAÇÃO (Geral) --- */
-.theme-toggle:hover {
-    transform: scale(1.1);
-}
-
-.footer-badges img {
-    height: 25px;
-    transition: filter 0.3s, transform 0.3s;
-    filter: grayscale(0.4);
-}
-
-.footer-badges img:hover {
-    filter: grayscale(0);
-    transform: scale(1.05);
-}
-
-/* ==========================================================================
-    PÁGINA DE ERRO 404
-========================================================================== */
-
-.error-container {
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-}
-
-.error-icon {
-    font-size: 3rem;
-    color: var(--hr-gradient);
-    margin-bottom: 20px;
-    animation: moveTrain 4s infinite linear;
-}
-
-.error-container h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.error-container p {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    margin-bottom: 30px;
-}
-
-.btn-home {
-    padding: 15px 30px;
-    background-color: var(--accent-red);
-    color: white;
-    border-radius: 50px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.btn-home:hover {
-    background-color: #ff3333;
-    transform: scale(1.05);
-}
-
-@keyframes moveTrain {
-    0% {
-        transform: translateX(-20px);
-        opacity: 0.8;
-    }
-
-    50% {
-        transform: translateX(20px);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateX(-20px);
-        opacity: 0.8;
     }
 }
