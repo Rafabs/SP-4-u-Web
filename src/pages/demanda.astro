@@ -5,7 +5,6 @@ const base = import.meta.env.BASE_URL;
 
 <Layout title="Demanda de Passageiros - Sampa 4u">
   <link rel="stylesheet" href={`${base}/demanda.css`} slot="head" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
   <div class="demanda-page">
     <header class="dashboard-header">
@@ -59,14 +58,19 @@ const base = import.meta.env.BASE_URL;
         <p>Dados processados automaticamente a partir dos relatórios de demanda bruta do Metrô de São Paulo.</p>
         <div class="actions" style="margin-top: 15px;">
           <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
-            <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github" />
+            <img
+              src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+              alt="github"
+            />
           </a>
         </div>
       </div>
     </section>
   </div>
 
-  <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script is:inline src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-  <script is:inline src={`${base}/demanda-logic.js`}></script>
+  <script>
+    // Chart.js e PapaParse agora vêm do npm — sem CDN
+    import { initDemanda } from "../lib/demanda_logic";
+    initDemanda();
+  </script>
 </Layout>

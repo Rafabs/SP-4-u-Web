@@ -1,8 +1,11 @@
 import { defineConfig } from 'astro/config';
 
+import react from '@astrojs/react';
+
 export default defineConfig({
   site: 'https://rafabs.github.io/SP-4-u-Web',
   base: '/SP-4-u-Web/',
+
   vite: {
     cacheDir: "C:/temp/vite-cache", // Move o cache para fora do OneDrive
     build: {
@@ -15,5 +18,7 @@ export default defineConfig({
         }
       }
     }
-  }
+  },
+
+  integrations: [react()]
 });

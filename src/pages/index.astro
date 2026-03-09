@@ -1,59 +1,63 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LinhaCard from '../components/LinhaCard.astro';
-import { dadosLinhas } from '../data/linhas.js';
-
-// Convertendo o objeto em uma array para facilitar o map
-const linhas = Object.entries(dadosLinhas);
+import { dadosLinhas } from '../data/linhas';
 ---
 
-<Layout title="Sampa 4u">
-    <hr>
-    <section class="about">
-        <div class="info-container">
-            <h2>Sampa 4u</h2>
-            <p>
-                O <strong>Sampa 4u</strong> é um ecossistema de visualização de dados focado na malha metroferroviária e de ônibus urbano de São Paulo. O projeto transforma dados operacionais e coordenadas em interfaces gráficas intuitivas, facilitando a compreensão da mobilidade urbana na capital paulista.
-            </p>
-            <div class="version-info">
-                <img src="https://img.shields.io/badge/Vers%C3%A3o-v26.03.4-blue?style=for-the-badge" alt="Version">
-                <img src="https://img.shields.io/badge/Atualiza%C3%A7%C3%A3o-07/03/2026-green?style=for-the-badge" alt="Atualização">
-                <img src="https://img.shields.io/badge/Licença-MIT-orange?style=for-the-badge" alt="Licença">
-            </div>
-        </div>
-    </section>
+<Layout title="Sampa 4u | Início">
+  <hr />
+  <section class="about">
+    <div class="info-container">
+      <h2>Sampa 4u</h2>
+      <p>
+        O <strong>Sampa 4u</strong> é um ecossistema de visualização de dados focado na malha
+        metroferroviária e de ônibus urbano de São Paulo. O projeto transforma dados operacionais
+        e coordenadas em interfaces gráficas intuitivas, facilitando a compreensão da mobilidade
+        urbana na capital paulista.
+      </p>
+      <div class="version-info">
+        <img src="https://img.shields.io/badge/Vers%C3%A3o-v26.03.5-blue?style=for-the-badge" alt="Version" />
+        <img src="https://img.shields.io/badge/Atualiza%C3%A7%C3%A3o-09/03/2026-green?style=for-the-badge" alt="Atualização" />
+        <img src="https://img.shields.io/badge/Licença-MIT-orange?style=for-the-badge" alt="Licença" />
+      </div>
+    </div>
+  </section>
 
-    <hr>
+  <hr />
 
-    <section class="lines">
-        <h2>Consulte as linhas do Sistema Metropolitano</h2>        
-        <ul class="line-list">
-            {Object.entries(dadosLinhas).map(([id, linha]) => (
-                <LinhaCard id={id} nome={linha.nome} cor={linha.cor} empresa={linha.empresa} />
-            ))}
-        </ul>
-        <div class="empresa" id="ultima-atualizacao">Atualizado em DD/MM/AAAA HH:MM</div>
-    </section>
+  <section class="lines">
+    <h2>Consulte as linhas do Sistema Metropolitano</h2>
+    <ul class="line-list">
+      {Object.entries(dadosLinhas).map(([id, linha]) => (
+        <LinhaCard id={id} nome={linha.nome} cor={linha.cor} empresa={linha.empresa} />
+      ))}
+    </ul>
+    <div class="empresa" id="ultima-atualizacao">Atualizado em DD/MM/AAAA HH:MM</div>
+  </section>
 
-    <hr>
-    <section class="data" style="text-align: center;">
-        <h2>Notícias sobre o transporte público</h2>
-        <a href="/news" class="btn-news">Acessar Portal de Notícias</a>
-    </section>
+  <hr />
 
-    <hr>
-    <div id="dynamic-systems-info"></div>
-    <hr>
+  <section class="data" style="text-align: center;">
+    <h2>Notícias sobre o transporte público</h2>
+    <a href="/news" class="btn-news">Acessar Portal de Notícias</a>
+  </section>
 
-    <section class="about">
-        <div class="info-container">
-            <h2>Desenvolvimento e Transparência</h2>
-            <div class="actions" style="margin-bottom: 20px;">
-                <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
-                    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github">
-                </a>
-            </div>
-            <p><strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de integração contínua.</p>
-        </div>
-    </section>
+  <hr />
+  <div id="dynamic-systems-info"></div>
+  <hr />
+
+  <section class="about">
+    <div class="info-container">
+      <h2>Desenvolvimento e Transparência</h2>
+      <div class="actions" style="margin-bottom: 20px;">
+        <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
+          <img
+            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+            alt="github"
+          />
+        </a>
+      </div>
+      <p><strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de integração contínua.</p>
+    </div>
+  </section>
 </Layout>

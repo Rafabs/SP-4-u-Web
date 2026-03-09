@@ -15,13 +15,10 @@ const base = import.meta.env.BASE_URL;
             href="#"
             id="linha-nome-titulo"
             style="pointer-events: none; text-decoration: none;"
-            >Nome da Linha</a
-          >
-
+          >Nome da Linha</a>
           <div class="card" id="linha-status-info">
             Informações sobre a Operação - Carregando...
           </div>
-
           <div class="empresa-wrapper">
             <img
               id="linha-destaque-logo"
@@ -42,15 +39,12 @@ const base = import.meta.env.BASE_URL;
     </div>
 
     <!-- NAVEGADOR DE LINHAS -->
-    <div class="line-switcher-section">
-      </div>
-      <div class="line-switcher-grid" id="line-switcher-grid">
-      </div>
-        <div class="switcher-arrows">
-          <button class="arrow-btn" id="arrow-prev" aria-label="Anterior">&#8592;</button>
-          <span class="page-indicator" id="page-indicator">1 / 1</span>
-          <button class="arrow-btn" id="arrow-next" aria-label="Próxima">&#8594;</button>
-        </div>      
+    <div class="line-switcher-section"></div>
+    <div class="line-switcher-grid" id="line-switcher-grid"></div>
+    <div class="switcher-arrows">
+      <button class="arrow-btn" id="arrow-prev" aria-label="Anterior">&#8592;</button>
+      <span class="page-indicator" id="page-indicator">1 / 1</span>
+      <button class="arrow-btn" id="arrow-next" aria-label="Próxima">&#8594;</button>
     </div>
 
     <div style="text-align: center; margin-top: 40px; padding-bottom: 40px;">
@@ -63,5 +57,8 @@ const base = import.meta.env.BASE_URL;
   <hr />
   <div id="dynamic-systems-info"></div>
 
-  <script is:inline src={`${base}/detalhes.js`}></script>
+  <script>
+    import { initDetalhes } from "../lib/detalhes";
+    initDetalhes();
+  </script>
 </Layout>

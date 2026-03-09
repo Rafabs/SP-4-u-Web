@@ -3,29 +3,43 @@ import Layout from "../layouts/Layout.astro";
 const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="SPTrans - Sampa 4u">
+<Layout title="Sampa 4u | SPTrans">
   <link rel="stylesheet" href={`${base}/sptrans.css`} slot="head" />
   <link rel="stylesheet" href={`${base}/map.css`} slot="head" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" slot="head" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    slot="head"
+  />
 
   <section class="search-section">
     <div class="search-container">
       <span class="material-symbols-outlined search-icon">search</span>
-      <input type="text" id="lineSearch" placeholder="Busque por número ou nome da linha..." />
-      <span class="material-symbols-outlined clear-icon" id="clearSearch" title="Limpar busca">close</span>
+      <input
+        type="text"
+        id="lineSearch"
+        placeholder="Busque por número ou nome da linha..."
+      />
+      <span
+        class="material-symbols-outlined clear-icon"
+        id="clearSearch"
+        title="Limpar busca">close</span
+      >
     </div>
   </section>
 
   <div id="result-area"></div>
-  
+
   <div class="map-wrapper">
     <div id="map"></div>
     <div id="map-controls" class="custom-controls">
       <h3>Camadas</h3>
-        <input type="checkbox" id="check-sptrans"> <label for="check-sptrans">Visualizar Linhas</label>
+      <input type="checkbox" id="check-sptrans" />
+      <label for="check-sptrans">Visualizar Linhas</label>
     </div>
   </div>
-    <hr/>
+
+  <hr />
   <div id="dynamic-systems-info"></div>
 
   <section class="about">
@@ -34,14 +48,22 @@ const base = import.meta.env.BASE_URL;
       <p>Este projeto utiliza dados abertos (GTFS) para mapear a rede de transporte.</p>
       <div class="actions" style="margin-bottom: 20px;">
         <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
-          <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github" />
+          <img
+            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+            alt="github"
+          />
         </a>
       </div>
     </div>
   </section>
 
-  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-  <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script is:inline src={`${base}/sptrans.js`}></script>
-  <script is:inline src={`${base}/map-logic.js`}></script> 
+  <script>
+    import { loadMapData } from "../lib/map-logic";
+    import { initSptrans } from "../lib/sptrans";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadMapData();
+      initSptrans();
+    });
+  </script>
 </Layout>

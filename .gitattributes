@@ -1,2 +1,28 @@
+# Normaliza todos os arquivos de texto para LF no repositório
+* text=auto eol=lf
+
+# Força LF explicitamente nos tipos mais importantes
+*.js        text eol=lf
+*.ts        text eol=lf
+*.astro     text eol=lf
+*.css       text eol=lf
+*.json      text eol=lf
+*.md        text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+*.html      text eol=lf
+*.svg       text eol=lf
+*.env       text eol=lf
+# Binários — nunca converter
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.ico       binary
+*.woff      binary
+*.woff2     binary
+*.ttf       binary
+*.zip       binary
+*.txt       text eol=lf
 public/gtfs-*/*.txt filter=lfs diff=lfs merge=lfs -text
 data/*.txt filter=lfs diff=lfs merge=lfs -text

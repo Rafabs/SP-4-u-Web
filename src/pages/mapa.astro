@@ -14,29 +14,35 @@ const base = import.meta.env.BASE_URL;
   <div class="map-wrapper">
     <div id="map"></div>
     <div id="map-controls" class="custom-controls">
-        <h3>Camadas</h3>
-        <label><input type="checkbox" id="check-trilhos" checked> Trilhos</label>
-        <label><input type="checkbox" id="check-ciclo"> Ciclovias</label>
-        <label><input type="checkbox" id="check-bike"> Bicicletários</label>
+      <h3>Camadas</h3>
+      <label><input type="checkbox" id="check-trilhos" checked /> Trilhos</label>
+      <label><input type="checkbox" id="check-ciclo" /> Ciclovias</label>
+      <label><input type="checkbox" id="check-bike" /> Bicicletários</label>
     </div>
   </div>
 
-    <hr>
-    <div id="dynamic-systems-info"></div>
-    <hr>
+  <hr />
+  <div id="dynamic-systems-info"></div>
+  <hr />
 
-    <section class="about">
-        <div class="info-container">
-            <h2>Desenvolvimento e Transparência</h2>
-            <div class="actions" style="margin-bottom: 20px;">
-                <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
-                    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github">
-                </a>
-            </div>
-            <p><strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de integração contínua.</p>
-        </div>
-    </section>
-  <script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-  ></script>
-  <script is:inline src={`${base}/map-logic.js`}></script>
+  <section class="about">
+    <div class="info-container">
+      <h2>Desenvolvimento e Transparência</h2>
+      <div class="actions" style="margin-bottom: 20px;">
+        <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
+          <img
+            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+            alt="github"
+          />
+        </a>
+      </div>
+      <p><strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de integração contínua.</p>
+    </div>
+  </section>
+
+  <script>
+    // Astro bundla e gerencia automaticamente as dependências
+    import { loadMapData } from "../lib/map-logic";
+    loadMapData();
+  </script>
 </Layout>

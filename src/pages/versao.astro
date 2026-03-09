@@ -1,50 +1,59 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import roadmapData from '../data/roadmap.json'; // Importação direta do JSON
+import Layout from "../layouts/Layout.astro";
+import roadmapData from "../data/roadmap";
+import RepoLanguages from "../components/RepoLanguages.astro";
 const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="Versionamento - Sampa 4u">
-    <link rel="stylesheet" href={`${base}/version.css`} slot="head" />
+<Layout title="Sampa 4u | Versão e Roadmap">
+  <link rel="stylesheet" href={`${base}/version.css`} slot="head" />
 
-    <section class="execution">
-        <h2>
-            <span class="material-symbols-outlined" style="vertical-align: middle;">timeline</span> 
-            Roadmap de Desenvolvimento
-        </h2>
+  <section class="execution">
+    <h2>
+      <span class="material-symbols-outlined" style="vertical-align: middle;"
+        >timeline</span
+      >
+      Roadmap de Desenvolvimento
+    </h2>
 
-        {roadmapData.roadmap.map((secao) => (
-            <>
-                <h3>{secao.categoria}</h3>
-                {secao.itens ? (
-                    <ul>
-                        {secao.itens.map((item) => (
-                            <li>
-                                <input type="checkbox" checked={item.checked} disabled>
-                                {item.label} 
-                                {item.status && <code>{item.status}</code>}
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    <p>{secao.texto}</p>
-                )}
-            </>
-        ))}
+    <RepoLanguages user="Rafabs" repo="SP-4-u-Web" />
 
-        <details class="note" style="padding: 15px; cursor: pointer;">
-            <summary><strong>📚 Ver histórico completo</strong></summary>
-            <ul style="margin-top: 15px; list-style: none; padding-left: 0;">
-                {roadmapData.historico.map((log) => (
-                    <li>
-                        <code>{log.data}</code> 
-                        <code>{log.versao}</code> 
-                        {log.descricao}
-                    </li>
-                ))}
+    {
+      roadmapData.roadmap.map((secao) => (
+        <>
+          <h3>{secao.categoria}</h3>
+          {secao.itens ? (
+            <ul>
+              {secao.itens.map((item) => (
+                <li>
+                  <input type="checkbox" checked={item.checked} disabled />
+                  {item.label}
+                  {item.status && <code>{item.status}</code>}
+                </li>
+              ))}
             </ul>
-        </details>
+          ) : (
+            <p>{secao.texto}</p>
+          )}
+        </>
+      ))
+    }
 
-        <hr>
-        </section>
+    <details class="note" style="padding: 15px; cursor: pointer;">
+      <summary><strong>📚 Ver histórico completo</strong></summary>
+      <ul style="margin-top: 15px; list-style: none; padding-left: 0;">
+        {
+          roadmapData.historico.map((log) => (
+            <li>
+              <code>{log.data}</code>
+              <code>{log.versao}</code>
+              {log.descricao}
+            </li>
+          ))
+        }
+      </ul>
+    </details>
+
+    <hr />
+  </section>
 </Layout>
