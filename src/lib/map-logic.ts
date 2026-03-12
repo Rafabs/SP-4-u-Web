@@ -1,25 +1,25 @@
 import L from "leaflet";
 import Papa from "papaparse";
+import { map } from "./map-instance"; // ← instância compartilhada
 
 // ===============================
 // CONFIGURAÇÃO DE AMBIENTE
 // ===============================
 const BASE_URL = import.meta.env.BASE_URL ?? "";
 
-const isArtespPage = window.location.pathname.includes("artesp");
-const GTFS_CONFIG = {
-  folder: isArtespPage ? "gtfs-emtu" : "gtfs-sptrans",
-  label: isArtespPage ? "EMTU/ARTESP" : "SPTrans",
-};
+type GTFSSystem = "sptrans" | "artesp";
+let activeSystem: GTFSSystem = "sptrans";
 
-console.log(`[Mapa] Sistema ativo: ${GTFS_CONFIG.label}`);
+const GTFS_CONFIGS: Record<GTFSSystem, { folder: string; label: string }> = {
+  sptrans: { folder: "gtfs-sptrans", label: "SPTrans"     },
+  artesp:  { folder: "gtfs-emtu",   label: "EMTU/ARTESP" },
+};
 
 function getPath(path: string): string {
   return new URL(`${BASE_URL}${path}`, window.location.origin).href;
 }
-
 function getGTFSPath(fileName: string): string {
-  return getPath(`/${GTFS_CONFIG.folder}/${fileName}`);
+  return getPath(`/${GTFS_CONFIGS[activeSystem].folder}/${fileName}`);
 }
 
 // ===============================
@@ -30,7 +30,6 @@ interface RouteInfo {
   number: string;
   name: string;
 }
-
 interface PolylineWithMeta extends L.Polyline {
   routeId?: string;
   shapeId?: string;
@@ -41,28 +40,29 @@ interface PolylineWithMeta extends L.Polyline {
 // ESTADO DO MAPA
 // ===============================
 let selectedLayer: L.Path | null = null;
-let busDataLoaded = false;
-const busPolylines: Record<string, PolylineWithMeta[]> = {};
-const busRawCoords: Record<string, [number, number][]> = {};
 
-// ===============================
-// INICIALIZAÇÃO DO MAPA
-// ===============================
-export const map = L.map("map", {
-  preferCanvas: true,
-}).setView([-23.5505, -46.6333], 11);
+type BusState = {
+  loaded: boolean;
+  polylines: Record<string, PolylineWithMeta[]>;
+  rawCoords: Record<string, [number, number][]>;
+  layer: L.LayerGroup;
+};
 
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution: "&copy; OpenStreetMap contributors",
-}).addTo(map);
+const busState: Record<GTFSSystem, BusState> = {
+  sptrans: { loaded: false, polylines: {}, rawCoords: {}, layer: L.layerGroup() },
+  artesp:  { loaded: false, polylines: {}, rawCoords: {}, layer: L.layerGroup() },
+};
 
 // ===============================
 // CAMADAS
 // ===============================
-export const trilhosLayer = L.layerGroup();
-export const cicloLayer = L.layerGroup();
+export const trilhosLayer     = L.layerGroup();
+export const cicloLayer       = L.layerGroup();
 export const bicicletarioLayer = L.layerGroup();
-export const busRoutesLayer = L.layerGroup();
+// busRoutesLayer mantido por compatibilidade com emtu.ts e sptrans.ts
+export function getBusLayer(system: GTFSSystem): L.LayerGroup {
+  return busState[system].layer;
+}
 
 // ===============================
 // CARREGAMENTO DE DADOS GEOGRÁFICOS
@@ -77,11 +77,9 @@ export async function loadMapData(): Promise<void> {
       fetch(getPath("/data/map/LL_WGS84_KMZ_redecicloviaria.json")),
       fetch(getPath("/data/map/LL_WGS84_KMZ_bicicletarioparaciclo.geojson")),
     ]);
-
     responses.forEach((r) => {
       if (!r.ok) throw new Error(`Erro ao carregar ${r.url}`);
     });
-
     const [linesInfo, iconMapping, sectionsData, stationsData, cicloData, bikeData] =
       await Promise.all(responses.map((r) => r.json()));
 
@@ -160,11 +158,12 @@ export async function loadMapData(): Promise<void> {
 // ===============================
 // CARREGAMENTO GTFS (DINÂMICO)
 // ===============================
-export async function loadBusRoutes(): Promise<void> {
-  if (busDataLoaded) return;
-  busDataLoaded = true;
-
-  console.log(`[GTFS] Processando base ${GTFS_CONFIG.label}...`);
+export async function loadBusRoutes(system: GTFSSystem = "sptrans"): Promise<void> {
+  const state = busState[system];
+  if (state.loaded) return;
+  state.loaded = true;
+  activeSystem = system;
+  console.log(`[GTFS] Processando base ${GTFS_CONFIGS[system].label}...`);
 
   const routeResults = await new Promise<Papa.ParseResult<Record<string, string>>>(
     (resolve) => {
@@ -200,7 +199,6 @@ export async function loadBusRoutes(): Promise<void> {
     shapeToRoute[t.shape_id] = t.route_id;
   });
 
-  // Shapes via worker (pesado — mantém worker: true)
   await new Promise<void>((resolve) => {
     Papa.parse(getGTFSPath("shapes.txt"), {
       download: true,
@@ -209,20 +207,18 @@ export async function loadBusRoutes(): Promise<void> {
       complete(results: Papa.ParseResult<Record<string, string>>) {
         results.data.forEach((point) => {
           if (!point.shape_id) return;
-          if (!busRawCoords[point.shape_id]) busRawCoords[point.shape_id] = [];
-          busRawCoords[point.shape_id].push([
+          if (!state.rawCoords[point.shape_id]) state.rawCoords[point.shape_id] = [];
+          state.rawCoords[point.shape_id].push([
             parseFloat(point.shape_pt_lat),
             parseFloat(point.shape_pt_lon),
           ]);
         });
 
-        Object.keys(busRawCoords).forEach((shapeId) => {
+        Object.keys(state.rawCoords).forEach((shapeId) => {
           const routeId = shapeToRoute[shapeId];
           if (!routeId) return;
-
-          const allPoints = busRawCoords[shapeId];
+          const allPoints = state.rawCoords[shapeId];
           const lowResPoints = allPoints.filter((_, idx) => idx % 15 === 0);
-
           if (lowResPoints.length > 1) {
             const info = routeMap[routeId] ?? { color: "#0455A1", number: "N/A", name: "" };
             const polyline = L.polyline(lowResPoints, {
@@ -231,18 +227,16 @@ export async function loadBusRoutes(): Promise<void> {
               opacity: 0.3,
               smoothFactor: 3.0,
             }) as PolylineWithMeta;
-
             polyline.routeId = routeId;
             polyline.shapeId = shapeId;
             polyline.info = info;
-
-            if (!busPolylines[routeId]) busPolylines[routeId] = [];
-            busPolylines[routeId].push(polyline);
-            polyline.addTo(busRoutesLayer);
+            if (!state.polylines[routeId]) state.polylines[routeId] = [];
+            state.polylines[routeId].push(polyline);
+            polyline.addTo(state.layer);
           }
         });
 
-        console.log(`[GTFS] ${GTFS_CONFIG.label} carregado em modo económico.`);
+        console.log(`[GTFS] ${GTFS_CONFIGS[system].label} carregado em modo económico.`);
         resolve();
       },
     });
@@ -252,27 +246,25 @@ export async function loadBusRoutes(): Promise<void> {
 // ===============================
 // FILTRAGEM E ALTA RESOLUÇÃO
 // ===============================
-export function filterSptransLine(selectedRouteId: string | null): void {
-  busRoutesLayer.clearLayers();
+export function filterSptransLine(selectedRouteId: string | null, system: GTFSSystem = activeSystem): void {
+  const state = busState[system];
+  state.layer.clearLayers();
 
-  // Reset: volta ao modo económico
   if (!selectedRouteId) {
-    Object.values(busPolylines).flat().forEach((p) => p.addTo(busRoutesLayer));
+    Object.values(state.polylines).flat().forEach((p) => p.addTo(state.layer));
     return;
   }
 
-  // Alta resolução para a linha selecionada
-  if (busPolylines[selectedRouteId]) {
-    busPolylines[selectedRouteId].forEach((lowResPoly) => {
-      const fullCoords = busRawCoords[lowResPoly.shapeId!];
+  if (state.polylines[selectedRouteId]) {
+    state.polylines[selectedRouteId].forEach((lowResPoly) => {
+      const fullCoords = state.rawCoords[lowResPoly.shapeId!];
       const info = lowResPoly.info!;
-
       const highResPoly = L.polyline(fullCoords, {
         color: info.color,
         weight: 5,
         opacity: 1,
         smoothFactor: 0.5,
-      }).addTo(busRoutesLayer);
+      }).addTo(state.layer);
 
       highResPoly.bindPopup(`
         <div class="map-popup">
@@ -281,13 +273,13 @@ export function filterSptransLine(selectedRouteId: string | null): void {
           </div>
           <div class="popup-body">
             <p><strong>Linha:</strong> ${info.name}</p>
-            <p><small>Fonte: ${GTFS_CONFIG.label}</small></p>
+            <p><small>Fonte: ${GTFS_CONFIGS[system].label}</small></p>
           </div>
         </div>
       `);
     });
 
-    const group = new L.FeatureGroup(busRoutesLayer.getLayers());
+    const group = new L.FeatureGroup(state.layer.getLayers());
     if (group.getLayers().length > 0) {
       map.fitBounds(group.getBounds(), { padding: [40, 40], maxZoom: 16 });
     }
@@ -307,7 +299,6 @@ function handleLineClick(
   selectedLayer.setStyle({ weight: 8, opacity: 1 });
 
   const line = feature.properties?.lines?.[0]?.line;
-
   (selectedLayer as L.Layer & { bindPopup: (s: string) => L.Layer; openPopup: () => void })
     .bindPopup(`
       <div class="map-popup">
@@ -328,21 +319,40 @@ function handleLineClick(
 }
 
 export function setupLayerControls(): void {
-  const controls: Record<string, L.LayerGroup> = {
+  // Camadas estáticas
+  const staticControls: Record<string, L.LayerGroup> = {
     "check-trilhos": trilhosLayer,
-    "check-ciclo": cicloLayer,
-    "check-bike": bicicletarioLayer,
-    "check-sptrans": busRoutesLayer,
+    "check-ciclo":   cicloLayer,
+    "check-bike":    bicicletarioLayer,
   };
 
-  Object.entries(controls).forEach(([id, layer]) => {
+  Object.entries(staticControls).forEach(([id, layer]) => {
     const el = document.getElementById(id) as HTMLInputElement | null;
     if (!el) return;
-
     el.addEventListener("change", (e) => {
       const checked = (e.target as HTMLInputElement).checked;
-      if (id === "check-sptrans" && checked) loadBusRoutes();
       checked ? map.addLayer(layer) : map.removeLayer(layer);
+    });
+  });
+
+  // Camadas GTFS — cada sistema tem sua própria layer
+  const gtfsControls: Record<string, GTFSSystem> = {
+    "check-sptrans": "sptrans",
+    "check-artesp":  "artesp",
+  };
+
+  Object.entries(gtfsControls).forEach(([id, system]) => {
+    const el = document.getElementById(id) as HTMLInputElement | null;
+    if (!el) return;
+    el.addEventListener("change", (e) => {
+      const checked = (e.target as HTMLInputElement).checked;
+      const layer = busState[system].layer;
+      if (checked) {
+        loadBusRoutes(system);
+        map.addLayer(layer);
+      } else {
+        map.removeLayer(layer);
+      }
     });
   });
 }

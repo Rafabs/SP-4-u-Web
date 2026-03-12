@@ -13,11 +13,32 @@ const base = import.meta.env.BASE_URL;
 
   <div class="map-wrapper">
     <div id="map"></div>
+
     <div id="map-controls" class="custom-controls">
       <h3>Camadas</h3>
-      <label><input type="checkbox" id="check-trilhos" checked /> Trilhos</label>
+
+      <!-- Mobilidade Ativa -->
+      <p class="layer-group-label">Mobilidade Ativa</p>
       <label><input type="checkbox" id="check-ciclo" /> Ciclovias</label>
       <label><input type="checkbox" id="check-bike" /> Bicicletários</label>
+
+      <!-- Transporte Público -->
+      <p class="layer-group-label">Transporte Público</p>
+      <label><input type="checkbox" id="check-trilhos" /> METRÔ/CPTM e Concessionárias</label>
+      <label><input type="checkbox" id="check-artesp" /> Linhas ARTESP</label>
+      <label><input type="checkbox" id="check-sptrans" /> Linhas SPTrans</label>
+
+      <!-- Meio Ambiente -->
+      <p class="layer-group-label">Meio Ambiente</p>
+      <label><input type="checkbox" id="check-aqi" /> Qualidade do Ar</label>
+
+      <div class="aqi-legend-mini" id="aqi-legend" style="display:none;">
+        <div style="color:#009966;">● 0–50 &nbsp;&nbsp;Bom</div>
+        <div style="color:#ffde33;">● 51–100 &nbsp;Moderado</div>
+        <div style="color:#ff9933;">● 101–150 Inadequado</div>
+        <div style="color:#cc0033;">● 151+ &nbsp;&nbsp;Prejudicial</div>
+        <div style="color:#9e9e9e;">● — &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sem dados</div>
+      </div>
     </div>
   </div>
 
@@ -36,13 +57,33 @@ const base = import.meta.env.BASE_URL;
           />
         </a>
       </div>
-      <p><strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de integração contínua.</p>
+      <p>
+        <strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de
+        integração contínua.
+      </p>
     </div>
   </section>
 
   <script>
-    // Astro bundla e gerencia automaticamente as dependências
     import { loadMapData } from "../lib/map-logic";
-    loadMapData();
+    import { initEmtu } from "../lib/emtu";
+    import { initSptrans } from "../lib/sptrans";
+    import { loadAQIData, setupAQIControls } from "../lib/qualidade_ar";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadMapData();
+      initEmtu();
+      initSptrans();
+      setupAQIControls();
+      loadAQIData();
+
+      // Mostra/oculta legenda AQI junto com o checkbox
+      const checkAqi = document.getElementById("check-aqi") as HTMLInputElement;
+      const aqiLegend = document.getElementById("aqi-legend") as HTMLElement;
+
+      checkAqi?.addEventListener("change", () => {
+        aqiLegend.style.display = checkAqi.checked ? "block" : "none";
+      });
+    });
   </script>
 </Layout>

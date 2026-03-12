@@ -1,5 +1,5 @@
 import Papa from "papaparse";
-import { filterSptransLine, busRoutesLayer, loadBusRoutes } from "./map-logic";
+import { filterSptransLine, getBusLayer, loadBusRoutes } from "./map-logic";
 
 // ===============================
 // CONFIGURAÇÃO
