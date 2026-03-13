@@ -1,4 +1,5 @@
-import L from "leaflet";
+const L = (window as any).L;
+import type { Feature, Geometry } from "geojson";
 import Papa from "papaparse";
 import { map } from "./map-instance"; // ← instância compartilhada
 
@@ -89,19 +90,19 @@ export async function loadMapData(): Promise<void> {
 
     // --- TRILHOS ---
     L.geoJSON(sectionsData, {
-      style: (f) => ({
-        color: lineColors[f?.properties.lines?.[0]?.line] || "#666",
+      style: (f: Feature<Geometry> | undefined) => ({
+        color: lineColors[f?.properties?.lines?.[0]?.line] || "#666",
         weight: 4,
         opacity: 0.8,
         lineCap: "round",
       }),
-      onEachFeature: (f, l) =>
+      onEachFeature: (f: Feature<Geometry>, l: L.Layer) =>
         l.on("click", (e) => handleLineClick(e as L.LeafletMouseEvent, f, lineColors)),
     }).addTo(trilhosLayer);
 
     L.geoJSON(stationsData, {
-      pointToLayer: (f, latlng) => {
-        const lineName = f.properties.lines?.[0]?.line;
+      pointToLayer: (f: Feature<Geometry>, latlng: L.LatLng) => {
+        const lineName = f.properties?.lines?.[0]?.line;
         const iconPath = iconMapping[lineName];
         if (iconPath) {
           const fileName = iconPath.split(/[\\/]/).pop();
@@ -120,22 +121,22 @@ export async function loadMapData(): Promise<void> {
           weight: 1,
         });
       },
-      onEachFeature: (f, l) =>
+      onEachFeature: (f: Feature<Geometry>, l: L.Layer) =>
         l.bindPopup(
-          `<b>Estação:</b> ${f.properties.name}<br><b>Linha:</b> ${f.properties.lines?.[0]?.line}`
+          `<b>Estação:</b> ${f.properties?.name}<br><b>Linha:</b> ${f.properties?.lines?.[0]?.line}`
         ),
     }).addTo(trilhosLayer);
 
     // --- CICLOVIAS ---
     L.geoJSON(cicloData, {
       style: { color: "#32e622", weight: 3, opacity: 0.8 },
-      onEachFeature: (f, l) =>
-        l.bindPopup(`<b>Ciclovia:</b> ${f.properties.rc_nome || "Trecho"}`),
+      onEachFeature: (f: Feature<Geometry>, l: L.Layer) =>
+        l.bindPopup(`<b>Ciclovia:</b> ${f.properties?.rc_nome || "Trecho"}`),
     }).addTo(cicloLayer);
 
     // --- BICICLETÁRIOS ---
     L.geoJSON(bikeData, {
-      pointToLayer: (_, latlng) =>
+      pointToLayer: (_: Feature<Geometry>, latlng: L.LatLng) =>
         L.marker(latlng, {
           icon: L.icon({
             iconUrl: getPath("/icons/bicicleta.png"),
@@ -143,9 +144,9 @@ export async function loadMapData(): Promise<void> {
             iconAnchor: [12, 12],
           }),
         }),
-      onEachFeature: (f, l) =>
+      onEachFeature: (f: Feature<Geometry>, l: L.Layer) =>
         l.bindPopup(
-          `<b>Bicicletário:</b> ${f.properties.bcp_local}<br><b>Vagas:</b> ${f.properties.bcp_vaga}`
+          `<b>Bicicletário:</b> ${f.properties?.bcp_local}<br><b>Vagas:</b> ${f.properties?.bcp_vaga}`
         ),
     }).addTo(bicicletarioLayer);
 

@@ -31,7 +31,6 @@ const roadmapData: Roadmap = {
         { label: "Desenvolver funcionalidade para atualização/horário das linhas", checked: false },
         { label: "Desenvolver funcionalidade para atualização de status das linhas", checked: false },
         { label: "Analisar o uso de arquivos gtfs diretamente do servidor", checked: false },
-        { label: "Analisar o uso de API CETESB para AQI", checked: false },
         { label: "Corrigir exibição de dados de Pesquisa Origem e Destino (Exibição de 1997 e 2007)", checked: false },
         { label: "Desenvolver Design System e disponibilizar no projeto", status: "EM DESENVOLVIMENTO", checked: false },
         { label: "Desenvolver funcionalidade de página de Turismo", checked: false },
@@ -51,16 +50,15 @@ const roadmapData: Roadmap = {
     {
       categoria: "🖼️ Interface",
       itens: [
-        { label: "Integrar exibição de versionamento de index com roadmap.ts", checked: false },
         { label: "Exibir Linha 17 - Ouro por ramificação", checked: false },
         { label: "Correção de estilos em geral", checked: false },
-        { label: "Melhorias na interface e funcionalidade dos mapas", status: "EM DESENVOLVIMENTO", checked: false },
         { label: "Adotar método de design Hero Section", checked: false },
-        { label: "Atualizar dados .json/.kmz de Mapa", checked: false },
+        { label: "Atualizar dados .json/.kmz de Mapa", status: "EM DESENVOLVIMENTO", checked: false },
       ],
     },
   ],
   historico: [
+    { data: "13/03/2026", versao: "v26.03.7", descricao: "Melhorias na interface e funcionalidade dos mapas, Atualização GTFS - SPTrans e Integrado exibição de versionamento de index com roadmap.ts" },
     { data: "12/03/2026", versao: "v26.03.6", descricao: "Corrigido AQI para dados de qualidade do ar em -- exibir na cor cinza e Exibição de todos os mapas unificados em Explore" },
     { data: "09/03/2026", versao: "v26.03.5", descricao: "Ajustado a localização de arquivos de dados nas pastas" },
     { data: "07/03/2026", versao: "v26.03.4", descricao: "Ajustado Linhas de estações e implantado L6 - Laranja e L17 - Ouro e Correção de estilos na versão mobile (footer)" },

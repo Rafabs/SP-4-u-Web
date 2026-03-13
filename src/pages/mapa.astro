@@ -5,39 +5,84 @@ const base = import.meta.env.BASE_URL;
 
 <Layout title="Mapa Interativo - Sampa 4u">
   <link rel="stylesheet" href={`${base}/map.css`} slot="head" />
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    slot="head"
-  />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" slot="head" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" slot="head" />
+
+  <!-- Plugins CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-measure@3.1.0/dist/leaflet-measure.css" slot="head" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@3.0.2/Control.FullScreen.css" slot="head" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.css" slot="head" />
 
   <div class="map-wrapper">
     <div id="map"></div>
 
+    <!-- FAB centralizar -->
+    <button id="btn-center" class="map-fab" title="Centralizar em São Paulo">
+      <span class="material-symbols-outlined">my_location</span>
+    </button>
+
+    <!-- Painel de camadas -->
     <div id="map-controls" class="custom-controls">
-      <h3>Camadas</h3>
+      <div class="controls-header">
+        <span class="controls-title">
+          <span class="material-symbols-outlined">layers</span>
+          Camadas
+        </span>
+        <button id="btn-collapse" class="collapse-btn" title="Minimizar painel">
+          <span class="material-symbols-outlined" id="collapse-icon">expand_less</span>
+        </button>
+      </div>
 
-      <!-- Mobilidade Ativa -->
-      <p class="layer-group-label">Mobilidade Ativa</p>
-      <label><input type="checkbox" id="check-ciclo" /> Ciclovias</label>
-      <label><input type="checkbox" id="check-bike" /> Bicicletários</label>
+      <div id="controls-body">
 
-      <!-- Transporte Público -->
-      <p class="layer-group-label">Transporte Público</p>
-      <label><input type="checkbox" id="check-trilhos" /> METRÔ/CPTM e Concessionárias</label>
-      <label><input type="checkbox" id="check-artesp" /> Linhas ARTESP</label>
-      <label><input type="checkbox" id="check-sptrans" /> Linhas SPTrans</label>
+        <p class="layer-group-label">Mobilidade Ativa</p>
+        <label class="layer-item">
+          <input type="checkbox" id="check-ciclo" />
+          <span class="material-symbols-outlined layer-sym" style="color:#32e622;">route</span>
+          Ciclovias
+        </label>
 
-      <!-- Meio Ambiente -->
-      <p class="layer-group-label">Meio Ambiente</p>
-      <label><input type="checkbox" id="check-aqi" /> Qualidade do Ar</label>
+        <label class="layer-item">
+          <input type="checkbox" id="check-bike" />
+          <span class="material-symbols-outlined layer-sym" style="color:#32e622;">directions_bike</span>
+          Bicicletários
+        </label>
 
-      <div class="aqi-legend-mini" id="aqi-legend" style="display:none;">
-        <div style="color:#009966;">● 0–50 &nbsp;&nbsp;Bom</div>
-        <div style="color:#ffde33;">● 51–100 &nbsp;Moderado</div>
-        <div style="color:#ff9933;">● 101–150 Inadequado</div>
-        <div style="color:#cc0033;">● 151+ &nbsp;&nbsp;Prejudicial</div>
-        <div style="color:#9e9e9e;">● — &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sem dados</div>
+        <p class="layer-group-label">Transporte Público</p>
+        <label class="layer-item">
+          <input type="checkbox" id="check-trilhos" />
+          <span class="material-symbols-outlined layer-sym" style="color:#aaaaaa;">train</span>
+          Trilhos
+        </label>
+        <div class="layer-legend" id="legend-trilhos" style="display:none;">
+          <div class="legend-note">Clique nas linhas para detalhes</div>
+        </div>        
+        <label class="layer-item">
+          <input type="checkbox" id="check-artesp" />
+          <span class="material-symbols-outlined layer-sym" style="color:#0054a6;">directions_bus</span>
+          Linhas ARTESP
+        </label>
+
+        <label class="layer-item">
+          <input type="checkbox" id="check-sptrans" />
+          <span class="material-symbols-outlined layer-sym" style="color:#e8000f;">directions_bus</span>
+          Linhas SPTrans
+        </label>
+
+        <p class="layer-group-label">Meio Ambiente</p>
+        <label class="layer-item">
+          <input type="checkbox" id="check-aqi" />
+          <span class="material-symbols-outlined layer-sym" style="color:#009966;">air</span>
+          Qualidade do Ar
+        </label>
+        <div class="layer-legend" id="aqi-legend" style="display:none;">
+          <div class="legend-row"><span class="legend-dot" style="background:#009966;"></span><span>0–50</span><span class="legend-label">Bom</span></div>
+          <div class="legend-row"><span class="legend-dot" style="background:#ffde33;"></span><span>51–100</span><span class="legend-label">Moderado</span></div>
+          <div class="legend-row"><span class="legend-dot" style="background:#ff9933;"></span><span>101–150</span><span class="legend-label">Inadequado</span></div>
+          <div class="legend-row"><span class="legend-dot" style="background:#cc0033;"></span><span>151+</span><span class="legend-label">Prejudicial</span></div>
+          <div class="legend-row"><span class="legend-dot" style="background:#9e9e9e;"></span><span>—</span><span class="legend-label">Sem dados</span></div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -51,39 +96,81 @@ const base = import.meta.env.BASE_URL;
       <h2>Desenvolvimento e Transparência</h2>
       <div class="actions" style="margin-bottom: 20px;">
         <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
-          <img
-            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
-            alt="github"
-          />
+          <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github" />
         </a>
       </div>
-      <p>
-        <strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de
-        integração contínua.
-      </p>
+      <p><strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de integração contínua.</p>
     </div>
   </section>
 
   <script>
     import { loadMapData } from "../lib/map-logic";
-    import { initEmtu } from "../lib/emtu";
+    import { initEmtu }    from "../lib/emtu";
     import { initSptrans } from "../lib/sptrans";
     import { loadAQIData, setupAQIControls } from "../lib/qualidade_ar";
+    import { map, initPlugins } from "../lib/map-instance";
 
-    document.addEventListener("DOMContentLoaded", () => {
+    // Injeta script UMD no DOM e aguarda carregamento
+    function loadScript(src: string): Promise<void> {
+      return new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = src;
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error(`Falha ao carregar ${src}`));
+        document.head.appendChild(s);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      // 1. Expõe L do npm como window.L
+      const { default: Leaflet } = await import("leaflet");
+      (window as any).L = Leaflet;
+
+      // 2. Carrega plugins UMD — agora window.L já existe
+      await Promise.all([
+        loadScript("https://unpkg.com/leaflet-measure@3.1.0/dist/leaflet-measure.js"),
+        loadScript("https://unpkg.com/leaflet.fullscreen@3.0.2/Control.FullScreen.js"),
+        loadScript("https://unpkg.com/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.js"),
+      ]).catch(console.warn);
+
       loadMapData();
       initEmtu();
       initSptrans();
       setupAQIControls();
       loadAQIData();
+      initPlugins(); // régua, fullscreen, minimap
 
-      // Mostra/oculta legenda AQI junto com o checkbox
-      const checkAqi = document.getElementById("check-aqi") as HTMLInputElement;
-      const aqiLegend = document.getElementById("aqi-legend") as HTMLElement;
-
-      checkAqi?.addEventListener("change", () => {
-        aqiLegend.style.display = checkAqi.checked ? "block" : "none";
+      // ── Corrige camadas ao entrar/sair de tela cheia ──
+      map.on("fullscreenchange", () => {
+        setTimeout(() => map.invalidateSize(), 100);
       });
+
+      // ── Centralizar em SP ──
+      document.getElementById("btn-center")?.addEventListener("click", () => {
+        map.flyTo([-23.5505, -46.6333], 11, { duration: 1.2 });
+      });
+
+      // ── Colapsar painel ──
+      const btnCollapse  = document.getElementById("btn-collapse") as HTMLButtonElement;
+      const collapseIcon = document.getElementById("collapse-icon") as HTMLElement;
+      const controlsBody = document.getElementById("controls-body") as HTMLElement;
+
+      btnCollapse?.addEventListener("click", () => {
+        const collapsed = controlsBody.classList.toggle("collapsed");
+        collapseIcon.textContent = collapsed ? "expand_more" : "expand_less";
+      });
+
+      // ── Legendas por camada ──
+      function toggleLegend(checkId: string, legendId: string) {
+        const checkbox = document.getElementById(checkId) as HTMLInputElement;
+        const legend   = document.getElementById(legendId) as HTMLElement;
+        if (!checkbox || !legend) return;
+        checkbox.addEventListener("change", () => {
+          legend.style.display = checkbox.checked ? "block" : "none";
+        });
+      }
+      toggleLegend("check-trilhos", "legend-trilhos");
+      toggleLegend("check-aqi",     "aqi-legend");
     });
   </script>
 </Layout>

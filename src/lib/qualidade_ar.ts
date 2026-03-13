@@ -1,4 +1,4 @@
-import L from "leaflet";
+const L = (window as any).L;
 import { map } from "./map-instance"; // ← mapa compartilhado
 
 const AQI_TOKEN = import.meta.env.PUBLIC_AQI_API_KEY as string | undefined;

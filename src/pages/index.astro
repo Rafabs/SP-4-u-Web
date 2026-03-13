@@ -2,8 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import LinhaCard from '../components/LinhaCard.astro';
 import { dadosLinhas } from '../data/linhas';
----
+import roadmapData from '../data/roadmap';
 
+const latest = roadmapData.historico[0];
+---
 <Layout title="Sampa 4u | Início">
   <hr />
   <section class="about">
@@ -16,15 +18,13 @@ import { dadosLinhas } from '../data/linhas';
         urbana na capital paulista.
       </p>
       <div class="version-info">
-        <img src="https://img.shields.io/badge/Vers%C3%A3o-v26.03.5-blue?style=for-the-badge" alt="Version" />
-        <img src="https://img.shields.io/badge/Atualiza%C3%A7%C3%A3o-09/03/2026-green?style=for-the-badge" alt="Atualização" />
+        <img src={`https://img.shields.io/badge/Vers%C3%A3o-${encodeURIComponent(latest.versao)}-blue?style=for-the-badge`} alt="Versão" />
+        <img src={`https://img.shields.io/badge/Atualiza%C3%A7%C3%A3o-${latest.data.replace(/\//g, '%2F')}-green?style=for-the-badge`} alt="Atualização" />
         <img src="https://img.shields.io/badge/Licença-MIT-orange?style=for-the-badge" alt="Licença" />
       </div>
     </div>
   </section>
-
   <hr />
-
   <section class="lines">
     <h2>Consulte as linhas do Sistema Metropolitano</h2>
     <ul class="line-list">
@@ -32,20 +32,18 @@ import { dadosLinhas } from '../data/linhas';
         <LinhaCard id={id} nome={linha.nome} cor={linha.cor} empresa={linha.empresa} />
       ))}
     </ul>
-    <div class="empresa" id="ultima-atualizacao">Atualizado em DD/MM/AAAA HH:MM</div>
+    <div class="empresa" id="ultima-atualizacao">
+      Atualizado em {latest.data} — {latest.descricao}
+    </div>
   </section>
-
   <hr />
-
   <section class="data" style="text-align: center;">
     <h2>Notícias sobre o transporte público</h2>
     <a href="/news" class="btn-news">Acessar Portal de Notícias</a>
   </section>
-
   <hr />
   <div id="dynamic-systems-info"></div>
   <hr />
-
   <section class="about">
     <div class="info-container">
       <h2>Desenvolvimento e Transparência</h2>

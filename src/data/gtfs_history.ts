@@ -15,6 +15,22 @@ export interface GTFSHistoryEntry {
 // ===============================
 export const historyData: GTFSHistoryEntry[] = [
   {
+    data: "11/03/2026",
+    tipo: "✏️ Modificação",
+    linha: "514T/10",
+    cor: "006341",
+    rota: "<after>Atual:</after> Term. Sacomã - Conj. Teotônio Vilela<br><before>Antes:</before> Term. Sacomã - Conj. Hab. Teotônio Vilela",
+    recente: true,
+  },  
+  {
+    data: "11/03/2026",
+    tipo: "✏️ Modificação",
+    linha: "4025/10",
+    cor: "006341",
+    rota: "<after>Atual:</after> Vl. Alpina - Metrô Tatuapé<br><before>Antes:</before> Sítio Das Figueiras - Metrô Tatuapé",
+    recente: true,
+  },  
+  {
     data: "02/03/2026",
     tipo: "🆕 Inclusão",
     linha: "2023/42",
@@ -36,7 +52,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "6820/21",
     cor: "782F40",
     rota: "<after>Atual:</after> Term. Capelinha - Jd. Amália<br><before>Antes:</before> Jd. Amália - Term. Capelinha",
-    recente: true,
+    recente: false,
   },
   {
     data: "20/02/2026",
@@ -44,7 +60,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "675R/23",
     cor: "0082BA",
     rota: "Grajaú - Shop Interlagos",
-    recente: true,
+    recente: false,
   },
   {
     data: "20/02/2026",
