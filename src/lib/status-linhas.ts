@@ -41,7 +41,7 @@ function codigoFromId(id: string): string {
 function cssClass(situacao: string): string {
   const s = situacao.toLowerCase();
   if (s.includes("normal")) return "verde_operacao_normal";
-  if (s.includes("velocidade") || s.includes("Operação com Impacto Pontual"))
+  if (s.includes("velocidade") || s.includes("impacto"))                                  
     return "amarelo_velocidade_reduzida";
   if (
     s.includes("paralisada") ||
