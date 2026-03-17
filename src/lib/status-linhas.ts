@@ -6,7 +6,9 @@ const MANIFEST  = `${BASE_URL}/data/status-manifest.json`;
 const PROXY_URL = "https://corsproxy.io/?" +
                   encodeURIComponent("https://ccm.artesp.sp.gov.br/metroferroviario/api/status/");
 
-const INTERVAL_MS = 5 * 60 * 1000; // 5 minutos
+const INTERVAL_MS = IS_LOCAL
+  ? 5 * 60 * 1000   // local: 5 min (API direto via proxy, dados frescos)
+  : 10 * 60 * 1000; // produção: 10 min (sincronizado com o Actions)
 
 interface StatusLinha {
   situacao: string;
