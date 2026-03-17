@@ -10,22 +10,24 @@ on:
 jobs:
   # Roda sempre — só atualiza o JSON
   fetch-status:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: node scripts/fetch-status.mjs
-      - name: Commit status atualizado
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add public/data/status-linhas.json public/data/status-manifest.json
-          git diff --staged --quiet || git commit -m "chore: atualiza status das linhas"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      runs-on: ubuntu-latest
+      permissions:
+        contents: write    # ← permite push no repositório
+      steps:
+        - uses: actions/checkout@v4
+        - uses: actions/setup-node@v4
+          with:
+            node-version: 20
+        - run: node scripts/fetch-status.mjs
+        - name: Commit status atualizado
+          run: |
+            git config user.name "github-actions"
+            git config user.email "actions@github.com"
+            git add public/data/status-linhas.json public/data/status-manifest.json
+            git diff --staged --quiet || git commit -m "chore: atualiza status das linhas"
+            git push
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   # Roda só no push — faz o build e deploy completo
   build-deploy:
