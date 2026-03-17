@@ -1,9 +1,10 @@
 // src/lib/status-linhas.ts
-const BASE_URL   = ((window as any).__BASE_URL__ ?? "").replace(/\/$/, "");
-const IS_LOCAL   = window.location.hostname === "localhost";
-const JSON_URL   = `${BASE_URL}/data/status-linhas.json`;
-const PROXY_URL  = "https://api.allorigins.win/get?url=" +
-                   encodeURIComponent("https://ccm.artesp.sp.gov.br/metroferroviario/api/status/");
+const BASE_URL  = ((window as any).__BASE_URL__ ?? "").replace(/\/$/, "");
+const IS_LOCAL  = window.location.hostname === "localhost";
+const JSON_URL  = `${BASE_URL}/data/status-linhas.json`;
+const MANIFEST  = `${BASE_URL}/data/status-manifest.json`;
+const PROXY_URL = "https://corsproxy.io/?" +
+                  encodeURIComponent("https://ccm.artesp.sp.gov.br/metroferroviario/api/status/");
 
 const INTERVAL_MS = 5 * 60 * 1000; // 5 minutos
 
@@ -12,6 +13,7 @@ interface StatusLinha {
   classificacao: string;
   operacao_normal: boolean;
   atualizado_ha: string;
+  atualizado_em?: string;
   descricao?: string;
 }
 interface LinhaAPI    { codigo: string; nome: string; status: StatusLinha; }
@@ -35,13 +37,18 @@ function cssClass(situacao: string): string {
 
 async function fetchData(): Promise<APIResponse> {
   if (IS_LOCAL) {
-    // Local: usa proxy allorigins para contornar CORS
-    const res  = await fetch(PROXY_URL);
-    const json = await res.json();
-    return JSON.parse(json.contents) as APIResponse;
+    // Local: usa corsproxy.io para contornar CORS
+    const res = await fetch(PROXY_URL);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
   }
-  // Produção: JSON estático gerado pelo Actions
-  const res = await fetch(`${JSON_URL}?t=${Date.now()}`); // cache-bust
+
+  // Produção: busca manifesto sem cache para obter timestamp atual
+  const manifestRes = await fetch(`${MANIFEST}?t=${Date.now()}`);
+  const { t }       = await manifestRes.json();
+
+  // Usa o timestamp do manifesto como cache-bust no JSON principal
+  const res = await fetch(`${JSON_URL}?t=${t}`);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json();
 }
@@ -68,16 +75,15 @@ function applyStatus(data: APIResponse): void {
     }
   });
 
-  // Última atualização
+  // Última atualização — usa timestamp do meta do JSON carregado
   const ultimaAtualizacao = document.getElementById("ultima-atualizacao");
-  if (ultimaAtualizacao) {
-    const ts = data.meta?.timestamp ?? new Date().toISOString();
-    const dt = new Date(ts);
+  if (ultimaAtualizacao && data.meta?.timestamp) {
+    const dt = new Date(data.meta.timestamp);
     const formatado = dt.toLocaleString("pt-BR", {
       day: "2-digit", month: "2-digit", year: "numeric",
       hour: "2-digit", minute: "2-digit",
     });
-    ultimaAtualizacao.textContent = `atualizado em ${formatado}`;
+    ultimaAtualizacao.textContent = `Atualizado em ${formatado}`;
   }
 }
 
@@ -95,6 +101,10 @@ async function update(): Promise<void> {
 }
 
 export function loadStatusLinhas(): void {
-  update(); // executa imediatamente
-  setInterval(update, INTERVAL_MS); // repete a cada 5 min
+  console.log("[Status] Iniciando — polling a cada 5 min");
+  update();
+  setInterval(() => {
+    console.log("[Status] Atualizando...");
+    update();
+  }, INTERVAL_MS);
 }

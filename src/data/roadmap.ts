@@ -46,7 +46,9 @@ const roadmapData: Roadmap = {
     },
     {
       categoria: "🛠️ Logs e Validações",
-      texto: "Sem modificações futuras no momento.",
+      itens: [
+        { label: "Atualizar Node.js, ver logs GitHub", checked: false },
+      ],
     },
     {
       categoria: "🖼️ Interface",

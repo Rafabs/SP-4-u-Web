@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: "0 */3 * * *"  # Atualiza status a cada 3 horas
+    - cron: "*/10 * * * *"  # A cada 10 minutos (mínimo do GitHub Actions)
   workflow_dispatch:
 
 permissions:

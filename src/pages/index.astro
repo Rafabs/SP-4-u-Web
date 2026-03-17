@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import LinhaCard from '../components/LinhaCard.astro';
-import { dadosLinhas } from '../data/linhas';
-import roadmapData from '../data/roadmap';
+import Layout from "../layouts/Layout.astro";
+import LinhaCard from "../components/LinhaCard.astro";
+import { dadosLinhas } from "../data/linhas";
+import roadmapData from "../data/roadmap";
 
 const latest = roadmapData.historico[0];
 const base = import.meta.env.BASE_URL;
@@ -14,15 +14,24 @@ const base = import.meta.env.BASE_URL;
     <div class="info-container">
       <h2>Sampa 4u</h2>
       <p>
-        O <strong>Sampa 4u</strong> é um ecossistema de visualização de dados focado na malha
-        metroferroviária e de ônibus urbano de São Paulo. O projeto transforma dados operacionais
-        e coordenadas em interfaces gráficas intuitivas, facilitando a compreensão da mobilidade
-        urbana na capital paulista.
+        O <strong>Sampa 4u</strong> é um ecossistema de visualização de dados focado
+        na malha metroferroviária e de ônibus urbano de São Paulo. O projeto transforma
+        dados operacionais e coordenadas em interfaces gráficas intuitivas, facilitando
+        a compreensão da mobilidade urbana na capital paulista.
       </p>
       <div class="version-info">
-        <img src={`https://img.shields.io/badge/Vers%C3%A3o-${encodeURIComponent(latest.versao)}-blue?style=for-the-badge`} alt="Versão" />
-        <img src={`https://img.shields.io/badge/Atualiza%C3%A7%C3%A3o-${latest.data.replace(/\//g, '%2F')}-green?style=for-the-badge`} alt="Atualização" />
-        <img src="https://img.shields.io/badge/Licença-MIT-orange?style=for-the-badge" alt="Licença" />
+        <img
+          src={`https://img.shields.io/badge/Vers%C3%A3o-${encodeURIComponent(latest.versao)}-blue?style=for-the-badge`}
+          alt="Versão"
+        />
+        <img
+          src={`https://img.shields.io/badge/Atualiza%C3%A7%C3%A3o-${latest.data.replace(/\//g, "%2F")}-green?style=for-the-badge`}
+          alt="Atualização"
+        />
+        <img
+          src="https://img.shields.io/badge/Licença-MIT-orange?style=for-the-badge"
+          alt="Licença"
+        />
       </div>
     </div>
   </section>
@@ -32,9 +41,16 @@ const base = import.meta.env.BASE_URL;
   <section class="lines">
     <h2>Consulte as linhas do Sistema Metropolitano</h2>
     <ul class="line-list">
-      {Object.entries(dadosLinhas).map(([id, linha]) => (
-        <LinhaCard id={id} nome={linha.nome} cor={linha.cor} empresa={linha.empresa} />
-      ))}
+      {
+        Object.entries(dadosLinhas).map(([id, linha]) => (
+          <LinhaCard
+            id={id}
+            nome={linha.nome}
+            cor={linha.cor}
+            empresa={linha.empresa}
+          />
+        ))
+      }
     </ul>
     <div class="empresa" id="ultima-atualizacao"></div>
   </section>
@@ -42,16 +58,22 @@ const base = import.meta.env.BASE_URL;
   <section class="about">
     <div
       class="attention"
-      style="background-color: rgba(0,0,0,0.05); padding: 15px; border-left: 5px solid #d40000; margin: 20px 0;">
+      style="background-color: rgba(0,0,0,0.05); padding: 15px; border-left: 5px solid #d40000; margin: 20px 0;"
+    >
       <h2>CCM | Centro de Controle Metroferroviário</h2>
-        <p>
+      <p>
         Os status operacionais exibidos acima são extraídos da API pública do
-        <strong>Centro de Controle Metroferroviário (CCM)</strong> da ARTESP, disponível em
-        <a href="https://ccm.artesp.sp.gov.br/metroferroviario/api/docs/" target="_blank" rel="noopener">
+        <strong>Centro de Controle Metroferroviário (CCM)</strong> da ARTESP, disponível
+        em
+        <a
+          href="https://ccm.artesp.sp.gov.br/metroferroviario/api/docs/"
+          target="_blank"
+          rel="noopener"
+        >
           ccm.artesp.sp.gov.br
-        </a>.
-        Os dados são coletados automaticamente a cada 3 horas via GitHub Actions e cobrem
-        todas as linhas do sistema metroferroviário paulista — incluindo Metrô, CPTM e Concessionárias.
+        </a>. Os dados são coletados automaticamente a cada 3 horas via GitHub
+        Actions e cobrem todas as linhas do sistema metroferroviário paulista —
+        incluindo Metrô, CPTM e Concessionárias.
       </p>
     </div>
   </section>
@@ -75,15 +97,18 @@ const base = import.meta.env.BASE_URL;
           />
         </a>
       </div>
-      <p><strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de integração contínua.</p>
+      <p>
+        <strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de
+        integração contínua.
+      </p>
     </div>
   </section>
 
-<script define:vars={{ base }}>
+  <script define:vars={{ base }}>
     window.__BASE_URL__ = base;
   </script>
   <script>
     import { loadStatusLinhas } from "../lib/status-linhas";
     loadStatusLinhas();
-  </script>
-</Layout>
+  </script></Layout
+>
