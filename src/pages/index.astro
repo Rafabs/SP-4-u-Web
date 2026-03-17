@@ -5,7 +5,9 @@ import { dadosLinhas } from '../data/linhas';
 import roadmapData from '../data/roadmap';
 
 const latest = roadmapData.historico[0];
+const base = import.meta.env.BASE_URL;
 ---
+
 <Layout title="Sampa 4u | Início">
   <hr />
   <section class="about">
@@ -24,7 +26,9 @@ const latest = roadmapData.historico[0];
       </div>
     </div>
   </section>
+
   <hr />
+
   <section class="lines">
     <h2>Consulte as linhas do Sistema Metropolitano</h2>
     <ul class="line-list">
@@ -32,18 +36,34 @@ const latest = roadmapData.historico[0];
         <LinhaCard id={id} nome={linha.nome} cor={linha.cor} empresa={linha.empresa} />
       ))}
     </ul>
-    <div class="empresa" id="ultima-atualizacao">
-      Atualizado em {latest.data} — {latest.descricao}
+    <div class="empresa" id="ultima-atualizacao"></div>
+  </section>
+
+  <section class="about">
+    <div
+      class="attention"
+      style="background-color: rgba(0,0,0,0.05); padding: 15px; border-left: 5px solid #d40000; margin: 20px 0;">
+      <h2>CCM | Centro de Controle Metroferroviário</h2>
+        <p>
+        Os status operacionais exibidos acima são extraídos da API pública do
+        <strong>Centro de Controle Metroferroviário (CCM)</strong> da ARTESP, disponível em
+        <a href="https://ccm.artesp.sp.gov.br/metroferroviario/api/docs/" target="_blank" rel="noopener">
+          ccm.artesp.sp.gov.br
+        </a>.
+        Os dados são coletados automaticamente a cada 3 horas via GitHub Actions e cobrem
+        todas as linhas do sistema metroferroviário paulista — incluindo Metrô, CPTM e Concessionárias.
+      </p>
     </div>
   </section>
   <hr />
+
   <section class="data" style="text-align: center;">
     <h2>Notícias sobre o transporte público</h2>
     <a href="/news" class="btn-news">Acessar Portal de Notícias</a>
   </section>
+
   <hr />
-  <div id="dynamic-systems-info"></div>
-  <hr />
+
   <section class="about">
     <div class="info-container">
       <h2>Desenvolvimento e Transparência</h2>
@@ -58,4 +78,12 @@ const latest = roadmapData.historico[0];
       <p><strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de integração contínua.</p>
     </div>
   </section>
+
+<script define:vars={{ base }}>
+    window.__BASE_URL__ = base;
+  </script>
+  <script>
+    import { loadStatusLinhas } from "../lib/status-linhas";
+    loadStatusLinhas();
+  </script>
 </Layout>

@@ -69,7 +69,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 6 • Laranja (MoveSP)",
+            "line": "Linha 6 • Laranja (LinhaUni)",
             "line_url_name": "275-linha-6-•-laranja",
             "system": "Metroferroviário"
           }
@@ -144,7 +144,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 6 • Laranja (MoveSP)",
+            "line": "Linha 6 • Laranja (LinhaUni)",
             "line_url_name": "275-linha-6-•-laranja",
             "system": "Metroferroviário"
           }
@@ -223,24 +223,6 @@
             "line": "Trem dos Ingleses (ABPF)",
             "line_url_name": "281-trem-dos-ingleses-(abpf)",
             "system": "Turismo"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [-46.6499, -23.55568] },
-      "properties": {
-        "id": 6667,
-        "klass": "Station",
-        "name": "14 Bis",
-        "buildstart": 2015,
-        "closure": 999999,
-        "lines": [
-          {
-            "line": "Linha 6 • Laranja (MoveSP)",
-            "line_url_name": "275-linha-6-•-laranja",
-            "system": "Metroferroviário"
           }
         ]
       }
@@ -332,7 +314,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 6 • Laranja (MoveSP)",
+            "line": "Linha 6 • Laranja (LinhaUni)",
             "line_url_name": "275-linha-6-•-laranja",
             "system": "Metroferroviário"
           }
@@ -350,7 +332,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 6 • Laranja (MoveSP)",
+            "line": "Linha 6 • Laranja (LinhaUni)",
             "line_url_name": "275-linha-6-•-laranja",
             "system": "Metroferroviário"
           }
@@ -444,7 +426,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 6 • Laranja (MoveSP)",
+            "line": "Linha 6 • Laranja (LinhaUni)",
             "line_url_name": "275-linha-6-•-laranja",
             "system": "Metroferroviário"
           }
@@ -481,7 +463,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 6 • Laranja (MoveSP)",
+            "line": "Linha 6 • Laranja (LinhaUni)",
             "line_url_name": "275-linha-6-•-laranja",
             "system": "Metroferroviário"
           }
@@ -499,7 +481,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 6 • Laranja (MoveSP)",
+            "line": "Linha 6 • Laranja (LinhaUni)",
             "line_url_name": "275-linha-6-•-laranja",
             "system": "Metroferroviário"
           }
@@ -545,6 +527,24 @@
     },
     {
       "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6499, -23.55568] },
+      "properties": {
+        "id": 6667,
+        "klass": "Station",
+        "name": "14 Bis-Saracura",
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [-46.67913, -23.62197] },
       "properties": {
         "id": 6685,
@@ -573,7 +573,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 6 • Laranja (MoveSP)",
+            "line": "Linha 6 • Laranja (LinhaUni)",
             "line_url_name": "275-linha-6-•-laranja",
             "system": "Metroferroviário"
           }
@@ -689,7 +689,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 6 • Laranja (MoveSP)",
+            "line": "Linha 6 • Laranja (LinhaUni)",
             "line_url_name": "275-linha-6-•-laranja",
             "system": "Metroferroviário"
           }
@@ -707,7 +707,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 6 • Laranja (MoveSP)",
+            "line": "Linha 6 • Laranja (LinhaUni)",
             "line_url_name": "275-linha-6-•-laranja",
             "system": "Metroferroviário"
           }
@@ -743,7 +743,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 6 • Laranja (MoveSP)",
+            "line": "Linha 6 • Laranja (LinhaUni)",
             "line_url_name": "275-linha-6-•-laranja",
             "system": "Metroferroviário"
           }
@@ -780,26 +780,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 6 • Laranja (MoveSP)",
-            "line_url_name": "275-linha-6-•-laranja",
-            "system": "Metroferroviário"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [-46.69588, -23.47533] },
-      "properties": {
-        "id": 6663,
-        "klass": "Station",
-        "name": "Vila Cardoso",
-        "opening": 999999,
-        "buildstart": 2015,
-        "closure": 999999,
-        "lines": [
-          {
-            "line": "Linha 6 • Laranja (MoveSP)",
+            "line": "Linha 6 • Laranja (LinhaUni)",
             "line_url_name": "275-linha-6-•-laranja",
             "system": "Metroferroviário"
           }
@@ -817,7 +798,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 6 • Laranja (MoveSP)",
+            "line": "Linha 6 • Laranja (LinhaUni)",
             "line_url_name": "275-linha-6-•-laranja",
             "system": "Metroferroviário"
           }
@@ -1869,30 +1850,6 @@
     },
     {
       "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [-46.33288, -23.52544] },
-      "properties": {
-        "id": 3408,
-        "klass": "Station",
-        "name": "Calmon Viana",
-        "opening": 1926,
-        "buildstart": 1925,
-        "closure": 999999,
-        "lines": [
-          {
-            "line": "Linha 12 • Safira (CPTM)",
-            "line_url_name": "272-linha-12---safira",
-            "system": "Metroferroviário"
-          },
-          {
-            "line": "Linha 11 • Coral (CPTM)",
-            "line_url_name": "271-linha-11---coral",
-            "system": "Metroferroviário"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [-46.77589, -23.52778] },
       "properties": {
         "id": 3336,
@@ -2051,7 +2008,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -2512,7 +2469,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -2588,7 +2545,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -2607,7 +2564,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -2626,7 +2583,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -2645,7 +2602,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -2664,7 +2621,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -2683,7 +2640,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -2702,7 +2659,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -2721,7 +2678,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -2740,7 +2697,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -2908,7 +2865,7 @@
             "system": "Metroferroviário"
           },
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -2927,7 +2884,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -3447,25 +3404,6 @@
           {
             "line": "Linha 5 • Lilás (ViaMobilidade)",
             "line_url_name": "264-linha-5---lilas",
-            "system": "Metroferroviário"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": { "type": "Point", "coordinates": [-46.59655, -23.58248] },
-      "properties": {
-        "id": 3389,
-        "klass": "Station",
-        "name": "Ipiranga",
-        "opening": 1886,
-        "buildstart": 1885,
-        "closure": 999999,
-        "lines": [
-          {
-            "line": "Linha 10 • Turquesa (CPTM)",
-            "line_url_name": "270-linha-10---turquesa",
             "system": "Metroferroviário"
           }
         ]
@@ -4438,6 +4376,30 @@
     },
     {
       "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.59655, -23.58248] },
+      "properties": {
+        "id": 3389,
+        "klass": "Station",
+        "name": "Ipiranga",
+        "opening": 1886,
+        "buildstart": 1885,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 10 • Turquesa (CPTM)",
+            "line_url_name": "270-linha-10---turquesa",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 15 • Prata (CMSP)",
+            "line_url_name": "265-linha-15---prata",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [-46.43129, -23.53919] },
       "properties": {
         "id": 3415,
@@ -4799,7 +4761,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -4820,7 +4782,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -4841,7 +4803,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -4875,7 +4837,7 @@
             "system": "Metroferroviário"
           },
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -4896,7 +4858,7 @@
         "closure": 999999,
         "lines": [
           {
-            "line": "Linha 7 • Rubi (CPTM)",
+            "line": "Linha 7 • Rubi (Tic Trens)",
             "line_url_name": "267-linha-7---rubi",
             "system": "Metroferroviário"
           }
@@ -5134,6 +5096,182 @@
           {
             "line": "Linha 4 • Amarela (ViaQuatro)",
             "line_url_name": "266-linha-4---amarela",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69588, -23.47533] },
+      "properties": {
+        "id": 6663,
+        "klass": "Station",
+        "name": "Maristela",
+        "opening": 999999,
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.33287, -23.52542] },
+      "properties": {
+        "id": 3408,
+        "klass": "Station",
+        "name": "Calmon Viana",
+        "opening": 1926,
+        "buildstart": 1925,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 12 • Safira (CPTM)",
+            "line_url_name": "272-linha-12---safira",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.54123, -23.54688] },
+      "properties": {
+        "id": 42854,
+        "klass": "Station",
+        "name": "Guilherme Giorgi",
+        "opening": 9999,
+        "buildstart": 2021,
+        "closure": 9999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.56627, -23.57341] },
+      "properties": {
+        "id": 42850,
+        "klass": "Station",
+        "name": "Santa Clara",
+        "opening": 9999,
+        "buildstart": 2021,
+        "closure": 9996,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.54548, -23.5548] },
+      "properties": {
+        "id": 42853,
+        "klass": "Station",
+        "name": "Santa Isabel",
+        "opening": 9999,
+        "buildstart": 2021,
+        "closure": 9994,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.54128, -23.53973] },
+      "properties": {
+        "id": 42855,
+        "klass": "Station",
+        "name": "Aricanduva",
+        "opening": 9999,
+        "buildstart": 2021,
+        "closure": 9999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.56026, -23.56398] },
+      "properties": {
+        "id": 42851,
+        "klass": "Station",
+        "name": "Anália Franco",
+        "opening": 9999,
+        "buildstart": 2021,
+        "closure": 9999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.55122, -23.5623] },
+      "properties": {
+        "id": 42852,
+        "klass": "Station",
+        "name": "Vila Formosa",
+        "opening": 9999,
+        "buildstart": 2021,
+        "closure": 9999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.57554, -23.57829] },
+      "properties": {
+        "id": 42849,
+        "klass": "Station",
+        "name": "Orfanato",
+        "opening": 9999,
+        "buildstart": 2021,
+        "closure": 9999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
             "system": "Metroferroviário"
           }
         ]

@@ -611,7 +611,6 @@ footer {
     }
 
     .line-list li span { grid-area: dot; }
-    .line-list li code { grid-area: hex; }
     .line-list li a    { grid-area: line; font-size: 0.9rem; }
     
     .line-list li .empresa {

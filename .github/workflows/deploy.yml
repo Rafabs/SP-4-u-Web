@@ -2,7 +2,10 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # A branch principal
+    branches: [main]
+  schedule:
+    - cron: "0 */3 * * *"  # Atualiza status a cada 3 horas
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -15,18 +18,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
+
       - name: Install dependencies
         run: npm install
-        
+
+      - name: Fetch status das linhas (ARTESP)
+        run: node scripts/fetch-status.js
+
       - name: Build Astro
         run: npm run build
         env:
-          PUBLIC_AQI_API_KEY: ${{ secrets.PUBLIC_AQI_API_KEY }} # API de WAQI
+          PUBLIC_AQI_API_KEY: ${{ secrets.PUBLIC_AQI_API_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

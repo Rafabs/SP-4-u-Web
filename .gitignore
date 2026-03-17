@@ -25,6 +25,7 @@ Thumbs.db
 
 # Dados Temporários de Desenvolvimento
 public/data/temp-*
+public/data/status-linhas.json
 C:/temp/vite-cache/deps/_metadata.json
 C:/temp/vite-cache/deps/astro___aria-query.js
 C:/temp/vite-cache/deps/astro___aria-query.js.map

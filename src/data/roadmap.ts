@@ -28,13 +28,14 @@ const roadmapData: Roadmap = {
     {
       categoria: "🔧 Refatoração e Estrutura",
       itens: [
-        { label: "Desenvolver funcionalidade para atualização/horário das linhas", checked: false },
-        { label: "Desenvolver funcionalidade para atualização de status das linhas", checked: false },
-        { label: "Analisar o uso de arquivos gtfs diretamente do servidor", checked: false },
+        { label: "Analisar o uso de arquivos GTFS diretamente do servidor", checked: false },
         { label: "Corrigir exibição de dados de Pesquisa Origem e Destino (Exibição de 1997 e 2007)", checked: false },
         { label: "Desenvolver Design System e disponibilizar no projeto", status: "EM DESENVOLVIMENTO", checked: false },
         { label: "Desenvolver funcionalidade de página de Turismo", checked: false },
+        { label: "Desenvolver status das linhas para cada item de detalhes.index", checked: false },
+        { label: "Desenvolver funcionalidade de sublink de Ocorrências metroferroviárias", checked: false },
         { label: "Adotar Next.js durante melhoria de mapas", checked: false },
+        { label: "Desenvolver app Android - SP4U.apk", checked: false },
       ],
     },
     {
@@ -52,12 +53,14 @@ const roadmapData: Roadmap = {
       itens: [
         { label: "Exibir Linha 17 - Ouro por ramificação", checked: false },
         { label: "Correção de estilos em geral", checked: false },
-        { label: "Adotar método de design Hero Section", checked: false },
-        { label: "Atualizar dados .json/.kmz de Mapa", status: "EM DESENVOLVIMENTO", checked: false },
+        { label: "Criação de página sublink de Ocorrências metroferroviárias em Index", checked: false },
+        { label: "Adotar método de design Hero Section", status: "EM DESENVOLVIMENTO", checked: false },
       ],
     },
   ],
   historico: [
+    { data: "17/03/2026", versao: "v26.03.9", descricao: "Desenvolvido funcionalidade para atualização/horário das linhas e Atualização de status das linhas" },
+    { data: "17/03/2026", versao: "v26.03.8", descricao: "Atualizar dados .json/.kmz de Mapa" },
     { data: "13/03/2026", versao: "v26.03.7", descricao: "Melhorias na interface e funcionalidade dos mapas, Atualização GTFS - SPTrans e Integrado exibição de versionamento de index com roadmap.ts" },
     { data: "12/03/2026", versao: "v26.03.6", descricao: "Corrigido AQI para dados de qualidade do ar em -- exibir na cor cinza e Exibição de todos os mapas unificados em Explore" },
     { data: "09/03/2026", versao: "v26.03.5", descricao: "Ajustado a localização de arquivos de dados nas pastas" },

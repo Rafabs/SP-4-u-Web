@@ -1,7 +1,7 @@
-const L = (window as any).L;
-import type { Feature, Geometry } from "geojson";
+import L from "leaflet";
 import Papa from "papaparse";
-import { map } from "./map-instance"; // ← instância compartilhada
+import { map } from "./map-instance"; 
+import type { Feature, Geometry } from "geojson";
 
 // ===============================
 // CONFIGURAÇÃO DE AMBIENTE
@@ -97,12 +97,17 @@ export async function loadMapData(): Promise<void> {
         lineCap: "round",
       }),
       onEachFeature: (f: Feature<Geometry>, l: L.Layer) =>
-        l.on("click", (e) => handleLineClick(e as L.LeafletMouseEvent, f, lineColors)),
+        l.on("click", (e) => handleLineClick(
+          e as L.LeafletMouseEvent,
+          f,
+          lineColors,
+          sectionsData.features  // ← aqui
+        )),
     }).addTo(trilhosLayer);
 
     L.geoJSON(stationsData, {
-      pointToLayer: (f: Feature<Geometry>, latlng: L.LatLng) => {
-        const lineName = f.properties?.lines?.[0]?.line;
+      pointToLayer: (f, latlng) => {
+        const lineName = f.properties.lines?.[0]?.line;
         const iconPath = iconMapping[lineName];
         if (iconPath) {
           const fileName = iconPath.split(/[\\/]/).pop();
@@ -121,22 +126,33 @@ export async function loadMapData(): Promise<void> {
           weight: 1,
         });
       },
-      onEachFeature: (f: Feature<Geometry>, l: L.Layer) =>
+      onEachFeature: (f, l) =>
         l.bindPopup(
-          `<b>Estação:</b> ${f.properties?.name}<br><b>Linha:</b> ${f.properties?.lines?.[0]?.line}`
+          `<b>Estação:</b> ${f.properties.name}<br>
+          <b>Linha:</b> ${f.properties.lines?.[0]?.line}`
         ),
     }).addTo(trilhosLayer);
 
     // --- CICLOVIAS ---
     L.geoJSON(cicloData, {
       style: { color: "#32e622", weight: 3, opacity: 0.8 },
-      onEachFeature: (f: Feature<Geometry>, l: L.Layer) =>
-        l.bindPopup(`<b>Ciclovia:</b> ${f.properties?.rc_nome || "Trecho"}`),
+      onEachFeature: (f: Feature<Geometry>, l: L.Layer) => {
+        const raw = f.properties?.rc_inaugur ?? "";
+        const inauguracao = raw.length === 8
+          ? `${raw.slice(6,8)}/${raw.slice(4,6)}/${raw.slice(0,4)}`
+          : "—";
+
+        l.bindPopup(`
+          <b>Local:</b> ${f.properties?.rc_nome || "—"}<br>
+          <b>Inauguração:</b> ${inauguracao}<br>
+          <b>Tipo:</b> ${f.properties?.tx_tipo_via_bicicleta || "—"}
+        `);
+      },
     }).addTo(cicloLayer);
 
     // --- BICICLETÁRIOS ---
     L.geoJSON(bikeData, {
-      pointToLayer: (_: Feature<Geometry>, latlng: L.LatLng) =>
+      pointToLayer: (_, latlng) =>
         L.marker(latlng, {
           icon: L.icon({
             iconUrl: getPath("/icons/bicicleta.png"),
@@ -144,9 +160,12 @@ export async function loadMapData(): Promise<void> {
             iconAnchor: [12, 12],
           }),
         }),
-      onEachFeature: (f: Feature<Geometry>, l: L.Layer) =>
+      onEachFeature: (f, l) =>
         l.bindPopup(
-          `<b>Bicicletário:</b> ${f.properties?.bcp_local}<br><b>Vagas:</b> ${f.properties?.bcp_vaga}`
+          `<b>Bicicletário:</b> ${f.properties.bcp_local}<br>
+          <b>Vagas:</b> ${f.properties.bcp_vaga}<br>
+          <b>Responsável:</b> ${f.properties.bcp_orgao}<br>
+          <b>Tipo:</b> ${f.properties.bcp_tipo}`
         ),
     }).addTo(bicicletarioLayer);
 
@@ -293,26 +312,44 @@ export function filterSptransLine(selectedRouteId: string | null, system: GTFSSy
 function handleLineClick(
   e: L.LeafletMouseEvent,
   feature: GeoJSON.Feature,
-  lineColors: Record<string, string>
+  lineColors: Record<string, string>,
+  allFeatures: GeoJSON.Feature[]  // ← passa todas as features do sectionsData
 ): void {
   if (selectedLayer) selectedLayer.setStyle({ weight: 4, opacity: 0.8 });
   selectedLayer = e.target as L.Path;
   selectedLayer.setStyle({ weight: 8, opacity: 1 });
 
-  const line = feature.properties?.lines?.[0]?.line;
+  const line      = feature.properties?.lines?.[0]?.line;
+  const system    = feature.properties?.lines?.[0]?.system ?? "—";
+  const buildstart = feature.properties?.buildstart;
+  const closure   = feature.properties?.closure;
+
+  // Soma o length de todos os trechos da mesma linha
+  const totalMetros = allFeatures
+    .filter(f => f.properties?.lines?.[0]?.line === line)
+    .reduce((acc, f) => acc + (f.properties?.length ?? 0), 0);
+
+  const extensao = totalMetros > 0
+    ? `${(totalMetros / 1000).toFixed(2)} km`
+    : "—";
+
+  const status = closure === 999999 ? "Em operação"
+    : closure ? `Encerrado em ${closure}` : "—";
+
+  const construcao = buildstart === 999999 ? "Planeamento"
+    : buildstart ? `${buildstart}` : "—";
+
   (selectedLayer as L.Layer & { bindPopup: (s: string) => L.Layer; openPopup: () => void })
     .bindPopup(`
       <div class="map-popup">
         <div class="popup-header" style="background-color:${lineColors[line] || "#333"}">
-          <strong>${line}</strong>
+          <strong>${line ?? "—"}</strong>
         </div>
         <div class="popup-body">
-          <p><strong>Sistema:</strong> ${feature.properties?.lines?.[0]?.system}</p>
-          <p><strong>Status:</strong> ${
-            feature.properties?.buildstart === 999999
-              ? "Planeamento"
-              : feature.properties?.buildstart
-          }</p>
+          <p><strong>Sistema:</strong> ${system}</p>
+          <p><strong>Construção:</strong> ${construcao}</p>
+          <p><strong>Status:</strong> ${status}</p>
+          <p><strong>Extensão total:</strong> ${extensao}</p>
         </div>
       </div>
     `)
