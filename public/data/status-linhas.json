@@ -1,7 +1,7 @@
 {
   "meta": {
     "versao": "1.0.0",
-    "timestamp": "2026-03-17T23:25:34.110320",
+    "timestamp": "2026-03-17T23:35:58.029257",
     "filtros_aplicados": {
       "empresa": null,
       "linha": null,
@@ -26,7 +26,7 @@
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-03-17T09:10:00.809717",
-            "atualizado_ha": "14 horas, 15 minutos"
+            "atualizado_ha": "14 horas, 25 minutos"
           },
           "estacoes": {
             "total": 17,
@@ -68,7 +68,7 @@
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-03-17T04:45:00.721728",
-            "atualizado_ha": "18 horas, 40 minutos"
+            "atualizado_ha": "18 horas, 50 minutos"
           },
           "estacoes": {
             "total": 17,
@@ -110,7 +110,7 @@
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-03-17T05:25:00.617589",
-            "atualizado_ha": "18 horas"
+            "atualizado_ha": "18 horas, 10 minutos"
           },
           "estacoes": {
             "total": 23,
@@ -151,7 +151,7 @@
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-03-17T04:00:18.842328",
-            "atualizado_ha": "19 horas, 25 minutos"
+            "atualizado_ha": "19 horas, 35 minutos"
           },
           "estacoes": {
             "total": 21,
@@ -197,7 +197,7 @@
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-03-17T21:45:04.372300",
-            "atualizado_ha": "1 hora, 40 minutos"
+            "atualizado_ha": "1 hora, 50 minutos"
           },
           "estacoes": {
             "total": 11,
@@ -233,7 +233,7 @@
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-03-17T04:00:18.842282",
-            "atualizado_ha": "19 horas, 25 minutos"
+            "atualizado_ha": "19 horas, 35 minutos"
           }
         },
         {
@@ -246,7 +246,7 @@
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-03-17T04:00:18.842291",
-            "atualizado_ha": "19 horas, 25 minutos"
+            "atualizado_ha": "19 horas, 35 minutos"
           },
           "estacoes": {
             "total": 16
@@ -262,7 +262,7 @@
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-03-17T04:00:18.842299",
-            "atualizado_ha": "19 horas, 25 minutos"
+            "atualizado_ha": "19 horas, 35 minutos"
           },
           "estacoes": {
             "total": 13
@@ -278,7 +278,7 @@
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-03-17T04:00:18.842307",
-            "atualizado_ha": "19 horas, 25 minutos"
+            "atualizado_ha": "19 horas, 35 minutos"
           },
           "estacoes": {
             "total": 3
@@ -301,7 +301,7 @@
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-03-17T04:40:07.962846",
-            "atualizado_ha": "18 horas, 45 minutos"
+            "atualizado_ha": "18 horas, 55 minutos"
           }
         },
         {
@@ -314,7 +314,7 @@
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-03-17T04:40:07.962817",
-            "atualizado_ha": "18 horas, 45 minutos"
+            "atualizado_ha": "18 horas, 55 minutos"
           }
         },
         {
@@ -327,7 +327,7 @@
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-03-17T14:35:00.720752",
-            "atualizado_ha": "8 horas, 50 minutos"
+            "atualizado_ha": "9 horas"
           }
         },
         {
@@ -340,7 +340,7 @@
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-03-17T04:40:07.962840",
-            "atualizado_ha": "18 horas, 45 minutos"
+            "atualizado_ha": "18 horas, 55 minutos"
           }
         }
       ]
