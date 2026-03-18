@@ -1,7 +1,7 @@
 {
   "meta": {
     "versao": "1.0.0",
-    "timestamp": "2026-03-18T00:25:36.123958",
+    "timestamp": "2026-03-18T00:35:35.394530",
     "filtros_aplicados": {
       "empresa": null,
       "linha": null,
@@ -26,7 +26,7 @@
             "classificacao": "ignorar",
             "operacao_normal": false,
             "atualizado_em": "2026-03-18T00:00:01.281520",
-            "atualizado_ha": "25 minutos"
+            "atualizado_ha": "35 minutos"
           },
           "estacoes": {
             "total": 17,
@@ -68,7 +68,7 @@
             "classificacao": "ignorar",
             "operacao_normal": false,
             "atualizado_em": "2026-03-18T00:05:21.162809",
-            "atualizado_ha": "20 minutos"
+            "atualizado_ha": "30 minutos"
           },
           "estacoes": {
             "total": 17,
@@ -110,7 +110,7 @@
             "classificacao": "ignorar",
             "operacao_normal": false,
             "atualizado_em": "2026-03-18T00:05:21.162814",
-            "atualizado_ha": "20 minutos"
+            "atualizado_ha": "30 minutos"
           },
           "estacoes": {
             "total": 23,
@@ -151,7 +151,7 @@
             "classificacao": "ignorar",
             "operacao_normal": false,
             "atualizado_em": "2026-03-18T00:05:21.162818",
-            "atualizado_ha": "20 minutos"
+            "atualizado_ha": "30 minutos"
           },
           "estacoes": {
             "total": 21,
@@ -197,7 +197,7 @@
             "classificacao": "ignorar",
             "operacao_normal": false,
             "atualizado_em": "2026-03-18T00:00:01.126569",
-            "atualizado_ha": "25 minutos"
+            "atualizado_ha": "35 minutos"
           },
           "estacoes": {
             "total": 11,
@@ -233,7 +233,7 @@
             "classificacao": "ignorar",
             "operacao_normal": false,
             "atualizado_em": "2026-03-18T00:00:01.126531",
-            "atualizado_ha": "25 minutos"
+            "atualizado_ha": "35 minutos"
           }
         },
         {
@@ -246,7 +246,7 @@
             "classificacao": "ignorar",
             "operacao_normal": false,
             "atualizado_em": "2026-03-18T00:00:01.126537",
-            "atualizado_ha": "25 minutos"
+            "atualizado_ha": "35 minutos"
           },
           "estacoes": {
             "total": 16
@@ -262,7 +262,7 @@
             "classificacao": "ignorar",
             "operacao_normal": false,
             "atualizado_em": "2026-03-18T00:00:01.126542",
-            "atualizado_ha": "25 minutos"
+            "atualizado_ha": "35 minutos"
           },
           "estacoes": {
             "total": 13
@@ -278,7 +278,7 @@
             "classificacao": "ignorar",
             "operacao_normal": false,
             "atualizado_em": "2026-03-18T00:00:01.126547",
-            "atualizado_ha": "25 minutos"
+            "atualizado_ha": "35 minutos"
           },
           "estacoes": {
             "total": 3
@@ -301,7 +301,7 @@
             "classificacao": "ignorar",
             "operacao_normal": false,
             "atualizado_em": "2026-03-18T00:05:21.162784",
-            "atualizado_ha": "20 minutos"
+            "atualizado_ha": "30 minutos"
           }
         },
         {
@@ -314,7 +314,7 @@
             "classificacao": "ignorar",
             "operacao_normal": false,
             "atualizado_em": "2026-03-18T00:05:21.162753",
-            "atualizado_ha": "20 minutos"
+            "atualizado_ha": "30 minutos"
           }
         },
         {
@@ -327,7 +327,7 @@
             "classificacao": "ignorar",
             "operacao_normal": false,
             "atualizado_em": "2026-03-18T00:05:21.162771",
-            "atualizado_ha": "20 minutos"
+            "atualizado_ha": "30 minutos"
           }
         },
         {
@@ -340,7 +340,7 @@
             "classificacao": "ignorar",
             "operacao_normal": false,
             "atualizado_em": "2026-03-18T00:05:21.162778",
-            "atualizado_ha": "20 minutos"
+            "atualizado_ha": "30 minutos"
           }
         }
       ]
