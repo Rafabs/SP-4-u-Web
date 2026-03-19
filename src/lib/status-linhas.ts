@@ -43,13 +43,12 @@ function cssClass(situacao: string): string {
   if (s.includes("normal")) 
     return "verde_operacao_normal";
   if (s.includes("velocidade") || 
-      s.includes("impacto")) ||
-      s.includes("atividade")                                 
+      s.includes("impacto") ||
+      s.includes("atividade"))                                
     return "amarelo_velocidade_reduzida";
   if (
     s.includes("paralisada") ||
-    s.includes("interrompida")
-  )
+    s.includes("interrompida"))
     return "vermelho_paralisada";
   return "branco_dados_indisponiveis";
 }
