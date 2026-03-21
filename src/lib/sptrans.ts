@@ -76,6 +76,10 @@ export function initSptrans(): void {
 // ===============================
 function setupNavigationCleanup(): void {
   document.querySelectorAll("a").forEach((link) => {
+    // Ignora âncoras internas (#) — não são navegação de página
+    const href = link.getAttribute("href") ?? "";
+    if (href.startsWith("#")) return;
+
     link.addEventListener("click", () => {
       isLeavingPage = true;
       window.stop();

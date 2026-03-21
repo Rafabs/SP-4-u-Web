@@ -49,7 +49,7 @@
     font-weight: 800;
     font-size: 14px;
     text-transform: uppercase;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     min-width: 65px;
     text-align: center;
 }
@@ -129,6 +129,7 @@
     padding: 30px 20px;
     background: linear-gradient(to bottom, var(--bg-dark, #f4f4f4), transparent);
     gap: 15px;
+    scroll-margin-top: 80px; /* altura aproximada do header */
 }
 
 .search-container {
@@ -222,5 +223,39 @@
 
     .line-destiny {
         font-size: 1rem;
+    }
+}
+
+/* --- Hero Section --- */
+.hero-sptrans .hero-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes bus-run {
+    0% {
+        left: -40px;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: .6;
+    }
+
+    95% {
+        opacity: .6;
+    }
+
+    100% {
+        left: 110%;
+        opacity: 0;
     }
 }

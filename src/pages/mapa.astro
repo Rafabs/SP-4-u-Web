@@ -3,25 +3,81 @@ import Layout from "../layouts/Layout.astro";
 const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="Mapa Interativo - Sampa 4u">
+<Layout title="Sampa 4u | Mapa Interativo">
   <link rel="stylesheet" href={`${base}/map.css`} slot="head" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" slot="head" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" slot="head" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    slot="head"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    slot="head"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet-measure@3.1.0/dist/leaflet-measure.css"
+    slot="head"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet.fullscreen@3.0.2/Control.FullScreen.css"
+    slot="head"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.css"
+    slot="head"
+  />
 
-  <!-- Plugins CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-measure@3.1.0/dist/leaflet-measure.css" slot="head" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@3.0.2/Control.FullScreen.css" slot="head" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.css" slot="head" />
+  <!-- HERO compacto antes do mapa -->
+  <section class="hero hero-mapa">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-lines" id="mapa-canvas"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Visualização Geoespacial · São Paulo</div>
+      <h1 class="hero-h1">
+        Explore a<br /><span style="color:#32e622;">Cidade</span>
+      </h1>
+      <p class="hero-sub">
+        Trilhos, ciclovias, ônibus, bicicletários e qualidade do ar — todos os
+        dados da mobilidade urbana de SP reunidos em um único mapa interativo.
+      </p>
+      <div class="hero-ctas">
+        <a href="#map-section" class="btn-hero-primary">Abrir mapa</a>
+        <a href="#map-section" class="btn-hero-ghost">Ver camadas</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-val">6</div>
+          <div class="stat-label">Camadas de dados</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">1.400+</div>
+          <div class="stat-label">km de ciclovias</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">215+</div>
+          <div class="stat-label">Estações mapeadas</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">1.300+</div>
+          <div class="stat-label">Linhas de ônibus</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="map-wrapper">
+  <div id="map-section" class="map-wrapper">
     <div id="map"></div>
 
-    <!-- FAB centralizar -->
     <button id="btn-center" class="map-fab" title="Centralizar em São Paulo">
       <span class="material-symbols-outlined">my_location</span>
     </button>
 
-    <!-- Painel de camadas -->
     <div id="map-controls" class="custom-controls">
       <div class="controls-header">
         <span class="controls-title">
@@ -29,60 +85,96 @@ const base = import.meta.env.BASE_URL;
           Camadas
         </span>
         <button id="btn-collapse" class="collapse-btn" title="Minimizar painel">
-          <span class="material-symbols-outlined" id="collapse-icon">expand_less</span>
+          <span class="material-symbols-outlined" id="collapse-icon"
+            >expand_less</span
+          >
         </button>
       </div>
 
       <div id="controls-body">
-
         <p class="layer-group-label">Mobilidade Ativa</p>
         <label class="layer-item">
           <input type="checkbox" id="check-ciclo" />
-          <span class="material-symbols-outlined layer-sym" style="color:#32e622;">route</span>
+          <span
+            class="material-symbols-outlined layer-sym"
+            style="color:#32e622;">route</span
+          >
           Ciclovias
         </label>
-
         <label class="layer-item">
           <input type="checkbox" id="check-bike" />
-          <span class="material-symbols-outlined layer-sym" style="color:#32e622;">directions_bike</span>
+          <span
+            class="material-symbols-outlined layer-sym"
+            style="color:#32e622;">directions_bike</span
+          >
           Bicicletários
         </label>
 
         <p class="layer-group-label">Transporte Público</p>
         <label class="layer-item">
           <input type="checkbox" id="check-trilhos" />
-          <span class="material-symbols-outlined layer-sym" style="color:#aaaaaa;">train</span>
+          <span
+            class="material-symbols-outlined layer-sym"
+            style="color:#aaaaaa;">train</span
+          >
           Trilhos
         </label>
         <div class="layer-legend" id="legend-trilhos" style="display:none;">
           <div class="legend-note">Clique nas linhas para detalhes</div>
-        </div>        
+        </div>
         <label class="layer-item">
           <input type="checkbox" id="check-artesp" />
-          <span class="material-symbols-outlined layer-sym" style="color:#0054a6;">directions_bus</span>
+          <span
+            class="material-symbols-outlined layer-sym"
+            style="color:#0054a6;">directions_bus</span
+          >
           Linhas ARTESP
         </label>
-
         <label class="layer-item">
           <input type="checkbox" id="check-sptrans" />
-          <span class="material-symbols-outlined layer-sym" style="color:#e8000f;">directions_bus</span>
+          <span
+            class="material-symbols-outlined layer-sym"
+            style="color:#e8000f;">directions_bus</span
+          >
           Linhas SPTrans
         </label>
 
         <p class="layer-group-label">Meio Ambiente</p>
         <label class="layer-item">
           <input type="checkbox" id="check-aqi" />
-          <span class="material-symbols-outlined layer-sym" style="color:#009966;">air</span>
+          <span
+            class="material-symbols-outlined layer-sym"
+            style="color:#009966;">air</span
+          >
           Qualidade do Ar
         </label>
         <div class="layer-legend" id="aqi-legend" style="display:none;">
-          <div class="legend-row"><span class="legend-dot" style="background:#009966;"></span><span>0–50</span><span class="legend-label">Bom</span></div>
-          <div class="legend-row"><span class="legend-dot" style="background:#ffde33;"></span><span>51–100</span><span class="legend-label">Moderado</span></div>
-          <div class="legend-row"><span class="legend-dot" style="background:#ff9933;"></span><span>101–150</span><span class="legend-label">Inadequado</span></div>
-          <div class="legend-row"><span class="legend-dot" style="background:#cc0033;"></span><span>151+</span><span class="legend-label">Prejudicial</span></div>
-          <div class="legend-row"><span class="legend-dot" style="background:#9e9e9e;"></span><span>—</span><span class="legend-label">Sem dados</span></div>
+          <div class="legend-row">
+            <span class="legend-dot" style="background:#009966;"></span><span
+              >0–50</span
+            ><span class="legend-label">Bom</span>
+          </div>
+          <div class="legend-row">
+            <span class="legend-dot" style="background:#ffde33;"></span><span
+              >51–100</span
+            ><span class="legend-label">Moderado</span>
+          </div>
+          <div class="legend-row">
+            <span class="legend-dot" style="background:#ff9933;"></span><span
+              >101–150</span
+            ><span class="legend-label">Inadequado</span>
+          </div>
+          <div class="legend-row">
+            <span class="legend-dot" style="background:#cc0033;"></span><span
+              >151+</span
+            ><span class="legend-label">Prejudicial</span>
+          </div>
+          <div class="legend-row">
+            <span class="legend-dot" style="background:#9e9e9e;"></span><span
+              >—</span
+            ><span class="legend-label">Sem dados</span>
+          </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -96,21 +188,26 @@ const base = import.meta.env.BASE_URL;
       <h2>Desenvolvimento e Transparência</h2>
       <div class="actions" style="margin-bottom: 20px;">
         <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
-          <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="github" />
+          <img
+            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+            alt="github"
+          />
         </a>
       </div>
-      <p><strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de integração contínua.</p>
+      <p>
+        <strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de
+        integração contínua.
+      </p>
     </div>
   </section>
 
   <script>
     import { loadMapData } from "../lib/map-logic";
-    import { initEmtu }    from "../lib/emtu";
+    import { initEmtu } from "../lib/emtu";
     import { initSptrans } from "../lib/sptrans";
     import { loadAQIData, setupAQIControls } from "../lib/qualidade_ar";
     import { map, initPlugins } from "../lib/map-instance";
 
-    // Injeta script UMD no DOM e aguarda carregamento
     function loadScript(src: string): Promise<void> {
       return new Promise((resolve, reject) => {
         const s = document.createElement("script");
@@ -122,15 +219,19 @@ const base = import.meta.env.BASE_URL;
     }
 
     document.addEventListener("DOMContentLoaded", async () => {
-      // 1. Expõe L do npm como window.L
       const { default: Leaflet } = await import("leaflet");
       (window as any).L = Leaflet;
 
-      // 2. Carrega plugins UMD — agora window.L já existe
       await Promise.all([
-        loadScript("https://unpkg.com/leaflet-measure@3.1.0/dist/leaflet-measure.js"),
-        loadScript("https://unpkg.com/leaflet.fullscreen@3.0.2/Control.FullScreen.js"),
-        loadScript("https://unpkg.com/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.js"),
+        loadScript(
+          "https://unpkg.com/leaflet-measure@3.1.0/dist/leaflet-measure.js",
+        ),
+        loadScript(
+          "https://unpkg.com/leaflet.fullscreen@3.0.2/Control.FullScreen.js",
+        ),
+        loadScript(
+          "https://unpkg.com/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.js",
+        ),
       ]).catch(console.warn);
 
       loadMapData();
@@ -138,39 +239,67 @@ const base = import.meta.env.BASE_URL;
       initSptrans();
       setupAQIControls();
       loadAQIData();
-      initPlugins(); // régua, fullscreen, minimap
+      initPlugins();
 
-      // ── Corrige camadas ao entrar/sair de tela cheia ──
       map.on("fullscreenchange", () => {
         setTimeout(() => map.invalidateSize(), 100);
       });
 
-      // ── Centralizar em SP ──
       document.getElementById("btn-center")?.addEventListener("click", () => {
         map.flyTo([-23.5505, -46.6333], 11, { duration: 1.2 });
       });
 
-      // ── Colapsar painel ──
-      const btnCollapse  = document.getElementById("btn-collapse") as HTMLButtonElement;
-      const collapseIcon = document.getElementById("collapse-icon") as HTMLElement;
-      const controlsBody = document.getElementById("controls-body") as HTMLElement;
+      const btnCollapse = document.getElementById(
+        "btn-collapse",
+      ) as HTMLButtonElement;
+      const collapseIcon = document.getElementById(
+        "collapse-icon",
+      ) as HTMLElement;
+      const controlsBody = document.getElementById(
+        "controls-body",
+      ) as HTMLElement;
 
       btnCollapse?.addEventListener("click", () => {
         const collapsed = controlsBody.classList.toggle("collapsed");
         collapseIcon.textContent = collapsed ? "expand_more" : "expand_less";
       });
 
-      // ── Legendas por camada ──
       function toggleLegend(checkId: string, legendId: string) {
         const checkbox = document.getElementById(checkId) as HTMLInputElement;
-        const legend   = document.getElementById(legendId) as HTMLElement;
+        const legend = document.getElementById(legendId) as HTMLElement;
         if (!checkbox || !legend) return;
         checkbox.addEventListener("change", () => {
           legend.style.display = checkbox.checked ? "block" : "none";
         });
       }
       toggleLegend("check-trilhos", "legend-trilhos");
-      toggleLegend("check-aqi",     "aqi-legend");
+      toggleLegend("check-aqi", "aqi-legend");
+
+      // Trilhos animados no hero
+      const MAPA_COLORS = [
+        "#0455A1",
+        "#007E5E",
+        "#EE372F",
+        "#FFF000",
+        "#9B3894",
+        "#CA016B",
+        "#97A098",
+        "#01A9A7",
+      ];
+      const canvas = document.getElementById("mapa-canvas");
+      if (canvas) {
+        MAPA_COLORS.forEach((color, i) => {
+          const x = 40 + i * 32;
+          const track = document.createElement("div");
+          track.className = "line-track";
+          track.style.cssText = `background:${color};right:${x}px;`;
+          canvas.appendChild(track);
+          const dot = document.createElement("div");
+          dot.className = "line-dot";
+          dot.style.cssText = `background:${color};right:${x - 2.5}px;animation-duration:${4 + i * 0.7}s;animation-delay:${-i * 0.5}s;`;
+          canvas.appendChild(dot);
+        });
+      }
     });
   </script>
 </Layout>

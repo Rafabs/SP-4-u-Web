@@ -6,7 +6,43 @@ const base = import.meta.env.BASE_URL;
 <Layout title="Demanda de Passageiros - Sampa 4u">
   <link rel="stylesheet" href={`${base}/demanda.css`} slot="head" />
 
-  <div class="demanda-page">
+  <!-- HERO -->
+  <section class="hero hero-demanda">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-lines" id="demanda-canvas"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Dados Operacionais · Metrô SP</div>
+      <h1 class="hero-h1">Demanda de<br><span style="color:#049FC3;">Passageiros</span></h1>
+      <p class="hero-sub">
+        Média de entradas por dia útil no sistema metroviário de São Paulo —
+        dados históricos de 2020 a 2025 do Portal da Transparência.
+      </p>
+      <div class="hero-ctas">
+        <a href="#dashboard" class="btn-hero-primary" style="background:#049FC3;">Ver dashboard</a>
+        <a href="#dashboard" class="btn-hero-ghost">Comparar linhas</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat" style="border-color:#049FC3;">
+          <div class="stat-val">2020–25</div>
+          <div class="stat-label">Período coberto</div>
+        </div>
+        <div class="stat" style="border-color:#049FC3;">
+          <div class="stat-val">MDU</div>
+          <div class="stat-label">Média dia útil</div>
+        </div>
+        <div class="stat" style="border-color:#049FC3;">
+          <div class="stat-val">Metrô SP</div>
+          <div class="stat-label">Fonte dos dados</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="demanda-page" id="dashboard">
     <header class="dashboard-header">
       <h1>Demanda de Passageiros</h1>
       <p>Média de entradas por dia útil no sistema metroviário (2020-2025)</p>
@@ -23,13 +59,11 @@ const base = import.meta.env.BASE_URL;
         <p id="total-demand">0</p>
         <span>Passageiros (MDU)</span>
       </div>
-
       <div class="stat-card">
         <h3>Estação de Maior Movimento</h3>
         <p id="peak-station" style="font-size: 1.6rem; color: var(--text-primary);">-</p>
         <span id="peak-value" style="color: var(--accent-red); font-weight: bold;">0</span>
       </div>
-
       <div class="stat-card" style="border-left: 4px solid #a72828;">
         <h3>Status da Linha</h3>
         <p id="status-line" style="font-size: 1.4rem; color: var(--text-primary);">Consolidado</p>
@@ -42,7 +76,6 @@ const base = import.meta.env.BASE_URL;
         <h3>Evolução Mensal da Linha</h3>
         <div style="height: 320px;"><canvas id="chart-tendencia"></canvas></div>
       </div>
-
       <div class="chart-box">
         <h3>Top 10 Estações da Linha</h3>
         <div style="height: 320px;"><canvas id="chart-ranking"></canvas></div>
@@ -69,8 +102,42 @@ const base = import.meta.env.BASE_URL;
   </div>
 
   <script>
-    // Chart.js e PapaParse agora vêm do npm — sem CDN
     import { initDemanda } from "../lib/demanda_logic";
     initDemanda();
+
+    // Passageiros animados — horizontal
+    const DEMANDA_COLORS = [
+      '#049FC3','#0088aa','#06b8e0','#007799',
+      '#049FC3','#0099bb','#05acd4','#006688',
+    ];
+    const canvas = document.getElementById('demanda-canvas');
+    if (canvas) {
+      DEMANDA_COLORS.forEach((color, i) => {
+        const y = 40 + i * 55;
+
+        const track = document.createElement('div');
+        track.style.cssText = `
+          position:absolute;left:0;right:0;
+          top:${y}px;height:2px;
+          background:${color};opacity:.12;
+        `;
+        canvas.appendChild(track);
+
+        const icon = document.createElement('span');
+        icon.className = 'material-symbols-outlined';
+        icon.textContent = i % 4 === 0 ? 'groups'
+          : i % 4 === 1 ? 'person'
+          : i % 4 === 2 ? 'monitoring'
+          : 'subway';
+        icon.style.cssText = `
+          position:absolute;top:${y - 12}px;
+          font-size:${18 + (i % 3) * 6}px;
+          color:${color};opacity:.6;
+          animation:bus-run ${6 + i * 1.2}s linear infinite;
+          animation-delay:${-i * 0.8}s;
+        `;
+        canvas.appendChild(icon);
+      });
+    }
   </script>
 </Layout>

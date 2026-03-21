@@ -301,3 +301,18 @@
         border-bottom-color: rgba(0, 0, 0, 0.08);
     }
 }
+
+/* ── 14. Hero Section ── */
+    .hero-mapa {
+      padding: 48px 40px 40px; /* mais compacto que o hero padrão */
+    }
+    .hero-mapa .hero-lines {
+      position: absolute;
+      right: -20px;
+      top: 0;
+      bottom: 0;
+      width: 340px;
+    }
+    html {
+      scroll-behavior: smooth;
+    }

@@ -9,17 +9,48 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Sampa 4u | Início">
-  <hr />
-  <section class="about">
-    <div class="info-container">
-      <h2>Sampa 4u</h2>
-      <p>
-        O <strong>Sampa 4u</strong> é um ecossistema de visualização de dados focado
-        na malha metroferroviária e de ônibus urbano de São Paulo. O projeto transforma
-        dados operacionais e coordenadas em interfaces gráficas intuitivas, facilitando
-        a compreensão da mobilidade urbana na capital paulista.
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-lines" id="lines-canvas"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Sistema Metroferroviário · São Paulo</div>
+      <h1 class="hero-h1">Mobilidade Urbana<br />em <span>tempo real</span></h1>
+      <p class="hero-sub">
+        Visualize trilhos, ciclovias, qualidade do ar e dados operacionais de
+        todas as linhas da RMSP — em um único lugar.
       </p>
-      <div class="version-info">
+      <div class="hero-ctas">
+        <a href={`${base}mapa`} class="btn-hero-primary">Explorar mapa</a>
+        <a href="#status-linhas" class="btn-hero-ghost">Ver status das linhas</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-val">13</div><div class="stat-label">
+            Linhas monitoradas
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">215+</div><div class="stat-label">
+            Estações mapeadas
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">10min</div><div class="stat-label">
+            Ciclo de atualização de dados
+          </div>
+        </div>
+      </div>
+      <div class="hero-version">
+        <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
+          <img
+            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+            alt="github"
+          />
+        </a>             
         <img
           src={`https://img.shields.io/badge/Vers%C3%A3o-${encodeURIComponent(latest.versao)}-blue?style=for-the-badge`}
           alt="Versão"
@@ -31,14 +62,27 @@ const base = import.meta.env.BASE_URL;
         <img
           src="https://img.shields.io/badge/Licença-MIT-orange?style=for-the-badge"
           alt="Licença"
-        />
+        />   
       </div>
     </div>
   </section>
 
   <hr />
+  <section class="about">
+    <div class="info-container">
+      <h2>Sampa 4u</h2>
+      <p>
+        O <strong>Sampa 4u</strong> é um ecossistema de visualização de dados focado
+        na malha metroferroviária e de ônibus urbano de São Paulo. O projeto transforma
+        dados operacionais e coordenadas em interfaces gráficas intuitivas, facilitando
+        a compreensão da mobilidade urbana na capital paulista.
+      </p>
+    </div>
+  </section>
 
-  <section class="lines">
+  <hr />
+
+  <section class="lines" id="status-linhas">
     <h2>Consulte as linhas do Sistema Metropolitano</h2>
     <ul class="line-list">
       {
@@ -54,6 +98,8 @@ const base = import.meta.env.BASE_URL;
     </ul>
     <div class="empresa" id="ultima-atualizacao"></div>
   </section>
+
+  <hr />
 
   <section class="about">
     <div
@@ -71,7 +117,7 @@ const base = import.meta.env.BASE_URL;
           rel="noopener"
         >
           ccm.artesp.sp.gov.br
-        </a>. Os dados são coletados automaticamente a cada 3 horas via GitHub
+        </a>. Os dados são coletados automaticamente a cada 10 minutos via GitHub
         Actions e cobrem todas as linhas do sistema metroferroviário paulista —
         incluindo Metrô, CPTM e Concessionárias.
       </p>
@@ -79,36 +125,50 @@ const base = import.meta.env.BASE_URL;
   </section>
   <hr />
 
+
   <section class="data" style="text-align: center;">
     <h2>Notícias sobre o transporte público</h2>
     <a href="/news" class="btn-news">Acessar Portal de Notícias</a>
   </section>
 
-  <hr />
-
-  <section class="about">
-    <div class="info-container">
-      <h2>Desenvolvimento e Transparência</h2>
-      <div class="actions" style="margin-bottom: 20px;">
-        <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
-          <img
-            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
-            alt="github"
-          />
-        </a>
-      </div>
-      <p>
-        <strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de
-        integração contínua.
-      </p>
-    </div>
-  </section>
-
   <script define:vars={{ base }}>
     window.__BASE_URL__ = base;
   </script>
+
   <script>
     import { loadStatusLinhas } from "../lib/status-linhas";
     loadStatusLinhas();
-  </script></Layout
->
+
+    // Trilhos animados
+    const LINES = [
+      { color: "#0455A1" },
+      { color: "#007E5E" },
+      { color: "#EE372F" },
+      { color: "#FFF000" },
+      { color: "#9B3894" },
+      { color: "#CA016B" },
+      { color: "#97A098" },
+      { color: "#01A9A7" },
+      { color: "#049FC3" },
+      { color: "#F68368" },
+      { color: "#133C8D" },
+      { color: "#00B352" },
+      { color: "#C0C0C0" },
+    ];
+
+    const canvas = document.getElementById("lines-canvas");
+    if (canvas) {
+      LINES.forEach((l, i) => {
+        const x = 60 + i * 60;
+        const track = document.createElement("div");
+        track.className = "line-track";
+        track.style.cssText = `background:${l.color};right:${x}px;`;
+        canvas.appendChild(track);
+        const dot = document.createElement("div");
+        dot.className = "line-dot";
+        dot.style.cssText = `background:${l.color};right:${x - 2.5}px;animation-duration:${4 + i * 0.7}s;animation-delay:${-i * 0.5}s;`;
+        canvas.appendChild(dot);
+      });
+    }
+  </script>
+</Layout>

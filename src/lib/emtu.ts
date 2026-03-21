@@ -83,6 +83,10 @@ export function initEmtu(): void {
 // ===============================
 function setupNavigationCleanup(): void {
   document.querySelectorAll("a").forEach((link) => {
+    // ← adiciona essa linha
+    const href = link.getAttribute("href") ?? "";
+    if (href.startsWith("#")) return;
+
     link.addEventListener("click", () => {
       isLeavingPage = true;
       window.stop();

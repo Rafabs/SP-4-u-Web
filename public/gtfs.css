@@ -35,11 +35,13 @@
 
 .update-card li {
     padding: 8px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     font-size: 0.9rem;
 }
 
-.update-card li:last-child { border: none; }
+.update-card li:last-child {
+    border: none;
+}
 
 .update-card li span {
     font-weight: bold;
@@ -60,7 +62,7 @@
     color: var(--text-primary);
 }
 
-.history-table th, 
+.history-table th,
 .history-table td {
     padding: 12px 15px;
     border: 1px solid var(--border-color);
@@ -80,7 +82,8 @@
 }
 
 .history-table tr:hover {
-    background-color: rgba(212, 0, 0, 0.05); /* Leve tom de vermelho ao passar o mouse */
+    background-color: rgba(212, 0, 0, 0.05);
+    /* Leve tom de vermelho ao passar o mouse */
 }
 
 /* Ajuste para as Badges dentro da tabela */
@@ -92,13 +95,15 @@
 
 /* 3. Estilo para as tags de Atual/Antes (Modificações) */
 after {
-    color: #00ff1e; /* Verde para 'Atual' */
+    color: #00ff1e;
+    /* Verde para 'Atual' */
     font-weight: bold;
     font-size: 0.85rem;
 }
 
 before {
-    color: #ff4d4d; /* Vermelho para 'Antes' */
+    color: #ff4d4d;
+    /* Vermelho para 'Antes' */
     font-weight: bold;
     font-size: 0.85rem;
 }
@@ -134,8 +139,42 @@ before {
     .update-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .history-table {
         font-size: 0.8rem;
     }
+}
+
+/* 6. Hero Section */
+.hero-gtfs .hero-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+@keyframes bus-run {
+    0% {
+        left: -40px;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: .6;
+    }
+
+    95% {
+        opacity: .6;
+    }
+
+    100% {
+        left: 110%;
+        opacity: 0;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
 }

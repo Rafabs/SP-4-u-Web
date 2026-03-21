@@ -3,57 +3,129 @@ import Layout from "../layouts/Layout.astro";
 import roadmapData from "../data/roadmap";
 import RepoLanguages from "../components/RepoLanguages.astro";
 const base = import.meta.env.BASE_URL;
+
+const latest = roadmapData.historico[0];
 ---
 
 <Layout title="Sampa 4u | Versão e Roadmap">
   <link rel="stylesheet" href={`${base}/version.css`} slot="head" />
 
-  <section class="execution">
+  <!-- HERO -->
+  <section class="hero hero-versao">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-lines" id="versao-canvas"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Desenvolvimento · Open Source</div>
+      <h1 class="hero-h1">Versão e<br><span style="color:#7f77dd;">Roadmap</span></h1>
+      <p class="hero-sub">
+        Acompanhe o histórico de atualizações, funcionalidades planejadas
+        e o progresso de desenvolvimento do Sampa 4u.
+      </p>
+      <div class="hero-ctas">
+        <a href="#roadmap" class="btn-hero-primary" style="background:#7f77dd;">Ver roadmap</a>
+        <a href="#historico" class="btn-hero-ghost">Histórico completo</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat" style="border-color:#7f77dd;">
+          <div class="stat-val">{latest.versao}</div>
+          <div class="stat-label">Versão atual</div>
+        </div>
+        <div class="stat" style="border-color:#7f77dd;">
+          <div class="stat-val">{roadmapData.historico.length}</div>
+          <div class="stat-label">Versões lançadas</div>
+        </div>
+        <div class="stat" style="border-color:#7f77dd;">
+          <div class="stat-val">MIT</div>
+          <div class="stat-label">Licença</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="execution" id="roadmap">
     <h2>
-      <span class="material-symbols-outlined" style="vertical-align: middle;"
-        >timeline</span
-      >
+      <span class="material-symbols-outlined" style="vertical-align: middle;">timeline</span>
       Roadmap de Desenvolvimento
     </h2>
 
     <RepoLanguages user="Rafabs" repo="SP-4-u-Web" />
 
-    {
-      roadmapData.roadmap.map((secao) => (
-        <>
-          <h3>{secao.categoria}</h3>
-          {secao.itens ? (
-            <ul>
-              {secao.itens.map((item) => (
-                <li>
-                  <input type="checkbox" checked={item.checked} disabled />
-                  {item.label}
-                  {item.status && <code>{item.status}</code>}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>{secao.texto}</p>
-          )}
-        </>
-      ))
-    }
+    {roadmapData.roadmap.map((secao) => (
+      <>
+        <h3>{secao.categoria}</h3>
+        {secao.itens ? (
+          <ul>
+            {secao.itens.map((item) => (
+              <li>
+                <input type="checkbox" checked={item.checked} disabled />
+                {item.label}
+                {item.status && <code>{item.status}</code>}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>{secao.texto}</p>
+        )}
+      </>
+    ))}
 
-    <details class="note" style="padding: 15px; cursor: pointer;">
+    <details class="note" id="historico" style="padding: 15px; cursor: pointer;">
       <summary><strong>📚 Ver histórico completo</strong></summary>
       <ul style="margin-top: 15px; list-style: none; padding-left: 0;">
-        {
-          roadmapData.historico.map((log) => (
-            <li>
-              <code>{log.data}</code>
-              <code>{log.versao}</code>
-              {log.descricao}
-            </li>
-          ))
-        }
+        {roadmapData.historico.map((log) => (
+          <li>
+            <code>{log.data}</code>
+            <code>{log.versao}</code>
+            {log.descricao}
+          </li>
+        ))}
       </ul>
     </details>
 
     <hr />
   </section>
+
+  <script>
+    // Commits animados — horizontal
+    const VERSAO_COLORS = [
+      '#7f77dd','#534ab7','#afa9ec','#3c3489',
+      '#7f77dd','#6b63cc','#9b95e0','#4a42a8',
+    ];
+    const canvas = document.getElementById('versao-canvas');
+    if (canvas) {
+      VERSAO_COLORS.forEach((color, i) => {
+        const y = 40 + i * 55;
+
+        const track = document.createElement('div');
+        track.style.cssText = `
+          position:absolute;left:0;right:0;
+          top:${y}px;height:2px;
+          background:${color};opacity:.12;
+        `;
+        canvas.appendChild(track);
+
+        const icon = document.createElement('span');
+        icon.className = 'material-symbols-outlined';
+        icon.textContent = i % 4 === 0 ? 'commit'
+          : i % 4 === 1 ? 'merge'
+          : i % 4 === 2 ? 'timeline'
+          : 'deployed_code';
+        icon.style.cssText = `
+          position:absolute;top:${y - 12}px;
+          font-size:${18 + (i % 3) * 6}px;
+          color:${color};opacity:.6;
+          animation:bus-run ${6 + i * 1.2}s linear infinite;
+          animation-delay:${-i * 0.8}s;
+        `;
+        canvas.appendChild(icon);
+      });
+    }
+  </script>
+
+  <style>
+  </style>
 </Layout>

@@ -171,3 +171,22 @@
         width: 100%;
     }
 }
+
+/* Hero Section */
+    .hero-demanda .hero-lines {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    @keyframes bus-run {
+      0%   { left: -40px; opacity: 0; }
+      5%   { opacity: .6; }
+      95%  { opacity: .6; }
+      100% { left: 110%; opacity: 0; }
+    }
+
+    html { scroll-behavior: smooth; }

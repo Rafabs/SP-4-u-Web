@@ -6,48 +6,64 @@ const base = import.meta.env.BASE_URL;
 <Layout title="Sampa 4u | EMTU/ARTESP">
   <link rel="stylesheet" href={`${base}/artesp.css`} slot="head" />
   <link rel="stylesheet" href={`${base}/map.css`} slot="head" />
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    slot="head"
-  />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" slot="head" />
 
-  <section>
-    <div
-      class="attention"
-      style="background-color: rgba(0,0,0,0.05); padding: 15px; border-left: 5px solid #0078D4; margin: 20px 0;"
-    >
-      <p>
-        Os dados GTFS (itinerários e horários) da ARTESP
-        têm previsão oficial de abertura para <strong>15/04/2026</strong>. Até
-        esta data, as informações apresentadas são do último GTFS. Para
-        atualizações, consulte o cronograma do <a
-          href="https://www.artesp.sp.gov.br"
-          target="_blank">Plano de Dados Abertos da ARTESP</a
-        >.
+  <!-- HERO -->
+  <section class="hero hero-artesp">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-lines" id="bus-routes-canvas"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Transporte Intermunicipal · São Paulo</div>
+      <h1 class="hero-h1">Rede de Ônibus<br><span style="color:#0054a6;">EMTU / ARTESP</span></h1>
+      <p class="hero-sub">
+        Explore as linhas intermunicipais da Região Metropolitana de São Paulo
+        com dados abertos GTFS — rotas, tarifas e operadoras.
       </p>
+
+      <!-- Aviso GTFS inline no hero -->
+      <div class="hero-notice">
+        <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle;">info</span>
+        Dados GTFS atualizados até a abertura oficial prevista para
+        <strong>15/04/2026</strong> —
+        <a href="https://www.artesp.sp.gov.br" target="_blank" rel="noopener">Plano de Dados Abertos ARTESP</a>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="#search-section" class="btn-hero-primary" style="background:#0054a6;">Buscar linha</a>
+        <a href="#map" class="btn-hero-ghost">Ver no mapa</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat" style="border-color:#0054a6;">
+          <div class="stat-val">200+</div>
+          <div class="stat-label">Linhas intermunicipais</div>
+        </div>
+        <div class="stat" style="border-color:#0054a6;">
+          <div class="stat-val">39</div>
+          <div class="stat-label">Municípios atendidos</div>
+        </div>
+        <div class="stat" style="border-color:#0054a6;">
+          <div class="stat-val">GTFS</div>
+          <div class="stat-label">Dados abertos</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="search-section">
+  <section class="search-section" id="search-section">
     <div class="search-container">
       <span class="material-symbols-outlined search-icon">search</span>
-      <input
-        type="text"
-        id="lineSearch"
-        placeholder="Busque por número ou nome da linha..."
-      />
-      <span
-        class="material-symbols-outlined clear-icon"
-        id="clearSearch"
-        title="Limpar busca">close</span
-      >
+      <input type="text" id="lineSearch" placeholder="Busque por número ou nome da linha..." />
+      <span class="material-symbols-outlined clear-icon" id="clearSearch" title="Limpar busca">close</span>
     </div>
   </section>
 
   <div id="result-area"></div>
 
-  <div class="map-wrapper">
+  <div class="map-wrapper" id="map-wrapper">
     <div id="map"></div>
     <div id="map-controls" class="custom-controls">
       <h3>Camadas</h3>
@@ -65,8 +81,7 @@ const base = import.meta.env.BASE_URL;
       <p>
         Este é um projeto de código aberto sob constante atualização. Você pode
         acompanhar o histórico de melhorias, contribuir com novas
-        funcionalidades ou reportar inconsistências através do repositório
-        oficial.
+        funcionalidades ou reportar inconsistências através do repositório oficial.
       </p>
       <div class="actions" style="margin-bottom: 20px;">
         <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
@@ -84,7 +99,6 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <script>
-    // Sem is:inline, sem CDN para PapaParse/Leaflet — tudo via npm
     import { loadMapData } from "../lib/map-logic";
     import { initEmtu } from "../lib/emtu";
 
@@ -92,5 +106,35 @@ const base = import.meta.env.BASE_URL;
       loadMapData();
       initEmtu();
     });
+
+    // Ônibus animados — azul ARTESP
+    const BUS_COLORS = [
+      '#0054a6','#0066cc','#0078D4','#004499',
+      '#0054a6','#003380','#0055bb','#0044aa',
+    ];
+    const canvas = document.getElementById('bus-routes-canvas');
+    if (canvas) {
+      BUS_COLORS.forEach((color, i) => {
+        const y = 40 + i * 55;
+        const track = document.createElement('div');
+        track.style.cssText = `
+          position:absolute;left:0;right:0;
+          top:${y}px;height:2px;
+          background:${color};opacity:.12;
+        `;
+        canvas.appendChild(track);
+        const bus = document.createElement('span');
+        bus.className = 'material-symbols-outlined';
+        bus.textContent = 'directions_bus';
+        bus.style.cssText = `
+          position:absolute;top:${y - 12}px;
+          font-size:${18 + (i % 3) * 6}px;
+          color:${color};opacity:.6;
+          animation:bus-run ${6 + i * 1.2}s linear infinite;
+          animation-delay:${-i * 0.8}s;
+        `;
+        canvas.appendChild(bus);
+      });
+    }
   </script>
 </Layout>
