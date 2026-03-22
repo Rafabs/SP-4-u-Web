@@ -44,7 +44,9 @@ function cssClass(situacao: string): string {
     return "verde_operacao_normal";
   if (s.includes("velocidade") || 
       s.includes("impacto") ||
-      s.includes("atividade"))                                
+      s.includes("atividade")||
+      s.includes("parcial")
+    )                                
     return "amarelo_velocidade_reduzida";
   if (
     s.includes("paralisada") ||
