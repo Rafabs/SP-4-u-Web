@@ -40,9 +40,13 @@ function codigoFromId(id: string): string {
 
 function cssClass(situacao: string): string {
   const s = situacao.toLowerCase();
-  if (s.includes("normal")) 
+  if (
+      s.includes("normal") ||
+      s.includes("especial")
+    ) 
     return "verde_operacao_normal";
-  if (s.includes("velocidade") || 
+  if (
+      s.includes("velocidade") || 
       s.includes("impacto") ||
       s.includes("atividade")||
       s.includes("parcial")
