@@ -61,6 +61,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "30/03/2026", versao: "v26.03.11", descricao: "Atualização GTFS - SPTrans" },
     { data: "21/03/2026", versao: "v26.03.10", descricao: "Adotado método de design Hero Section" },
     { data: "17/03/2026", versao: "v26.03.9", descricao: "Desenvolvido funcionalidade para atualização/horário das linhas e Atualização de status das linhas" },
     { data: "17/03/2026", versao: "v26.03.8", descricao: "Atualizar dados .json/.kmz de Mapa" },

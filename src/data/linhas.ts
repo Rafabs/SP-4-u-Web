@@ -21,5 +21,5 @@ export const dadosLinhas: Record<string, Linha> = {
   L12: { nome: "12 - Safira",     cor: "#133C8D", empresa: "CPTM"          },
   L13: { nome: "13 - Jade",       cor: "#00B352", empresa: "CPTM"          },
   L15: { nome: "15 - Prata",      cor: "#C0C0C0", empresa: "METRÔ"         },
-  L17: { nome: "17 - Ouro",       cor: "#000000", empresa: "VIAMOBILIDADE" },
+  L17: { nome: "17 - Ouro",       cor: "#000000", empresa: "METRÔ" },
 };
