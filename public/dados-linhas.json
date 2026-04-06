@@ -139,7 +139,7 @@
         "destaqueSecundario": false,
         "tag": "SCZ",
         "conexoes": [
-          { "linha": "L05", "cor": "#9B3894", "operadora": "ViaMobilidade" }
+          { "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE" }
         ]
       },
       {
@@ -252,7 +252,7 @@
         "destaqueSecundario": false,
         "tag": "CKB",
         "conexoes": [
-          { "linha": "L05", "cor": "#9B3894", "operadora": "ViaMobilidade" }
+          { "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE" }
         ]
       },
       {
@@ -304,7 +304,7 @@
         "tag": "BFU",
         "conexoes": [
           { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
-          { "linha": "L08", "cor": "#97A098", "operadora": "ViaMobilidade" },
+          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
@@ -511,7 +511,7 @@
         "destaqueSecundario": false,
         "tag": "PIN",
         "conexoes": [
-          { "linha": "L09", "cor": "#00A78E", "operadora": "ViaMobilidade" }
+          { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE" }
         ]
       },
       {
@@ -634,7 +634,7 @@
         "destaqueSecundario": false,
         "tag": "STA",
         "conexoes": [
-          { "linha": "L09", "cor": "#00A78E", "operadora": "ViaMobilidade" }
+          { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE" }
         ]
       },
       {
@@ -797,7 +797,7 @@
         "tag": "BFU",
         "conexoes": [
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L08", "cor": "#97A098", "operadora": "ViaMobilidade" },
+          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
@@ -970,7 +970,7 @@
         "destaqueSecundario": false,
         "tag": "PAL",
         "conexoes": [
-          { "linha": "L09", "cor": "#00A78E", "operadora": "ViaMobilidade" }
+          { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE" }
         ]
       },
       {
@@ -979,7 +979,7 @@
         "destaqueSecundario": false,
         "tag": "OSA",
         "conexoes": [
-          { "linha": "L09", "cor": "#00A78E", "operadora": "ViaMobilidade" }
+          { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE" }
         ]
       },
       {
@@ -1157,7 +1157,7 @@
         "destaqueSecundario": false,
         "tag": "SAM",
         "conexoes": [
-          { "linha": "L05", "cor": "#9B3894", "operadora": "ViaMobilidade" }
+          { "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE" }
         ]
       },
       {
@@ -1245,7 +1245,7 @@
         "destaqueSecundario": false,
         "tag": "PAL",
         "conexoes": [
-          { "linha": "L08", "cor": "#97A098", "operadora": "ViaMobilidade" }
+          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" }
         ]
       },
       {
@@ -1254,7 +1254,7 @@
         "destaqueSecundario": false,
         "tag": "OSA",
         "conexoes": [
-          { "linha": "L08", "cor": "#97A098", "operadora": "ViaMobilidade" }
+          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" }
         ]
       }
     ]
@@ -1378,7 +1378,7 @@
         "conexoes": [
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
           { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
-          { "linha": "L08", "cor": "#97A098", "operadora": "ViaMobilidade" },
+          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" },
           { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
         ]
       },
@@ -1628,7 +1628,7 @@
         "conexoes": [
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
           { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
-          { "linha": "L08", "cor": "#97A098", "operadora": "ViaMobilidade" },
+          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }
         ]
@@ -1766,70 +1766,56 @@
     ]
   },
   "L17": {
-    "nome": "Linha 17 - Ouro [EM CONSTRUÇÃO]",
-    "cor": "#000000",
-    "operadora": "METRÔ",
-    "estacoes": [
-      {
-        "nomePrincipal": "Morumbi",
-        "nomeSecundario": "Claro",
-        "destaqueSecundario": false,
-        "tag": "MOR",
-        "conexoes": [
-          { "linha": "L09", "cor": "#00A78E", "operadora": "ViaMobilidade" }
-        ]
-      },
-      {
-        "nomePrincipal": "Chucri Zaidan",
-        "nomeSecundario": null,
-        "destaqueSecundario": false,
-        "tag": "CZD",
-        "conexoes": []
-      },
-      {
-        "nomePrincipal": "Vila Cordeiro",
-        "nomeSecundario": null,
-        "destaqueSecundario": false,
-        "tag": "VCD",
-        "conexoes": []
-      },
-      {
-        "nomePrincipal": "Campo Belo",
-        "nomeSecundario": null,
-        "destaqueSecundario": false,
-        "tag": "CBM",
-        "conexoes": [
-          { "linha": "L05", "cor": "#9B3894", "operadora": "ViaMobilidade" }
-        ]
-      },
-      {
-        "nomePrincipal": "Vereador José Diniz",
-        "nomeSecundario": null,
-        "destaqueSecundario": false,
-        "tag": "VJD",
-        "conexoes": []
-      },
-      {
-        "nomePrincipal": "Brooklin Paulista",
-        "nomeSecundario": null,
-        "destaqueSecundario": false,
-        "tag": "BPA",
-        "conexoes": []
-      },
-      {
-        "nomePrincipal": "Aeroporto",
-        "nomeSecundario": "Congonhas",
-        "destaqueSecundario": true,
-        "tag": "CGN",
-        "conexoes": []
-      },
-      {
-        "nomePrincipal": "Washington Luís",
-        "nomeSecundario": null,
-        "destaqueSecundario": false,
-        "tag": "JDA",
-        "conexoes": []
-      }      
-    ]
-  }
+  "nome": "Linha 17 - Ouro",
+  "cor": "#000000",
+  "operadora": "METRÔ",
+  "bifurcacaoEm": "Brooklin Paulista",
+  "estacoes": [
+    {
+      "nomePrincipal": "Morumbi",
+      "nomeSecundario": "Claro",
+      "destaqueSecundario": false,
+      "tag": "MOR",
+      "conexoes": [{ "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE" }]
+    },
+    {
+      "nomePrincipal": "Chucri Zaidan",
+      "tag": "CZD",
+      "conexoes": []
+    },
+    {
+      "nomePrincipal": "Vila Cordeiro",
+      "tag": "VCD",
+      "conexoes": []
+    },
+    {
+      "nomePrincipal": "Campo Belo",
+      "tag": "CBM",
+      "conexoes": [{ "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE" }]
+    },
+    {
+      "nomePrincipal": "Vereador José Diniz",
+      "tag": "VJD",
+      "conexoes": []
+    },
+    {
+      "nomePrincipal": "Brooklin Paulista",
+      "tag": "BPA",
+      "conexoes": []
+    },
+    {
+      "nomePrincipal": "Aeroporto",
+      "nomeSecundario": "Congonhas",
+      "destaqueSecundario": true,
+      "tag": "CGN",
+      "ramal": true,
+      "conexoes": []
+    },
+    {
+      "nomePrincipal": "Washington Luís",
+      "tag": "JDA",
+      "conexoes": []
+    }
+  ]
+}
 }

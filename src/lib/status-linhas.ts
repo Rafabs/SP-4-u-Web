@@ -49,7 +49,8 @@ function cssClass(situacao: string): string {
       s.includes("velocidade") || 
       s.includes("impacto") ||
       s.includes("atividade")||
-      s.includes("parcial")
+      s.includes("parcial") ||
+      s.includes("maiores") 
     )                                
     return "amarelo_velocidade_reduzida";
   if (
