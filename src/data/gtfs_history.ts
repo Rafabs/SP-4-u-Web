@@ -15,6 +15,22 @@ export interface GTFSHistoryEntry {
 // ===============================
 export const historyData: GTFSHistoryEntry[] = [
   {
+    data: "31/03/2026",
+    tipo: "✏️ Modificação",
+    linha: "6045/21",
+    cor: "782F40",
+    rota: "<after>Atual:</after> Term. Capelinha - Valo Velho<br><before>Antes:</before> Valo Velho - Term. Capelinha",
+    recente: true,
+  },    
+  {
+    data: "31/03/2026",
+    tipo: "🆕 Inclusão",
+    linha: "776M/10",
+    cor: "782F40",
+    rota: "Term. áGua Espraiada - Aeroporto",
+    recente: true,
+  },        
+  {
     data: "30/03/2026",
     tipo: "❌ Remoção",
     linha: "857R/41",

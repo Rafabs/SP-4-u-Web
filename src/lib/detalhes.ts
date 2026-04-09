@@ -72,6 +72,12 @@ export async function initDetalhes(): Promise<void> {
     if (dados && linhaId) {
       renderPage(dados, linhaId);
       renderLineSwitcher(linhaId, dadosLinhas);
+
+      // ✅ ADICIONADO: carrega o status da linha selecionada
+      // O renderPage já renomeou o id do card para o padrão "{linhaId.toLowerCase()}-info"
+      // que o loadStatusLinhas usa para encontrar e atualizar o card.
+      const { loadStatusLinhas } = await import("./status-linhas");
+      loadStatusLinhas();
     } else {
       window.location.href = `${BASE_URL}/404`;
     }
@@ -101,7 +107,7 @@ function renderPage(dados: DadosLinha, linhaId: string): void {
 
   if (empresaEl) empresaEl.innerText = nomeOperadora;
 
-  // Status da operação
+  // Status da operação — renomeia o id para o padrão esperado pelo status-linhas.ts
   const statusCard = document.getElementById("linha-status-info");
   if (statusCard) {
     statusCard.id        = `${linhaId.toLowerCase()}-info`;

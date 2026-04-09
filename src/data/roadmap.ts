@@ -32,7 +32,6 @@ const roadmapData: Roadmap = {
         { label: "Corrigir exibição de dados de Pesquisa Origem e Destino (Exibição de 1997 e 2007)", checked: false },
         { label: "Desenvolver Design System e disponibilizar no projeto", status: "EM DESENVOLVIMENTO", checked: false },
         { label: "Desenvolver funcionalidade de página de Turismo", checked: false },
-        { label: "Desenvolver status das linhas para cada item de detalhes.index", status: "EM DESENVOLVIMENTO", checked: false },
         { label: "Desenvolver funcionalidade de sublink de Ocorrências metroferroviárias", checked: false },
         { label: "Adotar Next.js durante melhoria de mapas", checked: false },
         { label: "Melhorar códigos e comentários", checked: false },
@@ -61,6 +60,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "08/04/2026", versao: "v26.04.1", descricao: "Desenvolvido status das linhas para cada item de detalhes.index, Atualização GTFS - SPTrans" },
     { data: "30/03/2026", versao: "v26.03.11", descricao: "Atualização GTFS - SPTrans" },
     { data: "21/03/2026", versao: "v26.03.10", descricao: "Adotado método de design Hero Section" },
     { data: "17/03/2026", versao: "v26.03.9", descricao: "Desenvolvido funcionalidade para atualização/horário das linhas e Atualização de status das linhas" },
