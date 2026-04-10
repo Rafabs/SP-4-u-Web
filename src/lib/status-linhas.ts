@@ -91,7 +91,6 @@ function openModal(linhaNome: string, status: StatusLinha): void {
   badge.textContent = status.situacao;
   badge.className   = `status-modal-badge ${cssClass(status.situacao)}`;
   desc.textContent  = status.descricao || "Nenhuma descrição adicional disponível.";
-  update.textContent = `Atualizado há ${status.atualizado_ha}`;
 
   overlay.classList.add("is-open");
 }
