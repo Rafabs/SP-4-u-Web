@@ -696,6 +696,145 @@ footer {
     transform: scale(1.05);
 }
 
+/* ==========================================================================
+   STATUS MODAL - POP-UP PERSONALIZADO
+   ========================================================================== */
+
+#status-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#status-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.status-modal-box {
+    background: var(--bg-card);
+    width: 90%;
+    max-width: 450px;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+}
+
+#status-modal.is-open .status-modal-box {
+    transform: scale(1) translateY(0);
+}
+
+/* Header do Modal */
+.status-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.status-modal-linha {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+.status-modal-close {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: var(--text-secondary);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.status-modal-close:hover {
+    background: var(--accent-red);
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* Badge de Status no Modal */
+.status-modal-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Corpo do Texto */
+.status-modal-desc {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid var(--border-color);
+}
+
+.status-modal-update {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    color: var(--text-secondary);
+    text-align: right;
+    display: block;
+    border-top: 1px solid var(--border-color);
+    padding-top: 12px;
+}
+
+/* Cores dinâmicas para o Badge do Modal (reutilizando suas variáveis) */
+.status-modal-badge.verde_operacao_normal { 
+    background: var(--status-green-bg); color: var(--status-green-text); 
+    border: 1px solid #00ff1e33;
+}
+.status-modal-badge.amarelo_velocidade_reduzida { 
+    background: var(--status-yellow-bg); color: var(--status-yellow-text); 
+    border: 1px solid #ffd90033;
+}
+.status-modal-badge.vermelho_paralisada { 
+    background: var(--status-red-bg); color: var(--status-red-text); 
+    border: 1px solid #ff000033;
+}
+
+.status-modal-close {
+    position: relative; /* Garante que o z-index funcione */
+    z-index: 3100;      /* Maior que a box */
+    cursor: pointer !important; /* Força o cursor de clique */
+    pointer-events: auto; /* Garante que aceite cliques */
+}
+
+/* Responsividade do Modal */
+@media (max-width: 480px) {
+    .status-modal-box {
+        width: 85%;
+        padding: 20px;
+    }
+}
+
 @keyframes moveTrain {
     0% {
         transform: translateX(-20px);

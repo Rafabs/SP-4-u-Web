@@ -32,7 +32,6 @@ const roadmapData: Roadmap = {
         { label: "Corrigir exibição de dados de Pesquisa Origem e Destino (Exibição de 1997 e 2007)", checked: false },
         { label: "Desenvolver Design System e disponibilizar no projeto", status: "EM DESENVOLVIMENTO", checked: false },
         { label: "Desenvolver funcionalidade de página de Turismo", checked: false },
-        { label: "Desenvolver funcionalidade de sublink de Ocorrências metroferroviárias", checked: false },
         { label: "Adotar Next.js durante melhoria de mapas", checked: false },
         { label: "Melhorar códigos e comentários", checked: false },
         { label: "Desenvolver app Android - SP4U.apk", status: "EM DESENVOLVIMENTO", checked: false },
@@ -55,11 +54,11 @@ const roadmapData: Roadmap = {
       itens: [
         { label: "Exibir Linha 17 - Ouro por ramificação", checked: false },
         { label: "Correção de estilos em geral", checked: false },
-        { label: "Criação de página sublink de Ocorrências metroferroviárias em Index", checked: false },
       ],
     },
   ],
   historico: [
+    { data: "10/04/2026", versao: "v26.04.2", descricao: "Criado e Desenvovido pop-up de Ocorrências metroferroviárias em Index, Atualização GTFS - SPTrans" },
     { data: "08/04/2026", versao: "v26.04.1", descricao: "Desenvolvido status das linhas para cada item de detalhes.index, Atualização GTFS - SPTrans" },
     { data: "30/03/2026", versao: "v26.03.11", descricao: "Atualização GTFS - SPTrans" },
     { data: "21/03/2026", versao: "v26.03.10", descricao: "Adotado método de design Hero Section" },
