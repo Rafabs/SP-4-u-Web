@@ -1050,3 +1050,26 @@ footer {
         font-size: 1.4rem;
     }
 }
+
+/* Estilo para ícones de links externos dentro de textos/listas */
+.inline-icon {
+    font-size: 14px !important; /* Tamanho reduzido para texto */
+    vertical-align: middle;
+    margin-left: 4px;
+    opacity: 0.6;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+/* Efeito ao passar o mouse no link pai */
+a:hover .inline-icon {
+    opacity: 1;
+    color: var(--accent-red); /* Ou a cor de destaque que preferir */
+    transform: translateY(-1px);
+}
+
+/* Ajuste específico para a lista de contatos para não quebrar o grid */
+.contact-item a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}

@@ -28,11 +28,13 @@ const roadmapData: Roadmap = {
     {
       categoria: "🔧 Refatoração e Estrutura",
       itens: [
-        { label: "Analisar o uso de arquivos GTFS diretamente do servidor", checked: false },
         { label: "Corrigir exibição de dados de Pesquisa Origem e Destino (Exibição de 1997 e 2007)", checked: false },
         { label: "Desenvolver Design System e disponibilizar no projeto", status: "EM DESENVOLVIMENTO", checked: false },
         { label: "Desenvolver funcionalidade de página de Turismo", checked: false },
+        { label: "Desenvolver funcionalidade de página de Notícias", checked: false },
+        { label: "Desenvolver funcionalidade de página de Fonte de Dados (footer)", checked: false },
         { label: "Adotar Next.js durante melhoria de mapas", checked: false },
+        { label: "Implantar Olho Vivo", checked: false },
         { label: "Melhorar códigos e comentários", checked: false },
         { label: "Desenvolver app Android - SP4U.apk", status: "EM DESENVOLVIMENTO", checked: false },
       ],
@@ -52,6 +54,7 @@ const roadmapData: Roadmap = {
     {
       categoria: "🖼️ Interface",
       itens: [
+        { label: "Desenvolver Mapa do Metropolitano e disponibilizar via Figma", status: "EM DESENVOLVIMENTO", checked: false },
         { label: "Exibir Linha 17 - Ouro por ramificação", checked: false },
         { label: "Correção de estilos em geral", checked: false },
       ],

@@ -125,7 +125,8 @@ function applyStatus(data: APIResponse): void {
     })
   );
 
-  document.querySelectorAll<HTMLElement>("[id$='-info']").forEach((card) => {
+  document.querySelectorAll<HTMLElement>("[id$='-info']:not(#dynamic-systems-info)")
+.forEach((card) => {
     const baseId = card.id.replace("-info", "").toUpperCase();
     const codigo = codigoFromId(baseId);
     const status = statusMap.get(codigo);
@@ -162,7 +163,8 @@ async function update(): Promise<void> {
     applyStatus(data);
   } catch (err) {
     console.warn("[Status] Erro ao atualizar:", err);
-    document.querySelectorAll<HTMLElement>("[id$='-info']").forEach((card) => {
+    document.querySelectorAll<HTMLElement>("[id$='-info']:not(#dynamic-systems-info)")
+.forEach((card) => {
       card.className   = "card branco_dados_indisponiveis";
       card.textContent = "Indisponível";
     });
