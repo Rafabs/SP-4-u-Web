@@ -15,18 +15,27 @@ permissions:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      
     steps:
       - uses: actions/checkout@v4
+      
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24 
           cache: 'npm'
+          
       - run: npm install
+      
       - run: node scripts/fetch-status.mjs
+      
       - run: npm run build
         env:
           PUBLIC_AQI_API_KEY: ${{ secrets.PUBLIC_AQI_API_KEY }}
+          
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
+          
       - uses: actions/deploy-pages@v4
