@@ -61,6 +61,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "22/04/2026", versao: "v26.04.5", descricao: "Atualização GTFS - SPTrans" },
     { data: "19/04/2026", versao: "v26.04.4", descricao: "Atualização Logo" },
     { data: "14/04/2026", versao: "v26.04.3", descricao: "Atualização GTFS - SPTrans" },
     { data: "10/04/2026", versao: "v26.04.2", descricao: "Criado e Desenvovido pop-up de Ocorrências metroferroviárias em Index, Atualização GTFS - SPTrans" },
