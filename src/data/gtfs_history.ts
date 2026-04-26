@@ -84,7 +84,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "6045/21",
     cor: "782F40",
     rota: "<after>Atual:</after> Term. Capelinha - Valo Velho<br><before>Antes:</before> Valo Velho - Term. Capelinha",
-    recente: true,
+    recente: false,
   },    
   {
     data: "31/03/2026",
@@ -92,7 +92,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "776M/10",
     cor: "782F40",
     rota: "Term. áGua Espraiada - Aeroporto",
-    recente: true,
+    recente: false,
   },        
   {
     data: "30/03/2026",
@@ -100,7 +100,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "857R/41",
     cor: "FF671F",
     rota: "Est. Hebraica Rebouças - Ana Rosa",
-    recente: true,
+    recente: false,
   },    
   {
     data: "11/03/2026",

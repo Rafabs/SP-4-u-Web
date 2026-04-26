@@ -16,6 +16,7 @@ const base = import.meta.env.BASE_URL;
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />        
     <link rel="stylesheet" href={`${base}styles.css`}/>   
     <link rel="icon" href={`${base}public/icons/sp4u_logo.png`} type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Share+Tech+Mono&display=swap" rel="stylesheet">    
     <slot name="head" />    
 </head>
 <body>
@@ -41,28 +42,65 @@ const base = import.meta.env.BASE_URL;
             <a href={`${base}ciclovia`}><span class="material-symbols-outlined">directions_bike</span><span>Ciclovia</span></a>
             <a href={`${base}origem_destino`}><span class="material-symbols-outlined">transfer_within_a_station</span><span>Pesquisa OD</span></a>
             <a href={`${base}demanda`}><span class="material-symbols-outlined">monitoring</span><span>Demanda</span></a>
+            <a href={`${base}noticias`}><span class="material-symbols-outlined">newspaper</span><span>Notícias</span></a>
             <a href={`${base}mapa`}><span class="material-symbols-outlined">map</span><span>Explore</span></a>
         </nav>
     </header>
 
     <slot /> 
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-info">                
-                <p class="copyright">&copy; 2023 - 2026 | <strong>Sampa 4u</strong></p>
-                <p class="author">Desenvolvido por <span>Rafael Barbosa</span></p>
-            </div>
-            <a href={`${base}versao`}>Versões de Desenvolvimento e Licença</a>
-            <div class="footer-badges"><img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="VSCode">
-				<img src="https://img.shields.io/badge/Astro-FF5D01?style=for-the-badge&logo=astro&logoColor=white" alt="Astro">
-				<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-				<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JS">
-				<img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT">
-             </div>
-        </div>
-    </footer>
+<footer>
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href={`${base}versao`}>Versões de Desenvolvimento e Licença</a>
+      <a href={`${base}fonte_dados`}>Fonte de Informação · Dados Abertos</a>
+    </div>
+    <div class="footer-badges">
+      <img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="VSCode">
+      <img src="https://img.shields.io/badge/Astro-FF5D01?style=for-the-badge&logo=astro&logoColor=white" alt="Astro">
+      <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JS">
+      <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT">
+    </div>
+  </div>
 
+  <div class="dev-card">
+    <div class="scanlines"></div>
+    <div class="sweep"></div>
+    <div class="co tl"></div><div class="co tr"></div>
+    <div class="co bl"></div><div class="co br"></div>
+
+    <div class="card-top">
+      <span class="sys">SYS://SAMPA4U · DEV_CARD</span>
+      <span class="dots"><span></span><span></span><span></span></span>
+    </div>
+
+    <div class="card-body">
+      <div class="card-left"></div>
+      <div class="card-info">
+        <div class="dev-label">// desenvolvido por</div>
+        <div class="dev-name" data-t="RAFAEL BARBOSA">RAFAEL <span class="hi">BARBOSA</span></div>
+        <div class="dev-tags">
+          <span class="dtag active">💻 ADS</span>
+          <span class="dtag">🌐 OPEN SOURCE</span>
+        </div>
+        <div class="tw-line" id="tw-footer">&nbsp;<span class="cur"></span></div>
+        <a class="gh-link" href="https://github.com/rafabs" target="_blank">
+          <span class="gh-dot"></span>
+          GITHUB.COM/RAFABS
+        </a>
+      </div>
+    </div>
+
+    <div class="card-bottom">
+      <span>© 2023 – 2026 · SAMPA 4U</span>
+      <span>MIT LICENSE</span>
+      <span>SÃO PAULO · BR</span>
+    </div>
+  </div>
+</footer>
+
+    <script is:inline src={`${base}footer-card.js`}></script>
     <script is:inline src={`${base}components.js`}></script>
     <script is:inline src={`${base}bottom-theme.js`}></script>
     <script is:inline src={`${base}menu-toggle.js`}></script>
