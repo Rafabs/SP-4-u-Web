@@ -680,11 +680,7 @@ footer {
 .co.bl { bottom: 7px; left: 7px; border-width: 0 0 2px 2px; }
 .co.br { bottom: 7px; right: 7px; border-width: 0 2px 2px 0; }
 
-.card-top {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 9px 22px; border-bottom: 1px solid rgba(26, 58, 255, .2);
-  position: relative; z-index: 3; background: rgba(26, 58, 255, .06);
-}
+
 .sys { font-size: 9px; color: rgba(100, 140, 255, .6); letter-spacing: 3px; }
 .dots span {
   display: inline-block; width: 5px; height: 5px; border-radius: 50%;
