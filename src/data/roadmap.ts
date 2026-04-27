@@ -32,7 +32,6 @@ const roadmapData: Roadmap = {
         { label: "Desenvolver Design System e disponibilizar no projeto", status: "EM DESENVOLVIMENTO", checked: false },
         { label: "Desenvolver funcionalidade de página de Turismo", checked: false },
         { label: "Desenvolver funcionalidade de página de Notícias", checked: false },
-        { label: "Desenvolver funcionalidade de página de Fonte de Dados (footer)", status: "EM DESENVOLVIMENTO", checked: false },
         { label: "Adotar Next.js durante melhoria de mapas", checked: false },
         { label: "Implantar Olho Vivo", checked: false },
         { label: "Melhorar códigos e comentários", checked: false },
@@ -42,7 +41,6 @@ const roadmapData: Roadmap = {
     {
       categoria: "📚 Documentação (readme)",
       itens: [
-        { label: "Atualizar README.md", status: "EM DESENVOLVIMENTO", checked: false },
       ],
     },
     {
@@ -60,7 +58,8 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
-    { data: "26/04/2026", versao: "v26.04.6", descricao: "Desenvolver Mapa do Metropolitano e disponibilizar via Figma" },
+    { data: "27/04/2026", versao: "v26.04.7", descricao: "Desenvolvido funcionalidade de página de Fonte de Dados (footer), Atualização do README.md"},
+    { data: "26/04/2026", versao: "v26.04.6", descricao: "Desenvolvido Mapa do Metropolitano e disponibilizar via Figma"},
     { data: "22/04/2026", versao: "v26.04.5", descricao: "Atualização GTFS - SPTrans" },
     { data: "19/04/2026", versao: "v26.04.4", descricao: "Atualização Logo" },
     { data: "14/04/2026", versao: "v26.04.3", descricao: "Atualização GTFS - SPTrans" },

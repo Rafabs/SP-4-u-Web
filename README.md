@@ -1,44 +1,104 @@
-# 🌆 Sampa 4u 🌆
+# 🌆 Sampa 4u
 
 ![Astro](https://img.shields.io/badge/Astro-FF5D01?style=for-the-badge&logo=astro&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 ![Leaflet](https://img.shields.io/badge/Leaflet-199903?style=for-the-badge&logo=leaflet&logoColor=white)
 
-O **Sampa 4u** é um ecossistema de visualização de dados focado na mobilidade urbana e qualidade ambiental de São Paulo. O projeto transforma dados operacionais (GTFS), coordenadas geográficas e APIs ambientais em interfaces gráficas intuitivas.
+> Ecossistema de visualização de dados focado na mobilidade urbana e qualidade ambiental da Região Metropolitana de São Paulo.
 
 ---
 
-## 🚀 Funcionalidades Atuais
+## 🗺️ Visão Geral
 
-- **📍 Mapa Interativo Unificado:** Visualização de trilhos (Metrô/CPTM), ciclovias e bicicletários em uma única interface Leaflet.
-- **🚌 Integração GTFS Multi-Sistema:** Suporte dinâmico para dados da **SPTrans** e **ARTESP/EMTU**, com renderização progressiva de milhares de linhas sem perda de performance.
-- **🍃 Monitoramento AQI (Qualidade do Ar):** Integração em tempo real com a API do *World Air Quality Index*, exibindo níveis de poluição em estações de monitoramento por toda a capital.
-- **📊 Roadmap Automatizado:** Sistema de versionamento alimentado via JSON, garantindo transparência total no desenvolvimento.
-- **📱 Design Ultra-Responsivo:** Interface otimizada para consulta rápida em dispositivos móveis.
-- **🔐 Segurança de Dados:** Implementação de variáveis de ambiente e GitHub Secrets para proteção de chaves de API.
+O **Sampa 4u** transforma dados operacionais abertos — GTFS, APIs de monitoramento metroferroviário, qualidade do ar e geodados — em interfaces gráficas intuitivas. O projeto cobre todas as linhas do sistema metroferroviário paulista, ônibus municipal e metropolitano, ciclovias, turismo e pesquisa de origem e destino.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🚀 Funcionalidades
 
-* **Astro:** Framework focado em performance (Island Architecture) para entrega de HTML estático.
-* **Leaflet.js:** Biblioteca principal para manipulação de mapas e camadas geográficas.
-* **PapaParse:** Processamento de arquivos CSV/GTFS pesados diretamente no navegador.
-* **GitHub Actions:** Pipeline de CI/CD para automação de builds e gestão de Secrets.
-* **Material Symbols:** Linguagem visual moderna do Google para ícones de interface.
+| Módulo | Descrição |
+|---|---|
+| 🗺️ **Mapa Interativo** | Visualização unificada de trilhos (Metrô/CPTM), ciclovias e bicicletários via Leaflet |
+| 🚌 **GTFS Multi-Sistema** | Suporte a SPTrans e EMTU/ARTESP com renderização progressiva de milhares de rotas |
+| 🚇 **Status das Linhas** | Monitoramento em tempo real via API do CCM ARTESP, atualizado a cada 10 minutos por GitHub Actions |
+| 🍃 **Qualidade do Ar (AQI)** | Integração com CETESB/QUALAR exibindo índices AQI por estação de monitoramento |
+| 🚲 **Rede Cicloviária** | Mapeamento de ciclovias, ciclofaixas e calçadas compartilhadas da capital |
+| 🏛️ **Turismo** | Pontos turísticos, atrativos culturais e roteiros pela cidade |
+| 📊 **Pesquisa OD** | Visualização dos dados de Origem-Destino do Metrô SP |
+| 📰 **Notícias** | Portal de notícias sobre transporte público paulistano |
+| 🎨 **Design Figma** | Protótipo visual do projeto embedado diretamente na interface |
+| 📋 **Roadmap** | Sistema de versionamento alimentado via JSON com histórico público de desenvolvimento |
+| 📱 **Responsivo** | Interface otimizada para mobile, tablet e desktop |
+| 🌓 **Tema Claro/Escuro** | Alternância de tema persistida por sessão |
+| 🔐 **Segurança** | Chaves de API protegidas via GitHub Secrets e variáveis de ambiente Astro |
 
 ---
 
-## 📁 Estrutura do Projeto
+## 🛠️ Stack Tecnológica
 
-```text
-├── .github/workflows/ # Configuração de Deploy e CI/CD (Secrets)
-├── src/
-│   ├── data/          # Fontes de verdade (roadmap.json, linhas.json)
-│   ├── layouts/       # Templates base com suporte a Slots
-│   ├── pages/         # Rotas (Mapas, Qualidade do Ar, Versões)
-│   └── scripts/       # Lógica centralizada (map-logic.js, emtu.js)
-├── public/            # Dados GTFS, GeoJSON e ícones estáticos
-└── astro.config.mjs   # Configurações de ambiente e base URL
+| Tecnologia | Uso |
+|---|---|
+| **Astro** | Framework principal (Island Architecture) — entrega de HTML estático com performance máxima |
+| **Leaflet.js** | Renderização de mapas interativos e camadas geográficas |
+| **PapaParse** | Processamento de arquivos CSV/GTFS pesados no navegador |
+| **GitHub Actions** | CI/CD, deploy automático e coleta periódica de dados via API |
+| **Material Symbols** | Biblioteca de ícones Google para toda a interface |
+| **Orbitron + Share Tech Mono** | Tipografia gamer/terminal no footer e assinatura do projeto |
+| **OpenStreetMap / Overpass** | Base cartográfica aberta para o mapa interativo |
+
+---
+
+## 📡 Fontes de Dados
+
+| Fonte | Tipo | Cobertura |
+|---|---|---|
+| [CCM ARTESP](https://ccm.artesp.sp.gov.br/metroferroviario/) | API Real-time | Status das linhas metroferroviárias |
+| [SPTrans – Olho Vivo](https://www.sptrans.com.br/desenvolvedores/) | GTFS / API | Ônibus municipal SP |
+| [EMTU](https://www.emtu.sp.gov.br/emtu/dados-abertos/dados-abertos-principal.fss) | GTFS / API | Ônibus metropolitano — 5 RMs |
+| [WAQI - WORLD'S AIR POLLUTION](https://waqi.info/) | API / CSV | Qualidade do ar — Estado de SP |
+| [GeoSampa – PMSP](https://geosampa.prefeitura.sp.gov.br/) | WMS / WFS | Geodados municipais — 400+ camadas |
+| [Portal Dados Abertos PMSP](https://dados.prefeitura.sp.gov.br/) | CSV / JSON / API | Datasets municipais abertos |
+| [Pesquisa OD – Metrô SP](https://www.metro.sp.gov.br/pesquisa-od/) | Microdados | Deslocamentos na RMSP |
+| [OpenStreetMap](https://overpass-api.de/) | API / GeoJSON | Base cartográfica global |
+| [Transitland](https://www.transit.land/) | GTFS / API | Feeds GTFS internacionais |
+| [Citylines.co](https://www.citylines.co/) | Open Data | Histórico de sistemas de transporte |
+
+---
+
+## ⚙️ Como Executar Localmente
+
+```bash
+# Clonar o repositório
+git clone https://github.com/Rafabs/SP-4-u-Web.git
+cd SP-4-u-Web
+
+# Instalar dependências
+npm install
+
+# Iniciar servidor de desenvolvimento
+npm run dev
+
+# Build de produção
+npm run build
+```
+
+> **Atenção:** algumas integrações (SPTrans Olho Vivo, CETESB) exigem chaves de API. Crie um arquivo `.env` na raiz com as variáveis necessárias antes de executar.
+
+---
+
+## 🗂️ Variáveis de Ambiente
+
+```env
+PUBLIC_SPTRANS_KEY=sua_chave_aqui
+PUBLIC_WAQI_TOKEN=seu_token_aqui
+```
+
+---
+
+## 📜 Licença
+
+Distribuído sob a licença **MIT**. Consulte o arquivo [`LICENSE`](./LICENSE) para mais detalhes.

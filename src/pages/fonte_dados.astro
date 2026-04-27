@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { originData } from "../data/fonte_dados";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Sampa 4u | Fontes de Dados">
+  <link rel="stylesheet" href={`${base}/styles.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}/fontes.css`} slot="head" />
+  <section class="hero-mini">
+    <div class="hero-content">
+      <h1>Transparência de Dados</h1>
+      <p>Conheça as fontes oficiais que alimentam o ecossistema Sampa 4u.</p>
+    </div>
+  </section>
+
+  <section class="fontes-container">
+    <div class="intro-text">
+      <p>
+        O <strong>Sampa 4u</strong> preza pela precisão das informações. Todos os dados exibidos 
+        são consumidos de APIs oficiais ou bases públicas governamentais, garantindo que o usuário 
+        tenha acesso ao status real da mobilidade paulista.
+      </p>
+    </div>
+
+    <div class="fontes-grid">
+      {originData.map((fonte) => (
+        <div class="fonte-card">
+          <div class="fonte-header">
+            <span class="material-symbols-outlined">{fonte.icon || 'database'}</span>
+            <h3>{fonte.nome}</h3>
+          </div>
+          <p>{fonte.descricao}</p>
+          <div class="fonte-meta">
+            <span class="tipo-badge">{fonte.tipo}</span>
+            <a href={fonte.url} target="_blank" rel="noopener noreferrer" class="btn-link">
+              Acessar Fonte Original
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
