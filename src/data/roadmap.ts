@@ -58,6 +58,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "28/04/2026", versao: "v26.04.8", descricao: "Atualização GTFS - SPTrans" },
     { data: "27/04/2026", versao: "v26.04.7", descricao: "Desenvolvido funcionalidade de página de Fonte de Dados (footer), Atualização do README.md"},
     { data: "26/04/2026", versao: "v26.04.6", descricao: "Desenvolvido Mapa do Metropolitano e disponibilizar via Figma"},
     { data: "22/04/2026", versao: "v26.04.5", descricao: "Atualização GTFS - SPTrans" },

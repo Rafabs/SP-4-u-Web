@@ -15,6 +15,62 @@ export interface GTFSHistoryEntry {
 // ===============================
 export const historyData: GTFSHistoryEntry[] = [
   {
+    data: "28/04/2026",
+    tipo: "🆕 Inclusão",
+    linha: "N144/11",
+    cor: "509E2F",
+    rota: "Term. Cachoeirinha - Hospital Brasilândia",
+    recente: true,
+  },     
+  {
+    data: "28/04/2026",
+    tipo: "✏️ Modificação",
+    linha: "6082/10",
+    cor: "0082BA",
+    rota: "<after>Atual:</after> Conexão Terminais - Conexão Terminais<br><before>Antes:</before> Circular - Term. Est. Varginha",
+    recente: true,
+  },     
+  {
+    data: "28/04/2026",
+    tipo: "✏️ Modificação",
+    linha: "407A/21",
+    cor: "DA291C",
+    rota: "<after>Atual:</after> Pq. Savoy - Metrô Belém<br><before>Antes:</before> Shop. Aricanduva - Metrô Belém",
+    recente: true,
+  },       
+  {
+    data: "28/04/2026",
+    tipo: "✏️ Modificação",
+    linha: "407A/10",
+    cor: "DA291C",
+    rota: "<after>Atual:</after> Pq. Savoy - Lgo. Da Concórdia<br><before>Antes:</before> Shop. Aricanduva - Lgo. Da Concórdia",
+    recente: true,
+  },     
+  {
+    data: "28/04/2026",
+    tipo: "✏️ Modificação",
+    linha: "3737/10",
+    cor: "DA291C",
+    rota: "<after>Atual:</after> Metrô Guilhermina/esperança - Shop.aricanduva<br><before>Antes:</before> Shop. Aricanduva - Metrô Guilhermina/esperança",
+    recente: true,
+  },     
+  {
+    data: "28/04/2026",
+    tipo: "✏️ Modificação",
+    linha: "3731/10",
+    cor: "DA291C",
+    rota: "<after>Atual:</after> Metrô Vl. Matilde - Shop. Aricanduva<br><before>Antes:</before> Shop. Aricanduva - Metrô Vl. Matilde",
+    recente: true,
+  },   
+  {
+    data: "28/04/2026",
+    tipo: "✏️ Modificação",
+    linha: "3721/10",
+    cor: "DA291C",
+    rota: "<after>Atual:</after> Metrô Artur Alvim - Shop. Aricanduva<br><before>Antes:</before> Shop. Aricanduva - Metrô Artur Alvim",
+    recente: true,
+  },   
+  {
     data: "22/04/2026",
     tipo: "🆕 Inclusão",
     linha: "5178/22",
@@ -28,7 +84,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "4007/31",
     cor: "DA291C",
     rota: "Cohab Juscelino - São Mateus",
-    recente: true,
+    recente: false,
   },  
   {
     data: "14/04/2026",
@@ -36,7 +92,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "6051/10",
     cor: "0082BA",
     rota: "<after>Atual:</after> Jd. Itajaí - Term. Varginha<br><before>Antes:</before> Jd. Itajaí - Term. Est. Varginha",
-    recente: true,
+    recente: false,
   }, 
   {
     data: "14/04/2026",
@@ -44,7 +100,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "6051/31",
     cor: "0082BA",
     rota: "<after>Atual:</after> Jd. Itajaí - Term. Varginha<br><before>Antes:</before> Jd. Itajaí - Term. Est. Varginha",
-    recente: true,
+    recente: false,
   }, 
   {
     data: "14/04/2026",
@@ -52,7 +108,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "6052/10",
     cor: "0082BA",
     rota: "<after>Atual:</after> Jd. Sete De Setembro - Term. Varginha<br><before>Antes:</before> Jd. Sete De Setembro - Term. Est. Varginha",
-    recente: true,
+    recente: false,
   },     
   {
     data: "14/04/2026",
@@ -60,7 +116,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "6052/31",
     cor: "0082BA",
     rota: "<after>Atual:</after> Jd. Almeida Prado - Term. Varginha<br><before>Antes:</before> Jd. Almeida Prado - Term. Est. Varginha",
-    recente: true,
+    recente: false,
   },   
   {
     data: "14/04/2026",
@@ -68,7 +124,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "6082/10",
     cor: "0082BA",
     rota: "Circular - Term. Est. Varginha",
-    recente: true,
+    recente: false,
   },  
   {
     data: "14/04/2026",
@@ -76,7 +132,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "695Y/42",
     cor: "0082BA",
     rota: "<after>Atual:</after> Term. Parelheiros - Est. Varginha<br><before>Antes:</before> Term. Parelheiros - Term. Est. Varginha",
-    recente: true,
+    recente: false,
   }, 
   {
     data: "31/03/2026",
