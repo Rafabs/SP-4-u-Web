@@ -33,7 +33,7 @@ function cssClass(situacao: string): string {
   if (s.includes("normal") || s.includes("especial"))
     return "verde_operacao_normal";
   if (s.includes("velocidade") || s.includes("impacto") ||
-      s.includes("atividade") || s.includes("parcial") || s.includes("maiores"))
+      s.includes("atividade") || s.includes("parcial") || s.includes("maiores") || s.includes("circulação"))
     return "amarelo_velocidade_reduzida";
   if (s.includes("paralisada") || s.includes("interrompida"))
     return "vermelho_paralisada";

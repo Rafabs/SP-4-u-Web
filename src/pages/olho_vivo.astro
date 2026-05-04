@@ -1,0 +1,68 @@
+---
+// src/pages/olho_vivo.astro
+import Layout from "../layouts/Layout.astro";
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Sampa 4u | Olho Vivo SPTrans">
+  <link rel="stylesheet" href={`${base}/sptrans.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}/olho-vivo.css`} slot="head" />
+
+  <section class="hero hero-sptrans">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-lines" id="olhovivo-canvas"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Monitoramento · SPTrans</div>
+      <h1 class="hero-h1">Olho Vivo<br><span style="color:#e8000f;">SPTrans</span></h1>
+      <p class="hero-sub">
+        Frota de ônibus municipais em circulação agora —
+        dados da API Olho Vivo da SPTrans atualizados via GitHub Actions.
+      </p>
+      <div class="hero-ctas">
+        <a href="#frota" class="btn-hero-primary" style="background:#e8000f;">Ver frota</a>
+        <a href="https://olhovivo.sptrans.com.br/" target="_blank" rel="noopener" class="btn-hero-ghost">Portal Oficial</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat" style="border-color:#e8000f;">
+          <div class="stat-val" id="hero-total-onibus">—</div>
+          <div class="stat-label">Áreas de Atuação</div>
+        </div>
+        <div class="stat" style="border-color:#e8000f;">
+          <div class="stat-val" id="hero-total-empresas">—</div>
+          <div class="stat-label">Empresas Operando</div>
+        </div>
+        <div class="stat" style="border-color:#e8000f;">
+          <div class="stat-val">Live</div>
+          <div class="stat-label">Status da Frota</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="frota" class="main-content-overlap">
+    <div class="status-indicator-wrapper">
+      <div class="live-label">
+        <span class="live-dot" style="background:#e8000f; box-shadow: 0 0 8px #e8000f;"></span>
+        <small id="frota-timestamp">Sincronizando...</small>
+      </div>
+    </div>
+
+    <div id="frota-grid" class="modern-grid">
+      <div class="frota-loading">Processando base de dados SPTrans...</div>
+    </div>
+  </section>
+
+  <script define:vars={{ base }}>
+    window.__BASE_URL__ = base;
+  </script>
+  <script>
+    // O Astro resolve o caminho a partir da pasta src
+    import { loadFrota } from '../lib/olho-vivo.ts';
+
+    // Executa a função
+    loadFrota();
+  </script>
+
+</Layout>

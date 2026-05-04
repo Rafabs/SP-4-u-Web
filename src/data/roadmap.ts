@@ -33,7 +33,6 @@ const roadmapData: Roadmap = {
         { label: "Desenvolver funcionalidade de página de Turismo", checked: false },
         { label: "Desenvolver funcionalidade de página de Notícias", checked: false },
         { label: "Adotar Next.js durante melhoria de mapas", checked: false },
-        { label: "Implantar Olho Vivo", checked: false },
         { label: "Melhorar códigos e comentários", checked: false },
         { label: "Desenvolver app Android - SP4U.apk", status: "EM DESENVOLVIMENTO", checked: false },
       ],
@@ -58,6 +57,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "04/05/2026", versao: "v26.05.1", descricao: "Desenvolvido Olho Vivo" },
     { data: "28/04/2026", versao: "v26.04.8", descricao: "Atualização GTFS - SPTrans" },
     { data: "27/04/2026", versao: "v26.04.7", descricao: "Desenvolvido funcionalidade de página de Fonte de Dados (footer), Atualização do README.md"},
     { data: "26/04/2026", versao: "v26.04.6", descricao: "Desenvolvido Mapa do Metropolitano e disponibilizar via Figma"},

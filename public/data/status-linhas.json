@@ -1,7 +1,7 @@
 {
   "meta": {
     "versao": "1.0.0",
-    "timestamp": "2026-03-18T01:45:36.013196",
+    "timestamp": "2026-05-03T23:51:33.465752",
     "filtros_aplicados": {
       "empresa": null,
       "linha": null,
@@ -21,12 +21,12 @@
           "codigo": "7",
           "ativa": true,
           "status": {
-            "situacao": "Operação Encerrada",
-            "descricao": "",
-            "classificacao": "ignorar",
-            "operacao_normal": false,
-            "atualizado_em": "2026-03-18T00:00:01.281520",
-            "atualizado_ha": "1 hora, 45 minutos"
+            "situacao": "Circulação de Trens",
+            "descricao": "Devido à manutenção programada, os trens circulam por via única entre as estações Perus e Caieiras. Embarques e desembarques na mesma plataforma nestas estações.",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T18:10:01.764571",
+            "atualizado_ha": "5 horas, 41 minutos"
           },
           "estacoes": {
             "total": 17,
@@ -63,12 +63,12 @@
           "codigo": "5",
           "ativa": true,
           "status": {
-            "situacao": "Operação Encerrada",
+            "situacao": "Operação Normal",
             "descricao": "",
-            "classificacao": "ignorar",
-            "operacao_normal": false,
-            "atualizado_em": "2026-03-18T00:05:21.162809",
-            "atualizado_ha": "1 hora, 40 minutos"
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T04:45:01.585471",
+            "atualizado_ha": "19 horas, 6 minutos"
           },
           "estacoes": {
             "total": 17,
@@ -105,12 +105,12 @@
           "codigo": "8",
           "ativa": true,
           "status": {
-            "situacao": "Operação Encerrada",
+            "situacao": "Operação Normal",
             "descricao": "",
-            "classificacao": "ignorar",
-            "operacao_normal": false,
-            "atualizado_em": "2026-03-18T00:05:21.162814",
-            "atualizado_ha": "1 hora, 40 minutos"
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T16:35:01.379143",
+            "atualizado_ha": "7 horas, 16 minutos"
           },
           "estacoes": {
             "total": 23,
@@ -146,12 +146,12 @@
           "codigo": "9",
           "ativa": true,
           "status": {
-            "situacao": "Operação Encerrada",
-            "descricao": "",
-            "classificacao": "ignorar",
-            "operacao_normal": false,
-            "atualizado_em": "2026-03-18T00:05:21.162818",
-            "atualizado_ha": "1 hora, 40 minutos"
+            "situacao": "Atividade Programada",
+            "descricao": "Devido à atividade programada, os trens da Linha 9-Esmeralda estão circulando com maiores intervalos e retornando da estação Presidente Altino.",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T11:00:01.555163",
+            "atualizado_ha": "12 horas, 51 minutos"
           },
           "estacoes": {
             "total": 21,
@@ -192,12 +192,12 @@
           "codigo": "4",
           "ativa": true,
           "status": {
-            "situacao": "Operação Encerrada",
+            "situacao": "Operação Normal",
             "descricao": "",
-            "classificacao": "ignorar",
-            "operacao_normal": false,
-            "atualizado_em": "2026-03-18T00:00:01.126569",
-            "atualizado_ha": "1 hora, 45 minutos"
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T04:45:01.585488",
+            "atualizado_ha": "19 horas, 6 minutos"
           },
           "estacoes": {
             "total": 11,
@@ -228,12 +228,12 @@
           "codigo": "10",
           "ativa": true,
           "status": {
-            "situacao": "Operação Encerrada",
+            "situacao": "Operação Normal",
             "descricao": "",
-            "classificacao": "ignorar",
-            "operacao_normal": false,
-            "atualizado_em": "2026-03-18T00:00:01.126531",
-            "atualizado_ha": "1 hora, 45 minutos"
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T16:55:01.580125",
+            "atualizado_ha": "6 horas, 56 minutos"
           }
         },
         {
@@ -241,12 +241,12 @@
           "codigo": "11",
           "ativa": true,
           "status": {
-            "situacao": "Operação Encerrada",
+            "situacao": "Operação Normal",
             "descricao": "",
-            "classificacao": "ignorar",
-            "operacao_normal": false,
-            "atualizado_em": "2026-03-18T00:00:01.126537",
-            "atualizado_ha": "1 hora, 45 minutos"
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T04:05:01.448600",
+            "atualizado_ha": "19 horas, 46 minutos"
           },
           "estacoes": {
             "total": 16
@@ -257,12 +257,12 @@
           "codigo": "12",
           "ativa": true,
           "status": {
-            "situacao": "Operação Encerrada",
+            "situacao": "Operação Normal",
             "descricao": "",
-            "classificacao": "ignorar",
-            "operacao_normal": false,
-            "atualizado_em": "2026-03-18T00:00:01.126542",
-            "atualizado_ha": "1 hora, 45 minutos"
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T04:05:01.448606",
+            "atualizado_ha": "19 horas, 46 minutos"
           },
           "estacoes": {
             "total": 13
@@ -273,12 +273,12 @@
           "codigo": "13",
           "ativa": true,
           "status": {
-            "situacao": "Operação Encerrada",
+            "situacao": "Operação Normal",
             "descricao": "",
-            "classificacao": "ignorar",
-            "operacao_normal": false,
-            "atualizado_em": "2026-03-18T00:00:01.126547",
-            "atualizado_ha": "1 hora, 45 minutos"
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T04:05:01.448611",
+            "atualizado_ha": "19 horas, 46 minutos"
           },
           "estacoes": {
             "total": 3
@@ -296,12 +296,12 @@
           "codigo": "15",
           "ativa": true,
           "status": {
-            "situacao": "Operação Encerrada",
-            "descricao": "Operação Encerrada",
-            "classificacao": "ignorar",
-            "operacao_normal": false,
-            "atualizado_em": "2026-03-18T00:05:21.162784",
-            "atualizado_ha": "1 hora, 40 minutos"
+            "situacao": "Operação Normal",
+            "descricao": "Operação Normal",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-02T04:45:01.995950",
+            "atualizado_ha": "1 dia, 19 horas"
           }
         },
         {
@@ -309,12 +309,12 @@
           "codigo": "1",
           "ativa": true,
           "status": {
-            "situacao": "Operação Encerrada",
-            "descricao": "Operação Encerrada",
-            "classificacao": "ignorar",
-            "operacao_normal": false,
-            "atualizado_em": "2026-03-18T00:05:21.162753",
-            "atualizado_ha": "1 hora, 40 minutos"
+            "situacao": "Operação Normal",
+            "descricao": "Operação Normal",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-02T04:45:01.995915",
+            "atualizado_ha": "1 dia, 19 horas"
           }
         },
         {
@@ -322,12 +322,12 @@
           "codigo": "2",
           "ativa": true,
           "status": {
-            "situacao": "Operação Encerrada",
-            "descricao": "Operação Encerrada",
-            "classificacao": "ignorar",
-            "operacao_normal": false,
-            "atualizado_em": "2026-03-18T00:05:21.162771",
-            "atualizado_ha": "1 hora, 40 minutos"
+            "situacao": "Operação Normal",
+            "descricao": "Operação Normal",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-02T04:45:01.995936",
+            "atualizado_ha": "1 dia, 19 horas"
           }
         },
         {
@@ -335,12 +335,12 @@
           "codigo": "3",
           "ativa": true,
           "status": {
-            "situacao": "Operação Encerrada",
-            "descricao": "Operação Encerrada",
-            "classificacao": "ignorar",
-            "operacao_normal": false,
-            "atualizado_em": "2026-03-18T00:05:21.162778",
-            "atualizado_ha": "1 hora, 40 minutos"
+            "situacao": "Operação Normal",
+            "descricao": "Operação Normal",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-02T04:45:01.995943",
+            "atualizado_ha": "1 dia, 19 horas"
           }
         }
       ]
