@@ -622,21 +622,25 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
-  padding: 20px 16px 28px;
-  background: #121212;
-  border-top: 1px solid rgba(10, 18, 66, 0.2);
+  gap: 10px;
+  padding: 30px 15px;
+  background: var(--bg-dark);
+  border-top: 1px solid var(--accent-soft);
+  font-family: var(--mono);
 }
 
 .footer-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   font-family: 'Share Tech Mono', Courier, monospace;
 }
 
-.footer-links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+.footer-links { 
+  display: flex; 
+  gap: 20px; 
+}
 .footer-links a {
   font-size: 14px; color: rgba(255, 80, 80, 0.65); letter-spacing: 2px;
   text-decoration: none; border-bottom: 1px solid rgba(255, 80, 80, 0.2); padding-bottom: 2px;
@@ -645,7 +649,7 @@ footer {
 .footer-links a:hover { color: #ff0000; border-color: #ff0000; }
 
 .footer-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
-.footer-badges img { height: 20px; opacity: .75; transition: opacity .2s; }
+.footer-badges img { height: 10px; opacity: .75; transition: opacity .2s; }
 .footer-badges img:hover { opacity: 1; }
 
 /* ── DEV CARD ── */
@@ -690,18 +694,23 @@ footer {
 .dots span:nth-child(3) { animation-delay: .4s; }
 @keyframes blink-d { 0%, 100% { opacity: 1; } 50% { opacity: .15; } }
 
-.card-body { display: flex; align-items: stretch; position: relative; z-index: 3; padding: 20px 24px; gap: 24px; }
+.card-body {
+  display: flex;
+  padding: 10px;
+  gap: 20px;
+  position: relative;
+}
 .card-left {
   width: 3px; flex-shrink: 0; align-self: stretch; border-radius: 2px;
   background: linear-gradient(to bottom, transparent, #1a3aff, transparent); opacity: .7;
 }
 .card-info { flex: 1; display: flex; flex-direction: column; gap: 12px; }
 
-.dev-label { font-size: 9px; color: rgba(100, 140, 255, .55); letter-spacing: 5px; text-transform: uppercase; }
+.dev-label { font-size: 7px; color: rgba(100, 140, 255, .55); letter-spacing: 5px; text-transform: uppercase; }
 
 .dev-name {
   font-family: 'Orbitron', sans-serif; font-weight: 900;
-  font-size: 28px; letter-spacing: 3px; color: #fff;
+  font-size: 12px; letter-spacing: 3px; color: #fff;
   text-transform: uppercase; position: relative; line-height: 1.1;
   animation: glitch-n 9s infinite;
 }
@@ -715,13 +724,13 @@ footer {
 
 .dev-tags { display: flex; gap: 7px; flex-wrap: wrap; }
 .dtag {
-  font-size: 11px; letter-spacing: 2px; color: #6ea8ff;
+  font-size: 9px; letter-spacing: 2px; color: #6ea8ff;
   border: 1px solid rgba(26, 58, 255, .35); padding: 4px 10px; border-radius: 2px;
   background: rgba(26, 58, 255, .08);
 }
 .dtag.active { border-color: rgba(77, 128, 255, .8); background: rgba(26, 58, 255, .18); color: #a0c4ff; }
 
-.tw-line { font-size: 11px; color: #6ea8ff; letter-spacing: 2px; min-height: 16px; opacity: .85; }
+.tw-line { font-size: 9px; color: #6ea8ff; letter-spacing: 2px; min-height: 16px; opacity: .85; }
 .cur {
   display: inline-block; width: 7px; height: 11px;
   background: #1a3aff; margin-left: 2px; vertical-align: middle;
@@ -732,7 +741,7 @@ footer {
 
 .gh-link {
   display: inline-flex; align-items: center; gap: 7px; align-self: flex-start;
-  font-size: 10px; color: #6ea8ff; letter-spacing: 2px; text-decoration: none;
+  font-size: 9px; color: #6ea8ff; letter-spacing: 2px; text-decoration: none;
   border: 1px solid rgba(26, 58, 255, .35); padding: 6px 14px; border-radius: 2px;
   background: rgba(26, 58, 255, .08); transition: all .2s;
 }
@@ -748,7 +757,7 @@ footer {
   padding: 8px 24px; border-top: 1px solid rgba(26, 58, 255, .15);
   position: relative; z-index: 3; background: rgba(26, 58, 255, .04);
 }
-.card-bottom span { font-size: 10px; color: rgba(100, 140, 255, .4); letter-spacing: 2px; }
+.card-bottom span { font-size: 9px; color: rgba(100, 140, 255, .4); letter-spacing: 2px; }
 
 .menu-toggle {
     display: none; /* Escondido no desktop */
