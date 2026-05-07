@@ -15,6 +15,70 @@ export interface GTFSHistoryEntry {
 // ===============================
 export const historyData: GTFSHistoryEntry[] = [
   {
+    data: "07/05/2026",
+    tipo: "✏️ Modificação",
+    linha: "677V/10",
+    cor: "0082BA",
+    rota: "<after>Atual:</after> Jd. Alpino - Term. Grajaú<br><before>Antes:</before> Jd. Alpino - Est. Grajaú",
+    recente: true,
+  },        
+  {
+    data: "07/05/2026",
+    tipo: "✏️ Modificação",
+    linha: "6084/10",
+    cor: "0082BA",
+    rota: "<after>Atual:</after> Jd. Chác. Do Sol - Term. Est. Varginha<br><before>Antes:</before> Jd. Chác. Do Sol - Term. Varginha",
+    recente: true,
+  },      
+  {
+    data: "07/05/2026",
+    tipo: "✏️ Modificação",
+    linha: "6063/43",
+    cor: "0082BA",
+    rota: "<after>Atual:</after> Vl. Da Paz - Term. Est. Varginha<br><before>Antes:</before> Vl. Da Paz - Term. Varginha",
+    recente: true,
+  },     
+  {
+    data: "07/05/2026",
+    tipo: "✏️ Modificação",
+    linha: "6063/42",
+    cor: "0082BA",
+    rota: "<after>Atual:</after> Chác. Sto. Amaro - Term. Est. Varginha<br><before>Antes:</before> Chác. Sto. Amaro - Term. Varginha",
+    recente: true,
+  },   
+  {
+    data: "07/05/2026",
+    tipo: "✏️ Modificação",
+    linha: "6063/41",
+    cor: "0082BA",
+    rota: "<after>Atual:</after> Jd. Novo Marilda - Term. Est. Varginha<br><before>Antes:</before> Jd. Novo Marilda - Term. Varginha",
+    recente: true,
+  },  
+  {
+    data: "07/05/2026",
+    tipo: "✏️ Modificação",
+    linha: "6063/21",
+    cor: "0082BA",
+    rota: "<after>Atual:</after> Jd. Novo Horizonte - Term. Est. Varginha<br><before>Antes:</before> Jd. Novo Horizonte - Term. Varginha",
+    recente: true,
+  },      
+  {
+    data: "07/05/2026",
+    tipo: "✏️ Modificação",
+    linha: "6063/10",
+    cor: "0082BA",
+    rota: "<after>Atual:</after> Jd. Varginha - Term. Est. Varginha<br><before>Antes:</before> Jd. Varginha - Term. Varginha",
+    recente: true,
+  },        
+  {
+    data: "07/05/2026",
+    tipo: "✏️ Modificação",
+    linha: "6058/10",
+    cor: "0082BA",
+    rota: "<after>Atual:</after> Jd. Noronha - Term. Est. Varginha<br><before>Antes:</before> Jd. Noronha - Term. Varginha",
+    recente: true,
+  },      
+  {
     data: "28/04/2026",
     tipo: "🆕 Inclusão",
     linha: "N144/11",
@@ -28,7 +92,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "6082/10",
     cor: "0082BA",
     rota: "<after>Atual:</after> Conexão Terminais - Conexão Terminais<br><before>Antes:</before> Circular - Term. Est. Varginha",
-    recente: true,
+    recente: false,
   },     
   {
     data: "28/04/2026",
@@ -36,7 +100,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "407A/21",
     cor: "DA291C",
     rota: "<after>Atual:</after> Pq. Savoy - Metrô Belém<br><before>Antes:</before> Shop. Aricanduva - Metrô Belém",
-    recente: true,
+    recente: false,
   },       
   {
     data: "28/04/2026",
@@ -44,7 +108,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "407A/10",
     cor: "DA291C",
     rota: "<after>Atual:</after> Pq. Savoy - Lgo. Da Concórdia<br><before>Antes:</before> Shop. Aricanduva - Lgo. Da Concórdia",
-    recente: true,
+    recente: false,
   },     
   {
     data: "28/04/2026",
@@ -52,7 +116,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "3737/10",
     cor: "DA291C",
     rota: "<after>Atual:</after> Metrô Guilhermina/esperança - Shop.aricanduva<br><before>Antes:</before> Shop. Aricanduva - Metrô Guilhermina/esperança",
-    recente: true,
+    recente: false,
   },     
   {
     data: "28/04/2026",
@@ -60,7 +124,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "3731/10",
     cor: "DA291C",
     rota: "<after>Atual:</after> Metrô Vl. Matilde - Shop. Aricanduva<br><before>Antes:</before> Shop. Aricanduva - Metrô Vl. Matilde",
-    recente: true,
+    recente: false,
   },   
   {
     data: "28/04/2026",
@@ -68,7 +132,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "3721/10",
     cor: "DA291C",
     rota: "<after>Atual:</after> Metrô Artur Alvim - Shop. Aricanduva<br><before>Antes:</before> Shop. Aricanduva - Metrô Artur Alvim",
-    recente: true,
+    recente: false,
   },   
   {
     data: "22/04/2026",
@@ -76,7 +140,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "5178/22",
     cor: "0082BA",
     rota: "Pça. Tito Pacheco - Paulista",
-    recente: true,
+    recente: false,
   },   
   {
     data: "14/04/2026",

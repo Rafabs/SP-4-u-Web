@@ -31,7 +31,6 @@ const roadmapData: Roadmap = {
         { label: "Corrigir exibição de dados de Pesquisa Origem e Destino (Exibição de 1997 e 2007)", checked: false },
         { label: "Desenvolver Design System e disponibilizar no projeto", status: "EM DESENVOLVIMENTO", checked: false },
         { label: "Desenvolver funcionalidade de página de Turismo", checked: false },
-        { label: "Desenvolver funcionalidade de página de Notícias", checked: false },
         { label: "Adotar Next.js durante melhoria de mapas", checked: false },
         { label: "Melhorar códigos e comentários", checked: false },
         { label: "Desenvolver app Android - SP4U.apk", status: "EM DESENVOLVIMENTO", checked: false },
@@ -57,6 +56,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "07/05/2026", versao: "v26.05.2", descricao: "Atualização GTFS - SPTrans e Desenvolvido funcionalidade de página de Notícias" },
     { data: "04/05/2026", versao: "v26.05.1", descricao: "Desenvolvido Olho Vivo" },
     { data: "28/04/2026", versao: "v26.04.8", descricao: "Atualização GTFS - SPTrans" },
     { data: "27/04/2026", versao: "v26.04.7", descricao: "Desenvolvido funcionalidade de página de Fonte de Dados (footer), Atualização do README.md"},

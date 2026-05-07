@@ -4,26 +4,35 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Mapa - Sampa 4u">
+
     <hr>
+    
     <section class="about">
         <div class="info-container">
-            <h2>Sampa 4u</h2>
+            <h2>Canais de Informação</h2>
             <p>
-                O <strong>Sampa 4u</strong> é um ecossistema de visualização de dados focado na malha metroferroviária e
-                de ônibus urbano de São Paulo.
-                Este projeto demonstra como transformar coordenadas e informações operacionais em interfaces gráficas
-                intuitivas utilizando dados abertos e tecnologia open source.
+                Para notícias atualizadas sobre a regulação do transporte, concessões aeroportuárias e rodoviárias no estado, consulte os canais oficiais da ARTESP. 
+                Esses links fornecem acesso direto às últimas notícias, comunicados e atualizações sobre os sistemas de transporte sob regulação da agência.:
             </p>
-            <p>
-                Cada script foi projetado para renderizar linhas, estações, conexões estratégicas e trajetos em tempo
-                real. Além da infraestrutura, o sistema integra APIs para monitorar o fluxo de trânsito
-                (Centro-Bairro/Bairro-Centro),
-                além de fornecer dados climáticos e cronológicos da capital paulista.
-            </p>
-            <div class="version-info">
-                <img src="https://img.shields.io/badge/Vers%C3%A3o-1.0.0.0-blue.svg" alt="Version">
-                <img src="https://img.shields.io/badge/Atualiza%C3%A7%C3%A3o-12/02/2026-green.svg" alt="Atualização">
+            
+            <div class="actions" style="margin-top: 15px;">
+                <a href="https://ccm.artesp.sp.gov.br/metroferroviario/noticias" target="_blank" class="external-link">
+                    <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px;">news</span>
+                    Notícias ARTESP | Metroviário
+                </a>
             </div>
+            <div class="actions" style="margin-top: 15px;">
+                <a href="https://ccm.artesp.sp.gov.br/rodovias/noticias" target="_blank" class="external-link">
+                    <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px;">news</span>
+                    Notícias ARTESP | Rodovias
+                </a>
+            </div>       
+            <div class="actions" style="margin-top: 15px;">
+                <a href="https://ccm.artesp.sp.gov.br/aeroportos/noticias" target="_blank" class="external-link">
+                    <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px;">news</span>
+                    Notícias ARTESP | Aeroportos
+                </a>
+            </div>                    
         </div>
     </section>
 
@@ -50,3 +59,27 @@ const base = import.meta.env.BASE_URL;
         </div>
     </section>
 </Layout>
+
+<style>
+    .external-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        background: rgba(26, 58, 255, 0.1);
+        border: 1px solid rgba(26, 58, 255, 0.3);
+        border-radius: 4px;
+        color: #6ea8ff;
+        text-decoration: none;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    .external-link:hover {
+        background: rgba(26, 58, 255, 0.2);
+        border-color: #4d80ff;
+        color: #fff;
+        box-shadow: 0 0 15px rgba(26, 58, 255, 0.4);
+    }
+</style>
