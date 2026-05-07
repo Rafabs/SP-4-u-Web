@@ -29,7 +29,7 @@ export async function loadFrota(): Promise<void> {
           <div class="area-header" style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 15px;">
             <div>
               <div class="area-badge" style="background: ${color}; margin-bottom: 5px;">Área ${a.area}</div>
-              <div style="font-size: 11px; font-weight: bold; display: flex; align-items: center; gap: 4px;">
+              <div style="font-size: 12px; font-weight: bold; display: flex; align-items: center; gap: 4px;">
                 <span class="material-symbols-outlined" style="font-size:14px;">directions_bus</span>
                 ${qtdOnibus.toLocaleString('pt-BR')} ÔNIBUS
               </div>
@@ -42,7 +42,6 @@ export async function loadFrota(): Promise<void> {
           <div class="companies-stack">
             ${(a.empresas ?? []).map((e: any) => `
               <div class="company-item">
-                <div class="company-code" style="border-color: ${color}44;">${e.codigo}</div>
                 <div class="company-name" style="font-size:0.75rem;">${e.nome}</div>
               </div>
             `).join("")}
