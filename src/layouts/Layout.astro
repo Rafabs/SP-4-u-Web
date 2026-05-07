@@ -1,10 +1,24 @@
 ---
+// src/layouts/Layout.astro
+import fs from 'fs';
+import path from 'path';
+
 interface Props {
     title: string;
 }
 
 const { title } = Astro.props;
 const base = import.meta.env.BASE_URL;
+
+const logoPath = path.resolve('./public/logo/Fundo-Preto-Estendido.svg');
+let logoSvgContent = '';
+
+try {
+    logoSvgContent = fs.readFileSync(logoPath, 'utf8');
+} catch (err) {
+    console.error("Erro ao carregar o SVG do logo:", err);
+    logoSvgContent = '<span>Sampa 4u</span>'; // Fallback caso o arquivo não exista
+}
 ---
 
 <!DOCTYPE html>
@@ -15,18 +29,39 @@ const base = import.meta.env.BASE_URL;
     <title>{title}</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />        
     <link rel="stylesheet" href={`${base}styles.css`}/>   
-    <link rel="icon" href={`${base}icons/sp4u_logo.png`} type="image/png">
+    <link rel="icon" href={`${base}logo/Quadrado-Fundo-Preto-Original.svg`} type="image/svg+xml">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Share+Tech+Mono&display=swap" rel="stylesheet">    
     <slot name="head" />    
 </head>
 <body>
     <button class="theme-toggle" id="theme-btn" title="Alternar tema">🌓</button>
     <header>
-        <div class="logo-container">
-            <a href={`${base}`}>
-            <img class="logo" src={`${base}/icons/sp4u_logo.png`} alt="Logo SP4U">
-            </a>
-        </div>
+      <a href={`${base}`} class="logo-wrapper" aria-label="Sampa 4u Home">
+        <Fragment set:html={logoSvgContent} />
+      </a>
+
+    <style>
+        .logo-wrapper {
+          display: flex;
+          align-items: center;
+          height: 45px; 
+          text-decoration: none;
+          background: transparent;
+        }
+        
+        .logo-wrapper :global(svg) {
+          height: 100%;
+          width: auto;
+          mix-blend-mode: screen; 
+          transition: all 0.3s ease;
+        }
+        
+        .logo-wrapper:hover :global(svg) {
+          filter: drop-shadow(0 0 10px var(--accent));
+          transform: scale(1.02);
+        }
+      </style>
+
         <button id="backToTop"><span class="material-symbols-outlined">arrow_upward</span></button>
 
         <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
