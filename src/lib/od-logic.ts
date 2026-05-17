@@ -511,17 +511,6 @@ const GRAFICOS_COMPARATIVOS: ChartDef[] = [
     ],
   },
   {
-    id: "chart-vinculo", axisLabel: "Pessoas",
-    labels: ["Com Carteira", "Sem Carteira", "Público", "Autônomo", "Empregador"],
-    getValues: (dm) => [
-      getVal(dm.vinculo, "Assalariado com Carteira"),
-      getVal(dm.vinculo, ["Assalariado sem Carteira", "Assalariado sem Carteira "]),
-      getVal(dm.vinculo, ["Funcionário Público", "Funcionário público"]),
-      getVal(dm.vinculo, ["Autônomo", "Autonomo"]),
-      getVal(dm.vinculo, "Empregador"),
-    ],
-  },
-  {
     id: "chart-atividade", axisLabel: "Pessoas",
     labels: ["Ocupado", "Aposentado", "Sem Trabalho", "Estudante"],
     getValues: (dm) => [
@@ -548,19 +537,6 @@ const GRAFICOS_COMPARATIVOS: ChartDef[] = [
       getVal(dm.empregos_vinculo, ["Assalariado sem Carteira ", "Assalariado sem Carteira", "Assalariado sem carteira"]),
       getVal(dm.empregos_vinculo, ["Funcionário Público", "Funcionário público"]),
       getVal(dm.empregos_vinculo, ["Autônomo", "Autonomo"]),
-    ],
-  },
-  {
-    id: "chart-viagens-comparativo", axisLabel: "Viagens",
-    labels: ["Metrô", "Trem", "Ônibus", "Carro", "Bicicleta", "A pé"],
-    getValues: (dm) => [
-      getVal(dm.modos, ["Metrô", "Metro"]),
-      getVal(dm.modos, "Trem"),
-      getVal(dm.modos, ["Ônibus (*)", "Ônibus", "Onibus"]),
-      getVal(dm.modos, ["Dirigindo Automóvel", "Dirigindo automóvel"]) +
-      getVal(dm.modos, ["Passageiro de Automóvel", "Passageiro de automóvel"]),
-      getVal(dm.modos, "Bicicleta"),
-      getVal(dm.modos, ["A pé", "A Pe"]),
     ],
   },
   {

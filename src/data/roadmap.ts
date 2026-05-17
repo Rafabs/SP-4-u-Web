@@ -43,7 +43,6 @@ const roadmapData: Roadmap = {
     {
       categoria: "🛠️ Logs e Validações",
       itens: [
-        { label: "Atualizar Node.js, ver logs GitHub", checked: false },
       ],
     },
     {
@@ -55,6 +54,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "17/05/2026", versao: "v26.05.5", descricao: "Atualização GTFS - SPTrans e Atualizado Node.js, visualizção logs GitHub Actions " },
     { data: "12/05/2026", versao: "v26.05.4", descricao: "Correção de erro do Leaflet CSS " },
     { data: "11/05/2026", versao: "v26.05.3", descricao: "Correção de exibição de dados de Pesquisa Origem e Destino (Exibição de 1997 e 2007)" },
     { data: "07/05/2026", versao: "v26.05.2", descricao: "Atualização GTFS - SPTrans e Desenvolvido funcionalidade de página de Notícias" },
