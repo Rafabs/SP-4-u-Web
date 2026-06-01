@@ -19,6 +19,7 @@ interface Estacao {
   nomeSecundario?: string;
   secondary?: string;
   destaqueSecundario?: boolean;
+  acesso_livre?: boolean;  
   conexoes?: Conexao[];
 }
 
@@ -41,7 +42,8 @@ const ICON_MAP: Record<string, string> = {
   L03: "3_vermelha.png",
   L04: "4_amarela.png",
   L05: "5_lilas.png",
-  L07: "cptm.png",
+  L06: "6_laranja.png",
+  L07: "tictrens.png",
   L08: "8_diamante.png",
   L09: "9_esmeralda.png",
   L10: "cptm.png",
@@ -49,6 +51,7 @@ const ICON_MAP: Record<string, string> = {
   L12: "cptm.png",
   L13: "cptm.png",
   L15: "15_prata.png",
+  L17: "1_azul.png",
 };
 
 function getIconFileName(id: string): string {
@@ -134,7 +137,10 @@ function renderTimeline(dados: DadosLinha): void {
 
   dados.estacoes.forEach((est) => {
     const item = document.createElement("div");
-    item.className = `item ${(est.conexoes?.length ?? 0) > 0 ? "has-transfer" : ""}`;
+
+    const isFree = est.acesso_livre === true;
+    item.className = `item ${(est.conexoes?.length ?? 0) > 0 ? "has-transfer" : ""} ${isFree ? "is-free-access" : ""}`;
+    
     item.style.setProperty("--line-color", dados.cor);
 
     const isDestaque     = est.destaqueSecundario === true;
@@ -149,7 +155,7 @@ function renderTimeline(dados: DadosLinha): void {
           : ""}
       </div>
     `;
-
+    
     let pillsHTML = '<div class="transfer-pills">';
     est.conexoes?.forEach((con) => {
       const iconName = con.icone ?? (con.linha ? getIconFileName(con.linha) : "default.png");

@@ -30,7 +30,8 @@ const roadmapData: Roadmap = {
       itens: [
         { label: "Desenvolver Design System e disponibilizar no projeto", status: "EM DESENVOLVIMENTO", checked: false },
         { label: "Desenvolver funcionalidade de página de Turismo", status: "EM DESENVOLVIMENTO", checked: false },
-        { label: "Adotar Next.js durante melhoria de mapas", checked: false },
+        { label: "Desenvolver Legendas em Detalhes", checked: false },
+        { label: "Adotar Next.js durante melhoria de mapas no Vercel", checked: false },
         { label: "Melhorar códigos e comentários", checked: false },
         { label: "Desenvolver app Android - SP4U.apk", status: "EM DESENVOLVIMENTO", checked: false },
       ],
@@ -49,11 +50,11 @@ const roadmapData: Roadmap = {
       categoria: "🖼️ Interface",
       itens: [
         { label: "Exibir Linha 17 - Ouro por ramificação", checked: false },
-        { label: "Correção de estilos em geral", checked: false },
       ],
     },
   ],
   historico: [
+    { data: "01/06/2026", versao: "v26.06.1", descricao: "Atualização GTFS - SPTrans e Correção de estilos em geral " },
     { data: "17/05/2026", versao: "v26.05.5", descricao: "Atualização GTFS - SPTrans e Atualizado Node.js, visualizção logs GitHub Actions " },
     { data: "12/05/2026", versao: "v26.05.4", descricao: "Correção de erro do Leaflet CSS " },
     { data: "11/05/2026", versao: "v26.05.3", descricao: "Correção de exibição de dados de Pesquisa Origem e Destino (Exibição de 1997 e 2007)" },

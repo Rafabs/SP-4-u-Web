@@ -397,7 +397,7 @@ header {
 }
 
 /* ================================================
-   HERO SECTION — adicionar ao styles.css
+   HERO SECTION
    ================================================ */
 
 .hero {
@@ -531,10 +531,10 @@ header {
 /* Trilhos animados */
 .hero-lines {
     position: absolute;
-    right: 0;           /* ← era -20px, agora cola na borda */
+    right: 0;          
     top: 0;
     bottom: 0;
-    width: 340px;       /* ← era 420px, reduz a área dos trilhos */
+    width: 340px;      
     pointer-events: none;
     z-index: 1;
 }
@@ -619,51 +619,74 @@ header {
 
 /* ── FOOTER ── */
 footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 30px 15px;
-  background: var(--bg-dark);
-  border-top: 1px solid var(--accent-soft);
-  font-family: var(--mono);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Share Tech Mono', Courier, monospace;
 }
 
 .footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  font-family: 'Share Tech Mono', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Links do Rodapé */
 .footer-links { 
-  display: flex; 
-  gap: 20px; 
+    display: flex; 
+    gap: 30px; /* Mais espaçamento entre os links */
 }
-.footer-links a {
-  font-size: 14px; color: rgba(255, 80, 80, 0.65); letter-spacing: 2px;
-  text-decoration: none; border-bottom: 1px solid rgba(255, 80, 80, 0.2); padding-bottom: 2px;
-  transition: color .2s, border-color .2s;
-}
-.footer-links a:hover { color: #ff0000; border-color: #ff0000; }
 
-.footer-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
-.footer-badges img { height: 10px; opacity: .75; transition: opacity .2s; }
-.footer-badges img:hover { opacity: 1; }
+.footer-links a {
+    font-size: 13px; /* Um tiquinho menor fica mais minimalista e elegante */
+    color: rgba(255, 80, 80, 0.6); 
+    letter-spacing: 1.5px;
+    text-transform: uppercase; /* Deixa o visual mono mais padrão "terminal" */
+    text-decoration: none; 
+    border-bottom: 1px solid transparent; /* Evita o "pulo" visual no hover */
+    padding-bottom: 4px;
+    transition: color 0.25s ease, border-color 0.25s ease, opacity 0.25s ease;
+}
+
+.footer-links a:hover { 
+    color: #ffffff; 
+    border-color: var(--accent-red); /* Usa sua variável padrão de destaque */
+}
+
+/* Área das Badges (Shields/Tecnologias) */
+.footer-badges { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 10px; /* Mais espaço entre as imagens */
+    margin-top: 5px;
+}
+
+.footer-badges img { 
+    height: 16px; /* 10px costuma ficar ilegível; 16px é o tamanho perfeito para badges inline */
+    opacity: 0.5; /* Fica mais discreto por padrão, integrando-se ao fundo */
+    filter: grayscale(0.3) brightness(0.9); /* Suaviza as cores para não brigar com seu layout */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-badges img:hover { 
+    opacity: 1; 
+    filter: grayscale(0) brightness(1); /* Devolve a cor original ao passar o mouse */
+    transform: translateY(-2px); /* Efeito clássico flutuante */
+}
 
 /* ── DEV CARD ── */
 .dev-card {
   width: 100%; max-width: 500px; position: relative;
-  background: #0a0a18; border: 1px solid rgba(16, 27, 102, 0.5);
+  background: #180a0a; border: 1px solid rgba(102, 16, 16, 0.5);
   border-radius: 8px; overflow: hidden;
   font-family: 'Share Tech Mono', Courier, monospace;
 }
 .dev-card::before {
   content: ''; position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(16, 27, 102, .05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16, 27, 102, .05) 1px, transparent 1px);
+    linear-gradient(rgba(102, 16, 16, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(102, 16, 16, 0.05) 1px, transparent 1px);
   background-size: 30px 30px; pointer-events: none;
 }
 
@@ -673,19 +696,19 @@ footer {
 }
 .sweep {
   position: absolute; left: 0; width: 100%; height: 2px; top: -2px; z-index: 2; pointer-events: none;
-  background: linear-gradient(90deg, transparent, rgba(16, 27, 102, .5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(102, 16, 16, 0.5), transparent);
   animation: sweep 5s linear infinite;
 }
 @keyframes sweep { 0% { top: -2px } 100% { top: 100% } }
 
-.co { position: absolute; width: 14px; height: 14px; border-color: rgba(80, 120, 255, .8); border-style: solid; z-index: 5; }
+.co { position: absolute; width: 14px; height: 14px; border-color: rgba(255, 80, 80, 0.8); border-style: solid; z-index: 5; }
 .co.tl { top: 7px; left: 7px; border-width: 2px 0 0 2px; }
 .co.tr { top: 7px; right: 7px; border-width: 2px 2px 0 0; }
 .co.bl { bottom: 7px; left: 7px; border-width: 0 0 2px 2px; }
 .co.br { bottom: 7px; right: 7px; border-width: 0 2px 2px 0; }
 
 
-.sys { font-size: 9px; color: rgba(100, 140, 255, .6); letter-spacing: 3px; }
+.sys { font-size: 9px; color: rgba(255, 100, 100, 0.6); letter-spacing: 3px; }
 .dots span {
   display: inline-block; width: 5px; height: 5px; border-radius: 50%;
   background: #1aff39; margin-left: 5px; animation: blink-d 1.3s infinite;
@@ -702,50 +725,50 @@ footer {
 }
 .card-left {
   width: 3px; flex-shrink: 0; align-self: stretch; border-radius: 2px;
-  background: linear-gradient(to bottom, transparent, #1a3aff, transparent); opacity: .7;
+  background: linear-gradient(to bottom, transparent, #ff1a1a, transparent); opacity: .7;
 }
 .card-info { flex: 1; display: flex; flex-direction: column; gap: 12px; }
 
-.dev-label { font-size: 7px; color: rgba(100, 140, 255, .55); letter-spacing: 5px; text-transform: uppercase; }
+.dev-label { font-size: 7px; color: rgba(255, 151, 151, 0.55); letter-spacing: 5px; text-transform: uppercase; }
 
 .dev-name {
   font-family: 'Orbitron', sans-serif; font-weight: 900;
-  font-size: 12px; letter-spacing: 3px; color: #fff;
+  font-size: 12px; letter-spacing: 3px; color: #dddddd;
   text-transform: uppercase; position: relative; line-height: 1.1;
   animation: glitch-n 9s infinite;
 }
-.dev-name .hi { color: #4d80ff; text-shadow: 0 0 20px rgba(26, 58, 255, .6); }
+.dev-name .hi { color: #949494; text-shadow: 0 0 20px rgba(124, 124, 124, 0.6); }
 .dev-name::before, .dev-name::after { content: attr(data-t); position: absolute; top: 0; left: 0; }
-.dev-name::before { color: #ff1a4d; clip-path: polygon(0 0,100% 0,100% 35%,0 35%); animation: gb 9s infinite; }
-.dev-name::after  { color: #1a3aff; clip-path: polygon(0 65%,100% 65%,100% 100%,0 100%); animation: ga 9s infinite; }
+.dev-name::before { color: #ff1a1a; clip-path: polygon(0 0,100% 0,100% 35%,0 35%); animation: gb 9s infinite; }
+.dev-name::after  { color: #ff1a1a; clip-path: polygon(0 65%,100% 65%,100% 100%,0 100%); animation: ga 9s infinite; }
 @keyframes glitch-n { 0%,87%,100%{transform:translate(0);} 88%{transform:translate(-2px,0);} 89%{transform:translate(2px,0);} 90%{transform:translate(0);} }
 @keyframes gb { 0%,87%,100%{opacity:0;} 88%{opacity:.8;transform:translate(-3px,0);} 89%{opacity:0;} }
 @keyframes ga { 0%,89%,100%{opacity:0;} 90%{opacity:.8;transform:translate(3px,0);} 91%{opacity:0;} }
 
 .dev-tags { display: flex; gap: 7px; flex-wrap: wrap; }
 .dtag {
-  font-size: 9px; letter-spacing: 2px; color: #6ea8ff;
-  border: 1px solid rgba(26, 58, 255, .35); padding: 4px 10px; border-radius: 2px;
-  background: rgba(26, 58, 255, .08);
+  font-size: 9px; letter-spacing: 2px; color: #ff6e6e;
+  border: 1px solid rgba(255, 26, 26, 0.35); padding: 4px 10px; border-radius: 2px;
+  background: rgba(255, 26, 26, 0.08);
 }
-.dtag.active { border-color: rgba(77, 128, 255, .8); background: rgba(26, 58, 255, .18); color: #a0c4ff; }
+.dtag.active { border-color: rgba(255, 77, 77, 0.8); background: rgba(255, 26, 26, 0.18); color: #ffa0a0; }
 
-.tw-line { font-size: 9px; color: #6ea8ff; letter-spacing: 2px; min-height: 16px; opacity: .85; }
+.tw-line { font-size: 9px; color: #ff6e6e; letter-spacing: 2px; min-height: 16px; opacity: .85; }
 .cur {
   display: inline-block; width: 7px; height: 11px;
-  background: #1a3aff; margin-left: 2px; vertical-align: middle;
-  box-shadow: 0 0 6px rgba(26, 58, 255, .6);
+  background: #ff1a1a; margin-left: 2px; vertical-align: middle;
+  box-shadow: 0 0 6px rgba(255, 26, 26, 0.6);
   animation: blink 1s step-end infinite;
 }
 @keyframes blink { 50% { opacity: 0; } }
 
 .gh-link {
   display: inline-flex; align-items: center; gap: 7px; align-self: flex-start;
-  font-size: 9px; color: #6ea8ff; letter-spacing: 2px; text-decoration: none;
-  border: 1px solid rgba(26, 58, 255, .35); padding: 6px 14px; border-radius: 2px;
-  background: rgba(26, 58, 255, .08); transition: all .2s;
+  font-size: 9px; color: #d4d4d4; letter-spacing: 2px; text-decoration: none;
+  border: 1px solid rgba(255, 26, 26, 0.35); padding: 6px 14px; border-radius: 2px;
+  background: rgba(255, 26, 26, 0.08); transition: all .2s;
 }
-.gh-link:hover { color: #a0c4ff; border-color: rgba(77, 128, 255, .7); background: rgba(26, 58, 255, .2); }
+.gh-link:hover { color: #ffa0a0; border-color: rgba(255, 77, 77, 0.7); background: rgba(255, 26, 26, 0.2); }
 .gh-dot {
   width: 6px; height: 6px; border-radius: 50%;
   background: #1aff5f; box-shadow: 0 0 6px rgba(26, 255, 64, 0.8);
@@ -754,10 +777,10 @@ footer {
 
 .card-bottom {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 8px 24px; border-top: 1px solid rgba(26, 58, 255, .15);
-  position: relative; z-index: 3; background: rgba(26, 58, 255, .04);
+  padding: 8px 24px; border-top: 1px solid rgba(63, 55, 55, 0.15);
+  position: relative; z-index: 3; background: rgba(78, 75, 75, 0.04);
 }
-.card-bottom span { font-size: 9px; color: rgba(100, 140, 255, .4); letter-spacing: 2px; }
+.card-bottom span { font-size: 9px; color: rgba(255, 100, 100, 0.4); letter-spacing: 2px; }
 
 .menu-toggle {
     display: none; /* Escondido no desktop */
@@ -1117,11 +1140,18 @@ footer {
         gap: 8px;
     }
 
+    /* Centraliza o link (e o ícone flex interno) no mobile */
+    .contact-item a {
+        justify-self: center;
+        text-align: center;
+        justify-content: center; /* Alinha o texto e o .inline-icon horizontalmente */
+    }
+
     .contact-item span {
         color: var(--text-secondary);
         justify-self: center; 
-
-    }    
+        text-align: center;
+    }  
 
     .theme-toggle, #backToTop {
         right: 15px;    
@@ -1143,28 +1173,47 @@ footer {
   .dtag { font-size: 8px; padding: 3px 8px; }
 
     footer {
-        padding: 30px 20px; /* Garante um respiro nas laterais */
-        overflow: hidden;   /* Evita qualquer sobra interna */
+        padding: 35px 5px; 
+        overflow: hidden;   
     }
 
     .footer-content {
         flex-direction: column;
-        gap: 20px;
+        gap: 22px; /* Espaço ideal entre o texto/links e o bloco de badges */
         text-align: center;
-        width: 100%;        /* Garante que ocupe apenas o espaço disponível */
-        max-width: 100%;    /* Previne expansão indevida */
+        width: 100%;        
+        max-width: 100%;    
+    }
+
+    /* Força os links a quebrarem em lista ou se organizarem melhor em telas estreitas */
+    .footer-links {
+        flex-direction: column; 
+        gap: 14px; /* Espaço confortável para o clique do dedo (touch target) */
+        align-items: center;
+    }
+
+    .footer-links a {
+        font-size: 13px; /* Mantém o tamanho minimalista do desktop */
+        padding: 3px 6px; /* Área de clique expandida para facilitar o toque no celular */
     }
 
     .footer-badges {
         display: flex;
-        flex-wrap: wrap;    /* CRUCIAL: Faz as badges pularem de linha se não couberem */
+        flex-wrap: wrap;    
         justify-content: center;
-        gap: 8px;           /* Espaçamento entre elas */
+        gap: 5px; /* Um pouco mais de respiro caso elas quebrem linha */
+        width: 100%;
+        max-width: 280px; /* Evita que uma linha mobile fique com badges demais espalhadas */
+        margin: 0 auto;
     }
 
     .footer-badges img {
-        max-width: 120px;   /* Reduz levemente o tamanho no mobile */
-        height: auto;
+        /* No mobile, usamos height em vez de max-width para manter as badges */
+        /* proporcionais às fontes, já que o layout global mudou para height: 16px */
+        height: 15px; 
+        max-width: unset; /* Reseta o valor antigo */
+        width: auto;
+        opacity: 0.7; /* No mobile, deixamos um pouco mais visível que no desktop por falta do hover padrão */
     }
 
     .figma-embed-wrapper {

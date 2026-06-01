@@ -1,0 +1,66 @@
+.external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(26, 58, 255, 0.1);
+  border: 1px solid rgba(26, 58, 255, 0.3);
+  border-radius: 4px;
+  color: #6ea8ff;
+  text-decoration: none;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.external-link:hover {
+  background: rgba(26, 58, 255, 0.2);
+  border-color: #4d80ff;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(26, 58, 255, 0.4);
+}
+
+/* 5. Responsividade */
+@media (max-width: 768px) {
+    .update-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .history-table {
+        font-size: 0.8rem;
+    }
+}
+
+/* 6. Hero Section */
+.hero-news .hero-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+@keyframes bus-run {
+    0% {
+        left: -40px;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: .6;
+    }
+
+    95% {
+        opacity: .6;
+    }
+
+    100% {
+        left: 110%;
+        opacity: 0;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}

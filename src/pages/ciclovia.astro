@@ -6,7 +6,7 @@ const base = import.meta.env.BASE_URL;
 <Layout title="Sampa 4u | Ciclovias">
   <link rel="stylesheet" href={`${base}/map.css`} slot="head" />
   <link rel="stylesheet" href={`${base}/ciclovia.css`} slot="head" />
-    <link rel="stylesheet" href={`${base}/leaflet.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}/leaflet.css`} slot="head" />
 
   <!-- HERO -->
   <section class="hero hero-ciclo">
@@ -78,38 +78,7 @@ const base = import.meta.env.BASE_URL;
     import { loadMapData } from "../lib/map-logic";
     loadMapData();
 
-    // Bikes animadas — horizontal
-    const CICLO_COLORS = [
-      '#32e622','#28cc1a','#3fff2f','#20aa14',
-      '#32e622','#25bb18','#38dd25','#1e9912',
-    ];
-    const canvas = document.getElementById('ciclo-canvas');
-    if (canvas) {
-      CICLO_COLORS.forEach((color, i) => {
-        const y = 40 + i * 55;
-
-        const track = document.createElement('div');
-        track.style.cssText = `
-          position:absolute;left:0;right:0;
-          top:${y}px;height:2px;
-          background:${color};opacity:.12;
-        `;
-        canvas.appendChild(track);
-
-        const icon = document.createElement('span');
-        icon.className = 'material-symbols-outlined';
-        icon.textContent = i % 3 === 0 ? 'directions_bike'
-          : i % 3 === 1 ? 'pedal_bike'
-          : 'electric_bike';
-        icon.style.cssText = `
-          position:absolute;top:${y - 12}px;
-          font-size:${18 + (i % 3) * 6}px;
-          color:${color};opacity:.6;
-          animation:bus-run ${6 + i * 1.2}s linear infinite;
-          animation-delay:${-i * 0.8}s;
-        `;
-        canvas.appendChild(icon);
-      });
-    }
+    import { initHeroCiclovia } from "../lib/hero-ciclovia";
+    initHeroCiclovia();
   </script>
 </Layout>

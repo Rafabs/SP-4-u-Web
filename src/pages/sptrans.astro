@@ -18,13 +18,19 @@ const base = import.meta.env.BASE_URL;
 
     <div class="hero-content">
       <div class="hero-tag">Transporte Público · São Paulo</div>
-      <h1 class="hero-h1">Rede de Ônibus<br><span style="color:#e8000f;">SPTrans</span></h1>
+      <h1 class="hero-h1">
+        Rede de Ônibus<br /><span style="color:#e8000f;">SPTrans</span>
+      </h1>
       <p class="hero-sub">
-        Explore as linhas de ônibus municipais de São Paulo com dados
-        abertos GTFS — rotas, tarifas e horários em tempo real.
+        Explore as linhas de ônibus municipais de São Paulo com dados abertos
+        GTFS — rotas, tarifas e horários em tempo real.
       </p>
       <div class="hero-ctas">
-        <a href="#search-section" class="btn-hero-primary" style="background:#e8000f;">Buscar linha</a>
+        <a
+          href="#search-section"
+          class="btn-hero-primary"
+          style="background:#e8000f;">Buscar linha</a
+        >
         <a href="#map" class="btn-hero-ghost">Ver no mapa</a>
       </div>
       <div class="hero-stats">
@@ -47,12 +53,21 @@ const base = import.meta.env.BASE_URL;
   <section class="search-section" id="search-section">
     <div class="search-container">
       <span class="material-symbols-outlined search-icon">search</span>
-      <input type="text" id="lineSearch" placeholder="Busque por número ou nome da linha..." />
-      <span class="material-symbols-outlined clear-icon" id="clearSearch" title="Limpar busca">close</span>
+      <input
+        type="text"
+        id="lineSearch"
+        placeholder="Busque por número ou nome da linha"
+      />
+      <span
+        class="material-symbols-outlined clear-icon"
+        id="clearSearch"
+        title="Limpar busca">close</span
+      >
     </div>
   </section>
 
   <div id="result-area"></div>
+  <hr />
 
   <div class="map-wrapper">
     <div id="map"></div>
@@ -65,63 +80,18 @@ const base = import.meta.env.BASE_URL;
 
   <hr />
   <div id="dynamic-systems-info"></div>
+  <hr />
 
-  <section class="about">
-    <div class="info-container">
-      <h2>Desenvolvimento e Transparência</h2>
-      <p>Este projeto utiliza dados abertos (GTFS) para mapear a rede de transporte.</p>
-      <div class="actions" style="margin-bottom: 20px;">
-        <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
-          <img
-            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
-            alt="github"
-          />
-        </a>
-      </div>
-    </div>
-  </section>
+<script>
+  import { loadMapData } from "../lib/map-logic";
+  import { initSptrans } from "../lib/sptrans";
+  import { initHeroBus }  from "../lib/hero-bus";
 
-  <script>
-    import { loadMapData } from "../lib/map-logic";
-    import { initSptrans } from "../lib/sptrans";
+  document.addEventListener("DOMContentLoaded", () => {
+    loadMapData();
+    initSptrans();
+  });
 
-    document.addEventListener("DOMContentLoaded", () => {
-      loadMapData();
-      initSptrans();
-    });
-
-    // Trilhos animados — ônibus (horizontal)
-    const BUS_COLORS = [
-      '#e8000f','#cc0000','#ff3333','#ff6600',
-      '#e8000f','#aa0000','#ff4444','#dd1111',
-    ];
-    const canvas = document.getElementById('bus-routes-canvas');
-    if (canvas) {
-      BUS_COLORS.forEach((color, i) => {
-        const y = 40 + i * 55;
-
-        // Trilho horizontal
-        const track = document.createElement('div');
-        track.style.cssText = `
-          position:absolute;left:0;right:0;
-          top:${y}px;height:2px;
-          background:${color};opacity:.12;
-        `;
-        canvas.appendChild(track);
-
-        // Ônibus animado
-        const bus = document.createElement('span');
-        bus.className = 'material-symbols-outlined';
-        bus.textContent = 'directions_bus';
-        bus.style.cssText = `
-          position:absolute;top:${y - 12}px;
-          font-size:${18 + (i % 3) * 6}px;
-          color:${color};opacity:.6;
-          animation:bus-run ${6 + i * 1.2}s linear infinite;
-          animation-delay:${-i * 0.8}s;
-        `;
-        canvas.appendChild(bus);
-      });
-    }
-  </script>
+  initHeroBus("bus-routes-canvas");
+</script>
 </Layout>

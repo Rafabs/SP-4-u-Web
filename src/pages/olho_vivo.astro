@@ -18,7 +18,7 @@ const base = import.meta.env.BASE_URL;
       <h1 class="hero-h1">Olho Vivo<br><span style="color:#e8000f;">SPTrans</span></h1>
       <p class="hero-sub">
         Frota de ônibus municipais em circulação agora —
-        dados da API Olho Vivo da SPTrans atualizados via GitHub Actions.
+        dados da API Olho Vivo da SPTrans.
       </p>
       <div class="hero-ctas">
         <a href="#frota" class="btn-hero-primary" style="background:#e8000f;">Ver frota</a>
@@ -57,12 +57,12 @@ const base = import.meta.env.BASE_URL;
   <script define:vars={{ base }}>
     window.__BASE_URL__ = base;
   </script>
-  <script>
-    // O Astro resolve o caminho a partir da pasta src
-    import { loadFrota } from '../lib/olho-vivo.ts';
+<script>
+  import { loadFrota }   from "../lib/olho-vivo";
+  import { initHeroOlhoVivo } from "../lib/hero-olho-vivo";
 
-    // Executa a função
-    loadFrota();
-  </script>
+  loadFrota();
+  initHeroOlhoVivo("olhovivo-canvas");
+</script>
 
 </Layout>

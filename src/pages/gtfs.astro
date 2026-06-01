@@ -111,66 +111,8 @@ function badgeUrl(linha: string, cor: string): string {
   <div id="dynamic-systems-info"></div>
   <hr />
 
-  <section class="about">
-    <div class="info-container">
-      <h2>Desenvolvimento e Transparência</h2>
-      <p>
-        Este é um projeto de código aberto sob constante atualização. Você pode
-        acompanhar o histórico de melhorias, contribuir com novas
-        funcionalidades ou reportar inconsistências através do repositório oficial.
-      </p>
-      <div class="actions" style="margin-bottom: 20px;">
-        <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
-          <img
-            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
-            alt="github"
-          />
-        </a>
-      </div>
-      <p>
-        <strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de
-        integração contínua.
-      </p>
-    </div>
-  </section>
-
-  <script>
-    // Animação horizontal — mesmo padrão da SPTrans
-    const COLORS = [
-      '#00b352','#009966','#00cc44','#007733',
-      '#00aa44','#008833','#00bb55','#006622',
-    ];
-    const canvas = document.getElementById('gtfs-canvas');
-    if (canvas) {
-      COLORS.forEach((color, i) => {
-        const y = 40 + i * 55;
-
-        // Trilho horizontal
-        const track = document.createElement('div');
-        track.style.cssText = `
-          position:absolute;left:0;right:0;
-          top:${y}px;height:2px;
-          background:${color};opacity:.12;
-        `;
-        canvas.appendChild(track);
-
-        // Ícone animado da esquerda para direita
-        const pkg = document.createElement('span');
-        pkg.className = 'material-symbols-outlined';
-        pkg.textContent = i % 5 === 0 ? 'train'
-          : i % 5 === 1 ? 'directions_bus'
-          : i % 5 === 2 ? 'schedule'
-          : i % 5 === 3 ? 'route'
-          : 'transfer_within_a_station';
-        pkg.style.cssText = `
-          position:absolute;top:${y - 12}px;
-          font-size:${18 + (i % 3) * 6}px;
-          color:${color};opacity:.6;
-          animation:bus-run ${6 + i * 1.2}s linear infinite;
-          animation-delay:${-i * 0.8}s;
-        `;
-        canvas.appendChild(pkg);
-      });
-    }
-  </script>
+<script>
+  import { initHeroGtfs } from "../lib/hero-gtfs";
+  initHeroGtfs();
+</script>
 </Layout>

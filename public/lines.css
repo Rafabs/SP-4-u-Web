@@ -178,7 +178,7 @@
     display: flex;
     justify-content: center;
     overflow-x: auto;
-    min-height: 220px;
+    min-height: 620px;
     position: relative;
 }
 
@@ -301,6 +301,20 @@
 
 .item:hover .name-main {
     color: var(--line-color);
+}
+
+.item:hover .name-main.is-not-main {
+    color: var(--line-color) !important;
+}
+
+.item:hover .name-secondary.is-highlight {
+    color: var(--line-color) !important;
+}
+
+.item:hover .name-secondary:not(.is-highlight),
+.item:hover .is-not-main {
+    color: var(--line-color) !important;
+    opacity: 0.1; /* Mantém um tom sutil para não perder a hierarquia */
 }
 
 .is-highlight {
@@ -592,6 +606,14 @@
         align-items: center;
         position: relative;
         padding: 8px 0;
+    }
+
+    .item.is-free-access::before {
+        background: radial-gradient(circle, var(--bg-deep) 35%, var(--text-primary) 40%) !important;
+    }
+
+    .item.is-free-access:hover::before {
+        background: radial-gradient(circle, var(--bg-deep) 35%, var(--line-color) 40%) !important;
     }
 
     .item.has-transfer {

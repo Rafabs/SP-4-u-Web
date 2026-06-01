@@ -9,7 +9,6 @@ const base = import.meta.env.BASE_URL;
 
   <main class="dashboard-main">
     <section>
-
       <!-- HERO OD -->
       <section class="hero hero-od">
         <div class="hero-bg">
@@ -20,19 +19,26 @@ const base = import.meta.env.BASE_URL;
 
         <div class="hero-content">
           <div class="hero-tag">Mobilidade Urbana · RMSP</div>
-          <h1 class="hero-h1">Pesquisa<br><span style="color:#f0a500;">Origem e Destino</span></h1>
+          <h1 class="hero-h1">
+            Pesquisa<br /><span style="color:#f0a500;">Origem e Destino</span>
+          </h1>
           <p class="hero-sub">
-            Padrões de deslocamento da Região Metropolitana de São Paulo —
-            dados que orientam o planejamento do transporte público e a expansão da rede metroviária.
+            Padrões de deslocamento da Região Metropolitana de São Paulo — dados
+            que orientam o planejamento do transporte público e a expansão da
+            rede metroviária.
           </p>
           <div class="hero-ctas">
-          <a href="https://transparencia.metrosp.com.br/dataset/pesquisa-origem-e-destino" 
-            class="btn-hero-primary" 
-            target="_blank"
-            style="background:#f0a500;color:#0a0a0f;display:inline-flex;align-items:center;gap:6px;">
+            <a
+              href="https://transparencia.metrosp.com.br/dataset/pesquisa-origem-e-destino"
+              class="btn-hero-primary"
+              target="_blank"
+              style="background:#f0a500;color:#0a0a0f;display:inline-flex;align-items:center;gap:6px;"
+            >
               Explorar dados
-              <span class="material-symbols-outlined inline-icon">open_in_new</span>
-          </a>
+              <span class="material-symbols-outlined inline-icon"
+                >open_in_new</span
+              >
+            </a>
             <a href="#od-dashboard" class="btn-hero-ghost">Ver gráficos</a>
           </div>
           <div class="hero-stats">
@@ -57,7 +63,12 @@ const base = import.meta.env.BASE_URL;
         <header class="od-header-card">
           <div class="header-text">
             <h1>Pesquisa Origem e Destino <span>OD</span></h1>
-            <p>O estudo revela os novos padrões de deslocamento na <span>Região Metropolitana de São Paulo</span>, auxiliando no planejamento do transporte público e na expansão da rede metroviária.</p>
+            <p>
+              O estudo revela os novos padrões de deslocamento na <span
+                >Região Metropolitana de São Paulo</span
+              >, auxiliando no planejamento do transporte público e na expansão
+              da rede metroviária.
+            </p>
           </div>
           <div class="controls-container">
             <div class="od-selector-box">
@@ -76,76 +87,111 @@ const base = import.meta.env.BASE_URL;
         </header>
 
         <div class="map-container">
-          <div id="map" style="height: 400px; width: 100%; border-radius: 8px;"></div>
+          <div id="map" style="height: 400px; width: 100%; border-radius: 8px;">
+          </div>
         </div>
 
         <div class="stats-container">
-          <div class="stat-item"><span class="stat-label">População</span><span id="stat-pop" class="stat-value">--</span></div>
-          <div class="stat-item"><span class="stat-label">Empregos</span><span id="stat-jobs" class="stat-value">--</span></div>
-          <div class="stat-item"><span class="stat-label">Frota</span><span id="stat-cars" class="stat-value">--</span></div>
-          <div class="stat-item accent"><span class="stat-label">Renda Capita</span><span id="stat-income" class="stat-value">--</span></div>
+          <div class="stat-item">
+            <span class="stat-label">População</span><span
+              id="stat-pop"
+              class="stat-value">--</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Empregos</span><span
+              id="stat-jobs"
+              class="stat-value">--</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Frota</span><span
+              id="stat-cars"
+              class="stat-value">--</span>
+          </div>
+          <div class="stat-item accent">
+            <span class="stat-label">Renda Capita</span><span
+              id="stat-income"
+              class="stat-value">--</span>
+          </div>
         </div>
 
         <div class="charts-grid">
-          <div class="chart-card full-width"><h3>Modos de Transporte - Evolução</h3><div class="canvas-holder wide"><canvas id="chart-modos"></canvas></div></div>
-          <div class="chart-card"><h3>Perfil por Gênero</h3><div class="canvas-holder"><canvas id="chart-genero"></canvas></div></div>
-          <div class="chart-card"><h3>Distribuição por Idade</h3><div class="canvas-holder"><canvas id="chart-idade"></canvas></div></div>
-          <div class="chart-card"><h3>Nível de Escolaridade</h3><div class="canvas-holder"><canvas id="chart-escolaridade"></canvas></div></div>
-          <div class="chart-card full-width"><h3>Motivos de Viagem - Evolução</h3><div class="canvas-holder wide"><canvas id="chart-motivos"></canvas></div></div>
-          <div class="chart-card"><h3>Condição de Atividade</h3><div class="canvas-holder"><canvas id="chart-atividade"></canvas></div></div>
-          <div class="chart-card"><h3>Matrículas Escolares</h3><div class="canvas-holder"><canvas id="chart-matriculas"></canvas></div></div>
-          <div class="chart-card"><h3>Empregos por Setor</h3><div class="canvas-holder"><canvas id="chart-empregos-setor"></canvas></div></div>
-          <div class="chart-card"><h3>Empregos por Vínculo</h3><div class="canvas-holder"><canvas id="chart-empregos-vinculo"></canvas></div></div>
-          <div class="chart-card"><h3>Trabalho Externo vs Interno</h3><div class="canvas-holder"><canvas id="chart-trabalho-externo"></canvas></div></div>
-          <div class="chart-card"><h3>Tempo Médio de Viagem</h3><div class="canvas-holder"><canvas id="chart-tempo-viagem"></canvas></div></div>
-          <div class="chart-card"><h3>Razões para Viagens a Pé</h3><div class="canvas-holder"><canvas id="chart-razoes-pe"></canvas></div></div>
+          <div class="chart-card full-width">
+            <h3>Modos de Transporte - Evolução</h3><div
+              class="canvas-holder wide"
+            >
+              <canvas id="chart-modos"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h3>Perfil por Gênero</h3><div class="canvas-holder">
+              <canvas id="chart-genero"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h3>Distribuição por Idade</h3><div class="canvas-holder">
+              <canvas id="chart-idade"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h3>Nível de Escolaridade</h3><div class="canvas-holder">
+              <canvas id="chart-escolaridade"></canvas>
+            </div>
+          </div>
+          <div class="chart-card full-width">
+            <h3>Motivos de Viagem - Evolução</h3><div
+              class="canvas-holder wide"
+            >
+              <canvas id="chart-motivos"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h3>Condição de Atividade</h3><div class="canvas-holder">
+              <canvas id="chart-atividade"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h3>Matrículas Escolares</h3><div class="canvas-holder">
+              <canvas id="chart-matriculas"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h3>Empregos por Setor</h3><div class="canvas-holder">
+              <canvas id="chart-empregos-setor"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h3>Empregos por Vínculo</h3><div class="canvas-holder">
+              <canvas id="chart-empregos-vinculo"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h3>Trabalho Externo vs Interno</h3><div class="canvas-holder">
+              <canvas id="chart-trabalho-externo"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h3>Tempo Médio de Viagem</h3><div class="canvas-holder">
+              <canvas id="chart-tempo-viagem"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <h3>Razões para Viagens a Pé</h3><div class="canvas-holder">
+              <canvas id="chart-razoes-pe"></canvas>
+            </div>
+          </div>
         </div>
       </div>
-
     </section>
 
     <hr />
-  <div id="dynamic-systems-info"></div>
-      
+    <div id="dynamic-systems-info"></div>
   </main>
 
   <script>
     import { initODDashboard } from "../lib/od-logic";
     initODDashboard();
 
-    // Fluxo de pessoas animado — origem → destino
-    const OD_COLORS = [
-      '#f0a500','#cc8800','#ffbb33','#aa7700',
-      '#f0a500','#dd9900','#ffcc44','#bb8800',
-    ];
-    const canvas = document.getElementById('od-canvas');
-    if (canvas) {
-      OD_COLORS.forEach((color, i) => {
-        const y = 40 + i * 55;
-
-        const track = document.createElement('div');
-        track.style.cssText = `
-          position:absolute;left:0;right:0;
-          top:${y}px;height:2px;
-          background:${color};opacity:.12;
-        `;
-        canvas.appendChild(track);
-
-        const icon = document.createElement('span');
-        icon.className = 'material-symbols-outlined';
-        icon.textContent = i % 4 === 0 ? 'transfer_within_a_station'
-          : i % 4 === 1 ? 'directions_walk'
-          : i % 4 === 2 ? 'commute'
-          : 'query_stats';
-        icon.style.cssText = `
-          position:absolute;top:${y - 12}px;
-          font-size:${18 + (i % 3) * 6}px;
-          color:${color};opacity:.6;
-          animation:bus-run ${6 + i * 1.2}s linear infinite;
-          animation-delay:${-i * 0.8}s;
-        `;
-        canvas.appendChild(icon);
-      });
-    }
+    import { initHeroOd } from "../lib/hero-od";
+    initHeroOd();
   </script>
 </Layout>

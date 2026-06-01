@@ -173,11 +173,13 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <script>
+<script>
     import { loadMapData } from "../lib/map-logic";
     import { initSptrans } from "../lib/sptrans";
     import { loadAQIData, setupAQIControls } from "../lib/qualidade_ar";
     import { map, initPlugins } from "../lib/map-instance";
+    import { initHeroMapa } from "../lib/hero-mapa";
+    initHeroMapa();
 
     function loadScript(src: string): Promise<void> {
       return new Promise((resolve, reject) => {
@@ -194,15 +196,9 @@ const base = import.meta.env.BASE_URL;
       (window as any).L = Leaflet;
 
       await Promise.all([
-        loadScript(
-          "https://unpkg.com/leaflet-measure@3.1.0/dist/leaflet-measure.js",
-        ),
-        loadScript(
-          "https://unpkg.com/leaflet.fullscreen@3.0.2/Control.FullScreen.js",
-        ),
-        loadScript(
-          "https://unpkg.com/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.js",
-        ),
+        loadScript("https://unpkg.com/leaflet-measure@3.1.0/dist/leaflet-measure.js"),
+        loadScript("https://unpkg.com/leaflet.fullscreen@3.0.2/Control.FullScreen.js"),
+        loadScript("https://unpkg.com/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.js"),
       ]).catch(console.warn);
 
       loadMapData();
@@ -219,15 +215,9 @@ const base = import.meta.env.BASE_URL;
         map.flyTo([-23.5505, -46.6333], 11, { duration: 1.2 });
       });
 
-      const btnCollapse = document.getElementById(
-        "btn-collapse",
-      ) as HTMLButtonElement;
-      const collapseIcon = document.getElementById(
-        "collapse-icon",
-      ) as HTMLElement;
-      const controlsBody = document.getElementById(
-        "controls-body",
-      ) as HTMLElement;
+      const btnCollapse = document.getElementById("btn-collapse") as HTMLButtonElement;
+      const collapseIcon = document.getElementById("collapse-icon") as HTMLElement;
+      const controlsBody = document.getElementById("controls-body") as HTMLElement;
 
       btnCollapse?.addEventListener("click", () => {
         const collapsed = controlsBody.classList.toggle("collapsed");
@@ -244,32 +234,6 @@ const base = import.meta.env.BASE_URL;
       }
       toggleLegend("check-trilhos", "legend-trilhos");
       toggleLegend("check-aqi", "aqi-legend");
-
-      // Trilhos animados no hero
-      const MAPA_COLORS = [
-        "#0455A1",
-        "#007E5E",
-        "#EE372F",
-        "#FFF000",
-        "#9B3894",
-        "#CA016B",
-        "#97A098",
-        "#01A9A7",
-      ];
-      const canvas = document.getElementById("mapa-canvas");
-      if (canvas) {
-        MAPA_COLORS.forEach((color, i) => {
-          const x = 40 + i * 32;
-          const track = document.createElement("div");
-          track.className = "line-track";
-          track.style.cssText = `background:${color};right:${x}px;`;
-          canvas.appendChild(track);
-          const dot = document.createElement("div");
-          dot.className = "line-dot";
-          dot.style.cssText = `background:${color};right:${x - 2.5}px;animation-duration:${4 + i * 0.7}s;animation-delay:${-i * 0.5}s;`;
-          canvas.appendChild(dot);
-        });
-      }
     });
   </script>
 </Layout>

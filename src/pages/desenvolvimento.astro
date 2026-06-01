@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Sampa 4u | Fontes de Dados">
+  <link rel="stylesheet" href={`${base}/styles.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}/fontes.css`} slot="head" />
+  <section class="about">
+    <div class="info-container">
+      <h2>Desenvolvimento e Transparência</h2>
+      <div class="actions" style="margin-bottom: 20px;">
+        <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
+          <img
+            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+            alt="github"
+          />
+        </a>
+      </div>
+      <p>
+        <strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de
+        integração contínua.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+

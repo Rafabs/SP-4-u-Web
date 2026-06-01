@@ -8,22 +8,26 @@
         "nomePrincipal": "Tucuruvi",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "TUC",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" }
+          { "tipo": "servico", "nome": "EMTU", "icone": "B.png" }
         ]
       },
       {
         "nomePrincipal": "Parada Inglesa",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PIG",
-        "conexoes": []
-      },
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+        ]      },
       {
         "nomePrincipal": "Jardim São Paulo",
         "nomeSecundario": "Ayrton Senna",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JPA",
         "conexoes": []
       },
@@ -31,6 +35,7 @@
         "nomePrincipal": "Santana",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "SAN",
         "conexoes": []
       },
@@ -38,6 +43,7 @@
         "nomePrincipal": "Carandiru",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CDU",
         "conexoes": []
       },
@@ -45,22 +51,28 @@
         "nomePrincipal": "Portuguesa",
         "nomeSecundario": "Tietê",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "TTE",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" }          
+        ]
       },
       {
         "nomePrincipal": "Armênia",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PPQ",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" }
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
         ]
       },
       {
         "nomePrincipal": "Tiradentes",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "TRD",
         "conexoes": []
       },
@@ -68,10 +80,11 @@
         "nomePrincipal": "Luz",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "LUZ",
         "conexoes": [
+          { "tipo": "servico", "nome": "Expresso Turístico", "icone": "expresso_turistico.png" },
           { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
@@ -81,6 +94,7 @@
         "nomePrincipal": "São Bento",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "BTO",
         "conexoes": []
       },
@@ -88,6 +102,7 @@
         "nomePrincipal": "Sé",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PSE",
         "conexoes": [{ "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }]
       },
@@ -95,6 +110,7 @@
         "nomePrincipal": "Japão",
         "nomeSecundario": "Liberdade",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "LIB",
         "conexoes": []
       },
@@ -102,13 +118,17 @@
         "nomePrincipal": "São Joaquim",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JQM",
-        "conexoes": []
+        "conexoes": [
+          { "linha": "L06", "cor": "#000000", "operadora": "LinhaUni" }
+        ]
       },
       {
         "nomePrincipal": "Vergueiro",
         "nomeSecundario": "Sebrae",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "VGO",
         "conexoes": []
       },
@@ -116,6 +136,7 @@
         "nomePrincipal": "Paraíso",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PSO",
         "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
       },
@@ -123,6 +144,7 @@
         "nomePrincipal": "Ana Rosa",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "ANR",
         "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
       },
@@ -130,6 +152,7 @@
         "nomePrincipal": "Vila Mariana",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "VMN",
         "conexoes": []
       },
@@ -137,6 +160,7 @@
         "nomePrincipal": "Santa Cruz",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "SCZ",
         "conexoes": [
           { "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE" }
@@ -146,6 +170,7 @@
         "nomePrincipal": "Praça da Árvore",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "ARV",
         "conexoes": []
       },
@@ -153,6 +178,7 @@
         "nomePrincipal": "Saúde",
         "nomeSecundario": "Ultrafarma",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "SAU",
         "conexoes": []
       },
@@ -160,6 +186,7 @@
         "nomePrincipal": "São Judas",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JUD",
         "conexoes": []
       },
@@ -167,6 +194,7 @@
         "nomePrincipal": "Conceição",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CON",
         "conexoes": []
       },
@@ -174,11 +202,12 @@
         "nomePrincipal": "Jabaquara",
         "nomeSecundario": "Comitê Paralímpico Brasileiro",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JAB",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" },
-          { "tipo": "servico", "nome": "Zoo", "icone": "zoo.png" },
-          { "tipo": "Corredor EMTU", "nome": "A", "icone": "A.png" }
+          { "tipo": "Corredor EMTU", "nome": "A", "icone": "A.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "Zoo", "icone": "zoo.png" }
         ]
       }
     ]
@@ -192,13 +221,17 @@
         "nomePrincipal": "Vila Madalena",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "VMD",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+        ]
       },
       {
-        "nomePrincipal": "Sumaré",
-        "nomeSecundario": "Santuário N. Sra. de Fátima",
-        "destaqueSecundario": false,
+        "nomePrincipal": "Santuário N. Sa. de Fátima",
+        "nomeSecundario": "Sumaré",
+        "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "SUM",
         "conexoes": []
       },
@@ -206,6 +239,7 @@
         "nomePrincipal": "Clínicas",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CLI",
         "conexoes": []
       },
@@ -213,6 +247,7 @@
         "nomePrincipal": "Consolação",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CNS",
         "conexoes": [
           { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" }
@@ -222,6 +257,7 @@
         "nomePrincipal": "Trianon • Masp",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "TRI",
         "conexoes": []
       },
@@ -229,6 +265,7 @@
         "nomePrincipal": "Brigadeiro",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "BGD",
         "conexoes": []
       },
@@ -236,6 +273,7 @@
         "nomePrincipal": "Paraíso",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PSO",
         "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }]
       },
@@ -243,6 +281,7 @@
         "nomePrincipal": "Ana Rosa",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "ANR",
         "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }]
       },
@@ -250,6 +289,7 @@
         "nomePrincipal": "Chácara Klabin",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CKB",
         "conexoes": [
           { "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE" }
@@ -259,6 +299,7 @@
         "nomePrincipal": "Santos",
         "nomeSecundario": "Imigrantes",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "IMG",
         "conexoes": []
       },
@@ -266,6 +307,7 @@
         "nomePrincipal": "Alto do Ipiranga",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "AIP",
         "conexoes": []
       },
@@ -273,13 +315,17 @@
         "nomePrincipal": "Sacomã",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "SAC",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+        ]
       },
       {
         "nomePrincipal": "Tamanduateí",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "TTI",
         "conexoes": [{ "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" }]
       },
@@ -287,6 +333,7 @@
         "nomePrincipal": "Vila Prudente",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "VPT",
         "conexoes": [{ "linha": "L15", "cor": "#9E9E9E", "operadora": "Metrô" }]
       }
@@ -301,9 +348,13 @@
         "nomePrincipal": "Palmeiras",
         "nomeSecundario": "Barra Funda",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "BFU",
         "conexoes": [
-          { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "expresso_aeroporto.png" },
+          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" },
           { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
@@ -314,6 +365,7 @@
         "nomePrincipal": "Marechal Deodoro",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "DEO",
         "conexoes": []
       },
@@ -321,6 +373,7 @@
         "nomePrincipal": "Santa Cecília",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CEC",
         "conexoes": []
       },
@@ -328,6 +381,7 @@
         "nomePrincipal": "República",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "REP",
         "conexoes": [
           { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" }
@@ -337,6 +391,7 @@
         "nomePrincipal": "Anhangabaú",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "GBU",
         "conexoes": []
       },
@@ -344,13 +399,16 @@
         "nomePrincipal": "Sé",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PSE",
-        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }]
+        "conexoes": [
+          { "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }]
       },
       {
         "nomePrincipal": "Pedro II",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PDS",
         "conexoes": []
       },
@@ -358,9 +416,10 @@
         "nomePrincipal": "Brás",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "BAS",
         "conexoes": [
-          { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L12", "cor": "#009496", "operadora": "CPTM" },
@@ -371,6 +430,7 @@
         "nomePrincipal": "Bresser",
         "nomeSecundario": "Mooca",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "BRE",
         "conexoes": []
       },
@@ -378,6 +438,7 @@
         "nomePrincipal": "Belém",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "BEL",
         "conexoes": []
       },
@@ -385,8 +446,10 @@
         "nomePrincipal": "Tatuapé",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "TAT",
         "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L12", "cor": "#009496", "operadora": "CPTM" }
         ]
@@ -395,15 +458,20 @@
         "nomePrincipal": "Carrão",
         "nomeSecundario": "Assaí Atacadista",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CAR",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+        ]
       },
       {
         "nomePrincipal": "Penha",
         "nomeSecundario": "Lojas Besni",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PEN",
         "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
           { "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }
         ]
@@ -412,6 +480,7 @@
         "nomePrincipal": "Vila Matilde",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "VTD",
         "conexoes": []
       },
@@ -419,6 +488,7 @@
         "nomePrincipal": "Guilhermina",
         "nomeSecundario": "Esperança",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "VPA",
         "conexoes": []
       },
@@ -426,6 +496,7 @@
         "nomePrincipal": "Patriarca",
         "nomeSecundario": "Vila Ré",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PCA",
         "conexoes": []
       },
@@ -433,15 +504,20 @@
         "nomePrincipal": "Artur Alvim",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "ART",
         "conexoes": []
       },
       {
         "nomePrincipal": "Corinthians",
         "nomeSecundario": "Itaquera",
-        "destaqueSecundario": false,
+        "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "ITQ",
-        "conexoes": [{ "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }]
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },        
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }
+        ]
       }
     ]
   },
@@ -454,10 +530,11 @@
         "nomePrincipal": "Luz",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "LUZ",
         "conexoes": [
+          { "tipo": "servico", "nome": "Expresso Turístico", "icone": "expresso_turistico.png" },          
           { "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
@@ -467,20 +544,27 @@
         "nomePrincipal": "República",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "REP",
-        "conexoes": [{ "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }]
+        "conexoes": [
+          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }
+        ]
       },
       {
         "nomePrincipal": "Higienópolis",
         "nomeSecundario": "Mackenzie",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "HIG",
-        "conexoes": []
+        "conexoes": [
+          { "linha": "L06", "cor": "#000000", "operadora": "LinhaUni" }
+        ]
       },
       {
         "nomePrincipal": "Paulista",
         "nomeSecundario": "Pernambucanas",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PTA",
         "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
       },
@@ -488,6 +572,7 @@
         "nomePrincipal": "Oscar Freire",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "FRE",
         "conexoes": []
       },
@@ -495,13 +580,15 @@
         "nomePrincipal": "Fradique Coutinho",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "FRA",
         "conexoes": []
       },
       {
         "nomePrincipal": "Faria Lima",
-        "nomeSecundario": null,
+        "nomeSecundario": "PagBank",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "FAL",
         "conexoes": []
       },
@@ -509,6 +596,7 @@
         "nomePrincipal": "Pinheiros",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PIN",
         "conexoes": [
           { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE" }
@@ -518,13 +606,17 @@
         "nomePrincipal": "Butantã",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "BUT",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "C.png" }         
+        ]
       },
       {
         "nomePrincipal": "São Paulo",
         "nomeSecundario": "Morumbi",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "MBI",
         "conexoes": []
       },
@@ -532,6 +624,7 @@
         "nomePrincipal": "Vila Sônia",
         "nomeSecundario": "Elisabeth Tenreiro",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "VSO",
         "conexoes": []
       }
@@ -546,6 +639,7 @@
         "nomePrincipal": "Chácara Klabin",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CKB",
         "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
       },
@@ -553,6 +647,7 @@
         "nomePrincipal": "Santa Cruz",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "SCZ",
         "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }]
       },
@@ -560,6 +655,7 @@
         "nomePrincipal": "Hospital São Paulo",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "HSP",
         "conexoes": []
       },
@@ -567,6 +663,7 @@
         "nomePrincipal": "AACD",
         "nomeSecundario": "Servidor",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "SER",
         "conexoes": []
       },
@@ -574,6 +671,7 @@
         "nomePrincipal": "Moema",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "MOE",
         "conexoes": []
       },
@@ -581,6 +679,7 @@
         "nomePrincipal": "Eucaliptos",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "ECT",
         "conexoes": []
       },
@@ -588,22 +687,25 @@
         "nomePrincipal": "Campo Belo",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CPB",
-        "conexoes": [{ "linha": "L17", "cor": "#808080", "operadora": "Metrô" }]
+        "conexoes": [{ "linha": "L17", "cor": "#000000", "operadora": "Metrô" }]
       },
       {
         "nomePrincipal": "Brooklin",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "BRK",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" }
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
         ]
       },
       {
         "nomePrincipal": "Borba Gato",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "BGA",
         "conexoes": []
       },
@@ -611,6 +713,7 @@
         "nomePrincipal": "Alto da Boa Vista",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "ABV",
         "conexoes": []
       },
@@ -618,6 +721,7 @@
         "nomePrincipal": "Adolfo Pinheiro",
         "nomeSecundario": "Unisa",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "APN",
         "conexoes": []
       },
@@ -625,6 +729,7 @@
         "nomePrincipal": "Largo Treze",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "LTR",
         "conexoes": []
       },
@@ -632,6 +737,7 @@
         "nomePrincipal": "Santo Amaro",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "STA",
         "conexoes": [
           { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE" }
@@ -641,6 +747,7 @@
         "nomePrincipal": "Giovanni Gronchi",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "GGR",
         "conexoes": []
       },
@@ -648,6 +755,7 @@
         "nomePrincipal": "Vila das Belezas",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "VBE",
         "conexoes": []
       },
@@ -655,31 +763,34 @@
         "nomePrincipal": "Campo Limpo",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CPL",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" }
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
         ]
       },
       {
         "nomePrincipal": "Capão Redondo",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CPR",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "onibus_emtu.png" }
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
         ]
       }
     ]
   },
   "L06": {
-    "nome": "Linha 6 - Laranja [EM CONSTRUÇÃO]",
+    "nome": "Linha 6 - Laranja",
     "cor": "#000000",
-    "operadora": "METRÔ",
+    "operadora": "LINHA UNI",
     "estacoes": [
       {
         "nomePrincipal": "Brasilândia",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "XYZ",
         "conexoes": []
       },
@@ -687,6 +798,7 @@
         "nomePrincipal": "Maristela",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "XYZ",
         "conexoes": []
       },
@@ -694,6 +806,7 @@
         "nomePrincipal": "Itaberaba",
         "nomeSecundario": "Hospital Vila Penteado",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "ITB",
         "conexoes": []
       },
@@ -701,6 +814,7 @@
         "nomePrincipal": "João Paulo I",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JPI",
         "conexoes": []
       },
@@ -708,6 +822,7 @@
         "nomePrincipal": "Freguesia do Ó",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "FRE",
         "conexoes": []
       },
@@ -715,6 +830,7 @@
         "nomePrincipal": "Santa Marina",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "STM",
         "conexoes": []
       },
@@ -722,13 +838,15 @@
         "nomePrincipal": "Água Branca",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "ABR",
-        "conexoes": [{ "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" }]
+        "conexoes": [{ "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" }]
       },
       {
         "nomePrincipal": "SESC",
         "nomeSecundario": "Pompeia",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "XYZ",
         "conexoes": []
       },
@@ -736,6 +854,7 @@
         "nomePrincipal": "Perdizes",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "XYZ",
         "conexoes": []
       },
@@ -743,6 +862,7 @@
         "nomePrincipal": "PUC",
         "nomeSecundario": "Cardoso de Almeida",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "XYZ",
         "conexoes": []
       },
@@ -750,6 +870,7 @@
         "nomePrincipal": "FAAP",
         "nomeSecundario": "Pacaembu",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "XYZ",
         "conexoes": []
       },
@@ -757,6 +878,7 @@
         "nomePrincipal": "Higienópolis",
         "nomeSecundario": "Mackenzie",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "HIG",
         "conexoes": [
           { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" }
@@ -766,6 +888,7 @@
         "nomePrincipal": "14 Bis",
         "nomeSecundario": "Saracura",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "XYZ",
         "conexoes": []
       },
@@ -773,6 +896,7 @@
         "nomePrincipal": "Bela Vista",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "XYZ",
         "conexoes": []
       },
@@ -780,6 +904,7 @@
         "nomePrincipal": "São Joaquim",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JQM",
         "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }]
       }
@@ -794,8 +919,12 @@
         "nomePrincipal": "Palmeiras",
         "nomeSecundario": "Barra Funda",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "BFU",
         "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "expresso_aeroporto.png" },          
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
           { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
@@ -807,13 +936,17 @@
         "nomePrincipal": "Água Branca",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "ABR",
-        "conexoes": []
+        "conexoes": [
+          { "linha": "L06", "cor": "#000000", "operadora": "LinhaUni" }
+        ]
       },
       {
         "nomePrincipal": "Lapa",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "LPA",
         "conexoes": []
       },
@@ -821,6 +954,7 @@
         "nomePrincipal": "Piqueri",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PQR",
         "conexoes": []
       },
@@ -828,6 +962,7 @@
         "nomePrincipal": "Pirituba",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PRT",
         "conexoes": []
       },
@@ -835,6 +970,7 @@
         "nomePrincipal": "Vila Clarice",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "VCL",
         "conexoes": []
       },
@@ -842,6 +978,7 @@
         "nomePrincipal": "Jaraguá",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JRG",
         "conexoes": []
       },
@@ -849,6 +986,7 @@
         "nomePrincipal": "Vila Aurora",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "VAU",
         "conexoes": []
       },
@@ -856,6 +994,7 @@
         "nomePrincipal": "Perus",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PRU",
         "conexoes": []
       },
@@ -863,20 +1002,27 @@
         "nomePrincipal": "Caieiras",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CAI",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+        ]
       },
       {
         "nomePrincipal": "Franco da Rocha",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "FDR",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+        ]
       },
       {
         "nomePrincipal": "Baltazar Fidélis",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "BFI",
         "conexoes": []
       },
@@ -884,13 +1030,17 @@
         "nomePrincipal": "Francisco Morato",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "FMO",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+        ]
       },
       {
         "nomePrincipal": "Botujuru",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "BTJ",
         "conexoes": []
       },
@@ -898,6 +1048,7 @@
         "nomePrincipal": "Campo Limpo Pta.",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CLP",
         "conexoes": []
       },
@@ -905,6 +1056,7 @@
         "nomePrincipal": "Várzea Paulista",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "VPL",
         "conexoes": []
       },
@@ -912,6 +1064,7 @@
         "nomePrincipal": "Jundiaí",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JUN",
         "conexoes": []
       }
@@ -927,6 +1080,7 @@
         "nomePrincipal": "Júlio Prestes",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JPR",
         "conexoes": []
       },
@@ -934,10 +1088,14 @@
         "nomePrincipal": "Palmeiras",
         "nomeSecundario": "Barra Funda",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "BFU",
         "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "expresso_aeroporto.png" },          
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
+          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
@@ -947,13 +1105,15 @@
         "nomePrincipal": "Lapa",
         "nomeSecundario": "Senac",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "LAB",
         "conexoes": []
       },
       {
-        "nomePrincipal": "Domingo de Moraes",
+        "nomePrincipal": "Domingos de Moraes",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "DMO",
         "conexoes": []
       },
@@ -961,6 +1121,7 @@
         "nomePrincipal": "Imperatriz Leopoldina",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "ILE",
         "conexoes": []
       },
@@ -968,6 +1129,7 @@
         "nomePrincipal": "Presidente Altino",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PAL",
         "conexoes": [
           { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE" }
@@ -977,8 +1139,11 @@
         "nomePrincipal": "Osasco",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "OSA",
         "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" },          
           { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE" }
         ]
       },
@@ -986,6 +1151,7 @@
         "nomePrincipal": "Comandante Sampaio",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CSA",
         "conexoes": []
       },
@@ -993,6 +1159,7 @@
         "nomePrincipal": "Quitaúna",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "QTU",
         "conexoes": []
       },
@@ -1000,20 +1167,27 @@
         "nomePrincipal": "General Miguel Costa",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "GMC",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "C.png" }         
+        ]
       },
       {
         "nomePrincipal": "Carapicuíba",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CPB",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "C.png" }         
+        ]
       },
       {
         "nomePrincipal": "Santa Terezinha",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "STE",
         "conexoes": []
       },
@@ -1021,6 +1195,7 @@
         "nomePrincipal": "Antônio João",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "AJO",
         "conexoes": []
       },
@@ -1028,13 +1203,18 @@
         "nomePrincipal": "Barueri",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "BRU",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "C.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" }         
+        ]
       },
       {
         "nomePrincipal": "Jardim Belval",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JBE",
         "conexoes": []
       },
@@ -1042,6 +1222,7 @@
         "nomePrincipal": "Jardim Silveira",
         "nomeSecundario": "Leo Madeiras",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JSI",
         "conexoes": []
       },
@@ -1049,13 +1230,17 @@
         "nomePrincipal": "Jandira",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JDI",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "C.png" }         
+        ]
       },
       {
         "nomePrincipal": "Sagrado Coração",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "SCO",
         "conexoes": []
       },
@@ -1063,6 +1248,7 @@
         "nomePrincipal": "Eng° Cardoso",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,
         "tag": "ECD",
         "conexoes": []
       },
@@ -1070,13 +1256,17 @@
         "nomePrincipal": "Itapevi",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": true,
         "tag": "IPV",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "C.png" }         
+        ]
       },
       {
         "nomePrincipal": "Santa Rita",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": true,
         "tag": "SRT",
         "conexoes": []
       },
@@ -1084,6 +1274,7 @@
         "nomePrincipal": "Ambuitá",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": true,
         "tag": "AMB",
         "conexoes": []
       },
@@ -1091,6 +1282,7 @@
         "nomePrincipal": "Amador Bueno",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": true,
         "tag": "ABU",
         "conexoes": []
       }
@@ -1100,12 +1292,13 @@
   "L09": {
     "nome": "Linha 9 - Esmeralda",
     "cor": "#01A9A7",
-    "operadora": "VIAMOBILIDADE_L9",
+    "operadora": "VIAMOBILIDADE",
     "estacoes": [
       {
         "nomePrincipal": "Varginha",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "VAR",
         "conexoes": []
       },
@@ -1113,6 +1306,7 @@
         "nomePrincipal": "Bruno Covas",
         "nomeSecundario": "Mendes • Vila Natal",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "MVN",
         "conexoes": []
       },
@@ -1120,13 +1314,17 @@
         "nomePrincipal": "Grajaú",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "GRA",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }         
+        ]
       },
       {
         "nomePrincipal": "Primavera ",
         "nomeSecundario": "Interlagos",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "INT",
         "conexoes": []
       },
@@ -1134,6 +1332,7 @@
         "nomePrincipal": "Autódromo",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "AUT",
         "conexoes": []
       },
@@ -1141,6 +1340,7 @@
         "nomePrincipal": "Jurubatuba",
         "nomeSecundario": "Senac",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JUR",
         "conexoes": []
       },
@@ -1148,6 +1348,7 @@
         "nomePrincipal": "Socorro",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "SOC",
         "conexoes": []
       },
@@ -1155,6 +1356,7 @@
         "nomePrincipal": "Santo Amaro",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "SAM",
         "conexoes": [
           { "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE" }
@@ -1164,6 +1366,7 @@
         "nomePrincipal": "João Dias",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JOD",
         "conexoes": []
       },
@@ -1171,6 +1374,7 @@
         "nomePrincipal": "Granja Julieta",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "GJT",
         "conexoes": []
       },
@@ -1178,13 +1382,15 @@
         "nomePrincipal": "Morumbi",
         "nomeSecundario": "Claro",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "MRB",
-        "conexoes": [{ "linha": "L17", "cor": "#808080", "operadora": "Metrô" }]
+        "conexoes": [{ "linha": "L17", "cor": "#000000", "operadora": "Metrô" }]
       },
       {
         "nomePrincipal": "Berrini",
         "nomeSecundario": "Casas Bahia",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "BRR",
         "conexoes": []
       },
@@ -1192,6 +1398,7 @@
         "nomePrincipal": "Vila Olímpia",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "VOL",
         "conexoes": []
       },
@@ -1199,6 +1406,7 @@
         "nomePrincipal": "Cidade Jardim",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CJD",
         "conexoes": []
       },
@@ -1206,6 +1414,7 @@
         "nomePrincipal": "Hebraica",
         "nomeSecundario": "Rebouças",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "HBR",
         "conexoes": []
       },
@@ -1213,6 +1422,7 @@
         "nomePrincipal": "Pinheiros",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PIN",
         "conexoes": [
           { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" }
@@ -1222,6 +1432,7 @@
         "nomePrincipal": "Cidade Universitária",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "USP",
         "conexoes": []
       },
@@ -1229,6 +1440,7 @@
         "nomePrincipal": "Vila Lobos",
         "nomeSecundario": "Jaguaré",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "JAG",
         "conexoes": []
       },
@@ -1236,6 +1448,7 @@
         "nomePrincipal": "Ceasa",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CEA",
         "conexoes": []
       },
@@ -1243,6 +1456,7 @@
         "nomePrincipal": "Presidente Altino",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PAL",
         "conexoes": [
           { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" }
@@ -1252,8 +1466,11 @@
         "nomePrincipal": "Osasco",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "OSA",
         "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" },          
           { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" }
         ]
       }
@@ -1269,6 +1486,7 @@
         "nomePrincipal": "Rio Grande da Serra",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "RGS",
         "conexoes": []
       },
@@ -1276,13 +1494,18 @@
         "nomePrincipal": "Ribeirão Pires",
         "nomeSecundario": "Antônio Bespalec",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "RPI",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" }           
+        ]
       },
       {
         "nomePrincipal": "Guapituba",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "GPT",
         "conexoes": []
       },
@@ -1290,13 +1513,17 @@
         "nomePrincipal": "Mauá",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "MAU",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" }          
+        ]
       },
       {
         "nomePrincipal": "Capuava",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CPV",
         "conexoes": []
       },
@@ -1304,20 +1531,28 @@
         "nomePrincipal": "Prefeito Celso Daniel",
         "nomeSecundario": "Santo André",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "SAN",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "A.png" }          
+        ]
       },
       {
         "nomePrincipal": "Prefeito Saladino",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "PSA",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" }          
+        ]
       },
       {
         "nomePrincipal": "Utinga",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "UTG",
         "conexoes": []
       },
@@ -1325,13 +1560,18 @@
         "nomePrincipal": "São Caetano do Sul",
         "nomeSecundario": "Prefeito Walter Braido",
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "SCT",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" }
+        ]
       },
       {
         "nomePrincipal": "Tamanduateí",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "TMD",
         "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
       },
@@ -1339,6 +1579,7 @@
         "nomePrincipal": "Ipiranga",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "IPG",
         "conexoes": []
       },
@@ -1346,6 +1587,7 @@
         "nomePrincipal": "Juventus",
         "nomeSecundario": "Mooca",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "MOC",
         "conexoes": []
       },
@@ -1353,15 +1595,48 @@
         "nomePrincipal": "Brás",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "BAS",
         "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
-          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" },
+          { "linha": "L12", "cor": "#009496", "operadora": "CPTM" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }          
+        ]
+      },
+      {
+        "nomePrincipal": "Luz",
+        "nomeSecundario": null,
+        "destaqueSecundario": false,
+        "acesso_livre": false,        
+        "tag": "LUZ",
+        "conexoes": [
+          { "tipo": "servico", "nome": "Expresso Turístico", "icone": "expresso_turistico.png" },          
+          { "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" },
+          { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" },
+          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }          
+        ]
+      },      
+      {
+        "nomePrincipal": "Palmeiras",
+        "nomeSecundario": "Barra Funda",
+        "destaqueSecundario": true,
+        "acesso_livre": false,     
+        "tag": "BFU",
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "expresso_aeroporto.png" },          
+          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
+          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" },
+          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
         ]
-      }
+      }    
     ]
   },
 
@@ -1374,23 +1649,31 @@
         "nomePrincipal": "Palmeiras",
         "nomeSecundario": "Barra Funda",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "BFU",
         "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "expresso_aeroporto.png" },          
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
+          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" },
           { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }          
         ]
       },
       {
         "nomePrincipal": "Luz",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "LUZ",
         "conexoes": [
+          { "tipo": "servico", "nome": "Expresso Turístico", "icone": "expresso_turistico.png" },          
           { "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" },
           { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
+          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
         ]
       },
@@ -1398,19 +1681,24 @@
         "nomePrincipal": "Brás",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "BAS",
         "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
-          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }
+          { "linha": "L12", "cor": "#009496", "operadora": "CPTM" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }               
         ]
       },
       {
         "nomePrincipal": "Tatuapé",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "TAT",
         "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
           { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }
         ]
@@ -1419,13 +1707,18 @@
         "nomePrincipal": "Corinthians",
         "nomeSecundario": "Itaquera",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "ITQ",
-        "conexoes": [{ "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }]
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
+          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }
+        ]
       },
       {
         "nomePrincipal": "Dom Bosco",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "DOB",
         "conexoes": []
       },
@@ -1433,6 +1726,7 @@
         "nomePrincipal": "José Bonifácio",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JBO",
         "conexoes": []
       },
@@ -1440,13 +1734,17 @@
         "nomePrincipal": "Guaianazes",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "GUA",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+        ]
       },
       {
         "nomePrincipal": "Antônio Gianetti Neto",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "AGN",
         "conexoes": []
       },
@@ -1454,6 +1752,7 @@
         "nomePrincipal": "Ferraz de Vasconcelos",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "FVC",
         "conexoes": []
       },
@@ -1461,6 +1760,7 @@
         "nomePrincipal": "Poá",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "POA",
         "conexoes": []
       },
@@ -1468,20 +1768,28 @@
         "nomePrincipal": "Calmon Viana",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CMV",
-        "conexoes": [{ "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }]
+        "conexoes": [
+          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }
+        ]
       },
       {
         "nomePrincipal": "Suzano",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "SUZ",
-        "conexoes": [{ "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }]
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
+          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }
+        ]
       },
       {
         "nomePrincipal": "Jundiapeba",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JPB",
         "conexoes": []
       },
@@ -1489,6 +1797,7 @@
         "nomePrincipal": "Braz Cubas",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "BCB",
         "conexoes": []
       },
@@ -1496,6 +1805,7 @@
         "nomePrincipal": "Mogi das Cruzes",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "MDC",
         "conexoes": []
       },
@@ -1503,8 +1813,12 @@
         "nomePrincipal": "Estudantes",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "EST",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" }          
+        ]
       }
     ]
   },
@@ -1518,20 +1832,24 @@
         "nomePrincipal": "Brás",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "BAS",
         "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }               
         ]
       },
       {
         "nomePrincipal": "Tatuapé",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "TAT",
         "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }
         ]
@@ -1540,6 +1858,7 @@
         "nomePrincipal": "Engenheiro Goulart",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "EGO",
         "conexoes": [{ "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }]
       },
@@ -1547,6 +1866,7 @@
         "nomePrincipal": "USP Leste",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "USP",
         "conexoes": []
       },
@@ -1554,6 +1874,7 @@
         "nomePrincipal": "Comendador Ermelino",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CEL",
         "conexoes": []
       },
@@ -1561,6 +1882,7 @@
         "nomePrincipal": "São Miguel Paulista",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "SMP",
         "conexoes": []
       },
@@ -1568,6 +1890,7 @@
         "nomePrincipal": "Jardim Helena",
         "nomeSecundario": "Vila Mara",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "JHV",
         "conexoes": []
       },
@@ -1575,6 +1898,7 @@
         "nomePrincipal": "Itaim Paulista",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "ITP",
         "conexoes": []
       },
@@ -1582,6 +1906,7 @@
         "nomePrincipal": "Jardim Romano",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JRO",
         "conexoes": []
       },
@@ -1589,13 +1914,17 @@
         "nomePrincipal": "Engenheiro Manoel Feio",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "EMF",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+        ]
       },
       {
         "nomePrincipal": "Itaquaquecetuba",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "IQU",
         "conexoes": []
       },
@@ -1603,6 +1932,7 @@
         "nomePrincipal": "Aracaré",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "ARA",
         "conexoes": []
       },
@@ -1610,6 +1940,7 @@
         "nomePrincipal": "Calmon Viana",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CMV",
         "conexoes": [{ "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }]
       }
@@ -1624,10 +1955,14 @@
         "nomePrincipal": "Palmeiras",
         "nomeSecundario": "Barra Funda",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "BFU",
         "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" },
+          { "tipo": "servico", "nome": "EMTU", "icone": "expresso_aeroporto.png" },          
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
+          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" },
           { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }
@@ -1637,11 +1972,14 @@
         "nomePrincipal": "Luz",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "LUZ",
         "conexoes": [
+          { "tipo": "servico", "nome": "Expresso Turístico", "icone": "expresso_turistico.png" },          
           { "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" },
           { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
+          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }
         ]
       },
@@ -1649,10 +1987,11 @@
         "nomePrincipal": "Brás",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "BAS",
         "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
           { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "CPTM" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
           { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
           { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }
@@ -1662,6 +2001,7 @@
         "nomePrincipal": "Eng° Goulart",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "EGO",
         "conexoes": [{ "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }]
       },
@@ -1669,15 +2009,22 @@
         "nomePrincipal": "Guarulhos",
         "nomeSecundario": "CECAP",
         "destaqueSecundario": true,
+        "acesso_livre": false,     
         "tag": "GCE",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" }
+        ]
       },
       {
-        "nomePrincipal": "Aeroporto • Guarulhos",
-        "nomeSecundario": null,
-        "destaqueSecundario": false,
+        "nomePrincipal": "Aeroporto",
+        "nomeSecundario": "Guarulhos",
+        "destaqueSecundario": true,
+        "acesso_livre": false,        
         "tag": "AGU",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "B.png" },
+          { "tipo": "aeroporto", "nome": "GRUAirport", "icone": "aeroporto_GRU.png" }
+        ]
       }
     ]
   },
@@ -1690,6 +2037,7 @@
         "nomePrincipal": "Vila Prudente",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "VPM",
         "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
       },
@@ -1697,6 +2045,7 @@
         "nomePrincipal": "Oratório",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "ORT",
         "conexoes": []
       },
@@ -1704,6 +2053,7 @@
         "nomePrincipal": "São Lucas",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "SLU",
         "conexoes": []
       },
@@ -1711,6 +2061,7 @@
         "nomePrincipal": "Camilo Haddad",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "CAD",
         "conexoes": []
       },
@@ -1718,6 +2069,7 @@
         "nomePrincipal": "Vila Tolstói",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "VTL",
         "conexoes": []
       },
@@ -1725,6 +2077,7 @@
         "nomePrincipal": "Vila União",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "VUN",
         "conexoes": []
       },
@@ -1732,6 +2085,7 @@
         "nomePrincipal": "Jardim Planalto",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "JPL",
         "conexoes": []
       },
@@ -1739,6 +2093,7 @@
         "nomePrincipal": "Sapopemba",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "SAP",
         "conexoes": []
       },
@@ -1746,6 +2101,7 @@
         "nomePrincipal": "Fazenda da Juta",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "FJT",
         "conexoes": []
       },
@@ -1753,13 +2109,17 @@
         "nomePrincipal": "São Mateus",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "MAT",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "EMTU", "icone": "A.png" }
+        ]
       },
       {
         "nomePrincipal": "Jardim Colonial",
         "nomeSecundario": null,
         "destaqueSecundario": false,
+        "acesso_livre": false,        
         "tag": "IGT",
         "conexoes": []
       }
@@ -1808,8 +2168,9 @@
       "nomeSecundario": "Congonhas",
       "destaqueSecundario": true,
       "tag": "CGN",
-      "ramal": true,
-      "conexoes": []
+      "conexoes": [
+          { "tipo": "aeroporto", "nome": "AENA", "icone": "aeroporto_CGH.png" }
+      ]
     },
     {
       "nomePrincipal": "Washington Luís",
