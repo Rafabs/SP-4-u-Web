@@ -54,6 +54,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "04/06/2026", versao: "v26.06.2", descricao: "Atualização GTFS - SPTrans" },
     { data: "01/06/2026", versao: "v26.06.1", descricao: "Atualização GTFS - SPTrans e Correção de estilos em geral " },
     { data: "17/05/2026", versao: "v26.05.5", descricao: "Atualização GTFS - SPTrans e Atualizado Node.js, visualizção logs GitHub Actions " },
     { data: "12/05/2026", versao: "v26.05.4", descricao: "Correção de erro do Leaflet CSS " },
