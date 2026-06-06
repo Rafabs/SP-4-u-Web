@@ -11,7 +11,7 @@
         "acesso_livre": false,        
         "tag": "TUC",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "B.png" }
+          { "tipo": "servico", "nome": "Corredor Guarulhos-SP", "icone": "B.png"}
         ]
       },
       {
@@ -21,7 +21,7 @@
         "acesso_livre": false,        
         "tag": "PIG",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" }
         ]      },
       {
         "nomePrincipal": "Jardim São Paulo",
@@ -54,8 +54,8 @@
         "acesso_livre": false,     
         "tag": "TTE",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" }          
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" }          
         ]
       },
       {
@@ -65,7 +65,7 @@
         "acesso_livre": false,        
         "tag": "PPQ",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" }
         ]
       },
       {
@@ -84,10 +84,10 @@
         "tag": "LUZ",
         "conexoes": [
           { "tipo": "servico", "nome": "Expresso Turístico", "icone": "expresso_turistico.png" },
-          { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" },
-          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
+          { "linha": "L04", "cor": "#FFF000", "operadora": "VIAQUATRO", "nome-linha": "Linha 4 - Amarela" },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" , "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" , "nome-linha": "Linha 13 - Jade" }
         ]
       },
       {
@@ -104,7 +104,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "PSE",
-        "conexoes": [{ "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }]
+        "conexoes": [{ "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" }]
       },
       {
         "nomePrincipal": "Japão",
@@ -121,7 +121,7 @@
         "acesso_livre": false,        
         "tag": "JQM",
         "conexoes": [
-          { "linha": "L06", "cor": "#000000", "operadora": "LinhaUni" }
+          { "linha": "L06", "cor": "#000000", "operadora": "LINHA UNI", "nome-linha": "Linha 6 - Laranja" }
         ]
       },
       {
@@ -138,7 +138,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "PSO",
-        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
+        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "METRÔ", "nome-linha": "Linha 2 - Verde" }]
       },
       {
         "nomePrincipal": "Ana Rosa",
@@ -146,7 +146,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "ANR",
-        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
+        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "METRÔ", "nome-linha": "Linha 2 - Verde" }]
       },
       {
         "nomePrincipal": "Vila Mariana",
@@ -163,7 +163,7 @@
         "acesso_livre": false,        
         "tag": "SCZ",
         "conexoes": [
-          { "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE" }
+          { "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 5 - Lilás" }
         ]
       },
       {
@@ -205,9 +205,9 @@
         "acesso_livre": false,        
         "tag": "JAB",
         "conexoes": [
-          { "tipo": "Corredor EMTU", "nome": "A", "icone": "A.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "tipo": "servico", "nome": "Zoo", "icone": "zoo.png" }
+          { "tipo": "Corredor EMTU", "nome": "Corredor São Mateus-Jabaquara", "icone": "A.png" },
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "Ponte Orca ao Zoológico", "icone": "zoo.png" }
         ]
       }
     ]
@@ -224,7 +224,7 @@
         "acesso_livre": false,        
         "tag": "VMD",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" }
         ]
       },
       {
@@ -250,7 +250,7 @@
         "acesso_livre": false,        
         "tag": "CNS",
         "conexoes": [
-          { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" }
+          { "linha": "L04", "cor": "#FFF000", "operadora": "VIAQUATRO" , "nome-linha": "Linha 4 - Amarela"}
         ]
       },
       {
@@ -275,7 +275,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "PSO",
-        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }]
+        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "METRÔ" , "nome-linha": "Linha 1 - Azul" }]
       },
       {
         "nomePrincipal": "Ana Rosa",
@@ -283,7 +283,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "ANR",
-        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }]
+        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "METRÔ" , "nome-linha": "Linha 1 - Azul" }]
       },
       {
         "nomePrincipal": "Chácara Klabin",
@@ -292,7 +292,7 @@
         "acesso_livre": false,        
         "tag": "CKB",
         "conexoes": [
-          { "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE" }
+          { "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 5 - Lilás" }
         ]
       },
       {
@@ -318,7 +318,7 @@
         "acesso_livre": false,        
         "tag": "SAC",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" }
         ]
       },
       {
@@ -327,7 +327,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "TTI",
-        "conexoes": [{ "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" }]
+        "conexoes": [{ "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" }]
       },
       {
         "nomePrincipal": "Vila Prudente",
@@ -335,7 +335,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "VPT",
-        "conexoes": [{ "linha": "L15", "cor": "#9E9E9E", "operadora": "Metrô" }]
+        "conexoes": [{ "linha": "L15", "cor": "#9E9E9E", "operadora": "METRÔ", "nome-linha": "Linha 15 - Prata" }]
       }
     ]
   },
@@ -351,14 +351,14 @@
         "acesso_livre": false,     
         "tag": "BFU",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "expresso_aeroporto.png" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" },
-          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" },
-          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" },
+          { "tipo": "servico", "nome": "Expresso Aeroporto", "icone": "expresso_aeroporto.png" },
+          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" },
+          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE",  "nome-linha": "Linha 8 - Diamante"  },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }
         ]
       },
       {
@@ -384,7 +384,7 @@
         "acesso_livre": false,        
         "tag": "REP",
         "conexoes": [
-          { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" }
+          { "linha": "L04", "cor": "#FFF000", "operadora": "VIAQUATRO" , "nome-linha": "Linha 4 - Amarela"}
         ]
       },
       {
@@ -402,7 +402,7 @@
         "acesso_livre": false,        
         "tag": "PSE",
         "conexoes": [
-          { "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }]
+          { "linha": "L01", "cor": "#0455A1", "operadora": "METRÔ" , "nome-linha": "Linha 1 - Azul" }]
       },
       {
         "nomePrincipal": "Pedro II",
@@ -419,11 +419,11 @@
         "acesso_livre": false,        
         "tag": "BAS",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
-          { "linha": "L12", "cor": "#009496", "operadora": "CPTM" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }
         ]
       },
       {
@@ -449,9 +449,9 @@
         "acesso_livre": false,        
         "tag": "TAT",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
-          { "linha": "L12", "cor": "#009496", "operadora": "CPTM" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" }
         ]
       },
       {
@@ -461,7 +461,7 @@
         "acesso_livre": false,        
         "tag": "CAR",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" }
         ]
       },
       {
@@ -471,9 +471,9 @@
         "acesso_livre": false,        
         "tag": "PEN",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "linha": "L02", "cor": "#007E5E", "operadora": "METRÔ", "nome-linha": "Linha 2 - Verde" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" }
         ]
       },
       {
@@ -515,8 +515,8 @@
         "acesso_livre": false,     
         "tag": "ITQ",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },        
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },        
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" }
         ]
       }
     ]
@@ -534,10 +534,10 @@
         "tag": "LUZ",
         "conexoes": [
           { "tipo": "servico", "nome": "Expresso Turístico", "icone": "expresso_turistico.png" },          
-          { "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" },
-          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
+          { "linha": "L01", "cor": "#0455A1", "operadora": "METRÔ" , "nome-linha": "Linha 1 - Azul" },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }
         ]
       },
       {
@@ -547,7 +547,7 @@
         "acesso_livre": false,        
         "tag": "REP",
         "conexoes": [
-          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }
+          { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" }
         ]
       },
       {
@@ -557,7 +557,7 @@
         "acesso_livre": false,        
         "tag": "HIG",
         "conexoes": [
-          { "linha": "L06", "cor": "#000000", "operadora": "LinhaUni" }
+          { "linha": "L06", "cor": "#000000", "operadora": "LINHA UNI", "nome-linha": "Linha 6 - Laranja" }
         ]
       },
       {
@@ -566,7 +566,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "PTA",
-        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
+        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "METRÔ", "nome-linha": "Linha 2 - Verde" }]
       },
       {
         "nomePrincipal": "Oscar Freire",
@@ -599,7 +599,7 @@
         "acesso_livre": false,        
         "tag": "PIN",
         "conexoes": [
-          { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE" }
+          { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 9 - Esmeralda" }
         ]
       },
       {
@@ -609,7 +609,7 @@
         "acesso_livre": false,        
         "tag": "BUT",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "C.png" }         
+          { "tipo": "servico", "nome": "Corredor Itapevi-SP", "icone": "C.png" }         
         ]
       },
       {
@@ -641,7 +641,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "CKB",
-        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
+        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "METRÔ", "nome-linha": "Linha 2 - Verde" }]
       },
       {
         "nomePrincipal": "Santa Cruz",
@@ -649,7 +649,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "SCZ",
-        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }]
+        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "METRÔ" , "nome-linha": "Linha 1 - Azul" }]
       },
       {
         "nomePrincipal": "Hospital São Paulo",
@@ -689,7 +689,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "CPB",
-        "conexoes": [{ "linha": "L17", "cor": "#000000", "operadora": "Metrô" }]
+        "conexoes": [{ "linha": "L17", "cor": "#000000", "operadora": "METRÔ", "nome-linha": "Linha 17 - Ouro" }]
       },
       {
         "nomePrincipal": "Brooklin",
@@ -698,7 +698,7 @@
         "acesso_livre": false,        
         "tag": "BRK",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" }
         ]
       },
       {
@@ -740,7 +740,7 @@
         "acesso_livre": false,        
         "tag": "STA",
         "conexoes": [
-          { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE" }
+          { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 9 - Esmeralda" }
         ]
       },
       {
@@ -766,7 +766,7 @@
         "acesso_livre": false,        
         "tag": "CPL",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" }
         ]
       },
       {
@@ -776,7 +776,7 @@
         "acesso_livre": false,        
         "tag": "CPR",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" }
         ]
       }
     ]
@@ -840,7 +840,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "ABR",
-        "conexoes": [{ "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" }]
+        "conexoes": [{ "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" }]
       },
       {
         "nomePrincipal": "SESC",
@@ -881,7 +881,7 @@
         "acesso_livre": false,        
         "tag": "HIG",
         "conexoes": [
-          { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" }
+          { "linha": "L04", "cor": "#FFF000", "operadora": "VIAQUATRO" , "nome-linha": "Linha 4 - Amarela"}
         ]
       },
       {
@@ -906,7 +906,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "JQM",
-        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" }]
+        "conexoes": [{ "linha": "L01", "cor": "#0455A1", "operadora": "METRÔ" , "nome-linha": "Linha 1 - Azul" }]
       }
     ]
   },
@@ -922,14 +922,14 @@
         "acesso_livre": false,     
         "tag": "BFU",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "expresso_aeroporto.png" },          
-          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" },
-          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" },
+          { "tipo": "servico", "nome": "Expresso Aeroporto", "icone": "expresso_aeroporto.png" },          
+          { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
+          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE",  "nome-linha": "Linha 8 - Diamante"  },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }
         ]
       },
       {
@@ -939,7 +939,7 @@
         "acesso_livre": false,        
         "tag": "ABR",
         "conexoes": [
-          { "linha": "L06", "cor": "#000000", "operadora": "LinhaUni" }
+          { "linha": "L06", "cor": "#000000", "operadora": "LINHA UNI", "nome-linha": "Linha 6 - Laranja" }
         ]
       },
       {
@@ -1005,7 +1005,7 @@
         "acesso_livre": false,        
         "tag": "CAI",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" }
         ]
       },
       {
@@ -1015,7 +1015,7 @@
         "acesso_livre": false,        
         "tag": "FDR",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" }
         ]
       },
       {
@@ -1033,7 +1033,7 @@
         "acesso_livre": false,        
         "tag": "FMO",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" }
         ]
       },
       {
@@ -1091,14 +1091,14 @@
         "acesso_livre": false,     
         "tag": "BFU",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "expresso_aeroporto.png" },          
-          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" },
-          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" },
+          { "tipo": "servico", "nome": "Expresso Aeroporto", "icone": "expresso_aeroporto.png" },          
+          { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
+          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }
         ]
       },
       {
@@ -1132,7 +1132,7 @@
         "acesso_livre": false,        
         "tag": "PAL",
         "conexoes": [
-          { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE" }
+          { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 9 - Esmeralda" }
         ]
       },
       {
@@ -1142,9 +1142,9 @@
         "acesso_livre": false,        
         "tag": "OSA",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" },          
-          { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" },          
+          { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 9 - Esmeralda" }
         ]
       },
       {
@@ -1170,7 +1170,7 @@
         "acesso_livre": false,        
         "tag": "GMC",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "C.png" }         
+          { "tipo": "servico", "nome": "Corredor Itapevi-SP", "icone": "C.png" }         
         ]
       },
       {
@@ -1180,7 +1180,7 @@
         "acesso_livre": false,        
         "tag": "CPB",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "C.png" }         
+          { "tipo": "servico", "nome": "Corredor Itapevi-SP", "icone": "C.png" }         
         ]
       },
       {
@@ -1206,8 +1206,8 @@
         "acesso_livre": false,        
         "tag": "BRU",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "C.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" }         
+          { "tipo": "servico", "nome": "Corredor Itapevi-SP", "icone": "C.png" },
+          { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" }         
         ]
       },
       {
@@ -1233,7 +1233,7 @@
         "acesso_livre": false,        
         "tag": "JDI",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "C.png" }         
+          { "tipo": "servico", "nome": "Corredor Itapevi-SP", "icone": "C.png" }         
         ]
       },
       {
@@ -1259,7 +1259,7 @@
         "acesso_livre": true,
         "tag": "IPV",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "C.png" }         
+          { "tipo": "servico", "nome": "Corredor Itapevi-SP", "icone": "C.png" }         
         ]
       },
       {
@@ -1317,7 +1317,7 @@
         "acesso_livre": false,        
         "tag": "GRA",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }         
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" }         
         ]
       },
       {
@@ -1359,7 +1359,7 @@
         "acesso_livre": false,        
         "tag": "SAM",
         "conexoes": [
-          { "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE" }
+          { "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 5 - Lilás" }
         ]
       },
       {
@@ -1384,7 +1384,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "MRB",
-        "conexoes": [{ "linha": "L17", "cor": "#000000", "operadora": "Metrô" }]
+        "conexoes": [{ "linha": "L17", "cor": "#000000", "operadora": "METRÔ", "nome-linha": "Linha 17 - Ouro" }]
       },
       {
         "nomePrincipal": "Berrini",
@@ -1425,7 +1425,7 @@
         "acesso_livre": false,        
         "tag": "PIN",
         "conexoes": [
-          { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" }
+          { "linha": "L04", "cor": "#FFF000", "operadora": "VIAQUATRO" , "nome-linha": "Linha 4 - Amarela"}
         ]
       },
       {
@@ -1459,7 +1459,7 @@
         "acesso_livre": false,        
         "tag": "PAL",
         "conexoes": [
-          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" }
+          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE",  "nome-linha": "Linha 8 - Diamante"  }
         ]
       },
       {
@@ -1469,9 +1469,9 @@
         "acesso_livre": false,        
         "tag": "OSA",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" },          
-          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" },          
+          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE",  "nome-linha": "Linha 8 - Diamante"  }
         ]
       }
     ]
@@ -1497,8 +1497,8 @@
         "acesso_livre": false,        
         "tag": "RPI",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" }           
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" }           
         ]
       },
       {
@@ -1516,7 +1516,7 @@
         "acesso_livre": false,        
         "tag": "MAU",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" }          
+          { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" }          
         ]
       },
       {
@@ -1534,7 +1534,7 @@
         "acesso_livre": false,     
         "tag": "SAN",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "A.png" }          
+          { "tipo": "servico", "nome": "Corredor São Mateus-Jabaquara", "icone": "A.png" }          
         ]
       },
       {
@@ -1544,8 +1544,8 @@
         "acesso_livre": false,        
         "tag": "PSA",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" }          
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" }          
         ]
       },
       {
@@ -1563,8 +1563,8 @@
         "acesso_livre": false,        
         "tag": "SCT",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" }
         ]
       },
       {
@@ -1573,7 +1573,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "TMD",
-        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
+        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "METRÔ", "nome-linha": "Linha 2 - Verde" }]
       },
       {
         "nomePrincipal": "Ipiranga",
@@ -1598,11 +1598,11 @@
         "acesso_livre": false,        
         "tag": "BAS",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
-          { "linha": "L12", "cor": "#009496", "operadora": "CPTM" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }          
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }          
         ]
       },
       {
@@ -1613,11 +1613,11 @@
         "tag": "LUZ",
         "conexoes": [
           { "tipo": "servico", "nome": "Expresso Turístico", "icone": "expresso_turistico.png" },          
-          { "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" },
-          { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }          
+          { "linha": "L01", "cor": "#0455A1", "operadora": "METRÔ" , "nome-linha": "Linha 1 - Azul" },
+          { "linha": "L04", "cor": "#FFF000", "operadora": "VIAQUATRO" , "nome-linha": "Linha 4 - Amarela"},
+          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }          
         ]
       },      
       {
@@ -1627,14 +1627,14 @@
         "acesso_livre": false,     
         "tag": "BFU",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "expresso_aeroporto.png" },          
-          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" },
-          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" },
+          { "tipo": "servico", "nome": "Expresso Aeroporto", "icone": "expresso_aeroporto.png" },          
+          { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ" },
+          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" },
+          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE",  "nome-linha": "Linha 8 - Diamante"  },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }
         ]
       }    
     ]
@@ -1652,14 +1652,14 @@
         "acesso_livre": false,     
         "tag": "BFU",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "expresso_aeroporto.png" },          
-          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" },
-          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" },
-          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }          
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" },
+          { "tipo": "servico", "nome": "Expresso Aeroporto", "icone": "expresso_aeroporto.png" },          
+          { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
+          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" },
+          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE",  "nome-linha": "Linha 8 - Diamante"  },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }          
         ]
       },
       {
@@ -1670,11 +1670,11 @@
         "tag": "LUZ",
         "conexoes": [
           { "tipo": "servico", "nome": "Expresso Turístico", "icone": "expresso_turistico.png" },          
-          { "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" },
-          { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" },
-          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }
+          { "linha": "L01", "cor": "#0455A1", "operadora": "METRÔ" , "nome-linha": "Linha 1 - Azul" },
+          { "linha": "L04", "cor": "#FFF000", "operadora": "VIAQUATRO" , "nome-linha": "Linha 4 - Amarela"},
+          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }
         ]
       },
       {
@@ -1684,11 +1684,11 @@
         "acesso_livre": false,        
         "tag": "BAS",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
-          { "linha": "L12", "cor": "#009496", "operadora": "CPTM" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }               
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
+          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }               
         ]
       },
       {
@@ -1698,9 +1698,9 @@
         "acesso_livre": false,        
         "tag": "TAT",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
+          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" }
         ]
       },
       {
@@ -1710,8 +1710,8 @@
         "acesso_livre": false,     
         "tag": "ITQ",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" }
         ]
       },
       {
@@ -1737,7 +1737,7 @@
         "acesso_livre": false,        
         "tag": "GUA",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" }
         ]
       },
       {
@@ -1771,7 +1771,7 @@
         "acesso_livre": false,        
         "tag": "CMV",
         "conexoes": [
-          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }
+          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" }
         ]
       },
       {
@@ -1781,8 +1781,8 @@
         "acesso_livre": false,        
         "tag": "SUZ",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" }
         ]
       },
       {
@@ -1816,8 +1816,8 @@
         "acesso_livre": false,        
         "tag": "EST",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" }          
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" }          
         ]
       }
     ]
@@ -1835,11 +1835,11 @@
         "acesso_livre": false,        
         "tag": "BAS",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }               
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }               
         ]
       },
       {
@@ -1849,9 +1849,9 @@
         "acesso_livre": false,        
         "tag": "TAT",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" }
         ]
       },
       {
@@ -1860,7 +1860,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "EGO",
-        "conexoes": [{ "linha": "L13", "cor": "#00B352", "operadora": "CPTM" }]
+        "conexoes": [{ "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }]
       },
       {
         "nomePrincipal": "USP Leste",
@@ -1917,7 +1917,7 @@
         "acesso_livre": false,        
         "tag": "EMF",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" }
         ]
       },
       {
@@ -1942,7 +1942,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "CMV",
-        "conexoes": [{ "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }]
+        "conexoes": [{ "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" }]
       }
     ]
   },
@@ -1958,14 +1958,14 @@
         "acesso_livre": false,     
         "tag": "BFU",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" },
-          { "tipo": "servico", "nome": "EMTU", "icone": "expresso_aeroporto.png" },          
-          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" },
-          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE" },
-          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" },
+          { "tipo": "servico", "nome": "Expresso Aeroporto", "icone": "expresso_aeroporto.png" },          
+          { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
+          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" },
+          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE",  "nome-linha": "Linha 8 - Diamante"  },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" }
         ]
       },
       {
@@ -1976,11 +1976,11 @@
         "tag": "LUZ",
         "conexoes": [
           { "tipo": "servico", "nome": "Expresso Turístico", "icone": "expresso_turistico.png" },          
-          { "linha": "L01", "cor": "#0455A1", "operadora": "Metrô" },
-          { "linha": "L04", "cor": "#FFF000", "operadora": "ViaQuatro" },
-          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS" },
-          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" }
+          { "linha": "L01", "cor": "#0455A1", "operadora": "METRÔ" , "nome-linha": "Linha 1 - Azul" },
+          { "linha": "L04", "cor": "#FFF000", "operadora": "VIAQUATRO" , "nome-linha": "Linha 4 - Amarela"},
+          { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" }
         ]
       },
       {
@@ -1990,11 +1990,11 @@
         "acesso_livre": false,        
         "tag": "BAS",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_onibus.png" },
-          { "linha": "L03", "cor": "#EE372F", "operadora": "Metrô" },
-          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" },
-          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
+          { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
+          { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" }
         ]
       },
       {
@@ -2003,7 +2003,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "EGO",
-        "conexoes": [{ "linha": "L12", "cor": "#133C8D", "operadora": "CPTM" }]
+        "conexoes": [{ "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" }]
       },
       {
         "nomePrincipal": "Guarulhos",
@@ -2012,7 +2012,7 @@
         "acesso_livre": false,     
         "tag": "GCE",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "terminal_rod.png" }
+          { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" }
         ]
       },
       {
@@ -2022,8 +2022,8 @@
         "acesso_livre": false,        
         "tag": "AGU",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "B.png" },
-          { "tipo": "aeroporto", "nome": "GRUAirport", "icone": "aeroporto_GRU.png" }
+          { "tipo": "servico", "nome": "Corredor Guarulhos-SP", "icone": "B.png"},
+          { "tipo": "aeroporto", "nome": "Aeroporto de Guarulhos (GRU)", "icone": "aeroporto_GRU.png" }
         ]
       }
     ]
@@ -2039,7 +2039,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "VPM",
-        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "Metrô" }]
+        "conexoes": [{ "linha": "L02", "cor": "#007E5E", "operadora": "METRÔ", "nome-linha": "Linha 2 - Verde" }]
       },
       {
         "nomePrincipal": "Oratório",
@@ -2136,7 +2136,7 @@
       "nomeSecundario": "Claro",
       "destaqueSecundario": false,
       "tag": "MOR",
-      "conexoes": [{ "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE" }]
+      "conexoes": [{ "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 9 - Turquesa" }]
     },
     {
       "nomePrincipal": "Chucri Zaidan",
@@ -2151,7 +2151,7 @@
     {
       "nomePrincipal": "Campo Belo",
       "tag": "CBM",
-      "conexoes": [{ "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE" }]
+      "conexoes": [{ "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 5 - Lilás" }]
     },
     {
       "nomePrincipal": "Vereador José Diniz",
@@ -2169,7 +2169,7 @@
       "destaqueSecundario": true,
       "tag": "CGN",
       "conexoes": [
-          { "tipo": "aeroporto", "nome": "AENA", "icone": "aeroporto_CGH.png" }
+          { "tipo": "aeroporto", "nome": "Aeroporto de Congonhas (CGH)", "icone": "aeroporto_CGH.png" }
       ]
     },
     {

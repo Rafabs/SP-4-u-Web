@@ -1,0 +1,18 @@
+{
+  "servico": {
+    "titulo": "Serviço Externo",
+    "descricao": "Serviços externos como terminais de ônibus, EMTU, ou serviços regionais associados à estação."
+  },
+  "linha": {
+    "titulo": "Conexão com Linha",
+    "descricao": "Conexões diretas com outras linhas de metrô, trem ou monotrilho."
+  },
+  "icone": {
+    "titulo": "Ícone/Operadora",
+    "descricao": "Indica um serviço ou operador específico representado por um ícone."
+  },
+  "outro": {
+    "titulo": "Outros",
+    "descricao": "Qualquer outro tipo de conexão não categorizado acima."
+  }
+}
