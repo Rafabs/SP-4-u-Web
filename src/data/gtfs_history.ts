@@ -15,6 +15,14 @@ export interface GTFSHistoryEntry {
 // ===============================
 export const historyData: GTFSHistoryEntry[] = [
   {
+    data: "08/06/2026",
+    tipo: "✏️ Modificação",
+    linha: "407E/10",
+    cor: "DA291C",
+    rota: "<after>Atual:</after> Jd. Sto. André - Metrô Carrão<br><before>Antes:</before> Jd. São Francisco (via Jd. Sto. André) - Metrô Carrão",
+    recente: true,
+  },     
+  {
     data: "31/05/2026",
     tipo: "🆕 Inclusão",
     linha: "879A/10",

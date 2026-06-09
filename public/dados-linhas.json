@@ -618,7 +618,9 @@
         "destaqueSecundario": true,
         "acesso_livre": false,     
         "tag": "MBI",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" }
+        ]
       },
       {
         "nomePrincipal": "Vila Sônia",
@@ -626,7 +628,9 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "VSO",
-        "conexoes": []
+        "conexoes": [
+          { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" }
+        ]
       }
     ]
   },
@@ -2112,7 +2116,7 @@
         "acesso_livre": false,        
         "tag": "MAT",
         "conexoes": [
-          { "tipo": "servico", "nome": "EMTU", "icone": "A.png" }
+          { "tipo": "servico", "nome": "Corredor São Mateus-Jabaquara", "icone": "A.png" }
         ]
       },
       {

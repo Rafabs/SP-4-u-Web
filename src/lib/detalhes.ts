@@ -45,7 +45,7 @@ const ICON_MAP: Record<string, string> = {
   L04: "4_amarela.png",
   L05: "5_lilas.png",
   L06: "6_laranja.png",
-  L07: "tictrens.png",
+  L07: "7_rubi.png",
   L08: "8_diamante.png",
   L09: "9_esmeralda.png",
   L10: "cptm.png",
@@ -112,8 +112,25 @@ function renderLegendButton(dados: DadosLinha): void {
   btn.style.cssText = "margin-left:8px;padding:8px 12px;border-radius:6px;background:#eee;color:#111;border:1px solid #ccc;cursor:pointer;";
 
   const panel = document.createElement("div");
+
   panel.id = "legend-panel";
-  panel.style.cssText = "position:fixed;z-index:9999;max-width:360px;max-height:60vh;overflow:auto;padding:12px;background:#fff;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.15);display:none;color:#111;font-size:14px;";
+
+  panel.style.cssText = `
+    position:fixed;
+    z-index:9999;
+    max-width:420px;
+    max-height:80vh;
+    overflow:auto;
+    padding:18px;
+    background:#121212;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 15px 50px rgba(0,0,0,.45);
+    display:none;
+    color:#fff;
+    font-size:14px;
+    backdrop-filter:blur(12px);
+  `;
 
   // informações adicionais estáticas para algumas linhas (sobrescreve/completa conexões)
   const LINE_INFO: Record<string, { cor?: string; operadora?: string; nomeLinha?: string }> = {
@@ -156,11 +173,6 @@ function renderLegendButton(dados: DadosLinha): void {
     });
   });
 
-  const title = document.createElement("div");
-  title.style.cssText = "font-weight:600;margin-bottom:8px;";
-  title.textContent = "Legenda — Conexões nesta linha";
-  panel.appendChild(title);
-
   // busca descrições adicionais em public/legenda-conexoes.json
   (async () => {
     let descrs: Record<string, { titulo?: string; descricao?: string }> = {};
@@ -188,7 +200,7 @@ function renderLegendButton(dados: DadosLinha): void {
         const servEntries = Object.entries(servicos).sort((a, b) => a[0].localeCompare(b[0]));
         servEntries.forEach(([key, v]) => {
         const row = document.createElement("div");
-        row.style.cssText = "display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid #f0f0f0;";
+        row.style.cssText = "display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08);";
         const img = document.createElement("img");
         img.src = v.icone ? `${BASE_URL}icons/${v.icone}` : `${BASE_URL}icons/default.png`;
         img.alt = key;
@@ -218,7 +230,7 @@ function renderLegendButton(dados: DadosLinha): void {
 
         lineEntries.forEach(([id, v]) => {
         const row = document.createElement("div");
-        row.style.cssText = "display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid #f7f7f7;";
+        row.style.cssText = "display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08);";
 
         // logo da linha (quando disponível)
         const imgLogo = document.createElement("img");
