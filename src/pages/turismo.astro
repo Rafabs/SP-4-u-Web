@@ -1,0 +1,71 @@
+---
+import Layout from "../layouts/Layout.astro";
+const base = import.meta.env.BASE_URL;
+---
+<Layout title="Sampa 4u | Turismo">
+  <link rel="stylesheet" href={`${base}leaflet.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}map.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}turismo.css`} slot="head" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" slot="head" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" slot="head" />
+
+  <section class="hero hero-mapa">
+    <div class="hero-bg"><div class="hero-grid"></div></div>
+    <div class="hero-lines" id="turismo-canvas"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Turismo · São Paulo</div>
+      <h1 class="hero-h1">Descubra os<br /><span style="color:#32e622;">marcos da cidade</span></h1>
+      <p class="hero-sub">Explore museus, parques, monumentos e bairros icônicos em um mapa interativo com busca e detalhes sobre cada ponto turístico.</p>
+      <div class="hero-ctas">
+        <a href="#map-section" class="btn-hero-primary">Abrir mapa</a>
+        <a href="#map-section" class="btn-hero-ghost">Buscar pontos</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-val">10+</div><div class="stat-label">Pontos turísticos</div></div>
+        <div class="stat"><div class="stat-val">5</div><div class="stat-label">Regiões destacadas</div></div>
+        <div class="stat"><div class="stat-val">100%</div><div class="stat-label">Exploração interativa</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="map-section" class="map-wrapper">
+    <div id="map"></div>
+    <button id="btn-center" class="map-fab" title="Centralizar em São Paulo">
+      <span class="material-symbols-outlined">my_location</span>
+    </button>
+    <div id="map-controls" class="custom-controls">
+      <div class="controls-header">
+        <span class="controls-title">
+          <span class="material-symbols-outlined">attractions</span>Pontos turísticos
+        </span>
+        <button id="btn-collapse" class="collapse-btn" title="Minimizar painel">
+          <span class="material-symbols-outlined" id="collapse-icon">expand_less</span>
+        </button>
+      </div>
+      <div id="controls-body">
+        <div class="search-container">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <input id="search-input" type="text" placeholder="Pesquisar por um ponto..." class="search-input" />
+          <button id="clear-search" class="clear-search-btn" type="button" aria-label="Limpar busca" hidden>
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <div class="results-header">
+          <span>Resultados</span>
+          <span id="results-count" class="results-count">0</span>
+        </div>
+        <div id="search-results" class="search-results" role="listbox" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+  <div id="dynamic-systems-info"></div>
+  <hr />
+
+  <script>
+    import { initTurismoPage } from "../lib/turismo";
+
+    initTurismoPage();
+  </script>
+</Layout>

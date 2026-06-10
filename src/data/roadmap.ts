@@ -29,7 +29,6 @@ const roadmapData: Roadmap = {
       categoria: "🔧 Refatoração e Estrutura",
       itens: [
         { label: "Desenvolver Design System e disponibilizar no projeto", status: "EM DESENVOLVIMENTO", checked: false },
-        { label: "Desenvolver funcionalidade de página de Turismo", status: "EM DESENVOLVIMENTO", checked: false },
         { label: "Adotar Next.js durante melhoria de mapas no Vercel", checked: false },
         { label: "Melhorar códigos e comentários", status: "EM DESENVOLVIMENTO", checked: false },
         { label: "Desenvolver app Android - SP4U.apk", status: "EM DESENVOLVIMENTO", checked: false },
@@ -53,6 +52,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "10/06/2026", versao: "v26.06.4", descricao: "Desenvolvido funcionalidade de página de Turismo" },
     { data: "08/06/2026", versao: "v26.06.3", descricao: "Atualização GTFS - SPTrans" },
     { data: "06/06/2026", versao: "v26.06.2", descricao: "Desenvolvido botão de Legendas em Detalhes de linhas" },
     { data: "04/06/2026", versao: "v26.06.2", descricao: "Atualização GTFS - SPTrans" },

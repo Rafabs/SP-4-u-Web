@@ -1,0 +1,210 @@
+#map-controls.custom-controls {
+  width: min(100%, 320px);
+  max-width: min(320px, calc(100vw - 2rem));
+  padding: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.26);
+}
+
+.controls-header {
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.8rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.8rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(50, 230, 34, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  margin-bottom: 0.7rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.search-container:focus-within {
+  border-color: rgba(50, 230, 34, 0.5);
+  box-shadow: 0 0 0 3px rgba(50, 230, 34, 0.16);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.search-container i {
+  color: #32e622;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.search-input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.clear-search-btn {
+  border: 0;
+  background: rgba(255, 255, 255, 0.12);
+  color: #f5f7fb;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.clear-search-btn:hover {
+  background: rgba(50, 230, 34, 0.18);
+  transform: scale(1.04);
+}
+
+.clear-search-btn .material-symbols-outlined {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.55rem;
+  padding: 0 0.2rem;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.results-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.8rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(50, 230, 34, 0.16);
+  color: #9cfb83;
+  font-weight: 600;
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  overflow: auto;
+  padding-right: 0.2rem;
+  max-height: min(360px, 48vh);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(50, 230, 34, 0.38) transparent;
+}
+
+.result-card {
+  display: flex;
+  align-items: center;
+  gap: 0.72rem;
+  padding: 0.72rem 0.85rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03));
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
+  color: inherit;
+}
+
+.result-card:hover,
+.result-card.is-active {
+  transform: translateY(-2px);
+  border-color: rgba(50, 230, 34, 0.45);
+  background: rgba(50, 230, 34, 0.12);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+}
+
+.result-marker {
+  width: 1.8rem;
+  height: 1.8rem;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+  background: transparent !important;
+  border: none !important;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+}
+
+.leaflet-marker-icon {
+  width: 48px !important;
+  height: 48px !important;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.leaflet-marker-icon:hover {
+  transform: scale(1.08);
+}
+
+.leaflet-marker-icon img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+  background: transparent !important;
+  border: none !important;
+}
+
+.result-name {
+  display: block;
+  color: #f5f7fb;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.8rem 0.9rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.empty-state strong {
+  color: #f5f7fb;
+}
+
+.legend-card {
+  margin-top: 0.8rem;
+  padding: 0.9rem 1rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.legend-card strong {
+  color: #f5f7fb;
+  font-size: 0.88rem;
+}
