@@ -17,10 +17,24 @@ const GTFS_CONFIGS: Record<GTFSSystem, { folder: string; label: string }> = {
 };
 
 function getPath(path: string): string {
-  return new URL(`${BASE_URL}${path}`, window.location.origin).href;
+  const normalizedBase = (BASE_URL || "/").replace(/\/+$/, "");
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  return new URL(`${normalizedBase}${normalizedPath}`, window.location.origin).href;
 }
 function getGTFSPath(fileName: string): string {
   return getPath(`/${GTFS_CONFIGS[activeSystem].folder}/${fileName}`);
+}
+
+function resolveStationIconPath(lineName: unknown, iconMapping: Record<string, string>): string | undefined {
+  if (!lineName || typeof lineName !== "string") return undefined;
+
+  const exactMatch = iconMapping[lineName];
+  if (exactMatch) return exactMatch;
+
+  const normalizedLine = lineName.toLowerCase().split(" •")[0].trim();
+  return Object.entries(iconMapping).find(([key]) =>
+    key.toLowerCase().split(" •")[0].trim() === normalizedLine
+  )?.[1];
 }
 
 // ===============================
@@ -107,13 +121,12 @@ export async function loadMapData(): Promise<void> {
 
     L.geoJSON(stationsData, {
       pointToLayer: (f, latlng) => {
-        const lineName = f.properties.lines?.[0]?.line;
-        const iconPath = iconMapping[lineName];
+        const lineName = f.properties?.lines?.[0]?.line;
+        const iconPath = resolveStationIconPath(lineName, iconMapping);
         if (iconPath) {
-          const fileName = iconPath.split(/[\\/]/).pop();
           return L.marker(latlng, {
             icon: L.icon({
-              iconUrl: getPath(`/icons/${fileName}`),
+              iconUrl: getPath(iconPath),
               iconSize: [22, 22],
               iconAnchor: [11, 11],
             }),

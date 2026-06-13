@@ -7,6 +7,12 @@ import L from "leaflet";
 
 export const map = L.map("map", {
   preferCanvas: true,
+  zoomAnimation: true,
+  touchZoom: false,
+  doubleClickZoom: false,
+  scrollWheelZoom: true,
+  boxZoom: true,
+  keyboard: true,
 }).setView([-23.5505, -46.6333], 11);
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {

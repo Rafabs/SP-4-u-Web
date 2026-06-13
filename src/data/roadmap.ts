@@ -52,6 +52,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "13/06/2026", versao: "v26.06.5", descricao: "Atualização GTFS - SPTrans e Correção de estilos em geral " },
     { data: "10/06/2026", versao: "v26.06.4", descricao: "Desenvolvido funcionalidade de página de Turismo" },
     { data: "08/06/2026", versao: "v26.06.3", descricao: "Atualização GTFS - SPTrans" },
     { data: "06/06/2026", versao: "v26.06.2", descricao: "Desenvolvido botão de Legendas em Detalhes de linhas" },

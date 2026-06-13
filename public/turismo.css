@@ -208,3 +208,35 @@
   color: #f5f7fb;
   font-size: 0.88rem;
 }
+
+/* --- Hero Section --- */
+.hero-turismo .hero-lines {
+  position: absolute;
+  inset: 0;
+  left: 0;
+  right: auto;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+@keyframes bus-run {
+  0% {
+    left: -40px;
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 0.6;
+  }
+
+  95% {
+    opacity: 0.6;
+  }
+
+  100% {
+    left: 110%;
+    opacity: 0;
+  }
+}

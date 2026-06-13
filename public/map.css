@@ -278,10 +278,37 @@
     right: 20px;
     padding: 8px 12px;
   }
+  .map-popup .leaflet-popup-content {
+    width: min(190px, calc(100vw - 20px)) !important;
+    margin: 6px 0;
+    font-size: 11px;
+  }
+  .map-popup .leaflet-popup-content-wrapper {
+    border-radius: 7px;
+  }
+  .popup-header {
+    padding: 8px;
+    font-size: 11px;
+  }
+  .popup-body {
+    padding: 8px;
+    font-size: 11px;
+    line-height: 1.25;
+  }
+  .leaflet-popup {
+    bottom: 4px !important;
+  }
   .map-fab {
     bottom: 14px;
     right: 20px;
   }
+  .update-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .history-table {
+    font-size: 0.8rem;
+  }  
 }
 
 /* ── 13. Light mode ── */
@@ -319,17 +346,6 @@
 }
 html {
   scroll-behavior: smooth;
-}
-
-/* 5. Responsividade */
-@media (max-width: 768px) {
-  .update-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .history-table {
-    font-size: 0.8rem;
-  }
 }
 
 /* 6. Hero Section */

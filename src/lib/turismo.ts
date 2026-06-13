@@ -1,6 +1,5 @@
 import L from "leaflet";
 import { landmarks } from "./turismo-landmarks.js";
-import { initHeroMapa } from "./hero-mapa.js";
 
 type LandmarkPoint = {
   name: string;
@@ -161,7 +160,6 @@ function initMap() {
 }
 
 export function initTurismoPage() {
-  initHeroMapa();
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initMap);
   } else {

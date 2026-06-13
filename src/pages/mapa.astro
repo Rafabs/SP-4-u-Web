@@ -4,11 +4,11 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Sampa 4u | Mapa Interativo">
-  <link rel="stylesheet" href={`${base}/leaflet.css`} slot="head" />
-  <link rel="stylesheet" href={`${base}/map.css`} slot="head" />
-  <link rel="stylesheet" href={`${base}/leaflet-measure.css`} slot="head" />
-  <link rel="stylesheet" href={`${base}/leaflet-fullscreen.css`} slot="head" />
-  <link rel="stylesheet" href={`${base}/leaflet-minimap.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}leaflet.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}map.css`} slot="head" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-measure@3.1.0/dist/leaflet-measure.css" slot="head" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@3.0.2/Control.FullScreen.css" slot="head" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.css" slot="head" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" slot="head" />
 
   <!-- HERO compacto antes do mapa -->
@@ -50,6 +50,7 @@ const base = import.meta.env.BASE_URL;
       </div>
     </div>
   </section>
+  <hr />
 
   <div id="map-section" class="map-wrapper">
     <div id="map"></div>
@@ -97,7 +98,7 @@ const base = import.meta.env.BASE_URL;
             class="material-symbols-outlined layer-sym"
             style="color:#aaaaaa;">train</span
           >
-          Trilhos
+          Trilhos e Corredores
         </label>
         <div class="layer-legend" id="legend-trilhos" style="display:none;">
           <div class="legend-note">Clique nas linhas para detalhes</div>
