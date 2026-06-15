@@ -1,3 +1,4 @@
+/* Tipografia para os cabeçalhos da interface de medição e do popup */
 .leaflet-control-measure h3,
 .leaflet-measure-resultpopup h3 {
   margin: 0 0 12px;
@@ -35,6 +36,7 @@
 .leaflet-measure-resultpopup .coorddivider {
   color: #999;
 }
+/* Estilo do container do painel de controle de medição */
 .leaflet-control-measure {
   max-width: 280px;
   background: #fff;
@@ -64,6 +66,7 @@
 .leaflet-control-measure .startprompt h3 {
   margin-bottom: 10px;
 }
+/* O estado inicial de orientação usa um layout de ações mais leve */
 .leaflet-control-measure .startprompt .tasks {
   margin-top: 0;
   padding-top: 0;
@@ -87,6 +90,7 @@
   margin-right: 5px;
   color: #999;
 }
+/* Os links de ação herdam o mesmo ritmo visual do controle */
 .leaflet-control-measure a.start {
   display: inline;
   width: auto;

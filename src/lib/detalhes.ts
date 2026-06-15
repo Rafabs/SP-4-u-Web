@@ -77,13 +77,7 @@ export async function initDetalhes(): Promise<void> {
     if (dados && linhaId) {
       renderPage(dados, linhaId);
       renderLineSwitcher(linhaId, dadosLinhas);
-
-        // adiciona botão de legenda com base nas conexões
-        renderLegendButton(dados);
-
-      // ✅ ADICIONADO: carrega o status da linha selecionada
-      // O renderPage já renomeou o id do card para o padrão "{linhaId.toLowerCase()}-info"
-      // que o loadStatusLinhas usa para encontrar e atualizar o card.
+      renderLegendButton(dados);
       const { loadStatusLinhas } = await import("./status-linhas");
       loadStatusLinhas();
     } else {
@@ -98,11 +92,9 @@ export async function initDetalhes(): Promise<void> {
 // LEGENDA (TIPOS DE CONEXÃO)
 // ===============================
 function renderLegendButton(dados: DadosLinha): void {
-  // evita múltiplos botões em re-renders
   if (document.getElementById("btn-legend")) return;
 
   const backBtn = document.querySelector(".btn-back") as HTMLElement | null;
-  // se não encontrar o botão de voltar, adiciona no body como fallback
   const insertAfterEl = backBtn ? (backBtn.closest("a") ?? backBtn) : null;
 
   const btn = document.createElement("button");
@@ -162,7 +154,6 @@ function renderLegendButton(dados: DadosLinha): void {
       } else if ((con as Conexao).tipo === "servico" || con.icone || con.nome) {
         const key = con.nome ?? `servico-${con.icone ?? "unknown"}`;
         if (!servicos[key]) servicos[key] = { icone: con.icone, operadora: (con as any).operadora ?? con.operadora, stations: [] };
-        // preenche operadora caso venha em outra estação/objeto
         if (!servicos[key].operadora && ((con as any).operadora ?? con.operadora)) servicos[key].operadora = (con as any).operadora ?? con.operadora;
         if (!servicos[key].stations.includes(stationName)) servicos[key].stations.push(stationName);
       } else {
@@ -232,7 +223,7 @@ function renderLegendButton(dados: DadosLinha): void {
         const row = document.createElement("div");
         row.style.cssText = "display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08);";
 
-        // logo da linha (quando disponível)
+        // logo da linha
         const imgLogo = document.createElement("img");
         imgLogo.src = `${BASE_URL}icons/${getIconFileName(id)}`;
         imgLogo.alt = id;
@@ -259,7 +250,6 @@ function renderLegendButton(dados: DadosLinha): void {
       });
     }
 
-    // Outros
     if (Object.keys(outros).length > 0) {
       const secTitle = document.createElement("div");
       secTitle.style.cssText = "font-weight:600;margin-top:8px;margin-bottom:6px;";
@@ -283,12 +273,9 @@ function renderLegendButton(dados: DadosLinha): void {
     }
   })();
 
-  // detecta viewport móvel para posicionamento mais confiável
   const isMobile = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(max-width:700px)").matches;
 
-  // (mantemos o botão na posição original; apenas o painel será centralizado em mobile)
-
-  // fechar ao clicar fora
+  // fechar o pop-up ao clicar fora
   document.addEventListener("click", (ev) => {
     const target = ev.target as HTMLElement;
     if (!target) return;
@@ -298,7 +285,6 @@ function renderLegendButton(dados: DadosLinha): void {
 
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
-    // posiciona o painel: em mobile usa fixed no canto inferior direito
     if (isMobile) {
       panel.style.position = "fixed";
       panel.style.left = "50%";
@@ -310,7 +296,6 @@ function renderLegendButton(dados: DadosLinha): void {
       panel.style.bottom = "";
     } else if (insertAfterEl instanceof Element) {
       const rect = (insertAfterEl as Element).getBoundingClientRect();
-      // tenta colocar o painel acima do botão
       panel.style.left = `${Math.max(12, rect.left)}px`;
       panel.style.top  = `${Math.max(12, rect.top - rect.height - 12)}px`;
       panel.style.position = "absolute";
@@ -318,7 +303,6 @@ function renderLegendButton(dados: DadosLinha): void {
       panel.style.right = "";
       panel.style.bottom = "";
     } else {
-      // fallback desktop: fixed no canto inferior direito
       panel.style.position = "fixed";
       panel.style.right = "18px";
       panel.style.bottom = "68px";
@@ -328,7 +312,6 @@ function renderLegendButton(dados: DadosLinha): void {
   });
 
   if (insertAfterEl && insertAfterEl.parentElement) {
-    // insere o botão logo após o elemento existente
     insertAfterEl.parentElement.insertBefore(btn, insertAfterEl.nextSibling);
   } else {
     document.body.appendChild(btn);
@@ -357,7 +340,7 @@ function renderPage(dados: DadosLinha, linhaId: string): void {
 
   if (empresaEl) empresaEl.innerText = nomeOperadora;
 
-  // Status da operação — renomeia o id para o padrão esperado pelo status-linhas.ts
+  // Status da operação (placeholder inicial, é atualizado pelo loadStatusLinhas)
   const statusCard = document.getElementById("linha-status-info");
   if (statusCard) {
     statusCard.id        = `${linhaId.toLowerCase()}-info`;

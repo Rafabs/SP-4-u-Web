@@ -6,9 +6,13 @@
   --control-border-light: #dddddd;
   --control-border-dark: #444444;
   --accent-color: #32e622;
+  --transition-fast: 0.15s ease;
+  --transition-default: 0.2s ease;
+  --transition-slow: 0.3s ease;  
 }
 
 /* ── 1. Container Principal ── */
+/* Limita a largura útil sem interferir na responsividade do mapa */
 .map-wrapper {
   position: relative;
   width: 100%;
@@ -20,7 +24,7 @@
 
 /* ── 2. Mapa ── */
 #map {
-  height: 75vh;
+  height: clamp(420px, 75vh, 900px);
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -32,7 +36,7 @@
   position: absolute;
   bottom: 24px;
   right: 30px;
-  z-index: 1000;
+  z-index: var(--z-map-controls);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -45,9 +49,11 @@
   color: var(--control-text-dark);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition:
-    background 0.2s,
-    transform 0.15s;
+    background-color var(--transition-default),
+    color var(--transition-default),
+    transform var(--transition-fast);
 }
+
 .map-fab:hover {
   background: var(--accent-color);
   color: #000;
@@ -58,6 +64,7 @@
 }
 
 /* ── 4. Controles Flutuantes ── */
+/* Painel flutuante independente do canvas Leaflet */
 .custom-controls {
   position: absolute;
   top: 25px;
@@ -118,6 +125,7 @@
 }
 
 /* ── 6. Corpo colapsável ── */
+/* Altura máxima elevada para acomodar futuras camadas sem ajustes */
 #controls-body {
   overflow: hidden;
   transition:
@@ -132,6 +140,7 @@
 }
 
 /* ── 7. Separadores de grupo ── */
+/* Separação visual entre categorias operacionais */
 .layer-group-label {
   font-family: "DM Mono", monospace;
   font-size: 8px;
@@ -188,6 +197,7 @@
 }
 
 /* ── 9. Legenda por camada ── */
+/* Legenda contextual exibida abaixo da camada correspondente */
 .layer-legend {
   margin: 0 0 8px 20px;
   font-size: 0.75rem;
@@ -231,6 +241,7 @@
   margin: 0;
   width: 250px !important;
 }
+/* Cabeçalho contextual do ponto selecionado */
 .popup-header {
   padding: 12px;
   color: #fff;
@@ -239,6 +250,7 @@
   font-size: 14px;
   letter-spacing: 0.5px;
 }
+/* Metadados operacionais e informações complementares */
 .popup-body {
   padding: 15px;
   font-size: 13px;
@@ -273,6 +285,7 @@
   #map {
     height: 50vh;
   }
+  /* Painel flutuante independente do canvas Leaflet */
   .custom-controls {
     top: 10px;
     right: 20px;
@@ -286,10 +299,12 @@
   .map-popup .leaflet-popup-content-wrapper {
     border-radius: 7px;
   }
+  /* Cabeçalho contextual do ponto selecionado */
   .popup-header {
     padding: 8px;
     font-size: 11px;
   }
+  /* Metadados operacionais e informações complementares */
   .popup-body {
     padding: 8px;
     font-size: 11px;
@@ -313,6 +328,7 @@
 
 /* ── 13. Light mode ── */
 @media (prefers-color-scheme: light) {
+  /* Painel flutuante independente do canvas Leaflet */
   .custom-controls {
     background: var(--control-bg-light);
     color: var(--control-text-light);
@@ -337,18 +353,7 @@
 .hero-mapa {
   padding: 48px 40px 40px; /* mais compacto que o hero padrão */
 }
-.hero-mapa .hero-lines {
-  position: absolute;
-  right: -20px;
-  top: 0;
-  bottom: 0;
-  width: 340px;
-}
-html {
-  scroll-behavior: smooth;
-}
-
-/* 6. Hero Section */
+/* Área decorativa utilizada pelas animações do hero */
 .hero-mapa .hero-lines {
   position: absolute;
   inset: 0;
@@ -357,7 +362,29 @@ html {
   z-index: 1;
   overflow: hidden;
 }
+.hero-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--hero-color);
+  opacity: 0.12;
+}
 
+.hero-moving-icon {
+  position: absolute;
+  color: var(--hero-color);
+  opacity: 0.6;
+  animation-name: bus-run;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Movimento decorativo dos elementos do hero */
 @keyframes bus-run {
   0% {
     left: -40px;
@@ -378,6 +405,18 @@ html {
   }
 }
 
-html {
-  scroll-behavior: smooth;
+/* Respeita preferências de acessibilidade do sistema */
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .map-fab,
+  .collapse-btn,
+  .layer-item,
+  #controls-body,
+  .custom-controls {
+    transition: none;
+  }
 }

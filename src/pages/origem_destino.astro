@@ -1,11 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const base = import.meta.env.BASE_URL;
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
 ---
 
 <Layout title="Sampa 4u | Pesquisa Origem e Destino">
-  <link rel="stylesheet" href={`${base}/od.css`} slot="head" />
-  <link rel="stylesheet" href={`${base}/leaflet.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}od.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}leaflet.css`} slot="head" />
 
   <main class="dashboard-main">
     <section>

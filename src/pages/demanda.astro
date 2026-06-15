@@ -1,28 +1,27 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const base = import.meta.env.BASE_URL;
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
 ---
 
 <Layout title="Demanda de Passageiros - Sampa 4u">
-  <link rel="stylesheet" href={`${base}/demanda.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}demanda.css`} slot="head" />
 
-  <!-- HERO -->
-  <section class="hero hero-demanda">
-    <div class="hero-bg">
+  <section class="hero hero-demanda" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true">
       <div class="hero-grid"></div>
     </div>
 
-    <div class="hero-lines" id="demanda-canvas"></div>
+    <div class="hero-lines" id="demanda-canvas" aria-hidden="true"></div>
 
     <div class="hero-content">
       <div class="hero-tag">Dados Operacionais · Metrô SP</div>
-      <h1 class="hero-h1">Demanda de<br><span style="color:#049FC3;">Passageiros</span></h1>
+      <h1 class="hero-h1" id="hero-title">Demanda de<br><span style="color:#049FC3;">Passageiros</span></h1>
       <p class="hero-sub">
         Média de entradas por dia útil no sistema metroviário de São Paulo —
         dados históricos de 2020 a 2025 do Portal da Transparência.
       </p>
       <div class="hero-ctas">
-        <a href="#dashboard" class="btn-hero-primary" style="background:#049FC3;">Ver dashboard</a>
+        <a href="#dashboard" class="btn-hero-primary" style="background:#049FC3; color:#ffffff;">Ver dashboard</a>
         <a href="#dashboard" class="btn-hero-ghost">Comparar linhas</a>
       </div>
       <div class="hero-stats">
@@ -43,16 +42,16 @@ const base = import.meta.env.BASE_URL;
   </section>
   <hr />
 
-  <div class="demanda-page" id="dashboard">
+  <main class="demanda-page" id="dashboard" role="region" aria-label="Dashboard de Estatísticas de Demanda">
     <header class="dashboard-header">
-      <h1>Demanda de Passageiros</h1>
+      <h2 class="dashboard-title">Dados de Ocupação do Sistema</h2>
       <p>Média de entradas por dia útil no sistema metroviário (2020-2025)</p>
     </header>
 
-    <div class="filter-bar" style="display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap;">
-      <select id="ano-filter" class="custom-select"></select>
-      <select id="linha-filter" class="custom-select"></select>
-    </div>
+    <section class="filter-bar" style="display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap;" aria-label="Filtros do Dashboard">
+      <select id="ano-filter" class="custom-select" aria-label="Selecionar Ano de Análise"></select>
+      <select id="linha-filter" class="custom-select" aria-label="Selecionar Linha de Metrô"></select>
+    </section>
 
     <div class="stats-grid">
       <div class="stat-card">
@@ -75,32 +74,32 @@ const base = import.meta.env.BASE_URL;
     <div class="charts-container">
       <div class="chart-box">
         <h3>Evolução Mensal da Linha</h3>
-        <div style="height: 320px;"><canvas id="chart-tendencia"></canvas></div>
+        <div style="height: 320px;"><canvas id="chart-tendencia" role="img" aria-label="Gráfico de linhas mostrando a tendência de evolução mensal de passageiros"></canvas></div>
       </div>
       <div class="chart-box">
         <h3>Top 10 Estações da Linha</h3>
-        <div style="height: 320px;"><canvas id="chart-ranking"></canvas></div>
+        <div style="height: 320px;"><canvas id="chart-ranking" role="img" aria-label="Gráfico de barras mostrando o ranking das dez estações mais movimentadas da linha"></canvas></div>
       </div>
     </div>
 
     <hr class="section-divider" />
     <div id="dynamic-systems-info"></div>
 
-    <section class="about">
+    <section class="about" aria-labelledby="about-title">
       <div class="info-container">
-        <h2>Desenvolvimento e Transparência</h2>
+        <h2 id="about-title">Desenvolvimento e Transparência</h2>
         <p>Dados processados automaticamente a partir dos relatórios de demanda bruta do Metrô de São Paulo.</p>
         <div class="actions" style="margin-top: 15px;">
-          <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
+          <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank" rel="noopener noreferrer">
             <img
               src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
-              alt="github"
+              alt="Acessar o repositório do Sampa 4u no GitHub"
             />
           </a>
         </div>
       </div>
     </section>
-  </div>
+  </main>
 
   <script>
     import { initDemanda } from "../lib/demanda_logic";

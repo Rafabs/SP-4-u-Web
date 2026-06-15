@@ -1,13 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { originData } from "../data/fonte_dados";
-
-const base = import.meta.env.BASE_URL;
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
 ---
 
 <Layout title="Sampa 4u | Fontes de Dados">
-  <link rel="stylesheet" href={`${base}/styles.css`} slot="head" />
-  <link rel="stylesheet" href={`${base}/fontes.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}styles.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}fontes.css`} slot="head" />
   <section class="hero-mini">
     <div class="hero-content">
       <h1>Transparência de Dados</h1>
@@ -19,7 +18,7 @@ const base = import.meta.env.BASE_URL;
     <div class="intro-text">
       <p>
         O <strong>Sampa 4u</strong> preza pela precisão das informações. Todos os dados exibidos 
-        são consumidos de APIs oficiais ou bases públicas governamentais, garantindo que o usuário 
+        dos de APIs oficiais ou bases públicas governamentais, garantindo que o usuário 
         tenha acesso ao status real da mobilidade paulista.
       </p>
     </div>

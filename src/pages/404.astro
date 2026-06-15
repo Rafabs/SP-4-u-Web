@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const base = import.meta.env.BASE_URL;
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
 ---
 
 <Layout title="Sampa 4u | 404 - Estação Não Encontrada">
-  <link rel="stylesheet" href={`${base}/404.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}404.css`} slot="head" />
+  
   <div class="error-wrapper">
 
-    <!-- Trilho animado -->
-    <div class="error-track">
+    <div class="error-track" aria-hidden="true">
       <div class="track-line"></div>
       <div class="train-anim">
         <span class="material-symbols-outlined">train</span>
@@ -17,9 +17,9 @@ const base = import.meta.env.BASE_URL;
 
     <div class="error-container">
       <div class="error-icons">
-        <span class="material-symbols-outlined icon-signal">traffic</span>
-        <div class="error-code">404</div>
-        <span class="material-symbols-outlined icon-wrong">wrong_location</span>
+        <span class="material-symbols-outlined icon-signal" aria-hidden="true">traffic</span>
+        <h1 class="error-code">404</h1>
+        <span class="material-symbols-outlined icon-wrong" aria-hidden="true">wrong_location</span>
       </div>
 
       <h2>Estação Não Encontrada</h2>
@@ -30,12 +30,12 @@ const base = import.meta.env.BASE_URL;
       </p>
 
       <div class="error-ctas">
-        <a href={`${base}`} class="btn-home">
-          <span class="material-symbols-outlined">arrow_back</span>
+        <a href={base} class="btn-home">
+          <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
           Voltar ao Início
         </a>
         <a href={`${base}mapa`} class="btn-map">
-          <span class="material-symbols-outlined">map</span>
+          <span class="material-symbols-outlined" aria-hidden="true">map</span>
           Ver Mapa
         </a>
       </div>

@@ -1,51 +1,103 @@
-    .hero-aqi .hero-lines {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        pointer-events: none;
-        z-index: 1;
-        overflow: hidden;
+.hero-aqi {
+    --aqi-mono-font: 'Courier New', monospace;
+    --aqi-divider: rgba(255, 255, 255, 0.06);
+}
+
+/* Camada decorativa: recebe os elementos dinâmicos sem interferir na interação. */
+.hero-aqi .hero-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-aqi .hero-lines > .material-symbols-outlined {
+    left: 0;
+    will-change: transform, opacity;
+}
+
+.hero-aqi-legend {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--aqi-divider);
+}
+
+.aqi-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+
+  background: var(--aqi-color);
+  opacity: 0.12;
+}
+
+.aqi-icon {
+  position: absolute;
+
+  color: var(--aqi-color);
+  opacity: 0.6;
+
+  animation-name: bus-run;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Pills compactas para manter a legenda legível em linhas quebradas. */
+.aqi-pill {
+    font-family: var(--aqi-mono-font);
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    padding: 4px 10px;
+    border-radius: 2px;
+    border: 1px solid currentColor;
+    white-space: nowrap;
+}
+
+@keyframes bus-run {
+    0% {
+        transform: translateX(-40px);
+        opacity: 0;
     }
 
+    5%,
+    95% {
+        opacity: .6;
+    }
+
+    100% {
+        transform: translateX(calc(100vw + 40px));
+        opacity: 0;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 480px) {
     .hero-aqi-legend {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-        margin-top: 24px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        gap: 6px;
     }
 
     .aqi-pill {
-        font-family: 'Courier New', monospace;
-        font-size: 11px;
-        letter-spacing: 1px;
-        padding: 4px 10px;
-        border-radius: 2px;
-        border: 1px solid;
-        white-space: nowrap;
+        font-size: 10px;
+        letter-spacing: .8px;
     }
+}
 
-    @keyframes bus-run {
-        0% {
-            left: -40px;
-            opacity: 0;
-        }
-
-        5% {
-            opacity: .6;
-        }
-
-        95% {
-            opacity: .6;
-        }
-
-        100% {
-            left: 110%;
-            opacity: 0;
-        }
-    }
-
+@media (prefers-reduced-motion: reduce) {
     html {
-        scroll-behavior: smooth;
+        scroll-behavior: auto;
     }
+
+    .hero-aqi .hero-lines > * {
+        animation: none;
+    }
+}

@@ -1,32 +1,49 @@
-// Aguarda o DOM carregar completamente
 document.addEventListener('DOMContentLoaded', () => {
     const themeBtn = document.getElementById('theme-btn');
     const body = document.body;
+    const storageKey = 'theme';
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)');
 
-    // 1. Verifica se o usuário já tem uma preferência salva no navegador
-    const savedTheme = localStorage.getItem('theme');
-    
-    // 2. Aplica o tema salvo (se existir)
-    if (savedTheme === 'light') {
-        body.classList.add('light-mode');
-        themeBtn.innerText = '🌙'; // Ícone para voltar ao Dark
-    } else {
-        themeBtn.innerText = '☀️'; // Ícone para ir ao Light
+    if (!themeBtn) {
+        return;
     }
 
-    // 3. Lógica de alternância (Toggle)
-    themeBtn.addEventListener('click', () => {
-        body.classList.toggle('light-mode');
-        
-        let theme = 'dark';
-        if (body.classList.contains('light-mode')) {
-            theme = 'light';
-            themeBtn.innerText = '🌙';
-        } else {
-            themeBtn.innerText = '☀️';
+    const getSavedTheme = () => {
+        try {
+            return localStorage.getItem(storageKey);
+        } catch {
+            return null;
         }
+    };
 
-        // 4. Salva a escolha para a próxima visita
-        localStorage.setItem('theme', theme);
+    const saveTheme = (theme) => {
+        try {
+            localStorage.setItem(storageKey, theme);
+        } catch {
+            // Navegadores podem bloquear storage em modo privado ou políticas restritas.
+        }
+    };
+
+    const setTheme = (theme, shouldPersist = false) => {
+        const isLight = theme === 'light';
+
+        body.classList.toggle('light-mode', isLight);
+        themeBtn.textContent = isLight ? '🌙' : '☀️';
+        themeBtn.setAttribute('aria-label', isLight ? 'Ativar tema escuro' : 'Ativar tema claro');
+        themeBtn.setAttribute('title', isLight ? 'Ativar tema escuro' : 'Ativar tema claro');
+
+        if (shouldPersist) {
+            saveTheme(theme);
+        }
+    };
+
+    // Preferência salva tem prioridade; sem ela, usa a configuração do sistema.
+    const initialTheme = getSavedTheme() || (prefersLight.matches ? 'light' : 'dark');
+
+    setTheme(initialTheme);
+
+    themeBtn.addEventListener('click', () => {
+        const nextTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
+        setTheme(nextTheme, true);
     });
 });

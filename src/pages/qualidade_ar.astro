@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const base = import.meta.env.BASE_URL;
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
 ---
 
 <Layout title="Sampa 4u | Qualidade do Ar">
@@ -68,28 +68,6 @@ const base = import.meta.env.BASE_URL;
   <hr />
   <div id="dynamic-systems-info"></div>
   <hr />
-
-  <section class="about">
-    <div class="info-container">
-      <h2>Desenvolvimento e Transparência</h2>
-      <p>
-        Os dados de Qualidade do Ar são processados em tempo real via API do
-        World Air Quality Index (WAQI), integrando estações da CETESB e redes colaborativas.
-      </p>
-      <div class="actions" style="margin-bottom: 20px;">
-        <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
-          <img
-            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
-            alt="github"
-          />
-        </a>
-      </div>
-      <p>
-        <strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de
-        integração contínua.
-      </p>
-    </div>
-  </section>
 
   <script>
     import { loadAQIData, setupAQIControls } from "../lib/qualidade_ar";

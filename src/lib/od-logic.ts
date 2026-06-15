@@ -271,8 +271,6 @@ function extrairDadosLegado(rows: unknown[][]): DataRow[] {
   }
   if (headerRow === -1) return [];
 
-  // Tab03_1997 tem cabeçalho em DUAS linhas (r7 parcial + r8 com nomes reais)
-  // Detecta: se próxima linha tem MAIS strings preenchidas que a atual
   const currRow = rows[headerRow] as unknown[];
   const nextRow = (rows[headerRow + 1] as unknown[]) ?? [];
   const currStrings = currRow.filter((c) => typeof c === "string" && (c as string).trim().length > 0).length;
@@ -283,14 +281,11 @@ function extrairDadosLegado(rows: unknown[][]): DataRow[] {
   let dataStart: number;
 
   if (nextCol0IsString && nextStrings > currStrings) {
-    // Cabeçalho duplo (Tab03_1997): r_next tem os nomes reais das colunas
-    // Usa r_next como base, preenchendo vazios com r_curr
     const r1 = currRow.map((h) => h?.toString().trim() ?? "");
     const r2 = nextRow.map((h) => h?.toString().trim() ?? "");
     headers   = r2.map((b, i) => b || r1[i] || `col_${i}`);
     dataStart = headerRow + 2;
   } else {
-    // Cabeçalho simples (Tab04, Tab02, Tab06, etc.): usa a linha atual
     headers   = currRow.map((h) => h?.toString().trim() ?? "");
     dataStart = headerRow + 1;
   }

@@ -10,27 +10,75 @@ const AQI_COLORS = [
 ];
 
 const ICONS = [
-'air',
-'cloud',
-'aq_indoor',
-'humidity_percentage'
-]
+  "air",
+  "cloud",
+  "aq_indoor",
+  "humidity_percentage",
+];
+
+const CONFIG = {
+  startY: 40,
+  spacing: 55,
+  baseIconSize: 18,
+  iconSizeVariation: 6,
+  baseDuration: 6,
+  durationStep: 1.2,
+  delayStep: 0.8,
+};
 
 export function initHeroAqi(): void {
   const canvas = document.getElementById("aqi-canvas");
+
   if (!canvas) return;
 
-  AQI_COLORS.forEach((color, i) => {
-    const y = 40 + i * 55;
+  AQI_COLORS.forEach((color, index) => {
+    const y = CONFIG.startY + index * CONFIG.spacing;
 
-    const track = document.createElement("div");
-    track.style.cssText = `position:absolute;left:0;right:0;top:${y}px;height:2px;background:${color};opacity:.12;`;
-    canvas.appendChild(track);
-
-    const pkg = document.createElement("span");
-    pkg.className = "material-symbols-outlined";
-    pkg.textContent = ICONS[i % ICONS.length];
-    pkg.style.cssText = `position:absolute;top:${y - 12}px;font-size:${18 + (i % 3) * 6}px;color:${color};opacity:.6;animation:bus-run ${6 + i * 1.2}s linear infinite;animation-delay:${-i * 0.8}s;`;
-    canvas.appendChild(pkg);
+    createTrack(canvas, y, color);
+    createAnimatedIcon(canvas, y, color, index);
   });
+}
+
+function createTrack(
+  container: HTMLElement,
+  y: number,
+  color: string
+): void {
+  const track = document.createElement("div");
+
+  track.className = "aqi-track";
+  track.style.top = `${y}px`;
+  track.style.setProperty("--aqi-color", color);
+
+  container.appendChild(track);
+}
+
+function createAnimatedIcon(
+  container: HTMLElement,
+  y: number,
+  color: string,
+  index: number
+): void {
+  const icon = document.createElement("span");
+
+  icon.className = "material-symbols-outlined aqi-icon";
+  icon.textContent = ICONS[index % ICONS.length];
+
+  icon.setAttribute("aria-hidden", "true");
+
+  icon.style.fontSize = `${
+    CONFIG.baseIconSize +
+    (index % 3) * CONFIG.iconSizeVariation
+  }px`;
+
+  icon.style.top = `${y - 12}px`;
+  icon.style.setProperty("--aqi-color", color);
+
+  icon.style.animationDuration =
+    `${CONFIG.baseDuration + index * CONFIG.durationStep}s`;
+
+  icon.style.animationDelay =
+    `${-index * CONFIG.delayStep}s`;
+
+  container.appendChild(icon);
 }

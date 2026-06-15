@@ -85,7 +85,6 @@ export function initDemanda(): void {
   const linhaSel = document.getElementById("linha-filter") as HTMLSelectElement | null;
   if (!anoSel || !linhaSel) return;
 
-  // Popula selects uma única vez
   if (anoSel.options.length === 0) {
     ANOS.forEach((ano) => anoSel.add(new Option(ano, ano)));
   }
@@ -109,7 +108,6 @@ async function loadAllData(): Promise<void> {
   const pathLeve   = `${BASE_URL}/data/Passageiros Transportados por Linha - ${ano}.csv`;
   const pathPesado = `${BASE_URL}/data/Entrada de Passageiros por Estação - Diária - ${ano}.csv`;
 
-  // Carrega os dois CSVs em paralelo — antes era sequencial (callback dentro de callback)
   const [resLeve, resPesado] = await Promise.all([
     parseCsv(pathLeve),
     parseCsv(pathPesado),
@@ -121,7 +119,6 @@ async function loadAllData(): Promise<void> {
   updateUI(globalData, ranking, linhaId);
 }
 
-// Wrapper para Papa.parse com Promise
 function parseCsv(path: string): Promise<string[][]> {
   return new Promise((resolve) => {
     Papa.parse(path, {

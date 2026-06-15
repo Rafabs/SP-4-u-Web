@@ -1,3 +1,10 @@
+:root{
+  --color-primary: #ed1c24; 
+  --color-text-secondary: #666; 
+  --color-border: #ddd;
+
+}
+
 /* --- Área de Resultados (Grid) --- */
 #result-area {
   display: grid;
@@ -83,7 +90,7 @@
 /* --- Corpo do Card --- */
 .route-full-name {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--text-secondary);
   margin-bottom: 12px;
   line-height: 1.4;
 }
@@ -173,7 +180,7 @@
 }
 
 .clear-icon:hover {
-  color: #ed1c24;
+  color: var(--color-primary);
   transform: scale(1.2);
 }
 
@@ -182,26 +189,29 @@
   padding: 14px 45px 14px 45px;
   /* Espaço para ícones em ambos os lados */
   font-size: 1rem;
-  border: 2px solid #ddd;
+  border: 2px solid var(--color-border);
   border-radius: 50px;
-  outline: none;
+  outline: 2px solid var(--color-primary); 
+  outline-offset: 2px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  transition: 
+    border-color 0.3s ease, 
+    box-shadow 0.3s ease;
 }
 
 #lineSearch:focus {
-  border-color: #ed1c24;
+  border-color: var(--color-primary);
   box-shadow: 0 4px 12px rgba(237, 28, 36, 0.2);
 }
 
 #lineSearch:focus + .search-icon {
-  color: #ed1c24;
+  color: var(--color-primary);
 }
 
 /* --- Contador de Linhas --- */
 #line-counter {
   text-align: center;
-  color: #666;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   font-weight: 500;
 }
@@ -238,6 +248,27 @@
   pointer-events: none;
   z-index: 1;
   overflow: hidden;
+}
+
+.hero-route-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+
+  background: var(--hero-color);
+  opacity: 0.12;
+}
+
+.hero-route-icon {
+  position: absolute;
+
+  color: var(--hero-color);
+  opacity: 0.6;
+
+  animation-name: bus-run;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 @keyframes bus-run {

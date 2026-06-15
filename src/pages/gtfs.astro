@@ -1,8 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { historyData } from "../data/gtfs_history";
-
-const base = import.meta.env.BASE_URL;
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
 
 const recentes = historyData.filter((item) => item.recente);
 const todos = historyData;
@@ -14,9 +13,8 @@ function badgeUrl(linha: string, cor: string): string {
 ---
 
 <Layout title="Sampa 4u | Histórico de Linhas">
-  <link rel="stylesheet" href={`${base}/gtfs.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}gtfs.css`} slot="head" />
 
-  <!-- HERO -->
   <section class="hero hero-gtfs">
     <div class="hero-bg">
       <div class="hero-grid"></div>
@@ -112,8 +110,8 @@ function badgeUrl(linha: string, cor: string): string {
   <div id="dynamic-systems-info"></div>
   <hr />
 
-<script>
-  import { initHeroGtfs } from "../lib/hero-gtfs";
-  initHeroGtfs();
-</script>
+  <script>
+    import { initHeroGtfs } from "../lib/hero-gtfs";
+    initHeroGtfs();
+  </script>
 </Layout>

@@ -1,32 +1,66 @@
-    .hero-ciclo .hero-lines {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        pointer-events: none;
-        z-index: 1;
-        overflow: hidden;
+/* Camada visual do hero: mantém trilhas e ícones fora do fluxo da página. */
+.hero-ciclo .hero-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-ciclo .hero-lines > .material-symbols-outlined {
+    left: 0;
+    will-change: transform, opacity;
+}
+
+.hero-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+
+  background: var(--hero-color);
+  opacity: 0.12;
+}
+
+.hero-moving-icon {
+  position: absolute;
+
+  color: var(--hero-color);
+  opacity: 0.6;
+
+  animation-name: bus-run;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bus-run {
+    0% {
+        transform: translateX(-40px);
+        opacity: 0;
     }
 
-    @keyframes bus-run {
-        0% {
-            left: -40px;
-            opacity: 0;
-        }
-
-        5% {
-            opacity: .6;
-        }
-
-        95% {
-            opacity: .6;
-        }
-
-        100% {
-            left: 110%;
-            opacity: 0;
-        }
+    5%,
+    95% {
+        opacity: .6;
     }
 
+    100% {
+        transform: translateX(calc(100vw + 40px));
+        opacity: 0;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
     html {
-        scroll-behavior: smooth;
+        scroll-behavior: auto;
     }
+
+    .hero-ciclo .hero-lines > * {
+        animation: none;
+    }
+}

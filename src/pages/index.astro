@@ -5,7 +5,7 @@ import { dadosLinhas } from "../data/linhas";
 import roadmapData from "../data/roadmap";
 
 const latest = roadmapData.historico[0];
-const base = import.meta.env.BASE_URL;
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
 ---
 
 <Layout title="Sampa 4u | Início">

@@ -1,3 +1,9 @@
+:root {
+    --accent-blue: #1a3aff;
+    --accent-blue-light: #6ea8ff;
+    --accent-blue-hover: #4d80ff;
+}
+
 .external-link {
   display: inline-flex;
   align-items: center;
@@ -6,16 +12,20 @@
   background: rgba(26, 58, 255, 0.1);
   border: 1px solid rgba(26, 58, 255, 0.3);
   border-radius: 4px;
-  color: #6ea8ff;
+  color: var(--accent-blue-light);
   text-decoration: none;
   font-family: "Share Tech Mono", monospace;
   font-size: 14px;
-  transition: all 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .external-link:hover {
   background: rgba(26, 58, 255, 0.2);
-  border-color: #4d80ff;
+  border-color: var(--accent-blue-hover);
   color: #fff;
   box-shadow: 0 0 15px rgba(26, 58, 255, 0.4);
 }
@@ -39,6 +49,24 @@
     pointer-events: none;
     z-index: 1;
     overflow: hidden;
+}
+
+.hero-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--hero-color);
+  opacity: 0.12;
+}
+
+.hero-moving-icon {
+  position: absolute;
+  color: var(--hero-color);
+  opacity: 0.6;
+  animation-name: bus-run;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 @keyframes bus-run {

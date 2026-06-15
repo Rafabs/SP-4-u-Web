@@ -1,30 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const base = import.meta.env.BASE_URL;
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
 ---
 
 <Layout title="Sampa 4u | Ciclovias">
-  <link rel="stylesheet" href={`${base}/map.css`} slot="head" />
-  <link rel="stylesheet" href={`${base}/ciclovia.css`} slot="head" />
-  <link rel="stylesheet" href={`${base}/leaflet.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}map.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}ciclovia.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}leaflet.css`} slot="head" />
 
-  <!-- HERO -->
-  <section class="hero hero-ciclo">
-    <div class="hero-bg">
+  <section class="hero hero-ciclo" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true">
       <div class="hero-grid"></div>
     </div>
 
-    <div class="hero-lines" id="ciclo-canvas"></div>
+    <div class="hero-lines" id="ciclo-canvas" aria-hidden="true"></div>
 
     <div class="hero-content">
       <div class="hero-tag">Mobilidade Ativa · São Paulo</div>
-      <h1 class="hero-h1">Rede Cicloviária<br><span style="color:#32e622;">de São Paulo</span></h1>
+      <h1 class="hero-h1" id="hero-title">Rede Cicloviária<br><span style="color:#32e622;">de São Paulo</span></h1>
       <p class="hero-sub">
         Explore ciclovias, ciclofaixas e bicicletários da cidade de São Paulo
         com dados do GeoSampa — Prefeitura de São Paulo.
       </p>
       <div class="hero-ctas">
-        <a href="#map" class="btn-hero-primary" style="background:#32e622;color:#0a0a0f;">Ver Mapa</a>
+        <a href="#map" class="btn-hero-primary" style="background:#32e622; color:#0a0a0f;">Ver Mapa</a>
       </div>
       <div class="hero-stats">
         <div class="stat" style="border-color:#32e622;">
@@ -45,36 +44,19 @@ const base = import.meta.env.BASE_URL;
 
   <hr />
 
-  <div class="map-wrapper" id="map-wrapper">
+  <div class="map-wrapper" id="map-wrapper" role="region" aria-label="Mapa Interativo da Rede Cicloviária">
     <div id="map"></div>
-    <div id="map-controls" class="custom-controls">
-      <h3>Camadas</h3>
+    
+    <section id="map-controls" class="custom-controls" aria-labelledby="controls-title">
+      <h3 id="controls-title">Camadas</h3>
       <label><input type="checkbox" id="check-ciclo" /> Ciclovias</label>
       <label><input type="checkbox" id="check-bike" /> Bicicletários</label>
-    </div>
+    </section>
   </div>
 
   <hr />
   <div id="dynamic-systems-info"></div>
   <hr />
-
-  <section class="about">
-    <div class="info-container">
-      <h2>Desenvolvimento e Transparência</h2>
-      <div class="actions" style="margin-bottom: 20px;">
-        <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
-          <img
-            src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
-            alt="github"
-          />
-        </a>
-      </div>
-      <p>
-        <strong>Status do Build:</strong> Todas as atualizações seguem o fluxo de
-        integração contínua.
-      </p>
-    </div>
-  </section>
 
   <script>
     import { loadMapData } from "../lib/map-logic";

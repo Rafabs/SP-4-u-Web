@@ -1,10 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const base = import.meta.env.BASE_URL;
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
 ---
 
 <Layout title="Carregando Detalhes... | Sampa 4u">
-  <link rel="stylesheet" href={`${base}/lines.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}lines.css`} slot="head" />
 
   <main>
     <div class="lines">
@@ -38,7 +38,6 @@ const base = import.meta.env.BASE_URL;
       </div>
     </div>
 
-    <!-- NAVEGADOR DE LINHAS -->
     <div class="line-switcher-section"></div>
     <div class="line-switcher-grid" id="line-switcher-grid"></div>
     <div class="switcher-arrows">
@@ -48,7 +47,7 @@ const base = import.meta.env.BASE_URL;
     </div>
 
     <div style="text-align: center; margin-top: 40px; padding-bottom: 40px;">
-      <a href={`${base}/`} style="text-decoration: none;">
+      <a href={`${base}`} style="text-decoration: none;">
         <button class="btn-back">Voltar para o Início</button>
       </a>
     </div>

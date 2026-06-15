@@ -1,173 +1,165 @@
-    .main-content-overlap {
-        max-width: 1100px;
-        margin: -80px auto 40px;
-        padding: 0 20px;
-        position: relative;
-        z-index: 10;
-    }
+:root {
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  --accent-red-strong: #e8000f;
+  --status-success: #34C759;
+}
 
-.area-group {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+.main-content-overlap {
+  max-width: 1100px;
+  margin: -80px auto 40px;
+  padding: 0 var(--radius-xl);
+  position: relative;
+  z-index: 10;
 }
 
 .area-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .area-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    box-shadow: 0 0 10px currentColor;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.modern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.area-group {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.area-group:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-red-strong);
+}
+
+.area-badge {
+  background: var(--accent-red-strong);
+  color: white;
+  width: fit-content;
+  padding: 4px var(--radius-lg);
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: var(--radius-xl);
+}
+
+.companies-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--radius-lg);
+  flex-grow: 1;
+}
+
+.company-item {
+  display: flex;
+  gap: var(--radius-lg);
+  align-items: center;
+  padding-bottom: var(--radius-lg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .company-code {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 800;
-    font-size: 0.75rem;
-    padding: 2px 6px;
-    border-radius: 4px;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid;
+  background: var(--status-success);
+  color: var(--text-primary);
+  font-family: monospace;
+  font-size: 0.7rem;
+  padding: 4px var(--radius-md);
+  border-radius: var(--radius-sm);
+  min-width: 35px;
+  text-align: center;
+}
+
+.company-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .company-name {
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: 0.8rem;
-    color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.company-tag {
+  font-size: 0.65rem;
+  color: var(--company-tag);
+  font-weight: bold;
 }
 
 .area-footer {
-    font-size: 0.7rem;
-    color: var(--text-secondary);
-    border-top: 1px solid var(--border-color);
-    padding-top: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  margin-top: var(--radius-xl);
+  padding-top: 15px;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: bold;
 }
-    
-    .modern-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 24px;
-    }
 
-    .area-group {
-        background: var(--bg-card);
-        border: 1px solid var(--border-color);
-        border-radius: 16px;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        transition: transform 0.3s ease;
-    }
+.hero-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0.4;
+}
 
-    .area-group:hover {
-        transform: translateY(-5px);
-        border-color: #e8000f;
-    }
+.hero-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--hero-color);
+  opacity: 0.12;
+}
 
-    .area-badge {
-        background: #e8000f;
-        color: white;
-        width: fit-content;
-        padding: 4px 12px;
-        border-radius: 8px;
-        font-weight: 800;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-    }
+.hero-moving-icon {
+  position: absolute;
+  color: var(--hero-color);
+  opacity: 0.6;
+  animation-name: bus-run;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
 
-    .companies-stack {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        flex-grow: 1;
-    }
+@keyframes bus-run {
+  0% {
+    left: -50px;
+    opacity: 0;
+  }
 
-    .company-item {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-        padding-bottom: 12px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
+  10% {
+    opacity: 0.6;
+  }
 
-    .company-code {
-        background: var(--code-color);
-        color: var(--text-primary);
-        font-family: monospace;
-        font-size: 0.7rem;
-        padding: 4px 8px;
-        border-radius: 4px;
-        min-width: 35px;
-        text-align: center;
-    }
+  90% {
+    opacity: 0.6;
+  }
 
-    .company-info {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .company-name {
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: var(--text-primary);
-        line-height: 1.2;
-    }
-
-    .company-tag {
-        font-size: 0.65rem;
-        color: #34C759;
-        font-weight: bold;
-    }
-
-    .area-footer {
-        margin-top: 20px;
-        padding-top: 15px;
-        border-top: 1px solid var(--border-color);
-        font-size: 0.75rem;
-        color: var(--text-secondary);
-        font-weight: bold;
-    }
-
-    .hero-lines {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        pointer-events: none;
-        z-index: 1;
-        overflow: hidden;
-        opacity: 0.4;
-    }
-
-    @keyframes bus-run {
-        0% {
-            left: -50px;
-            opacity: 0;
-        }
-
-        10% {
-            opacity: 0.6;
-        }
-
-        90% {
-            opacity: 0.6;
-        }
-
-        100% {
-            left: 110%;
-            opacity: 0;
-        }
-    }
+  100% {
+    left: 110%;
+    opacity: 0;
+  }
+}

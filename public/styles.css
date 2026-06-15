@@ -11,6 +11,7 @@
     --border-color: #333333;
     --code-color: #3d3d3d;
     --p-color: #ffffff;
+    --success-color: #32e622;
     --hr-gradient: linear-gradient(90deg, transparent, #333333, transparent);
     
     /* Cores de Status Operacional */
@@ -83,8 +84,8 @@ a {
    ========================================================================== */
 header {
     position: relative;
-    background: linear-gradient(180deg, var(--header-red) 0%, #1a0000 100%);
-    padding: 0.8rem 2rem; /* Reduzi um pouco o padding vertical */
+    background: linear-gradient(180deg, var(--header-red) 0%);
+    padding: 0.8rem 2rem; 
     z-index: 1100;
     border-bottom: 2px solid #4a0000;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
@@ -103,38 +104,38 @@ header {
 
 .nav-menu {
     display: flex;
-    gap: 25px; /* Aumentei o espaço entre os botões */
+    gap: 25px; 
     align-items: center;
 }
 
 .nav-menu a {
     display: flex;
-    flex-direction: column; /* COLOCA O ÍCONE EM CIMA */
-    align-items: center;    /* CENTRALIZA HORIZONTALMENTE */
+    flex-direction: column;
+    align-items: center;    
     justify-content: center;
-    gap: 4px;              /* ESPAÇO PEQUENO ENTRE ÍCONE E TEXTO */
+    gap: 4px;             
     text-decoration: none;
     transition: all 0.3s ease;
-    min-width: 65px;        /* GARANTE QUE O BOTÃO TENHA UMA ÁREA CLICÁVEL BOA */
+    min-width: 65px;      
 }
 
 .nav-menu a:hover {
     transform: translateY(-3px);
 }
 .nav-menu a .material-symbols-outlined {
-    font-size: 28px;        /* TAMANHO DO ÍCONE MAIOR E BACANA */
-    color: var(--text-secondary); /* COR INICIAL MAIS SUAVE */
+    font-size: 28px;        
+    color: var(--text-secondary);
     transition: color 0.3s;
 }
 
 .nav-menu a:hover .material-symbols-outlined,
 .nav-menu a.active-link .material-symbols-outlined {
-    color: #ff3333;         /* DESTAQUE NO HOVER E LINK ATIVO */
-    font-variation-settings: 'FILL' 1; /* OPCIONAL: PREENCHE O ÍCONE NO HOVER */
+    color: var(--p-color);         
+    font-variation-settings: 'FILL' 1;
 }
 
 .nav-menu a span {
-    font-size: 0.65rem;     /* TEXTO UM POUCO MENOR PARA HARMONIZAR */
+    font-size: 0.65rem;     
     font-weight: 700;
     text-transform: capitalize;
     letter-spacing: 0.8px;
@@ -148,7 +149,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    background: #fff;
+    background: var(--p-color); 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -163,19 +164,17 @@ header {
     color: #333;
     display: flex;
     align-items: center;
-    gap: 5px; /* Espaço entre ícone e texto */
+    gap: 5px; 
     font-weight: 500;
 }
 
 .nav-links a.active {
-    color: #ed1c24; /* Destaque para página atual */
+    color: #ed1c24; 
 }
 
-/* Garante que o ícone do Google alinhe com o texto */
 .material-symbols-outlined {
-    font-size: 24px; /* Tamanho padrão */
+    font-size: 24px; 
     vertical-align: middle;
-    /* Opcional: define a espessura do ícone */
     font-variation-settings: 'wght' 400; 
 }   
 
@@ -266,11 +265,11 @@ header {
 
 /* Empresa */
 .line-list li .empresa {
-    display: flex;            /* garante flex */
-    align-items: center;      /* centraliza verticalmente */
-    justify-content: flex-start; /* alinha à esquerda */
+    display: flex;            
+    align-items: center;     
+    justify-content: flex-start; 
     text-align: right;       
-    margin-right: 8px;        /* espaço entre empresa e operação */
+    margin-right: 8px;      
 }
 
 /* Operação */
@@ -406,7 +405,7 @@ header {
     min-height: 420px;
     position: relative;
     overflow: hidden;
-    max-width: 100%;  /* ← mantém full width para o fundo */
+    max-width: 100%;  
 }
 
 .hero-bg { position: absolute; inset: 0; pointer-events: none; }
@@ -423,9 +422,9 @@ header {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 1100px;  /* ← igual às outras sections */
-    margin: 0 auto;     /* ← centraliza */
-    padding: 0 20px;    /* ← respiro lateral igual às sections */
+    max-width: 1100px;  
+    margin: 0 auto;   
+    padding: 0 20px;   
 }
 .hero-tag {
     font-family: 'Courier New', monospace;
@@ -445,6 +444,14 @@ header {
     background: var(--text-secondary);
 }
 
+.line-track {
+  background: var(--line-color);
+}
+
+.line-dot {
+  background: var(--line-color);
+}
+
 .hero-h1 {
     font-size: clamp(32px, 5vw, 52px);
     font-weight: 800;
@@ -453,7 +460,7 @@ header {
     margin: 0 0 20px;
     letter-spacing: -1px;
 }
-.hero-h1 span { color: #32e622; }
+.hero-h1 span { color: var(--success-color); }
 
 .hero-sub {
     font-family: 'Courier New', monospace;
@@ -472,7 +479,7 @@ header {
 }
 
 .btn-hero-primary {
-    background: #32e622;
+    background: var(--success-color);
     color: #0a0a0f;
     font-family: 'Courier New', monospace;
     font-size: 12px;
@@ -510,7 +517,7 @@ header {
     flex-wrap: wrap;
 }
 .stat {
-    border-left: 2px solid #32e622;
+    border-left: 2px solid var(--success-color);
     padding-left: 14px;
 }
 .stat-val {
@@ -605,14 +612,13 @@ header {
 }
 
 #backToTop {
-    bottom: 75px; /* Ajustado para um respiro simétrico de 10px entre eles */
+    bottom: 75px;
     background-color: var(--border-color);
     color: white;
     font-size: 1.1rem;
-    display: none; /* Controlado pelo JS */
+    display: none; 
 }
 
-/* Hover Unificado */
 .theme-toggle:hover, #backToTop:hover {
     transform: scale(1.1);
 }
@@ -634,23 +640,23 @@ footer {
 /* Links do Rodapé */
 .footer-links { 
     display: flex; 
-    gap: 30px; /* Mais espaçamento entre os links */
+    gap: 30px; 
 }
 
 .footer-links a {
-    font-size: 13px; /* Um tiquinho menor fica mais minimalista e elegante */
+    font-size: 13px;
     color: rgba(255, 80, 80, 0.6); 
     letter-spacing: 1.5px;
-    text-transform: uppercase; /* Deixa o visual mono mais padrão "terminal" */
+    text-transform: uppercase;
     text-decoration: none; 
-    border-bottom: 1px solid transparent; /* Evita o "pulo" visual no hover */
+    border-bottom: 1px solid transparent;
     padding-bottom: 4px;
     transition: color 0.25s ease, border-color 0.25s ease, opacity 0.25s ease;
 }
 
 .footer-links a:hover { 
     color: #ffffff; 
-    border-color: var(--accent-red); /* Usa sua variável padrão de destaque */
+    border-color: var(--accent-red); 
 }
 
 /* Área das Badges (Shields/Tecnologias) */
@@ -658,21 +664,21 @@ footer {
     display: flex; 
     flex-wrap: wrap; 
     justify-content: center; 
-    gap: 10px; /* Mais espaço entre as imagens */
+    gap: 10px; 
     margin-top: 5px;
 }
 
 .footer-badges img { 
-    height: 16px; /* 10px costuma ficar ilegível; 16px é o tamanho perfeito para badges inline */
-    opacity: 0.5; /* Fica mais discreto por padrão, integrando-se ao fundo */
-    filter: grayscale(0.3) brightness(0.9); /* Suaviza as cores para não brigar com seu layout */
+    height: 16px; 
+    opacity: 0.5;
+    filter: grayscale(0.3) brightness(0.9); 
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-badges img:hover { 
     opacity: 1; 
-    filter: grayscale(0) brightness(1); /* Devolve a cor original ao passar o mouse */
-    transform: translateY(-2px); /* Efeito clássico flutuante */
+    filter: grayscale(0) brightness(1); 
+    transform: translateY(-2px); 
 }
 
 /* ── DEV CARD ── */
@@ -711,7 +717,7 @@ footer {
 .sys { font-size: 9px; color: rgba(255, 100, 100, 0.6); letter-spacing: 3px; }
 .dots span {
   display: inline-block; width: 5px; height: 5px; border-radius: 50%;
-  background: #1aff39; margin-left: 5px; animation: blink-d 1.3s infinite;
+  background: var(--success-color); margin-left: 5px; animation: blink-d 1.3s infinite;
 }
 .dots span:nth-child(2) { animation-delay: .2s; }
 .dots span:nth-child(3) { animation-delay: .4s; }
@@ -783,11 +789,11 @@ footer {
 .card-bottom span { font-size: 9px; color: rgba(255, 100, 100, 0.4); letter-spacing: 2px; }
 
 .menu-toggle {
-    display: none; /* Escondido no desktop */
+    display: none; 
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
-    height: 21px; /* Altura fixa para dar espaço entre as linhas */
+    height: 21px; 
     background: transparent;
     border: none;
     cursor: pointer;
@@ -798,7 +804,7 @@ footer {
     display: block;
     width: 100%;
     height: 3px;
-    background-color: var(--text-primary); /* Cor dinâmica baseada no tema */
+    background-color: var(--text-primary);
     border-radius: 3px;
     transition: all 0.3s ease;
 }
@@ -807,17 +813,6 @@ footer {
 /* --- ESTILOS DE INTERAÇÃO (Geral) --- */
 .theme-toggle:hover {
     transform: scale(1.1);
-}
-
-.footer-badges img {
-    height: 25px;
-    transition: filter 0.3s, transform 0.3s;
-    filter: grayscale(0.4);
-}
-
-.footer-badges img:hover {
-    filter: grayscale(0);
-    transform: scale(1.05);
 }
 
 /* ==========================================================================
@@ -977,7 +972,6 @@ footer {
     padding-top: 12px;
 }
 
-/* Cores dinâmicas para o Badge do Modal (reutilizando suas variáveis) */
 .status-modal-badge.verde_operacao_normal { 
     background: var(--status-green-bg); color: var(--status-green-text); 
     border: 1px solid #00ff1e33;
@@ -992,10 +986,10 @@ footer {
 }
 
 .status-modal-close {
-    position: relative; /* Garante que o z-index funcione */
-    z-index: 3100;      /* Maior que a box */
-    cursor: pointer !important; /* Força o cursor de clique */
-    pointer-events: auto; /* Garante que aceite cliques */
+    position: relative; 
+    z-index: 3100;      
+    cursor: pointer !important; 
+    pointer-events: auto;
 }
 
 /* Responsividade do Modal */
@@ -1056,7 +1050,7 @@ footer {
     }
 
     .menu-toggle {
-        display: flex !important; /* Força a exibição no mobile */
+        display: flex !important; 
         flex-direction: column;
         justify-content: space-between;
         width: 30px;
@@ -1065,10 +1059,9 @@ footer {
         border: none;
         cursor: pointer;
         padding: 0;
-        z-index: 1600; /* Garante que fique em cima de tudo */
+        z-index: 1600; 
     }
 
-    /* Efeito de X quando o menu estiver aberto (Opcional, mas bacana) */
     .menu-toggle.open span:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
     }
@@ -1103,7 +1096,6 @@ footer {
         padding: 10px 0;
     }
 
-    /* Ajuste da Lista de Linhas (Grid Mobile) */
     .line-list li {
         grid-template-columns: 16px 70px 1fr;
         grid-template-areas:
@@ -1144,7 +1136,7 @@ footer {
     .contact-item a {
         justify-self: center;
         text-align: center;
-        justify-content: center; /* Alinha o texto e o .inline-icon horizontalmente */
+        justify-content: center;
     }
 
     .contact-item span {
@@ -1179,41 +1171,38 @@ footer {
 
     .footer-content {
         flex-direction: column;
-        gap: 22px; /* Espaço ideal entre o texto/links e o bloco de badges */
+        gap: 22px; 
         text-align: center;
         width: 100%;        
         max-width: 100%;    
     }
 
-    /* Força os links a quebrarem em lista ou se organizarem melhor em telas estreitas */
     .footer-links {
         flex-direction: column; 
-        gap: 14px; /* Espaço confortável para o clique do dedo (touch target) */
+        gap: 14px; 
         align-items: center;
     }
 
     .footer-links a {
-        font-size: 13px; /* Mantém o tamanho minimalista do desktop */
-        padding: 3px 6px; /* Área de clique expandida para facilitar o toque no celular */
+        font-size: 13px; 
+        padding: 3px 6px; 
     }
 
     .footer-badges {
         display: flex;
         flex-wrap: wrap;    
         justify-content: center;
-        gap: 5px; /* Um pouco mais de respiro caso elas quebrem linha */
+        gap: 5px; 
         width: 100%;
-        max-width: 280px; /* Evita que uma linha mobile fique com badges demais espalhadas */
+        max-width: 280px; 
         margin: 0 auto;
     }
 
     .footer-badges img {
-        /* No mobile, usamos height em vez de max-width para manter as badges */
-        /* proporcionais às fontes, já que o layout global mudou para height: 16px */
         height: 15px; 
-        max-width: unset; /* Reseta o valor antigo */
+        max-width: unset;
         width: auto;
-        opacity: 0.7; /* No mobile, deixamos um pouco mais visível que no desktop por falta do hover padrão */
+        opacity: 0.7; 
     }
 
     .figma-embed-wrapper {
@@ -1269,21 +1258,19 @@ footer {
 
 /* Estilo para ícones de links externos dentro de textos/listas */
 .inline-icon {
-    font-size: 14px !important; /* Tamanho reduzido para texto */
+    font-size: 14px !important; 
     vertical-align: middle;
     margin-left: 4px;
     opacity: 0.6;
     transition: opacity 0.2s, transform 0.2s;
 }
 
-/* Efeito ao passar o mouse no link pai */
 a:hover .inline-icon {
     opacity: 1;
-    color: var(--accent-red); /* Ou a cor de destaque que preferir */
+    color: var(--accent-red); 
     transform: translateY(-1px);
 }
 
-/* Ajuste específico para a lista de contatos para não quebrar o grid */
 .contact-item a {
     display: flex;
     align-items: center;

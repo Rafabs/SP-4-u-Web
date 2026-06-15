@@ -1,36 +1,78 @@
 (function () {
-  const texts = [
+  const TARGET_ID = 'tw-footer';
+  const CURSOR_CLASS = 'cur';
+  const TYPE_LINES = [
     'SP-4-U · TRANSPORTE METROPOLITANO',
     'CITYLINES.CO CONTRIBUTOR',
     'DADOS ABERTOS · MOBILIDADE URBANA',
   ];
 
-  let li = 0, ci = 0, del = false;
+  const TIMING = {
+    start: 700,
+    type: 52,
+    erase: 26,
+    hold: 1800,
+    next: 350,
+  };
+
+  function createTypewriter(el) {
+    const textNode = document.createTextNode('');
+    const cursor = document.createElement('span');
+    cursor.className = CURSOR_CLASS;
+
+    el.replaceChildren(textNode, cursor);
+
+    return {
+      setText(value) {
+        textNode.textContent = value;
+      },
+    };
+  }
 
   function init() {
-    const el = document.getElementById('tw-footer');
+    const el = document.getElementById(TARGET_ID);
     if (!el) return;
 
-    function type() {
-      const t = texts[li];
-      if (!del) {
-        ci++;
-        el.innerHTML = t.slice(0, ci) + '<span class="cur"></span>';
-        if (ci === t.length) { del = true; setTimeout(type, 1800); return; }
-        setTimeout(type, 52);
-      } else {
-        ci--;
-        el.innerHTML = t.slice(0, ci) + '<span class="cur"></span>';
-        if (ci === 0) { del = false; li = (li + 1) % texts.length; setTimeout(type, 350); return; }
-        setTimeout(type, 26);
-      }
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const writer = createTypewriter(el);
+
+    if (prefersReducedMotion) {
+      writer.setText(TYPE_LINES[0]);
+      return;
     }
 
-    setTimeout(type, 700);
+    let lineIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function tick() {
+      const currentLine = TYPE_LINES[lineIndex];
+      const nextText = currentLine.slice(0, charIndex);
+
+      writer.setText(nextText);
+
+      if (!isDeleting && charIndex === currentLine.length) {
+        isDeleting = true;
+        setTimeout(tick, TIMING.hold);
+        return;
+      }
+
+      if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        lineIndex = (lineIndex + 1) % TYPE_LINES.length;
+        setTimeout(tick, TIMING.next);
+        return;
+      }
+
+      charIndex += isDeleting ? -1 : 1;
+      setTimeout(tick, isDeleting ? TIMING.erase : TIMING.type);
+    }
+
+    setTimeout(tick, TIMING.start);
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', init, { once: true });
   } else {
     init();
   }

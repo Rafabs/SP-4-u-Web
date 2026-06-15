@@ -1,9 +1,5 @@
 import Papa from "papaparse";
 import { filterSptransLine } from "./map-logic";
-
-// ===============================
-// CONFIGURAÇÃO
-// ===============================
 const BASE_URL = import.meta.env.BASE_URL ?? "";
 
 // ===============================
@@ -62,6 +58,15 @@ let gtfsData: GTFSData | null = {
 let isLeavingPage = false;
 let currentRenderId = 0;
 
+function escapeHtml(str: string): string {
+  return str.replace(/[&<>"']/g, (match) => {
+    const escapes: Record<string, string> = {
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    };
+    return escapes[match];
+  });
+}
+
 // ===============================
 // INICIALIZAÇÃO
 // ===============================
@@ -76,7 +81,6 @@ export function initSptrans(): void {
 // ===============================
 function setupNavigationCleanup(): void {
   document.querySelectorAll("a").forEach((link) => {
-    // Ignora âncoras internas (#) — não são navegação de página
     const href = link.getAttribute("href") ?? "";
     if (href.startsWith("#")) return;
 
@@ -128,7 +132,7 @@ function setupSearch(): void {
       clearBtn.style.display = "none";
       searchInput.focus();
       renderAllLines();
-      filterSptransLine(null); // Import direto — sem window.filterSptransLine
+      filterSptransLine(null);
     });
   }
 }
@@ -137,14 +141,13 @@ function setupSearch(): void {
 // CARREGAMENTO GTFS
 // ===============================
 async function loadGTFSFiles(): Promise<void> {
-  const basePath = `${BASE_URL}/gtfs-sptrans/`;
+  const basePath = `${BASE_URL}/gtfs-sptrans/`.replace(/\/+$/, "/");
 
-  const files: { id: keyof GTFSData; name: string }[] = [
+  const files: { id: Exclude<keyof GTFSData, "agency">; name: string }[] = [
     { id: "fares", name: "fare_attributes.txt" },
     { id: "routes", name: "routes.txt" },
     { id: "trips", name: "trips.txt" },
     { id: "calendar", name: "calendar.txt" },
-    { id: "agency", name: "agency.txt" },
   ];
 
   const promises = files.map(
@@ -154,14 +157,9 @@ async function loadGTFSFiles(): Promise<void> {
           download: true,
           header: true,
           skipEmptyLines: true,
-          complete: (results: Papa.ParseResult<Record<string, string>>) => {
+          complete: (results: Papa.ParseResult<any>) => {
             if (isLeavingPage || !gtfsData) return resolve();
-            if (file.id === "agency") {
-              const url = results.data[0]?.agency_url ?? "";
-              gtfsData.agency = url.split("=")[1] ?? "Não identificada";
-            } else {
-              (gtfsData[file.id] as unknown[]) = results.data;
-            }
+            gtfsData[file.id] = results.data;
             resolve();
           },
           error: (err) => {
@@ -172,7 +170,25 @@ async function loadGTFSFiles(): Promise<void> {
       })
   );
 
-  await Promise.all(promises);
+  const agencyPromise = new Promise<void>((resolve) => {
+    Papa.parse(`${basePath}agency.txt`, {
+      download: true,
+      header: true,
+      skipEmptyLines: true,
+      complete: (results: Papa.ParseResult<Record<string, string>>) => {
+        if (isLeavingPage || !gtfsData) return resolve();
+        const url = results.data[0]?.agency_url ?? "";
+        gtfsData.agency = url.split("=")[1] ?? "Não identificada";
+        resolve();
+      },
+      error: (err) => {
+        console.error("Erro ao carregar agency.txt:", err);
+        resolve();
+      },
+    });
+  });
+
+  await Promise.all([...promises, agencyPromise]);
 
   if (!isLeavingPage && gtfsData) {
     renderAllLines();
@@ -184,8 +200,6 @@ async function loadGTFSFiles(): Promise<void> {
 // SELEÇÃO DE LINHA → MAPA
 // ===============================
 function selecionarLinhaDaBusca(routeId: string): void {
-  console.log("Tentando filtrar linha:", routeId);
-
   const checkSptrans = document.getElementById("check-sptrans") as HTMLInputElement | null;
   if (checkSptrans && !checkSptrans.checked) {
     checkSptrans.checked = true;
@@ -193,10 +207,8 @@ function selecionarLinhaDaBusca(routeId: string): void {
   }
 
   setTimeout(() => {
-    filterSptransLine(routeId); // Import direto — sem window.filterSptransLine
-
-    document.getElementById("map")
-      ?.scrollIntoView({ behavior: "smooth", block: "center" });
+    filterSptransLine(routeId);
+    document.getElementById("map")?.scrollIntoView({ behavior: "smooth", block: "center" });
   }, 800);
 }
 
@@ -210,13 +222,10 @@ function renderAllLines(filteredRoutes: GTFSRoute[] | null = null): void {
   currentRenderId++;
   const renderId = currentRenderId;
 
-  while (resultArea.firstChild) {
-    resultArea.removeChild(resultArea.firstChild);
-  }
+  resultArea.textContent = "";
 
   const routesToRender = filteredRoutes ?? gtfsData.routes;
 
-  // Cache Maps para performance O(1)
   const tripMap = new Map<string, GTFSTrip>();
   gtfsData.trips.forEach((t) => {
     if (!tripMap.has(t.route_id)) tripMap.set(t.route_id, t);
@@ -225,10 +234,9 @@ function renderAllLines(filteredRoutes: GTFSRoute[] | null = null): void {
   const calendarMap = new Map<string, GTFSCalendar>();
   gtfsData.calendar.forEach((c) => calendarMap.set(c.service_id, c));
 
-  // Tarifa única por fare_id "Ônibus" (diferença em relação à EMTU)
   const fare = gtfsData.fares.find((f) => f.fare_id === "Ônibus");
   const preco = fare
-    ? parseFloat(fare.price).toLocaleString("pt-br", {
+    ? parseFloat(fare.price).toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL",
       })
@@ -258,9 +266,14 @@ function renderAllLines(filteredRoutes: GTFSRoute[] | null = null): void {
         else if (service.saturday === "1" || service.sunday === "1") operacao = "Fins de Semana";
       }
 
-      const badgeColor = route.route_color || "333333";
-      const textColor = route.route_text_color || "FFFFFF";
-      const shortName = route.route_short_name || "";
+      const badgeColor = /^[0-9A-Fa-f]{6}$/.test(route.route_color ?? "") ? route.route_color : "333333";
+      const textColor = /^[0-9A-Fa-f]{6}$/.test(route.route_text_color ?? "") ? route.route_text_color : "FFFFFF";
+      
+      const shortName = escapeHtml(route.route_short_name ?? "");
+      const longName = escapeHtml(route.route_long_name ?? "");
+      const headsign = trip ? escapeHtml(trip.trip_headsign) : "Circular";
+      const agencyName = escapeHtml(gtfsData?.agency ?? "Não identificada");
+      const routeIdSafe = escapeHtml(route.route_id);
 
       const card = document.createElement("div");
       card.className = "line-card";
@@ -275,18 +288,18 @@ function renderAllLines(filteredRoutes: GTFSRoute[] | null = null): void {
             <span class="route-badge" style="background-color: #${badgeColor}; color: #${textColor}">
               ${shortName}
             </span>
-            <span class="line-destiny">${trip ? trip.trip_headsign : "Circular"}</span>
+            <span class="line-destiny">${headsign}</span>
           </div>
         </div>
         <div class="line-body">
-          <p class="route-full-name">${route.route_long_name}</p>
+          <p class="route-full-name">${longName}</p>
           <div class="info-grid">
             <p><strong>Operação:</strong> ${operacao}</p>
             <p><strong>Tarifa:</strong> ${preco}</p>
           </div>
         </div>
         <div class="line-footer">
-          <small>Agência: ${gtfsData!.agency} | ID: ${route.route_id}</small>
+          <small>Agência: ${agencyName} | ID: ${routeIdSafe}</small>
         </div>
       `;
 
@@ -316,9 +329,11 @@ function updateCounter(count: number): void {
     const searchSection = document.querySelector(".search-section");
     if (searchSection) searchSection.after(counter);
   }
+  
+  // Garantia do contador numérico sem risco XSS
   counter.innerHTML = `
     <p style="text-align:center; color:#666; margin-top:-20px; margin-bottom:20px;">
-      Exibindo <strong>${count}</strong> linhas encontrada(s)
+      Exibindo <strong>${Number(count).toLocaleString("pt-BR")}</strong> linhas encontrada(s)
     </p>
   `;
 }
@@ -329,10 +344,14 @@ function updateCounter(count: number): void {
 function updateVersionInfo(): void {
   const infoContainer = document.querySelector(".info-container");
   if (infoContainer && gtfsData?.agency) {
+    // Evita a criação duplicada da tag caso a função rode novamente
+    if (infoContainer.querySelector(".gtfs-version-tag")) return;
+
     const versionTag = document.createElement("p");
+    versionTag.className = "gtfs-version-tag";
     versionTag.style.fontSize = "0.8rem";
     versionTag.style.marginTop = "10px";
-    versionTag.innerHTML = `Base de dados: <strong>${gtfsData.agency}</strong>`;
+    versionTag.innerHTML = `Base de dados: <strong>${escapeHtml(gtfsData.agency)}</strong>`;
     infoContainer.appendChild(versionTag);
   }
 }

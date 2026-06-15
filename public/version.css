@@ -29,7 +29,7 @@ details.note {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     margin-top: 20px;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 details.note[open] {

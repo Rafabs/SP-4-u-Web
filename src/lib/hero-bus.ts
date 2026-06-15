@@ -1,31 +1,84 @@
+const DEFAULT_BUS_COLORS = [
+  "#e8000f",
+  "#cc0000",
+  "#ff3333",
+  "#ff6600",
+  "#e8000f",
+  "#aa0000",
+  "#ff4444",
+  "#dd1111",
+];
+
+const HERO_CONFIG = {
+  startY: 40,
+  spacing: 55,
+  baseIconSize: 18,
+  iconSizeVariation: 6,
+  baseDuration: 6,
+  durationStep: 1.2,
+  delayStep: 0.8,
+};
+
 export function initHeroBus(
   canvasId = "bus-routes-canvas",
-  colors = [
-    "#e8000f",
-    "#cc0000",
-    "#ff3333",
-    "#ff6600",
-    "#e8000f",
-    "#aa0000",
-    "#ff4444",
-    "#dd1111",
-  ],
+  colors = DEFAULT_BUS_COLORS,
   icon = "directions_bus",
 ): void {
   const canvas = document.getElementById(canvasId);
+
   if (!canvas) return;
 
-  colors.forEach((color, i) => {
-    const y = 40 + i * 55;
+  colors.forEach((color, index) => {
+    const y = HERO_CONFIG.startY + index * HERO_CONFIG.spacing;
 
-    const track = document.createElement("div");
-    track.style.cssText = `position:absolute;left:0;right:0;top:${y}px;height:2px;background:${color};opacity:.12;`;
-    canvas.appendChild(track);
-
-    const bus = document.createElement("span");
-    bus.className = "material-symbols-outlined";
-    bus.textContent = icon;
-    bus.style.cssText = `position:absolute;top:${y - 12}px;font-size:${18 + (i % 3) * 6}px;color:${color};opacity:.6;animation:bus-run ${6 + i * 1.2}s linear infinite;animation-delay:${-i * 0.8}s;`;
-    canvas.appendChild(bus);
+    createTrack(canvas, y, color);
+    createAnimatedIcon(canvas, y, color, icon, index);
   });
+}
+
+function createTrack(
+  container: HTMLElement,
+  y: number,
+  color: string,
+): void {
+  const track = document.createElement("div");
+
+  track.className = "hero-route-track";
+  track.style.top = `${y}px`;
+  track.style.setProperty("--hero-color", color);
+
+  container.appendChild(track);
+}
+
+function createAnimatedIcon(
+  container: HTMLElement,
+  y: number,
+  color: string,
+  iconName: string,
+  index: number,
+): void {
+  const icon = document.createElement("span");
+
+  icon.className =
+    "material-symbols-outlined hero-route-icon";
+
+  icon.textContent = iconName;
+  icon.setAttribute("aria-hidden", "true");
+
+  icon.style.top = `${y - 12}px`;
+
+  icon.style.fontSize = `${
+    HERO_CONFIG.baseIconSize +
+    (index % 3) * HERO_CONFIG.iconSizeVariation
+  }px`;
+
+  icon.style.setProperty("--hero-color", color);
+
+  icon.style.animationDuration =
+    `${HERO_CONFIG.baseDuration + index * HERO_CONFIG.durationStep}s`;
+
+  icon.style.animationDelay =
+    `${-index * HERO_CONFIG.delayStep}s`;
+
+  container.appendChild(icon);
 }

@@ -389,7 +389,7 @@ export function setupLayerControls(): void {
   // Camadas GTFS — cada sistema tem sua própria layer
   const gtfsControls: Record<string, GTFSSystem> = {
     "check-sptrans": "sptrans",
-    "check-artesp":  "artesp",
+    //"check-artesp":  "artesp",
   };
 
   Object.entries(gtfsControls).forEach(([id, system]) => {
