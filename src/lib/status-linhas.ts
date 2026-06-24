@@ -1,10 +1,8 @@
 const BASE_URL = ((window as unknown as { __BASE_URL__?: string }).__BASE_URL__ ?? "").replace(/\/$/, "");
 const IS_LOCAL = window.location.hostname === "localhost";
+
 const JSON_URL = `${BASE_URL}/data/status-linhas.json`;
 const MANIFEST = `${BASE_URL}/data/status-manifest.json`;
-const PROXY_URL =
-  "https://corsproxy.io/?" +
-  encodeURIComponent("https://ccm.artesp.sp.gov.br/metroferroviario/api/status/");
 
 const INTERVAL_MS = IS_LOCAL ? 5 * 60 * 1000 : 10 * 60 * 1000;
 
@@ -16,6 +14,7 @@ interface StatusLinha {
   atualizado_em?: string;
   descricao?: string;
 }
+
 interface LinhaAPI   { codigo: string; nome: string; status: StatusLinha; }
 interface EmpresaAPI { linhas: LinhaAPI[]; }
 interface APIResponse {
@@ -111,15 +110,17 @@ async function fetchWithTimeout(url: string, options: RequestInit = {}, timeout 
 }
 
 async function fetchData(): Promise<APIResponse> {
+  // 🔥 LOCALHOST → usa o JSON local (sem proxy)
   if (IS_LOCAL) {
-    const res = await fetchWithTimeout(PROXY_URL);
+    const res = await fetchWithTimeout(`${JSON_URL}?t=${Date.now()}`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return res.json();
   }
-  
+
+  // 🔥 PRODUÇÃO → usa manifest + JSON local
   const manifestRes = await fetchWithTimeout(`${MANIFEST}?t=${Date.now()}`);
   const { t } = await manifestRes.json();
-  
+
   const res = await fetchWithTimeout(`${JSON_URL}?t=${t}`);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json();
