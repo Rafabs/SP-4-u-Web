@@ -59,5 +59,6 @@ const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
   <script>
     import { initDetalhes } from "../lib/detalhes";
     initDetalhes();
+    window.__BASE_URL__ = import.meta.env.BASE_URL;    
   </script>
 </Layout>
