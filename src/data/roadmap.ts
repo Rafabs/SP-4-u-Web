@@ -52,6 +52,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "24/06/2026", versao: "v26.06.12", descricao: "Correção de erro no carregamento de status das linhas" },    
     { data: "24/06/2026", versao: "v26.06.11", descricao: "Correção de erro no carregamento de status das linhas" },    
     { data: "24/06/2026", versao: "v26.06.10", descricao: "Correção de erro no carregamento de status das linhas" },    
     { data: "24/06/2026", versao: "v26.06.9", descricao: "Correção de erro no carregamento de status das linhas" },
