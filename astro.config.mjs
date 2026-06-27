@@ -11,7 +11,7 @@ export default defineConfig({
   },
 
   vite: {
-    cacheDir: "C:/temp/vite-cache", // Move o cache para fora do OneDrive
+    cacheDir: "C:/temp/vite-cache", 
     build: {
       rollupOptions: {
         output: {
