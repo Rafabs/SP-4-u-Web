@@ -52,6 +52,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "02/07/2026", versao: "v26.07.3", descricao: "Inserção de cores das linhas" },
     { data: "02/07/2026", versao: "v26.07.2", descricao: "Atualização GTFS - SPTrans" },
     { data: "01/07/2026", versao: "v26.07.1", descricao: "Correção de erro no carregamento de status das linhas" },    
     { data: "27/06/2026", versao: "v26.06.14", descricao: "Atualização GTFS - SPTrans e Atualização do Framwork Astro" },    

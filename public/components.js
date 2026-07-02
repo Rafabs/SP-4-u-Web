@@ -8,7 +8,7 @@ const SYSTEM_LINKS = [
   },
   {
     text: 'VIAQUATRO - Guia do Uso [PT/BR]',
-    url: 'https://trilhos.motiva.com.br/viaquatro/guia-de-uso/',
+    url: 'https://trilhos.motiva.com.br/linha-4-amarela/guia-de-uso/',
   },
   {
     text: 'VIAMOBILIDADE - LINHAS 5 E 17 - Guia do Uso [PT/BR]',
@@ -60,6 +60,18 @@ const SYSTEM_CONTACTS = [
     phone: '0800 770 7722',
   },
   {
+    name: 'MOTIVA',
+    site: 'trilhos.motiva.com.br',
+    url: 'https://trilhos.motiva.com.br',
+    phone: '0800 770 7722',
+  },  
+  {
+    name: 'LINHA UNI',
+    site: 'www.linhauni.com.br',
+    url: 'https://www.linhauni.com.br',
+    phone: '0800 770 7100',
+  },   
+  {
     name: 'SPTRANS',
     site: 'www.sptrans.com.br',
     url: 'https://www.sptrans.com.br',
@@ -70,12 +82,6 @@ const SYSTEM_CONTACTS = [
     site: 'www.tictrens.com.br',
     url: 'https://www.tictrens.com.br',
     phone: '0800 007 0670',
-  },
-  {
-    name: 'VIAQUATRO',
-    site: 'www.viaquatro.com.br',
-    url: 'https://www.viaquatro.com.br',
-    phone: '0800 770 7100',
   },
   {
     name: 'VIAMOBILIDADE',

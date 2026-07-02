@@ -693,7 +693,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "CPB",
-        "conexoes": [{ "linha": "L17", "cor": "#000000", "operadora": "METRÔ", "nome-linha": "Linha 17 - Ouro" }]
+        "conexoes": [{ "linha": "L17", "cor": "#917F57", "operadora": "METRÔ", "nome-linha": "Linha 17 - Ouro" }]
       },
       {
         "nomePrincipal": "Brooklin",
@@ -787,7 +787,7 @@
   },
   "L06": {
     "nome": "Linha 6 - Laranja",
-    "cor": "#000000",
+    "cor": "#F37321",
     "operadora": "LINHA UNI",
     "estacoes": [
       {
@@ -943,7 +943,7 @@
         "acesso_livre": false,        
         "tag": "ABR",
         "conexoes": [
-          { "linha": "L06", "cor": "#000000", "operadora": "LINHA UNI", "nome-linha": "Linha 6 - Laranja" }
+          { "linha": "L06", "cor": "#F37321", "operadora": "LINHA UNI", "nome-linha": "Linha 6 - Laranja" }
         ]
       },
       {
@@ -1388,7 +1388,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "MRB",
-        "conexoes": [{ "linha": "L17", "cor": "#000000", "operadora": "METRÔ", "nome-linha": "Linha 17 - Ouro" }]
+        "conexoes": [{ "linha": "L17", "cor": "#917F57", "operadora": "METRÔ", "nome-linha": "Linha 17 - Ouro" }]
       },
       {
         "nomePrincipal": "Berrini",
@@ -2131,7 +2131,7 @@
   },
   "L17": {
   "nome": "Linha 17 - Ouro",
-  "cor": "#000000",
+  "cor": "#917F57",
   "operadora": "METRÔ",
   "bifurcacaoEm": "Brooklin Paulista",
   "estacoes": [
