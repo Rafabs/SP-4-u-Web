@@ -9,7 +9,7 @@ const MANIFEST = "public/data/status-manifest.json";
 try {
   console.log("[fetch-status] Buscando API ARTESP...");
 
-  if (!API_KEY) {
+  if (!API_KEY) { //
     throw new Error("CCM_API não encontrada.");
   }
 
