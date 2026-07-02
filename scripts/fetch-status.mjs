@@ -1,6 +1,6 @@
 import { writeFileSync, mkdirSync } from "fs";
 
-const API_URL = "https://ccm.artesp.sp.gov.br/metroferroviario/api/status/";
+const API_URL ="https://ccm.artesp.sp.gov.br/metroferroviario/api/status/?artesp_only=true";
 const API_KEY = process.env.CCM_API;
 
 const OUT_PATH = "public/data/status-linhas.json";
@@ -16,11 +16,12 @@ try {
   console.log("[fetch-status] CCM_API carregada:", !!API_KEY);
 
   const res = await fetch(API_URL, {
-    headers: {
-      "Authorization": `Api-Key cci_metro_status_live_${API_KEY.trim()}` //
-    }
+  headers: {
+    Authorization: `Api-Key ${API_KEY.trim()}`
+  }
   });
-
+  console.log(API_KEY.length);
+  console.log(API_KEY);
   console.log("[fetch-status] HTTP:", res.status);
 
   if (!res.ok) {
