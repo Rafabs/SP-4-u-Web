@@ -17,7 +17,7 @@ try {
 
   const res = await fetch(API_URL, {
     headers: {
-      Authorization: `Bearer ${API_KEY}` 
+      Authorization: `Bearer ${API_KEY}` //
     }
   });
 
