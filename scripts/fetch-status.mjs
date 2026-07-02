@@ -1,23 +1,60 @@
 import { writeFileSync, mkdirSync } from "fs";
 
-const API_URL  = "https://ccm.artesp.sp.gov.br/metroferroviario/api/status/";
+const API_URL = "https://ccm.artesp.sp.gov.br/metroferroviario/api/status/";
+const API_KEY = process.env.CCM_API;
+
 const OUT_PATH = "public/data/status-linhas.json";
 const MANIFEST = "public/data/status-manifest.json";
 
 try {
   console.log("[fetch-status] Buscando API ARTESP...");
-  const res = await fetch(API_URL);
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+  if (!API_KEY) {
+    throw new Error("CCM_API não encontrada.");
+  }
+
+  console.log("[fetch-status] CCM_API carregada:", !!API_KEY);
+
+  const res = await fetch(API_URL, {
+    headers: {
+      "X-API-KEY": API_KEY
+    }
+  });
+
+  console.log("[fetch-status] HTTP:", res.status);
+
+  if (!res.ok) {
+    const body = await res.text();
+    console.error("[fetch-status] Resposta da API:");
+    console.error(body);
+    throw new Error(`HTTP ${res.status}`);
+  }
+
   const data = await res.json();
 
   mkdirSync("public/data", { recursive: true });
-  writeFileSync(OUT_PATH, JSON.stringify(data, null, 2), "utf-8");
-  writeFileSync(MANIFEST, JSON.stringify({ t: Date.now() }), "utf-8");
-  console.log(`[fetch-status] Salvo em ${OUT_PATH} — ${data.meta?.total_linhas ?? "?"} linhas`);
+
+  writeFileSync(
+    OUT_PATH,
+    JSON.stringify(data, null, 2),
+    "utf-8"
+  );
+
+  writeFileSync(
+    MANIFEST,
+    JSON.stringify({ t: Date.now() }, null, 2),
+    "utf-8"
+  );
+
+  console.log(
+    `[fetch-status] Salvo em ${OUT_PATH} — ${
+      data.meta?.total_linhas ?? "?"
+    } linhas`
+  );
+
 } catch (err) {
-  console.error("[fetch-status] Erro:", err.message);
-  mkdirSync("public/data", { recursive: true });
-  writeFileSync(OUT_PATH, JSON.stringify({ empresas: [] }), "utf-8");
-  writeFileSync(MANIFEST, JSON.stringify({ t: Date.now() }), "utf-8");
-  process.exit(0);
+  console.error("[fetch-status] Erro:", err);
+
+  // Mantém o último JSON válido
+  process.exit(1);
 }
