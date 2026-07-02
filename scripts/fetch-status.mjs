@@ -17,7 +17,7 @@ try {
 
   const res = await fetch(API_URL, {
     headers: {
-      "Authorization": `Api-Key ${API_KEY.trim()}`
+      "Authorization": `Api-Key cci_metro_status_live_${API_KEY.trim()}`
     }
   });
 
