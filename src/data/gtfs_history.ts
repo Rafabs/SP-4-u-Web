@@ -15,6 +15,22 @@ export interface GTFSHistoryEntry {
 // ===============================
 export const historyData: GTFSHistoryEntry[] = [
   {
+    data: "10/07/2026",
+    tipo: "🆕 Inclusão",
+    linha: "550P/10",
+    cor: "006341",
+    rota: "Term. Vl. Prudente - Metrô Brás",
+    recente: true,
+  }, 
+  {
+    data: "10/07/2026",
+    tipo: "🆕 Inclusão",
+    linha: "606F/10",
+    cor: "0082BA",
+    rota: "Circular - Autódromo",
+    recente: true,
+  },     
+  {
     data: "02/07/2026",
     tipo: "🆕 Inclusão",
     linha: "607C/21",
