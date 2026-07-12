@@ -1,6 +1,6 @@
 import { writeFileSync, mkdirSync } from "fs";
 
-const API_URL ="https://ccm.artesp.sp.gov.br/metroferroviario/api/status/?artesp_only=true";
+const API_URL ="https://ccm.artesp.sp.gov.br/metroferroviario/api/status";
 const API_KEY = process.env.CCM_API;
 
 const OUT_PATH = "public/data/status-linhas.json";
