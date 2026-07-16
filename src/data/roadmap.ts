@@ -30,7 +30,6 @@ const roadmapData: Roadmap = {
       itens: [
         { label: "Desenvolver Design System e disponibilizar no projeto", status: "EM DESENVOLVIMENTO", checked: false },
         { label: "Adotar Next.js durante melhoria de mapas no Vercel", checked: false },
-        { label: "Unificar código e estrutura de itens Hero Section", checked: false },
         { label: "Desenvolver app Android - SP4U.apk", status: "EM DESENVOLVIMENTO", checked: false },
       ],
     },
@@ -52,6 +51,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "16/07/2026", versao: "v26.06.7", descricao: "Unificar código e estrutura de itens Hero Section" },    
     { data: "15/07/2026", versao: "v26.06.6", descricao: "Atualização GTFS - SPTrans e Correção de Legenda de Mapa" },    
     { data: "12/07/2026", versao: "v26.06.5", descricao: "Correção de status das linhas" },    
     { data: "10/07/2026", versao: "v26.07.4", descricao: "Atualização GTFS - SPTrans" },

@@ -16,7 +16,7 @@ const latest = roadmapData.historico[0];
       <div class="hero-grid"></div>
     </div>
 
-    <div class="hero-lines" id="versao-canvas"></div>
+    <div class="hero-canvas" id="versao-canvas"></div>
 
     <div class="hero-content">
       <div class="hero-tag">Desenvolvimento · Open Source</div>
@@ -90,42 +90,9 @@ const latest = roadmapData.historico[0];
   </section>
 
   <script>
-    // Commits animados — horizontal
-    const VERSAO_COLORS = [
-      '#7f77dd','#534ab7','#afa9ec','#3c3489',
-      '#7f77dd','#6b63cc','#9b95e0','#4a42a8',
-    ];
-    const canvas = document.getElementById('versao-canvas');
-    if (canvas) {
-      VERSAO_COLORS.forEach((color, i) => {
-        const y = 40 + i * 55;
+    import { initHeroVersion } from "../lib/hero-animations";
 
-        const track = document.createElement('div');
-        track.style.cssText = `
-          position:absolute;left:0;right:0;
-          top:${y}px;height:2px;
-          background:${color};opacity:.12;
-        `;
-        canvas.appendChild(track);
-
-        const icon = document.createElement('span');
-        icon.className = 'material-symbols-outlined';
-        icon.textContent = i % 4 === 0 ? 'commit'
-          : i % 4 === 1 ? 'merge'
-          : i % 4 === 2 ? 'timeline'
-          : 'deployed_code';
-        icon.style.cssText = `
-          position:absolute;top:${y - 12}px;
-          font-size:${18 + (i % 3) * 6}px;
-          color:${color};opacity:.6;
-          animation:bus-run ${6 + i * 1.2}s linear infinite;
-          animation-delay:${-i * 0.8}s;
-        `;
-        canvas.appendChild(icon);
-      });
-    }
+    initHeroVersion();    
   </script>
 
-  <style>
-  </style>
 </Layout>

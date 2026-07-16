@@ -178,7 +178,7 @@ const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
     import { initSptrans } from "../lib/sptrans";
     import { loadAQIData, setupAQIControls } from "../lib/qualidade_ar";
     import { map, initPlugins } from "../lib/map-instance";
-    import { initHeroMapa } from "../lib/hero-mapa";
+    import { initHeroMapa } from "../lib/hero-animations";
     initHeroMapa();
 
     function loadScript(src: string): Promise<void> {
