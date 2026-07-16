@@ -23,8 +23,8 @@ export const historyData: GTFSHistoryEntry[] = [
     recente: true,
   }, 
   {
-    data: "10/07/2026",
-    tipo: "🆕 Inclusão",
+    data: "15/07/2026",
+    tipo: "❌ Remoção",
     linha: "606F/10",
     cor: "0082BA",
     rota: "Circular - Autódromo",

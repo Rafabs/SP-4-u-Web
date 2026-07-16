@@ -63,13 +63,13 @@ const SYSTEM_CONTACTS = [
     name: 'MOTIVA',
     site: 'trilhos.motiva.com.br',
     url: 'https://trilhos.motiva.com.br',
-    phone: '0800 770 7722',
+    phone: '0800 770 7100',
   },  
   {
     name: 'LINHA UNI',
     site: 'www.linhauni.com.br',
     url: 'https://www.linhauni.com.br',
-    phone: '0800 770 7100',
+    phone: '0800 580 3172',
   },   
   {
     name: 'SPTRANS',
