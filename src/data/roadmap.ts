@@ -51,6 +51,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "16/07/2026", versao: "v26.06.8", descricao: "Inserção de Guia do Passageiro da Linha Uni" },    
     { data: "16/07/2026", versao: "v26.06.7", descricao: "Unificar código e estrutura de itens Hero Section" },    
     { data: "15/07/2026", versao: "v26.06.6", descricao: "Atualização GTFS - SPTrans e Correção de Legenda de Mapa" },    
     { data: "12/07/2026", versao: "v26.06.5", descricao: "Correção de status das linhas" },    

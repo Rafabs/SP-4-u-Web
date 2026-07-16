@@ -14,6 +14,12 @@ const SYSTEM_LINKS = [
     text: 'VIAMOBILIDADE - LINHAS 5 E 17 - Guia do Uso [PT/BR]',
     url: 'https://trilhos.motiva.com.br/viamobilidade5/guia-de-uso/',
   },
+
+  {
+    text: 'LINHA UNI - Guia do Passageiro',
+    url: 'https://www.linhauni.com.br/guia-do-passageiro',
+  },
+
   {
     text: 'VIAMOBILIDADE - LINHAS 8 E 9 - Guia do Uso [PT/BR]',
     url: 'https://trilhos.motiva.com.br/viamobilidade8e9/guia-de-uso/',
