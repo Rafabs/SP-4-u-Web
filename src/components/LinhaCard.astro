@@ -4,15 +4,19 @@ interface Props {
   id: string;
   nome: string;
   cor: string;
+  imagem: string;
   empresa: string;
 }
 
-const { id, nome, cor, empresa } = Astro.props;
+const { id, nome, cor, imagem, empresa } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const imagemUrl = imagem.startsWith("http")
+  ? imagem
+  : `${base}${imagem.replace(/^\/?public\//, "").replace(/^\//, "")}`;
 ---
 <li>
   <span style={`background-color: ${cor};`}></span>
-  <code>{cor}</code>
+  <img class="linha-imagem" src={imagemUrl} alt={`Logotipo ${empresa}`} />
   <a href={`${base}detalhes?linha=${id}`}>{nome}</a>
   <div class="card" id={`${id.toLowerCase()}-info`}>
     Informações sobre a Operação - Carregando...

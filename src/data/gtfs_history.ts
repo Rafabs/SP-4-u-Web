@@ -15,6 +15,14 @@ export interface GTFSHistoryEntry {
 // ===============================
 export const historyData: GTFSHistoryEntry[] = [
   {
+    data: "20/07/2026",
+    tipo: "🆕 Inclusão",
+    linha: "7004/21",
+    cor: "782F40",
+    rota: "Term. Jd. Jacira - Vl. Do Sol",
+    recente: true,
+  },   
+  {
     data: "10/07/2026",
     tipo: "🆕 Inclusão",
     linha: "550P/10",
@@ -29,7 +37,15 @@ export const historyData: GTFSHistoryEntry[] = [
     cor: "0082BA",
     rota: "Circular - Autódromo",
     recente: true,
-  },     
+  },  
+  {
+    data: "05/07/2026",
+    tipo: "🆕 Inclusão",
+    linha: "606F/10",
+    cor: "0082BA",
+    rota: "Circular - Autódromo",
+    recente: true,
+  },        
   {
     data: "02/07/2026",
     tipo: "🆕 Inclusão",

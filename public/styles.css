@@ -216,24 +216,24 @@ header {
 
 .line-list li {
     display: grid;
-    grid-template-columns: 16px 80px 1fr auto auto;
+    grid-template-columns: 16px 16px 0px 600px 1fr auto auto;
     align-items: center;
     gap: 16px;
-    margin: 12px 0;
-    padding: 14px;
+    margin: 10px 0;
+    padding: 10px;
     border-radius: 8px;
     overflow: hidden;    
     background-color: var(--bg-card);
 }
 
-.line-list li span    { grid-column: 1; } /* bolinha */
-.line-list li code    { grid-column: 2; } /* hex */
-.line-list li a       { grid-column: 3; } /* linha */
-.line-list li .empresa{ grid-column: 4; } /* empresa */
-.line-list li .card   { grid-column: 5; } /* operação */
+.line-list li span          { grid-column: 1; } /* bolinha */
+.line-list li .linha-imagem { grid-column: 2; } /* logotipo */
+.line-list li a             { grid-column: 4; } /* linha */
+.line-list li .empresa      { grid-column: 5; } /* empresa */
+.line-list li .card         { grid-column: 6; } /* operação */
 
 .line-list li span,
-.line-list li code,
+.line-list li .linha-imagem,
 .line-list li a,
 .line-list li .empresa,
 .line-list li .card {
@@ -247,14 +247,10 @@ header {
     border-radius: 50%;
 }
 
-/* Código HEX */
-.line-list li code {
-    font-family: monospace;
-    background-color: var(--code-color);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 12px;
-    text-align: center;
+.line-list li .linha-imagem {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
 }
 
 /* Nome da linha */
@@ -1097,16 +1093,17 @@ footer {
     }
 
     .line-list li {
-        grid-template-columns: 16px 70px 1fr;
+        grid-template-columns: 16px 24px minmax(0, 1fr);
         grid-template-areas:
-            "dot hex line"
+            "dot image line"
             "empresa empresa operacao";
         gap: 10px;
-        padding: 15px;
+        padding: 12px;
     }
 
-    .line-list li span { grid-area: dot; }
-    .line-list li a    { grid-area: line; font-size: 0.9rem; }
+    .line-list li span          { grid-area: dot; }
+    .line-list li .linha-imagem { grid-area: image; }
+    .line-list li a             { grid-area: line; font-size: 0.9rem; }
     
     .line-list li .empresa {
         grid-area: empresa;
@@ -1214,11 +1211,10 @@ footer {
 /* --- DISPOSITIVOS MUITO PEQUENOS (até 480px) --- */
 @media (max-width: 480px) {
     .line-list li {
-        grid-template-columns: 1fr auto;
+        grid-template-columns: 24px minmax(0, 1fr) auto;
         grid-template-areas:
-            "line line"
-            "hex dot"
-            "empresa operacao";
+            "image line dot"
+            "empresa empresa operacao";
     }
 
     .line-list li .card,
