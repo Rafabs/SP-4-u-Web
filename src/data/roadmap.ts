@@ -51,6 +51,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "21/07/2026", versao: "v26.06.10", descricao: "Desenvolvido página de Termos e Privacidade" },    
     { data: "21/07/2026", versao: "v26.06.9", descricao: "Atualização GTFS - SPTrans e Inserção de Logo das linhas em index" },    
     { data: "16/07/2026", versao: "v26.06.8", descricao: "Inserção de Guia do Passageiro da Linha Uni" },    
     { data: "16/07/2026", versao: "v26.06.7", descricao: "Unificar código e estrutura de itens Hero Section" },    
