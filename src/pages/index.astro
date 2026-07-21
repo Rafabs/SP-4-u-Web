@@ -80,7 +80,8 @@ const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
         Object.entries(dadosLinhas).map(([id, linha]) => (
           <LinhaCard
             id={id}
-            imagem={linha.image}
+            imagemModoDark={linha.image_mode_light}
+            imagemModoLight={linha.image_mode_dark}
             nome={linha.nome}
             cor={linha.cor}
             empresa={linha.empresa}

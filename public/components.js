@@ -90,10 +90,10 @@ const SYSTEM_CONTACTS = [
     phone: '0800 007 0670',
   },
   {
-    name: 'VIAMOBILIDADE',
-    site: 'www.viamobilidade.com.br',
-    url: 'https://www.viamobilidade.com.br',
-    phone: '0800 770 7106',
+    name: 'TRIVIA',
+    site: 'www.triviatrens.com.br',
+    url: 'https://www.triviatrens.com.br',
+    phone: '0800 074 6733',
   },
 ];
 

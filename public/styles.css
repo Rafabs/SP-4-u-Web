@@ -253,6 +253,18 @@ header {
     object-fit: contain;
 }
 
+.line-list li .linha-imagem--light {
+    display: none;
+}
+
+body.light-mode .line-list li .linha-imagem--dark {
+    display: none;
+}
+
+body.light-mode .line-list li .linha-imagem--light {
+    display: block;
+}
+
 /* Nome da linha */
 .line-list li a {
     color: var(--text-primary);
@@ -1093,10 +1105,10 @@ footer {
     }
 
     .line-list li {
-        grid-template-columns: 16px 24px minmax(0, 1fr);
+        grid-template-columns: 24px 24px minmax(0, 1fr);
         grid-template-areas:
-            "dot image line"
-            "empresa empresa operacao";
+            "image line line"
+            "dot empresa operacao";
         gap: 10px;
         padding: 12px;
     }
@@ -1104,6 +1116,11 @@ footer {
     .line-list li span          { grid-area: dot; }
     .line-list li .linha-imagem { grid-area: image; }
     .line-list li a             { grid-area: line; font-size: 0.9rem; }
+
+    .line-list li span:first-child {
+        justify-self: center;
+        align-self: center;
+    }
     
     .line-list li .empresa {
         grid-area: empresa;
@@ -1119,6 +1136,7 @@ footer {
     .line-list li [class*="branco"] {
         grid-area: operacao;
         justify-self: end;
+        align-self: center;
         font-size: 11px;
     }
 
@@ -1213,8 +1231,13 @@ footer {
     .line-list li {
         grid-template-columns: 24px minmax(0, 1fr) auto;
         grid-template-areas:
-            "image line dot"
-            "empresa empresa operacao";
+            "image line line"
+            "dot empresa operacao";
+    }
+
+    .line-list li span:first-child {
+        justify-self: center;
+        align-self: center;
     }
 
     .line-list li .card,
@@ -1224,6 +1247,7 @@ footer {
         .line-list li [class*="branco"] {
             grid-area: operacao;
             justify-self: end;
+            align-self: center;
             font-size: 10px;          
             white-space: normal;      
             text-align: right;
