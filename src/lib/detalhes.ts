@@ -1,4 +1,6 @@
 // ===============================
+import { dadosLinhas as dadosLinhasHome } from "../data/linhas";
+
 // CONFIGURAÇÃO
 // ===============================
 const BASE_URL = import.meta.env.BASE_URL ?? "";
@@ -38,26 +40,48 @@ type DadosLinhas = Record<string, DadosLinha>;
 // ===============================
 // MAPA DE ÍCONES
 // ===============================
-const ICON_MAP: Record<string, string> = {
-  L01: "1_azul.png",
-  L02: "2_verde.png",
-  L03: "3_vermelha.png",
-  L04: "4_amarela.png",
-  L05: "5_lilas.png",
-  L06: "6_laranja.png",
-  L07: "7_rubi.png",
-  L08: "8_diamante.png",
-  L09: "9_esmeralda.png",
-  L10: "cptm.png",
-  L11: "cptm.png",
-  L12: "cptm.png",
-  L13: "cptm.png",
-  L15: "15_prata.png",
-  L17: "1_azul.png",
+interface IconesLinha {
+  dark: string;
+  light: string;
+}
+
+const ICON_MAP: Record<string, IconesLinha> = {
+  L01: { dark: "white_metro.png", light: "black_metro.png" },
+  L02: { dark: "white_metro.png", light: "black_metro.png" },
+  L03: { dark: "white_metro.png", light: "black_metro.png" },
+  L04: { dark: "white_motiva.png", light: "black_motiva.png" },
+  L05: { dark: "white_motiva.png", light: "black_motiva.png" },
+  L06: { dark: "white_linha_uni.png", light: "black_linha_uni.png" },
+  L07: { dark: "white_tic_trens.png", light: "black_tic_trens.png" },
+  L08: { dark: "white_motiva.png", light: "black_motiva.png" },
+  L09: { dark: "white_motiva.png", light: "black_motiva.png" },
+  L10: { dark: "white_cptm.png", light: "black_cptm.png" },
+  L11: { dark: "white_trivia.png", light: "black_trivia.png" },
+  L12: { dark: "white_trivia.png", light: "black_trivia.png" },
+  L13: { dark: "white_trivia.png", light: "black_trivia.png" },
+  L15: { dark: "white_metro.png", light: "black_metro.png" },
+  L17: { dark: "white_metro.png", light: "black_metro.png" },
 };
 
-function getIconFileName(id: string): string {
-  return ICON_MAP[id] ?? "default.png";
+function getIconFiles(id: string): IconesLinha {
+  return ICON_MAP[id] ?? { dark: "default.png", light: "default.png" };
+}
+
+function atualizarImagensDoTema(): void {
+  const usarTemaClaro = document.body.classList.contains("light-mode");
+  document.querySelectorAll<HTMLImageElement>("img[data-src-dark][data-src-light]").forEach((imagem) => {
+    imagem.src = usarTemaClaro ? imagem.dataset.srcLight! : imagem.dataset.srcDark!;
+  });
+}
+
+function observarMudancaDeTema(): void {
+  if (document.body.dataset.observaImagensTema === "true") return;
+
+  document.body.dataset.observaImagensTema = "true";
+  new MutationObserver(atualizarImagensDoTema).observe(document.body, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
 }
 
 // ===============================
@@ -78,6 +102,8 @@ export async function initDetalhes(): Promise<void> {
       renderPage(dados, linhaId);
       renderLineSwitcher(linhaId, dadosLinhas);
       renderLegendButton(dados);
+      observarMudancaDeTema();
+      atualizarImagensDoTema();
       const { loadStatusLinhas } = await import("./status-linhas");
       loadStatusLinhas();
     } else {
@@ -224,9 +250,12 @@ function renderLegendButton(dados: DadosLinha): void {
         row.style.cssText = "display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08);";
 
         // logo da linha
+        const icons = getIconFiles(id);
         const imgLogo = document.createElement("img");
-        imgLogo.src = `${BASE_URL}icons/${getIconFileName(id)}`;
+        imgLogo.dataset.srcDark = `${BASE_URL}icons/${icons.dark}`;
+        imgLogo.dataset.srcLight = `${BASE_URL}icons/${icons.dark}`;
         imgLogo.alt = id;
+        imgLogo.className = "operator-img";
         imgLogo.style.cssText = "width:28px;height:20px;object-fit:contain;";
 
         const ball = document.createElement("div");
@@ -335,10 +364,21 @@ function renderPage(dados: DadosLinha, linhaId: string): void {
 
   // Operadora
   const empresaEl = document.getElementById("linha-empresa");
-  const logoImg   = document.getElementById("linha-destaque-logo") as HTMLImageElement | null;
   const nomeOperadora = dados.operadora ?? dados.empresa ?? "Operadora Desconhecida";
 
   if (empresaEl) empresaEl.innerText = nomeOperadora;
+
+  const dadosLogo = dadosLinhasHome[linhaId];
+  const normalizarImagemUrl = (imagem: string) => imagem.startsWith("http")
+    ? imagem
+    : `${BASE_URL}${imagem.replace(/^\/?public\//, "").replace(/^\//, "")}`;
+  const logo = document.getElementById("linha-imagem") as HTMLImageElement | null;
+
+  if (dadosLogo && logo) {
+    logo.dataset.srcDark = normalizarImagemUrl(dadosLogo.image_mode_light);
+    logo.dataset.srcLight = normalizarImagemUrl(dadosLogo.image_mode_dark ?? dadosLogo.image_mode_light);
+    logo.alt = `Logotipo ${dadosLogo.empresa}`;
+  }
 
   // Status da operação (placeholder inicial, é atualizado pelo loadStatusLinhas)
   const statusCard = document.getElementById("linha-status-info");
@@ -388,8 +428,10 @@ function renderTimeline(dados: DadosLinha): void {
     
     let pillsHTML = '<div class="transfer-pills">';
     est.conexoes?.forEach((con) => {
-      const iconName = con.icone ?? (con.linha ? getIconFileName(con.linha) : "default.png");
-      const iconPath = `${iconBase}/${iconName}`;
+      const icons = con.linha ? getIconFiles(con.linha) : { dark: "default.png", light: "default.png" };
+      const iconHTML = con.icone
+        ? `<img src="${iconBase}/${con.icone}" class="operator-img" alt="${con.nome ?? "logo"}">`
+        : `<img src="${iconBase}/${icons.dark}" data-src-dark="${iconBase}/${icons.dark}" data-src-light="${iconBase}/${icons.light}" class="operator-img" alt="${con.nome ?? "logo"}">`;
 
       let ballHTML = "";
       if (con.linha && con.cor) {
@@ -403,7 +445,7 @@ function renderTimeline(dados: DadosLinha): void {
 
       pillsHTML += `
         <div class="transfer-pill-custom">
-          <img src="${iconPath}" class="operator-img" alt="${con.nome ?? "logo"}">
+          ${iconHTML}
           ${ballHTML}
         </div>
       `;

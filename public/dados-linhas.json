@@ -84,10 +84,10 @@
         "tag": "LUZ",
         "conexoes": [
           { "tipo": "servico", "nome": "Expresso Turístico", "icone": "expresso_turistico.png" },
-          { "linha": "L04", "cor": "#FFF000", "operadora": "VIAQUATRO", "nome-linha": "Linha 4 - Amarela" },
+          { "linha": "L04", "cor": "#FFF000", "operadora": "MOTIVA", "nome-linha": "Linha 4 - Amarela" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM" , "nome-linha": "Linha 11 - Coral" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM" , "nome-linha": "Linha 13 - Jade" }
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA" , "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "TRIVIA" , "nome-linha": "Linha 13 - Jade" }
         ]
       },
       {
@@ -121,7 +121,7 @@
         "acesso_livre": false,        
         "tag": "JQM",
         "conexoes": [
-          { "linha": "L06", "cor": "#000000", "operadora": "LINHA UNI", "nome-linha": "Linha 6 - Laranja" }
+          { "linha": "L06", "cor": "#F37321", "operadora": "LINHA UNI", "nome-linha": "Linha 6 - Laranja" }
         ]
       },
       {
@@ -163,7 +163,7 @@
         "acesso_livre": false,        
         "tag": "SCZ",
         "conexoes": [
-          { "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 5 - Lilás" }
+          { "linha": "L05", "cor": "#9B3894", "operadora": "MOTIVA", "nome-linha": "Linha 5 - Lilás" }
         ]
       },
       {
@@ -250,7 +250,7 @@
         "acesso_livre": false,        
         "tag": "CNS",
         "conexoes": [
-          { "linha": "L04", "cor": "#FFF000", "operadora": "VIAQUATRO" , "nome-linha": "Linha 4 - Amarela"}
+          { "linha": "L04", "cor": "#FFF000", "operadora": "MOTIVA" , "nome-linha": "Linha 4 - Amarela"}
         ]
       },
       {
@@ -292,7 +292,7 @@
         "acesso_livre": false,        
         "tag": "CKB",
         "conexoes": [
-          { "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 5 - Lilás" }
+          { "linha": "L05", "cor": "#9B3894", "operadora": "MOTIVA", "nome-linha": "Linha 5 - Lilás" }
         ]
       },
       {
@@ -355,10 +355,10 @@
           { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" },
           { "tipo": "servico", "nome": "Expresso Aeroporto", "icone": "expresso_aeroporto.png" },
           { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" },
-          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE",  "nome-linha": "Linha 8 - Diamante"  },
+          { "linha": "L08", "cor": "#97A098", "operadora": "MOTIVA",  "nome-linha": "Linha 8 - Diamante"  },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "TRIVIA", "nome-linha": "Linha 13 - Jade" }
         ]
       },
       {
@@ -384,7 +384,7 @@
         "acesso_livre": false,        
         "tag": "REP",
         "conexoes": [
-          { "linha": "L04", "cor": "#FFF000", "operadora": "VIAQUATRO" , "nome-linha": "Linha 4 - Amarela"}
+          { "linha": "L04", "cor": "#FFF000", "operadora": "MOTIVA" , "nome-linha": "Linha 4 - Amarela"}
         ]
       },
       {
@@ -421,9 +421,9 @@
         "conexoes": [
           { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
-          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L12", "cor": "#133C8D", "operadora": "TRIVIA", "nome-linha": "Linha 12 - Safira" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "TRIVIA", "nome-linha": "Linha 13 - Jade" }
         ]
       },
       {
@@ -450,8 +450,8 @@
         "tag": "TAT",
         "conexoes": [
           { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
-          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" }
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L12", "cor": "#133C8D", "operadora": "TRIVIA", "nome-linha": "Linha 12 - Safira" }
         ]
       },
       {
@@ -473,7 +473,7 @@
         "conexoes": [
           { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
           { "linha": "L02", "cor": "#007E5E", "operadora": "METRÔ", "nome-linha": "Linha 2 - Verde" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" }
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" }
         ]
       },
       {
@@ -516,7 +516,7 @@
         "tag": "ITQ",
         "conexoes": [
           { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },        
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" }
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" }
         ]
       }
     ]
@@ -524,7 +524,7 @@
   "L04": {
     "nome": "Linha 4 - Amarela",
     "cor": "#FFF000",
-    "operadora": "VIAQUATRO",
+    "operadora": "MOTIVA",
     "estacoes": [
       {
         "nomePrincipal": "Luz",
@@ -536,8 +536,8 @@
           { "tipo": "servico", "nome": "Expresso Turístico", "icone": "expresso_turistico.png" },          
           { "linha": "L01", "cor": "#0455A1", "operadora": "METRÔ" , "nome-linha": "Linha 1 - Azul" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "TRIVIA", "nome-linha": "Linha 13 - Jade" }
         ]
       },
       {
@@ -557,12 +557,12 @@
         "acesso_livre": false,        
         "tag": "HIG",
         "conexoes": [
-          { "linha": "L06", "cor": "#000000", "operadora": "LINHA UNI", "nome-linha": "Linha 6 - Laranja" }
+          { "linha": "L06", "cor": "#F37321", "operadora": "LINHA UNI", "nome-linha": "Linha 6 - Laranja" }
         ]
       },
       {
         "nomePrincipal": "Paulista",
-        "nomeSecundario": "Pernambucanas",
+        "nomeSecundario": null,
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "PTA",
@@ -599,7 +599,7 @@
         "acesso_livre": false,        
         "tag": "PIN",
         "conexoes": [
-          { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 9 - Esmeralda" }
+          { "linha": "L09", "cor": "#00A78E", "operadora": "MOTIVA", "nome-linha": "Linha 9 - Esmeralda" }
         ]
       },
       {
@@ -637,7 +637,7 @@
   "L05": {
     "nome": "Linha 5 - Lilás",
     "cor": "#9B3894",
-    "operadora": "VIAMOBILIDADE",
+    "operadora": "MOTIVA",
     "estacoes": [
       {
         "nomePrincipal": "Chácara Klabin",
@@ -744,7 +744,7 @@
         "acesso_livre": false,        
         "tag": "STA",
         "conexoes": [
-          { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 9 - Esmeralda" }
+          { "linha": "L09", "cor": "#00A78E", "operadora": "MOTIVA", "nome-linha": "Linha 9 - Esmeralda" }
         ]
       },
       {
@@ -885,7 +885,7 @@
         "acesso_livre": false,        
         "tag": "HIG",
         "conexoes": [
-          { "linha": "L04", "cor": "#FFF000", "operadora": "VIAQUATRO" , "nome-linha": "Linha 4 - Amarela"}
+          { "linha": "L04", "cor": "#FFF000", "operadora": "MOTIVA" , "nome-linha": "Linha 4 - Amarela"}
         ]
       },
       {
@@ -930,10 +930,10 @@
           { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" },
           { "tipo": "servico", "nome": "Expresso Aeroporto", "icone": "expresso_aeroporto.png" },          
           { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
-          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE",  "nome-linha": "Linha 8 - Diamante"  },
+          { "linha": "L08", "cor": "#97A098", "operadora": "MOTIVA",  "nome-linha": "Linha 8 - Diamante"  },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "TRIVIA", "nome-linha": "Linha 13 - Jade" }
         ]
       },
       {
@@ -1078,7 +1078,7 @@
   "L08": {
     "nome": "Linha 8 - Diamante",
     "cor": "#97A098",
-    "operadora": "VIAMOBILIDADE",
+    "operadora": "MOTIVA",
     "estacoes": [
       {
         "nomePrincipal": "Júlio Prestes",
@@ -1101,8 +1101,8 @@
           { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
           { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "TRIVIA", "nome-linha": "Linha 13 - Jade" }
         ]
       },
       {
@@ -1136,7 +1136,7 @@
         "acesso_livre": false,        
         "tag": "PAL",
         "conexoes": [
-          { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 9 - Esmeralda" }
+          { "linha": "L09", "cor": "#00A78E", "operadora": "MOTIVA", "nome-linha": "Linha 9 - Esmeralda" }
         ]
       },
       {
@@ -1148,7 +1148,7 @@
         "conexoes": [
           { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
           { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" },          
-          { "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 9 - Esmeralda" }
+          { "linha": "L09", "cor": "#00A78E", "operadora": "MOTIVA", "nome-linha": "Linha 9 - Esmeralda" }
         ]
       },
       {
@@ -1296,7 +1296,7 @@
   "L09": {
     "nome": "Linha 9 - Esmeralda",
     "cor": "#01A9A7",
-    "operadora": "VIAMOBILIDADE",
+    "operadora": "MOTIVA",
     "estacoes": [
       {
         "nomePrincipal": "Varginha",
@@ -1363,7 +1363,7 @@
         "acesso_livre": false,        
         "tag": "SAM",
         "conexoes": [
-          { "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 5 - Lilás" }
+          { "linha": "L05", "cor": "#9B3894", "operadora": "MOTIVA", "nome-linha": "Linha 5 - Lilás" }
         ]
       },
       {
@@ -1429,7 +1429,7 @@
         "acesso_livre": false,        
         "tag": "PIN",
         "conexoes": [
-          { "linha": "L04", "cor": "#FFF000", "operadora": "VIAQUATRO" , "nome-linha": "Linha 4 - Amarela"}
+          { "linha": "L04", "cor": "#FFF000", "operadora": "MOTIVA" , "nome-linha": "Linha 4 - Amarela"}
         ]
       },
       {
@@ -1463,7 +1463,7 @@
         "acesso_livre": false,        
         "tag": "PAL",
         "conexoes": [
-          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE",  "nome-linha": "Linha 8 - Diamante"  }
+          { "linha": "L08", "cor": "#97A098", "operadora": "MOTIVA",  "nome-linha": "Linha 8 - Diamante"  }
         ]
       },
       {
@@ -1475,7 +1475,7 @@
         "conexoes": [
           { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
           { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" },          
-          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE",  "nome-linha": "Linha 8 - Diamante"  }
+          { "linha": "L08", "cor": "#97A098", "operadora": "MOTIVA",  "nome-linha": "Linha 8 - Diamante"  }
         ]
       }
     ]
@@ -1604,9 +1604,9 @@
         "conexoes": [
           { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
           { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
-          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }          
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L12", "cor": "#133C8D", "operadora": "TRIVIA", "nome-linha": "Linha 12 - Safira" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "TRIVIA", "nome-linha": "Linha 13 - Jade" }          
         ]
       },
       {
@@ -1618,10 +1618,10 @@
         "conexoes": [
           { "tipo": "servico", "nome": "Expresso Turístico", "icone": "expresso_turistico.png" },          
           { "linha": "L01", "cor": "#0455A1", "operadora": "METRÔ" , "nome-linha": "Linha 1 - Azul" },
-          { "linha": "L04", "cor": "#FFF000", "operadora": "VIAQUATRO" , "nome-linha": "Linha 4 - Amarela"},
+          { "linha": "L04", "cor": "#FFF000", "operadora": "MOTIVA" , "nome-linha": "Linha 4 - Amarela"},
           { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }          
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "TRIVIA", "nome-linha": "Linha 13 - Jade" }          
         ]
       },      
       {
@@ -1636,9 +1636,9 @@
           { "tipo": "servico", "nome": "Expresso Aeroporto", "icone": "expresso_aeroporto.png" },          
           { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ" },
           { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" },
-          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE",  "nome-linha": "Linha 8 - Diamante"  },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }
+          { "linha": "L08", "cor": "#97A098", "operadora": "MOTIVA",  "nome-linha": "Linha 8 - Diamante"  },
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "TRIVIA", "nome-linha": "Linha 13 - Jade" }
         ]
       }    
     ]
@@ -1647,7 +1647,7 @@
   "L11": {
     "nome": "Linha 11 - Coral",
     "cor": "#F68368",
-    "operadora": "CPTM",
+    "operadora": "TRIVIA",
     "estacoes": [
       {
         "nomePrincipal": "Palmeiras",
@@ -1661,9 +1661,9 @@
           { "tipo": "servico", "nome": "Expresso Aeroporto", "icone": "expresso_aeroporto.png" },          
           { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
           { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" },
-          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE",  "nome-linha": "Linha 8 - Diamante"  },
+          { "linha": "L08", "cor": "#97A098", "operadora": "MOTIVA",  "nome-linha": "Linha 8 - Diamante"  },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }          
+          { "linha": "L13", "cor": "#00B352", "operadora": "TRIVIA", "nome-linha": "Linha 13 - Jade" }          
         ]
       },
       {
@@ -1675,10 +1675,10 @@
         "conexoes": [
           { "tipo": "servico", "nome": "Expresso Turístico", "icone": "expresso_turistico.png" },          
           { "linha": "L01", "cor": "#0455A1", "operadora": "METRÔ" , "nome-linha": "Linha 1 - Azul" },
-          { "linha": "L04", "cor": "#FFF000", "operadora": "VIAQUATRO" , "nome-linha": "Linha 4 - Amarela"},
+          { "linha": "L04", "cor": "#FFF000", "operadora": "MOTIVA" , "nome-linha": "Linha 4 - Amarela"},
           { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }
+          { "linha": "L13", "cor": "#00B352", "operadora": "TRIVIA", "nome-linha": "Linha 13 - Jade" }
         ]
       },
       {
@@ -1691,8 +1691,8 @@
           { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
           { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
-          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }               
+          { "linha": "L12", "cor": "#133C8D", "operadora": "TRIVIA", "nome-linha": "Linha 12 - Safira" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "TRIVIA", "nome-linha": "Linha 13 - Jade" }               
         ]
       },
       {
@@ -1704,7 +1704,7 @@
         "conexoes": [
           { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
           { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
-          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" }
+          { "linha": "L12", "cor": "#133C8D", "operadora": "TRIVIA", "nome-linha": "Linha 12 - Safira" }
         ]
       },
       {
@@ -1775,7 +1775,7 @@
         "acesso_livre": false,        
         "tag": "CMV",
         "conexoes": [
-          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" }
+          { "linha": "L12", "cor": "#133C8D", "operadora": "TRIVIA", "nome-linha": "Linha 12 - Safira" }
         ]
       },
       {
@@ -1786,7 +1786,7 @@
         "tag": "SUZ",
         "conexoes": [
           { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
-          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" }
+          { "linha": "L12", "cor": "#133C8D", "operadora": "TRIVIA", "nome-linha": "Linha 12 - Safira" }
         ]
       },
       {
@@ -1830,7 +1830,7 @@
   "L12": {
     "nome": "Linha 12 - Safira",
     "cor": "#133C8D",
-    "operadora": "CPTM",
+    "operadora": "TRIVIA",
     "estacoes": [
       {
         "nomePrincipal": "Brás",
@@ -1842,8 +1842,8 @@
           { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
           { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
-          { "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }               
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L13", "cor": "#00B352", "operadora": "TRIVIA", "nome-linha": "Linha 13 - Jade" }               
         ]
       },
       {
@@ -1855,7 +1855,7 @@
         "conexoes": [
           { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
           { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" }
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" }
         ]
       },
       {
@@ -1864,7 +1864,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "EGO",
-        "conexoes": [{ "linha": "L13", "cor": "#00B352", "operadora": "CPTM", "nome-linha": "Linha 13 - Jade" }]
+        "conexoes": [{ "linha": "L13", "cor": "#00B352", "operadora": "TRIVIA", "nome-linha": "Linha 13 - Jade" }]
       },
       {
         "nomePrincipal": "USP Leste",
@@ -1946,14 +1946,14 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "CMV",
-        "conexoes": [{ "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" }]
+        "conexoes": [{ "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" }]
       }
     ]
   },
   "L13": {
     "nome": "Linha 13 - Jade",
     "cor": "#00B352",
-    "operadora": "CPTM",
+    "operadora": "TRIVIA",
     "estacoes": [
       {
         "nomePrincipal": "Palmeiras",
@@ -1967,9 +1967,9 @@
           { "tipo": "servico", "nome": "Expresso Aeroporto", "icone": "expresso_aeroporto.png" },          
           { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
           { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" },
-          { "linha": "L08", "cor": "#97A098", "operadora": "VIAMOBILIDADE",  "nome-linha": "Linha 8 - Diamante"  },
+          { "linha": "L08", "cor": "#97A098", "operadora": "MOTIVA",  "nome-linha": "Linha 8 - Diamante"  },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" }
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" }
         ]
       },
       {
@@ -1981,10 +1981,10 @@
         "conexoes": [
           { "tipo": "servico", "nome": "Expresso Turístico", "icone": "expresso_turistico.png" },          
           { "linha": "L01", "cor": "#0455A1", "operadora": "METRÔ" , "nome-linha": "Linha 1 - Azul" },
-          { "linha": "L04", "cor": "#FFF000", "operadora": "VIAQUATRO" , "nome-linha": "Linha 4 - Amarela"},
+          { "linha": "L04", "cor": "#FFF000", "operadora": "MOTIVA" , "nome-linha": "Linha 4 - Amarela"},
           { "linha": "L07", "cor": "#CA016B", "operadora": "TIC TRENS", "nome-linha": "Linha 7 - Rubi" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" }
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" }
         ]
       },
       {
@@ -1997,8 +1997,8 @@
           { "tipo": "servico", "nome": "Terminal de Ônibus Integrado", "icone": "terminal_onibus.png" },
           { "linha": "L03", "cor": "#EE372F", "operadora": "METRÔ", "nome-linha": "Linha 3 - Vermelha" },
           { "linha": "L10", "cor": "#0088B0", "operadora": "CPTM", "nome-linha": "Linha 10 - Turquesa" },
-          { "linha": "L11", "cor": "#F04E23", "operadora": "CPTM", "nome-linha": "Linha 11 - Coral" },
-          { "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" }
+          { "linha": "L11", "cor": "#F04E23", "operadora": "TRIVIA", "nome-linha": "Linha 11 - Coral" },
+          { "linha": "L12", "cor": "#133C8D", "operadora": "TRIVIA", "nome-linha": "Linha 12 - Safira" }
         ]
       },
       {
@@ -2007,7 +2007,7 @@
         "destaqueSecundario": false,
         "acesso_livre": false,        
         "tag": "EGO",
-        "conexoes": [{ "linha": "L12", "cor": "#133C8D", "operadora": "CPTM", "nome-linha": "Linha 12 - Safira" }]
+        "conexoes": [{ "linha": "L12", "cor": "#133C8D", "operadora": "TRIVIA", "nome-linha": "Linha 12 - Safira" }]
       },
       {
         "nomePrincipal": "Guarulhos",
@@ -2016,6 +2016,7 @@
         "acesso_livre": false,     
         "tag": "GCE",
         "conexoes": [
+          { "tipo": "servico", "nome": "Corredor Guarulhos-SP", "icone": "B.png"},
           { "tipo": "servico", "nome": "Terminal Rodoviário", "icone": "terminal_rod.png" }
         ]
       },
@@ -2140,7 +2141,7 @@
       "nomeSecundario": "Claro",
       "destaqueSecundario": false,
       "tag": "MOR",
-      "conexoes": [{ "linha": "L09", "cor": "#00A78E", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 9 - Turquesa" }]
+      "conexoes": [{ "linha": "L09", "cor": "#00A78E", "operadora": "MOTIVA", "nome-linha": "Linha 9 - Turquesa" }]
     },
     {
       "nomePrincipal": "Chucri Zaidan",
@@ -2155,7 +2156,7 @@
     {
       "nomePrincipal": "Campo Belo",
       "tag": "CBM",
-      "conexoes": [{ "linha": "L05", "cor": "#9B3894", "operadora": "VIAMOBILIDADE", "nome-linha": "Linha 5 - Lilás" }]
+      "conexoes": [{ "linha": "L05", "cor": "#9B3894", "operadora": "MOTIVA", "nome-linha": "Linha 5 - Lilás" }]
     },
     {
       "nomePrincipal": "Vereador José Diniz",

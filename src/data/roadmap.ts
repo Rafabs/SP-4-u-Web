@@ -51,6 +51,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "22/07/2026", versao: "v26.06.12", descricao: "Inserção de Logo das linhas em modo dark e light em Detalhes de Linhas" },    
     { data: "21/07/2026", versao: "v26.06.11", descricao: "Corrigido alinhamento de estilos, inserção de Logo das linhas em modo dark e light e adição da operadora Trivia" },    
     { data: "21/07/2026", versao: "v26.06.10", descricao: "Desenvolvido página de Termos e Privacidade" },    
     { data: "21/07/2026", versao: "v26.06.9", descricao: "Atualização GTFS - SPTrans e Inserção de Logo das linhas em index" },    

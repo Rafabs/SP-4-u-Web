@@ -11,6 +11,7 @@ const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
       <ul class="line-list">
         <li style="list-style: none;">
           <span id="linha-cor-bloco"></span>
+          <img id="linha-imagem" class="linha-imagem" src="" alt="" />
           <a
             href="#"
             id="linha-nome-titulo"
@@ -20,12 +21,6 @@ const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
             Informações sobre a Operação - Carregando...
           </div>
           <div class="empresa-wrapper">
-            <img
-              id="linha-destaque-logo"
-              src=""
-              alt=""
-              style="display: none; width: 20px; height: 20px; object-fit: contain;"
-            />
             <div class="empresa" id="linha-empresa">EMPRESA</div>
           </div>
         </li>

@@ -88,7 +88,7 @@
 
 .line-list li {
     display: grid;
-    grid-template-columns: 16px 80px 1fr auto auto; /* Indicador | Código | Nome | Operadora | Status */
+    grid-template-columns: 16px 28px 1fr auto auto; /* Indicador | Logo | Nome | Operadora | Status */
     align-items: center;
     gap: 16px;
     margin: 12px 0;
@@ -98,16 +98,16 @@
     background-color: var(--bg-card);
 }
 
-.line-list li span    { grid-column: 1; }
-.line-list li code    { grid-column: 2; }
-.line-list li a       { grid-column: 3; }
-.line-list li .empresa{ grid-column: 4; }
-.line-list li .card   { grid-column: 5; }
+.line-list li span             { grid-column: 1; }
+.line-list li .linha-imagem    { grid-column: 2; }
+.line-list li a                { grid-column: 3; }
+.line-list li .empresa-wrapper { grid-column: 4; }
+.line-list li .card            { grid-column: 5; }
 
 .line-list li span,
-.line-list li code,
+.line-list li .linha-imagem,
 .line-list li a,
-.line-list li .empresa,
+.line-list li .empresa-wrapper,
 .line-list li .card {
     grid-row: 1;
 }
@@ -200,6 +200,27 @@
     pointer-events: none;
     border-radius: inherit;
     opacity: 0.5;
+}
+
+/* Tema claro da timeline */
+body.light-mode .station-timeline-container {
+    background: #f8fafc;
+    border-color: rgba(26, 26, 26, 0.12);
+}
+
+body.light-mode .station-timeline-container::before {
+    background-image:
+        linear-gradient(rgba(26, 26, 26, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 26, 26, 0.08) 1px, transparent 1px);
+    opacity: 1;
+}
+
+body.light-mode .transfer-pill-custom {
+    background: #ffffff;
+    border-color: rgba(26, 26, 26, 0.16);
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 /* --- WRAPPER INTERNO --- */
@@ -720,4 +741,22 @@
     .page-indicator {
         font-size: 9px;
     }
+}
+
+.line-list li .linha-imagem {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.line-list li .linha-imagem--light {
+    display: none;
+}
+
+body.light-mode .line-list li .linha-imagem--dark {
+    display: none;
+}
+
+body.light-mode .line-list li .linha-imagem--light {
+    display: block;
 }
