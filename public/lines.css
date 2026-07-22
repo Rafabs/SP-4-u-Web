@@ -614,6 +614,66 @@ body.light-mode .transfer-pill-custom {
    ================================================ */
 @media (max-width: 768px) {
 
+    /* --- Cabeçalho da linha selecionada --- */
+    .line-list li {
+        grid-template-columns: 24px minmax(0, 1fr) auto;
+        grid-template-areas:
+            "image name name"
+            "indicator company status";
+        column-gap: 10px;
+        row-gap: 8px;
+        padding: 12px;
+    }
+
+    .line-list li span:first-child {
+        grid-area: indicator;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .line-list li .linha-imagem {
+        grid-area: image;
+        grid-column: auto;
+        grid-row: auto;
+        width: 24px;
+        height: 24px;
+    }
+
+    .line-list li a {
+        grid-area: name;
+        grid-column: auto;
+        grid-row: auto;
+        min-width: 0;
+        font-size: 0.95rem;
+    }
+
+    .line-list li .empresa-wrapper {
+        grid-area: company;
+        grid-column: auto;
+        grid-row: auto;
+        min-width: 0;
+    }
+
+    .line-list li .empresa {
+        min-width: 0;
+        margin: 0;
+        text-align: left;
+        font-size: 0.8rem;
+    }
+
+    .line-list li .card,
+    .line-list li .amarelo_velocidade_reduzida,
+    .line-list li .verde_operacao_normal,
+    .line-list li .vermelho_paralisada,
+    .line-list li .branco_dados_indisponiveis {
+        grid-area: status;
+        grid-column: auto;
+        grid-row: auto;
+        justify-self: end;
+        align-self: center;
+        font-size: 11px;
+    }
+
     /* --- Timeline vertical --- */
     .station-timeline-container {
         display: block;
