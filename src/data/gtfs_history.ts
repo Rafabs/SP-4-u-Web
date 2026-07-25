@@ -1,6 +1,4 @@
-// ===============================
 // TIPOS
-// ===============================
 export interface GTFSHistoryEntry {
   data: string;
   tipo: string;
@@ -10,9 +8,7 @@ export interface GTFSHistoryEntry {
   recente: boolean;
 }
 
-// ===============================
 // DADOS
-// ===============================
 export const historyData: GTFSHistoryEntry[] = [
   {
     data: "20/07/2026",

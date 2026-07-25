@@ -27,14 +27,10 @@ Chart.register(
   Legend
 );
 
-// ===============================
 // CONFIGURAÇÃO
-// ===============================
 const BASE_URL = import.meta.env.BASE_URL ?? "";
 
-// ===============================
 // TIPOS
-// ===============================
 interface LinhaOption {
   id: string;
   label: string;
@@ -50,9 +46,7 @@ interface EstacaoRanking {
   media: number;
 }
 
-// ===============================
 // CONSTANTES
-// ===============================
 const ANOS = ["2025", "2024", "2023", "2022", "2021", "2020"];
 
 const LINHAS: LinhaOption[] = [
@@ -72,14 +66,10 @@ const LINE_COLORS: Record<string, string> = {
   "15-PRATA":   "#808080",
 };
 
-// ===============================
 // ESTADO
-// ===============================
 const charts: { trend?: Chart; rank?: Chart } = {};
 
-// ===============================
 // INICIALIZAÇÃO
-// ===============================
 export function initDemanda(): void {
   const anoSel   = document.getElementById("ano-filter")   as HTMLSelectElement | null;
   const linhaSel = document.getElementById("linha-filter") as HTMLSelectElement | null;
@@ -98,9 +88,7 @@ export function initDemanda(): void {
   loadAllData();
 }
 
-// ===============================
 // CARREGAMENTO DE DADOS
-// ===============================
 async function loadAllData(): Promise<void> {
   const ano     = (document.getElementById("ano-filter")   as HTMLSelectElement).value;
   const linhaId = (document.getElementById("linha-filter") as HTMLSelectElement).value;
@@ -132,9 +120,7 @@ function parseCsv(path: string): Promise<string[][]> {
   });
 }
 
-// ===============================
 // PROCESSAMENTO
-// ===============================
 function processLeve(rows: string[][], linhaBusca: string): TrendData {
   let trend: (number | null)[] = new Array(12).fill(null);
   let mduSoma = 0;
@@ -217,9 +203,7 @@ function processRanking(rows: string[][], linhaBusca: string): EstacaoRanking[] 
     .slice(0, 10);
 }
 
-// ===============================
 // ATUALIZAÇÃO DA UI
-// ===============================
 function updateUI(global: TrendData, ranking: EstacaoRanking[], linhaId: string): void {
   const totalEl       = document.getElementById("total-demand");
   const peakStationEl = document.getElementById("peak-station");
@@ -236,9 +220,7 @@ function updateUI(global: TrendData, ranking: EstacaoRanking[], linhaId: string)
   renderRankingChart(ranking, linhaId);
 }
 
-// ===============================
 // GRÁFICOS
-// ===============================
 function getLineColor(linha: string): string {
   const key = Object.keys(LINE_COLORS).find((k) => linha.includes(k));
   return key ? LINE_COLORS[key] : "#d40000";

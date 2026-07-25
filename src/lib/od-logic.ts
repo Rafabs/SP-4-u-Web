@@ -12,9 +12,7 @@ Chart.register(
 
 const BASE_URL = import.meta.env.BASE_URL ?? "";
 
-// ===============================
 // FONTES POR ANO
-// ===============================
 const OD_FONTES_POR_ANO: Record<number, Record<string, string>> = {
   1997: {
     geral:            "Tab02_OD1997.xls",
@@ -100,9 +98,7 @@ let compararAnos: number[] = [];
 // nomeZona(normalizado) → zonaId numérico, por ano
 const cacheZonaIdPorAno: Record<number, Record<string, number>> = {};
 
-// ===============================
 // UTILITÁRIOS
-// ===============================
 function normalize(s: string): string {
   return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
 }
@@ -130,9 +126,7 @@ function getGeoJsonPath(ano: number): string {
   return buildPath(cleanBase(), "origem_destino", String(ano), OD_CONFIG.geoJson[ano]);
 }
 
-// ===============================
 // MAPA
-// ===============================
 function extrairZonaIdDeProperties(props: Record<string, unknown>): number | null {
   const candidatos = [
     "Zona97", "Zona07",
@@ -220,9 +214,7 @@ function highlightMapZone(zoneName: string): void {
   if (!found) console.warn(`Zona "${zoneName}" não encontrada no GeoJSON.`);
 }
 
-// ===============================
 // LOOKUP ZonaID
-// ===============================
 function getZonaId(zoneName: string, ano: number): number | null {
   const cache = cacheZonaIdPorAno[ano];
   if (!cache) return null;
@@ -234,9 +226,7 @@ function getZonaId(zoneName: string, ano: number): number | null {
   return null;
 }
 
-// ===============================
 // LEITURA DE EXCEL
-// ===============================
 async function getExcelDataNormalizado(ano: number, key: string): Promise<DataRow[]> {
   try {
     const fileName = getFileName(key, ano);
@@ -258,9 +248,7 @@ async function getExcelDataNormalizado(ano: number, key: string): Promise<DataRo
   }
 }
 
-// ===============================
 // EXTRATOR LEGADO (1997/2007)
-// ===============================
 function extrairDadosLegado(rows: unknown[][]): DataRow[] {
   // Encontra headerRow: primeira linha após r5 com ≥3 células STRING preenchidas
   let headerRow = -1;
@@ -311,9 +299,7 @@ function extrairDadosLegado(rows: unknown[][]): DataRow[] {
   return results;
 }
 
-// ===============================
 // BUSCA DE ZONA
-// ===============================
 function findZone(data: DataRow[], zoneName: string, ano: number): DataRow | null {
   if (!data?.length) return null;
 
@@ -353,9 +339,7 @@ function getVal(row: DataRow | null | undefined, terms: string | string[]): numb
   return 0;
 }
 
-// ===============================
 // CARREGAMENTO MULTI-ANO
-// ===============================
 async function carregarDadosZonaMultiAno(zoneName: string, anos: number[]): Promise<MultiAnoData> {
   const resultados: MultiAnoData = {};
   const fontes = Object.keys(OD_FONTES_POR_ANO[2017]);
@@ -379,9 +363,7 @@ async function carregarDadosZonaMultiAno(zoneName: string, anos: number[]): Prom
   return resultados;
 }
 
-// ===============================
 // GRÁFICOS
-// ===============================
 function createTooltipWithPercentage(total: number) {
   return {
     callbacks: {
@@ -414,9 +396,7 @@ function renderChart(id: string, type: string, data: object, options: object = {
   charts[id] = new Chart(canvas, { type: type as never, data: data as never, options: merged as never });
 }
 
-// ===============================
 // GRÁFICOS FIXOS
-// ===============================
 function renderGraficosFixos(dataMap: DataMap): void {
   // Gênero
   const masc = getVal(dataMap.genero, "Masculino");
@@ -458,9 +438,7 @@ function renderGraficosFixos(dataMap: DataMap): void {
   }, { plugins: { tooltip: createTooltipWithPercentage(peData.reduce((a, b) => a + b, 0)) } });
 }
 
-// ===============================
 // GRÁFICOS COMPARATIVOS
-// ===============================
 type ChartDef = {
   id: string; labels: string[];
   getValues: (dm: DataMap) => number[];
@@ -586,9 +564,7 @@ function renderGraficosComparativos(dadosMultiAno: MultiAnoData, anos: number[])
   }, { scales: scaleOpts("Empregos", false) });
 }
 
-// ===============================
 // CARDS DE ESTATÍSTICAS
-// ===============================
 function atualizarCardsBasicos(dataMap: DataMap): void {
   const faixas = ["até 3","4 a 6","7 a 10","11 a 14","15 a 17","18 a 22","23 a 29","30 a 39","40 a 49","50 a 59","60 e mais"];
   const totalPop  = faixas.reduce((s, f) => s + getVal(dataMap.geral, f), 0);
@@ -611,9 +587,7 @@ function setStatText(id: string, text: string): void {
   if (el) el.textContent = text;
 }
 
-// ===============================
 // CONTROLES
-// ===============================
 function initAnoSelector(selector: HTMLSelectElement): void {
   const anoSelector = document.getElementById("ano-selector") as HTMLSelectElement | null;
   if (!anoSelector) return;
@@ -673,9 +647,7 @@ async function atualizarComparacao(selector: HTMLSelectElement): Promise<void> {
   }
 }
 
-// ===============================
 // CARREGA ZONAS (dropdown — sempre do 2017)
-// ===============================
 async function loadZones(selector: HTMLSelectElement): Promise<void> {
   try {
     const fileName = getFileName("geral", 2017);
@@ -708,9 +680,7 @@ async function loadZones(selector: HTMLSelectElement): Promise<void> {
   }
 }
 
-// ===============================
 // ENTRY POINT
-// ===============================
 export async function initODDashboard(): Promise<void> {
   Chart.defaults.color = "#a0a0a0";
   Chart.defaults.font.family = "'Segoe UI', sans-serif";

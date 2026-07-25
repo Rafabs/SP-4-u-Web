@@ -2,9 +2,7 @@ import Papa from "papaparse";
 import { filterSptransLine } from "./map-logic";
 const BASE_URL = import.meta.env.BASE_URL ?? "";
 
-// ===============================
 // TIPOS
-// ===============================
 interface GTFSRoute {
   route_id: string;
   route_short_name: string;
@@ -44,9 +42,7 @@ interface GTFSData {
   agency: string;
 }
 
-// ===============================
 // ESTADO
-// ===============================
 let gtfsData: GTFSData | null = {
   routes: [],
   fares: [],
@@ -67,18 +63,14 @@ function escapeHtml(str: string): string {
   });
 }
 
-// ===============================
 // INICIALIZAÇÃO
-// ===============================
 export function initSptrans(): void {
   setupNavigationCleanup();
   setupSearch();
   loadGTFSFiles();
 }
 
-// ===============================
 // CANCELAMENTO AO SAIR DA PÁGINA
-// ===============================
 function setupNavigationCleanup(): void {
   document.querySelectorAll("a").forEach((link) => {
     const href = link.getAttribute("href") ?? "";
@@ -99,9 +91,7 @@ function setupNavigationCleanup(): void {
   });
 }
 
-// ===============================
 // BUSCA
-// ===============================
 function setupSearch(): void {
   const searchInput = document.getElementById("lineSearch") as HTMLInputElement | null;
   const clearBtn = document.getElementById("clearSearch") as HTMLElement | null;
@@ -137,9 +127,7 @@ function setupSearch(): void {
   }
 }
 
-// ===============================
 // CARREGAMENTO GTFS
-// ===============================
 async function loadGTFSFiles(): Promise<void> {
   const basePath = `${BASE_URL}/gtfs-sptrans/`.replace(/\/+$/, "/");
 
@@ -196,9 +184,7 @@ async function loadGTFSFiles(): Promise<void> {
   }
 }
 
-// ===============================
 // SELEÇÃO DE LINHA → MAPA
-// ===============================
 function selecionarLinhaDaBusca(routeId: string): void {
   const checkSptrans = document.getElementById("check-sptrans") as HTMLInputElement | null;
   if (checkSptrans && !checkSptrans.checked) {
@@ -212,9 +198,7 @@ function selecionarLinhaDaBusca(routeId: string): void {
   }, 800);
 }
 
-// ===============================
 // RENDERIZAÇÃO POR BLOCOS (CHUNKING)
-// ===============================
 function renderAllLines(filteredRoutes: GTFSRoute[] | null = null): void {
   const resultArea = document.getElementById("result-area");
   if (!resultArea || !gtfsData) return;
@@ -318,9 +302,7 @@ function renderAllLines(filteredRoutes: GTFSRoute[] | null = null): void {
   processChunk();
 }
 
-// ===============================
 // CONTADOR
-// ===============================
 function updateCounter(count: number): void {
   let counter = document.getElementById("line-counter");
   if (!counter) {
@@ -330,7 +312,6 @@ function updateCounter(count: number): void {
     if (searchSection) searchSection.after(counter);
   }
   
-  // Garantia do contador numérico sem risco XSS
   counter.innerHTML = `
     <p style="text-align:center; color:#666; margin-top:-20px; margin-bottom:20px;">
       Exibindo <strong>${Number(count).toLocaleString("pt-BR")}</strong> linhas encontrada(s)
@@ -338,13 +319,10 @@ function updateCounter(count: number): void {
   `;
 }
 
-// ===============================
 // INFORMAÇÃO DE VERSÃO
-// ===============================
 function updateVersionInfo(): void {
   const infoContainer = document.querySelector(".info-container");
   if (infoContainer && gtfsData?.agency) {
-    // Evita a criação duplicada da tag caso a função rode novamente
     if (infoContainer.querySelector(".gtfs-version-tag")) return;
 
     const versionTag = document.createElement("p");

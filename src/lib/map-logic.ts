@@ -3,9 +3,7 @@ import Papa from "papaparse";
 import { map } from "./map-instance"; 
 import type { Feature, Geometry } from "geojson";
 
-// ===============================
 // CONFIGURAÇÃO DE AMBIENTE
-// ===============================
 const BASE_URL = import.meta.env.BASE_URL ?? "";
 
 type GTFSSystem = "sptrans" | "artesp";
@@ -37,9 +35,7 @@ function resolveStationIconPath(lineName: unknown, iconMapping: Record<string, s
   )?.[1];
 }
 
-// ===============================
 // TIPOS
-// ===============================
 interface RouteInfo {
   color: string;
   number: string;
@@ -51,9 +47,7 @@ interface PolylineWithMeta extends L.Polyline {
   info?: RouteInfo;
 }
 
-// ===============================
 // ESTADO DO MAPA
-// ===============================
 let selectedLayer: L.Path | null = null;
 
 type BusState = {
@@ -68,9 +62,7 @@ const busState: Record<GTFSSystem, BusState> = {
   artesp:  { loaded: false, polylines: {}, rawCoords: {}, layer: L.layerGroup() },
 };
 
-// ===============================
 // CAMADAS
-// ===============================
 export const trilhosLayer     = L.layerGroup();
 export const cicloLayer       = L.layerGroup();
 export const bicicletarioLayer = L.layerGroup();
@@ -79,9 +71,7 @@ export function getBusLayer(system: GTFSSystem): L.LayerGroup {
   return busState[system].layer;
 }
 
-// ===============================
 // CARREGAMENTO DE DADOS GEOGRÁFICOS
-// ===============================
 export async function loadMapData(): Promise<void> {
   try {
     const responses = await Promise.all([
@@ -188,9 +178,7 @@ export async function loadMapData(): Promise<void> {
   }
 }
 
-// ===============================
 // CARREGAMENTO GTFS (DINÂMICO)
-// ===============================
 export async function loadBusRoutes(system: GTFSSystem = "sptrans"): Promise<void> {
   const state = busState[system];
   if (state.loaded) return;
@@ -203,48 +191,66 @@ export async function loadBusRoutes(system: GTFSSystem = "sptrans"): Promise<voi
       Papa.parse(getGTFSPath("routes.txt"), {
         download: true,
         header: true,
+        skipEmptyLines: true,
         complete: resolve,
       });
     }
   );
 
   const routeMap: Record<string, RouteInfo> = {};
-  routeResults.data.forEach((r) => {
-    routeMap[r.route_id] = {
-      color: r.route_color ? `#${r.route_color}` : "#0455A1",
-      number: r.route_short_name || r.route_id,
-      name: r.route_long_name,
-    };
-  });
+  if (routeResults?.data) {
+    routeResults.data.forEach((r) => {
+      if (!r || !r.route_id) return; 
+      routeMap[r.route_id] = {
+        color: r.route_color ? `#${r.route_color}` : "#0455A1",
+        number: r.route_short_name || r.route_id,
+        name: r.route_long_name,
+      };
+    });
+  }
 
   const tripResults = await new Promise<Papa.ParseResult<Record<string, string>>>(
     (resolve) => {
       Papa.parse(getGTFSPath("trips.txt"), {
         download: true,
         header: true,
+        skipEmptyLines: true, 
         complete: resolve,
       });
     }
   );
 
   const shapeToRoute: Record<string, string> = {};
-  tripResults.data.forEach((t) => {
-    shapeToRoute[t.shape_id] = t.route_id;
-  });
+  if (tripResults?.data) {
+    tripResults.data.forEach((t) => {
+      if (!t || !t.shape_id) return; 
+      shapeToRoute[t.shape_id] = t.route_id;
+    });
+  }
 
   await new Promise<void>((resolve) => {
     Papa.parse(getGTFSPath("shapes.txt"), {
       download: true,
       header: true,
+      skipEmptyLines: true,
       worker: true,
       complete(results: Papa.ParseResult<Record<string, string>>) {
+        if (!results || !results.data) {
+          console.warn(`[GTFS] Nenhum dado de shapes retornado para ${system}.`);
+          return resolve();
+        }
+
         results.data.forEach((point) => {
-          if (!point.shape_id) return;
+          if (!point || !point.shape_id) return;
+
           if (!state.rawCoords[point.shape_id]) state.rawCoords[point.shape_id] = [];
-          state.rawCoords[point.shape_id].push([
-            parseFloat(point.shape_pt_lat),
-            parseFloat(point.shape_pt_lon),
-          ]);
+          
+          const lat = parseFloat(point.shape_pt_lat);
+          const lon = parseFloat(point.shape_pt_lon);
+
+          if (!isNaN(lat) && !isNaN(lon)) {
+            state.rawCoords[point.shape_id].push([lat, lon]);
+          }
         });
 
         Object.keys(state.rawCoords).forEach((shapeId) => {
@@ -269,16 +275,14 @@ export async function loadBusRoutes(system: GTFSSystem = "sptrans"): Promise<voi
           }
         });
 
-        console.log(`[GTFS] ${GTFS_CONFIGS[system].label} carregado em modo económico.`);
+        console.log(`[GTFS] ${GTFS_CONFIGS[system].label} carregado em modo econômico.`);
         resolve();
       },
     });
   });
 }
 
-// ===============================
 // FILTRAGEM E ALTA RESOLUÇÃO
-// ===============================
 export function filterSptransLine(selectedRouteId: string | null, system: GTFSSystem = activeSystem): void {
   const state = busState[system];
   state.layer.clearLayers();
@@ -319,9 +323,7 @@ export function filterSptransLine(selectedRouteId: string | null, system: GTFSSy
   }
 }
 
-// ===============================
 // UTILITÁRIOS E CONTROLES
-// ===============================
 function handleLineClick(
   e: L.LeafletMouseEvent,
   feature: GeoJSON.Feature,

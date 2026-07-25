@@ -1,13 +1,9 @@
-// ===============================
 import { dadosLinhas as dadosLinhasHome } from "../data/linhas";
 
 // CONFIGURAÇÃO
-// ===============================
 const BASE_URL = import.meta.env.BASE_URL ?? "";
 
-// ===============================
 // TIPOS
-// ===============================
 interface Conexao {
   linha?: string;
   nome?: string;
@@ -37,9 +33,7 @@ interface DadosLinha {
 
 type DadosLinhas = Record<string, DadosLinha>;
 
-// ===============================
 // MAPA DE ÍCONES
-// ===============================
 interface IconesLinha {
   dark: string;
   light: string;
@@ -84,9 +78,7 @@ function observarMudancaDeTema(): void {
   });
 }
 
-// ===============================
 // INICIALIZAÇÃO
-// ===============================
 export async function initDetalhes(): Promise<void> {
   const params  = new URLSearchParams(window.location.search);
   const linhaId = params.get("linha");
@@ -114,9 +106,7 @@ export async function initDetalhes(): Promise<void> {
   }
 }
 
-// ===============================
 // LEGENDA (TIPOS DE CONEXÃO)
-// ===============================
 function renderLegendButton(dados: DadosLinha): void {
   if (document.getElementById("btn-legend")) return;
 
@@ -348,9 +338,7 @@ function renderLegendButton(dados: DadosLinha): void {
   document.body.appendChild(panel);
 }
 
-// ===============================
 // RENDERIZAÇÃO DA PÁGINA
-// ===============================
 function renderPage(dados: DadosLinha, linhaId: string): void {
   document.title = dados.nome;
 
@@ -390,9 +378,7 @@ function renderPage(dados: DadosLinha, linhaId: string): void {
   renderTimeline(dados);
 }
 
-// ===============================
 // TIMELINE DE ESTAÇÕES
-// ===============================
 function renderTimeline(dados: DadosLinha): void {
   const wrapper = document.getElementById("station-line-wrapper");
   const lineBar = document.getElementById("dynamic-line-color");
@@ -457,9 +443,7 @@ function renderTimeline(dados: DadosLinha): void {
   });
 }
 
-// ===============================
 // NAVEGADOR DE LINHAS (GRID PAGINADO)
-// ===============================
 function renderLineSwitcher(currentLinhaId: string, dadosLinhas: DadosLinhas): void {
   const grid      = document.getElementById("line-switcher-grid");
   const btnPrev   = document.getElementById("arrow-prev") as HTMLButtonElement | null;
@@ -498,7 +482,6 @@ function renderLineSwitcher(currentLinhaId: string, dadosLinhas: DadosLinhas): v
       grid!.appendChild(pill);
     });
 
-    // Células vazias para manter o grid alinhado
     const remainder = pageSize - slice.length;
     for (let i = 0; i < remainder; i++) {
       const empty = document.createElement("div");
