@@ -51,7 +51,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
-    { data: "25/07/2026", versao: "v26.07.14", descricao: "(GTFS): Previne erro ao ler shapes com linhas vazias ou indefinidas" },    
+    { data: "25/07/2026", versao: "v26.07.14", descricao: "Atualização GTFS - SPTrans e (GTFS): Previne erro ao ler shapes com linhas vazias ou indefinidas" },    
     { data: "22/07/2026", versao: "v26.07.13", descricao: "Correção de estilos de Detalhes na versão mobile" },    
     { data: "22/07/2026", versao: "v26.07.12", descricao: "Inserção de Logo das linhas em modo dark e light em Detalhes de Linhas" },    
     { data: "21/07/2026", versao: "v26.07.11", descricao: "Corrigido alinhamento de estilos, inserção de Logo das linhas em modo dark e light e adição da operadora Trivia" },    

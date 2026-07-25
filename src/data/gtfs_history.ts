@@ -9,7 +9,15 @@ export interface GTFSHistoryEntry {
 }
 
 // DADOS
-export const historyData: GTFSHistoryEntry[] = [
+export const historyData: GTFSHistoryEntry[] = [ 
+  {
+    data: "24/07/2026",
+    tipo: "🆕 Inclusão",
+    linha: "4050/10",
+    cor: "DA291C",
+    rota: "Metrô Itaquera - Pq. Do Carmo",
+    recente: true,
+  },    
   {
     data: "20/07/2026",
     tipo: "🆕 Inclusão",
