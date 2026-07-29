@@ -1,5 +1,5 @@
 import Papa from "papaparse";
-import { filterSptransLine } from "./map-logic";
+import { filterArtespLine } from "./map-logic";
 const BASE_URL = import.meta.env.BASE_URL ?? "";
 
 // TIPOS
@@ -81,7 +81,7 @@ function formatFarePrice(price?: string): string {
 }
 
 // INICIALIZAÇÃO
-export function initSptrans(): void {
+export function initArtesp(): void {
   setupNavigationCleanup();
   setupSearch();
   loadGTFSFiles();
@@ -139,14 +139,14 @@ function setupSearch(): void {
       clearBtn.style.display = "none";
       searchInput.focus();
       renderAllLines();
-      filterSptransLine(null);
+      filterArtespLine(null);
     });
   }
 }
 
 // CARREGAMENTO GTFS
 async function loadGTFSFiles(): Promise<void> {
-  const basePath = `${BASE_URL}/gtfs-sptrans/`.replace(/\/+$/, "/");
+  const basePath = `${BASE_URL}/gtfs-artesp/`.replace(/\/+$/, "/");
 
   const files: { id: Exclude<keyof GTFSData, "agency">; name: string }[] = [
     { id: "fares", name: "fare_attributes.txt" },
@@ -204,14 +204,14 @@ async function loadGTFSFiles(): Promise<void> {
 
 // SELEÇÃO DE LINHA → MAPA
 function selecionarLinhaDaBusca(routeId: string): void {
-  const checkSptrans = document.getElementById("check-sptrans") as HTMLInputElement | null;
-  if (checkSptrans && !checkSptrans.checked) {
-    checkSptrans.checked = true;
-    checkSptrans.dispatchEvent(new Event("change"));
+  const checkArtesp = document.getElementById("check-artesp") as HTMLInputElement | null;
+  if (checkArtesp && !checkArtesp.checked) {
+    checkArtesp.checked = true;
+    checkArtesp.dispatchEvent(new Event("change"));
   }
 
   setTimeout(() => {
-    filterSptransLine(routeId);
+    filterArtespLine(routeId);
     document.getElementById("map")?.scrollIntoView({ behavior: "smooth", block: "center" });
   }, 800);
 }
@@ -264,7 +264,7 @@ function renderAllLines(filteredRoutes: GTFSRoute[] | null = null): void {
       if (service) {
         if (service.monday === "1" && service.sunday === "1") operacao = "Diária";
         else if (service.monday === "1" && service.saturday === "0") operacao = "Segunda a Sexta";
-        else if (service.saturday === "1" || service.sunday === "1") operacao = "Fins de Semana";
+        else if (service.saturday === "1" || service.sunday === "1") operacao = "Diária";
       }
 
       const badgeColor = /^[0-9A-Fa-f]{6}$/.test(route.route_color ?? "") ? route.route_color : "333333";

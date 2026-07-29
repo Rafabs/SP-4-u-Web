@@ -323,6 +323,46 @@ export function filterSptransLine(selectedRouteId: string | null, system: GTFSSy
   }
 }
 
+export function filterArtespLine(selectedRouteId: string | null, system: GTFSSystem = activeSystem): void {
+  const state = busState[system];
+  state.layer.clearLayers();
+
+  if (!selectedRouteId) {
+    Object.values(state.polylines).flat().forEach((p) => p.addTo(state.layer));
+    return;
+  }
+
+  if (state.polylines[selectedRouteId]) {
+    state.polylines[selectedRouteId].forEach((lowResPoly) => {
+      const fullCoords = state.rawCoords[lowResPoly.shapeId!];
+      const info = lowResPoly.info!;
+      const highResPoly = L.polyline(fullCoords, {
+        color: info.color,
+        weight: 5,
+        opacity: 1,
+        smoothFactor: 0.5,
+      }).addTo(state.layer);
+
+      highResPoly.bindPopup(`
+        <div class="map-popup">
+          <div class="popup-header" style="background-color: ${info.color}">
+            <strong>${info.number}</strong>
+          </div>
+          <div class="popup-body">
+            <p><strong>Linha:</strong> ${info.name}</p>
+            <p><small>Fonte: ${GTFS_CONFIGS[system].label}</small></p>
+          </div>
+        </div>
+      `);
+    });
+
+    const group = new L.FeatureGroup(state.layer.getLayers());
+    if (group.getLayers().length > 0) {
+      map.fitBounds(group.getBounds(), { padding: [40, 40], maxZoom: 16 });
+    }
+  }
+}
+
 // UTILITÁRIOS E CONTROLES
 function handleLineClick(
   e: L.LeafletMouseEvent,

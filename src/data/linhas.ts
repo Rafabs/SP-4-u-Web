@@ -48,7 +48,7 @@ export const dadosLinhas: Record<string, Linha> = {
     nome: "06 - Laranja",
     image_mode_light: "/public/icons/white_linha_uni.png",
     image_mode_dark: "/public/icons/black_linha_uni.png",
-    cor: "#F37321",
+    cor: "#FF6600",
     empresa: "LINHA UNI",
   },
   L07: {
@@ -111,7 +111,7 @@ export const dadosLinhas: Record<string, Linha> = {
     nome: "17 - Ouro",
     image_mode_light: "/public/icons/white_metro.png",
     image_mode_dark: "/public/icons/black_metro.png",
-    cor: "#917F57",
+    cor: "#D48500",
     empresa: "METRÔ",
   },
 };

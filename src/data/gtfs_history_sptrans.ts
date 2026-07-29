@@ -9,14 +9,46 @@ export interface GTFSHistoryEntry {
 }
 
 // DADOS
-export const historyData: GTFSHistoryEntry[] = [ 
+export const historyData_SPTrans: GTFSHistoryEntry[] = [ 
+  {
+    data: "29/07/2026",
+    tipo: "❌ Remoção",
+    linha: "879A/10",
+    cor: "002F6C",
+    rota: "Metrô Barra Funda - São João / Ctn",
+    recente: true,
+  }, 
+  {
+    data: "29/07/2026",
+    tipo: "✏️ Modificação",
+    linha: "8072/10",
+    cor: "FF671F",
+    rota: "<after>Atual:</after> Horto Do Ypê - Metrô Morumbi<br><before>Antes:</before> Pq. Ipê - Metrô Morumbi",
+    recente: true,
+  },     
+  {
+    data: "29/07/2026",
+    tipo: "✏️ Modificação",
+    linha: "6045/21",
+    cor: "782F40",
+    rota: "<after>Atual:</after> Term. Capelinha - Chác. Sta. Maria<br><before>Antes:</before> Term. Capelinha - Valo Velho",
+    recente: true,
+  },   
+  {
+    data: "29/07/2026",
+    tipo: "❌ Remoção",
+    linha: "4050/10",
+    cor: "DA291C",
+    rota: "Metrô Itaquera - Pq. Do Carmo",
+    recente: true,
+  },      
   {
     data: "24/07/2026",
     tipo: "🆕 Inclusão",
     linha: "4050/10",
     cor: "DA291C",
     rota: "Metrô Itaquera - Pq. Do Carmo",
-    recente: true,
+    recente: false,
   },    
   {
     data: "20/07/2026",
@@ -48,7 +80,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "606F/10",
     cor: "0082BA",
     rota: "Circular - Autódromo",
-    recente: true,
+    recente: false,
   },        
   {
     data: "02/07/2026",
@@ -56,7 +88,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "607C/21",
     cor: "0082BA",
     rota: "Pça Tito Pacheco - Berrini",
-    recente: true,
+    recente: false,
   },   
   {
     data: "08/06/2026",
@@ -64,7 +96,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "407E/10",
     cor: "DA291C",
     rota: "<after>Atual:</after> Jd. Sto. André - Metrô Carrão<br><before>Antes:</before> Jd. São Francisco (via Jd. Sto. André) - Metrô Carrão",
-    recente: true,
+    recente: false,
   },     
   {
     data: "31/05/2026",
@@ -72,7 +104,7 @@ export const historyData: GTFSHistoryEntry[] = [
     linha: "879A/10",
     cor: "002F6C",
     rota: "Metrô Barra Funda - São João / Ctn",
-    recente: true,
+    recente: false,
   },     
   {
     data: "07/05/2026",

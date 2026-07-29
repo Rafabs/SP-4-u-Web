@@ -1,10 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { historyData } from "../data/gtfs_history";
 const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
+import { historyData_SPTrans } from "../data/gtfs_history_sptrans";
+import { historyData_ARTESP } from "../data/gtfs_history_artesp";
 
-const recentes = historyData.filter((item) => item.recente);
-const todos = historyData;
+const recentes_SPTrans = historyData_SPTrans.filter((item) => item.recente);
+const todos_SPTrans = historyData_SPTrans;
+
+const recentes_ARTESP = historyData_ARTESP.filter((item) => item.recente);
+const todos_ARTESP = historyData_ARTESP;
 
 function badgeUrl(linha: string, cor: string): string {
   const label = linha.replace(/-/g, "--").replace(/ /g, "_");
@@ -14,7 +18,6 @@ function badgeUrl(linha: string, cor: string): string {
 
 <Layout title="Sampa 4u | Histórico de Linhas">
   <link rel="stylesheet" href={`${base}gtfs.css`} slot="head" />
-
   <section class="hero hero-gtfs">
     <div class="hero-bg">
       <div class="hero-grid"></div>
@@ -35,11 +38,11 @@ function badgeUrl(linha: string, cor: string): string {
       </div>
       <div class="hero-stats">
         <div class="stat" style="border-color:#00b352;">
-          <div class="stat-val">{recentes.length}</div>
+          <div class="stat-val">{recentes_SPTrans.length}</div>
           <div class="stat-label">Atualizações recentes</div>
         </div>
         <div class="stat" style="border-color:#00b352;">
-          <div class="stat-val">{todos.length}</div>
+          <div class="stat-val">{todos_SPTrans.length}</div>
           <div class="stat-label">Registros totais</div>
         </div>
         <div class="stat" style="border-color:#00b352;">
@@ -54,7 +57,7 @@ function badgeUrl(linha: string, cor: string): string {
   <section id="ultimas">
     <h2>
       <span class="material-symbols-outlined" style="vertical-align: middle;">push_pin</span>
-      Últimas Atualizações
+      Últimas Atualizações - SPTrans
     </h2>
     <div class="table-wrapper">
       <table class="history-table">
@@ -66,7 +69,7 @@ function badgeUrl(linha: string, cor: string): string {
           </tr>
         </thead>
         <tbody>
-          {recentes.map((item) => (
+          {recentes_SPTrans.map((item) => (
             <tr>
               <td>{item.tipo}</td>
               <td><img src={badgeUrl(item.linha, item.cor)} alt={item.linha} /></td>
@@ -92,7 +95,62 @@ function badgeUrl(linha: string, cor: string): string {
             </tr>
           </thead>
           <tbody>
-            {todos.map((item) => (
+            {todos_SPTrans.map((item) => (
+              <tr>
+                <td>{item.data}</td>
+                <td>{item.tipo}</td>
+                <td><img src={badgeUrl(item.linha, item.cor)} alt={item.linha} /></td>
+                <td set:html={item.rota} />
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <section id="ultimas">
+    <h2>
+      <span class="material-symbols-outlined" style="vertical-align: middle;">push_pin</span>
+      Últimas Atualizações - ARTESP
+    </h2>
+    <div class="table-wrapper">
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Linha</th>
+            <th>Rota</th>
+          </tr>
+        </thead>
+        <tbody>
+          {recentes_ARTESP.map((item) => (
+            <tr>
+              <td>{item.tipo}</td>
+              <td><img src={badgeUrl(item.linha, item.cor)} alt={item.linha} /></td>
+              <td set:html={item.rota} />
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <br />
+
+    <details class="note" id="historico" style="padding: 15px; cursor: pointer;">
+      <summary><strong>📚 Ver histórico completo</strong></summary>
+      <div style="margin-top: 15px;">
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Tipo</th>
+              <th>Linha</th>
+              <th>Rota</th>
+            </tr>
+          </thead>
+          <tbody>
+            {todos_ARTESP.map((item) => (
               <tr>
                 <td>{item.data}</td>
                 <td>{item.tipo}</td>
