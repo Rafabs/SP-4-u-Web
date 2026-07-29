@@ -1,0 +1,137 @@
+---
+// src/layouts/Layout.astro
+import fs from 'fs';
+import path from 'path';
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+const logoPath = path.resolve('./public/logo/Fundo-Preto-Estendido.svg');
+let logoSvgContent = '';
+
+try {
+    logoSvgContent = fs.readFileSync(logoPath, 'utf8');
+} catch (err) {
+    console.error("Erro ao carregar o SVG do logo:", err);
+    logoSvgContent = '<span>Sampa 4u</span>'; // Fallback caso o arquivo não exista
+}
+---
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />        
+    <link rel="stylesheet" href={`${base}styles.css`}/>   
+    <link rel="icon" href={`${base}logo/Quadrado-Fundo-Preto-Original.svg`} type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Share+Tech+Mono&display=swap" rel="stylesheet">    
+    <slot name="head" />    
+</head>
+<body>
+    <button class="theme-toggle" id="theme-btn" title="Alternar tema">🌓</button>
+    <header>
+      <a href={`${base}`} class="logo-wrapper" aria-label="Sampa 4u Home">
+        <Fragment set:html={logoSvgContent} />
+      </a>
+
+    <style>
+        .logo-wrapper {
+          display: flex;
+          align-items: center;
+          height: 45px; 
+          text-decoration: none;
+          background: transparent;
+        }
+        
+        .logo-wrapper :global(svg) {
+          height: 100%;
+          width: auto;
+          mix-blend-mode: screen; 
+          transition: all 0.3s ease;
+        }
+        
+        .logo-wrapper:hover :global(svg) {
+          filter: drop-shadow(0 0 10px var(--accent));
+          transform: scale(1.02);
+        }
+      </style>
+
+        <button id="backToTop"><span class="material-symbols-outlined">arrow_upward</span></button>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav-menu" id="nav-menu">
+            <a href={`${base}`}><span class="material-symbols-outlined">home</span><span>Início</span></a>
+            <a href={`${base}sptrans`}><span class="material-symbols-outlined">directions_bus</span><span>SPTrans</span></a>
+            <a href={`${base}artesp`}><span class="material-symbols-outlined">bus_map_pin</span><span>ARTESP</span></a>
+            <a href={`${base}olho_vivo`}><span class="material-symbols-outlined">Eye_Tracking</span><span>Olho Vivo</span></a>
+            <a href={`${base}gtfs`}><span class="material-symbols-outlined">schedule</span><span>GTFS</span></a>
+            <a href={`${base}qualidade_ar`}><span class="material-symbols-outlined">humidity_percentage</span><span>Ar (AQI)</span></a>
+            <a href={`${base}ciclovia`}><span class="material-symbols-outlined">directions_bike</span><span>Ciclovia</span></a>
+            <a href={`${base}origem_destino`}><span class="material-symbols-outlined">transfer_within_a_station</span><span>Pesquisa OD</span></a>
+            <a href={`${base}demanda`}><span class="material-symbols-outlined">monitoring</span><span>Demanda</span></a>
+            <a href={`${base}news`}><span class="material-symbols-outlined">newspaper</span><span>Notícias</span></a>
+            <a href={`${base}turismo`}><span class="material-symbols-outlined">attractions</span><span>Turismo</span></a>
+            <a href={`${base}mapa`}><span class="material-symbols-outlined">map</span><span>Explore</span></a>
+        </nav>
+    </header>
+
+    <slot /> 
+</body>
+<footer>
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href={`${base}versao`}>Versões de Desenvolvimento e Licença</a>
+      <a href={`${base}fonte_dados`}>Fonte de Informação · Dados Abertos</a>
+      <a href={`${base}desenvolvimento`}>Desenvolvimento e Transparência</a>
+      <a href={`${base}termos-e-privacidade`}>Termos de Uso & Privacidade</a>      
+    </div>
+    <div class="footer-badges">
+      <img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="VSCode">
+      <img src="https://img.shields.io/badge/Astro-FF5D01?style=for-the-badge&logo=astro&logoColor=white" alt="Astro">
+      <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JS">
+      <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT">
+    </div>
+  </div>
+
+  <div class="dev-card">
+    <div class="card-body">
+      <div class="card-left"></div>
+      <div class="card-info">
+        <div class="dev-label">// desenvolvido por</div>
+        <div class="dev-name" data-t="RAFAEL BARBOSA">RAFAEL <span class="hi">BARBOSA</span></div>
+        <div class="dev-tags">          
+        <a class="gh-link" href="https://github.com/rafabs" target="_blank">
+          <span class="gh-dot"></span>
+          GITHUB.COM/RAFABS
+        </a>          
+        </div>
+        <div class="tw-line" id="tw-footer">&nbsp;<span class="cur"></span></div>
+      </div>
+    </div>
+
+    <div class="card-bottom">
+      <span>2023 – 2026 · SAMPA 4U</span>
+      <span>MIT LICENSE</span>
+      <span>SÃO PAULO · BR</span>
+    </div>
+  </div>
+</footer>
+
+    <script is:inline src={`${base}footer-card.js`}></script>
+    <script is:inline src={`${base}components.js`}></script>
+    <script is:inline src={`${base}bottom-theme.js`}></script>
+    <script is:inline src={`${base}menu-toggle.js`}></script>
+    <script define:vars={{ base: import.meta.env.BASE_URL }}>
+  window.__BASE_URL__ = base.replace(/\/$/, "");
+</script>
+</html>

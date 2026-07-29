@@ -1,0 +1,14 @@
+{
+  "servico": {
+    "titulo": "Serviços",
+    "descricao": "Serviços disponíveis nas estações"
+  },
+  "linha": {
+    "titulo": "Linhas",
+    "descricao": "Conexões com outras linhas"
+  },
+  "outro": {
+    "titulo": "Outros",
+    "descricao": "Outras conexões disponíveis"
+  }
+}

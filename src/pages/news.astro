@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
+
+const canais = [
+  {
+    href: "https://ccm.artesp.sp.gov.br/metroferroviario/noticias",
+    icon: "train",
+    label: "Metroviário & Ferroviário",
+    desc: "Metrô, trens e sistemas sobre trilhos",
+  },
+  {
+    href: "https://ccm.artesp.sp.gov.br/rodovias/noticias",
+    icon: "route",
+    label: "Rodovias",
+    desc: "Ônibus intermunicipais e vias concedidas",
+  },
+  {
+    href: "https://ccm.artesp.sp.gov.br/aeroportos/noticias",
+    icon: "flight",
+    label: "Aeroportos",
+    desc: "Terminais e conexões aeroportuárias",
+  },
+];
+---
+
+<Layout title="Sampa 4u | Notícias">
+  <link rel="stylesheet" href={`${base}news.css`} slot="head" />
+  <section class="hero hero-news">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-lines" id="news-canvas"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Informação Oficial · ARTESP</div>
+      <h1 class="hero-h1">Canais de<br><span style="color:#4d80ff;">Informação</span></h1>
+      <p class="hero-sub">
+        Acompanhe as últimas novidades sobre operação, fiscalização e melhorias
+        no transporte metropolitano — metrô, trens, ônibus e aeroportos — pelos
+        canais oficiais da ARTESP.
+      </p>
+      <div class="hero-ctas">
+
+      </div>
+      <div class="hero-stats">
+        <div class="stat" style="border-color:#4d80ff;">
+          <div class="stat-val">3</div>
+          <div class="stat-label">Canais oficiais</div>
+        </div>
+        <div class="stat" style="border-color:#4d80ff;">
+          <div class="stat-val">ARTESP</div>
+          <div class="stat-label">Fonte regulatória</div>
+        </div>
+        <div class="stat" style="border-color:#4d80ff;">
+          <div class="stat-val">OSS</div>
+          <div class="stat-label">Código aberto</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr />
+
+  <section class="about">
+        <div class="info-container">
+            <h2>Canais de Informação</h2>
+            <p>
+            Para acompanhar as últimas novidades sobre a operação, fiscalização e melhorias no transporte metropolitano, incluindo 
+            sistemas de metrô, trens e ônibus intermunicipais, consulte os canais oficiais da ARTESP.
+            Lá você encontra atualizações, comunicados e notícias sobre a mobilidade regulada pela agência, sempre com informações confiáveis e atualizadas.
+            </p>
+            
+            <div class="actions" style="margin-top: 15px;">
+                <a href="https://ccm.artesp.sp.gov.br/metroferroviario/noticias" target="_blank" class="external-link">
+                    <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px;">news</span>
+                    Notícias ARTESP | Metroviário
+                </a>
+            </div>
+            <div class="actions" style="margin-top: 15px;">
+                <a href="https://ccm.artesp.sp.gov.br/rodovias/noticias" target="_blank" class="external-link">
+                    <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px;">news</span>
+                    Notícias ARTESP | Rodovias
+                </a>
+            </div>       
+            <div class="actions" style="margin-top: 15px;">
+                <a href="https://ccm.artesp.sp.gov.br/aeroportos/noticias" target="_blank" class="external-link">
+                    <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px;">news</span>
+                    Notícias ARTESP | Aeroportos
+                </a>
+            </div>                    
+        </div>
+    </section>
+
+  <hr />
+  <div id="dynamic-systems-info"></div>
+  <hr />
+
+</Layout>
+
+<script>
+  import { initHeroNews } from "../lib/hero-animations";
+  initHeroNews();
+</script>

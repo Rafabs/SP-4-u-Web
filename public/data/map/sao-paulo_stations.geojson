@@ -1,0 +1,5281 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.7068, -23.74859] },
+      "properties": {
+        "id": 6638,
+        "klass": "Station",
+        "name": "Mendes",
+        "opening": 2021,
+        "buildstart": 2013,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.49281, -23.43264] },
+      "properties": {
+        "id": 6643,
+        "klass": "Station",
+        "name": "Aeroporto",
+        "opening": 2018,
+        "buildstart": 2013,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 13 • Jade (CPTM)",
+            "line_url_name": "277-linha-13-•-jade",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.52047, -23.49775] },
+      "properties": {
+        "id": 6642,
+        "klass": "Station",
+        "name": "Engenheiro Goulart",
+        "opening": 2017,
+        "buildstart": 2013,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 13 • Jade (CPTM)",
+            "line_url_name": "277-linha-13-•-jade",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69571, -23.4635] },
+      "properties": {
+        "id": 6640,
+        "klass": "Station",
+        "name": "Brasilândia",
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.52862, -23.59992] },
+      "properties": {
+        "id": 6675,
+        "klass": "Station",
+        "name": "Vila Tolstói",
+        "opening": 2018,
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 15 • Prata (CMSP)",
+            "line_url_name": "265-linha-15---prata",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6996, -23.64168] },
+      "properties": {
+        "id": 6648,
+        "klass": "Station",
+        "name": "Alto da Boa Vista",
+        "opening": 2017,
+        "buildstart": 2011,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.67311, -23.56102] },
+      "properties": {
+        "id": 6646,
+        "klass": "Station",
+        "name": "Oscar Freire",
+        "opening": 2018,
+        "buildstart": 2016,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 4 • Amarela (ViaQuatro)",
+            "line_url_name": "266-linha-4---amarela",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.67404, -23.53652] },
+      "properties": {
+        "id": 6670,
+        "klass": "Station",
+        "name": "Perdizes",
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.53837, -23.59475] },
+      "properties": {
+        "id": 6673,
+        "klass": "Station",
+        "name": "Camilo Haddad",
+        "opening": 2018,
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 15 • Prata (CMSP)",
+            "line_url_name": "265-linha-15---prata",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.50124, -23.61472] },
+      "properties": {
+        "id": 6677,
+        "klass": "Station",
+        "name": "Sapopemba",
+        "opening": 2019,
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 15 • Prata (CMSP)",
+            "line_url_name": "265-linha-15---prata",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.54492, -23.58859] },
+      "properties": {
+        "id": 6672,
+        "klass": "Station",
+        "name": "São Lucas",
+        "opening": 2018,
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 15 • Prata (CMSP)",
+            "line_url_name": "265-linha-15---prata",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.30309, -23.77804] },
+      "properties": {
+        "id": 6687,
+        "klass": "Station",
+        "name": "Paranapiacaba",
+        "opening": 1867,
+        "buildstart": 1861,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Trem dos Ingleses (ABPF)",
+            "line_url_name": "281-trem-dos-ingleses-(abpf)",
+            "system": "Turismo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.5088, -23.60498] },
+      "properties": {
+        "id": 6674,
+        "klass": "Station",
+        "name": "Jardim Planalto",
+        "opening": 2019,
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 15 • Prata (CMSP)",
+            "line_url_name": "265-linha-15---prata",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.51653, -23.60288] },
+      "properties": {
+        "id": 6676,
+        "klass": "Station",
+        "name": "Vila União",
+        "opening": 2018,
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 15 • Prata (CMSP)",
+            "line_url_name": "265-linha-15---prata",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.48702, -23.6113] },
+      "properties": {
+        "id": 6678,
+        "klass": "Station",
+        "name": "Fazenda da Juta",
+        "opening": 2019,
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 15 • Prata (CMSP)",
+            "line_url_name": "265-linha-15---prata",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.83458, -23.40083] },
+      "properties": {
+        "id": 6692,
+        "klass": "Station",
+        "name": "Natura",
+        "opening": 2008,
+        "buildstart": 2005,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Estrada de Ferro Perus-Pirapora (IFPPC)",
+            "line_url_name": "284-estrada-de-ferro-perus-pirapora-(ifppc)",
+            "system": "Turismo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.65918, -23.54661] },
+      "properties": {
+        "id": 6669,
+        "klass": "Station",
+        "name": "Angélica - Pacaembu",
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.68299, -23.52936] },
+      "properties": {
+        "id": 6668,
+        "klass": "Station",
+        "name": "SESC - Pompeia",
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.7762, -23.39881] },
+      "properties": {
+        "id": 6690,
+        "klass": "Station",
+        "name": "Mineral",
+        "opening": 1914,
+        "buildstart": 1913,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Estrada de Ferro Perus-Pirapora (IFPPC)",
+            "line_url_name": "284-estrada-de-ferro-perus-pirapora-(ifppc)",
+            "system": "Turismo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.78926, -23.40426] },
+      "properties": {
+        "id": 6693,
+        "klass": "Station",
+        "name": "Ecologia",
+        "opening": 1914,
+        "buildstart": 1913,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Estrada de Ferro Perus-Pirapora (IFPPC)",
+            "line_url_name": "284-estrada-de-ferro-perus-pirapora-(ifppc)",
+            "system": "Turismo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.72361, -23.58665] },
+      "properties": {
+        "id": 6647,
+        "klass": "Station",
+        "name": "São Paulo - Morumbi",
+        "opening": 2018,
+        "buildstart": 2016,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 4 • Amarela (ViaQuatro)",
+            "line_url_name": "266-linha-4---amarela",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.05822, -23.45894] },
+      "properties": {
+        "id": 6694,
+        "klass": "Station",
+        "name": "Luis Carlos",
+        "opening": 1914,
+        "buildstart": 1913,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Trem de Guararema (ABPF)",
+            "line_url_name": "283-trem-de-guararema-(abpf)",
+            "system": "Turismo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.66481, -23.54174] },
+      "properties": {
+        "id": 6671,
+        "klass": "Station",
+        "name": "PUC - Cardoso de Almeida",
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.65376, -23.54983] },
+      "properties": {
+        "id": 6645,
+        "klass": "Station",
+        "name": "Higienópolis - Mackenzie",
+        "opening": 2018,
+        "buildstart": 2016,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 4 • Amarela (ViaQuatro)",
+            "line_url_name": "266-linha-4---amarela",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69091, -23.51529] },
+      "properties": {
+        "id": 6661,
+        "klass": "Station",
+        "name": "Santa Marina",
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69356, -23.50224] },
+      "properties": {
+        "id": 6662,
+        "klass": "Station",
+        "name": "Freguesia do Ó",
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69223, -23.63266] },
+      "properties": {
+        "id": 6656,
+        "klass": "Station",
+        "name": "Borba Gato",
+        "opening": 2017,
+        "buildstart": 2011,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69523, -23.61352] },
+      "properties": {
+        "id": 6680,
+        "klass": "Station",
+        "name": "Chucri Zaidan",
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 17 • Ouro (ViaMobilidade)",
+            "line_url_name": "274-linha-17-•-ouro",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6499, -23.55568] },
+      "properties": {
+        "id": 6667,
+        "klass": "Station",
+        "name": "14 Bis-Saracura",
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.67913, -23.62197] },
+      "properties": {
+        "id": 6685,
+        "klass": "Station",
+        "name": "Vereador José Diniz",
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 17 • Ouro (ViaMobilidade)",
+            "line_url_name": "274-linha-17-•-ouro",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.64338, -23.56038] },
+      "properties": {
+        "id": 6666,
+        "klass": "Station",
+        "name": "Bela Vista",
+        "opening": 999999,
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.68255, -23.61908] },
+      "properties": {
+        "id": 6682,
+        "klass": "Station",
+        "name": "Campo Belo",
+        "opening": 999999,
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 17 • Ouro (ViaMobilidade)",
+            "line_url_name": "274-linha-17-•-ouro",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.68791, -23.62641] },
+      "properties": {
+        "id": 6655,
+        "klass": "Station",
+        "name": "Brooklin",
+        "opening": 2017,
+        "buildstart": 2011,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6685, -23.61023] },
+      "properties": {
+        "id": 6653,
+        "klass": "Station",
+        "name": "Eucaliptos",
+        "opening": 2018,
+        "buildstart": 2011,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.67437, -23.62903] },
+      "properties": {
+        "id": 6686,
+        "klass": "Station",
+        "name": "Brooklin Paulista",
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 17 • Ouro (ViaMobilidade)",
+            "line_url_name": "274-linha-17-•-ouro",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.66616, -23.6354] },
+      "properties": {
+        "id": 6683,
+        "klass": "Station",
+        "name": "Jardim Aeroporto",
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 17 • Ouro (ViaMobilidade)",
+            "line_url_name": "274-linha-17-•-ouro",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6389, -23.56172] },
+      "properties": {
+        "id": 6658,
+        "klass": "Station",
+        "name": "São Joaquim",
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.65341, -23.54967] },
+      "properties": {
+        "id": 6659,
+        "klass": "Station",
+        "name": "Higienópolis - Mackenzie",
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.66145, -23.62746] },
+      "properties": {
+        "id": 6684,
+        "klass": "Station",
+        "name": "Congonhas",
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 17 • Ouro (ViaMobilidade)",
+            "line_url_name": "274-linha-17-•-ouro",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.68819, -23.52111] },
+      "properties": {
+        "id": 6660,
+        "klass": "Station",
+        "name": "Água Branca",
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.65209, -23.59775] },
+      "properties": {
+        "id": 6652,
+        "klass": "Station",
+        "name": "AACD - Servidor",
+        "opening": 2018,
+        "buildstart": 2011,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69146, -23.48396] },
+      "properties": {
+        "id": 6664,
+        "klass": "Station",
+        "name": "Itaberaba",
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69066, -23.49209] },
+      "properties": {
+        "id": 6665,
+        "klass": "Station",
+        "name": "João Paulo I",
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.68957, -23.61517] },
+      "properties": {
+        "id": 6681,
+        "klass": "Station",
+        "name": "Vila Cordeiro",
+        "opening": 999999,
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 17 • Ouro (ViaMobilidade)",
+            "line_url_name": "274-linha-17-•-ouro",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.60829, -23.55792] },
+      "properties": {
+        "id": 6688,
+        "klass": "Station",
+        "name": "Mooca",
+        "opening": 1898,
+        "buildstart": 1897,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Trem dos Imigrantes (ABPF)",
+            "line_url_name": "282-trem-dos-imigrantes-(abpf)",
+            "system": "Turismo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.70186, -23.62167] },
+      "properties": {
+        "id": 6679,
+        "klass": "Station",
+        "name": "Morumbi",
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 17 • Ouro (ViaMobilidade)",
+            "line_url_name": "274-linha-17-•-ouro",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.61363, -23.54952] },
+      "properties": {
+        "id": 6689,
+        "klass": "Station",
+        "name": "Hospedaria dos Imigrantes",
+        "opening": 1888,
+        "buildstart": 1887,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Trem dos Imigrantes (ABPF)",
+            "line_url_name": "282-trem-dos-imigrantes-(abpf)",
+            "system": "Turismo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.82311, -23.40128] },
+      "properties": {
+        "id": 6691,
+        "klass": "Station",
+        "name": "Santa Fé",
+        "opening": 1914,
+        "buildstart": 1913,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Estrada de Ferro Perus-Pirapora (IFPPC)",
+            "line_url_name": "284-estrada-de-ferro-perus-pirapora-(ifppc)",
+            "system": "Turismo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.03208, -23.41436] },
+      "properties": {
+        "id": 6695,
+        "klass": "Station",
+        "name": "Guararema",
+        "opening": 1876,
+        "buildstart": 1875,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Trem de Guararema (ABPF)",
+            "line_url_name": "283-trem-de-guararema-(abpf)",
+            "system": "Turismo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.62593, -23.68529] },
+      "properties": {
+        "id": 6714,
+        "klass": "Station",
+        "name": "Diadema",
+        "opening": 1990,
+        "buildstart": 1987,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha A • Corredor ABD (Metra)",
+            "line_url_name": "286-linha-a-•-corredor-abd",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69335, -23.60601] },
+      "properties": {
+        "id": 6715,
+        "klass": "Station",
+        "name": "Berrini",
+        "opening": 2010,
+        "buildstart": 2008,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha B • Diadema-Berrini (Metra)",
+            "line_url_name": "287-linha-b-•-diadema-brooklin-(emtu)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69711, -23.62244] },
+      "properties": {
+        "id": 6716,
+        "klass": "Station",
+        "name": "Morumbi",
+        "opening": 2010,
+        "buildstart": 2008,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha B • Diadema-Berrini (Metra)",
+            "line_url_name": "287-linha-b-•-diadema-brooklin-(emtu)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.48134, -23.62385] },
+      "properties": {
+        "id": 6723,
+        "klass": "Station",
+        "name": "Sônia Maria",
+        "opening": 1988,
+        "buildstart": 1987,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha A • Corredor ABD (Metra)",
+            "line_url_name": "286-linha-a-•-corredor-abd",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.5511, -23.72067] },
+      "properties": {
+        "id": 6720,
+        "klass": "Station",
+        "name": "Ferrazópolis",
+        "opening": 1988,
+        "buildstart": 1987,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha A • Corredor ABD (Metra)",
+            "line_url_name": "286-linha-a-•-corredor-abd",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.55223, -23.69832] },
+      "properties": {
+        "id": 6719,
+        "klass": "Station",
+        "name": "São Bernardo",
+        "opening": 1988,
+        "buildstart": 1987,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha A • Corredor ABD (Metra)",
+            "line_url_name": "286-linha-a-•-corredor-abd",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63973, -23.64667] },
+      "properties": {
+        "id": 6717,
+        "klass": "Station",
+        "name": "Jabaquara",
+        "opening": 1990,
+        "buildstart": 1987,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha A • Corredor ABD (Metra)",
+            "line_url_name": "286-linha-a-•-corredor-abd",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.5849, -23.69165] },
+      "properties": {
+        "id": 6718,
+        "klass": "Station",
+        "name": "Piraporinha",
+        "opening": 1990,
+        "buildstart": 1987,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha A • Corredor ABD (Metra)",
+            "line_url_name": "286-linha-a-•-corredor-abd",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.71086, -23.66329] },
+      "properties": {
+        "id": 3365,
+        "klass": "Station",
+        "name": "Socorro",
+        "opening": 1960,
+        "buildstart": 1957,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.60707, -23.54638] },
+      "properties": {
+        "id": 3230,
+        "klass": "Station",
+        "name": "Bresser-Mooca",
+        "opening": 1920,
+        "buildstart": 1919,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.47619, -23.61347] },
+      "properties": {
+        "id": 6722,
+        "klass": "Station",
+        "name": "São Mateus",
+        "opening": 1988,
+        "buildstart": 1987,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha A • Corredor ABD (Metra)",
+            "line_url_name": "286-linha-a-•-corredor-abd",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.52692, -23.65178] },
+      "properties": {
+        "id": 6721,
+        "klass": "Station",
+        "name": "Santo André",
+        "opening": 1988,
+        "buildstart": 1987,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha A • Corredor ABD (Metra)",
+            "line_url_name": "286-linha-a-•-corredor-abd",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.56666, -23.4573] },
+      "properties": {
+        "id": 6933,
+        "klass": "Station",
+        "name": "Vila Galvão",
+        "opening": 2014,
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha C • Guarulhos-Tucuruvi (EMTU)",
+            "line_url_name": "288-linha-c-•-guarulhos-tucuruvi-(emtu)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.87474, -23.51306] },
+      "properties": {
+        "id": 7034,
+        "klass": "Station",
+        "name": "Barueri",
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha D • Itapevi-Butantã (EMTU)",
+            "line_url_name": "289-linha-d-•-itapevi-butanta",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.62933, -23.54653] },
+      "properties": {
+        "id": 6920,
+        "klass": "Station",
+        "name": "Mercado",
+        "opening": 2007,
+        "buildstart": 1997,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Expresso Tiradentes (SPTrans)",
+            "line_url_name": "285-expresso-tiradentes-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.62706, -23.55024] },
+      "properties": {
+        "id": 6921,
+        "klass": "Station",
+        "name": "Pedro II",
+        "opening": 2007,
+        "buildstart": 1997,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Expresso Tiradentes (SPTrans)",
+            "line_url_name": "285-expresso-tiradentes-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.61505, -23.55873] },
+      "properties": {
+        "id": 6922,
+        "klass": "Station",
+        "name": "Ana Neri",
+        "opening": 2007,
+        "buildstart": 1997,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Expresso Tiradentes (SPTrans)",
+            "line_url_name": "285-expresso-tiradentes-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.61134, -23.56416] },
+      "properties": {
+        "id": 6923,
+        "klass": "Station",
+        "name": "Alberto Lion",
+        "opening": 2007,
+        "buildstart": 1997,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Expresso Tiradentes (SPTrans)",
+            "line_url_name": "285-expresso-tiradentes-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.60306, -23.60289] },
+      "properties": {
+        "id": 6924,
+        "klass": "Station",
+        "name": "Sacomã",
+        "opening": 2007,
+        "buildstart": 1997,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Expresso Tiradentes (SPTrans)",
+            "line_url_name": "285-expresso-tiradentes-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.59727, -23.59809] },
+      "properties": {
+        "id": 6925,
+        "klass": "Station",
+        "name": "Rua do Grito",
+        "opening": 2007,
+        "buildstart": 1997,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Expresso Tiradentes (SPTrans)",
+            "line_url_name": "285-expresso-tiradentes-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.5979, -23.5914] },
+      "properties": {
+        "id": 6926,
+        "klass": "Station",
+        "name": "Nossa Senhora Aparecida",
+        "opening": 2007,
+        "buildstart": 1997,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Expresso Tiradentes (SPTrans)",
+            "line_url_name": "285-expresso-tiradentes-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.58837, -23.58569] },
+      "properties": {
+        "id": 6928,
+        "klass": "Station",
+        "name": "Dianópolis",
+        "opening": 2009,
+        "buildstart": 1997,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Expresso Tiradentes (SPTrans)",
+            "line_url_name": "285-expresso-tiradentes-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.60321, -23.57449] },
+      "properties": {
+        "id": 6927,
+        "klass": "Station",
+        "name": "Clube Atlético Ypiranga",
+        "opening": 2007,
+        "buildstart": 1997,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Expresso Tiradentes (SPTrans)",
+            "line_url_name": "285-expresso-tiradentes-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.586, -23.58419] },
+      "properties": {
+        "id": 6930,
+        "klass": "Station",
+        "name": "Vila Prudente",
+        "opening": 1970,
+        "buildstart": 1969,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Paes de Barros (SPTrans)",
+            "line_url_name": "601-paes-de-barros-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.49493, -23.43456] },
+      "properties": {
+        "id": 6931,
+        "klass": "Station",
+        "name": "Taboão",
+        "opening": 2012,
+        "buildstart": 2010,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha C • Guarulhos-Tucuruvi (EMTU)",
+            "line_url_name": "288-linha-c-•-guarulhos-tucuruvi-(emtu)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.49734, -23.4617] },
+      "properties": {
+        "id": 6932,
+        "klass": "Station",
+        "name": "CECAP",
+        "opening": 2012,
+        "buildstart": 2010,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha C • Guarulhos-Tucuruvi (EMTU)",
+            "line_url_name": "288-linha-c-•-guarulhos-tucuruvi-(emtu)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.935, -23.54601] },
+      "properties": {
+        "id": 7032,
+        "klass": "Station",
+        "name": "Itapevi",
+        "opening": 2012,
+        "buildstart": 2011,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha D • Itapevi-Butantã (EMTU)",
+            "line_url_name": "289-linha-d-•-itapevi-butanta",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.90207, -23.52791] },
+      "properties": {
+        "id": 7033,
+        "klass": "Station",
+        "name": "Jandira",
+        "opening": 2012,
+        "buildstart": 2011,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha D • Itapevi-Butantã (EMTU)",
+            "line_url_name": "289-linha-d-•-itapevi-butanta",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.73518, -23.80411] },
+      "properties": {
+        "id": 7037,
+        "klass": "Station",
+        "name": "Parelheiros",
+        "opening": 2004,
+        "buildstart": 2003,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Parelheiros-Rio Bonito-Santo Amaro (SPTrans)",
+            "line_url_name": "598-parelheiros-rio-bonito-santo-amaro-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.71204, -23.66581] },
+      "properties": {
+        "id": 7040,
+        "klass": "Station",
+        "name": "Guarapiranga",
+        "opening": 2004,
+        "buildstart": 2003,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Jd. Ângela-Guarapiranga-Santo Amaro (SPTrans)",
+            "line_url_name": "597-jd.-angela-guarapiranga-santo-amaro-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.73405, -23.64343] },
+      "properties": {
+        "id": 7043,
+        "klass": "Station",
+        "name": "João Dias",
+        "opening": 2000,
+        "buildstart": 1999,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Itapecerica-João Dias-Centro (SPTrans)",
+            "line_url_name": "599-itapecerica-joao-dias-centro-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.67333, -23.48036] },
+      "properties": {
+        "id": 7046,
+        "klass": "Station",
+        "name": "Vila Nova Cachoeirinha",
+        "opening": 1991,
+        "buildstart": 1990,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Inajar-Rio Branco-Centro (SPTrans)",
+            "line_url_name": "594-inajar-rio-branco-centro-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6488, -23.53745] },
+      "properties": {
+        "id": 7049,
+        "klass": "Station",
+        "name": "Amaral Gurgel",
+        "opening": 2003,
+        "buildstart": 2002,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Pirituba-Lapa-Centro (SPTrans)",
+            "line_url_name": "593-pirituba-lapa-centro-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.81582, -23.52389] },
+      "properties": {
+        "id": 7036,
+        "klass": "Station",
+        "name": "Osasco - Km 21",
+        "opening": 2017,
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha D • Itapevi-Butantã (EMTU)",
+            "line_url_name": "289-linha-d-•-itapevi-butanta",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69945, -23.73608] },
+      "properties": {
+        "id": 7039,
+        "klass": "Station",
+        "name": "Grajaú",
+        "opening": 2004,
+        "buildstart": 2003,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Parelheiros-Rio Bonito-Santo Amaro (SPTrans)",
+            "line_url_name": "598-parelheiros-rio-bonito-santo-amaro-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.76626, -23.65902] },
+      "properties": {
+        "id": 7042,
+        "klass": "Station",
+        "name": "Capelinha",
+        "opening": 2000,
+        "buildstart": 1999,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Itapecerica-João Dias-Centro (SPTrans)",
+            "line_url_name": "599-itapecerica-joao-dias-centro-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.71597, -23.48465] },
+      "properties": {
+        "id": 7045,
+        "klass": "Station",
+        "name": "Pirituba",
+        "opening": 2003,
+        "buildstart": 2002,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Pirituba-Lapa-Centro (SPTrans)",
+            "line_url_name": "593-pirituba-lapa-centro-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.64223, -23.54941] },
+      "properties": {
+        "id": 7048,
+        "klass": "Station",
+        "name": "Bandeira",
+        "opening": 2000,
+        "buildstart": 1999,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Santo Amaro-Nove de Julho-Centro",
+            "line_url_name": "596-santo-amaro-nove-de-julho-centro",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.83562, -23.51886] },
+      "properties": {
+        "id": 7035,
+        "klass": "Station",
+        "name": "Carapicuíba",
+        "opening": 2016,
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha D • Itapevi-Butantã (EMTU)",
+            "line_url_name": "289-linha-d-•-itapevi-butanta",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.71686, -23.76609] },
+      "properties": {
+        "id": 7038,
+        "klass": "Station",
+        "name": "Varginha",
+        "opening": 2004,
+        "buildstart": 2003,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Parelheiros-Rio Bonito-Santo Amaro (SPTrans)",
+            "line_url_name": "598-parelheiros-rio-bonito-santo-amaro-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.77692, -23.69213] },
+      "properties": {
+        "id": 7041,
+        "klass": "Station",
+        "name": "Jd. Ângela",
+        "opening": 2004,
+        "buildstart": 2003,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Jd. Ângela-Guarapiranga-Santo Amaro (SPTrans)",
+            "line_url_name": "597-jd.-angela-guarapiranga-santo-amaro-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.70814, -23.65452] },
+      "properties": {
+        "id": 7044,
+        "klass": "Station",
+        "name": "Santo Amaro",
+        "opening": 2004,
+        "buildstart": 2003,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Jd. Ângela-Guarapiranga-Santo Amaro (SPTrans)",
+            "line_url_name": "597-jd.-angela-guarapiranga-santo-amaro-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.70012, -23.52074] },
+      "properties": {
+        "id": 7047,
+        "klass": "Station",
+        "name": "Lapa",
+        "opening": 2003,
+        "buildstart": 2002,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Pirituba-Lapa-Centro (SPTrans)",
+            "line_url_name": "593-pirituba-lapa-centro-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.64435, -23.53409] },
+      "properties": {
+        "id": 7050,
+        "klass": "Station",
+        "name": "Princesa ISabel",
+        "opening": 1991,
+        "buildstart": 1990,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Inajar-Rio Branco-Centro (SPTrans)",
+            "line_url_name": "594-inajar-rio-branco-centro-(sptrans)",
+            "system": "Metrorrodoviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.61262, -23.60235] },
+      "properties": {
+        "id": 3217,
+        "klass": "Station",
+        "name": "Alto do Ipiranga",
+        "opening": 2007,
+        "buildstart": 1993,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.93537, -23.54571] },
+      "properties": {
+        "id": 3353,
+        "klass": "Station",
+        "name": "Itapevi",
+        "opening": 1875,
+        "buildstart": 1872,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.36822, -23.47931] },
+      "properties": {
+        "id": 3423,
+        "klass": "Station",
+        "name": "Engenheiro Manoel Feio",
+        "opening": 1926,
+        "buildstart": 1925,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 12 • Safira (CPTM)",
+            "line_url_name": "272-linha-12---safira",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.42166, -23.4927] },
+      "properties": {
+        "id": 3426,
+        "klass": "Station",
+        "name": "Jardim Helena - Vila Mara",
+        "opening": 2008,
+        "buildstart": 2007,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 12 • Safira (CPTM)",
+            "line_url_name": "272-linha-12---safira",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.18477, -23.51572] },
+      "properties": {
+        "id": 3403,
+        "klass": "Station",
+        "name": "Estudantes",
+        "opening": 1976,
+        "buildstart": 1976,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.77589, -23.52778] },
+      "properties": {
+        "id": 3336,
+        "klass": "Station",
+        "name": "Osasco",
+        "opening": 1892,
+        "buildstart": 1891,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63353, -23.5505] },
+      "properties": {
+        "id": 3225,
+        "klass": "Station",
+        "name": "Sé",
+        "opening": 1978,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63002, -23.59282] },
+      "properties": {
+        "id": 3215,
+        "klass": "Station",
+        "name": "Chácara Klabin",
+        "opening": 2006,
+        "buildstart": 1993,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.62475, -23.50257] },
+      "properties": {
+        "id": 3226,
+        "klass": "Station",
+        "name": "Santana",
+        "opening": 1975,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.67812, -23.5508] },
+      "properties": {
+        "id": 3204,
+        "klass": "Station",
+        "name": "Sumaré",
+        "opening": 1998,
+        "buildstart": 1993,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6387, -23.56191] },
+      "properties": {
+        "id": 3237,
+        "klass": "Station",
+        "name": "São Joaquim",
+        "opening": 1975,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.62494, -23.50915] },
+      "properties": {
+        "id": 3227,
+        "klass": "Station",
+        "name": "Carandiru",
+        "opening": 1975,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.72608, -23.4884] },
+      "properties": {
+        "id": 3257,
+        "klass": "Station",
+        "name": "Pirituba",
+        "opening": 1885,
+        "buildstart": 1884,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63664, -23.59874] },
+      "properties": {
+        "id": 3248,
+        "klass": "Station",
+        "name": "Santa Cruz",
+        "opening": 1974,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6379, -23.61053] },
+      "properties": {
+        "id": 3249,
+        "klass": "Station",
+        "name": "Praça da Árvore",
+        "opening": 1974,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63354, -23.54432] },
+      "properties": {
+        "id": 3239,
+        "klass": "Station",
+        "name": "São Bento",
+        "opening": 1975,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.62072, -23.59591] },
+      "properties": {
+        "id": 3216,
+        "klass": "Station",
+        "name": "Santos-Imigrantes",
+        "opening": 2006,
+        "buildstart": 1993,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69083, -23.54665] },
+      "properties": {
+        "id": 3203,
+        "klass": "Station",
+        "name": "Vila Madalena",
+        "opening": 1998,
+        "buildstart": 1993,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63924, -23.6186] },
+      "properties": {
+        "id": 3250,
+        "klass": "Station",
+        "name": "Saúde",
+        "opening": 1974,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.60285, -23.6015] },
+      "properties": {
+        "id": 3218,
+        "klass": "Station",
+        "name": "Sacomã",
+        "opening": 2010,
+        "buildstart": 2007,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63219, -23.53097] },
+      "properties": {
+        "id": 3242,
+        "klass": "Station",
+        "name": "Tiradentes",
+        "opening": 1975,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.60331, -23.4801] },
+      "properties": {
+        "id": 3231,
+        "klass": "Station",
+        "name": "Tucuruvi",
+        "opening": 1998,
+        "buildstart": 1996,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.60887, -23.48703] },
+      "properties": {
+        "id": 3232,
+        "klass": "Station",
+        "name": "Parada Inglesa",
+        "opening": 1998,
+        "buildstart": 1996,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.62933, -23.52546] },
+      "properties": {
+        "id": 3243,
+        "klass": "Station",
+        "name": "Armênia",
+        "opening": 1975,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.61673, -23.49233] },
+      "properties": {
+        "id": 3233,
+        "klass": "Station",
+        "name": "Jardim São Paulo-Ayrton Senna",
+        "opening": 1998,
+        "buildstart": 1996,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.56201, -23.58219] },
+      "properties": {
+        "id": 3206,
+        "klass": "Station",
+        "name": "Oratório",
+        "opening": 2014,
+        "buildstart": 2010,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 15 • Prata (CMSP)",
+            "line_url_name": "265-linha-15---prata",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69365, -23.5675] },
+      "properties": {
+        "id": 3234,
+        "klass": "Station",
+        "name": "Faria Lima",
+        "opening": 2010,
+        "buildstart": 2004,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 4 • Amarela (ViaQuatro)",
+            "line_url_name": "266-linha-4---amarela",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.62517, -23.51625] },
+      "properties": {
+        "id": 3244,
+        "klass": "Station",
+        "name": "Portuguesa-Tietê",
+        "opening": 1975,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.66226, -23.5553] },
+      "properties": {
+        "id": 3235,
+        "klass": "Station",
+        "name": "Paulista",
+        "opening": 2010,
+        "buildstart": 2004,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 4 • Amarela (ViaQuatro)",
+            "line_url_name": "266-linha-4---amarela",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.66061, -23.55773] },
+      "properties": {
+        "id": 3208,
+        "klass": "Station",
+        "name": "Consolação",
+        "opening": 1991,
+        "buildstart": 1987,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63989, -23.56863] },
+      "properties": {
+        "id": 3236,
+        "klass": "Station",
+        "name": "Vergueiro",
+        "opening": 1975,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.65387, -23.56361] },
+      "properties": {
+        "id": 3209,
+        "klass": "Station",
+        "name": "Trianon-Masp",
+        "opening": 1991,
+        "buildstart": 1987,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.64079, -23.62561] },
+      "properties": {
+        "id": 3251,
+        "klass": "Station",
+        "name": "São Judas",
+        "opening": 1974,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.64767, -23.56865] },
+      "properties": {
+        "id": 3210,
+        "klass": "Station",
+        "name": "Brigadeiro",
+        "opening": 1991,
+        "buildstart": 1987,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63589, -23.55535] },
+      "properties": {
+        "id": 3238,
+        "klass": "Station",
+        "name": "Liberdade",
+        "opening": 1975,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.67088, -23.55403] },
+      "properties": {
+        "id": 3205,
+        "klass": "Station",
+        "name": "Clínicas",
+        "opening": 1992,
+        "buildstart": 1987,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.71494, -23.50249] },
+      "properties": {
+        "id": 3256,
+        "klass": "Station",
+        "name": "Piqueri",
+        "opening": 1960,
+        "buildstart": 1959,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.64117, -23.64632] },
+      "properties": {
+        "id": 3245,
+        "klass": "Station",
+        "name": "Jabaquara",
+        "opening": 1974,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.64117, -23.63531] },
+      "properties": {
+        "id": 3246,
+        "klass": "Station",
+        "name": "Conceição",
+        "opening": 1974,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63473, -23.58949] },
+      "properties": {
+        "id": 3247,
+        "klass": "Station",
+        "name": "Vila Mariana",
+        "opening": 1974,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.72629, -23.32953] },
+      "properties": {
+        "id": 3263,
+        "klass": "Station",
+        "name": "Franco da Rocha",
+        "opening": 1888,
+        "buildstart": 1887,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.73882, -23.45512] },
+      "properties": {
+        "id": 3259,
+        "klass": "Station",
+        "name": "Jaraguá",
+        "opening": 1891,
+        "buildstart": 1890,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.70381, -23.51758] },
+      "properties": {
+        "id": 3255,
+        "klass": "Station",
+        "name": "Lapa",
+        "opening": 1899,
+        "buildstart": 1898,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.74467, -23.46974] },
+      "properties": {
+        "id": 3258,
+        "klass": "Station",
+        "name": "Vila Clarice",
+        "opening": 1955,
+        "buildstart": 1954,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.74702, -23.4388] },
+      "properties": {
+        "id": 3260,
+        "klass": "Station",
+        "name": "Vila Aurora",
+        "opening": 2013,
+        "buildstart": 2010,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.7535, -23.40505] },
+      "properties": {
+        "id": 3261,
+        "klass": "Station",
+        "name": "Perus",
+        "opening": 1867,
+        "buildstart": 1865,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.72324, -23.31009] },
+      "properties": {
+        "id": 3264,
+        "klass": "Station",
+        "name": "Baltazar Fidélis",
+        "opening": 1955,
+        "buildstart": 1954,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.7516, -23.36616] },
+      "properties": {
+        "id": 3262,
+        "klass": "Station",
+        "name": "Caieiras",
+        "opening": 1883,
+        "buildstart": 1877,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.74234, -23.28376] },
+      "properties": {
+        "id": 3265,
+        "klass": "Station",
+        "name": "Francisco Morato",
+        "opening": 1867,
+        "buildstart": 1865,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.61581, -23.54784] },
+      "properties": {
+        "id": 3228,
+        "klass": "Station",
+        "name": "Brás",
+        "opening": 1979,
+        "buildstart": 1975,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63851, -23.58123] },
+      "properties": {
+        "id": 3214,
+        "klass": "Station",
+        "name": "Ana Rosa",
+        "opening": 1975,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.64059, -23.57544] },
+      "properties": {
+        "id": 3212,
+        "klass": "Station",
+        "name": "Paraíso",
+        "opening": 1975,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63362, -23.53629] },
+      "properties": {
+        "id": 3240,
+        "klass": "Station",
+        "name": "Luz",
+        "opening": 1975,
+        "buildstart": 1968,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 4 • Amarela (ViaQuatro)",
+            "line_url_name": "266-linha-4---amarela",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 1 • Azul (CMSP)",
+            "line_url_name": "261-linha-1---azul",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.58334, -23.58464] },
+      "properties": {
+        "id": 3207,
+        "klass": "Station",
+        "name": "Vila Prudente",
+        "opening": 2014,
+        "buildstart": 2009,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Expresso Tiradentes (SPTrans)",
+            "line_url_name": "285-expresso-tiradentes-(sptrans)",
+            "system": "Metrorrodoviário"
+          },
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 15 • Prata (CMSP)",
+            "line_url_name": "265-linha-15---prata",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.58944, -23.59274] },
+      "properties": {
+        "id": 3220,
+        "klass": "Station",
+        "name": "Tamanduateí",
+        "opening": 2010,
+        "buildstart": 2007,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 10 • Turquesa (CPTM)",
+            "line_url_name": "270-linha-10---turquesa",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63544, -23.53519] },
+      "properties": {
+        "id": 3252,
+        "klass": "Station",
+        "name": "Luz",
+        "opening": 1867,
+        "buildstart": 1865,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.68879, -23.52134] },
+      "properties": {
+        "id": 3254,
+        "klass": "Station",
+        "name": "Água Branca",
+        "opening": 1867,
+        "buildstart": 1865,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.62594, -23.54969] },
+      "properties": {
+        "id": 3229,
+        "klass": "Station",
+        "name": "Pedro II",
+        "opening": 1980,
+        "buildstart": 1975,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.58956, -23.54292] },
+      "properties": {
+        "id": 3271,
+        "klass": "Station",
+        "name": "Belém",
+        "opening": 1981,
+        "buildstart": 1975,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63925, -23.54783] },
+      "properties": {
+        "id": 3272,
+        "klass": "Station",
+        "name": "Anhangabaú",
+        "opening": 1983,
+        "buildstart": 1975,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.64932, -23.5391] },
+      "properties": {
+        "id": 3274,
+        "klass": "Station",
+        "name": "Santa Cecília",
+        "opening": 1983,
+        "buildstart": 1975,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.65557, -23.53409] },
+      "properties": {
+        "id": 3275,
+        "klass": "Station",
+        "name": "Marechal Deodoro",
+        "opening": 1988,
+        "buildstart": 1975,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.84795, -23.51655] },
+      "properties": {
+        "id": 3341,
+        "klass": "Station",
+        "name": "Santa Terezinha ",
+        "opening": 1940,
+        "buildstart": 1939,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.73797, -23.52408] },
+      "properties": {
+        "id": 3334,
+        "klass": "Station",
+        "name": "Imperatriz Leopoldina",
+        "opening": 1931,
+        "buildstart": 1930,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69911, -23.52003] },
+      "properties": {
+        "id": 3332,
+        "klass": "Station",
+        "name": "Lapa",
+        "opening": 1958,
+        "buildstart": 1957,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.79572, -23.52567] },
+      "properties": {
+        "id": 3337,
+        "klass": "Station",
+        "name": "Comandante Sampaio",
+        "opening": 1946,
+        "buildstart": 1945,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.81587, -23.52351] },
+      "properties": {
+        "id": 3339,
+        "klass": "Station",
+        "name": "General Miguel Costa",
+        "opening": 1951,
+        "buildstart": 1950,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.83531, -23.51858] },
+      "properties": {
+        "id": 3340,
+        "klass": "Station",
+        "name": "Carapicuíba",
+        "opening": 1921,
+        "buildstart": 1920,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.89354, -23.52346] },
+      "properties": {
+        "id": 3345,
+        "klass": "Station",
+        "name": "Jardim Silveira",
+        "opening": 1951,
+        "buildstart": 1950,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.85866, -23.5169] },
+      "properties": {
+        "id": 3342,
+        "klass": "Station",
+        "name": "Antônio João",
+        "opening": 1941,
+        "buildstart": 1940,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.64081, -23.5328] },
+      "properties": {
+        "id": 3331,
+        "klass": "Station",
+        "name": "Júlio Prestes",
+        "opening": 1938,
+        "buildstart": 1926,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.88931, -23.51421] },
+      "properties": {
+        "id": 3344,
+        "klass": "Station",
+        "name": "Jardim Belval",
+        "opening": 1966,
+        "buildstart": 1965,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.90221, -23.52762] },
+      "properties": {
+        "id": 3346,
+        "klass": "Station",
+        "name": "Jandira",
+        "opening": 1925,
+        "buildstart": 1924,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.91754, -23.52927] },
+      "properties": {
+        "id": 3347,
+        "klass": "Station",
+        "name": "Sagrado Coração",
+        "opening": 1955,
+        "buildstart": 1954,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.92887, -23.53526] },
+      "properties": {
+        "id": 3348,
+        "klass": "Station",
+        "name": "Engenheiro Cardoso",
+        "opening": 1951,
+        "buildstart": 1950,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.95326, -23.54417] },
+      "properties": {
+        "id": 3349,
+        "klass": "Station",
+        "name": "Santa Rita",
+        "opening": 1975,
+        "buildstart": 1974,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.98381, -23.53059] },
+      "properties": {
+        "id": 3350,
+        "klass": "Station",
+        "name": "Amador Bueno",
+        "opening": 1922,
+        "buildstart": 1921,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.80713, -23.52276] },
+      "properties": {
+        "id": 3338,
+        "klass": "Station",
+        "name": "Quitaúna",
+        "opening": 1929,
+        "buildstart": 1928,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.87486, -23.5126] },
+      "properties": {
+        "id": 3343,
+        "klass": "Station",
+        "name": "Barueri",
+        "opening": 1875,
+        "buildstart": 1872,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.72162, -23.51886] },
+      "properties": {
+        "id": 3333,
+        "klass": "Station",
+        "name": "Domingos de Moraes",
+        "opening": 1920,
+        "buildstart": 1918,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.76193, -23.53127] },
+      "properties": {
+        "id": 3335,
+        "klass": "Station",
+        "name": "Presidente Altino",
+        "opening": 1919,
+        "buildstart": 1918,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.57002, -23.6101] },
+      "properties": {
+        "id": 3388,
+        "klass": "Station",
+        "name": "São Caetano",
+        "opening": 1883,
+        "buildstart": 1882,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 10 • Turquesa (CPTM)",
+            "line_url_name": "270-linha-10---turquesa",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.74255, -23.53753] },
+      "properties": {
+        "id": 3376,
+        "klass": "Station",
+        "name": "Ceasa",
+        "opening": 1981,
+        "buildstart": 1979,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.75902, -23.64904] },
+      "properties": {
+        "id": 3398,
+        "klass": "Station",
+        "name": "Campo Limpo",
+        "opening": 2002,
+        "buildstart": 1998,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.51668, -23.52938] },
+      "properties": {
+        "id": 3359,
+        "klass": "Station",
+        "name": "Guilhermina-Esperança",
+        "opening": 1988,
+        "buildstart": 1975,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69707, -23.7364] },
+      "properties": {
+        "id": 3361,
+        "klass": "Station",
+        "name": "Grajaú",
+        "opening": 1992,
+        "buildstart": 1991,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69677, -23.60473] },
+      "properties": {
+        "id": 3369,
+        "klass": "Station",
+        "name": "Berrini",
+        "opening": 2000,
+        "buildstart": 1999,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.71974, -23.6555] },
+      "properties": {
+        "id": 3401,
+        "klass": "Station",
+        "name": "Santo Amaro",
+        "opening": 2002,
+        "buildstart": 1998,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.70243, -23.6773] },
+      "properties": {
+        "id": 3364,
+        "klass": "Station",
+        "name": "Jurubatuba",
+        "opening": 1957,
+        "buildstart": 1952,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.225, -23.53624] },
+      "properties": {
+        "id": 3405,
+        "klass": "Station",
+        "name": "Brás Cubas",
+        "opening": 1914,
+        "buildstart": 1913,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.71196, -23.62752] },
+      "properties": {
+        "id": 3367,
+        "klass": "Station",
+        "name": "Granja Julieta",
+        "opening": 2000,
+        "buildstart": 1999,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.39136, -23.74405] },
+      "properties": {
+        "id": 3380,
+        "klass": "Station",
+        "name": "Rio Grande da Serra",
+        "opening": 1867,
+        "buildstart": 1865,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 10 • Turquesa (CPTM)",
+            "line_url_name": "270-linha-10---turquesa",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63537, -23.53524] },
+      "properties": {
+        "id": 3379,
+        "klass": "Station",
+        "name": "Luz",
+        "opening": 1867,
+        "buildstart": 1865,
+        "closure": 2011,
+        "lines": [
+          {
+            "line": "Linha 10 • Turquesa (CPTM)",
+            "line_url_name": "270-linha-10---turquesa",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.74597, -23.64021] },
+      "properties": {
+        "id": 3399,
+        "klass": "Station",
+        "name": "Vila das Belezas",
+        "opening": 2002,
+        "buildstart": 1998,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69889, -23.57348] },
+      "properties": {
+        "id": 3372,
+        "klass": "Station",
+        "name": "Hebraica - Rebouças",
+        "opening": 2000,
+        "buildstart": 1999,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.70813, -23.57228] },
+      "properties": {
+        "id": 3392,
+        "klass": "Station",
+        "name": "Butantã",
+        "opening": 2011,
+        "buildstart": 2004,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 4 • Amarela (ViaQuatro)",
+            "line_url_name": "266-linha-4---amarela",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.71184, -23.55763] },
+      "properties": {
+        "id": 3374,
+        "klass": "Station",
+        "name": "Cidade Universitária",
+        "opening": 1981,
+        "buildstart": 1957,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.41451, -23.71399] },
+      "properties": {
+        "id": 3381,
+        "klass": "Station",
+        "name": "Ribeirão Pires",
+        "opening": 1885,
+        "buildstart": 1884,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 10 • Turquesa (CPTM)",
+            "line_url_name": "270-linha-10---turquesa",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.44895, -23.69185] },
+      "properties": {
+        "id": 3382,
+        "klass": "Station",
+        "name": "Guapituba",
+        "opening": 1907,
+        "buildstart": 1906,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 10 • Turquesa (CPTM)",
+            "line_url_name": "270-linha-10---turquesa",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.46133, -23.6682] },
+      "properties": {
+        "id": 3383,
+        "klass": "Station",
+        "name": "Mauá",
+        "opening": 1883,
+        "buildstart": 1882,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 10 • Turquesa (CPTM)",
+            "line_url_name": "270-linha-10---turquesa",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.48991, -23.65838] },
+      "properties": {
+        "id": 3384,
+        "klass": "Station",
+        "name": "Capuava",
+        "opening": 1920,
+        "buildstart": 1919,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 10 • Turquesa (CPTM)",
+            "line_url_name": "270-linha-10---turquesa",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.52863, -23.65204] },
+      "properties": {
+        "id": 3385,
+        "klass": "Station",
+        "name": "Prefeito Celso Daniel - Santo André",
+        "opening": 1867,
+        "buildstart": 1865,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 10 • Turquesa (CPTM)",
+            "line_url_name": "270-linha-10---turquesa",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.4711, -23.54208] },
+      "properties": {
+        "id": 3356,
+        "klass": "Station",
+        "name": "Corinthians-Itaquera",
+        "opening": 1988,
+        "buildstart": 1975,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.70164, -23.62164] },
+      "properties": {
+        "id": 3368,
+        "klass": "Station",
+        "name": "Morumbi",
+        "opening": 1957,
+        "buildstart": 1956,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6927, -23.59331] },
+      "properties": {
+        "id": 3370,
+        "klass": "Station",
+        "name": "Vila Olímpia",
+        "opening": 1960,
+        "buildstart": 1959,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69102, -23.5853] },
+      "properties": {
+        "id": 3371,
+        "klass": "Station",
+        "name": "Cidade Jardim",
+        "opening": 1970,
+        "buildstart": 1969,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.70255, -23.56756] },
+      "properties": {
+        "id": 3373,
+        "klass": "Station",
+        "name": "Pinheiros",
+        "opening": 1957,
+        "buildstart": 1954,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 4 • Amarela (ViaQuatro)",
+            "line_url_name": "266-linha-4---amarela",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.73294, -23.54592] },
+      "properties": {
+        "id": 3375,
+        "klass": "Station",
+        "name": "Villa Lobos - Jaguaré",
+        "opening": 1960,
+        "buildstart": 1959,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.68843, -23.706] },
+      "properties": {
+        "id": 3363,
+        "klass": "Station",
+        "name": "Autódromo",
+        "opening": 1957,
+        "buildstart": 1965,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69174, -23.72284] },
+      "properties": {
+        "id": 3362,
+        "klass": "Station",
+        "name": "Primavera - Interlagos",
+        "opening": 1957,
+        "buildstart": 1956,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.48429, -23.54038] },
+      "properties": {
+        "id": 3357,
+        "klass": "Station",
+        "name": "Artur Alvim",
+        "opening": 1921,
+        "buildstart": 1920,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.50155, -23.53113] },
+      "properties": {
+        "id": 3358,
+        "klass": "Station",
+        "name": "Patriarca",
+        "opening": 1948,
+        "buildstart": 1947,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.53097, -23.53191] },
+      "properties": {
+        "id": 3360,
+        "klass": "Station",
+        "name": "Vila Matilde",
+        "opening": 1921,
+        "buildstart": 1920,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.54253, -23.53359] },
+      "properties": {
+        "id": 3354,
+        "klass": "Station",
+        "name": "Penha",
+        "opening": 1894,
+        "buildstart": 1893,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.56442, -23.5379] },
+      "properties": {
+        "id": 3355,
+        "klass": "Station",
+        "name": "Carrão",
+        "opening": 1934,
+        "buildstart": 1933,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.73407, -23.64396] },
+      "properties": {
+        "id": 3400,
+        "klass": "Station",
+        "name": "Giovanni Gronchi",
+        "opening": 2002,
+        "buildstart": 1998,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.53715, -23.63775] },
+      "properties": {
+        "id": 3386,
+        "klass": "Station",
+        "name": "Prefeito Saladino",
+        "opening": 1952,
+        "buildstart": 1951,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 10 • Turquesa (CPTM)",
+            "line_url_name": "270-linha-10---turquesa",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.54407, -23.62617] },
+      "properties": {
+        "id": 3387,
+        "klass": "Station",
+        "name": "Utinga",
+        "opening": 1933,
+        "buildstart": 1932,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 10 • Turquesa (CPTM)",
+            "line_url_name": "270-linha-10---turquesa",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.68421, -23.56617] },
+      "properties": {
+        "id": 3394,
+        "klass": "Station",
+        "name": "Fradique Coutinho",
+        "opening": 2014,
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 4 • Amarela (ViaQuatro)",
+            "line_url_name": "266-linha-4---amarela",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.70402, -23.64998] },
+      "properties": {
+        "id": 3396,
+        "klass": "Station",
+        "name": "Adolfo Pinheiro",
+        "opening": 2014,
+        "buildstart": 2009,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.25809, -23.5428] },
+      "properties": {
+        "id": 3406,
+        "klass": "Station",
+        "name": "Jundiapeba",
+        "opening": 1914,
+        "buildstart": 1913,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.76791, -23.659] },
+      "properties": {
+        "id": 3397,
+        "klass": "Station",
+        "name": "Capão Redondo",
+        "opening": 2002,
+        "buildstart": 1998,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.70784, -23.65398] },
+      "properties": {
+        "id": 3402,
+        "klass": "Station",
+        "name": "Largo Treze",
+        "opening": 2002,
+        "buildstart": 1998,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.34334, -23.52524] },
+      "properties": {
+        "id": 3410,
+        "klass": "Station",
+        "name": "Poá",
+        "opening": 1875,
+        "buildstart": 1874,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.19797, -23.52187] },
+      "properties": {
+        "id": 3404,
+        "klass": "Station",
+        "name": "Mogi das Cruzes",
+        "opening": 1875,
+        "buildstart": 1874,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.4481, -23.54181] },
+      "properties": {
+        "id": 3416,
+        "klass": "Station",
+        "name": "Dom Bosco",
+        "opening": 2000,
+        "buildstart": 1999,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.36816, -23.54086] },
+      "properties": {
+        "id": 3411,
+        "klass": "Station",
+        "name": "Ferraz de Vasconcelos",
+        "opening": 1926,
+        "buildstart": 1925,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.38367, -23.55446] },
+      "properties": {
+        "id": 3412,
+        "klass": "Station",
+        "name": "Antônio Gianetti Neto",
+        "opening": 1998,
+        "buildstart": 1997,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.33917, -23.50008] },
+      "properties": {
+        "id": 3421,
+        "klass": "Station",
+        "name": "Aracaré",
+        "opening": 1950,
+        "buildstart": 1951,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 12 • Safira (CPTM)",
+            "line_url_name": "272-linha-12---safira",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.34795, -23.48606] },
+      "properties": {
+        "id": 3422,
+        "klass": "Station",
+        "name": "Itaquaquecetuba",
+        "opening": 1926,
+        "buildstart": 1925,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 12 • Safira (CPTM)",
+            "line_url_name": "272-linha-12---safira",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.38575, -23.48503] },
+      "properties": {
+        "id": 3424,
+        "klass": "Station",
+        "name": "Jardim Romano",
+        "opening": 2008,
+        "buildstart": 2007,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 12 • Safira (CPTM)",
+            "line_url_name": "272-linha-12---safira",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.40229, -23.49395] },
+      "properties": {
+        "id": 3425,
+        "klass": "Station",
+        "name": "Itaim Paulista",
+        "opening": 1926,
+        "buildstart": 1925,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 12 • Safira (CPTM)",
+            "line_url_name": "272-linha-12---safira",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.50082, -23.48549] },
+      "properties": {
+        "id": 3429,
+        "klass": "Station",
+        "name": "USP Leste",
+        "opening": 2008,
+        "buildstart": 2007,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 12 • Safira (CPTM)",
+            "line_url_name": "272-linha-12---safira",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.44364, -23.49055] },
+      "properties": {
+        "id": 3427,
+        "klass": "Station",
+        "name": "São Miguel Paulista",
+        "opening": 1926,
+        "buildstart": 1925,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 12 • Safira (CPTM)",
+            "line_url_name": "272-linha-12---safira",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.59655, -23.58248] },
+      "properties": {
+        "id": 3389,
+        "klass": "Station",
+        "name": "Ipiranga",
+        "opening": 1886,
+        "buildstart": 1885,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 10 • Turquesa (CPTM)",
+            "line_url_name": "270-linha-10---turquesa",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 15 • Prata (CMSP)",
+            "line_url_name": "265-linha-15---prata",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.43129, -23.53919] },
+      "properties": {
+        "id": 3415,
+        "klass": "Station",
+        "name": "José Bonifácio",
+        "opening": 2000,
+        "buildstart": 1999,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.61631, -23.54513] },
+      "properties": {
+        "id": 3419,
+        "klass": "Station",
+        "name": "Brás",
+        "opening": 1875,
+        "buildstart": 1874,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 10 • Turquesa (CPTM)",
+            "line_url_name": "270-linha-10---turquesa",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 12 • Safira (CPTM)",
+            "line_url_name": "272-linha-12---safira",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.41535, -23.54237] },
+      "properties": {
+        "id": 3413,
+        "klass": "Station",
+        "name": "Guaianazes",
+        "opening": 1875,
+        "buildstart": 1874,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.57642, -23.54032] },
+      "properties": {
+        "id": 3418,
+        "klass": "Station",
+        "name": "Tatuapé",
+        "opening": 1934,
+        "buildstart": 1933,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 12 • Safira (CPTM)",
+            "line_url_name": "272-linha-12---safira",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.30773, -23.53418] },
+      "properties": {
+        "id": 3407,
+        "klass": "Station",
+        "name": "Suzano",
+        "opening": 1875,
+        "buildstart": 1874,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 12 • Safira (CPTM)",
+            "line_url_name": "272-linha-12---safira",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.48229, -23.48514] },
+      "properties": {
+        "id": 3428,
+        "klass": "Station",
+        "name": "Comendador Ermelino",
+        "opening": 1926,
+        "buildstart": 1925,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 12 • Safira (CPTM)",
+            "line_url_name": "272-linha-12---safira",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.52022, -23.49813] },
+      "properties": {
+        "id": 3430,
+        "klass": "Station",
+        "name": "Engenheiro Goulart",
+        "opening": 1926,
+        "buildstart": 1925,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 12 • Safira (CPTM)",
+            "line_url_name": "272-linha-12---safira",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.60837, -23.55795] },
+      "properties": {
+        "id": 3390,
+        "klass": "Station",
+        "name": "Juventus - Mooca",
+        "opening": 1898,
+        "buildstart": 1897,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 10 • Turquesa (CPTM)",
+            "line_url_name": "270-linha-10---turquesa",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.30307, -23.77802] },
+      "properties": {
+        "id": 3439,
+        "klass": "Station",
+        "name": "Paranapiacaba",
+        "opening": 2009,
+        "buildstart": 2008,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Expresso Turístico • Luz-Paranapiacaba (CPTM)",
+            "line_url_name": "280-expresso-turistico-•-luz-paranapiacaba",
+            "system": "Turismo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.52821, -23.65191] },
+      "properties": {
+        "id": 3440,
+        "klass": "Station",
+        "name": "Prefeito Celso Daniel - Santo André",
+        "opening": 2009,
+        "buildstart": 2008,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Expresso Turístico • Luz-Paranapiacaba (CPTM)",
+            "line_url_name": "280-expresso-turistico-•-luz-paranapiacaba",
+            "system": "Turismo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.19822, -23.52162] },
+      "properties": {
+        "id": 3441,
+        "klass": "Station",
+        "name": "Mogi das Cruzes",
+        "opening": 2009,
+        "buildstart": 2008,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Expresso Turístico • Luz-Mogi das Cruzes (CPTM)",
+            "line_url_name": "279-expresso-turistico-•-luz-mogi-das-cruzes",
+            "system": "Turismo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63537, -23.53504] },
+      "properties": {
+        "id": 3442,
+        "klass": "Station",
+        "name": "Luz",
+        "opening": 2009,
+        "buildstart": 2008,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Expresso Turístico • Luz-Jundiaí (CPTM)",
+            "line_url_name": "278-expresso-turistico-•-luz-jundiai",
+            "system": "Turismo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63527, -23.53505] },
+      "properties": {
+        "id": 3443,
+        "klass": "Station",
+        "name": "Luz",
+        "opening": 2009,
+        "buildstart": 2008,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Expresso Turístico • Luz-Mogi das Cruzes (CPTM)",
+            "line_url_name": "279-expresso-turistico-•-luz-mogi-das-cruzes",
+            "system": "Turismo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.63527, -23.53507] },
+      "properties": {
+        "id": 3444,
+        "klass": "Station",
+        "name": "Luz",
+        "opening": 2009,
+        "buildstart": 2008,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Expresso Turístico • Luz-Paranapiacaba (CPTM)",
+            "line_url_name": "280-expresso-turistico-•-luz-paranapiacaba",
+            "system": "Turismo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6618, -23.60361] },
+      "properties": {
+        "id": 6654,
+        "klass": "Station",
+        "name": "Moema",
+        "opening": 2018,
+        "buildstart": 2011,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6428, -23.54442] },
+      "properties": {
+        "id": 3273,
+        "klass": "Station",
+        "name": "República",
+        "opening": 1982,
+        "buildstart": 1975,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 4 • Amarela (ViaQuatro)",
+            "line_url_name": "266-linha-4---amarela",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.8292, -23.20888] },
+      "properties": {
+        "id": 10882,
+        "klass": "Station",
+        "name": "Várzea Paulista",
+        "osm_id": 1997343101,
+        "osm_tags": "{\"name\":\"Várzea Paulista\",\"public_transport\":\"stop_position\",\"railway\":\"stop\",\"train\":\"yes\"}",
+        "opening": 0,
+        "buildstart": 0,
+        "closure": 999999,
+        "lines": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.76758, -23.23595] },
+      "properties": {
+        "id": 10878,
+        "klass": "Station",
+        "name": "Botujuru",
+        "osm_id": 656324713,
+        "osm_tags": "{\"name\":\"Botujuru\",\"public_transport\":\"stop_position\",\"railway\":\"stop\",\"train\":\"yes\"}",
+        "opening": 1908,
+        "buildstart": 1907,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.82919, -23.20891] },
+      "properties": {
+        "id": 10883,
+        "klass": "Station",
+        "name": "Várzea Paulista",
+        "osm_id": 1997343106,
+        "osm_tags": "{\"name\":\"Várzea Paulista\",\"public_transport\":\"stop_position\",\"railway\":\"stop\",\"train\":\"yes\"}",
+        "opening": 1891,
+        "buildstart": 1890,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.78537, -23.20675] },
+      "properties": {
+        "id": 10879,
+        "klass": "Station",
+        "name": "Campo Limpo Paulista",
+        "osm_id": 1672428938,
+        "osm_tags": "{\"name\":\"Campo Limpo Paulista\",\"public_transport\":\"stop_position\",\"railway\":\"stop\",\"train\":\"yes\"}",
+        "opening": 1881,
+        "buildstart": 1880,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.66749, -23.52555] },
+      "properties": {
+        "id": 3253,
+        "klass": "Station",
+        "name": "Palmeiras - Barra Funda",
+        "opening": 1892,
+        "buildstart": 1875,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 3 • Vermelha (CMSP)",
+            "line_url_name": "263-linha-3---vermelha",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 8 • Diamante (ViaMobilidade)",
+            "line_url_name": "268-linha-8---diamante",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.87249, -23.19478] },
+      "properties": {
+        "id": 10885,
+        "klass": "Station",
+        "name": "Jundiaí",
+        "osm_id": 1997343098,
+        "osm_tags": "{\"description\":\"plataforma de saída a F. Morato\",\"name\":\"Jundiaí\",\"public_transport\":\"stop_position\",\"railway\":\"station\"}",
+        "opening": 1867,
+        "buildstart": 1866,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 7 • Rubi (Tic Trens)",
+            "line_url_name": "267-linha-7---rubi",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.49221, -23.44747] },
+      "properties": {
+        "id": 6644,
+        "klass": "Station",
+        "name": "Guarulhos - CECAP",
+        "opening": 2018,
+        "buildstart": 2013,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 13 • Jade (CPTM)",
+            "line_url_name": "277-linha-13-•-jade",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.71479, -23.76662] },
+      "properties": {
+        "id": 3533,
+        "klass": "Station",
+        "name": "Varginha",
+        "opening": 2025,
+        "buildstart": 2013,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 9 • Esmeralda (ViaMobilidade)",
+            "line_url_name": "269-linha-9---esmeralda",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.64561, -23.59821] },
+      "properties": {
+        "id": 6651,
+        "klass": "Station",
+        "name": "Hospital São Paulo",
+        "opening": 2018,
+        "buildstart": 2011,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 5 • Lilás (ViaMobilidade)",
+            "line_url_name": "264-linha-5---lilas",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.66811, -23.6978] },
+      "properties": {
+        "id": 42057,
+        "klass": "Station",
+        "name": "Atracadouro Mar Paulista",
+        "osm_id": 11902198519,
+        "osm_tags": "{\"addr:city\":\"São Paulo\",\"amenity\":\"ferry_terminal\",\"ferry\":\"yes\",\"gtfs_id\":\"5914667\",\"name\":\"Atracadouro Mar Paulista\",\"network\":\"SPTrans\",\"network:short\":\"SPTrans\",\"network:wikidata\":\"Q7392689\",\"network:wikipedia\":\"pt:São Paulo Transporte\",\"public_transport\":\"stop_position\",\"public_transport:version\":\"2\",\"route_ref\":\"626A-10\",\"wheelchair\":\"yes\"}",
+        "osm_metadata": "{\"version\":2}",
+        "opening": 2024,
+        "buildstart": 2024,
+        "lines": [
+          {
+            "line": "AQUÁTICO-SP",
+            "line_url_name": "6354-aquatico-sp",
+            "system": "Metrohidroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.47596, -23.6118] },
+      "properties": {
+        "id": 6641,
+        "klass": "Station",
+        "name": "São Mateus",
+        "opening": 2019,
+        "buildstart": 2012,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 15 • Prata (CMSP)",
+            "line_url_name": "265-linha-15---prata",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.54402, -23.62619] },
+      "properties": {
+        "id": 19609,
+        "klass": "Station",
+        "name": "Utinga",
+        "osm_id": 656351141,
+        "osm_tags": "{\"name\":\"Utinga\",\"public_transport\":\"stop_position\",\"railway\":\"stop\",\"train\":\"yes\"}",
+        "osm_metadata": "{\"version\":4}",
+        "opening": 0,
+        "buildstart": 0,
+        "closure": 999999,
+        "lines": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.52808, -23.65204] },
+      "properties": {
+        "id": 19610,
+        "klass": "Station",
+        "name": "Prefeito Celso Daniel - Santo André",
+        "osm_id": 656353782,
+        "osm_tags": "{\"alt_name\":\"Santo André\",\"local_ref\":\"5\",\"name\":\"Prefeito Celso Daniel - Santo André\",\"public_transport\":\"stop_position\",\"railway\":\"stop\",\"train\":\"yes\"}",
+        "osm_metadata": "{\"version\":5}",
+        "opening": 0,
+        "buildstart": 0,
+        "closure": 999999,
+        "lines": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.46762, -23.59858] },
+      "properties": {
+        "id": 19608,
+        "klass": "Station",
+        "name": "Jardim Colonial",
+        "opening": 2021,
+        "buildstart": 2019,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 15 • Prata (CMSP)",
+            "line_url_name": "265-linha-15---prata",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.53725, -23.6374] },
+      "properties": {
+        "id": 19611,
+        "klass": "Station",
+        "name": "Prefeito Saladino - Santo André",
+        "osm_id": 2278811013,
+        "osm_tags": "{\"local_ref\":\"2\",\"name\":\"Prefeito Saladino - Santo André\",\"public_transport\":\"stop_position\",\"railway\":\"stop\",\"train\":\"yes\"}",
+        "osm_metadata": "{\"version\":3}",
+        "opening": 0,
+        "buildstart": 0,
+        "closure": 999999,
+        "lines": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.53731, -23.63747] },
+      "properties": {
+        "id": 19612,
+        "klass": "Station",
+        "name": "Prefeito Saladino - Santo André",
+        "osm_id": 2278811014,
+        "osm_tags": "{\"local_ref\":\"1\",\"name\":\"Prefeito Saladino - Santo André\",\"public_transport\":\"stop_position\",\"railway\":\"stop\",\"train\":\"yes\"}",
+        "osm_metadata": "{\"version\":3}",
+        "opening": 0,
+        "buildstart": 0,
+        "closure": 999999,
+        "lines": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.54411, -23.62623] },
+      "properties": {
+        "id": 19613,
+        "klass": "Station",
+        "name": "Utinga",
+        "osm_id": 2280117742,
+        "osm_tags": "{\"local_ref\":\"1\",\"name\":\"Utinga\",\"public_transport\":\"stop_position\",\"railway\":\"stop\",\"train\":\"yes\"}",
+        "osm_metadata": "{\"version\":2}",
+        "opening": 0,
+        "buildstart": 0,
+        "closure": 999999,
+        "lines": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.65584, -23.73927] },
+      "properties": {
+        "id": 42058,
+        "klass": "Station",
+        "name": "Atracadouro Cantinho do Céu",
+        "osm_id": 11902198520,
+        "osm_tags": "{\"addr:city\":\"São Paulo\",\"amenity\":\"ferry_terminal\",\"description\":\"Atracadouro Cantinho do Céu Ref.: Rua Boa Vista\",\"ferry\":\"yes\",\"gtfs_id\":\"3014977\",\"name\":\"Atracadouro Cantinho do Céu\",\"network\":\"SPTrans\",\"network:short\":\"SPTrans\",\"network:wikidata\":\"Q7392689\",\"network:wikipedia\":\"pt:São Paulo Transporte\",\"public_transport\":\"stop_position\",\"public_transport:version\":\"2\",\"route_ref\":\"626A-10\",\"wheelchair\":\"yes\"}",
+        "osm_metadata": "{\"version\":2}",
+        "opening": 2024,
+        "buildstart": 2024,
+        "lines": [
+          {
+            "line": "AQUÁTICO-SP",
+            "line_url_name": "6354-aquatico-sp",
+            "system": "Metrohidroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.73214, -23.59213] },
+      "properties": {
+        "id": 6639,
+        "klass": "Station",
+        "name": "Vila Sônia",
+        "opening": 2021,
+        "buildstart": 2016,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 4 • Amarela (ViaQuatro)",
+            "line_url_name": "266-linha-4---amarela",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.69588, -23.47533] },
+      "properties": {
+        "id": 6663,
+        "klass": "Station",
+        "name": "Maristela",
+        "opening": 999999,
+        "buildstart": 2015,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 6 • Laranja (LinhaUni)",
+            "line_url_name": "275-linha-6-•-laranja",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.33287, -23.52542] },
+      "properties": {
+        "id": 3408,
+        "klass": "Station",
+        "name": "Calmon Viana",
+        "opening": 1926,
+        "buildstart": 1925,
+        "closure": 999999,
+        "lines": [
+          {
+            "line": "Linha 12 • Safira (CPTM)",
+            "line_url_name": "272-linha-12---safira",
+            "system": "Metroferroviário"
+          },
+          {
+            "line": "Linha 11 • Coral (CPTM)",
+            "line_url_name": "271-linha-11---coral",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.54123, -23.54688] },
+      "properties": {
+        "id": 42854,
+        "klass": "Station",
+        "name": "Guilherme Giorgi",
+        "opening": 9999,
+        "buildstart": 2021,
+        "closure": 9999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.56627, -23.57341] },
+      "properties": {
+        "id": 42850,
+        "klass": "Station",
+        "name": "Santa Clara",
+        "opening": 9999,
+        "buildstart": 2021,
+        "closure": 9996,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.54548, -23.5548] },
+      "properties": {
+        "id": 42853,
+        "klass": "Station",
+        "name": "Santa Isabel",
+        "opening": 9999,
+        "buildstart": 2021,
+        "closure": 9994,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.54128, -23.53973] },
+      "properties": {
+        "id": 42855,
+        "klass": "Station",
+        "name": "Aricanduva",
+        "opening": 9999,
+        "buildstart": 2021,
+        "closure": 9999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.56026, -23.56398] },
+      "properties": {
+        "id": 42851,
+        "klass": "Station",
+        "name": "Anália Franco",
+        "opening": 9999,
+        "buildstart": 2021,
+        "closure": 9999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.55122, -23.5623] },
+      "properties": {
+        "id": 42852,
+        "klass": "Station",
+        "name": "Vila Formosa",
+        "opening": 9999,
+        "buildstart": 2021,
+        "closure": 9999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.57554, -23.57829] },
+      "properties": {
+        "id": 42849,
+        "klass": "Station",
+        "name": "Orfanato",
+        "opening": 9999,
+        "buildstart": 2021,
+        "closure": 9999,
+        "lines": [
+          {
+            "line": "Linha 2 • Verde (CMSP)",
+            "line_url_name": "262-linha-2---vermelha",
+            "system": "Metroferroviário"
+          }
+        ]
+      }
+    }
+  ]
+}

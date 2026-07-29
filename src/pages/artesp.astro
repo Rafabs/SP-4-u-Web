@@ -1,0 +1,98 @@
+---
+import Layout from "../layouts/Layout.astro";
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
+---
+
+<Layout title="Sampa 4u | ARTESP">
+  <link rel="stylesheet" href={`${base}sptrans.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}map.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}leaflet.css`} slot="head" />
+
+  <!-- HERO -->
+  <section class="hero hero-artesp">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-lines" id="bus-routes-canvas"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Transporte Público · Região Metropolitana de São Paulo</div>
+      <h1 class="hero-h1">
+        Rede de Ônibus<br /><span style="color:#e8000f;">ARTESP</span>
+      </h1>
+      <p class="hero-sub">
+        Explore as linhas de ônibus intermunicipais da Região Metropolitana de São Paulo com dados abertos
+        GTFS — rotas, tarifas e horários em tempo real.
+      </p>
+      <div class="hero-ctas">
+        <a
+          href="#search-section"
+          class="btn-hero-primary"
+          style="background:#e8000f;">Buscar linha</a
+        >
+        <a href="#map" class="btn-hero-ghost">Ver no mapa</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat" style="border-color:#e8000f;">
+          <div class="stat-val">800+</div>
+          <div class="stat-label">Linhas ativas</div>
+        </div>
+        <div class="stat" style="border-color:#e8000f;">
+          <div class="stat-val">100.000+</div>
+          <div class="stat-label">Pontos de parada</div>
+        </div>
+        <div class="stat" style="border-color:#e8000f;">
+          <div class="stat-val">GTFS</div>
+          <div class="stat-label">Dados abertos</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr />
+
+  <section class="search-section" id="search-section">
+    <div class="search-container">
+      <span class="material-symbols-outlined search-icon">search</span>
+      <input
+        type="text"
+        id="lineSearch"
+        placeholder="Busque por número ou nome da linha"
+      />
+      <span
+        class="material-symbols-outlined clear-icon"
+        id="clearSearch"
+        title="Limpar busca">close</span
+      >
+    </div>
+  </section>
+
+  <div id="result-area"></div>
+  <hr />
+
+  <div class="map-wrapper">
+    <div id="map"></div>
+    <div id="map-controls" class="custom-controls">
+      <h3>Camadas</h3>
+      <input type="checkbox" id="check-artesp" />
+      <label for="check-artesp">Visualizar Linhas</label>
+    </div>
+  </div>
+
+  <hr />
+  <div id="dynamic-systems-info"></div>
+  <hr />
+
+<script>
+  import { loadMapData } from "../lib/map-logic";
+  import { initArtesp } from "../lib/artesp";
+  import { initHeroBus }  from "../lib/hero-animations";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    loadMapData();
+    initArtesp();
+  });
+
+  initHeroBus("bus-routes-canvas");
+</script>
+</Layout>

@@ -1,0 +1,349 @@
+{
+  "meta": {
+    "versao": "1.0.0",
+    "timestamp": "2026-05-03T23:51:33.465752",
+    "filtros_aplicados": {
+      "empresa": null,
+      "linha": null,
+      "artesp_only": false
+    },
+    "total_linhas": 13,
+    "total_empresas": 6
+  },
+  "empresas": [
+    {
+      "id": 97,
+      "nome": "TIC Trens",
+      "fiscalizacao_artesp": true,
+      "linhas": [
+        {
+          "nome": "Linha 7-Rubi",
+          "codigo": "7",
+          "ativa": true,
+          "status": {
+            "situacao": "Circulação de Trens",
+            "descricao": "Devido à manutenção programada, os trens circulam por via única entre as estações Perus e Caieiras. Embarques e desembarques na mesma plataforma nestas estações.",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T18:10:01.764571",
+            "atualizado_ha": "5 horas, 41 minutos"
+          },
+          "estacoes": {
+            "total": 17,
+            "nomes": [
+              "Palmeiras-Barra Funda",
+              "Água Branca",
+              "Lapa",
+              "Piqueri",
+              "Pirituba",
+              "Vila Clarice",
+              "Jaraguá",
+              "Vila Aurora",
+              "Perus",
+              "Caieiras",
+              "Franco da Rocha",
+              "Baltazar Fidélis",
+              "Francisco Morato",
+              "Botujuru",
+              "Campo Limpo Paulista",
+              "Várzea Paulista",
+              "Jundiaí"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "nome": "ViaMobilidade 5",
+      "fiscalizacao_artesp": true,
+      "linhas": [
+        {
+          "nome": "Linha 5-Lilás",
+          "codigo": "5",
+          "ativa": true,
+          "status": {
+            "situacao": "Operação Normal",
+            "descricao": "",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T04:45:01.585471",
+            "atualizado_ha": "19 horas, 6 minutos"
+          },
+          "estacoes": {
+            "total": 17,
+            "nomes": [
+              "Capão Redondo",
+              "Campo Limpo",
+              "Vila das Belezas",
+              "Giovanni Gronchi",
+              "Santo Amaro",
+              "Largo Treze",
+              "Adolfo Pinheiro",
+              "Alto da Boa Vista",
+              "Borba Gato",
+              "Brooklin",
+              "Campo Belo",
+              "Eucaliptos",
+              "Moema",
+              "AACD-Servidor",
+              "Hospital São Paulo",
+              "Santa Cruz",
+              "Chácara Klabin"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "nome": "ViaMobilidade 8 e 9",
+      "fiscalizacao_artesp": true,
+      "linhas": [
+        {
+          "nome": "Linha 8-Diamante",
+          "codigo": "8",
+          "ativa": true,
+          "status": {
+            "situacao": "Operação Normal",
+            "descricao": "",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T16:35:01.379143",
+            "atualizado_ha": "7 horas, 16 minutos"
+          },
+          "estacoes": {
+            "total": 23,
+            "nomes": [
+              "Júlio Prestes",
+              "Palmeiras-Barra Funda",
+              "Lapa",
+              "Domingos de Moraes",
+              "Imperatriz Leopoldina",
+              "Presidente Altino",
+              "Osasco",
+              "Comandante Sampaio",
+              "Quitaúna",
+              "General Miguel Costa",
+              "Carapicuíba",
+              "Santa Terezinha",
+              "Antônio João",
+              "Barueri",
+              "Jardim Belval",
+              "Jardim Silveira",
+              "Jandira",
+              "Sagrado Coração",
+              "Engenheiro Cardoso",
+              "Itapevi",
+              "Santa Rita",
+              "Ambuitá",
+              "Amador Bueno"
+            ]
+          }
+        },
+        {
+          "nome": "Linha 9-Esmeralda",
+          "codigo": "9",
+          "ativa": true,
+          "status": {
+            "situacao": "Atividade Programada",
+            "descricao": "Devido à atividade programada, os trens da Linha 9-Esmeralda estão circulando com maiores intervalos e retornando da estação Presidente Altino.",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T11:00:01.555163",
+            "atualizado_ha": "12 horas, 51 minutos"
+          },
+          "estacoes": {
+            "total": 21,
+            "nomes": [
+              "Osasco",
+              "Presidente Altino",
+              "Ceasa",
+              "Vila Lobos-Jaguaré",
+              "Cidade Universitária",
+              "Pinheiros",
+              "Hebraica-Rebouças",
+              "Cidade Jardim",
+              "Vila Olímpia",
+              "Berrini",
+              "Morumbi",
+              "Granja Julieta",
+              "João Dias",
+              "Santo Amaro",
+              "Socorro",
+              "Jurubatuba",
+              "Autódromo",
+              "Primavera-Interlagos",
+              "Grajaú",
+              "Bruno Covas/Mendes-Vila Natal",
+              "Varginha"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "nome": "ViaQuatro",
+      "fiscalizacao_artesp": true,
+      "linhas": [
+        {
+          "nome": "Linha 4-Amarela",
+          "codigo": "4",
+          "ativa": true,
+          "status": {
+            "situacao": "Operação Normal",
+            "descricao": "",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T04:45:01.585488",
+            "atualizado_ha": "19 horas, 6 minutos"
+          },
+          "estacoes": {
+            "total": 11,
+            "nomes": [
+              "Luz",
+              "República",
+              "Higienópolis-Mackenzie",
+              "Paulista",
+              "Oscar Freire",
+              "Fradique Coutinho",
+              "Faria Lima",
+              "Pinheiros",
+              "Butantã",
+              "São Paulo-Morumbi",
+              "Vila Sônia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "nome": "CPTM - Companhia Paulista de Trens Metropolitanos",
+      "fiscalizacao_artesp": false,
+      "linhas": [
+        {
+          "nome": "Linha 10-Turquesa",
+          "codigo": "10",
+          "ativa": true,
+          "status": {
+            "situacao": "Operação Normal",
+            "descricao": "",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T16:55:01.580125",
+            "atualizado_ha": "6 horas, 56 minutos"
+          }
+        },
+        {
+          "nome": "Linha 11-Coral",
+          "codigo": "11",
+          "ativa": true,
+          "status": {
+            "situacao": "Operação Normal",
+            "descricao": "",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T04:05:01.448600",
+            "atualizado_ha": "19 horas, 46 minutos"
+          },
+          "estacoes": {
+            "total": 16
+          }
+        },
+        {
+          "nome": "Linha 12-Safira",
+          "codigo": "12",
+          "ativa": true,
+          "status": {
+            "situacao": "Operação Normal",
+            "descricao": "",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T04:05:01.448606",
+            "atualizado_ha": "19 horas, 46 minutos"
+          },
+          "estacoes": {
+            "total": 13
+          }
+        },
+        {
+          "nome": "Linha 13-Jade",
+          "codigo": "13",
+          "ativa": true,
+          "status": {
+            "situacao": "Operação Normal",
+            "descricao": "",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-03T04:05:01.448611",
+            "atualizado_ha": "19 horas, 46 minutos"
+          },
+          "estacoes": {
+            "total": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "nome": "Metrô de São Paulo",
+      "fiscalizacao_artesp": false,
+      "linhas": [
+        {
+          "nome": "Linha 15-Prata",
+          "codigo": "15",
+          "ativa": true,
+          "status": {
+            "situacao": "Operação Normal",
+            "descricao": "Operação Normal",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-02T04:45:01.995950",
+            "atualizado_ha": "1 dia, 19 horas"
+          }
+        },
+        {
+          "nome": "Linha 1-Azul",
+          "codigo": "1",
+          "ativa": true,
+          "status": {
+            "situacao": "Operação Normal",
+            "descricao": "Operação Normal",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-02T04:45:01.995915",
+            "atualizado_ha": "1 dia, 19 horas"
+          }
+        },
+        {
+          "nome": "Linha 2-Verde",
+          "codigo": "2",
+          "ativa": true,
+          "status": {
+            "situacao": "Operação Normal",
+            "descricao": "Operação Normal",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-02T04:45:01.995936",
+            "atualizado_ha": "1 dia, 19 horas"
+          }
+        },
+        {
+          "nome": "Linha 3-Vermelha",
+          "codigo": "3",
+          "ativa": true,
+          "status": {
+            "situacao": "Operação Normal",
+            "descricao": "Operação Normal",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-02T04:45:01.995943",
+            "atualizado_ha": "1 dia, 19 horas"
+          }
+        }
+      ]
+    }
+  ]
+}

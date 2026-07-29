@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
+---
+
+<Layout title="Sampa 4u | 404 - Estação Não Encontrada">
+  <link rel="stylesheet" href={`${base}404.css`} slot="head" />
+  
+  <div class="error-wrapper">
+
+    <div class="error-track" aria-hidden="true">
+      <div class="track-line"></div>
+      <div class="train-anim">
+        <span class="material-symbols-outlined">train</span>
+      </div>
+    </div>
+
+    <div class="error-container">
+      <div class="error-icons">
+        <span class="material-symbols-outlined icon-signal" aria-hidden="true">traffic</span>
+        <h1 class="error-code">404</h1>
+        <span class="material-symbols-outlined icon-wrong" aria-hidden="true">wrong_location</span>
+      </div>
+
+      <h2>Estação Não Encontrada</h2>
+      <p class="error-tag">— LINHA FORA DE OPERAÇÃO —</p>
+      <p class="error-desc">
+        Parece que o trem mudou de rota ou esta linha ainda está em obras.
+        Aguarde o próximo trem ou retorne à estação central.
+      </p>
+
+      <div class="error-ctas">
+        <a href={base} class="btn-home">
+          <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+          Voltar ao Início
+        </a>
+        <a href={`${base}mapa`} class="btn-map">
+          <span class="material-symbols-outlined" aria-hidden="true">map</span>
+          Ver Mapa
+        </a>
+      </div>
+    </div>
+
+  </div>
+</Layout>

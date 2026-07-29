@@ -1,0 +1,29 @@
+---
+// src/components/LinhaCard.astro
+interface Props {
+  id: string;
+  nome: string;
+  cor: string;
+  imagemModoDark: string;
+  imagemModoLight?: string;
+  empresa: string;
+}
+
+const { id, nome, cor, imagemModoDark, imagemModoLight, empresa } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const normalizarImagemUrl = (imagem: string) => imagem.startsWith("http")
+  ? imagem
+  : `${base}${imagem.replace(/^\/?public\//, "").replace(/^\//, "")}`;
+const imagemDarkUrl = normalizarImagemUrl(imagemModoDark);
+const imagemLightUrl = imagemModoLight ? normalizarImagemUrl(imagemModoLight) : imagemDarkUrl;
+---
+<li>
+  <span style={`background-color: ${cor};`}></span>
+  <img class="linha-imagem linha-imagem--dark" src={imagemDarkUrl} alt={`Logotipo ${empresa}`} />
+  <img class="linha-imagem linha-imagem--light" src={imagemLightUrl} alt="" aria-hidden="true" />
+  <a href={`${base}detalhes?linha=${id}`}>{nome}</a>
+  <div class="card" id={`${id.toLowerCase()}-info`}>
+    Informações sobre a Operação - Carregando...
+  </div>
+  <div class="empresa">{empresa}</div>
+</li>

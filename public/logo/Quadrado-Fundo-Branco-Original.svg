@@ -1,0 +1,56 @@
+<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="23" height="23" fill="white"/>
+<line x1="3.5" y1="1" x2="3.5" y2="5" stroke="#FF0000"/>
+<line x1="3.5" y1="13" x2="3.5" y2="17" stroke="#000DFF"/>
+<line x1="10.5" y1="6" x2="10.5" y2="10" stroke="#FF0000"/>
+<line x1="12.5" y1="6" x2="12.5" y2="10" stroke="#FF0000"/>
+<line x1="12.5" y1="1" x2="12.5" y2="2" stroke="#FF0000"/>
+<line x1="4" y1="0.5" x2="10" y2="0.5" stroke="#FF0000"/>
+<line x1="4" y1="5.5" x2="10" y2="5.5" stroke="#FF0000"/>
+<line x1="4" y1="17.5" x2="11" y2="17.5" stroke="#000DFF"/>
+<line x1="13" y1="5.5" x2="19" y2="5.5" stroke="#FF0000"/>
+<line x1="12" y1="0.5" x2="19" y2="0.5" stroke="#FF0000"/>
+<line x1="4" y1="10.5" x2="10" y2="10.5" stroke="#FF0000"/>
+<line x1="19.5" y1="1" x2="19.5" y2="5" stroke="#FF0000"/>
+<line x1="3" y1="9.5" x2="4" y2="9.5" stroke="#FF0000"/>
+<line x1="10" y1="1.5" x2="11" y2="1.5" stroke="#FF0000"/>
+<line x1="10.5" y1="17" x2="10.5" y2="22" stroke="#000DFF"/>
+<line x1="10.5" y1="13" x2="10.5" y2="17" stroke="#000DFF"/>
+<line x1="12.5" y1="13" x2="12.5" y2="22" stroke="#00882D"/>
+<line x1="19.5" y1="13" x2="19.5" y2="22" stroke="#00882D"/>
+<line x1="13" y1="22.5" x2="19" y2="22.5" stroke="#00882D"/>
+<path d="M10 0L11 1H10V0Z" fill="#FF0000"/>
+<path d="M4 0V1H3L4 0Z" fill="#FF0000"/>
+<path d="M4 5V6L3 5H4Z" fill="#FF0000"/>
+<path d="M10 5L11 6H10V5Z" fill="#FF0000"/>
+<path d="M4 16L5 17H4V16Z" fill="#000DFF"/>
+<path d="M10 10H11L10 11V10Z" fill="#FF0000"/>
+<path d="M10 9V10H9L10 9Z" fill="#FF0000"/>
+<path d="M10 6V7L9 6H10Z" fill="#FF0000"/>
+<path d="M4 4L5 5H4V4Z" fill="#FF0000"/>
+<path d="M4 1H5L4 2V1Z" fill="#FF0000"/>
+<path d="M9 1H10V2L9 1Z" fill="#FF0000"/>
+<path d="M4 10V11L3 10H4Z" fill="#FF0000"/>
+<path d="M19 0L20 1H19V0Z" fill="#FF0000"/>
+<path d="M19 5H20L19 6V5Z" fill="#FF0000"/>
+<path d="M19 4V5H18L19 4Z" fill="#FF0000"/>
+<path d="M18 1H19V2L18 1Z" fill="#FF0000"/>
+<path d="M13 5V6H12L13 5Z" fill="#FF0000"/>
+<path d="M4 12V13H3L4 12Z" fill="#000DFF"/>
+<path d="M11 12V13H10L11 12Z" fill="#000DFF"/>
+<path d="M13 13H12V12L13 13Z" fill="#00882D"/>
+<path d="M20 12V13H19L20 12Z" fill="#00882D"/>
+<path d="M13 6H14L13 7V6Z" fill="#FF0000"/>
+<path d="M13 2V3L12 2H13Z" fill="#FF0000"/>
+<path d="M10 2H11L10 3V2Z" fill="#FF0000"/>
+<path d="M12 10H13L12 11V10Z" fill="#FF0000"/>
+<path d="M4 9L5 10H4V9Z" fill="#FF0000"/>
+<path d="M13 1H14L13 2V1Z" fill="#FF0000"/>
+<path d="M4 8V9H3L4 8Z" fill="#FF0000"/>
+<path d="M4 17V18L3 17H4Z" fill="#000DFF"/>
+<path d="M11 22V23L10 22H11Z" fill="#000DFF"/>
+<path d="M13 22V23L12 22H13Z" fill="#00882D"/>
+<path d="M13 21L14 22H13V21Z" fill="#00882D"/>
+<path d="M19 21V22H18L19 21Z" fill="#00882D"/>
+<path d="M20 22L19 23V22H20Z" fill="#00882D"/>
+</svg>

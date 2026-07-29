@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
+---
+
+<Layout title="Carregando Detalhes... | Sampa 4u">
+  <link rel="stylesheet" href={`${base}lines.css`} slot="head" />
+
+  <main>
+    <div class="lines">
+      <ul class="line-list">
+        <li style="list-style: none;">
+          <span id="linha-cor-bloco"></span>
+          <img id="linha-imagem" class="linha-imagem" src="" alt="" />
+          <a
+            href="#"
+            id="linha-nome-titulo"
+            style="pointer-events: none; text-decoration: none;"
+          >Nome da Linha</a>
+          <div class="card" id="linha-status-info" data-linha-status>
+            Informações sobre a Operação - Carregando...
+          </div>
+          <div class="empresa-wrapper">
+            <div class="empresa" id="linha-empresa">EMPRESA</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="station-timeline-container">
+      <div id="station-line-wrapper" class="line-wrapper d-flex flex-nowrap">
+        <div class="line" id="dynamic-line-color"></div>
+      </div>
+    </div>
+
+    <div class="line-switcher-section"></div>
+    <div class="line-switcher-grid" id="line-switcher-grid"></div>
+    <div class="switcher-arrows">
+      <button class="arrow-btn" id="arrow-prev" aria-label="Anterior">&#8592;</button>
+      <span class="page-indicator" id="page-indicator">1 / 1</span>
+      <button class="arrow-btn" id="arrow-next" aria-label="Próxima">&#8594;</button>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding-bottom: 40px;">
+      <a href={`${base}`} style="text-decoration: none;">
+        <button class="btn-back">Voltar para o Início</button>
+      </a>
+    </div>
+  </main>
+
+  <hr />
+  <div id="dynamic-systems-info"></div>
+
+  <script>
+    import { initDetalhes } from "../lib/detalhes";
+    initDetalhes();
+    window.__BASE_URL__ = import.meta.env.BASE_URL;    
+  </script>
+</Layout>

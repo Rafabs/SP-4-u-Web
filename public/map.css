@@ -1,0 +1,422 @@
+:root {
+  --control-bg-light: rgba(255, 255, 255, 0.9);
+  --control-bg-dark: rgba(30, 30, 30, 0.95);
+  --control-text-light: #333333;
+  --control-text-dark: #f0f0f0;
+  --control-border-light: #dddddd;
+  --control-border-dark: #444444;
+  --accent-color: #32e622;
+  --transition-fast: 0.15s ease;
+  --transition-default: 0.2s ease;
+  --transition-slow: 0.3s ease;  
+}
+
+/* ── 1. Container Principal ── */
+/* Limita a largura útil sem interferir na responsividade do mapa */
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* ── 2. Mapa ── */
+#map {
+  height: clamp(420px, 75vh, 900px);
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+/* ── 3. FAB Centralizar ── */
+.map-fab {
+  position: absolute;
+  bottom: 24px;
+  right: 30px;
+  z-index: var(--z-map-controls);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--control-bg-dark);
+  color: var(--control-text-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition:
+    background-color var(--transition-default),
+    color var(--transition-default),
+    transform var(--transition-fast);
+}
+
+.map-fab:hover {
+  background: var(--accent-color);
+  color: #000;
+  transform: scale(1.08);
+}
+.map-fab .material-symbols-outlined {
+  font-size: 20px;
+}
+
+/* ── 4. Controles Flutuantes ── */
+/* Painel flutuante independente do canvas Leaflet */
+.custom-controls {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  z-index: 1000;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid transparent;
+  min-width: 180px;
+  transition: all 0.3s ease;
+  background: var(--control-bg-dark);
+  color: var(--control-text-dark);
+  border-color: var(--control-border-dark);
+}
+
+/* ── 5. Header do painel ── */
+.controls-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 8px;
+}
+.controls-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.controls-title .material-symbols-outlined {
+  font-size: 18px;
+  opacity: 0.7;
+}
+.collapse-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.collapse-btn:hover {
+  opacity: 1;
+}
+.collapse-btn .material-symbols-outlined {
+  font-size: 18px;
+}
+
+/* ── 6. Corpo colapsável ── */
+/* Altura máxima elevada para acomodar futuras camadas sem ajustes */
+#controls-body {
+  overflow: hidden;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
+  max-height: 600px;
+  opacity: 1;
+}
+#controls-body.collapsed {
+  max-height: 0;
+  opacity: 0;
+}
+
+/* ── 7. Separadores de grupo ── */
+/* Separação visual entre categorias operacionais */
+.layer-group-label {
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: normal;
+  color: var(--text-dim, #a6a6be);
+  margin: 12px 0 4px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  user-select: none;
+}
+.layer-group-label:first-of-type {
+  border-top: none;
+  margin-top: 4px;
+}
+
+/* ── 8. Item de camada ── */
+.layer-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.layer-item:hover {
+  color: var(--accent-color);
+}
+.layer-item input[type="checkbox"] {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--accent-color);
+}
+.layer-icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.layer-sym {
+  font-size: 16px;
+  flex-shrink: 0;
+  width: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+/* ── 9. Legenda por camada ── */
+/* Legenda contextual exibida abaixo da camada correspondente */
+.layer-legend {
+  margin: 0 0 8px 20px;
+  font-size: 0.75rem;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 2px solid rgba(255, 255, 255, 0.12);
+}
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.8;
+}
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.legend-label {
+  margin-left: auto;
+  opacity: 0.7;
+  font-size: 0.7rem;
+}
+.legend-note {
+  opacity: 0.55;
+  font-size: 0.7rem;
+  font-style: italic;
+}
+
+/* ── 10. Popup do Mapa ── */
+.map-popup .leaflet-popup-content-wrapper {
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+.map-popup .leaflet-popup-content {
+  margin: 0;
+  width: 250px !important;
+}
+/* Cabeçalho contextual do ponto selecionado */
+.popup-header {
+  padding: 12px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+/* Metadados operacionais e informações complementares */
+.popup-body {
+  padding: 15px;
+  font-size: 13px;
+  color: #333;
+  line-height: 1.6;
+}
+.popup-body p {
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.popup-body i {
+  color: #666;
+  width: 16px;
+  text-align: center;
+}
+
+/* ── 11. Miscelânea ── */
+.bike-icon {
+  background: none !important;
+  border: none !important;
+}
+.leaflet-interactive[stroke="#e67e22"]:hover {
+  stroke: #d35400;
+  stroke-width: 5;
+  cursor: pointer;
+}
+
+/* ── 12. Mobile ── */
+@media (max-width: 768px) {
+  #map {
+    height: 50vh;
+  }
+  /* Painel flutuante independente do canvas Leaflet */
+  .custom-controls {
+    top: 10px;
+    right: 20px;
+    padding: 8px 12px;
+  }
+  .map-popup .leaflet-popup-content {
+    width: min(190px, calc(100vw - 20px)) !important;
+    margin: 6px 0;
+    font-size: 11px;
+  }
+  .map-popup .leaflet-popup-content-wrapper {
+    border-radius: 7px;
+  }
+  /* Cabeçalho contextual do ponto selecionado */
+  .popup-header {
+    padding: 8px;
+    font-size: 11px;
+  }
+  /* Metadados operacionais e informações complementares */
+  .popup-body {
+    padding: 8px;
+    font-size: 11px;
+    line-height: 1.25;
+  }
+  .leaflet-popup {
+    bottom: 4px !important;
+  }
+  .map-fab {
+    bottom: 14px;
+    right: 20px;
+  }
+  .update-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .history-table {
+    font-size: 0.8rem;
+  }  
+}
+
+/* ── 13. Light mode ── */
+@media (prefers-color-scheme: light) {
+  /* Painel flutuante independente do canvas Leaflet */
+  .custom-controls {
+    background: var(--control-bg-light);
+    color: var(--control-text-light);
+    border-color: var(--control-border-light);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  .map-fab {
+    background: var(--control-bg-light);
+    color: var(--control-text-light);
+  }
+  .layer-legend {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.08);
+    border-left-color: rgba(0, 0, 0, 0.15);
+  }
+  .controls-header {
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* ── 14. Hero Section ── */
+.hero-mapa {
+  padding: 48px 40px 40px; /* mais compacto que o hero padrão */
+}
+/* Área decorativa utilizada pelas animações do hero */
+.hero-mapa .hero-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+.hero-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--hero-color);
+  opacity: 0.12;
+}
+
+.hero-moving-icon {
+  position: absolute;
+  color: var(--hero-color);
+  opacity: 0.6;
+  animation-name: bus-run;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Movimento decorativo dos elementos do hero */
+@keyframes bus-run {
+  0% {
+    left: -40px;
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 0.6;
+  }
+
+  95% {
+    opacity: 0.6;
+  }
+
+  100% {
+    left: 110%;
+    opacity: 0;
+  }
+}
+
+/* Respeita preferências de acessibilidade do sistema */
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .map-fab,
+  .collapse-btn,
+  .layer-item,
+  #controls-body,
+  .custom-controls {
+    transition: none;
+  }
+}

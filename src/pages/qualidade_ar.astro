@@ -1,0 +1,80 @@
+---
+import Layout from "../layouts/Layout.astro";
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
+---
+
+<Layout title="Sampa 4u | Qualidade do Ar">
+  <link rel="stylesheet" href={`${base}/aqi.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}/map.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}/leaflet.css`} slot="head" />
+
+  <!-- HERO -->
+  <section class="hero hero-aqi">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-lines" id="aqi-canvas"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Meio Ambiente · São Paulo</div>
+      <h1 class="hero-h1">Qualidade do Ar<br><span id="hero-aqi-label" style="color:#009966;">em tempo real</span></h1>
+      <p class="hero-sub">
+        Monitoramento contínuo via API WAQI integrando estações da CETESB
+        e redes colaborativas — cobertura da Região Metropolitana de SP.
+      </p>
+      <div class="hero-ctas">
+        <a href="#map" class="btn-hero-primary" style="background:#009966;">Ver no mapa</a>
+        <a href="https://waqi.info/#/c/-23.491/-46.611/11z" target="_blank" rel="noopener" class="btn-hero-ghost">Portal WAQI</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat" style="border-color:#009966;">
+          <div class="stat-val">30+</div>
+          <div class="stat-label">Estações monitoradas</div>
+        </div>
+
+        <div class="stat" style="border-color:#009966;">
+          <div class="stat-val">CETESB</div>
+          <div class="stat-label">Rede oficial</div>
+        </div>
+        <div class="stat" style="border-color:#009966;">
+          <div class="stat-val">WAQI</div>
+          <div class="stat-label">API em tempo real</div>
+        </div>
+      </div>
+  <hr />
+
+      <!-- Legenda AQI no hero -->
+      <div class="hero-aqi-legend">
+        <div class="aqi-pill" style="background:rgba(0,153,102,0.15);border-color:#009966;color:#009966;">0–50 Bom</div>
+        <div class="aqi-pill" style="background:rgba(255,222,51,0.15);border-color:#ffde33;color:#ffde33;">51–100 Moderado</div>
+        <div class="aqi-pill" style="background:rgba(255,153,51,0.15);border-color:#ff9933;color:#ff9933;">101–150 Inadequado</div>
+        <div class="aqi-pill" style="background:rgba(204,0,51,0.15);border-color:#cc0033;color:#cc0033;">151+ Prejudicial</div>
+        <div class="aqi-pill" style="background:rgba(158,158,158,0.15);border-color:#9e9e9e;color:#9e9e9e;">— Sem dados</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-wrapper" id="map">
+    <div id="map"></div>
+    <div id="map-controls" class="custom-controls">
+      <h3>Qualidade do Ar (AQI)</h3>
+      <label>
+        <input type="checkbox" id="check-aqi"/> Estações Ativas
+      </label>
+    </div>
+  </div>
+
+  <hr />
+  <div id="dynamic-systems-info"></div>
+  <hr />
+
+  <script>
+    import { loadAQIData, setupAQIControls } from "../lib/qualidade_ar";
+    import { initHeroAqi } from "../lib/hero-animations";
+
+    setupAQIControls();
+    loadAQIData();
+    initHeroAqi();
+  </script>
+</Layout>

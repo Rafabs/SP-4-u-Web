@@ -1,0 +1,175 @@
+---
+import Layout from "../layouts/Layout.astro";
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
+import { historyData_SPTrans } from "../data/gtfs_history_sptrans";
+import { historyData_ARTESP } from "../data/gtfs_history_artesp";
+
+const recentes_SPTrans = historyData_SPTrans.filter((item) => item.recente);
+const todos_SPTrans = historyData_SPTrans;
+
+const recentes_ARTESP = historyData_ARTESP.filter((item) => item.recente);
+const todos_ARTESP = historyData_ARTESP;
+
+function badgeUrl(linha: string, cor: string): string {
+  const label = linha.replace(/-/g, "--").replace(/ /g, "_");
+  return `https://img.shields.io/badge/${label}-${cor}.svg`;
+}
+---
+
+<Layout title="Sampa 4u | Histórico de Linhas">
+  <link rel="stylesheet" href={`${base}gtfs.css`} slot="head" />
+  <section class="hero hero-gtfs">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-lines" id="gtfs-canvas"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Dados Abertos · GTFS</div>
+      <h1 class="hero-h1">Histórico de<br><span style="color:#00b352;">Linhas GTFS</span></h1>
+      <p class="hero-sub">
+        Acompanhe as atualizações da base de dados GTFS — novas linhas,
+        alterações de rota e modificações operacionais do sistema metropolitano.
+      </p>
+      <div class="hero-ctas">
+        <a href="#ultimas" class="btn-hero-primary" style="background:#00b352;">Ver atualizações</a>
+        <a href="#historico" class="btn-hero-ghost">Histórico completo</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat" style="border-color:#00b352;">
+          <div class="stat-val">{recentes_SPTrans.length}</div>
+          <div class="stat-label">Atualizações recentes</div>
+        </div>
+        <div class="stat" style="border-color:#00b352;">
+          <div class="stat-val">{todos_SPTrans.length}</div>
+          <div class="stat-label">Registros totais</div>
+        </div>
+        <div class="stat" style="border-color:#00b352;">
+          <div class="stat-val">GTFS</div>
+          <div class="stat-label">Formato aberto</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr />
+
+  <section id="ultimas">
+    <h2>
+      <span class="material-symbols-outlined" style="vertical-align: middle;">push_pin</span>
+      Últimas Atualizações - SPTrans
+    </h2>
+    <div class="table-wrapper">
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Linha</th>
+            <th>Rota</th>
+          </tr>
+        </thead>
+        <tbody>
+          {recentes_SPTrans.map((item) => (
+            <tr>
+              <td>{item.tipo}</td>
+              <td><img src={badgeUrl(item.linha, item.cor)} alt={item.linha} /></td>
+              <td set:html={item.rota} />
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <br />
+
+    <details class="note" id="historico" style="padding: 15px; cursor: pointer;">
+      <summary><strong>📚 Ver histórico completo</strong></summary>
+      <div style="margin-top: 15px;">
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Tipo</th>
+              <th>Linha</th>
+              <th>Rota</th>
+            </tr>
+          </thead>
+          <tbody>
+            {todos_SPTrans.map((item) => (
+              <tr>
+                <td>{item.data}</td>
+                <td>{item.tipo}</td>
+                <td><img src={badgeUrl(item.linha, item.cor)} alt={item.linha} /></td>
+                <td set:html={item.rota} />
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <section id="ultimas">
+    <h2>
+      <span class="material-symbols-outlined" style="vertical-align: middle;">push_pin</span>
+      Últimas Atualizações - ARTESP
+    </h2>
+    <div class="table-wrapper">
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Linha</th>
+            <th>Rota</th>
+          </tr>
+        </thead>
+        <tbody>
+          {recentes_ARTESP.map((item) => (
+            <tr>
+              <td>{item.tipo}</td>
+              <td><img src={badgeUrl(item.linha, item.cor)} alt={item.linha} /></td>
+              <td set:html={item.rota} />
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <br />
+
+    <details class="note" id="historico" style="padding: 15px; cursor: pointer;">
+      <summary><strong>📚 Ver histórico completo</strong></summary>
+      <div style="margin-top: 15px;">
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Tipo</th>
+              <th>Linha</th>
+              <th>Rota</th>
+            </tr>
+          </thead>
+          <tbody>
+            {todos_ARTESP.map((item) => (
+              <tr>
+                <td>{item.data}</td>
+                <td>{item.tipo}</td>
+                <td><img src={badgeUrl(item.linha, item.cor)} alt={item.linha} /></td>
+                <td set:html={item.rota} />
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <hr />
+  <div id="dynamic-systems-info"></div>
+  <hr />
+
+  <script>
+    import { initHeroGtfs } from "../lib/hero-animations";
+    initHeroGtfs();
+  </script>
+</Layout>

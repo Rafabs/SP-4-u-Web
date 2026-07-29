@@ -1,0 +1,89 @@
+---
+interface LanguagesResponse {
+  [key: string]: number;
+}
+
+const { user, repo } = Astro.props;
+
+// Busca dados de linguagens da API do GitHub
+const response = await fetch(`https://api.github.com/repos/${user}/${repo}/languages`);
+const data = (await response.json()) as LanguagesResponse;
+
+// Soma total de bytes
+const total: number = Object.values(data).reduce((acc: number, n: number) => acc + n, 0);
+
+// Calcula percentuais
+const languages = Object.entries(data).map(([name, value]) => ({
+  name,
+  value,
+  percent: ((value / total) * 100).toFixed(1)
+}));
+
+// Cores padrão do GitHub
+const colors: Record<string, string> = {
+  JavaScript: "#f1e05a",
+  TypeScript: "#3178c6",
+  HTML: "#e34c26",
+  CSS: "#563d7c",
+  Astro: "#ff5d01",
+  Python: "#3572A5",
+  default: "#999"
+};
+---
+
+<style>
+  .lang-box {
+    margin: 20px 0;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .lang-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .lang-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    margin-right: 8px;
+  }
+
+  .bar-container {
+    background: #222;
+    height: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 6px;
+  }
+
+  .bar {
+    height: 100%;
+  }
+</style>
+
+<div class="lang-box">
+  <h3>Linguagens Utilizadas em {repo}</h3>
+
+  {languages.map(lang => (
+    <div>
+      <div class="lang-row">
+        <div
+          class="lang-color"
+          style={`background: ${colors[lang.name] || colors.default}`}
+        ></div>
+        <strong>{lang.name}</strong>
+        <span style="margin-left: auto;">{lang.percent}%</span>
+      </div>
+
+      <div class="bar-container">
+        <div
+          class="bar"
+          style={`width: ${lang.percent}%; background: ${colors[lang.name] || colors.default}`}
+        ></div>
+      </div>
+    </div>
+  ))}
+</div>

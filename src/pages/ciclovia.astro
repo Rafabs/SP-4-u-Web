@@ -1,0 +1,68 @@
+---
+import Layout from "../layouts/Layout.astro";
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
+---
+
+<Layout title="Sampa 4u | Ciclovias">
+  <link rel="stylesheet" href={`${base}map.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}ciclovia.css`} slot="head" />
+  <link rel="stylesheet" href={`${base}leaflet.css`} slot="head" />
+
+  <section class="hero hero-ciclo" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-lines" id="ciclo-canvas" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Mobilidade Ativa · São Paulo</div>
+      <h1 class="hero-h1" id="hero-title">Rede Cicloviária<br><span style="color:#32e622;">de São Paulo</span></h1>
+      <p class="hero-sub">
+        Explore ciclovias, ciclofaixas e bicicletários da cidade de São Paulo
+        com dados do GeoSampa — Prefeitura de São Paulo.
+      </p>
+      <div class="hero-ctas">
+        <a href="#map" class="btn-hero-primary" style="background:#32e622; color:#0a0a0f;">Ver Mapa</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat" style="border-color:#32e622;">
+          <div class="stat-val">1.400+</div>
+          <div class="stat-label">km de ciclovias</div>
+        </div>
+        <div class="stat" style="border-color:#32e622;">
+          <div class="stat-val">400+</div>
+          <div class="stat-label">Bicicletários</div>
+        </div>
+        <div class="stat" style="border-color:#32e622;">
+          <div class="stat-val">GeoSampa</div>
+          <div class="stat-label">Fonte dos dados</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <div class="map-wrapper" id="map-wrapper" role="region" aria-label="Mapa Interativo da Rede Cicloviária">
+    <div id="map"></div>
+    
+    <section id="map-controls" class="custom-controls" aria-labelledby="controls-title">
+      <h3 id="controls-title">Camadas</h3>
+      <label><input type="checkbox" id="check-ciclo" /> Ciclovias</label>
+      <label><input type="checkbox" id="check-bike" /> Bicicletários</label>
+    </section>
+  </div>
+
+  <hr />
+  <div id="dynamic-systems-info"></div>
+  <hr />
+
+  <script>
+    import { loadMapData } from "../lib/map-logic";
+    loadMapData();
+
+    import { initHeroCiclovia } from "../lib/hero-animations";
+    initHeroCiclovia();
+  </script>
+</Layout>

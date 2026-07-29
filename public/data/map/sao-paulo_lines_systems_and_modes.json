@@ -1,0 +1,452 @@
+[
+  {
+    "id": 6354,
+    "name": "AQUÁTICO-SP",
+    "url_name": "6354-aquatico-sp",
+    "color": "#0082ba",
+    "system_id": 700,
+    "system_name": "Metrohidroviário",
+    "transport_mode_id": 10,
+    "transport_mode_name": "ferry"
+  },
+  {
+    "id": 2139,
+    "name": "Balsa João Basso (EMAE)",
+    "url_name": "2139-balsa-joao-basso",
+    "color": "#4a90e2",
+    "system_id": 700,
+    "system_name": "Metrohidroviário",
+    "transport_mode_id": 10,
+    "transport_mode_name": "ferry"
+  },
+  {
+    "id": 1215,
+    "name": "Berrini-Chucri Zaidan",
+    "url_name": "1215-berrini-chucri-zaidan",
+    "color": "#dd040d",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 8,
+    "transport_mode_name": "bus"
+  },
+  {
+    "id": 595,
+    "name": "Campo Limpo-Rebouças-Centro (SPTrans)",
+    "url_name": "595-campo-limpo-reboucas-centro-(sptrans)",
+    "color": "#dd040d",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 8,
+    "transport_mode_name": "bus"
+  },
+  {
+    "id": 284,
+    "name": "Estrada de Ferro Perus-Pirapora (IFPPC)",
+    "url_name": "284-estrada-de-ferro-perus-pirapora-(ifppc)",
+    "color": "#7ed321",
+    "system_id": 275,
+    "system_name": "Turismo",
+    "transport_mode_id": 5,
+    "transport_mode_name": "light_rail"
+  },
+  {
+    "id": 2142,
+    "name": "Expresso Aeroporto (CPTM)",
+    "url_name": "2142-expresso-aeroporto-(cptm)",
+    "color": "#00a150",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 2141,
+    "name": "Expresso Linha 10 (CPTM)",
+    "url_name": "2141-expresso-linha-10-(cptm)",
+    "color": "#00748b",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 285,
+    "name": "Expresso Tiradentes (SPTrans)",
+    "url_name": "285-expresso-tiradentes-(sptrans)",
+    "color": "#dd040d",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 6,
+    "transport_mode_name": "brt"
+  },
+  {
+    "id": 278,
+    "name": "Expresso Turístico • Luz-Jundiaí (CPTM)",
+    "url_name": "278-expresso-turistico-•-luz-jundiai",
+    "color": "#761418",
+    "system_id": 275,
+    "system_name": "Turismo",
+    "transport_mode_id": 5,
+    "transport_mode_name": "light_rail"
+  },
+  {
+    "id": 279,
+    "name": "Expresso Turístico • Luz-Mogi das Cruzes (CPTM)",
+    "url_name": "279-expresso-turistico-•-luz-mogi-das-cruzes",
+    "color": "#761418",
+    "system_id": 275,
+    "system_name": "Turismo",
+    "transport_mode_id": 5,
+    "transport_mode_name": "light_rail"
+  },
+  {
+    "id": 280,
+    "name": "Expresso Turístico • Luz-Paranapiacaba (CPTM)",
+    "url_name": "280-expresso-turistico-•-luz-paranapiacaba",
+    "color": "#761418",
+    "system_id": 275,
+    "system_name": "Turismo",
+    "transport_mode_id": 5,
+    "transport_mode_name": "light_rail"
+  },
+  {
+    "id": 594,
+    "name": "Inajar-Rio Branco-Centro (SPTrans)",
+    "url_name": "594-inajar-rio-branco-centro-(sptrans)",
+    "color": "#dd040d",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 8,
+    "transport_mode_name": "bus"
+  },
+  {
+    "id": 599,
+    "name": "Itapecerica-João Dias-Centro (SPTrans)",
+    "url_name": "599-itapecerica-joao-dias-centro-(sptrans)",
+    "color": "#dd040d",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 8,
+    "transport_mode_name": "bus"
+  },
+  {
+    "id": 597,
+    "name": "Jd. Ângela-Guarapiranga-Santo Amaro (SPTrans)",
+    "url_name": "597-jd.-angela-guarapiranga-santo-amaro-(sptrans)",
+    "color": "#dd040d",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 8,
+    "transport_mode_name": "bus"
+  },
+  {
+    "id": 261,
+    "name": "Linha 1 • Azul (CMSP)",
+    "url_name": "261-linha-1---azul",
+    "color": "#0455a1",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 262,
+    "name": "Linha 2 • Verde (CMSP)",
+    "url_name": "262-linha-2---vermelha",
+    "color": "#007e5e",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 263,
+    "name": "Linha 3 • Vermelha (CMSP)",
+    "url_name": "263-linha-3---vermelha",
+    "color": "#ee372f",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 266,
+    "name": "Linha 4 • Amarela (ViaQuatro)",
+    "url_name": "266-linha-4---amarela",
+    "color": "#ffff00",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 264,
+    "name": "Linha 5 • Lilás (ViaMobilidade)",
+    "url_name": "264-linha-5---lilas",
+    "color": "#9b3894",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 275,
+    "name": "Linha 6 • Laranja (LinhaUni)",
+    "url_name": "275-linha-6-•-laranja",
+    "color": "#ff8000",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 267,
+    "name": "Linha 7 • Rubi (Tic Trens)",
+    "url_name": "267-linha-7---rubi",
+    "color": "#ca016b",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 268,
+    "name": "Linha 8 • Diamante (ViaMobilidade)",
+    "url_name": "268-linha-8---diamante",
+    "color": "#97a098",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 269,
+    "name": "Linha 9 • Esmeralda (ViaMobilidade)",
+    "url_name": "269-linha-9---esmeralda",
+    "color": "#01a9a7",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 270,
+    "name": "Linha 10 • Turquesa (CPTM)",
+    "url_name": "270-linha-10---turquesa",
+    "color": "#049fc3",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 271,
+    "name": "Linha 11 • Coral (CPTM)",
+    "url_name": "271-linha-11---coral",
+    "color": "#f68368",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 272,
+    "name": "Linha 12 • Safira (CPTM)",
+    "url_name": "272-linha-12---safira",
+    "color": "#133c8d",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 277,
+    "name": "Linha 13 • Jade (CPTM)",
+    "url_name": "277-linha-13-•-jade",
+    "color": "#00b352",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 265,
+    "name": "Linha 15 • Prata (CMSP)",
+    "url_name": "265-linha-15---prata",
+    "color": "#c0c0c0",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 274,
+    "name": "Linha 17 • Ouro (ViaMobilidade)",
+    "url_name": "274-linha-17-•-ouro",
+    "color": "#fc921c",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 276,
+    "name": "Linha 18 • Bronze (VemABC)",
+    "url_name": "276-linha-18-•-bronze",
+    "color": "#945a28",
+    "system_id": 94,
+    "system_name": "Metroferroviário",
+    "transport_mode_id": 4,
+    "transport_mode_name": "heavy_rail"
+  },
+  {
+    "id": 286,
+    "name": "Linha A • Corredor ABD (Metra)",
+    "url_name": "286-linha-a-•-corredor-abd",
+    "color": "#1e4ea3",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 8,
+    "transport_mode_name": "bus"
+  },
+  {
+    "id": 287,
+    "name": "Linha B • Diadema-Berrini (Metra)",
+    "url_name": "287-linha-b-•-diadema-brooklin-(emtu)",
+    "color": "#1e4ea3",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 8,
+    "transport_mode_name": "bus"
+  },
+  {
+    "id": 288,
+    "name": "Linha C • Guarulhos-Tucuruvi (EMTU)",
+    "url_name": "288-linha-c-•-guarulhos-tucuruvi-(emtu)",
+    "color": "#1e4ea3",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 8,
+    "transport_mode_name": "bus"
+  },
+  {
+    "id": 289,
+    "name": "Linha D • Itapevi-Butantã (EMTU)",
+    "url_name": "289-linha-d-•-itapevi-butanta",
+    "color": "#1e4ea3",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 8,
+    "transport_mode_name": "bus"
+  },
+  {
+    "id": 601,
+    "name": "Paes de Barros (SPTrans)",
+    "url_name": "601-paes-de-barros-(sptrans)",
+    "color": "#dd040d",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 8,
+    "transport_mode_name": "bus"
+  },
+  {
+    "id": 598,
+    "name": "Parelheiros-Rio Bonito-Santo Amaro (SPTrans)",
+    "url_name": "598-parelheiros-rio-bonito-santo-amaro-(sptrans)",
+    "color": "#dd040d",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 8,
+    "transport_mode_name": "bus"
+  },
+  {
+    "id": 2140,
+    "name": "Parque do Estoril - Zoológico",
+    "url_name": "2140-parque-do-estoril---zoologico",
+    "color": "#9013fe",
+    "system_id": 701,
+    "system_name": "Teleférico",
+    "transport_mode_id": 0,
+    "transport_mode_name": "default"
+  },
+  {
+    "id": 593,
+    "name": "Pirituba-Lapa-Centro (SPTrans)",
+    "url_name": "593-pirituba-lapa-centro-(sptrans)",
+    "color": "#dd040d",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 8,
+    "transport_mode_name": "bus"
+  },
+  {
+    "id": 602,
+    "name": "Ponte Baixa",
+    "url_name": "602-leste-•-aricanduva",
+    "color": "#dd040d",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 8,
+    "transport_mode_name": "bus"
+  },
+  {
+    "id": 603,
+    "name": "Ponte Orca • Zoo (EMTU)",
+    "url_name": "603-ponte-orca-•-zoo-(emtu)",
+    "color": "#000",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 8,
+    "transport_mode_name": "bus"
+  },
+  {
+    "id": 596,
+    "name": "Santo Amaro-Nove de Julho-Centro",
+    "url_name": "596-santo-amaro-nove-de-julho-centro",
+    "color": "#dd040d",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 8,
+    "transport_mode_name": "bus"
+  },
+  {
+    "id": 283,
+    "name": "Trem de Guararema (ABPF)",
+    "url_name": "283-trem-de-guararema-(abpf)",
+    "color": "#f8e71c",
+    "system_id": 275,
+    "system_name": "Turismo",
+    "transport_mode_id": 5,
+    "transport_mode_name": "light_rail"
+  },
+  {
+    "id": 282,
+    "name": "Trem dos Imigrantes (ABPF)",
+    "url_name": "282-trem-dos-imigrantes-(abpf)",
+    "color": "#f8e71c",
+    "system_id": 275,
+    "system_name": "Turismo",
+    "transport_mode_id": 5,
+    "transport_mode_name": "light_rail"
+  },
+  {
+    "id": 281,
+    "name": "Trem dos Ingleses (ABPF)",
+    "url_name": "281-trem-dos-ingleses-(abpf)",
+    "color": "#f8e71c",
+    "system_id": 275,
+    "system_name": "Turismo",
+    "transport_mode_id": 5,
+    "transport_mode_name": "light_rail"
+  },
+  {
+    "id": 600,
+    "name": "Ver. José Diniz-Ibirapuera-Centro (SPTrans)",
+    "url_name": "600-capelinha-ibirapuera-centro-(sptrans)",
+    "color": "#dd040d",
+    "system_id": 279,
+    "system_name": "Metrorrodoviário",
+    "transport_mode_id": 8,
+    "transport_mode_name": "bus"
+  }
+]

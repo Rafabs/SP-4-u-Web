@@ -1,0 +1,94 @@
+:root {
+    --accent-blue: #1a3aff;
+    --accent-blue-light: #6ea8ff;
+    --accent-blue-hover: #4d80ff;
+}
+
+.external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(26, 58, 255, 0.1);
+  border: 1px solid rgba(26, 58, 255, 0.3);
+  border-radius: 4px;
+  color: var(--accent-blue-light);
+  text-decoration: none;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 14px;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.external-link:hover {
+  background: rgba(26, 58, 255, 0.2);
+  border-color: var(--accent-blue-hover);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(26, 58, 255, 0.4);
+}
+
+/* 5. Responsividade */
+@media (max-width: 768px) {
+    .update-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .history-table {
+        font-size: 0.8rem;
+    }
+}
+
+/* 6. Hero Section */
+.hero-news .hero-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--hero-color);
+  opacity: 0.12;
+}
+
+.hero-moving-icon {
+  position: absolute;
+  color: var(--hero-color);
+  opacity: 0.6;
+  animation-name: bus-run;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bus-run {
+    0% {
+        left: -40px;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: .6;
+    }
+
+    95% {
+        opacity: .6;
+    }
+
+    100% {
+        left: 110%;
+        opacity: 0;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}

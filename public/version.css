@@ -1,0 +1,134 @@
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS DA PÁGINA DE VERSÃO & ROADMAP
+   ========================================================================== */
+
+/* Estilo para as seções de Roadmap */
+.execution h3 {
+    color: var(--accent-red);
+    margin-top: 25px;
+    border-left: 4px solid var(--accent-red);
+    padding-left: 15px;
+}
+
+/* Checkboxes de tarefas */
+.execution ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.execution li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estilização do Histórico (Details) */
+details.note {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+details.note[open] {
+    border-color: var(--accent-red);
+}
+
+details summary {
+    outline: none;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+/* Labels de status (Em desenvolvimento / Concluído) */
+code {
+    background-color: var(--code-color);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Nota de rodapé (Atenção) */
+.attention {
+    background-color: rgba(212, 0, 0, 0.1);
+    border-left: 4px solid var(--accent-red);
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 4px;
+}
+
+/* Hero Section */
+.hero-versao .hero-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#versao-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-track {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--hero-color), transparent);
+  opacity: 0.15;
+}
+
+.hero-moving-icon {
+  position: absolute;
+  left: -50px;
+  color: var(--hero-color);
+  opacity: 0.8;
+  filter: drop-shadow(0 0 8px var(--hero-color));
+  animation: moveHorizontal linear infinite;
+  will-change: transform;
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-10vw);
+  }
+  100% {
+    transform: translateX(115vw);
+  }
+}
+
+@keyframes bus-run {
+    0% {
+        left: -40px;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: .6;
+    }
+
+    95% {
+        opacity: .6;
+    }
+
+    100% {
+        left: 110%;
+        opacity: 0;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}

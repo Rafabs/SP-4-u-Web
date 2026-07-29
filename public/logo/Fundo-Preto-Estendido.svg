@@ -1,0 +1,64 @@
+<svg width="35" height="11" viewBox="0 0 35 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2_67)">
+<rect width="35" height="11" fill="black"/>
+<line x1="0.5" y1="1" x2="0.5" y2="5" stroke="#FF0000"/>
+<line x1="18.5" y1="1" x2="18.5" y2="5" stroke="#000DFF"/>
+<line x1="7.5" y1="6" x2="7.5" y2="10" stroke="#FF0000"/>
+<line x1="9.5" y1="6" x2="9.5" y2="10" stroke="#FF0000"/>
+<line x1="9.5" y1="1" x2="9.5" y2="2" stroke="#FF0000"/>
+<line x1="1" y1="0.5" x2="7" y2="0.5" stroke="#FF0000"/>
+<line x1="1" y1="5.5" x2="7" y2="5.5" stroke="#FF0000"/>
+<path d="M19 5.5L26 5.5" stroke="#000DFF"/>
+<line x1="10" y1="5.5" x2="16" y2="5.5" stroke="#FF0000"/>
+<line x1="9" y1="0.5" x2="16" y2="0.5" stroke="#FF0000"/>
+<line x1="1" y1="10.5" x2="7" y2="10.5" stroke="#FF0000"/>
+<line x1="16.5" y1="1" x2="16.5" y2="5" stroke="#FF0000"/>
+<line y1="9.5" x2="1" y2="9.5" stroke="#FF0000"/>
+<line x1="7" y1="1.5" x2="8" y2="1.5" stroke="#FF0000"/>
+<line x1="25.5" y1="5" x2="25.5" y2="10" stroke="#000DFF"/>
+<line x1="25.5" y1="1" x2="25.5" y2="5" stroke="#000DFF"/>
+<line x1="27.5" y1="1" x2="27.5" y2="10" stroke="#00882D"/>
+<line x1="34.5" y1="1" x2="34.5" y2="10" stroke="#00882D"/>
+<line x1="28" y1="10.5" x2="34" y2="10.5" stroke="#00882D"/>
+<path d="M7 0L8 1H7V0Z" fill="#FF0000"/>
+<path d="M1 0V1H0L1 0Z" fill="#FF0000"/>
+<path d="M1 5V6L0 5H1Z" fill="#FF0000"/>
+<path d="M7 5L8 6H7V5Z" fill="#FF0000"/>
+<path d="M7 10H8L7 11V10Z" fill="#FF0000"/>
+<path d="M7 9V10H6L7 9Z" fill="#FF0000"/>
+<path d="M7 6V7L6 6H7Z" fill="#FF0000"/>
+<path d="M1 4L2 5H1V4Z" fill="#FF0000"/>
+<path d="M1 1H2L1 2V1Z" fill="#FF0000"/>
+<path d="M6 1H7V2L6 1Z" fill="#FF0000"/>
+<path d="M1 10V11L0 10H1Z" fill="#FF0000"/>
+<path d="M16 0L17 1H16V0Z" fill="#FF0000"/>
+<path d="M16 5H17L16 6V5Z" fill="#FF0000"/>
+<path d="M16 4V5H15L16 4Z" fill="#FF0000"/>
+<path d="M15 1H16V2L15 1Z" fill="#FF0000"/>
+<path d="M10 5V6H9L10 5Z" fill="#FF0000"/>
+<path d="M19 0V1H18L19 0Z" fill="#000DFF"/>
+<path d="M26 0V1H25L26 0Z" fill="#000DFF"/>
+<path d="M28 1H27V0L28 1Z" fill="#00882D"/>
+<path d="M35 0V1H34L35 0Z" fill="#00882D"/>
+<path d="M10 6H11L10 7V6Z" fill="#FF0000"/>
+<path d="M10 2V3L9 2H10Z" fill="#FF0000"/>
+<path d="M10 10V11L9 10H10Z" fill="#FF0000"/>
+<path d="M7 2H8L7 3V2Z" fill="#FF0000"/>
+<path d="M1 9L2 10H1V9Z" fill="#FF0000"/>
+<path d="M10 1H11L10 2V1Z" fill="#FF0000"/>
+<path d="M1 8V9H0L1 8Z" fill="#FF0000"/>
+<path d="M19 4L20 5H19V4Z" fill="#000DFF"/>
+<path d="M19 5V6L18 5H19Z" fill="#000DFF"/>
+<path d="M26 10V11L25 10H26Z" fill="#000DFF"/>
+<path d="M18 3L19 4H18V3Z" fill="#000DFF"/>
+<path d="M28 10V11L27 10H28Z" fill="#00882D"/>
+<path d="M28 9L29 10H28V9Z" fill="#00882D"/>
+<path d="M34 9V10H33L34 9Z" fill="#00882D"/>
+<path d="M35 10L34 11V10H35Z" fill="#00882D"/>
+</g>
+<defs>
+<clipPath id="clip0_2_67">
+<rect width="35" height="11" fill="white"/>
+</clipPath>
+</defs>
+</svg>

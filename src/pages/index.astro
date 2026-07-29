@@ -1,0 +1,150 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LinhaCard from "../components/LinhaCard.astro";
+import { dadosLinhas } from "../data/linhas";
+import roadmapData from "../data/roadmap";
+
+const latest = roadmapData.historico[0];
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
+---
+
+<Layout title="Sampa 4u | Início">
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-lines" id="lines-canvas"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Sistema Metroferroviário · São Paulo</div>
+      <h1 class="hero-h1">Mobilidade Urbana<br />em <span>tempo real</span></h1>
+      <p class="hero-sub">
+        Visualize trilhos, ciclovias, qualidade do ar e dados operacionais de
+        todas as linhas da RMSP — em um único lugar.
+      </p>
+      <div class="hero-ctas">
+        <a href={`${base}mapa`} class="btn-hero-primary">Explorar mapa</a>
+        <a href="#status-linhas" class="btn-hero-ghost">Ver status das linhas</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-val">13</div><div class="stat-label">Linhas monitoradas</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">215+</div><div class="stat-label">Estações mapeadas</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">10 min</div><div class="stat-label">Ciclo de atualização de dados</div>
+        </div>
+      </div>
+      <div class="hero-version">
+        <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank">
+          <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+            alt="github"/>
+        </a>
+        <img src={`https://img.shields.io/badge/Vers%C3%A3o-${encodeURIComponent(latest.versao)}-blue?style=for-the-badge`}
+          alt="Versão"/>
+        <img src={`https://img.shields.io/badge/Atualiza%C3%A7%C3%A3o-${latest.data.replace(/\//g, "%2F")}-green?style=for-the-badge`}
+          alt="Atualização"/>
+        <img
+          src="https://img.shields.io/badge/Licença-MIT-orange?style=for-the-badge"
+          alt="Licença"/>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+  <section class="about">
+    <div class="info-container">
+      <h2>Sampa 4u</h2>
+      <p>
+        O <strong>Sampa 4u</strong> é um ecossistema de visualização de dados focado
+        na malha metroferroviária e de ônibus urbano de São Paulo. O projeto transforma
+        dados operacionais e coordenadas em interfaces gráficas intuitivas, facilitando
+        a compreensão da mobilidade urbana na capital paulista.
+      </p>
+      <p>
+        O projeto é desenvolvido utilizando o método Incremental Delivery, com
+        atualizações regulares e roadmap público.
+      </p>
+    </div>
+  </section>
+
+  <hr />
+
+  <section class="lines" id="status-linhas">
+    <h2>Consulte as linhas do Sistema Metropolitano</h2>
+    <ul class="line-list">
+      {
+        Object.entries(dadosLinhas).map(([id, linha]) => (
+          <LinhaCard
+            id={id}
+            imagemModoDark={linha.image_mode_light}
+            imagemModoLight={linha.image_mode_dark}
+            nome={linha.nome}
+            cor={linha.cor}
+            empresa={linha.empresa}
+          />
+        ))
+      }
+    </ul>
+    <div class="empresa" id="ultima-atualizacao"></div>
+  </section>
+
+  <hr />
+
+  <section class="about">
+    <div
+      class="attention"
+      style="background-color: rgba(0,0,0,0.05); padding: 15px; border-left: 5px solid #d40000; margin: 20px 0;"
+    >
+      <h2>CCM | Centro de Controle Multimodal</h2>
+      <p>
+        Os status operacionais exibidos acima são extraídos da API pública do
+        <strong>Centro de Controle Multimodal (CCM)</strong> da ARTESP, disponível
+        em <br>
+        <a
+          href="https://ccm.artesp.sp.gov.br/metroferroviario/api/docs/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ccm.artesp.sp.gov.br
+        </a>. Os dados são coletados automaticamente a cada 10 minutos via
+        GitHub Actions e cobrem todas as linhas do sistema metroferroviário
+        paulista — incluindo Metrô, CPTM e Concessionárias.
+      </p>
+    </div>
+  </section>
+  <hr />
+
+  <section class="data figma-section">
+    <h2>Mapa do Transporte Metropolitano</h2>
+    <p class="figma-desc">
+      Veja o protótipo visual do mapa do transporte metropolitano criado na
+      ferramenta Figma
+    </p>
+    <div class="figma-embed-wrapper">
+      <iframe
+        title="Mapa do Transporte Metropolitano – Figma"
+        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FdV6TZhnCs7CmzCyIP2aPA8%2FMapa-do-Transporte-Metropolitano%3Fnode-id%3D0-1&scaling=scale-down&fit-width=1"
+        allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <hr />
+  <div id="dynamic-systems-info"></div>
+  <hr />
+
+  <script define:vars={{ base }}>
+    window.__BASE_URL__ = base;
+  </script>
+
+  <script>
+    import { loadStatusLinhas } from "../lib/status-linhas";
+    import { initHeroLines } from "../lib/hero-animations";
+
+    loadStatusLinhas();
+    initHeroLines();
+  </script>
+</Layout>

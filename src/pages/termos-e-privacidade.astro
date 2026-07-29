@@ -1,0 +1,126 @@
+---
+import Layout from "../layouts/Layout.astro";
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
+const lastUpdated = "21 de Julho de 2026";
+---
+
+<Layout title="Sampa 4u | Termos de Uso e Privacidade">
+  <link rel="stylesheet" href={`${base}/termos.css`} slot="head" />
+
+  <!-- HERO -->
+  <section class="hero hero-termos">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+
+    <!-- Canvas de animação fluida unificada -->
+    <div class="hero-canvas" id="termos-canvas"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Transparência · Compromisso Open Source</div>
+      <h1 class="hero-h1">Termos &<br><span style="color:#ff0000;">Privacidade</span></h1>
+      <p class="hero-sub">
+        Transparência no tratamento de dados e nas regras de uso do site, aplicativos e serviços digitais do ecossistema Sampa 4u.
+      </p>
+      <div class="hero-stats">
+        <div class="stat" style="border-color:#ff0000;">
+          <div class="stat-val">100%</div>
+          <div class="stat-label">Sem Rastreamento Comercial</div>
+        </div>
+        <div class="stat" style="border-color:#ff0000;">
+          <div class="stat-val">LGPD</div>
+          <div class="stat-label">Em conformidade</div>
+        </div>
+        <div class="stat" style="border-color:#ff0000;">
+          <div class="stat-val">MIT</div>
+          <div class="stat-label">Código Aberto</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <section class="legal-content">
+    <div class="legal-container">
+      <p class="last-updated"><strong>Última atualização:</strong> {lastUpdated}</p>
+
+      <nav class="legal-nav">
+        <a href="#privacidade">1. Política de Privacidade</a>
+        <a href="#termos">2. Termos de Uso</a>
+        <a href="#apis-terceiros">3. Fontes de Dados e APIs</a>
+        <a href="#contato">4. Contato</a>
+      </nav>
+
+      <!-- SEÇÃO PRIVACIDADE -->
+      <article id="privacidade" class="legal-block">
+        <h2>1. Política de Privacidade</h2>
+        <p>
+          O <strong>Sampa 4u</strong> é um projeto open source focado em disponibilizar visualizações e dados sobre a mobilidade urbana e infraestrutura de São Paulo. A filosofia central deste projeto é o respeito total à privacidade do usuário.
+        </p>
+
+        <h3>1.1. Coleta e Uso de Dados</h3>
+        <ul>
+          <li><strong>Dados Pessoais:</strong> Não coletamos, armazenamos ou comercializamos informações de identificação pessoal (como nome, CPF, e-mail ou telefone) para navegação básica no site ou aplicativo.</li>
+          <li><strong>Geolocalização:</strong> Quando você utiliza recursos que requerem sua localização (como encontrar paradas de ônibus ou ciclovias próximas), as coordenadas GPS são processadas estritamente no seu dispositivo e/ou enviadas pontualmente para requisição de rotas. Não guardamos histórico de localização nos nossos servidores.</li>
+          <li><strong>Registros Técnicos (Logs):</strong> Servidores e redes de entrega de conteúdo (CDN) podem registrar dados estritamente técnicos (como IP e user-agent) para fins de segurança, prevenção de ataques DoS e diagnóstico de erros.</li>
+        </ul>
+
+        <h3>1.2. Cookies e Armazenamento Local</h3>
+        <p>
+          Utilizamos o <code>localStorage</code> do seu navegador/dispositivo apenas para salvar preferências do usuário (como tema escuro/claro ou filtros selecionados). Não utilizamos cookies de rastreamento publicitário de terceiros.
+        </p>
+      </article>
+
+      <!-- SEÇÃO TERMOS DE USO -->
+      <article id="termos" class="legal-block">
+        <h2>2. Termos de Uso</h2>
+        
+        <h3>2.1. Natureza do Serviço</h3>
+        <p>
+          O Sampa 4u é um agregador e visualizador de dados informativos. Os serviços são disponibilizados <strong>"como estão"</strong>, sem garantias implícitas ou explícitas de disponibilidade ininterrupta.
+        </p>
+
+        <h3>2.2. Isenção de Responsabilidade</h3>
+        <ul>
+          <li><strong>Precisão dos Dados de Transporte:</strong> Horários de ônibus, estimativas do Olho Vivo/SPTrans, tempo de chegada e status de linhas de metrô/trem dependem de APIs públicas oficiais e podem apresentar divergências com a realidade operacional.</li>
+          <li><strong>Tomada de Decisões:</strong> O Sampa 4u não se responsabiliza por atrasos, perdas financeiras ou eventuais contratempos decorrentes da confiança nas estimativas fornecidas pelas ferramentas.</li>
+        </ul>
+
+        <h3>2.3. Licença e Código Aberto</h3>
+        <p>
+          O código-fonte do projeto está sob a licença <strong>MIT</strong>. Você é livre para estudar, modificar e distribuir o projeto, desde que mantidos os créditos originais conforme o repositório público no GitHub.
+        </p>
+      </article>
+
+      <!-- SEÇÃO APIS E TERCEIROS -->
+      <article id="apis-terceiros" class="legal-block">
+        <h2>3. Integrantes e Fontes de Dados Públicos</h2>
+        <p>
+          O ecossistema Sampa 4u consome e exibe dados provenientes de APIs e bases públicas abertas, incluindo:
+        </p>
+        <ul>
+          <li><strong>SPTrans (Olho Vivo / GTFS):</strong> Posições da frota de ônibus e linhas operacionais.</li>
+          <li><strong>GeoSampa / Prefeitura de SP:</strong> Malha cicloviária, pontos turísticos e divisões administrativas.</li>
+          <li><strong>ARTESP (CCM):</strong> API de monitoramento em tempo real do sistema metroferroviário (linhas concedidas e estatais da RMSP).</li>
+          <li><strong>WAQI - World's Air Pollution:</strong> Sistema de informações com índices e histórico de qualidade do ar das estações de monitoramento automáticas do Estado de São Paulo.</li>
+        </ul>
+        <p>
+          A utilização de cada uma das fontes respeita suas respectivas políticas de dados abertos e uso justo de API.
+        </p>
+      </article>
+
+      <!-- SEÇÃO CONTATO -->
+      <article id="contato" class="legal-block">
+        <h2>4. Dúvidas e Contato</h2>
+        <p>
+          Para dúvidas, sugestões ou solicitações relativas à privacidade e aos serviços digitais, você pode abrir uma issue diretamente no repositório no GitHub ou entrar em contato com os mantenedores do projeto.
+        </p>
+        <div class="legal-cta">
+          <a href="https://github.com/Rafabs/SP-4-u-Web" target="_blank" rel="noopener noreferrer" class="btn-hero-primary" style="background:#ff0000;">
+            Acessar Repositório no GitHub
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+</Layout>

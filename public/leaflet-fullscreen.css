@@ -1,0 +1,35 @@
+.fullscreen-icon {
+    background-image: url('icon-fullscreen.svg');
+    background-repeat: no-repeat;
+    background-size: 26px 52px;
+    background-position: 0 0;
+}
+
+.fullscreen-icon.leaflet-fullscreen-on {
+    background-position: 0 -26px;
+}
+
+.leaflet-touch .fullscreen-icon {
+    background-position: 2px 2px;
+}
+
+.leaflet-touch .fullscreen-icon.leaflet-fullscreen-on {
+    background-position: 2px -24px;
+}
+
+/* Safari ainda depende do seletor legado para fullscreen nativo. */
+/* stylelint-disable-next-line selector-no-vendor-prefix */
+.leaflet-container:-webkit-full-screen,
+.leaflet-container:fullscreen {
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 99999;
+}
+
+.leaflet-pseudo-fullscreen {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 99999;
+}

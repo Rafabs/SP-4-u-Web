@@ -1,0 +1,224 @@
+.error-wrapper {
+    --mono-font: 'Courier New', monospace;
+    --error-accent: var(--accent-red, #d40000);
+    --error-text: var(--text-primary, #e0e0e0);
+    --error-muted: var(--text-secondary, #a0a0a0);
+    --error-border: var(--border-color, #333);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: min(80vh, 760px);
+    text-align: center;
+    padding: clamp(24px, 5vw, 48px) 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Mantém o trilho independente do bloco textual. */
+.error-track {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 40px;
+    margin-bottom: clamp(28px, 5vw, 40px);
+}
+
+.track-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    transform: translateY(-50%);
+    background: repeating-linear-gradient(90deg,
+            var(--error-border) 0,
+            var(--error-border) 20px,
+            transparent 20px,
+            transparent 30px);
+}
+
+.train-anim {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-60px, -50%);
+    animation: train-pass 4s linear infinite;
+    will-change: transform, opacity;
+}
+
+.train-anim .material-symbols-outlined {
+    font-size: 32px;
+    color: var(--error-accent);
+}
+
+@keyframes train-pass {
+    0% {
+        transform: translate(-60px, -50%);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(calc(600px + 60px), -50%);
+        opacity: 0;
+    }
+}
+
+/* Limita o comprimento de linha para leitura confortável. */
+.error-container {
+    max-width: 520px;
+}
+
+.error-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.icon-signal {
+    font-size: 2.5rem;
+    color: #ffcc00;
+    animation: blink 1.2s step-end infinite;
+    will-change: opacity;
+}
+
+.icon-wrong {
+    font-size: 2.5rem;
+    color: #ff4444;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+}
+
+.error-code {
+    font-size: clamp(4rem, 12vw, 6rem);
+    font-weight: 900;
+    color: var(--error-text);
+    line-height: 1;
+    letter-spacing: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.error-container h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--error-text);
+    margin: 0 0 8px;
+}
+
+.error-tag {
+    font-family: var(--mono-font);
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--error-accent);
+    margin: 0 0 20px;
+}
+
+.error-container .error-desc {
+    font-size: 0.95rem;
+    color: var(--error-muted);
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+/* CTAs compartilham base visual e preservam distinção por hierarquia. */
+.error-ctas {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.error-wrapper .btn-home,
+.error-wrapper .btn-map {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 11px 24px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: var(--mono-font);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+.error-wrapper .btn-home {
+    background: var(--error-accent);
+    color: #fff;
+    border: 1px solid var(--error-accent);
+}
+
+.error-wrapper .btn-home:hover {
+    opacity: 0.85;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.error-wrapper .btn-map {
+    background: transparent;
+    color: var(--error-text);
+    border: 1px solid var(--error-border);
+}
+
+.error-wrapper .btn-map:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: var(--error-text);
+    transform: translateY(-1px);
+}
+
+.error-wrapper .btn-home:focus-visible,
+.error-wrapper .btn-map:focus-visible {
+    outline: 2px solid var(--error-text);
+    outline-offset: 3px;
+}
+
+.error-footer {
+    font-family: var(--mono-font);
+    font-size: 11px;
+    color: var(--error-muted);
+    letter-spacing: 1px;
+}
+
+@media (max-width: 480px) {
+    .error-track {
+        display: none;
+    }
+
+    .error-ctas {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .train-anim,
+    .icon-signal {
+        animation: none;
+    }
+}

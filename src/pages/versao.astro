@@ -1,0 +1,98 @@
+---
+import Layout from "../layouts/Layout.astro";
+import roadmapData from "../data/roadmap";
+import RepoLanguages from "../components/RepoLanguages.astro";
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
+
+const latest = roadmapData.historico[0];
+---
+
+<Layout title="Sampa 4u | Versão e Roadmap">
+  <link rel="stylesheet" href={`${base}/version.css`} slot="head" />
+
+  <!-- HERO -->
+  <section class="hero hero-versao">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-canvas" id="versao-canvas"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Desenvolvimento · Open Source</div>
+      <h1 class="hero-h1">Versão e<br><span style="color:#7f77dd;">Roadmap</span></h1>
+      <p class="hero-sub">
+        Acompanhe o histórico de atualizações, funcionalidades planejadas
+        e o progresso de desenvolvimento do Sampa 4u.
+      </p>
+      <div class="hero-ctas">
+        <a href="#roadmap" class="btn-hero-primary" style="background:#7f77dd;">Ver roadmap</a>
+        <a href="#historico" class="btn-hero-ghost">Histórico completo</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat" style="border-color:#7f77dd;">
+          <div class="stat-val">{latest.versao}</div>
+          <div class="stat-label">Versão atual</div>
+        </div>
+        <div class="stat" style="border-color:#7f77dd;">
+          <div class="stat-val">{roadmapData.historico.length}</div>
+          <div class="stat-label">Versões lançadas</div>
+        </div>
+        <div class="stat" style="border-color:#7f77dd;">
+          <div class="stat-val">MIT</div>
+          <div class="stat-label">Licença</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="execution" id="roadmap">
+    <h2>
+      <span class="material-symbols-outlined" style="vertical-align: middle;">timeline</span>
+      Roadmap de Desenvolvimento
+    </h2>
+
+    <RepoLanguages user="Rafabs" repo="SP-4-u-Web" />
+
+    {roadmapData.roadmap.map((secao) => (
+      <>
+        <h3>{secao.categoria}</h3>
+        {secao.itens ? (
+          <ul>
+            {secao.itens.map((item) => (
+              <li>
+                <input type="checkbox" checked={item.checked} disabled />
+                {item.label}
+                {item.status && <code>{item.status}</code>}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>{secao.texto}</p>
+        )}
+      </>
+    ))}
+
+    <details class="note" id="historico" style="padding: 15px; cursor: pointer;">
+      <summary><strong>📚 Ver histórico completo</strong></summary>
+      <ul style="margin-top: 15px; list-style: none; padding-left: 0;">
+        {roadmapData.historico.map((log) => (
+          <li>
+            <code>{log.data}</code>
+            <code>{log.versao}</code>
+            {log.descricao}
+          </li>
+        ))}
+      </ul>
+    </details>
+
+    <hr />
+  </section>
+
+  <script>
+    import { initHeroVersion } from "../lib/hero-animations";
+
+    initHeroVersion();    
+  </script>
+
+</Layout>
