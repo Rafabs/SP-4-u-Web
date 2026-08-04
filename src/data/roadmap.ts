@@ -51,6 +51,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "04/08/2026", versao: "v26.08.1", descricao: "Atualização GTFS - SPTrans e dados do citylines" },    
     { data: "29/07/2026", versao: "v26.07.15", descricao: "Criação de itens GTFS da ARTESP com adaptação de históricos, atualização GTFS - SPTrans e Inserção de cores hexadecimal das linhas 6 e 17" },    
     { data: "25/07/2026", versao: "v26.07.14", descricao: "Atualização GTFS - SPTrans e (GTFS): Previne erro ao ler shapes com linhas vazias ou indefinidas" },    
     { data: "22/07/2026", versao: "v26.07.13", descricao: "Correção de estilos de Detalhes na versão mobile" },    
