@@ -26,6 +26,8 @@ function codigoFromId(id: string): string {
   return String(parseInt(id.replace("L", ""), 10));
 }
 
+const STALE_THRESHOLD_MS = 20 * 60 * 1000; // 20 minutos
+
 function cssClass(situacao: string): string {
   const s = situacao.toLowerCase();
   if (s.includes("normal") || s.includes("especial"))
@@ -36,6 +38,24 @@ function cssClass(situacao: string): string {
   if (s.includes("paralisada") || s.includes("interrompida"))
     return "vermelho_paralisada";
   return "branco_dados_indisponiveis";
+}
+
+function formatPtBrDateTime(value: string): string | null {
+  const dt = new Date(value);
+  if (Number.isNaN(dt.getTime())) return null;
+  return dt.toLocaleString("pt-BR", {
+    day: "2-digit", month: "2-digit", year: "numeric",
+    hour: "2-digit", minute: "2-digit",
+    timeZone: "America/Sao_Paulo"
+  });
+}
+
+function createStatusUpdateLabel(timestamp?: string): string {
+  if (!timestamp) return "";
+  const formatted = formatPtBrDateTime(timestamp) ?? timestamp;
+  const ageMs = Date.now() - new Date(timestamp).getTime();
+  const staleNote = ageMs > STALE_THRESHOLD_MS ? " (podem estar desatualizados)" : "";
+  return `Atualizado em ${formatted}${staleNote}`;
 }
 
 function handleEscKey(e: KeyboardEvent): void {
@@ -84,7 +104,9 @@ function openModal(linhaNome: string, status: StatusLinha): void {
   badge.textContent = status.situacao;
   badge.className   = `status-modal-badge ${cssClass(status.situacao)}`;
   desc.textContent  = status.descricao || "Nenhuma descrição adicional disponível.";
-  update.textContent = status.atualizado_em ? `Atualizado em: ${status.atualizado_em}` : "";
+  update.textContent = status.atualizado_em
+    ? `Atualizado em: ${formatPtBrDateTime(status.atualizado_em) ?? status.atualizado_em}`
+    : "";
 
   overlay.classList.add("is-open");
 
@@ -161,18 +183,8 @@ function applyStatus(data: APIResponse): void {
     });
 
   const ultimaAtualizacao = document.getElementById("ultima-atualizacao");
-  if (ultimaAtualizacao && data.meta?.timestamp) {
-    try {
-      const dt = new Date(data.meta.timestamp);
-      const formatado = dt.toLocaleString("pt-BR", {
-        day: "2-digit", month: "2-digit", year: "numeric",
-        hour: "2-digit", minute: "2-digit",
-        timeZone: "America/Sao_Paulo"
-      });
-      ultimaAtualizacao.textContent = `Atualizado em ${formatado}`;
-    } catch {
-      ultimaAtualizacao.textContent = `Atualizado em ${data.meta.timestamp}`;
-    }
+  if (ultimaAtualizacao) {
+    ultimaAtualizacao.textContent = createStatusUpdateLabel(data.meta?.timestamp);
   }
 }
 

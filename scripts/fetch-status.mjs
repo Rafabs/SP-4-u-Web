@@ -16,12 +16,10 @@ try {
   console.log("[fetch-status] CCM_API carregada:", !!API_KEY);
 
   const res = await fetch(API_URL, {
-  headers: {
-    Authorization: `Api-Key ${API_KEY.trim()}`
-  }
+    headers: {
+      Authorization: `Api-Key ${API_KEY.trim()}`
+    }
   });
-  console.log(API_KEY.length);
-  console.log(API_KEY);
   console.log("[fetch-status] HTTP:", res.status);
 
   if (!res.ok) {
