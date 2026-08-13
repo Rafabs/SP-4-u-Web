@@ -9,8 +9,11 @@ const MANIFEST = "public/data/status-manifest.json";
 try {
   console.log("[fetch-status] Buscando API ARTESP...");
 
-  if (!API_KEY) { //
-    throw new Error("CCM_API não encontrada.");
+  if (!API_KEY || !API_KEY.trim()) {
+    console.warn(
+      "[fetch-status] CCM_API não encontrada ou vazia. Pulando atualização automática. Configure o secret CCM_API no GitHub para reativar as atualizações dos status das linhas."
+    );
+    process.exit(0);
   }
 
   console.log("[fetch-status] CCM_API carregada:", !!API_KEY);
@@ -26,6 +29,14 @@ try {
     const body = await res.text();
     console.error("[fetch-status] Resposta da API:");
     console.error(body);
+
+    if (res.status === 401 || res.status === 403) {
+      console.warn(
+        "[fetch-status] Credencial inválida/expirada. A atualização foi interrompida para evitar sobrescrever o JSON com dados antigos."
+      );
+      process.exit(0);
+    }
+
     throw new Error(`HTTP ${res.status}`);
   }
 

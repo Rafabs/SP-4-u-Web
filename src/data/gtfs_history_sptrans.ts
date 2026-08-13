@@ -11,6 +11,14 @@ export interface GTFSHistoryEntry {
 // DADOS
 export const historyData_SPTrans: GTFSHistoryEntry[] = [ 
   {
+    data: "11/08/2026",
+    tipo: "🆕 Inclusão",
+    linha: "1027/10",
+    cor: "509E2F",
+    rota: "Term Jd Britânia - Itaberaba I",
+    recente: true,
+  },   
+  {
     data: "29/07/2026",
     tipo: "❌ Remoção",
     linha: "879A/10",
@@ -24,7 +32,7 @@ export const historyData_SPTrans: GTFSHistoryEntry[] = [
     linha: "8072/10",
     cor: "FF671F",
     rota: "<after>Atual:</after> Horto Do Ypê - Metrô Morumbi<br><before>Antes:</before> Pq. Ipê - Metrô Morumbi",
-    recente: true,
+    recente: false,
   },     
   {
     data: "29/07/2026",
@@ -32,7 +40,7 @@ export const historyData_SPTrans: GTFSHistoryEntry[] = [
     linha: "6045/21",
     cor: "782F40",
     rota: "<after>Atual:</after> Term. Capelinha - Chác. Sta. Maria<br><before>Antes:</before> Term. Capelinha - Valo Velho",
-    recente: true,
+    recente: false,
   },   
   {
     data: "29/07/2026",
@@ -40,7 +48,7 @@ export const historyData_SPTrans: GTFSHistoryEntry[] = [
     linha: "4050/10",
     cor: "DA291C",
     rota: "Metrô Itaquera - Pq. Do Carmo",
-    recente: true,
+    recente: false,
   },      
   {
     data: "24/07/2026",
@@ -56,7 +64,7 @@ export const historyData_SPTrans: GTFSHistoryEntry[] = [
     linha: "7004/21",
     cor: "782F40",
     rota: "Term. Jd. Jacira - Vl. Do Sol",
-    recente: true,
+    recente: false,
   },   
   {
     data: "10/07/2026",
@@ -64,7 +72,7 @@ export const historyData_SPTrans: GTFSHistoryEntry[] = [
     linha: "550P/10",
     cor: "006341",
     rota: "Term. Vl. Prudente - Metrô Brás",
-    recente: true,
+    recente: false,
   }, 
   {
     data: "15/07/2026",
@@ -72,7 +80,7 @@ export const historyData_SPTrans: GTFSHistoryEntry[] = [
     linha: "606F/10",
     cor: "0082BA",
     rota: "Circular - Autódromo",
-    recente: true,
+    recente: false,
   },  
   {
     data: "05/07/2026",
