@@ -51,7 +51,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
-    { data: "18/08/2026", versao: "v26.08.1", descricao: "Atualização GTFS - SPTrans" },    
+    { data: "18/08/2026", versao: "v26.08.4", descricao: "Atualização GTFS - SPTrans" },    
     { data: "12/08/2026", versao: "v26.08.3", descricao: "Atualização GTFS - SPTrans e Correção de erro no carregamento de status das linhas" },    
     { data: "09/08/2026", versao: "v26.08.2", descricao: "Atualização GTFS - SPTrans e Correção de erro no carregamento de status das linhas" },    
     { data: "04/08/2026", versao: "v26.08.1", descricao: "Atualização GTFS - SPTrans e dados do citylines" },    
