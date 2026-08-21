@@ -313,6 +313,41 @@ body.light-mode .line-list li .linha-imagem--light {
     text-align: right;
 }
 
+/* Saúde da última atualização dos status das linhas */
+.status-atualizacao {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.status-atualizacao .empresa {
+    min-width: 0;
+}
+
+.status-atualizacao-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex: 0 0 10px;
+    background: var(--text-secondary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--text-secondary) 20%, transparent);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.status-atualizacao-dot.is-healthy {
+    background: var(--status-green-text);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--status-green-text) 20%, transparent),
+                0 0 10px color-mix(in srgb, var(--status-green-text) 70%, transparent);
+}
+
+.status-atualizacao-dot.is-unhealthy {
+    background: var(--status-red-text);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--status-red-text) 20%, transparent),
+                0 0 10px color-mix(in srgb, var(--status-red-text) 70%, transparent);
+}
+
 /* Listagem de Dados e Links Úteis */
 .data-list {
     display: grid;

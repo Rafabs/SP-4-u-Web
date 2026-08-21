@@ -54,8 +54,22 @@ function createStatusUpdateLabel(timestamp?: string): string {
   if (!timestamp) return "";
   const formatted = formatPtBrDateTime(timestamp) ?? timestamp;
   const ageMs = Date.now() - new Date(timestamp).getTime();
-  const staleNote = ageMs > STALE_THRESHOLD_MS ? " (podem estar desatualizados)" : "";
+  const staleNote = ageMs > STALE_THRESHOLD_MS ? " (Algumas informações podem estar desatualizadas)" : "";
   return `Atualizado em ${formatted}${staleNote}`;
+}
+
+function isDataFresh(timestamp?: string): boolean {
+  if (!timestamp) return false;
+  const updatedAt = new Date(timestamp).getTime();
+  return !Number.isNaN(updatedAt) && Date.now() - updatedAt <= STALE_THRESHOLD_MS;
+}
+
+function setUpdateHealth(isHealthy: boolean): void {
+  const dot = document.getElementById("status-atualizacao-dot");
+  if (!dot) return;
+
+  dot.classList.toggle("is-healthy", isHealthy);
+  dot.classList.toggle("is-unhealthy", !isHealthy);
 }
 
 function handleEscKey(e: KeyboardEvent): void {
@@ -186,6 +200,8 @@ function applyStatus(data: APIResponse): void {
   if (ultimaAtualizacao) {
     ultimaAtualizacao.textContent = createStatusUpdateLabel(data.meta?.timestamp);
   }
+
+  setUpdateHealth(isDataFresh(data.meta?.timestamp));
 }
 
 async function update(): Promise<void> {
@@ -201,6 +217,12 @@ async function update(): Promise<void> {
         card.onclick = null;
         card.style.cursor = "";
       });
+
+    const ultimaAtualizacao = document.getElementById("ultima-atualizacao");
+    if (ultimaAtualizacao) {
+      ultimaAtualizacao.textContent = "Falha ao atualizar o status das linhas";
+    }
+    setUpdateHealth(false);
   }
 }
 
