@@ -51,6 +51,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "06/09/2026", versao: "v26.09.1", descricao: "Atualização de informações, seguindo o ESCOPO REGULATÓRIO da ARTESP" },    
     { data: "29/08/2026", versao: "v26.08.7", descricao: "Atualização GTFS - SPTrans" },    
     { data: "21/08/2026", versao: "v26.08.6", descricao: "Atualização GTFS - SPTrans e Criação de ícone para sinalizar saúde do status das linhas" },    
     { data: "20/08/2026", versao: "v26.08.5", descricao: "Atualização GTFS - SPTrans e Atualização de ícones do Mapa" },    

@@ -228,7 +228,7 @@
           "codigo": "10",
           "ativa": true,
           "status": {
-            "situacao": "Operação Normal",
+            "situacao": "Dados Indisponíveis",
             "descricao": "",
             "classificacao": "operacional",
             "operacao_normal": true,
@@ -241,7 +241,7 @@
           "codigo": "11",
           "ativa": true,
           "status": {
-            "situacao": "Operação Normal",
+            "situacao": "Dados Indisponíveis",
             "descricao": "",
             "classificacao": "operacional",
             "operacao_normal": true,
@@ -257,7 +257,7 @@
           "codigo": "12",
           "ativa": true,
           "status": {
-            "situacao": "Operação Normal",
+            "situacao": "Dados Indisponíveis",
             "descricao": "",
             "classificacao": "operacional",
             "operacao_normal": true,
@@ -273,7 +273,7 @@
           "codigo": "13",
           "ativa": true,
           "status": {
-            "situacao": "Operação Normal",
+            "situacao": "Dados Indisponíveis",
             "descricao": "",
             "classificacao": "operacional",
             "operacao_normal": true,
@@ -296,8 +296,8 @@
           "codigo": "15",
           "ativa": true,
           "status": {
-            "situacao": "Operação Normal",
-            "descricao": "Operação Normal",
+            "situacao": "Dados Indisponíveis",
+            "descricao": "Dados Indisponíveis",
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-05-02T04:45:01.995950",
@@ -305,12 +305,25 @@
           }
         },
         {
+          "nome": "Linha 17-Ouro",
+          "codigo": "17",
+          "ativa": true,
+          "status": {
+            "situacao": "Dados Indisponíveis",
+            "descricao": "Dados Indisponíveis",
+            "classificacao": "operacional",
+            "operacao_normal": true,
+            "atualizado_em": "2026-05-02T04:45:01.995950",
+            "atualizado_ha": "1 dia, 19 horas"
+          }
+        },        
+        {
           "nome": "Linha 1-Azul",
           "codigo": "1",
           "ativa": true,
           "status": {
-            "situacao": "Operação Normal",
-            "descricao": "Operação Normal",
+            "situacao": "Dados Indisponíveis",
+            "descricao": "Dados Indisponíveis",
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-05-02T04:45:01.995915",
@@ -322,8 +335,8 @@
           "codigo": "2",
           "ativa": true,
           "status": {
-            "situacao": "Operação Normal",
-            "descricao": "Operação Normal",
+            "situacao": "Dados Indisponíveis",
+            "descricao": "Dados Indisponíveis",
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-05-02T04:45:01.995936",
@@ -335,8 +348,8 @@
           "codigo": "3",
           "ativa": true,
           "status": {
-            "situacao": "Operação Normal",
-            "descricao": "Operação Normal",
+            "situacao": "Dados Indisponíveis",
+            "descricao": "Dados Indisponíveis",
             "classificacao": "operacional",
             "operacao_normal": true,
             "atualizado_em": "2026-05-02T04:45:01.995943",

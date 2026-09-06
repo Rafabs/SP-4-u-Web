@@ -73,6 +73,26 @@ const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
 
   <hr />
 
+  <section class="about">
+    <div
+      class="attention"
+      style="background-color: rgba(0,0,0,0.05); padding: 15px; border-left: 5px solid #d4b400; margin: 20px 0;"
+    >
+      <h2>AVISO | Comunicado Importante - Escopo Regulatório da API (CCM-ARTESP)</h2>
+      <p>
+        Em estrita conformidade com as competências legais e atribuições fiscalizatórias da Agência Reguladora de Serviços Públicos Delegados de Transporte do Estado de São Paulo (ARTESP), informamos que, a partir de 
+        <strong> 03/09/2026</strong>, os dados e status fornecidos por esta API contemplam <strong> exclusivamente as concessionárias e linhas metroferroviárias sob fiscalização e regulação direta da ARTESP </strong> (malha delegada).
+        Os dados operacionais das linhas geridas diretamente por empresas públicas estaduais não integram mais a camada de dados exposta por este portal. Para solicitações, consultas ou informações sobre as demais linhas, os interessados devem acionar diretamente os canais oficiais e as Ouvidorias dos respectivos órgãos e operadoras responsáveis: <br>
+      </p>
+      <ul>
+        <li> Companhia do Metropolitano de São Paulo (Metrô): <a href="https://www.metro.sp.gov.br" target="_blank" rel="noopener noreferrer">www.metro.sp.gov.br</a>  / Ouvidoria e SIC<br></li>
+        <li> Companhia Paulista de Trens Metropolitanos (CPTM): <a href="https://www.cptm.sp.gov.br" target="_blank" rel="noopener noreferrer">www.cptm.sp.gov.br</a>  / Ouvidoria e SIC<br></li>
+      </ul>
+      <p><a href="https://ccm.artesp.sp.gov.br/metroferroviario/api/docs/" target="_blank" rel="noopener noreferrer">— Saiba Mais —</a></p>
+    </div>
+  </section>
+  <hr />
+
   <section class="lines" id="status-linhas">
     <h2>Consulte as linhas do Sistema Metropolitano</h2>
     <ul class="line-list">
