@@ -11,6 +11,14 @@ export interface GTFSHistoryEntry {
 // DADOS
 export const historyData_SPTrans: GTFSHistoryEntry[] = [ 
   {
+    data: "11/09/2026",
+    tipo: "🆕 Inclusão",
+    linha: "2036/10",
+    cor: "002F6C",
+    rota: "Vl. Arouca - Bairro Três Cruzes",
+    recente: true,
+  },
+  {
     data: "18/08/2026",
     tipo: "❌ Remoção",
     linha: "695V/01",
