@@ -30,10 +30,10 @@ const STALE_THRESHOLD_MS = 20 * 60 * 1000; // 20 minutos
 
 function cssClass(situacao: string): string {
   const s = situacao.toLowerCase();
-  if (s.includes("normal") || s.includes("especial") || s.includes("transitoria"))
+  if (s.includes("normal") || s.includes("especial") || s.includes("transitória"))
     return "verde_operacao_normal";
   if (s.includes("velocidade") || s.includes("impacto") ||
-      s.includes("atividade") || s.includes("parcial") || s.includes("maiores") || s.includes("circulação"))
+      s.includes("atividade") || s.includes("parcial") || s.includes("maiores") || s.includes("circulação")  || s.includes("diferenciada"))
     return "amarelo_velocidade_reduzida";
   if (s.includes("paralisada") || s.includes("interrompida"))
     return "vermelho_paralisada";

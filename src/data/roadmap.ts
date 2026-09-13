@@ -51,6 +51,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "12/09/2026", versao: "v26.09.3", descricao: "Atualização do termo Operação Diferenciada em status de linha" },    
     { data: "11/09/2026", versao: "v26.09.2", descricao: "Atualização GTFS - SPTrans" },    
     { data: "06/09/2026", versao: "v26.09.1", descricao: "Atualização de informações, seguindo o ESCOPO REGULATÓRIO da ARTESP" },    
     { data: "29/08/2026", versao: "v26.08.7", descricao: "Atualização GTFS - SPTrans" },    
