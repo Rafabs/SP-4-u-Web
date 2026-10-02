@@ -9,7 +9,31 @@ export interface GTFSHistoryEntry {
 }
 
 // DADOS
-export const historyData_SPTrans: GTFSHistoryEntry[] = [ 
+export const historyData_SPTrans: GTFSHistoryEntry[] = [
+  {
+    data: "02/10/2026",
+    tipo: "🆕 Inclusão",
+    linha: "8086/31",
+    cor: "FF671F",
+    rota: "Jaguaré - Pinheiros",
+    recente: true,
+  },   
+  {
+    data: "02/10/2026",
+    tipo: "🆕 Inclusão",
+    linha: "439P/10",
+    cor: "FFD100",
+    rota: "Ceret - Lgo. Da Concórdia",
+    recente: true,
+  },    
+  {
+    data: "02/10/2026",
+    tipo: "🆕 Inclusão",
+    linha: "220P/10",
+    cor: "002F6C",
+    rota: "Term. Parada Inglesa - Ctn",
+    recente: true,
+  },   
   {
     data: "11/09/2026",
     tipo: "🆕 Inclusão",
