@@ -51,6 +51,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "24/10/2026", versao: "v26.10.4", descricao: "Atualização GTFS - SPTrans" },    
     { data: "17/10/2026", versao: "v26.10.3", descricao: "Atualização GTFS - ARTESP" },        
     { data: "15/10/2026", versao: "v26.10.2", descricao: "Atualização GTFS - SPTrans" },    
     { data: "02/10/2026", versao: "v26.10.1", descricao: "Atualização GTFS - SPTrans" },    
