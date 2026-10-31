@@ -11,6 +11,14 @@ export interface GTFSHistoryEntry {
 // DADOS
 export const historyData_SPTrans: GTFSHistoryEntry[] = [
   {
+    data: "30/10/2026",
+    tipo: "❌ Remoção",
+    linha: "695T/01",
+    cor: "782F40",
+    rota: "Term. Capelinha - Metrô Vl. Mariana",
+    recente: true,
+  }, 
+  {
     data: "02/10/2026",
     tipo: "🆕 Inclusão",
     linha: "8086/31",
@@ -56,7 +64,7 @@ export const historyData_SPTrans: GTFSHistoryEntry[] = [
     linha: "4033/21",
     cor: "006341",
     rota: "São Mateus - Nova Conquista",
-    recente: true,
+    recente: false,
   },    
   {
     data: "12/08/2026",
@@ -64,7 +72,7 @@ export const historyData_SPTrans: GTFSHistoryEntry[] = [
     linha: "2035/10",
     cor: "002F6C",
     rota: "Metrô Parada Inglesa - Conj. Hab. Sonda Ii",
-    recente: true,
+    recente: false,
   },  
   {
     data: "11/08/2026",
@@ -72,7 +80,7 @@ export const historyData_SPTrans: GTFSHistoryEntry[] = [
     linha: "1027/10",
     cor: "509E2F",
     rota: "Term Jd Britânia - Itaberaba I",
-    recente: true,
+    recente: false,
   },   
   {
     data: "29/07/2026",
