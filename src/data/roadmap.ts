@@ -43,7 +43,7 @@ const roadmapData: Roadmap = {
       itens: [
       ],
     },
-    {
+    { 
       categoria: "🖼️ Interface",
       itens: [
         { label: "Exibir Linha 17 - Ouro por ramificação", checked: false },
