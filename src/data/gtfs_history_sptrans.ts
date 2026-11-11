@@ -11,12 +11,28 @@ export interface GTFSHistoryEntry {
 // DADOS
 export const historyData_SPTrans: GTFSHistoryEntry[] = [
   {
+    data: "10/11/2026",
+    tipo: "🆕 Inclusão",
+    linha: "771P/42",
+    cor: "FF671F",
+    rota: "Jd. João Xxiii - Term. Pinheiros",
+    recente: true,
+  },   
+  {
+    data: "10/11/2026",
+    tipo: "❌ Remoção",
+    linha: "606F/10",
+    cor: "0082BA",
+    rota: "Circular G.p. Sp - Autódromo",
+    recente: true,
+  },     
+  {
     data: "06/11/2026",
     tipo: "🆕 Inclusão",
     linha: "606F/10",
     cor: "0082BA",
     rota: "Circular G.p. Sp - Autódromo",
-    recente: true,
+    recente: false,
   },     
   {
     data: "30/10/2026",
@@ -24,7 +40,7 @@ export const historyData_SPTrans: GTFSHistoryEntry[] = [
     linha: "695T/01",
     cor: "782F40",
     rota: "Term. Capelinha - Metrô Vl. Mariana",
-    recente: true,
+    recente: false,
   }, 
   {
     data: "02/10/2026",
@@ -32,7 +48,7 @@ export const historyData_SPTrans: GTFSHistoryEntry[] = [
     linha: "8086/31",
     cor: "FF671F",
     rota: "Jaguaré - Pinheiros",
-    recente: true,
+    recente: false,
   },   
   {
     data: "02/10/2026",
@@ -40,7 +56,7 @@ export const historyData_SPTrans: GTFSHistoryEntry[] = [
     linha: "439P/10",
     cor: "FFD100",
     rota: "Ceret - Lgo. Da Concórdia",
-    recente: true,
+    recente: false,
   },    
   {
     data: "02/10/2026",
@@ -48,7 +64,7 @@ export const historyData_SPTrans: GTFSHistoryEntry[] = [
     linha: "220P/10",
     cor: "002F6C",
     rota: "Term. Parada Inglesa - Ctn",
-    recente: true,
+    recente: false,
   },   
   {
     data: "11/09/2026",
@@ -56,7 +72,7 @@ export const historyData_SPTrans: GTFSHistoryEntry[] = [
     linha: "2036/10",
     cor: "002F6C",
     rota: "Vl. Arouca - Bairro Três Cruzes",
-    recente: true,
+    recente: false,
   },
   {
     data: "18/08/2026",
@@ -64,7 +80,7 @@ export const historyData_SPTrans: GTFSHistoryEntry[] = [
     linha: "695V/01",
     cor: "782F40",
     rota: "Term. Capelinha - Metrô Ana Rosa",
-    recente: true,
+    recente: false,
   }, 
   {
     data: "18/08/2026",
