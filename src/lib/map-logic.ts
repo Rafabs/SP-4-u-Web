@@ -19,8 +19,11 @@ function getPath(path: string): string {
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
   return new URL(`${normalizedBase}${normalizedPath}`, window.location.origin).href;
 }
-function getGTFSPath(fileName: string): string {
-  return getPath(`/${GTFS_CONFIGS[activeSystem].folder}/${fileName}`);
+function getGTFSPath(
+  fileName: string,
+  system: GTFSSystem = activeSystem
+): string {
+  return getPath(`/${GTFS_CONFIGS[system].folder}/${fileName}`);
 }
 
 function resolveStationIconPath(lineName: unknown, iconMapping: Record<string, string>): string | undefined {
