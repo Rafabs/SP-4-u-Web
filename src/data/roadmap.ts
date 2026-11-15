@@ -51,6 +51,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "15/11/2026", versao: "v26.11.4", descricao: "Correção TypeError das linhas SPTrans e ARTESP" },    
     { data: "11/11/2026", versao: "v26.11.3", descricao: "Atualização GTFS - SPTrans" },    
     { data: "06/11/2026", versao: "v26.11.2", descricao: "Atualização GTFS - SPTrans" },    
     { data: "02/11/2026", versao: "v26.11.1", descricao: "Atualização GTFS - SPTrans" },    

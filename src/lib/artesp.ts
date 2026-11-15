@@ -61,11 +61,17 @@ let gtfsData: GTFSData | null = {
 let isLeavingPage = false;
 let currentRenderId = 0;
 
-function escapeHtml(str: string): string {
-  return str.replace(/[&<>"']/g, (match) => {
+
+function escapeHtml(str: string | null | undefined): string {
+  return String(str ?? '').replace(/[&<>"']/g, (match) => {
     const escapes: Record<string, string> = {
-      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
     };
+
     return escapes[match];
   });
 }
