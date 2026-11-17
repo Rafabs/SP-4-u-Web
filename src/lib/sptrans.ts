@@ -152,8 +152,8 @@ function setupSearch(): void {
 
 // CARREGAMENTO GTFS
 async function loadGTFSFiles(): Promise<void> {
-  const basePath = `${BASE_URL}/gtfs-sptrans/`.replace(/\/+$/, "/");
-
+  const basePath = `${BASE_URL.replace(/\/+$/, "")}/gtfs-sptrans/`;
+  
   const files: { id: Exclude<keyof GTFSData, "agency">; name: string }[] = [
     { id: "fares", name: "fare_attributes.txt" },
     { id: "fareRules", name: "fare_rules.txt" },
