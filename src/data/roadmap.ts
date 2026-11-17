@@ -47,6 +47,7 @@ const roadmapData: Roadmap = {
       categoria: "🖼️ Interface",
       itens: [
         { label: "Exibir Linha 17 - Ouro por ramificação", checked: false },
+        { label: "Desenvolver Dash de ocorrências com base no DB de status", status: "EM DESENVOLVIMENTO", checked: false },
       ],
     },
   ],
