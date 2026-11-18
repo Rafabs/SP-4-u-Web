@@ -106,6 +106,12 @@ export function initHeroDemanda(): void {
   createMovingIconHero("demanda-canvas", colors, icons);
 }
 
+export function initHeroHistorico(): void {
+  const colors = ["#d40000", "#b30000", "#ef4444", "#991b1b", "#dc2626", "#7f1d1d"];
+  const icons = ["monitoring", "warning", "train", "analytics"];
+  createMovingIconHero("history-canvas", colors, icons);
+}
+
 export function initHeroGtfs(): void {
   const colors = ["#00b352", "#009966", "#00cc44", "#007733", "#00aa44", "#008833", "#00bb55", "#006622"];
   const icons = ["train", "directions_bus", "schedule", "route", "transfer_within_a_station"];

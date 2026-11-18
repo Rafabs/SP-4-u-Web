@@ -1,0 +1,179 @@
+---
+import Layout from "../layouts/Layout.astro";
+const base = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "") + "/";
+---
+
+<Layout title="Sampa 4u | Histórico de Ocorrências">
+  <link rel="stylesheet" href={`${base}ocorrencias-historico.css`} slot="head" />
+
+  <section class="hero hero-history" aria-labelledby="history-title">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-lines" id="history-canvas" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Dados operacionais · ARTESP</div>
+      <h1 class="hero-h1" id="history-title">
+        Histórico de<br /><span>Ocorrências</span>
+      </h1>
+      <p class="hero-sub">
+        Analise registros de status metroferroviários, acompanhe falhas ao longo
+        do tempo e compare linhas e concessionárias.
+      </p>
+      <div class="hero-ctas">
+        <a href="#historico-graficos" class="btn-hero-primary">Explorar gráficos</a>
+        <a href="#historico-registros" class="btn-hero-ghost">Consultar registros</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-val">2020–2026</div>
+          <div class="stat-label">Período disponível</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val" id="hero-record-count">—</div>
+          <div class="stat-label">Registros históricos</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">xlsx</div>
+          <div class="stat-label">Planilhas locais [PROVISÓRIO]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+  <main class="history-dashboard" id="dashboard">
+    <section class="history-panel" aria-label="Filtros do histórico">
+      <div class="panel-heading">
+        <div>
+          <h2>Filtros</h2>
+          <p>Combine os campos para analisar um recorte específico.</p>
+        </div>
+        <div class="panel-actions">
+          <button type="button" class="history-button secondary" id="clear-filters">
+            Limpar filtros
+          </button>
+          <button type="button" class="history-button primary" id="reload">
+            <span class="material-symbols-outlined" aria-hidden="true">refresh</span>
+            Recarregar dados
+          </button>
+        </div>
+      </div>
+      <div class="filter-grid">
+        <label>Ano
+          <select id="filter-year"><option value="">Todos os anos</option></select>
+        </label>
+        <label>Linha
+          <select id="filter-line"><option value="">Todas as linhas</option></select>
+        </label>
+        <label>Concessionária
+          <select id="filter-company"><option value="">Todas</option></select>
+        </label>
+        <label>Situação
+          <select id="filter-situation"><option value="">Todas</option></select>
+        </label>
+        <label>Classificação
+          <select id="filter-class"><option value="">Todas</option></select>
+        </label>
+        <label>De
+          <input id="filter-start" type="date" />
+        </label>
+        <label>Até
+          <input id="filter-end" type="date" />
+        </label>
+        <label class="search-field">Buscar nos registros
+          <input id="search" type="search" placeholder="Situação, descrição, linha..." />
+        </label>
+      </div>
+      <p class="load-status" id="load-status" role="status" aria-live="polite">
+        Preparando leitura das planilhas...
+      </p>
+    </section>
+
+    <section class="history-kpis" aria-label="Resumo dos registros filtrados">
+      <article class="history-kpi">
+        <span class="material-symbols-outlined" aria-hidden="true">dataset</span>
+        <div><span>Registros encontrados</span><strong id="kpi-total">—</strong></div>
+      </article>
+      <article class="history-kpi problem">
+        <span class="material-symbols-outlined" aria-hidden="true">warning</span>
+        <div><span>Falhas únicas no recorte</span><strong id="kpi-problems">—</strong></div>
+      </article>
+      <article class="history-kpi">
+        <span class="material-symbols-outlined" aria-hidden="true">route</span>
+        <div><span>Linhas no recorte</span><strong id="kpi-lines">—</strong></div>
+      </article>
+      <article class="history-kpi">
+        <span class="material-symbols-outlined" aria-hidden="true">business</span>
+        <div><span>Concessionárias no recorte</span><strong id="kpi-companies">—</strong></div>
+      </article>
+    </section>
+
+    <section class="history-charts" id="historico-graficos" aria-label="Gráficos do histórico">
+      <p class="history-note">
+        Os gráficos contam o início de cada período contínuo classificado como problema uma única vez,
+        por linha. As atualizações repetidas continuam disponíveis na tabela.
+      </p>
+      <article class="history-chart-card trend-chart">
+        <div class="chart-heading">
+          <div><h2>Falhas ao longo do tempo</h2><p>Registros classificados como problema por mês</p></div>
+        </div>
+        <div class="chart-area"><canvas id="monthly-chart" role="img" aria-label="Gráfico mensal de ocorrências"></canvas></div>
+      </article>
+      <article class="history-chart-card">
+        <div class="chart-heading">
+          <div><h2>Falhas por situação</h2><p>Distribuição dos tipos de ocorrência</p></div>
+        </div>
+        <div class="chart-area"><canvas id="situation-chart" role="img" aria-label="Gráfico de falhas por situação"></canvas></div>
+      </article>
+      <article class="history-chart-card">
+        <div class="chart-heading">
+          <div><h2>Linhas com mais falhas</h2><p>Até 15 linhas no recorte</p></div>
+        </div>
+        <div class="chart-area tall"><canvas id="line-chart" role="img" aria-label="Gráfico de falhas por linha"></canvas></div>
+      </article>
+      <article class="history-chart-card">
+        <div class="chart-heading">
+          <div><h2>Falhas por concessionária</h2><p>Volume de registros</p></div>
+        </div>
+        <div class="chart-area tall"><canvas id="company-chart" role="img" aria-label="Gráfico de falhas por concessionária"></canvas></div>
+      </article>
+    </section>
+
+    <section class="history-table-card" id="historico-registros" aria-labelledby="records-title">
+      <div class="table-heading">
+        <div>
+          <span class="history-eyebrow">Consulta detalhada</span>
+          <h2 id="records-title">Registros de status</h2>
+        </div>
+        <span id="table-summary">Carregando registros...</span>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Data e hora</th><th>Linha</th><th>Concessionária</th>
+              <th>Situação</th><th>Classificação</th><th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody id="records-body">
+            <tr><td colspan="6" class="empty">Carregando planilhas XLSX...</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pagination">
+        <button type="button" class="history-button secondary" id="prev-page">Anterior</button>
+        <span id="page-info">Página 1</span>
+        <button type="button" class="history-button secondary" id="next-page">Próxima</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    import { initHistoricalDashboard } from "../lib/ocorrencias-historico";
+    import { initHeroHistorico } from "../lib/hero-animations";
+
+    initHistoricalDashboard();
+    initHeroHistorico();
+  </script>
+</Layout>

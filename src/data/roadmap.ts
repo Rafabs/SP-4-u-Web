@@ -47,11 +47,12 @@ const roadmapData: Roadmap = {
       categoria: "🖼️ Interface",
       itens: [
         { label: "Exibir Linha 17 - Ouro por ramificação", checked: false },
-        { label: "Desenvolver Dash de ocorrências com base no DB de status", status: "EM DESENVOLVIMENTO", checked: false },
+        { label: "Desenvolver Dash de ocorrências com base no DB automático de status", checked: false },
       ],
     },
   ],
   historico: [
+    { data: "18/11/2026", versao: "v26.11.5", descricao: "Criado dashboard de ocorrências" },    
     { data: "15/11/2026", versao: "v26.11.4", descricao: "Correção TypeError das linhas SPTrans e ARTESP" },    
     { data: "11/11/2026", versao: "v26.11.3", descricao: "Atualização GTFS - SPTrans" },    
     { data: "06/11/2026", versao: "v26.11.2", descricao: "Atualização GTFS - SPTrans" },    

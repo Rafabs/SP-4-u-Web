@@ -2,7 +2,7 @@ export const originData = [
   // ── MONITORAMENTO METROFERROVIÁRIO ──
   {
     nome: "CCM ARTESP",
-    descricao: "API de monitoramento em tempo real do sistema metroferroviário (linhas concedidas e estatais da RMSP).",
+    descricao: "API de monitoramento em tempo real do sistema metroferroviário (linhas concedidas e estatais da RMSP) e armazenamento de dados/status.",
     url: "https://ccm.artesp.sp.gov.br/metroferroviario/",
     tipo: "API Real-time",
     icon: "sensors"
