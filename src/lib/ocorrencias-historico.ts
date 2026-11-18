@@ -254,23 +254,21 @@ function isEncerrada(situacao: string): boolean {
  * Situações que não representam falhas.
  */
 function isFalhaParaGraficos(registro: Registro): boolean {
-  const situacao = registro.situacao
-    .trim()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLocaleLowerCase("pt-BR")
-    .replace(/\s+/g, " ");
+  const situacao = normalizarSituacao(registro.situacao);
 
   if (!situacao) return false;
 
-  const situacoesNaoFalha = [
-    "operacao normal",
-    "encerrada",
-    "transitoria",
-    "especial"
-  ];
+  if (
+    situacao === "Operação Normal" ||
+    situacao === "Operação Transitória" ||
+    situacao === "Operação Especial" ||
+    situacao === "Operação Diferenciada" ||    
+    situacao.toLowerCase().includes("encerrad")
+  ) {
+    return false;
+  }
 
-  return !situacoesNaoFalha.includes(situacao);
+  return true;
 }
 
 /**
