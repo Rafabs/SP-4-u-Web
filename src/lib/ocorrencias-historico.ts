@@ -262,6 +262,7 @@ function isFalhaParaGraficos(registro: Registro): boolean {
     situacao === "Operação Normal" ||
     situacao === "Operação Transitória" ||
     situacao === "Operação Especial" ||
+    situacao === "Atividade Programada" ||
     situacao === "Operação Diferenciada" ||    
     situacao.toLowerCase().includes("encerrad")
   ) {
