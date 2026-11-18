@@ -263,7 +263,7 @@
 }
 
 .history-kpi strong {
-  font-family: "Orbitron", sans-serif;
+  font-family: inherit;
   font-size: 1.35rem;
 }
 
