@@ -42,8 +42,9 @@ function normalizarCabecalho(valor: unknown): string {
 /**
  * Padroniza situações equivalentes.
  */
-function normalizarSituacao(situacao: string): string {
-  const normalizada = situacao
+function normalizarSituacao(situacao: unknown): string {
+  const original = String(situacao ?? "");
+  const normalizada = original
     .trim()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
@@ -57,7 +58,7 @@ function normalizarSituacao(situacao: string): string {
     return "Operação Paralisada";
   }
 
-  return situacao.trim();
+  return original.trim();
 }
 
 /**
@@ -245,7 +246,7 @@ function lerLinha(row: Record<string, unknown>): Registro | null {
  * Identifica registros encerrados.
  */
 function isEncerrada(situacao: string): boolean {
-  return situacao
+  return String(situacao ?? "")
     .toLocaleLowerCase("pt-BR")
     .includes("encerrad");
 }
@@ -562,7 +563,7 @@ function filtrados(ignorarClassificacao = false): Registro[] {
     .toLocaleLowerCase("pt-BR");
 
   return registros.filter(r => {
-    if (ano && r.ano !== ano) return false;
+    // Encerradas nunca aparecem na tabela nem nos totais filtrados, mesmo se classificadas como Offline.\n    if (isEncerrada(r.situacao)) return false;\n\n    if (ano && r.ano !== ano) return false;
     if (linha && r.linha !== linha) return false;
     if (empresa && r.concessionaria !== empresa) return false;
     if (situacao && r.situacao !== situacao) return false;
