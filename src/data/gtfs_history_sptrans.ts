@@ -11,6 +11,14 @@ export interface GTFSHistoryEntry {
 // DADOS
 export const historyData_SPTrans: GTFSHistoryEntry[] = [
   {
+    data: "18/11/2026",
+    tipo: "🆕 Inclusão",
+    linha: "6291/31",
+    cor: "782F40",
+    rota: "Inocoop Campo Limpo - Term. Bandeira",
+    recente: true,
+  },     
+  {
     data: "10/11/2026",
     tipo: "🆕 Inclusão",
     linha: "771P/42",
