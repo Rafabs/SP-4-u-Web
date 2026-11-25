@@ -31,6 +31,7 @@ const roadmapData: Roadmap = {
         { label: "Desenvolver Design System e disponibilizar no projeto", status: "EM DESENVOLVIMENTO", checked: false },
         { label: "Adotar Next.js durante melhoria de mapas no Vercel", checked: false },
         { label: "Desenvolver app Android - SP4U.apk", status: "EM DESENVOLVIMENTO", checked: false },
+        { label: "Verificar rules de políticas no Git Pages https://github.com/Rafabs/SP-4-u-Web/settings/actions/rules até 02/12", status: "EM DESENVOLVIMENTO", checked: false },
       ],
     },
     {
