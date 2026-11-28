@@ -53,6 +53,7 @@ const roadmapData: Roadmap = {
     },
   ],
   historico: [
+    { data: "28/11/2026", versao: "v26.11.9", descricao: "chore(gtfs): atualiza dataset estático da SPTrans" },
     { data: "26/11/2026", versao: "v26.11.8", descricao: "chore(gtfs): atualiza dataset estático da SPTrans" },
     { data: "23/11/2026", versao: "v26.11.7", descricao: "chore(gtfs): atualiza dataset estático da SPTrans" },
     { data: "21/11/2026", versao: "v26.11.6", descricao: "chore(gtfs): atualiza dataset estático da SPTrans e de histórico de ocorrências" },

@@ -11,6 +11,14 @@ export interface GTFSHistoryEntry {
 // DADOS
 export const historyData_SPTrans: GTFSHistoryEntry[] = [
   {
+    data: "27/11/2026",
+    tipo: "🆕 Inclusão",
+    linha: "2002/31",
+    cor: "DA291C",
+    rota: "Term. Pq. D. Pedro Ii - Natal Iluminado",
+    recente: true,
+  }, 
+  {
     data: "22/11/2026",
     tipo: "🆕 Inclusão",
     linha: "6049/31",
